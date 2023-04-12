@@ -15,7 +15,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print("selam deneme")
         xibRegister()
         tableRegister()
         // Right Bar Button Item
