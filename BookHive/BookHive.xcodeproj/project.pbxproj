@@ -132,7 +132,6 @@
 				2E88B34929E6FC53008F4B4B /* Views */,
 				2E88B34329E6FB9B008F4B4B /* Controllers */,
 				EEAC4FB129E6F8220066757B /* BookHive.xcdatamodeld */,
-				EEAC4FB929E6F8230066757B /* Info.plist */,
 			);
 			path = BookHive;
 			sourceTree = "<group>";
@@ -150,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				EEAC4FB429E6F8230066757B /* Assets.xcassets */,
+				EEAC4FB929E6F8230066757B /* Info.plist */,
 				EEAC4FC729E6F9470066757B /* Font */,
 			);
 			path = Resources;
@@ -417,7 +417,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 74UL9K89V5;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = BookHive/Info.plist;
+				INFOPLIST_FILE = BookHive/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Bookhive;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -448,7 +448,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 74UL9K89V5;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = BookHive/Info.plist;
+				INFOPLIST_FILE = BookHive/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Bookhive;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
