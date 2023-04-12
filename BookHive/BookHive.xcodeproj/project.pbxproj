@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		EEAC4FA929E6F8220066757B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAC4FA829E6F8220066757B /* AppDelegate.swift */; };
 		EEAC4FAB29E6F8220066757B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAC4FAA29E6F8220066757B /* SceneDelegate.swift */; };
-		EEAC4FAD29E6F8220066757B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAC4FAC29E6F8220066757B /* ViewController.swift */; };
 		EEAC4FB029E6F8220066757B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEAC4FAE29E6F8220066757B /* Main.storyboard */; };
 		EEAC4FB329E6F8220066757B /* BookHive.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EEAC4FB129E6F8220066757B /* BookHive.xcdatamodeld */; };
 		EEAC4FB529E6F8230066757B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEAC4FB429E6F8230066757B /* Assets.xcassets */; };
@@ -20,7 +19,6 @@
 		EEAC4FA529E6F8220066757B /* BookHive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookHive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEAC4FA829E6F8220066757B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEAC4FAA29E6F8220066757B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EEAC4FAC29E6F8220066757B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EEAC4FAF29E6F8220066757B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EEAC4FB229E6F8220066757B /* BookHive.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BookHive.xcdatamodel; sourceTree = "<group>"; };
 		EEAC4FB429E6F8230066757B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -58,16 +56,119 @@
 		EEAC4FA729E6F8220066757B /* BookHive */ = {
 			isa = PBXGroup;
 			children = (
-				EEAC4FA829E6F8220066757B /* AppDelegate.swift */,
-				EEAC4FAA29E6F8220066757B /* SceneDelegate.swift */,
-				EEAC4FAC29E6F8220066757B /* ViewController.swift */,
-				EEAC4FAE29E6F8220066757B /* Main.storyboard */,
-				EEAC4FB429E6F8230066757B /* Assets.xcassets */,
-				EEAC4FB629E6F8230066757B /* LaunchScreen.storyboard */,
+				EEAC4FC629E6F9360066757B /* Model */,
+				EEAC4FC529E6F92C0066757B /* Application */,
+				EEAC4FC429E6F9260066757B /* Extansions */,
+				EEAC4FC329E6F91E0066757B /* Helper */,
+				EEAC4FC229E6F9120066757B /* Utilities */,
+				EEAC4FC129E6F9040066757B /* Screens */,
+				EEAC4FC029E6F8FA0066757B /* Resources */,
+				EEAC4FBF29E6F8EC0066757B /* StoryBoard */,
 				EEAC4FB929E6F8230066757B /* Info.plist */,
 				EEAC4FB129E6F8220066757B /* BookHive.xcdatamodeld */,
 			);
 			path = BookHive;
+			sourceTree = "<group>";
+		};
+		EEAC4FBF29E6F8EC0066757B /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				EEAC4FAE29E6F8220066757B /* Main.storyboard */,
+				EEAC4FB629E6F8230066757B /* LaunchScreen.storyboard */,
+			);
+			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+		EEAC4FC029E6F8FA0066757B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EEAC4FB429E6F8230066757B /* Assets.xcassets */,
+				EEAC4FC729E6F9470066757B /* Font */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		EEAC4FC129E6F9040066757B /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				EEAC4FCB29E6F9980066757B /* AccountVC */,
+				EEAC4FCA29E6F9900066757B /* SearchVC */,
+				EEAC4FC929E6F9830066757B /* MyBookVC */,
+				EEAC4FC829E6F97B0066757B /* HomeVC */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		EEAC4FC229E6F9120066757B /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		EEAC4FC329E6F91E0066757B /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		EEAC4FC429E6F9260066757B /* Extansions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extansions;
+			sourceTree = "<group>";
+		};
+		EEAC4FC529E6F92C0066757B /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				EEAC4FA829E6F8220066757B /* AppDelegate.swift */,
+				EEAC4FAA29E6F8220066757B /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		EEAC4FC629E6F9360066757B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EEAC4FC729E6F9470066757B /* Font */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		EEAC4FC829E6F97B0066757B /* HomeVC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HomeVC;
+			sourceTree = "<group>";
+		};
+		EEAC4FC929E6F9830066757B /* MyBookVC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MyBookVC;
+			sourceTree = "<group>";
+		};
+		EEAC4FCA29E6F9900066757B /* SearchVC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SearchVC;
+			sourceTree = "<group>";
+		};
+		EEAC4FCB29E6F9980066757B /* AccountVC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AccountVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,7 +243,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEAC4FB329E6F8220066757B /* BookHive.xcdatamodeld in Sources */,
-				EEAC4FAD29E6F8220066757B /* ViewController.swift in Sources */,
 				EEAC4FA929E6F8220066757B /* AppDelegate.swift in Sources */,
 				EEAC4FAB29E6F8220066757B /* SceneDelegate.swift in Sources */,
 			);
