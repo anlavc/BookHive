@@ -17,6 +17,7 @@
 		2E88B35929E700AE008F4B4B /* AccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E88B35729E700AE008F4B4B /* AccountViewController.xib */; };
 		2E88B35C29E7082C008F4B4B /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88B35A29E7082C008F4B4B /* SearchTableViewCell.swift */; };
 		2E88B35D29E7082C008F4B4B /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E88B35B29E7082C008F4B4B /* SearchTableViewCell.xib */; };
+		EE4FA2D129E76FB8007BB98B /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4FA2D029E76FB8007BB98B /* DummyData.swift */; };
 		EEAC4FA929E6F8220066757B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAC4FA829E6F8220066757B /* AppDelegate.swift */; };
 		EEAC4FAB29E6F8220066757B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAC4FAA29E6F8220066757B /* SceneDelegate.swift */; };
 		EEAC4FB029E6F8220066757B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEAC4FAE29E6F8220066757B /* Main.storyboard */; };
@@ -27,7 +28,6 @@
 		EEAC4FD029E70EDF0066757B /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEAC4FCE29E70EDF0066757B /* HomeTableViewCell.xib */; };
 		EEAC4FD429E714280066757B /* TableCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAC4FD229E714280066757B /* TableCollectionViewCell.swift */; };
 		EEAC4FD529E714280066757B /* TableCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEAC4FD329E714280066757B /* TableCollectionViewCell.xib */; };
-		EEAC4FE929E72BDF0066757B /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAC4FE829E72BDF0066757B /* DummyData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +41,7 @@
 		2E88B35729E700AE008F4B4B /* AccountViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountViewController.xib; sourceTree = "<group>"; };
 		2E88B35A29E7082C008F4B4B /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		2E88B35B29E7082C008F4B4B /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
+		EE4FA2D029E76FB8007BB98B /* DummyData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
 		EEAC4FA529E6F8220066757B /* BookHive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookHive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEAC4FA829E6F8220066757B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEAC4FAA29E6F8220066757B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,7 +72,6 @@
 		EEAC4FE529E7169D0066757B /* SF-Pro-Display-HeavyItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-HeavyItalic.ttf"; sourceTree = "<group>"; };
 		EEAC4FE629E7169D0066757B /* SF-Pro-Display-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-SemiboldItalic.ttf"; sourceTree = "<group>"; };
 		EEAC4FE729E7169D0066757B /* SF-Pro-Display-Ultralight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Ultralight.ttf"; sourceTree = "<group>"; };
-		EEAC4FE829E72BDF0066757B /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DummyData.swift; path = BookHive/Views/HomeTableViewCell/TableCollectionCell/DummyData.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,13 +116,6 @@
 			path = Details;
 			sourceTree = "<group>";
 		};
-		2E88B34629E6FC03008F4B4B /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
 		2E88B34929E6FC53008F4B4B /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +124,20 @@
 				2E88B35B29E7082C008F4B4B /* SearchTableViewCell.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		EE4FA2D229E7700E007BB98B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		EE4FA2D329E77015007BB98B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		EEAC4F9C29E6F8220066757B = {
@@ -152,11 +159,11 @@
 		EEAC4FA729E6F8220066757B /* BookHive */ = {
 			isa = PBXGroup;
 			children = (
+				EE4FA2D329E77015007BB98B /* ViewModels */,
+				EE4FA2D229E7700E007BB98B /* Services */,
 				EEAC4FC029E6F8FA0066757B /* Resources */,
 				EEAC4FBF29E6F8EC0066757B /* Storyboard */,
 				EEAC4FC529E6F92C0066757B /* Application */,
-				EEAC4FC329E6F91E0066757B /* Services */,
-				2E88B34629E6FC03008F4B4B /* ViewModels */,
 				EEAC4FC629E6F9360066757B /* Models */,
 				2E88B34929E6FC53008F4B4B /* Views */,
 				2E88B34329E6FB9B008F4B4B /* Controllers */,
@@ -184,13 +191,6 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		EEAC4FC329E6F91E0066757B /* Services */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
 		EEAC4FC529E6F92C0066757B /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,7 +203,7 @@
 		EEAC4FC629E6F9360066757B /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				EEAC4FE829E72BDF0066757B /* DummyData.swift */,
+				EE4FA2D029E76FB8007BB98B /* DummyData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -339,7 +339,7 @@
 				2E88B35C29E7082C008F4B4B /* SearchTableViewCell.swift in Sources */,
 				2E88B34C29E70077008F4B4B /* HomeViewController.swift in Sources */,
 				EEAC4FCF29E70EDF0066757B /* HomeTableViewCell.swift in Sources */,
-				EEAC4FE929E72BDF0066757B /* DummyData.swift in Sources */,
+				EE4FA2D129E76FB8007BB98B /* DummyData.swift in Sources */,
 				2E88B35029E70091008F4B4B /* MyBooksViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
