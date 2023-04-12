@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E88B34C29E70077008F4B4B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88B34A29E70077008F4B4B /* HomeViewController.swift */; };
+		2E88B34D29E70077008F4B4B /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E88B34B29E70077008F4B4B /* HomeViewController.xib */; };
+		2E88B35029E70091008F4B4B /* MyBooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88B34E29E70091008F4B4B /* MyBooksViewController.swift */; };
+		2E88B35129E70091008F4B4B /* MyBooksViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E88B34F29E70091008F4B4B /* MyBooksViewController.xib */; };
+		2E88B35429E7009F008F4B4B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88B35229E7009F008F4B4B /* SearchViewController.swift */; };
+		2E88B35529E7009F008F4B4B /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E88B35329E7009F008F4B4B /* SearchViewController.xib */; };
+		2E88B35829E700AE008F4B4B /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88B35629E700AE008F4B4B /* AccountViewController.swift */; };
+		2E88B35929E700AE008F4B4B /* AccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E88B35729E700AE008F4B4B /* AccountViewController.xib */; };
 		EEAC4FA929E6F8220066757B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAC4FA829E6F8220066757B /* AppDelegate.swift */; };
 		EEAC4FAB29E6F8220066757B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAC4FAA29E6F8220066757B /* SceneDelegate.swift */; };
 		EEAC4FB029E6F8220066757B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEAC4FAE29E6F8220066757B /* Main.storyboard */; };
@@ -16,6 +24,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E88B34A29E70077008F4B4B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		2E88B34B29E70077008F4B4B /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		2E88B34E29E70091008F4B4B /* MyBooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBooksViewController.swift; sourceTree = "<group>"; };
+		2E88B34F29E70091008F4B4B /* MyBooksViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyBooksViewController.xib; sourceTree = "<group>"; };
+		2E88B35229E7009F008F4B4B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		2E88B35329E7009F008F4B4B /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		2E88B35629E700AE008F4B4B /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		2E88B35729E700AE008F4B4B /* AccountViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountViewController.xib; sourceTree = "<group>"; };
 		EEAC4FA529E6F8220066757B /* BookHive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookHive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEAC4FA829E6F8220066757B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEAC4FAA29E6F8220066757B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +65,14 @@
 		2E88B34429E6FBA5008F4B4B /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				2E88B34A29E70077008F4B4B /* HomeViewController.swift */,
+				2E88B34B29E70077008F4B4B /* HomeViewController.xib */,
+				2E88B34E29E70091008F4B4B /* MyBooksViewController.swift */,
+				2E88B34F29E70091008F4B4B /* MyBooksViewController.xib */,
+				2E88B35229E7009F008F4B4B /* SearchViewController.swift */,
+				2E88B35329E7009F008F4B4B /* SearchViewController.xib */,
+				2E88B35629E700AE008F4B4B /* AccountViewController.swift */,
+				2E88B35729E700AE008F4B4B /* AccountViewController.xib */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -214,8 +238,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEAC4FB829E6F8230066757B /* LaunchScreen.storyboard in Resources */,
+				2E88B35929E700AE008F4B4B /* AccountViewController.xib in Resources */,
 				EEAC4FB529E6F8230066757B /* Assets.xcassets in Resources */,
+				2E88B35529E7009F008F4B4B /* SearchViewController.xib in Resources */,
 				EEAC4FB029E6F8220066757B /* Main.storyboard in Resources */,
+				2E88B34D29E70077008F4B4B /* HomeViewController.xib in Resources */,
+				2E88B35129E70091008F4B4B /* MyBooksViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,9 +254,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E88B35429E7009F008F4B4B /* SearchViewController.swift in Sources */,
 				EEAC4FB329E6F8220066757B /* BookHive.xcdatamodeld in Sources */,
+				2E88B35829E700AE008F4B4B /* AccountViewController.swift in Sources */,
 				EEAC4FA929E6F8220066757B /* AppDelegate.swift in Sources */,
 				EEAC4FAB29E6F8220066757B /* SceneDelegate.swift in Sources */,
+				2E88B34C29E70077008F4B4B /* HomeViewController.swift in Sources */,
+				2E88B35029E70091008F4B4B /* MyBooksViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

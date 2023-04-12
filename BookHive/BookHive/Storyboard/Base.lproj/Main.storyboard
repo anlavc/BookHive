@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -11,7 +12,7 @@
         <!--My Books-->
         <scene sceneID="Bng-5C-PJ0">
             <objects>
-                <viewController id="SAJ-Q1-qIm" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyBooksViewController" id="SAJ-Q1-qIm" customClass="MyBooksViewController" customModule="BookHive" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="o4G-VA-LrG">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,7 +28,7 @@
         <!--Home-->
         <scene sceneID="6SO-0T-Z1B">
             <objects>
-                <viewController id="EIi-fu-xyG" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="EIi-fu-xyG" customClass="HomeViewController" customModule="BookHive" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="msY-Ja-bu9">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -43,7 +44,7 @@
         <!--Search-->
         <scene sceneID="xAJ-Kg-3no">
             <objects>
-                <viewController id="ptD-8l-XOA" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchViewController" id="ptD-8l-XOA" customClass="SearchViewController" customModule="BookHive" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Q63-pk-oBp">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -59,7 +60,7 @@
         <!--Account-->
         <scene sceneID="g69-x8-cQb">
             <objects>
-                <viewController id="ZhL-mu-8oC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AccountViewController" id="ZhL-mu-8oC" customClass="AccountViewController" customModule="BookHive" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="s1X-G0-h4i">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
