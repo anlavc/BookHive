@@ -9,6 +9,7 @@ import UIKit
 
 class SearchTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var searchView: UIView!
     @IBOutlet weak var bookImageView: UIImageView!
     @IBOutlet weak var bookNameLabel: UILabel!
     @IBOutlet weak var genreLabel: UILabel!
@@ -19,6 +20,7 @@ class SearchTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        searchView.layer.cornerRadius = 20
         
     }
     

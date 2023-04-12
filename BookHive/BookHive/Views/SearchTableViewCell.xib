@@ -11,15 +11,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="126" id="KGk-i7-Jjw" customClass="SearchTableViewCell" customModule="BookHive" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="403" height="126"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="139" id="KGk-i7-Jjw" customClass="SearchTableViewCell" customModule="BookHive" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="494" height="139"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="403" height="126"/>
+                <rect key="frame" x="0.0" y="0.0" width="494" height="139"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pMB-ok-p0M">
-                        <rect key="frame" x="0.0" y="0.0" width="403" height="126"/>
+                        <rect key="frame" x="10" y="5" width="474" height="126"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="12" translatesAutoresizingMaskIntoConstraints="NO" id="Zzm-4r-TF8">
                                 <rect key="frame" x="21" y="10" width="73" height="106"/>
@@ -29,7 +29,7 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="3Ae-7m-d5x">
-                                <rect key="frame" x="123" y="22" width="272" height="52"/>
+                                <rect key="frame" x="123" y="22" width="343" height="52"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1984" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Qm-OU-bPT">
                                         <rect key="frame" x="0.0" y="0.0" width="31.333333333333332" height="20.666666666666668"/>
@@ -49,16 +49,16 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Baz-25-guq">
-                                <rect key="frame" x="123" y="86" width="263.33333333333331" height="22"/>
+                                <rect key="frame" x="122.99999999999997" y="86" width="334.33333333333326" height="22"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genre : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AEN-it-7ZP">
-                                        <rect key="frame" x="0.0" y="0.0" width="53.333333333333336" height="22"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="124.33333333333333" height="22"/>
                                         <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Science Fiction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HY6-OB-w5t">
-                                        <rect key="frame" x="53.333333333333343" y="0.0" width="210.00000000000003" height="22"/>
+                                        <rect key="frame" x="124.33333333333331" y="0.0" width="210" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="210" id="ecd-tP-Whf"/>
                                         </constraints>
@@ -69,7 +69,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="tertiaryLabelColor"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
                             <constraint firstItem="Baz-25-guq" firstAttribute="top" secondItem="3Ae-7m-d5x" secondAttribute="bottom" constant="12" id="3F3-1T-qRF"/>
                             <constraint firstAttribute="bottom" secondItem="Baz-25-guq" secondAttribute="bottom" constant="18" id="8iB-t0-p93"/>
@@ -85,10 +85,10 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="pMB-ok-p0M" secondAttribute="bottom" id="7dv-8S-psL"/>
-                    <constraint firstAttribute="trailing" secondItem="pMB-ok-p0M" secondAttribute="trailing" id="WPJ-Gg-kbL"/>
-                    <constraint firstItem="pMB-ok-p0M" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="deD-fQ-7Pq"/>
-                    <constraint firstItem="pMB-ok-p0M" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="eus-Rd-Yo8"/>
+                    <constraint firstAttribute="bottom" secondItem="pMB-ok-p0M" secondAttribute="bottom" constant="5" id="7dv-8S-psL"/>
+                    <constraint firstAttribute="trailing" secondItem="pMB-ok-p0M" secondAttribute="trailing" constant="10" id="WPJ-Gg-kbL"/>
+                    <constraint firstItem="pMB-ok-p0M" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="deD-fQ-7Pq"/>
+                    <constraint firstItem="pMB-ok-p0M" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="eus-Rd-Yo8"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -96,14 +96,15 @@
                 <outlet property="bookImageView" destination="Zzm-4r-TF8" id="c5Z-aa-cxy"/>
                 <outlet property="bookNameLabel" destination="5Qm-OU-bPT" id="Cyh-sF-fdW"/>
                 <outlet property="genreLabel" destination="HY6-OB-w5t" id="8xu-CU-W0w"/>
+                <outlet property="searchView" destination="pMB-ok-p0M" id="zay-PW-lNm"/>
             </connections>
-            <point key="canvasLocation" x="202.29007633587784" y="41.549295774647888"/>
+            <point key="canvasLocation" x="181.67938931297709" y="49.647887323943664"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="12" width="383" height="600"/>
-        <systemColor name="tertiaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
