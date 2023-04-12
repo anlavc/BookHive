@@ -15,6 +15,8 @@
 		2E88B35529E7009F008F4B4B /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E88B35329E7009F008F4B4B /* SearchViewController.xib */; };
 		2E88B35829E700AE008F4B4B /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88B35629E700AE008F4B4B /* AccountViewController.swift */; };
 		2E88B35929E700AE008F4B4B /* AccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E88B35729E700AE008F4B4B /* AccountViewController.xib */; };
+		2E88B35C29E7082C008F4B4B /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88B35A29E7082C008F4B4B /* SearchTableViewCell.swift */; };
+		2E88B35D29E7082C008F4B4B /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E88B35B29E7082C008F4B4B /* SearchTableViewCell.xib */; };
 		EEAC4FA929E6F8220066757B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAC4FA829E6F8220066757B /* AppDelegate.swift */; };
 		EEAC4FAB29E6F8220066757B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAC4FAA29E6F8220066757B /* SceneDelegate.swift */; };
 		EEAC4FB029E6F8220066757B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEAC4FAE29E6F8220066757B /* Main.storyboard */; };
@@ -37,6 +39,8 @@
 		2E88B35329E7009F008F4B4B /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
 		2E88B35629E700AE008F4B4B /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		2E88B35729E700AE008F4B4B /* AccountViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountViewController.xib; sourceTree = "<group>"; };
+		2E88B35A29E7082C008F4B4B /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		2E88B35B29E7082C008F4B4B /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
 		EEAC4FA529E6F8220066757B /* BookHive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookHive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEAC4FA829E6F8220066757B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEAC4FAA29E6F8220066757B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +127,8 @@
 			isa = PBXGroup;
 			children = (
 				EEAC4FCC29E70EB60066757B /* HomeTableViewCell */,
+				2E88B35A29E7082C008F4B4B /* SearchTableViewCell.swift */,
+				2E88B35B29E7082C008F4B4B /* SearchTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -146,6 +152,7 @@
 		EEAC4FA729E6F8220066757B /* BookHive */ = {
 			isa = PBXGroup;
 			children = (
+				EEAC4FC029E6F8FA0066757B /* Resources */,
 				EEAC4FBF29E6F8EC0066757B /* Storyboard */,
 				EEAC4FC529E6F92C0066757B /* Application */,
 				EEAC4FC329E6F91E0066757B /* Services */,
@@ -153,7 +160,6 @@
 				EEAC4FC629E6F9360066757B /* Models */,
 				2E88B34929E6FC53008F4B4B /* Views */,
 				2E88B34329E6FB9B008F4B4B /* Controllers */,
-				EEAC4FC029E6F8FA0066757B /* Resources */,
 				EEAC4FB129E6F8220066757B /* BookHive.xcdatamodeld */,
 			);
 			path = BookHive;
@@ -171,8 +177,8 @@
 		EEAC4FC029E6F8FA0066757B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				EEAC4FB929E6F8230066757B /* Info.plist */,
 				EEAC4FB429E6F8230066757B /* Assets.xcassets */,
+				EEAC4FB929E6F8230066757B /* Info.plist */,
 				EEAC4FC729E6F9470066757B /* Font */,
 			);
 			path = Resources;
@@ -305,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEAC4FB829E6F8230066757B /* LaunchScreen.storyboard in Resources */,
+				2E88B35D29E7082C008F4B4B /* SearchTableViewCell.xib in Resources */,
 				2E88B35929E700AE008F4B4B /* AccountViewController.xib in Resources */,
 				EEAC4FD029E70EDF0066757B /* HomeTableViewCell.xib in Resources */,
 				EEAC4FB529E6F8230066757B /* Assets.xcassets in Resources */,
@@ -329,6 +336,7 @@
 				EEAC4FA929E6F8220066757B /* AppDelegate.swift in Sources */,
 				EEAC4FAB29E6F8220066757B /* SceneDelegate.swift in Sources */,
 				EEAC4FD429E714280066757B /* TableCollectionViewCell.swift in Sources */,
+				2E88B35C29E7082C008F4B4B /* SearchTableViewCell.swift in Sources */,
 				2E88B34C29E70077008F4B4B /* HomeViewController.swift in Sources */,
 				EEAC4FCF29E70EDF0066757B /* HomeTableViewCell.swift in Sources */,
 				EEAC4FE929E72BDF0066757B /* DummyData.swift in Sources */,

@@ -11,6 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchViewController" customModule="BookHive" customModuleProvider="target">
             <connections>
+                <outlet property="searchBar" destination="cre-nm-CU4" id="BEv-eH-Wi7"/>
+                <outlet property="tableView" destination="aLz-5O-Gk5" id="iiI-K4-jaO"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,9 +20,33 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="cre-nm-CU4">
+                    <rect key="frame" x="0.0" y="141" width="393" height="56"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="9ll-R0-Amd"/>
+                    </connections>
+                </searchBar>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="aLz-5O-Gk5">
+                    <rect key="frame" x="0.0" y="202" width="393" height="616"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="616" id="ZiU-pU-Ha4"/>
+                    </constraints>
+                </tableView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <point key="canvasLocation" x="132" y="-11"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="aLz-5O-Gk5" secondAttribute="trailing" id="5pH-vh-EpZ"/>
+                <constraint firstItem="cre-nm-CU4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Aw9-wF-VqJ"/>
+                <constraint firstItem="cre-nm-CU4" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="BdT-5s-x8t"/>
+                <constraint firstItem="aLz-5O-Gk5" firstAttribute="top" secondItem="cre-nm-CU4" secondAttribute="bottom" constant="5" id="OS0-pG-ZKq"/>
+                <constraint firstItem="aLz-5O-Gk5" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="SYw-eS-MvU"/>
+                <constraint firstItem="aLz-5O-Gk5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="nyp-Dw-Dfg"/>
+            </constraints>
+            <point key="canvasLocation" x="101.5267175572519" y="20.422535211267608"/>
         </view>
     </objects>
     <resources>
