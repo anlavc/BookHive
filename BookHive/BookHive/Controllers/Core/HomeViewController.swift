@@ -59,15 +59,10 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         titleLabel.font = UIFont.systemFont(ofSize: 20,weight: .bold) // Font boyutunu ayarlayın
         headerView.addSubview(titleLabel)
         //button
-//        // Right Bar Button Item
-//            let rightButton = UIBarButtonItem(title: "Button Title", style: .plain, target: self, action: #selector(rightButtonTapped))
-//            let rightButtonView = UIView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
-//        rightButtonView.addSubview(rightButton.customView!)
-//            rightButtonView.backgroundColor = .clear
-//            rightButton.customView?.center = rightButtonView.center
-//            headerView.addSubview(rightButtonView)
+     
         return headerView
     }
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 50
     }

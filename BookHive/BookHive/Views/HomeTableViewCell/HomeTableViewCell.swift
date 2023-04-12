@@ -8,25 +8,19 @@
 import UIKit
 
 class HomeTableViewCell: UITableViewCell {
-let cell = "TableCollectionViewCell"
+   
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        collectionRegister()
+        collectionSetup()
         
         
     }
-    private func collectionRegister() {
-        collectionView.register(UINib(nibName: cell, bundle: nil), forCellWithReuseIdentifier: cell)
+    private func collectionSetup() {
+        collectionView.register(TableCollectionViewCell.nib(), forCellWithReuseIdentifier: TableCollectionViewCell.identifier)
         collectionView.delegate = self
         collectionView.dataSource = self
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
 }
@@ -36,7 +30,7 @@ extension HomeTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cell, for: indexPath) as! TableCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TableCollectionViewCell.identifier, for: indexPath) as! TableCollectionViewCell
         cell.imageView.image = UIImage(named: bookList[collectionView.tag].bookImage[indexPath.row])
         cell.bookName.text = bookList[collectionView.tag].bookName[indexPath.row]
         return cell

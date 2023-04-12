@@ -8,12 +8,16 @@
 import UIKit
 
 class TableCollectionViewCell: UICollectionViewCell {
-
+    
+    static let identifier = "TableCollectionViewCell"
+    
     @IBOutlet weak var bookName: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
     }
-
+    static func nib() -> UINib {
+        return UINib(nibName: "TableCollectionViewCell", bundle: nil)
+    }
 }
