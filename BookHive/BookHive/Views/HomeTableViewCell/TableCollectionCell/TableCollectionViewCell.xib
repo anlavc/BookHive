@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Display-Regular.ttf">
+            <string>SFProDisplay-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TableCollectionViewCell" id="gTV-IL-0wX" customClass="TableCollectionViewCell" customModule="BookHive" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="209" height="250"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="209" height="250"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="noo-GR-O3F">
+                        <rect key="frame" x="0.0" y="10" width="209" height="230"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="S7t-H1-MOe">
+                                <rect key="frame" x="0.0" y="0.0" width="209" height="230"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="The_Great_Gatsby" translatesAutoresizingMaskIntoConstraints="NO" id="Ubb-w8-gnl">
+                                        <rect key="frame" x="0.0" y="0.0" width="209" height="180"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="180" id="X7i-2D-H8d"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Great Gatsby The Great Gatsby" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="2AG-bR-hu1">
+                                        <rect key="frame" x="0.0" y="180" width="209" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="szX-rD-alF"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="2AG-bR-hu1" firstAttribute="trailing" secondItem="Ubb-w8-gnl" secondAttribute="trailing" id="0QJ-Ce-1rV"/>
+                                    <constraint firstItem="2AG-bR-hu1" firstAttribute="leading" secondItem="Ubb-w8-gnl" secondAttribute="leading" id="64i-XK-ZD3"/>
+                                    <constraint firstItem="Ubb-w8-gnl" firstAttribute="centerX" secondItem="S7t-H1-MOe" secondAttribute="centerX" id="acg-Ag-wwe"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="S7t-H1-MOe" secondAttribute="bottom" id="Zw7-DM-naM"/>
+                            <constraint firstAttribute="trailing" secondItem="S7t-H1-MOe" secondAttribute="trailing" id="cpN-2i-HHn"/>
+                            <constraint firstItem="S7t-H1-MOe" firstAttribute="leading" secondItem="noo-GR-O3F" secondAttribute="leading" id="jDV-ft-PBZ"/>
+                            <constraint firstItem="S7t-H1-MOe" firstAttribute="top" secondItem="noo-GR-O3F" secondAttribute="top" id="qFg-0E-Ypf"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="noo-GR-O3F" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="1hb-52-Qk4"/>
+                <constraint firstAttribute="bottom" secondItem="noo-GR-O3F" secondAttribute="bottom" constant="10" id="F4G-5l-Yzx"/>
+                <constraint firstAttribute="trailing" secondItem="noo-GR-O3F" secondAttribute="trailing" id="L4M-Yp-K9h"/>
+                <constraint firstItem="noo-GR-O3F" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="ur0-pM-OBs"/>
+            </constraints>
+            <size key="customSize" width="209" height="300"/>
+            <connections>
+                <outlet property="bookName" destination="2AG-bR-hu1" id="BaC-Fx-6LK"/>
+                <outlet property="imageView" destination="Ubb-w8-gnl" id="mIZ-DL-CpI"/>
+            </connections>
+            <point key="canvasLocation" x="223.66412213740458" y="125.35211267605635"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="The_Great_Gatsby" width="1129" height="1600"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
