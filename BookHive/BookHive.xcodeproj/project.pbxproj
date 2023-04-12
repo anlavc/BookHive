@@ -37,6 +37,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E88B34329E6FB9B008F4B4B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2E88B34429E6FBA5008F4B4B /* Core */,
+				2E88B34529E6FBC3008F4B4B /* Details */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		2E88B34429E6FBA5008F4B4B /* Core */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		2E88B34529E6FBC3008F4B4B /* Details */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		2E88B34629E6FC03008F4B4B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		2E88B34929E6FC53008F4B4B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		EEAC4F9C29E6F8220066757B = {
 			isa = PBXGroup;
 			children = (
@@ -56,68 +93,43 @@
 		EEAC4FA729E6F8220066757B /* BookHive */ = {
 			isa = PBXGroup;
 			children = (
-				EEAC4FC629E6F9360066757B /* Model */,
+				EEAC4FBF29E6F8EC0066757B /* Storyboard */,
 				EEAC4FC529E6F92C0066757B /* Application */,
-				EEAC4FC429E6F9260066757B /* Extansions */,
-				EEAC4FC329E6F91E0066757B /* Helper */,
-				EEAC4FC229E6F9120066757B /* Utilities */,
-				EEAC4FC129E6F9040066757B /* Screens */,
+				EEAC4FC329E6F91E0066757B /* Services */,
+				2E88B34629E6FC03008F4B4B /* ViewModels */,
+				EEAC4FC629E6F9360066757B /* Models */,
+				2E88B34929E6FC53008F4B4B /* Views */,
+				2E88B34329E6FB9B008F4B4B /* Controllers */,
 				EEAC4FC029E6F8FA0066757B /* Resources */,
-				EEAC4FBF29E6F8EC0066757B /* StoryBoard */,
-				EEAC4FB929E6F8230066757B /* Info.plist */,
 				EEAC4FB129E6F8220066757B /* BookHive.xcdatamodeld */,
 			);
 			path = BookHive;
 			sourceTree = "<group>";
 		};
-		EEAC4FBF29E6F8EC0066757B /* StoryBoard */ = {
+		EEAC4FBF29E6F8EC0066757B /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
 				EEAC4FAE29E6F8220066757B /* Main.storyboard */,
 				EEAC4FB629E6F8230066757B /* LaunchScreen.storyboard */,
 			);
-			path = StoryBoard;
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		EEAC4FC029E6F8FA0066757B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EEAC4FB929E6F8230066757B /* Info.plist */,
 				EEAC4FB429E6F8230066757B /* Assets.xcassets */,
 				EEAC4FC729E6F9470066757B /* Font */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		EEAC4FC129E6F9040066757B /* Screens */ = {
-			isa = PBXGroup;
-			children = (
-				EEAC4FCB29E6F9980066757B /* AccountVC */,
-				EEAC4FCA29E6F9900066757B /* SearchVC */,
-				EEAC4FC929E6F9830066757B /* MyBookVC */,
-				EEAC4FC829E6F97B0066757B /* HomeVC */,
-			);
-			path = Screens;
-			sourceTree = "<group>";
-		};
-		EEAC4FC229E6F9120066757B /* Utilities */ = {
+		EEAC4FC329E6F91E0066757B /* Services */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Utilities;
-			sourceTree = "<group>";
-		};
-		EEAC4FC329E6F91E0066757B /* Helper */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Helper;
-			sourceTree = "<group>";
-		};
-		EEAC4FC429E6F9260066757B /* Extansions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extansions;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		EEAC4FC529E6F92C0066757B /* Application */ = {
@@ -129,11 +141,11 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
-		EEAC4FC629E6F9360066757B /* Model */ = {
+		EEAC4FC629E6F9360066757B /* Models */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		EEAC4FC729E6F9470066757B /* Font */ = {
@@ -141,34 +153,6 @@
 			children = (
 			);
 			path = Font;
-			sourceTree = "<group>";
-		};
-		EEAC4FC829E6F97B0066757B /* HomeVC */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = HomeVC;
-			sourceTree = "<group>";
-		};
-		EEAC4FC929E6F9830066757B /* MyBookVC */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = MyBookVC;
-			sourceTree = "<group>";
-		};
-		EEAC4FCA29E6F9900066757B /* SearchVC */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SearchVC;
-			sourceTree = "<group>";
-		};
-		EEAC4FCB29E6F9980066757B /* AccountVC */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = AccountVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -320,7 +304,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -374,7 +358,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -393,12 +377,15 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 74UL9K89V5;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = BookHive/Info.plist;
+				INFOPLIST_FILE = Resources/BookHive/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Bookhive;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -408,7 +395,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -421,12 +408,15 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 74UL9K89V5;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = BookHive/Info.plist;
+				INFOPLIST_FILE = Resources/BookHive/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Bookhive;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -436,7 +426,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
