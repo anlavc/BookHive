@@ -9,12 +9,13 @@ import UIKit
 
 class MyBooksViewController: UIViewController {
     
-    // MARK: - Properties
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var wantToReadView: UIView!
     @IBOutlet weak var readView: UIView!
     
-    // MARK: - Life Cycle
+    
+    
+    
     override func loadView() {
         let mybooksView = Bundle.main.loadNibNamed("MyBooksViewController", owner: self)?.first as! UIView
         self.view = mybooksView
@@ -26,40 +27,33 @@ class MyBooksViewController: UIViewController {
         viewsSetup()
     }
     
-    // MARK: - Collection View Configure
     private func collectionViewSetup() {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection         = .horizontal
         layout.minimumLineSpacing      = 10 // ÖĞELER ARASINDAKİ MİNİMUM SATIR BOŞLUĞUNU AYARLA
         layout.minimumInteritemSpacing = 10 // ÖĞELER ARASINDAKİ MİNİMUM DİKEY BOŞLUĞU AYARLA
-        layout.sectionInset = UIEdgeInsets(top   : 10,
-                                           left  : 10,
-                                           bottom: 10,
-                                           right : 10) // COLLECTIONVIEW İÇİNDEKİ KENAR BOŞLUKLARI AYARLA
+        layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10) // COLLECTIONVIEW İÇİNDEKİ KENAR BOŞLUKLARI AYARLA
         collectionView.collectionViewLayout = layout
         collectionView.dataSource = self
         collectionView.delegate   = self
         collectionView.register(MyBooksCollectionViewCell.nib(), forCellWithReuseIdentifier: MyBooksCollectionViewCell.identifier)
     }
     
-    // MARK: - View Configure
     private func viewsSetup() {
         wantToReadView.layer.cornerRadius  = 15
         wantToReadView.layer.shadowColor   = UIColor.gray.cgColor
         wantToReadView.layer.shadowOpacity = 0.5
-        wantToReadView.layer.shadowOffset  = CGSize(width: 2,
-                                                    height: 2)
+        wantToReadView.layer.shadowOffset  = CGSize(width: 2, height: 2)
         wantToReadView.layer.shadowRadius  = 5
+        
         readView.layer.cornerRadius  = 15
         readView.layer.shadowColor   = UIColor.gray.cgColor
         readView.layer.shadowOpacity = 0.5
-        readView.layer.shadowOffset  = CGSize(width: 2,
-                                              height: 2)
+        readView.layer.shadowOffset  = CGSize(width: 2, height: 2)
         readView.layer.shadowRadius  = 5
     }
 }
 
-// MARK: - Extensions
 extension MyBooksViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 4
@@ -76,7 +70,6 @@ extension MyBooksViewController: UICollectionViewDelegate {
 
 extension MyBooksViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 300,
-                      height: 150)
+        return CGSize(width: 300, height: 150)
     }
 }
