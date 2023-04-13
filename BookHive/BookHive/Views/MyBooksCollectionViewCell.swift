@@ -17,11 +17,13 @@ class MyBooksCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var mybooksAuthorNameLabel: UILabel!
     @IBOutlet weak var progressBar: UIProgressView!
     
-    
-
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        mybooksView.layer.cornerRadius = 15
+        mybooksView.layer.shadowColor = UIColor.black.cgColor
+        mybooksView.layer.shadowOpacity = 0.5
+        mybooksView.layer.shadowRadius = 5
+        mybooksView.layer.shadowOffset = CGSize(width: 2, height: 2)
     }
     
     static func nib() -> UINib {
