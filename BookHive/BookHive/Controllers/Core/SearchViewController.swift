@@ -25,7 +25,7 @@ class SearchViewController: UIViewController {
         tableViewSetup()
     }
     
-    // MARK: - Table View Setup
+    // MARK: - Table View Configure
     private func tableViewSetup() {
         tableView.dataSource = self
         tableView.delegate   = self
@@ -35,7 +35,6 @@ class SearchViewController: UIViewController {
 //        recentTableView.register(RecentTableViewCell.nib(), forCellReuseIdentifier: RecentTableViewCell.identifier)
         
     }
-
 }
 // MARK: - Extensions
 extension SearchViewController: UITableViewDataSource {
