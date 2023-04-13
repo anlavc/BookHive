@@ -18,12 +18,20 @@ class SearchTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        searchView.layer.cornerRadius = 20
-        
+        viewConfigure()
     }
     
     static func nib() -> UINib {
         return UINib(nibName: "SearchTableViewCell", bundle: nil)
+    }
+    
+    private func viewConfigure() {
+        searchView.layer.cornerRadius = 20
+        searchView.layer.shadowColor = UIColor.gray.cgColor
+        searchView.layer.shadowOpacity = 0.5
+        searchView.layer.shadowRadius = 5
+        searchView.layer.shadowOffset = CGSize(width: 2,
+                                               height: 2)
     }
     
 }
