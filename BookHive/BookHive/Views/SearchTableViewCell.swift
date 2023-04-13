@@ -26,12 +26,7 @@ class SearchTableViewCell: UITableViewCell {
     }
     
     private func viewConfigure() {
-        searchView.layer.cornerRadius = 20
-        searchView.layer.shadowColor = UIColor.gray.cgColor
-        searchView.layer.shadowOpacity = 0.5
-        searchView.layer.shadowRadius = 5
-        searchView.layer.shadowOffset = CGSize(width: 2,
-                                               height: 2)
+        searchView.layer.cornerRadius = 30
+        searchView.addShadow(color: .gray, opacity: 0.5, offset: CGSize(width: 2, height: 2), radius: 5)
     }
-    
 }

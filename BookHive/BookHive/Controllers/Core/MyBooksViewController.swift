@@ -13,9 +13,6 @@ class MyBooksViewController: UIViewController {
     @IBOutlet weak var wantToReadView: UIView!
     @IBOutlet weak var readView: UIView!
     
-    
-    
-    
     override func loadView() {
         let mybooksView = Bundle.main.loadNibNamed("MyBooksViewController", owner: self)?.first as! UIView
         self.view = mybooksView
@@ -40,17 +37,10 @@ class MyBooksViewController: UIViewController {
     }
     
     private func viewsSetup() {
-        wantToReadView.layer.cornerRadius  = 15
-        wantToReadView.layer.shadowColor   = UIColor.gray.cgColor
-        wantToReadView.layer.shadowOpacity = 0.5
-        wantToReadView.layer.shadowOffset  = CGSize(width: 2, height: 2)
-        wantToReadView.layer.shadowRadius  = 5
-        
-        readView.layer.cornerRadius  = 15
-        readView.layer.shadowColor   = UIColor.gray.cgColor
-        readView.layer.shadowOpacity = 0.5
-        readView.layer.shadowOffset  = CGSize(width: 2, height: 2)
-        readView.layer.shadowRadius  = 5
+        wantToReadView.layer.cornerRadius = 15
+        wantToReadView.addShadow(color: .gray, opacity: 0.5, offset: CGSize(width: 2, height: 2), radius: 5)
+        readView.layer.cornerRadius = 15
+        readView.addShadow(color: .gray, opacity: 0.5, offset: CGSize(width: 2, height: 2), radius: 5)
     }
 }
 
