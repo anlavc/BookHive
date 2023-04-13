@@ -9,43 +9,53 @@ import UIKit
 
 class SearchViewController: UIViewController {
     
+    // MARK: - Properties
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var recentTableView: UITableView!
     
+    // MARK: - Life Cycle
     override func loadView() {
         let searchView = Bundle.main.loadNibNamed("SearchViewController", owner: self, options: nil)?.first as! UIView
-        self.view = searchView
+        self.view      = searchView
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableViewSetup()
+    }
+    
+    // MARK: - Table View Setup
+    private func tableViewSetup() {
+        tableView.dataSource = self
+        tableView.delegate   = self
+        tableView.register(SearchTableViewCell.nib(), forCellReuseIdentifier: SearchTableViewCell.identifier)
+        recentTableView.dataSource = self
+        recentTableView.delegate   = self
+        recentTableView.register(RecentTableViewCell.nib(), forCellReuseIdentifier: RecentTableViewCell.identifier)
         
     }
-    
-    private func tableViewSetup() {
-        tableView.register(SearchTableViewCell.nib(), forCellReuseIdentifier: SearchTableViewCell.identifier)
-        tableView.dataSource = self
-        tableView.delegate = self        
-    }
-
 
 }
-
+// MARK: - Extensions
 extension SearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        if tableView == self.recentTableView {
+            return 8
+        } else {
+            return 0
+        }
     }
-    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: SearchTableViewCell.identifier) as! SearchTableViewCell
-//        cell.textLabel?.text = "1984"
-//        cell.bookImageView.image = UIImage(named: "12")
-        return cell
+        if tableView == self.tableView {
+            let cell = tableView.dequeueReusableCell(withIdentifier: SearchTableViewCell.identifier, for: indexPath) as! SearchTableViewCell
+            return cell
+        } else {
+            let cell = recentTableView.dequeueReusableCell(withIdentifier: RecentTableViewCell.identifier, for: indexPath) as! RecentTableViewCell
+            return cell
+        }
     }
-    
-    
 }
 
 extension SearchViewController: UITableViewDelegate {
