@@ -12,7 +12,6 @@ class SearchViewController: UIViewController {
     // MARK: - Properties
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var recentTableView: UITableView!
     
     // MARK: - Life Cycle
     override func loadView() {
@@ -30,10 +29,6 @@ class SearchViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate   = self
         tableView.register(SearchTableViewCell.nib(), forCellReuseIdentifier: SearchTableViewCell.identifier)
-//        recentTableView.dataSource = self
-//        recentTableView.delegate   = self
-//        recentTableView.register(RecentTableViewCell.nib(), forCellReuseIdentifier: RecentTableViewCell.identifier)
-        
     }
 
 }

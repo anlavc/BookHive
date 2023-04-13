@@ -17,6 +17,10 @@
 		2E88B35929E700AE008F4B4B /* AccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E88B35729E700AE008F4B4B /* AccountViewController.xib */; };
 		2E88B35C29E7082C008F4B4B /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88B35A29E7082C008F4B4B /* SearchTableViewCell.swift */; };
 		2E88B35D29E7082C008F4B4B /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E88B35B29E7082C008F4B4B /* SearchTableViewCell.xib */; };
+		2E88B36F29E883A9008F4B4B /* MyBooksCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E88B36E29E883A9008F4B4B /* MyBooksCollectionViewCell.xib */; };
+		2E88B37129E883BE008F4B4B /* MyBooksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88B37029E883BE008F4B4B /* MyBooksCollectionViewCell.swift */; };
+		2E88B37429E884D6008F4B4B /* RecentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E88B37229E884D6008F4B4B /* RecentTableViewCell.xib */; };
+		2E88B37529E884D6008F4B4B /* RecentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88B37329E884D6008F4B4B /* RecentTableViewCell.swift */; };
 		EE4FA2D129E76FB8007BB98B /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4FA2D029E76FB8007BB98B /* DummyData.swift */; };
 		EEAC4FA929E6F8220066757B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAC4FA829E6F8220066757B /* AppDelegate.swift */; };
 		EEAC4FAB29E6F8220066757B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAC4FAA29E6F8220066757B /* SceneDelegate.swift */; };
@@ -41,6 +45,10 @@
 		2E88B35729E700AE008F4B4B /* AccountViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountViewController.xib; sourceTree = "<group>"; };
 		2E88B35A29E7082C008F4B4B /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		2E88B35B29E7082C008F4B4B /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
+		2E88B36E29E883A9008F4B4B /* MyBooksCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyBooksCollectionViewCell.xib; sourceTree = "<group>"; };
+		2E88B37029E883BE008F4B4B /* MyBooksCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBooksCollectionViewCell.swift; sourceTree = "<group>"; };
+		2E88B37229E884D6008F4B4B /* RecentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecentTableViewCell.xib; sourceTree = "<group>"; };
+		2E88B37329E884D6008F4B4B /* RecentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentTableViewCell.swift; sourceTree = "<group>"; };
 		EE4FA2D029E76FB8007BB98B /* DummyData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
 		EEAC4FA529E6F8220066757B /* BookHive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookHive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEAC4FA829E6F8220066757B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +128,10 @@
 			isa = PBXGroup;
 			children = (
 				EEAC4FCC29E70EB60066757B /* HomeTableViewCell */,
+				2E88B37029E883BE008F4B4B /* MyBooksCollectionViewCell.swift */,
+				2E88B36E29E883A9008F4B4B /* MyBooksCollectionViewCell.xib */,
+				2E88B37329E884D6008F4B4B /* RecentTableViewCell.swift */,
+				2E88B37229E884D6008F4B4B /* RecentTableViewCell.xib */,
 				2E88B35A29E7082C008F4B4B /* SearchTableViewCell.swift */,
 				2E88B35B29E7082C008F4B4B /* SearchTableViewCell.xib */,
 			);
@@ -314,12 +326,14 @@
 				2E88B35D29E7082C008F4B4B /* SearchTableViewCell.xib in Resources */,
 				2E88B35929E700AE008F4B4B /* AccountViewController.xib in Resources */,
 				EEAC4FD029E70EDF0066757B /* HomeTableViewCell.xib in Resources */,
+				2E88B37429E884D6008F4B4B /* RecentTableViewCell.xib in Resources */,
 				EEAC4FB529E6F8230066757B /* Assets.xcassets in Resources */,
 				EEAC4FD529E714280066757B /* TableCollectionViewCell.xib in Resources */,
 				2E88B35529E7009F008F4B4B /* SearchViewController.xib in Resources */,
 				EEAC4FB029E6F8220066757B /* Main.storyboard in Resources */,
 				2E88B34D29E70077008F4B4B /* HomeViewController.xib in Resources */,
 				2E88B35129E70091008F4B4B /* MyBooksViewController.xib in Resources */,
+				2E88B36F29E883A9008F4B4B /* MyBooksCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,8 +349,10 @@
 				2E88B35829E700AE008F4B4B /* AccountViewController.swift in Sources */,
 				EEAC4FA929E6F8220066757B /* AppDelegate.swift in Sources */,
 				EEAC4FAB29E6F8220066757B /* SceneDelegate.swift in Sources */,
+				2E88B37129E883BE008F4B4B /* MyBooksCollectionViewCell.swift in Sources */,
 				EEAC4FD429E714280066757B /* TableCollectionViewCell.swift in Sources */,
 				2E88B35C29E7082C008F4B4B /* SearchTableViewCell.swift in Sources */,
+				2E88B37529E884D6008F4B4B /* RecentTableViewCell.swift in Sources */,
 				2E88B34C29E70077008F4B4B /* HomeViewController.swift in Sources */,
 				EEAC4FCF29E70EDF0066757B /* HomeTableViewCell.swift in Sources */,
 				EE4FA2D129E76FB8007BB98B /* DummyData.swift in Sources */,

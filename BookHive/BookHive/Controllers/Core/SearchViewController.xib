@@ -11,7 +11,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchViewController" customModule="BookHive" customModuleProvider="target">
             <connections>
-                <outlet property="recentTableView" destination="i26-JT-NjF" id="j6e-C3-58J"/>
                 <outlet property="searchBar" destination="cre-nm-CU4" id="BEv-eH-Wi7"/>
                 <outlet property="tableView" destination="aLz-5O-Gk5" id="iiI-K4-jaO"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -36,10 +35,6 @@
                         <constraint firstAttribute="height" constant="616" id="ZiU-pU-Ha4"/>
                     </constraints>
                 </tableView>
-                <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="i26-JT-NjF">
-                    <rect key="frame" x="0.0" y="197" width="393" height="655"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -48,12 +43,8 @@
                 <constraint firstItem="cre-nm-CU4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Aw9-wF-VqJ"/>
                 <constraint firstItem="cre-nm-CU4" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="BdT-5s-x8t"/>
                 <constraint firstItem="aLz-5O-Gk5" firstAttribute="top" secondItem="cre-nm-CU4" secondAttribute="bottom" constant="5" id="OS0-pG-ZKq"/>
-                <constraint firstAttribute="bottom" secondItem="i26-JT-NjF" secondAttribute="bottom" id="S1q-64-eJD"/>
                 <constraint firstItem="aLz-5O-Gk5" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="SYw-eS-MvU"/>
                 <constraint firstItem="aLz-5O-Gk5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="nyp-Dw-Dfg"/>
-                <constraint firstItem="i26-JT-NjF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="oEE-Mq-Dt6"/>
-                <constraint firstItem="i26-JT-NjF" firstAttribute="top" secondItem="cre-nm-CU4" secondAttribute="bottom" id="olW-wH-8ng"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="i26-JT-NjF" secondAttribute="trailing" id="sjJ-Vh-7nL"/>
             </constraints>
             <point key="canvasLocation" x="101.5267175572519" y="20.422535211267608"/>
         </view>
