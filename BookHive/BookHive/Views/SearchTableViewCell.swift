@@ -14,8 +14,6 @@ class SearchTableViewCell: UITableViewCell {
     @IBOutlet weak var bookNameLabel: UILabel!
     @IBOutlet weak var genreLabel: UILabel!
     
-    
-    // Identifier
     static let identifier = "SearchTableViewCell"
 
     override func awakeFromNib() {

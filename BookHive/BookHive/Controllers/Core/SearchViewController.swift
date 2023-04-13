@@ -30,9 +30,9 @@ class SearchViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate   = self
         tableView.register(SearchTableViewCell.nib(), forCellReuseIdentifier: SearchTableViewCell.identifier)
-        recentTableView.dataSource = self
-        recentTableView.delegate   = self
-        recentTableView.register(RecentTableViewCell.nib(), forCellReuseIdentifier: RecentTableViewCell.identifier)
+//        recentTableView.dataSource = self
+//        recentTableView.delegate   = self
+//        recentTableView.register(RecentTableViewCell.nib(), forCellReuseIdentifier: RecentTableViewCell.identifier)
         
     }
 
@@ -40,21 +40,12 @@ class SearchViewController: UIViewController {
 // MARK: - Extensions
 extension SearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if tableView == self.recentTableView {
-            return 8
-        } else {
-            return 0
-        }
+        return 6
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if tableView == self.tableView {
-            let cell = tableView.dequeueReusableCell(withIdentifier: SearchTableViewCell.identifier, for: indexPath) as! SearchTableViewCell
-            return cell
-        } else {
-            let cell = recentTableView.dequeueReusableCell(withIdentifier: RecentTableViewCell.identifier, for: indexPath) as! RecentTableViewCell
-            return cell
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: SearchTableViewCell.identifier, for: indexPath) as! SearchTableViewCell
+        return cell
     }
 }
 

@@ -20,7 +20,7 @@ class MyBooksCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         mybooksView.layer.cornerRadius = 15
-        mybooksView.layer.shadowColor = UIColor.black.cgColor
+        mybooksView.layer.shadowColor = UIColor.gray.cgColor
         mybooksView.layer.shadowOpacity = 0.5
         mybooksView.layer.shadowRadius = 5
         mybooksView.layer.shadowOffset = CGSize(width: 2, height: 2)

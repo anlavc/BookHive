@@ -41,13 +41,13 @@ class MyBooksViewController: UIViewController {
     
     private func viewsSetup() {
         wantToReadView.layer.cornerRadius  = 15
-        wantToReadView.layer.shadowColor   = UIColor.black.cgColor
+        wantToReadView.layer.shadowColor   = UIColor.gray.cgColor
         wantToReadView.layer.shadowOpacity = 0.5
         wantToReadView.layer.shadowOffset  = CGSize(width: 2, height: 2)
         wantToReadView.layer.shadowRadius  = 5
         
         readView.layer.cornerRadius  = 15
-        readView.layer.shadowColor   = UIColor.black.cgColor
+        readView.layer.shadowColor   = UIColor.gray.cgColor
         readView.layer.shadowOpacity = 0.5
         readView.layer.shadowOffset  = CGSize(width: 2, height: 2)
         readView.layer.shadowRadius  = 5
