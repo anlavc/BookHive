@@ -10,17 +10,19 @@ import UIKit
 class HomeViewController: UIViewController {
     
     let cell = "HomeTableViewCell"
-    
+    //private var viewModel = HomeViewModel()
  
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("selam deneme")
+        
         xibRegister()
         tableRegister()
         // Right Bar Button Item
             let rightButton = UIBarButtonItem(title: "Button Title", style: .plain, target: self, action: #selector(rightButtonTapped))
             navigationItem.rightBarButtonItem = rightButton
+     
+        
     }
     private func xibRegister() {
         Bundle.main.loadNibNamed("HomeViewController", owner: self, options: nil)![0] as? HomeViewController
@@ -31,7 +33,10 @@ class HomeViewController: UIViewController {
         tableView.delegate = self
     }
     @objc func rightButtonTapped() {
-        print("tapped all")    }
+        print("tapped all")
+        
+    }
+
 
 }
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
@@ -43,7 +48,6 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: cell, for: indexPath) as! HomeTableViewCell
         cell.collectionView.tag = indexPath.section
         cell.collectionView.reloadData()
-        //cell.textLabel?.text = "naber"
         return cell
     }
     func numberOfSections(in tableView: UITableView) -> Int {
