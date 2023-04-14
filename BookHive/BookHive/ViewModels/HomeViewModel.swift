@@ -37,3 +37,4 @@ extension HomeViewModel {
         case error(Error?)
     }
 }
+

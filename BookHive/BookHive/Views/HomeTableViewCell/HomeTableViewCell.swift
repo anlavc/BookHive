@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class HomeTableViewCell: UITableViewCell {
     private var viewModel = HomeViewModel()
@@ -64,9 +65,46 @@ extension HomeTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TableCollectionViewCell.identifier, for: indexPath) as! TableCollectionViewCell
         //cell.imageView.image = UIImage(named: bookList[collectionView.tag].bookImage[indexPath.row])
-        cell.bookName.text = viewModel.trendBook[indexPath.row].title
+       
+        if let isbn = viewModel.trendBook[indexPath.row].availability?.isbn {
+            print("-----> ISBN \(indexPath.row) ---- \(isbn)")
+//            cell.imageView.setImageIsbn(with: isbn)
+            cell.imageView.kf.setImage(with: URL(string: "https://covers.openlibrary.org/b/isbn/\(isbn)-S.jpg"))
+        }
+        else {
+            if let olid = viewModel.trendBook[indexPath.row].availability?.openlibrary_edition {
+                print("-----> OLID \(indexPath.row) ---- \(olid)")
+                cell.imageView.setImageOlid(with: olid)
+            }
+            cell.bookName.text = viewModel.trendBook[indexPath.row].title
+        }
+        
         return cell
     }
     
     
+}
+
+// Kingfisher image cache Extensions
+extension UIImageView {
+    func setImageIsbn(with isbn: String) {
+        let urlString = "https://covers.openlibrary.org/b/isbn/\(isbn)-S.jpg"
+        guard let url = URL(string: urlString) else {
+            return
+        }
+        let resource = ImageResource(downloadURL: url, cacheKey: urlString)
+        print("------> \(resource)")
+        kf.indicatorType = .activity
+        kf.setImage(with: resource)
+    }
+    func setImageOlid(with olid: String) {
+        // https://covers.openlibrary.org/b/olid/OL25418275M-M.jpg
+        let urlString = "https://covers.openlibrary.org/b/olid/\(olid)-S.jpg"
+        guard let url = URL(string: urlString) else {
+            return
+        }
+        let resource = ImageResource(downloadURL: url, cacheKey: urlString)
+        kf.indicatorType = .activity
+        kf.setImage(with: resource)
+    }
 }

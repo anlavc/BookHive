@@ -25,5 +25,13 @@ struct Work: Codable {
     let coverI: Int?
     let ia: [String]?
     let subtitle: String?
+    let availability: Availability?
 }
 
+// MARK: - Availability
+struct Availability: Codable {
+    
+    let isbn: String?
+    let openlibrary_edition: String?
+    
+}
