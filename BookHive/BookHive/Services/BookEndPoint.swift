@@ -7,11 +7,11 @@
 
 import Foundation
 
-enum ProductEndPoint {
+enum BookEndPoint {
     case trending
     case now
 }
-extension ProductEndPoint: EndPointType {
+extension BookEndPoint: EndPointType {
     var path: String {
         switch self {
         case .trending:

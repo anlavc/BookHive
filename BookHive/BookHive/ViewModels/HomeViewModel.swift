@@ -15,7 +15,7 @@ final class HomeViewModel {
     func fetchTrendBooks() {
         APIManager.shared.request(
             modelType: Bookhive.self,
-            type: ProductEndPoint.trending) { response in
+            type: BookEndPoint.trending) { response in
                 self.eventHandler?(.stopLoading)
                 switch response {
                 case .success(let books):

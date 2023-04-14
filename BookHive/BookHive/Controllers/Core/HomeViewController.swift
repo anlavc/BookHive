@@ -10,6 +10,7 @@ import UIKit
 class HomeViewController: UIViewController {
     
     let cell = "HomeTableViewCell"
+    let sections = ["Trending","Best Sellers","Biography"]
     //private var viewModel = HomeViewModel()
  
     @IBOutlet weak var tableView: UITableView!
@@ -45,21 +46,27 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cell, for: indexPath) as! HomeTableViewCell
-        cell.collectionView.tag = indexPath.section
-        cell.collectionView.reloadData()
-        return cell
+        switch indexPath.section {
+        case 0:
+            return UITableViewCell()
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: cell, for: indexPath) as! HomeTableViewCell
+            return cell
+            
+        default:
+            return UITableViewCell()
+        }
     }
     func numberOfSections(in tableView: UITableView) -> Int {
-        return bookList.count
+        return sections.count
     }
-
+    //section header config
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         //headerview
         let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 50))
         //titlelabel
         let titleLabel = UILabel(frame: CGRect(x: 10, y: 10, width: headerView.frame.size.width, height: 20))
-        titleLabel.text = "\(bookList[section].sectionType)"
+        titleLabel.text = "\(sections[section])"
         titleLabel.font = UIFont.systemFont(ofSize: 20,weight: .bold) // Font boyutunu ayarlayın
         headerView.addSubview(titleLabel)
         //button

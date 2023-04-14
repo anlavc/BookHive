@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="357" height="330"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ufb-1h-g1j">
-                                <rect key="frame" x="0.0" y="0.0" width="357" height="330"/>
+                                <rect key="frame" x="5" y="0.0" width="347" height="330"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Hoy-nj-pfH">
                                     <size key="itemSize" width="128" height="229"/>
@@ -34,10 +34,10 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="ufb-1h-g1j" secondAttribute="trailing" id="MMk-El-C87"/>
+                            <constraint firstAttribute="trailing" secondItem="ufb-1h-g1j" secondAttribute="trailing" constant="5" id="MMk-El-C87"/>
                             <constraint firstAttribute="bottom" secondItem="ufb-1h-g1j" secondAttribute="bottom" id="jt9-bZ-mp0"/>
                             <constraint firstItem="ufb-1h-g1j" firstAttribute="top" secondItem="9kg-ub-7t9" secondAttribute="top" id="pAq-Hy-sDM"/>
-                            <constraint firstItem="ufb-1h-g1j" firstAttribute="leading" secondItem="9kg-ub-7t9" secondAttribute="leading" id="siy-cs-zm8"/>
+                            <constraint firstItem="ufb-1h-g1j" firstAttribute="leading" secondItem="9kg-ub-7t9" secondAttribute="leading" constant="5" id="siy-cs-zm8"/>
                         </constraints>
                     </view>
                 </subviews>
