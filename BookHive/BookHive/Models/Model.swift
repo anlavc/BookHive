@@ -18,13 +18,8 @@ struct Bookhive: Codable {
 
 // MARK: - Work
 struct Work: Codable {
-    let key, title: String?
-    let firstPublishYear: Int?
-    let language, authorKey, authorName: [String]?
-    let coverEditionKey: String?
-    let coverI: Int?
-    let ia: [String]?
-    let subtitle: String?
+    let title: String?
+    let cover_i: Int?
     let availability: Availability?
 }
 
@@ -33,5 +28,6 @@ struct Availability: Codable {
     
     let isbn: String?
     let openlibrary_edition: String?
+   
     
 }

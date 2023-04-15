@@ -15,12 +15,12 @@ class HomeTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        collectionSetup()
+    
         initViewModel()
         observeEvent()
+        collectionSetup()
     }
     func initViewModel() {
-        //        ProductEndPoint.products.path =
         viewModel.fetchTrendBooks()
     }
     func observeEvent() {
@@ -64,47 +64,44 @@ extension HomeTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TableCollectionViewCell.identifier, for: indexPath) as! TableCollectionViewCell
-        //cell.imageView.image = UIImage(named: bookList[collectionView.tag].bookImage[indexPath.row])
-       
-        if let isbn = viewModel.trendBook[indexPath.row].availability?.isbn {
-            print("-----> ISBN \(indexPath.row) ---- \(isbn)")
-//            cell.imageView.setImageIsbn(with: isbn)
-            cell.imageView.kf.setImage(with: URL(string: "https://covers.openlibrary.org/b/isbn/\(isbn)-S.jpg"))
+        cell.bookName.text = viewModel.trendBook[indexPath.row].title // TİTLE
+        // Download image and set
+        let olid = viewModel.trendBook[indexPath.item].availability?.openlibrary_edition
+        let cover = String(viewModel.trendBook[indexPath.row].cover_i ?? 0)
+        if olid == nil {
+            cell.imageView.setImageCover(with: Int(cover)!)
+            print("------> COVER Indexpath-- \(indexPath.row)")
+        } else {
+            cell.imageView.setImageOlid(with: olid!)
+            print("------> OLİD Indexpath-- \(indexPath.row)")
         }
-        else {
-            if let olid = viewModel.trendBook[indexPath.row].availability?.openlibrary_edition {
-                print("-----> OLID \(indexPath.row) ---- \(olid)")
-                cell.imageView.setImageOlid(with: olid)
-            }
-            cell.bookName.text = viewModel.trendBook[indexPath.row].title
-        }
-        
         return cell
     }
-    
-    
 }
 
 // Kingfisher image cache Extensions
 extension UIImageView {
-    func setImageIsbn(with isbn: String) {
-        let urlString = "https://covers.openlibrary.org/b/isbn/\(isbn)-S.jpg"
-        guard let url = URL(string: urlString) else {
-            return
-        }
-        let resource = ImageResource(downloadURL: url, cacheKey: urlString)
-        print("------> \(resource)")
-        kf.indicatorType = .activity
-        kf.setImage(with: resource)
-    }
     func setImageOlid(with olid: String) {
-        // https://covers.openlibrary.org/b/olid/OL25418275M-M.jpg
-        let urlString = "https://covers.openlibrary.org/b/olid/\(olid)-S.jpg"
+        let urlString = "https://covers.openlibrary.org/b/olid/\(olid)-M.jpg"
         guard let url = URL(string: urlString) else {
             return
         }
         let resource = ImageResource(downloadURL: url, cacheKey: urlString)
+        print("------> OLİD URL SERVİS \(urlString)")
         kf.indicatorType = .activity
         kf.setImage(with: resource)
     }
+    
+    func setImageCover(with cover: Int) {
+        let urlString = "https://covers.openlibrary.org/b/id/\(cover)-M.jpg"
+        guard let url = URL(string: urlString) else {
+            return
+        }
+        let resource = ImageResource(downloadURL: url, cacheKey: urlString)
+        print("------> COVER URL servis-- \(urlString)")
+      
+        kf.indicatorType = .activity
+        kf.setImage(with: resource)
+    }
+
 }
