@@ -24,7 +24,6 @@ class HomeTableViewCell: UITableViewCell {
         viewModel.fetchTrendBooks()
     }
     func observeEvent() {
-        print("DENEME")
         viewModel.eventHandler = { [weak self] event in
             guard let self else {return}
             
@@ -68,12 +67,14 @@ extension HomeTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
         // Download image and set
         let olid = viewModel.trendBook[indexPath.item].availability?.openlibrary_edition
         let cover = String(viewModel.trendBook[indexPath.row].cover_i ?? 0)
-        if olid == nil {
-            cell.imageView.setImageCover(with: Int(cover)!)
-            print("------> COVER Indexpath-- \(indexPath.row)")
-        } else {
+        
+        if cover == nil {
             cell.imageView.setImageOlid(with: olid!)
-            print("------> OLİD Indexpath-- \(indexPath.row)")
+          
+//            print("------> COVER Indexpath-- \(indexPath.row)")
+        } else {
+            cell.imageView.setImageCover(with: Int(cover)!)
+//            print("------> OLİD Indexpath-- \(indexPath.row)")
         }
         return cell
     }

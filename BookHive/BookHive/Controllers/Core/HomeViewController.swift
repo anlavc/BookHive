@@ -10,8 +10,9 @@ import UIKit
 class HomeViewController: UIViewController {
     
     let cell = "HomeTableViewCell"
+    let cellCoursel = "HomeCourselTableViewCell"
     let sections = ["BEST_SELLERS","TRENDING_BOOKS","BEST_SHARE"]
-    //private var viewModel = HomeViewModel()
+    
  
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
@@ -29,6 +30,10 @@ class HomeViewController: UIViewController {
         Bundle.main.loadNibNamed("HomeViewController", owner: self, options: nil)![0] as? HomeViewController
     }
     private func tableRegister() {
+        //courcell
+        tableView.register(UINib(nibName: cellCoursel, bundle: nil), forCellReuseIdentifier: cellCoursel)
+        
+        //trending
         tableView.register(UINib(nibName: cell, bundle: nil), forCellReuseIdentifier: cell)
         tableView.dataSource = self
         tableView.delegate = self
@@ -48,7 +53,8 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 0:
-            return UITableViewCell()
+            let cell1 = tableView.dequeueReusableCell(withIdentifier: cellCoursel, for: indexPath) as! HomeCourselTableViewCell
+            return cell1
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: cell, for: indexPath) as! HomeTableViewCell
             return cell
@@ -78,7 +84,15 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         return 50
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        switch indexPath.section {
+        case 0:
+            return 230
+        case 1:
+            return 210
+        default:
+            return 200
+        }
+
     }
     
 }

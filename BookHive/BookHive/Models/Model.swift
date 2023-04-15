@@ -19,7 +19,8 @@ struct Bookhive: Codable {
 // MARK: - Work
 struct Work: Codable {
     let title: String?
-    let cover_i: Int?
+    let cover_i: Int? 
+    let cover_id: Int?
     let availability: Availability?
 }
 
