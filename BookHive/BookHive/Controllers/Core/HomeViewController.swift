@@ -10,7 +10,7 @@ import UIKit
 class HomeViewController: UIViewController {
     
     let cell = "HomeTableViewCell"
-    let sections = ["Best Sellers","Trending","Biography"]
+    let sections = ["BEST_SELLERS","TRENDING_BOOKS","BEST_SHARE"]
     //private var viewModel = HomeViewModel()
  
     @IBOutlet weak var tableView: UITableView!
