@@ -10,6 +10,7 @@ import UIKit
 class HomeCourselTableViewCell: UITableViewCell {
     private var viewModel = HomeViewModel()
 
+   
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func awakeFromNib() {
@@ -20,13 +21,17 @@ class HomeCourselTableViewCell: UITableViewCell {
       
        
     }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         scaleCenterCell()
     }
+    
+    
     func initViewModel() {
         viewModel.fetchBestSeller()
     }
+    
     func observeEvent() {
         print("DENEME")
         viewModel.eventHandler = { [weak self] event in

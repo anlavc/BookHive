@@ -4,15 +4,11 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="SF-Pro-Display-Regular.ttf">
-            <string>SFProDisplay-Regular</string>
-        </array>
-    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="BookHive" customModuleProvider="target">
             <connections>
@@ -25,47 +21,35 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="myY-yJ-ohp">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="64"/>
+                    <color key="backgroundColor" name="coverbgColor"/>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="93E-mP-oWS">
                     <rect key="frame" x="0.0" y="64" width="393" height="754"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HJy-kd-ykZ">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
-                            <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi! Anıl" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GFb-FV-fLH">
-                                    <rect key="frame" x="20" y="10" width="73.666666666666671" height="30"/>
-                                    <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="25"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="50" id="Sba-Na-fAB"/>
-                                <constraint firstItem="GFb-FV-fLH" firstAttribute="centerY" secondItem="HJy-kd-ykZ" secondAttribute="centerY" id="Wbw-EI-48m"/>
-                                <constraint firstItem="GFb-FV-fLH" firstAttribute="leading" secondItem="HJy-kd-ykZ" secondAttribute="leading" constant="20" id="fTC-Eg-XCX"/>
-                            </constraints>
-                        </view>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="XwK-rK-vbx">
-                            <rect key="frame" x="0.0" y="50" width="393" height="704"/>
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="754"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </tableView>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" name="coverbgColor"/>
                     <constraints>
                         <constraint firstItem="XwK-rK-vbx" firstAttribute="leading" secondItem="93E-mP-oWS" secondAttribute="leading" id="OE5-2b-AH7"/>
                         <constraint firstAttribute="trailing" secondItem="XwK-rK-vbx" secondAttribute="trailing" id="T59-fX-dAA"/>
-                        <constraint firstAttribute="trailing" secondItem="HJy-kd-ykZ" secondAttribute="trailing" id="XN6-2e-GHQ"/>
-                        <constraint firstItem="HJy-kd-ykZ" firstAttribute="leading" secondItem="93E-mP-oWS" secondAttribute="leading" id="ZQV-h0-Uw1"/>
-                        <constraint firstItem="HJy-kd-ykZ" firstAttribute="top" secondItem="93E-mP-oWS" secondAttribute="top" id="c99-Va-lwg"/>
-                        <constraint firstItem="XwK-rK-vbx" firstAttribute="top" secondItem="HJy-kd-ykZ" secondAttribute="bottom" id="gUX-D3-NqU"/>
                         <constraint firstAttribute="bottom" secondItem="XwK-rK-vbx" secondAttribute="bottom" id="ggN-P9-f3h"/>
+                        <constraint firstItem="XwK-rK-vbx" firstAttribute="top" secondItem="93E-mP-oWS" secondAttribute="top" id="rYa-Ya-2zX"/>
                     </constraints>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="myY-yJ-ohp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="GNU-Du-5iA"/>
+                <constraint firstItem="93E-mP-oWS" firstAttribute="top" secondItem="myY-yJ-ohp" secondAttribute="bottom" id="Kf1-r0-b9j"/>
                 <constraint firstItem="93E-mP-oWS" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="5" id="ckc-L2-TOc"/>
+                <constraint firstItem="myY-yJ-ohp" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="eOz-b0-IOC"/>
+                <constraint firstAttribute="trailing" secondItem="myY-yJ-ohp" secondAttribute="trailing" id="ft1-qP-Dyj"/>
                 <constraint firstItem="93E-mP-oWS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="g00-Pi-yi7"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="93E-mP-oWS" secondAttribute="bottom" id="ho8-mA-D1B"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="93E-mP-oWS" secondAttribute="trailing" id="w4T-eb-tGh"/>
@@ -93,6 +77,9 @@
         </viewController>
     </objects>
     <resources>
+        <namedColor name="coverbgColor">
+            <color red="0.69803921570000005" green="0.64313725489999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

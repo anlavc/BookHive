@@ -11,13 +11,13 @@ class HomeViewController: UIViewController {
     
     let cell = "HomeTableViewCell"
     let cellCoursel = "HomeCourselTableViewCell"
-    let sections = ["BEST_SELLERS","TRENDING_BOOKS","BEST_SHARE"]
+    let sections = ["BEST_SELLERS","category","TRENDING_BOOKS","BEST_SHARE"]
     
  
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        UINavigationBar.appearance().backgroundColor = UIColor.red
         xibRegister()
         tableRegister()
         // Right Bar Button Item
@@ -79,14 +79,21 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
      
         return headerView
     }
-    
+    //Tableview section header bg color
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        if section == 0 {
+            let headerView = view as! UIView
+            headerView.backgroundColor = UIColor(named: "coverbgColor")
+           
+        }
+    }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 50
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
         case 0:
-            return 230
+            return 220
         case 1:
             return 210
         default:

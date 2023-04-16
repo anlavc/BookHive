@@ -11,15 +11,20 @@ class HomeCollectionViewCoursel: UICollectionViewCell {
     
     static let identifier = "HomeCollectionViewCoursel"
     
-    @IBOutlet weak var view: UIView!
+
   
+    @IBOutlet weak var bgview: UIView!
     @IBOutlet weak var imageView: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
-       
-        imageView.addShadow(offset: CGSize.init(width: 0, height: 25), color: UIColor.gray, radius: 10.0, opacity: 0.45)
-        
+        imageView.layer.masksToBounds = false
+        imageView.layer.shadowOffset = CGSize(width: 0, height: 25)//Blur
+        imageView.layer.shadowOpacity = 0.20
+        imageView.layer.shadowRadius = 6.0
+        imageView.layer.cornerRadius = 10.0
+//        imageView.addShadow(offset: CGSize.init(width: 0, height: 25), color: UIColor.gray, radius: 10.0, opacity: 0.45)
     }
+   
     static func nib() -> UINib {
         return UINib(nibName: "HomeCollectionViewCoursel", bundle: nil)
     }

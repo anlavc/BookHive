@@ -23,11 +23,6 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="12" translatesAutoresizingMaskIntoConstraints="NO" id="I5h-6h-ySb">
                                 <rect key="frame" x="5" y="5" width="120" height="190"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -50,8 +45,8 @@
             </constraints>
             <size key="customSize" width="210" height="278"/>
             <connections>
+                <outlet property="bgview" destination="j9F-ep-GFI" id="BsP-Yn-hzC"/>
                 <outlet property="imageView" destination="I5h-6h-ySb" id="sYV-bQ-Gbg"/>
-                <outlet property="view" destination="j9F-ep-GFI" id="ejM-Qe-FUa"/>
             </connections>
             <point key="canvasLocation" x="251.90839694656486" y="46.478873239436624"/>
         </collectionViewCell>
