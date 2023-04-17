@@ -12,6 +12,8 @@ class SearchViewController: UIViewController {
     // MARK: - Properties
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     
     // MARK: - Life Cycle
     override func loadView() {
@@ -22,6 +24,7 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableViewSetup()
+        collectionViewSetup()
     }
     
     // MARK: - Table View Setup
@@ -29,6 +32,18 @@ class SearchViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate   = self
         tableView.register(SearchTableViewCell.nib(), forCellReuseIdentifier: SearchTableViewCell.identifier)
+    }
+    
+    private func collectionViewSetup() {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.minimumInteritemSpacing = 10
+        layout.minimumLineSpacing = 30
+        
+        collectionView.collectionViewLayout = layout
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.register(LibraryCollectionViewCell.nib(), forCellWithReuseIdentifier: LibraryCollectionViewCell.identifier)
     }
 
 }
@@ -46,4 +61,31 @@ extension SearchViewController: UITableViewDataSource {
 
 extension SearchViewController: UITableViewDelegate {
    
+}
+
+extension SearchViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LibraryCollectionViewCell.identifier, for: indexPath) as! LibraryCollectionViewCell
+        return cell
+    }
+}
+
+extension SearchViewController: UICollectionViewDelegate {
+    
+}
+
+extension SearchViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 158, height: 202)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        let inset: CGFloat = 11
+        let outset: CGFloat = 30
+        return UIEdgeInsets(top: inset, left: outset, bottom: inset, right: outset)
+    }
 }

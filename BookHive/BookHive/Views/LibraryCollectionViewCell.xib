@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="LibraryCollectionViewCell" customModule="BookHive" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="158" height="202"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="158" height="202"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Udv-pA-Rh3">
+                        <rect key="frame" x="0.0" y="0.0" width="158" height="202"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Business" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6KF-6h-SMO">
+                                <rect key="frame" x="22" y="19" width="114" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="kE0-io-FMB"/>
+                                    <constraint firstAttribute="width" constant="114" id="l1z-QK-rko"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="The_Great_Gatsby" translatesAutoresizingMaskIntoConstraints="NO" id="24h-4d-cp6">
+                                <rect key="frame" x="29" y="42" width="100" height="140"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="UB0-h2-6vR"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemGray3Color"/>
+                        <constraints>
+                            <constraint firstItem="6KF-6h-SMO" firstAttribute="leading" secondItem="Udv-pA-Rh3" secondAttribute="leading" constant="22" id="0ym-OU-5eB"/>
+                            <constraint firstAttribute="trailing" secondItem="24h-4d-cp6" secondAttribute="trailing" constant="29" id="9pk-vB-T37"/>
+                            <constraint firstItem="6KF-6h-SMO" firstAttribute="top" secondItem="Udv-pA-Rh3" secondAttribute="top" constant="19" id="SRS-Ub-bGm"/>
+                            <constraint firstItem="24h-4d-cp6" firstAttribute="top" secondItem="6KF-6h-SMO" secondAttribute="bottom" constant="8" symbolic="YES" id="Xa7-W7-vZ3"/>
+                            <constraint firstAttribute="trailing" secondItem="6KF-6h-SMO" secondAttribute="trailing" constant="22" id="ZFR-2d-ijW"/>
+                            <constraint firstItem="24h-4d-cp6" firstAttribute="leading" secondItem="Udv-pA-Rh3" secondAttribute="leading" constant="29" id="bX6-io-hd0"/>
+                            <constraint firstAttribute="bottom" secondItem="24h-4d-cp6" secondAttribute="bottom" constant="20" symbolic="YES" id="eCs-Sz-wv8"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Udv-pA-Rh3" secondAttribute="bottom" id="1LZ-xD-p6y"/>
+                <constraint firstItem="Udv-pA-Rh3" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ODz-cw-kc0"/>
+                <constraint firstItem="Udv-pA-Rh3" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="aHY-Oc-BR6"/>
+                <constraint firstAttribute="trailing" secondItem="Udv-pA-Rh3" secondAttribute="trailing" id="nAO-qd-akx"/>
+            </constraints>
+            <size key="customSize" width="202" height="198"/>
+            <connections>
+                <outlet property="categoryImageView" destination="24h-4d-cp6" id="okl-Xc-hsZ"/>
+                <outlet property="categoryNameLabel" destination="6KF-6h-SMO" id="vJ4-oY-ElC"/>
+                <outlet property="cellView" destination="Udv-pA-Rh3" id="Mji-BF-z9J"/>
+            </connections>
+            <point key="canvasLocation" x="13.740458015267174" y="32.394366197183103"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="The_Great_Gatsby" width="1129" height="1600"/>
+        <systemColor name="systemGray3Color">
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
