@@ -29,7 +29,7 @@
                         <outlet property="delegate" destination="-1" id="9ll-R0-Amd"/>
                     </connections>
                 </searchBar>
-                <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="aLz-5O-Gk5">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="aLz-5O-Gk5">
                     <rect key="frame" x="0.0" y="202" width="393" height="616"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
@@ -37,7 +37,7 @@
                     </constraints>
                 </tableView>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="9P2-Mr-Rhc">
-                    <rect key="frame" x="0.0" y="197" width="393" height="655"/>
+                    <rect key="frame" x="0.0" y="197" width="393" height="621"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7eW-Hw-lk5">
                         <size key="itemSize" width="128" height="128"/>
@@ -51,15 +51,15 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="aLz-5O-Gk5" secondAttribute="trailing" id="5pH-vh-EpZ"/>
+                <constraint firstItem="9P2-Mr-Rhc" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="AEF-H6-5oc"/>
                 <constraint firstItem="cre-nm-CU4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Aw9-wF-VqJ"/>
                 <constraint firstItem="cre-nm-CU4" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="BdT-5s-x8t"/>
                 <constraint firstItem="aLz-5O-Gk5" firstAttribute="top" secondItem="cre-nm-CU4" secondAttribute="bottom" constant="5" id="OS0-pG-ZKq"/>
                 <constraint firstItem="aLz-5O-Gk5" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="SYw-eS-MvU"/>
-                <constraint firstItem="9P2-Mr-Rhc" firstAttribute="top" secondItem="cre-nm-CU4" secondAttribute="bottom" id="YUN-dh-qFO"/>
-                <constraint firstItem="9P2-Mr-Rhc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ccP-ml-icI"/>
-                <constraint firstAttribute="bottom" secondItem="9P2-Mr-Rhc" secondAttribute="bottom" id="fqB-fk-aEZ"/>
+                <constraint firstItem="9P2-Mr-Rhc" firstAttribute="top" secondItem="cre-nm-CU4" secondAttribute="bottom" id="YS9-8H-s7N"/>
+                <constraint firstItem="9P2-Mr-Rhc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="h7J-yi-Ddg"/>
+                <constraint firstItem="9P2-Mr-Rhc" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="ned-fx-Nvu"/>
                 <constraint firstItem="aLz-5O-Gk5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="nyp-Dw-Dfg"/>
-                <constraint firstItem="9P2-Mr-Rhc" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="r6v-Uo-ZSn"/>
             </constraints>
             <point key="canvasLocation" x="101.5267175572519" y="20.422535211267608"/>
         </view>

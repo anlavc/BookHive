@@ -15,11 +15,18 @@ class LibraryCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var categoryNameLabel: UILabel!
     @IBOutlet weak var categoryImageView: UIImageView!
     
+    var cellColor: UIColor? {
+        didSet {
+            guard let cellColor = cellColor else {return}
+            cellView.backgroundColor = cellColor
+        }
+    }
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
         categoryImageView.layer.cornerRadius = 5
-        cellView.layer.cornerRadius          = 15
+        cellView.layer.cornerRadius = 15
     }
     
     

@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -38,7 +37,6 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemGray3Color"/>
                         <constraints>
                             <constraint firstItem="6KF-6h-SMO" firstAttribute="leading" secondItem="Udv-pA-Rh3" secondAttribute="leading" constant="22" id="0ym-OU-5eB"/>
                             <constraint firstAttribute="trailing" secondItem="24h-4d-cp6" secondAttribute="trailing" constant="29" id="9pk-vB-T37"/>
@@ -62,15 +60,12 @@
             <connections>
                 <outlet property="categoryImageView" destination="24h-4d-cp6" id="okl-Xc-hsZ"/>
                 <outlet property="categoryNameLabel" destination="6KF-6h-SMO" id="vJ4-oY-ElC"/>
-                <outlet property="cellView" destination="Udv-pA-Rh3" id="Mji-BF-z9J"/>
+                <outlet property="cellView" destination="Udv-pA-Rh3" id="yOY-1i-y4V"/>
             </connections>
             <point key="canvasLocation" x="13.740458015267174" y="32.394366197183103"/>
         </collectionViewCell>
     </objects>
     <resources>
         <image name="The_Great_Gatsby" width="1129" height="1600"/>
-        <systemColor name="systemGray3Color">
-            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
     </resources>
 </document>

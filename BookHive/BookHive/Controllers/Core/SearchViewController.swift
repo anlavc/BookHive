@@ -23,27 +23,29 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableViewSetup()
         collectionViewSetup()
-    }
-    
-    // MARK: - Table View Setup
-    private func tableViewSetup() {
-        tableView.dataSource = self
-        tableView.delegate   = self
-        tableView.register(SearchTableViewCell.nib(), forCellReuseIdentifier: SearchTableViewCell.identifier)
+        tableViewSetup()
+        searchBar.delegate = self
     }
     
     private func collectionViewSetup() {
+        collectionView.isHidden = false
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         layout.minimumInteritemSpacing = 10
         layout.minimumLineSpacing = 30
-        
         collectionView.collectionViewLayout = layout
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(LibraryCollectionViewCell.nib(), forCellWithReuseIdentifier: LibraryCollectionViewCell.identifier)
+    }
+    
+    // MARK: - Table View Setup
+    private func tableViewSetup() {
+        tableView.isHidden = true
+        tableView.dataSource = self
+        tableView.delegate   = self
+        tableView.register(SearchTableViewCell.nib(), forCellReuseIdentifier: SearchTableViewCell.identifier)
     }
 
 }
@@ -65,11 +67,13 @@ extension SearchViewController: UITableViewDelegate {
 
 extension SearchViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LibraryCollectionViewCell.identifier, for: indexPath) as! LibraryCollectionViewCell
+        let cellColor = UIColor.cellColors[indexPath.row % UIColor.cellColors.count]
+        cell.cellColor = cellColor
         return cell
     }
 }
@@ -87,5 +91,17 @@ extension SearchViewController: UICollectionViewDelegateFlowLayout {
         let inset: CGFloat = 11
         let outset: CGFloat = 30
         return UIEdgeInsets(top: inset, left: outset, bottom: inset, right: outset)
+    }
+}
+
+extension SearchViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.isEmpty {
+            collectionView.isHidden = false
+            tableView.isHidden = true
+        } else {
+            collectionView.isHidden = true
+            tableView.isHidden = false
+        }
     }
 }
