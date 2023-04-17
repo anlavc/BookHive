@@ -29,8 +29,8 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="S7t-H1-MOe">
                                 <rect key="frame" x="0.0" y="0.0" width="209" height="230"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="The_Great_Gatsby" translatesAutoresizingMaskIntoConstraints="NO" id="Ubb-w8-gnl">
-                                        <rect key="frame" x="0.0" y="0.0" width="209" height="180"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Ubb-w8-gnl">
+                                        <rect key="frame" x="0.0" y="1.6666666666666714" width="209" height="177.33333333333331"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="180" id="X7i-2D-H8d"/>
                                         </constraints>
@@ -78,7 +78,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="The_Great_Gatsby" width="1129" height="1600"/>
+        <image name="person" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
