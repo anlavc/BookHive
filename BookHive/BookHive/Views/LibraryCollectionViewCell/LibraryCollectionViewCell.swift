@@ -18,7 +18,7 @@ class LibraryCollectionViewCell: UICollectionViewCell {
     var cellColor: UIColor? {
         didSet {
             guard let cellColor = cellColor else {return}
-            cellView.backgroundColor = cellColor
+            self.cellView.backgroundColor = cellColor
         }
     }
     

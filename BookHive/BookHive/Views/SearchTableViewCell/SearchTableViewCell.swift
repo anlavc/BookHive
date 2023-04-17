@@ -11,8 +11,6 @@ class SearchTableViewCell: UITableViewCell {
     
     @IBOutlet weak var searchView: UIView!
     @IBOutlet weak var bookImageView: UIImageView!
-    @IBOutlet weak var bookNameLabel: UILabel!
-    @IBOutlet weak var genreLabel: UILabel!
     
     static let identifier = "SearchTableViewCell"
 
@@ -26,7 +24,7 @@ class SearchTableViewCell: UITableViewCell {
     }
     
     private func viewConfigure() {
-        searchView.layer.cornerRadius = 30
+        searchView.layer.cornerRadius = 20
         searchView.addShadow(color: .gray, opacity: 0.5, offset: CGSize(width: 2, height: 2), radius: 5)
     }
 }
