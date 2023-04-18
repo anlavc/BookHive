@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchViewController" customModule="BookHive" customModuleProvider="target">
             <connections>
+                <outlet property="collectionView" destination="9P2-Mr-Rhc" id="MfF-Ul-zra"/>
                 <outlet property="searchBar" destination="cre-nm-CU4" id="BEv-eH-Wi7"/>
                 <outlet property="tableView" destination="aLz-5O-Gk5" id="iiI-K4-jaO"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -21,7 +22,7 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="cre-nm-CU4">
+                <searchBar contentMode="redraw" placeholder="Search books and authors" translatesAutoresizingMaskIntoConstraints="NO" id="cre-nm-CU4">
                     <rect key="frame" x="0.0" y="141" width="393" height="56"/>
                     <textInputTraits key="textInputTraits"/>
                     <connections>
@@ -35,15 +36,29 @@
                         <constraint firstAttribute="height" constant="616" id="ZiU-pU-Ha4"/>
                     </constraints>
                 </tableView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="9P2-Mr-Rhc">
+                    <rect key="frame" x="0.0" y="197" width="393" height="621"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7eW-Hw-lk5">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="aLz-5O-Gk5" secondAttribute="trailing" id="5pH-vh-EpZ"/>
+                <constraint firstItem="9P2-Mr-Rhc" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="AEF-H6-5oc"/>
                 <constraint firstItem="cre-nm-CU4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Aw9-wF-VqJ"/>
                 <constraint firstItem="cre-nm-CU4" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="BdT-5s-x8t"/>
                 <constraint firstItem="aLz-5O-Gk5" firstAttribute="top" secondItem="cre-nm-CU4" secondAttribute="bottom" constant="5" id="OS0-pG-ZKq"/>
                 <constraint firstItem="aLz-5O-Gk5" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="SYw-eS-MvU"/>
+                <constraint firstItem="9P2-Mr-Rhc" firstAttribute="top" secondItem="cre-nm-CU4" secondAttribute="bottom" id="YS9-8H-s7N"/>
+                <constraint firstItem="9P2-Mr-Rhc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="h7J-yi-Ddg"/>
+                <constraint firstItem="9P2-Mr-Rhc" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="ned-fx-Nvu"/>
                 <constraint firstItem="aLz-5O-Gk5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="nyp-Dw-Dfg"/>
             </constraints>
             <point key="canvasLocation" x="101.5267175572519" y="20.422535211267608"/>

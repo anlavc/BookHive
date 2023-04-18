@@ -11,21 +11,20 @@ class SearchTableViewCell: UITableViewCell {
     
     @IBOutlet weak var searchView: UIView!
     @IBOutlet weak var bookImageView: UIImageView!
-    @IBOutlet weak var bookNameLabel: UILabel!
-    @IBOutlet weak var genreLabel: UILabel!
     
-    
-    // Identifier
     static let identifier = "SearchTableViewCell"
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        searchView.layer.cornerRadius = 20
-        
+        viewConfigure()
     }
     
     static func nib() -> UINib {
         return UINib(nibName: "SearchTableViewCell", bundle: nil)
     }
     
+    private func viewConfigure() {
+        searchView.layer.cornerRadius = 20
+        searchView.addShadow(color: .gray, opacity: 0.5, offset: CGSize(width: 2, height: 2), radius: 5)
+    }
 }
