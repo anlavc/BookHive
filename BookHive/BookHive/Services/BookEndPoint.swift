@@ -4,32 +4,34 @@
 //
 //  Created by Anıl AVCI on 14.04.2023.
 //
+//https://openlibrary.org/subjects/new_york_times_bestseller
 
 import Foundation
 
 enum BookEndPoint {
     case trending
     case cover(isbn: String)
-    
+    case bestseller
 }
 extension BookEndPoint: EndPointType {
     var path: String {
         switch self {
         case .trending:
-            return "trending/daily.json"
-            
-            
+            return "trending/daily.json?limit=20"
         case .cover(isbn: let isbn):
             return "b/isbn/\(isbn)-L.jpg"
+        case .bestseller:
+            return "subjects/new_york_times_bestseller.json?limit=20"
         }
     }
     var baseURL: String {
         switch self {
         case .trending:
             return "https://openlibrary.org"
-            
         case .cover:
             return "https://covers.openlibrary.org"
+        case .bestseller:
+            return "https://openlibrary.org"
         }
     }
     var url: URL? {
@@ -42,6 +44,8 @@ extension BookEndPoint: EndPointType {
             
             
         case .cover:
+            return .get
+        case .bestseller:
             return .get
         }
 //        var body: Encodable? {

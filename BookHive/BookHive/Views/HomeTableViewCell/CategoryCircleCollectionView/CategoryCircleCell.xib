@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryCircleCell" rowHeight="151" id="KGk-i7-Jjw" customClass="CategoryCircleCell" customModule="BookHive" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="335" height="151"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="335" height="151"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xtF-2H-nOI">
+                        <rect key="frame" x="0.0" y="0.0" width="335" height="151"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="HyY-9F-Re4">
+                                <rect key="frame" x="0.0" y="0.0" width="335" height="151"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VPC-kd-yxj">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HyY-9F-Re4" firstAttribute="top" secondItem="xtF-2H-nOI" secondAttribute="top" id="D1C-bJ-MIG"/>
+                            <constraint firstItem="HyY-9F-Re4" firstAttribute="leading" secondItem="xtF-2H-nOI" secondAttribute="leading" id="p2V-Sg-J0S"/>
+                            <constraint firstAttribute="bottom" secondItem="HyY-9F-Re4" secondAttribute="bottom" id="sjS-dk-8rs"/>
+                            <constraint firstAttribute="trailing" secondItem="HyY-9F-Re4" secondAttribute="trailing" id="x0L-Mc-oiQ"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="xtF-2H-nOI" secondAttribute="trailing" id="1oi-PK-okC"/>
+                    <constraint firstItem="xtF-2H-nOI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="AvH-oG-nbL"/>
+                    <constraint firstItem="xtF-2H-nOI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="EOJ-hV-6gL"/>
+                    <constraint firstAttribute="bottom" secondItem="xtF-2H-nOI" secondAttribute="bottom" id="rPF-3V-9tT"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="collectionView" destination="HyY-9F-Re4" id="GXR-Ku-KsI"/>
+            </connections>
+            <point key="canvasLocation" x="103.05343511450381" y="5.2816901408450709"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -9,6 +9,7 @@ import Foundation
 
 final class HomeViewModel {
     var trendBook: [Work] = []
+    var bestSeller: [Work] = []
     
     var eventHandler: ((_ event: Event) -> Void)?
     
@@ -20,6 +21,20 @@ final class HomeViewModel {
                 switch response {
                 case .success(let books):
                     self.trendBook = books.works
+                    self.eventHandler?(.dataLoaded)
+                case .failure(let error):
+                    self.eventHandler?(.error(error))
+                }
+            }
+    }
+    func fetchBestSeller() {
+        APIManager.shared.request(
+            modelType: Bookhive.self,
+            type: BookEndPoint.bestseller) { response in
+                self.eventHandler?(.stopLoading)
+                switch response {
+                case .success(let books):
+                    self.bestSeller = books.works
                     self.eventHandler?(.dataLoaded)
                 case .failure(let error):
                     self.eventHandler?(.error(error))
