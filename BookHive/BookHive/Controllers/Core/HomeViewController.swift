@@ -43,8 +43,6 @@ class HomeViewController: UIViewController {
         print("tapped all")
         
     }
-
-
 }
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
