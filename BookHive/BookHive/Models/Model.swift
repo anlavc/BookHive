@@ -7,8 +7,6 @@
 
 import Foundation
 
-import Foundation
-
 // MARK: - Bookhive
 struct Bookhive: Codable {
     let query: String?

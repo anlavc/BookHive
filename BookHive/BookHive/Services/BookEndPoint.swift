@@ -12,6 +12,7 @@ enum BookEndPoint {
     case trending
     case cover(isbn: String)
     case bestseller
+    case search(search: String)
 }
 extension BookEndPoint: EndPointType {
     var path: String {
@@ -22,6 +23,8 @@ extension BookEndPoint: EndPointType {
             return "b/isbn/\(isbn)-L.jpg"
         case .bestseller:
             return "subjects/new_york_times_bestseller.json?limit=20"
+        case .search(let search):
+            return "\(search)"
         }
     }
     var baseURL: String {
@@ -32,6 +35,8 @@ extension BookEndPoint: EndPointType {
             return "https://covers.openlibrary.org"
         case .bestseller:
             return "https://openlibrary.org"
+        case .search:
+            return "https://openlibrary.org/search.json?q="
         }
     }
     var url: URL? {
@@ -41,21 +46,12 @@ extension BookEndPoint: EndPointType {
         switch self {
         case .trending:
             return .get
-            
-            
         case .cover:
             return .get
         case .bestseller:
             return .get
+        case .search:
+            return .get
         }
-//        var body: Encodable? {
-//            switch self {
-//            case .trending:
-//                return nil
-//                
-//            case .cover:
-//                return nil
-//            }
-//        }
     }
 }
