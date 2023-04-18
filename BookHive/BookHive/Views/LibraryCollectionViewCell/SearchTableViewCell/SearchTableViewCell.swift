@@ -39,5 +39,6 @@ class SearchTableViewCell: UITableViewCell {
         isFavorited.toggle()
         let bookFavorite = isFavorited ? "heart.fill" : "heart"
         favoriteButton.setImage(UIImage(systemName: bookFavorite), for: .normal)
+        
     }
 }
