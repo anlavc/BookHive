@@ -22,24 +22,22 @@ class HomeCollectionViewCoursel: UICollectionViewCell {
         imageView.layer.shadowOpacity = 0.20
         imageView.layer.shadowRadius = 6.0
         imageView.layer.cornerRadius = 10.0
-//        imageView.addShadow(offset: CGSize.init(width: 0, height: 25), color: UIColor.gray, radius: 10.0, opacity: 0.45)
+        
+
+    }
+    func setup(book: Work) {
+        // Download image and set
+        let olid = book.availability?.openlibrary_edition
+        let cover = String(book.cover_id ?? 0)
+        if cover == nil {
+            imageView.setImageOlid(with: olid!)
+        } else {
+            imageView.setImageCover(with: Int(cover)!)
+        }
     }
    
     static func nib() -> UINib {
         return UINib(nibName: "HomeCollectionViewCoursel", bundle: nil)
     }
-}
-extension UIImageView {
-
-    func addShadow(offset: CGSize, color: UIColor, radius: CGFloat, opacity: Float) {
-        layer.masksToBounds = false
-        layer.shadowOffset = offset
-        layer.shadowColor = color.cgColor
-        layer.shadowRadius = radius
-        layer.shadowOpacity = opacity
-
-        let backgroundCGColor = backgroundColor?.cgColor
-        backgroundColor = nil
-        layer.backgroundColor =  backgroundCGColor
-    }
+    
 }

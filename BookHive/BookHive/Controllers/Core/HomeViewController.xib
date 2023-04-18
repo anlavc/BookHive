@@ -21,38 +21,38 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="myY-yJ-ohp">
-                    <rect key="frame" x="0.0" y="0.0" width="393" height="64"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="myY-yJ-ohp" userLabel="topview">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="69"/>
                     <color key="backgroundColor" name="coverbgColor"/>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="93E-mP-oWS">
-                    <rect key="frame" x="0.0" y="64" width="393" height="754"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="93E-mP-oWS" userLabel="bgview">
+                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                     <subviews>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="XwK-rK-vbx">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="754"/>
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="759"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </tableView>
                     </subviews>
                     <color key="backgroundColor" name="coverbgColor"/>
                     <constraints>
-                        <constraint firstItem="XwK-rK-vbx" firstAttribute="leading" secondItem="93E-mP-oWS" secondAttribute="leading" id="OE5-2b-AH7"/>
-                        <constraint firstAttribute="trailing" secondItem="XwK-rK-vbx" secondAttribute="trailing" id="T59-fX-dAA"/>
-                        <constraint firstAttribute="bottom" secondItem="XwK-rK-vbx" secondAttribute="bottom" id="ggN-P9-f3h"/>
-                        <constraint firstItem="XwK-rK-vbx" firstAttribute="top" secondItem="93E-mP-oWS" secondAttribute="top" id="rYa-Ya-2zX"/>
+                        <constraint firstAttribute="bottom" secondItem="XwK-rK-vbx" secondAttribute="bottom" id="64R-fj-IbF"/>
+                        <constraint firstItem="XwK-rK-vbx" firstAttribute="leading" secondItem="93E-mP-oWS" secondAttribute="leading" id="9rl-0S-yPv"/>
+                        <constraint firstAttribute="trailing" secondItem="XwK-rK-vbx" secondAttribute="trailing" id="I4A-WR-bOg"/>
+                        <constraint firstItem="XwK-rK-vbx" firstAttribute="top" secondItem="93E-mP-oWS" secondAttribute="top" id="wpI-a8-yxq"/>
                     </constraints>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="myY-yJ-ohp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="GNU-Du-5iA"/>
-                <constraint firstItem="93E-mP-oWS" firstAttribute="top" secondItem="myY-yJ-ohp" secondAttribute="bottom" id="Kf1-r0-b9j"/>
-                <constraint firstItem="93E-mP-oWS" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="5" id="ckc-L2-TOc"/>
-                <constraint firstItem="myY-yJ-ohp" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="eOz-b0-IOC"/>
-                <constraint firstAttribute="trailing" secondItem="myY-yJ-ohp" secondAttribute="trailing" id="ft1-qP-Dyj"/>
-                <constraint firstItem="93E-mP-oWS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="g00-Pi-yi7"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="93E-mP-oWS" secondAttribute="bottom" id="ho8-mA-D1B"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="93E-mP-oWS" secondAttribute="trailing" id="w4T-eb-tGh"/>
+                <constraint firstItem="93E-mP-oWS" firstAttribute="top" secondItem="myY-yJ-ohp" secondAttribute="bottom" constant="-10" id="G5E-sW-Vi0"/>
+                <constraint firstItem="myY-yJ-ohp" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="SET-05-aXT"/>
+                <constraint firstItem="myY-yJ-ohp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="YPo-cm-IV7"/>
+                <constraint firstItem="93E-mP-oWS" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="au4-sk-k7r"/>
+                <constraint firstAttribute="trailing" secondItem="myY-yJ-ohp" secondAttribute="trailing" id="dQh-Da-A3L"/>
+                <constraint firstItem="93E-mP-oWS" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="etQ-YJ-Fsp"/>
+                <constraint firstItem="93E-mP-oWS" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="hvn-x3-A85"/>
+                <constraint firstItem="93E-mP-oWS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="nAW-7M-LpV"/>
             </constraints>
             <point key="canvasLocation" x="130.53435114503816" y="-11.267605633802818"/>
         </view>
@@ -78,7 +78,7 @@
     </objects>
     <resources>
         <namedColor name="coverbgColor">
-            <color red="0.69803921570000005" green="0.64313725489999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.69800001382827759" green="0.64300000667572021" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

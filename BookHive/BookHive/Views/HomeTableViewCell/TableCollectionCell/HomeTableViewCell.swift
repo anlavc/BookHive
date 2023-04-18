@@ -63,19 +63,7 @@ extension HomeTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TableCollectionViewCell.identifier, for: indexPath) as! TableCollectionViewCell
-        cell.bookName.text = viewModel.trendBook[indexPath.row].title // TİTLE
-        // Download image and set
-        let olid = viewModel.trendBook[indexPath.item].availability?.openlibrary_edition
-        let cover = String(viewModel.trendBook[indexPath.row].cover_i ?? 0)
-        
-        if cover == nil {
-            cell.imageView.setImageOlid(with: olid!)
-          
-//            print("------> COVER Indexpath-- \(indexPath.row)")
-        } else {
-            cell.imageView.setImageCover(with: Int(cover)!)
-//            print("------> OLİD Indexpath-- \(indexPath.row)")
-        }
+        cell.setup(book: viewModel.trendBook[indexPath.row])
         return cell
     }
 }

@@ -9,8 +9,7 @@ import UIKit
 
 class HomeCourselTableViewCell: UITableViewCell {
     private var viewModel = HomeViewModel()
-
-   
+  
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func awakeFromNib() {
@@ -82,17 +81,8 @@ extension HomeCourselTableViewCell: UICollectionViewDelegate, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCoursel.identifier, for: indexPath) as! HomeCollectionViewCoursel
-        // Download image and set
-        let olid = viewModel.bestSeller[indexPath.item].availability?.openlibrary_edition
-        let cover = String(viewModel.bestSeller[indexPath.row].cover_id ?? 0)
-        if cover == nil {
-            cell.imageView.setImageOlid(with: olid!)
-        } else {
-            cell.imageView.setImageCover(with: Int(cover)!)
-
-        }
-        
-        
+        cell.setup(book: viewModel.bestSeller[indexPath.row])
+        scaleCenterCell()
         return cell
     }
    

@@ -25,7 +25,7 @@
                                 <rect key="frame" x="-5" y="-10" width="329" height="210"/>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Pza-4t-cYe">
-                                <rect key="frame" x="5" y="5" width="309" height="225"/>
+                                <rect key="frame" x="5" y="5" width="309" height="235"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="JMM-Ml-4ui">
                                     <size key="itemSize" width="128" height="180"/>
@@ -42,7 +42,7 @@
                             <constraint firstItem="bja-Ak-Z1X" firstAttribute="top" secondItem="79c-AX-NHa" secondAttribute="top" constant="-10" id="5At-TI-Pog"/>
                             <constraint firstItem="Pza-4t-cYe" firstAttribute="leading" secondItem="79c-AX-NHa" secondAttribute="leading" constant="5" id="6W7-U5-8hn"/>
                             <constraint firstAttribute="bottom" secondItem="bja-Ak-Z1X" secondAttribute="bottom" constant="40" id="M1q-IN-QPH"/>
-                            <constraint firstAttribute="bottom" secondItem="Pza-4t-cYe" secondAttribute="bottom" constant="10" id="eKH-hO-WTN"/>
+                            <constraint firstAttribute="bottom" secondItem="Pza-4t-cYe" secondAttribute="bottom" id="eKH-hO-WTN"/>
                             <constraint firstItem="bja-Ak-Z1X" firstAttribute="leading" secondItem="79c-AX-NHa" secondAttribute="leading" constant="-5" id="eqJ-gj-bJa"/>
                             <constraint firstAttribute="trailing" secondItem="Pza-4t-cYe" secondAttribute="trailing" constant="5" id="jRc-1t-oJN"/>
                         </constraints>
