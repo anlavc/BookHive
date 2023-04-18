@@ -9,10 +9,13 @@ import UIKit
 
 class SearchViewController: UIViewController {
     
-    // MARK: - Properties
+    // MARK: - Outlets
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    // MARK: Properties
+    
     
     
     // MARK: - Life Cycle
