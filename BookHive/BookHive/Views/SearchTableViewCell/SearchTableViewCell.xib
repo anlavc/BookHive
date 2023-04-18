@@ -118,15 +118,40 @@
                                     </view>
                                 </subviews>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gSC-u9-Jlt">
+                                <rect key="frame" x="382" y="12" width="39" height="38"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jmf-Ux-ab7">
+                                        <rect key="frame" x="3" y="5" width="33" height="28"/>
+                                        <color key="tintColor" systemColor="systemRedColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system"/>
+                                        <connections>
+                                            <action selector="favoriteButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Bou-bv-xbd"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="05O-Gc-18A"/>
+                                    <constraint firstItem="jmf-Ux-ab7" firstAttribute="leading" secondItem="gSC-u9-Jlt" secondAttribute="leading" constant="3" id="0sD-cz-1Gj"/>
+                                    <constraint firstAttribute="trailing" secondItem="jmf-Ux-ab7" secondAttribute="trailing" constant="3" id="Axm-kw-HdI"/>
+                                    <constraint firstAttribute="width" constant="39" id="Hm4-o1-USz"/>
+                                    <constraint firstAttribute="bottom" secondItem="jmf-Ux-ab7" secondAttribute="bottom" constant="5" id="O9W-yB-V6N"/>
+                                    <constraint firstItem="jmf-Ux-ab7" firstAttribute="top" secondItem="gSC-u9-Jlt" secondAttribute="top" constant="5" id="z2f-wA-agC"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemGray2Color"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
                             <constraint firstItem="Az1-m9-ymj" firstAttribute="centerY" secondItem="pMB-ok-p0M" secondAttribute="centerY" id="19D-PM-CK6"/>
                             <constraint firstAttribute="trailing" secondItem="sQf-KR-maC" secondAttribute="trailing" constant="5" id="3fg-tK-Mh7"/>
                             <constraint firstItem="zvs-jz-IaF" firstAttribute="top" secondItem="sQf-KR-maC" secondAttribute="bottom" constant="10" id="8IM-ut-iZR"/>
                             <constraint firstItem="2xW-lz-YsR" firstAttribute="leading" secondItem="Zzm-4r-TF8" secondAttribute="trailing" id="EwU-Wb-3aq"/>
                             <constraint firstItem="zvs-jz-IaF" firstAttribute="leading" secondItem="sQf-KR-maC" secondAttribute="leading" id="FoS-kW-Su2"/>
+                            <constraint firstItem="gSC-u9-Jlt" firstAttribute="top" secondItem="pMB-ok-p0M" secondAttribute="top" constant="12" id="P5c-vd-qrj"/>
                             <constraint firstItem="Zzm-4r-TF8" firstAttribute="top" secondItem="pMB-ok-p0M" secondAttribute="top" constant="12" id="ZAj-Yc-Dh9"/>
+                            <constraint firstItem="gSC-u9-Jlt" firstAttribute="leading" secondItem="Zzm-4r-TF8" secondAttribute="trailing" constant="239" id="a9t-GJ-5kV"/>
                             <constraint firstItem="Az1-m9-ymj" firstAttribute="leading" secondItem="Zzm-4r-TF8" secondAttribute="trailing" constant="8" id="aJQ-h8-Rp4"/>
                             <constraint firstAttribute="trailing" secondItem="2xW-lz-YsR" secondAttribute="trailing" id="bKe-0f-03R"/>
                             <constraint firstAttribute="trailing" secondItem="Az1-m9-ymj" secondAttribute="trailing" constant="8" id="dmS-xe-o3P"/>
@@ -135,6 +160,7 @@
                             <constraint firstAttribute="trailing" secondItem="zvs-jz-IaF" secondAttribute="trailing" constant="5" id="lds-q3-Pzl"/>
                             <constraint firstItem="Zzm-4r-TF8" firstAttribute="leading" secondItem="pMB-ok-p0M" secondAttribute="leading" constant="8" id="psi-TP-lQL"/>
                             <constraint firstItem="sQf-KR-maC" firstAttribute="top" secondItem="Zzm-4r-TF8" secondAttribute="top" id="s0I-pY-6zo"/>
+                            <constraint firstAttribute="trailing" secondItem="gSC-u9-Jlt" secondAttribute="trailing" constant="17" id="seY-w0-CuB"/>
                             <constraint firstAttribute="height" constant="234" id="uVY-V0-hQ9"/>
                             <constraint firstItem="sQf-KR-maC" firstAttribute="leading" secondItem="Zzm-4r-TF8" secondAttribute="trailing" constant="10" id="wEF-ZB-15d"/>
                         </constraints>
@@ -150,6 +176,8 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="bookImageView" destination="Zzm-4r-TF8" id="c5Z-aa-cxy"/>
+                <outlet property="favoriteButton" destination="jmf-Ux-ab7" id="L2s-ZA-vzW"/>
+                <outlet property="favoriteView" destination="gSC-u9-Jlt" id="CBx-dJ-nvu"/>
                 <outlet property="searchView" destination="pMB-ok-p0M" id="zay-PW-lNm"/>
             </connections>
             <point key="canvasLocation" x="181.67938931297709" y="41.549295774647888"/>
@@ -157,17 +185,21 @@
     </objects>
     <resources>
         <image name="12" width="383" height="600"/>
+        <image name="heart" catalog="system" width="128" height="107"/>
         <systemColor name="systemBrownColor">
             <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
-        <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
