@@ -34,6 +34,9 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                             </collectionView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="oGY-wP-y7E">
+                                <rect key="frame" x="149.66666666666666" y="110" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
@@ -42,9 +45,11 @@
                             <constraint firstItem="bja-Ak-Z1X" firstAttribute="top" secondItem="79c-AX-NHa" secondAttribute="top" constant="-10" id="5At-TI-Pog"/>
                             <constraint firstItem="Pza-4t-cYe" firstAttribute="leading" secondItem="79c-AX-NHa" secondAttribute="leading" constant="5" id="6W7-U5-8hn"/>
                             <constraint firstAttribute="bottom" secondItem="bja-Ak-Z1X" secondAttribute="bottom" constant="40" id="M1q-IN-QPH"/>
+                            <constraint firstItem="oGY-wP-y7E" firstAttribute="centerY" secondItem="79c-AX-NHa" secondAttribute="centerY" id="SJe-4j-fEE"/>
                             <constraint firstAttribute="bottom" secondItem="Pza-4t-cYe" secondAttribute="bottom" id="eKH-hO-WTN"/>
                             <constraint firstItem="bja-Ak-Z1X" firstAttribute="leading" secondItem="79c-AX-NHa" secondAttribute="leading" constant="-5" id="eqJ-gj-bJa"/>
                             <constraint firstAttribute="trailing" secondItem="Pza-4t-cYe" secondAttribute="trailing" constant="5" id="jRc-1t-oJN"/>
+                            <constraint firstItem="oGY-wP-y7E" firstAttribute="centerX" secondItem="79c-AX-NHa" secondAttribute="centerX" id="swH-Fo-lGb"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -58,6 +63,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="collectionView" destination="Pza-4t-cYe" id="wiw-dQ-HuR"/>
+                <outlet property="indicator" destination="oGY-wP-y7E" id="Uko-ho-8Up"/>
             </connections>
             <point key="canvasLocation" x="129.00763358778624" y="38.380281690140848"/>
         </tableViewCell>

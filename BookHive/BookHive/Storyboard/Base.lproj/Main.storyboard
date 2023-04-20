@@ -25,7 +25,7 @@
             </objects>
             <point key="canvasLocation" x="-364" y="497"/>
         </scene>
-        <!--Home-->
+        <!--Home View Controller-->
         <scene sceneID="6SO-0T-Z1B">
             <objects>
                 <viewController storyboardIdentifier="HomeViewController" id="EIi-fu-xyG" customClass="HomeViewController" customModule="BookHive" customModuleProvider="target" sceneMemberID="viewController">
@@ -35,11 +35,14 @@
                         <viewLayoutGuide key="safeArea" id="KBs-Bq-cKg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="4Gp-GK-Jju"/>
+                    <navigationItem key="navigationItem" id="rEV-G0-Bes"/>
+                    <connections>
+                        <segue destination="Df5-lq-MtH" kind="show" identifier="DetailViewController" id="FaE-dZ-3mT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a0h-zi-bEB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-363" y="-276"/>
+            <point key="canvasLocation" x="562.59541984732823" y="-276.05633802816902"/>
         </scene>
         <!--Library-->
         <scene sceneID="xAJ-Kg-3no">
@@ -55,7 +58,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xBV-AD-c5w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="576" y="-276"/>
+            <point key="canvasLocation" x="1501.5267175572519" y="-276.05633802816902"/>
         </scene>
         <!--Account-->
         <scene sceneID="g69-x8-cQb">
@@ -73,6 +76,22 @@
             </objects>
             <point key="canvasLocation" x="548.85496183206101" y="495.77464788732397"/>
         </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="LQI-To-07k">
+            <objects>
+                <viewController storyboardIdentifier="DetailViewController" id="Df5-lq-MtH" customClass="DetailViewController" customModule="BookHive" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vk3-S1-pNk">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="4oS-Ex-ODP"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="BBA-XI-duH"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oXi-TE-jSI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2750.3816793893129" y="139.43661971830986"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="3uk-gf-inD">
             <objects>
@@ -83,7 +102,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="EIi-fu-xyG" kind="relationship" relationship="viewControllers" id="9eY-rB-Ccf"/>
+                        <segue destination="bIW-tm-ul1" kind="relationship" relationship="viewControllers" id="9eY-rB-Ccf"/>
                         <segue destination="SAJ-Q1-qIm" kind="relationship" relationship="viewControllers" id="AZ3-T8-ji0"/>
                         <segue destination="ptD-8l-XOA" kind="relationship" relationship="viewControllers" id="Kjn-H6-7gk"/>
                         <segue destination="ZhL-mu-8oC" kind="relationship" relationship="viewControllers" id="4x0-9q-rFh"/>
@@ -92,6 +111,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P69-Pa-Un1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1308" y="76"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="61Y-ss-PLm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bIW-tm-ul1" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="4Gp-GK-Jju"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Mbr-co-Kkw">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="EIi-fu-xyG" kind="relationship" relationship="rootViewController" id="bsK-W1-Oct"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Ou-cr-arX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-364.12213740458014" y="-276.05633802816902"/>
         </scene>
     </scenes>
     <resources>

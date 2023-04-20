@@ -31,10 +31,15 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                             </collectionView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="JJm-rf-n5e">
+                                <rect key="frame" x="168.66666666666666" y="155" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="JJm-rf-n5e" firstAttribute="centerY" secondItem="9kg-ub-7t9" secondAttribute="centerY" id="KLL-rm-qP8"/>
                             <constraint firstAttribute="trailing" secondItem="ufb-1h-g1j" secondAttribute="trailing" constant="5" id="MMk-El-C87"/>
+                            <constraint firstItem="JJm-rf-n5e" firstAttribute="centerX" secondItem="9kg-ub-7t9" secondAttribute="centerX" id="Wod-hB-06a"/>
                             <constraint firstAttribute="bottom" secondItem="ufb-1h-g1j" secondAttribute="bottom" id="jt9-bZ-mp0"/>
                             <constraint firstItem="ufb-1h-g1j" firstAttribute="top" secondItem="9kg-ub-7t9" secondAttribute="top" id="pAq-Hy-sDM"/>
                             <constraint firstItem="ufb-1h-g1j" firstAttribute="leading" secondItem="9kg-ub-7t9" secondAttribute="leading" constant="5" id="siy-cs-zm8"/>
@@ -51,6 +56,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="collectionView" destination="ufb-1h-g1j" id="onN-QR-8vm"/>
+                <outlet property="indicator" destination="JJm-rf-n5e" id="FyF-fb-lZt"/>
             </connections>
             <point key="canvasLocation" x="151.90839694656489" y="71.83098591549296"/>
         </tableViewCell>
