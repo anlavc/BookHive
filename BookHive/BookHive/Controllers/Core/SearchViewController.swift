@@ -13,10 +13,11 @@ class SearchViewController: UIViewController {
     // MARK: - Outlets
     @IBOutlet weak var tableView     : UITableView!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var searchTextField: UITextField!
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     
     // MARK: - Properties
     var viewModel = SearchViewModel()
-    var searchBar: UISearchBar!
     
     // MARK: - Life Cycle
     override func loadView() {
@@ -26,10 +27,17 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        createSearchBar()
+//        createSearchBar()
+        textFieldSetup()
         collectionViewSetup()
         tableViewSetup()
         observeEvent()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        DispatchQueue.main.async {
+            self.indicator.stopAnimating()
+        }
     }
     
     func observeEvent() {
@@ -40,12 +48,16 @@ class SearchViewController: UIViewController {
             case .loading:
                 print("Product Loading...")
             case .stopLoading:
+                DispatchQueue.main.async {
+                    self.indicator.stopAnimating()
+                }
                 print("Stop Loading...")
             case .dataLoaded:
                 if self.viewModel.searchBook.count == 0 {
                     print("Data Count ----> 0")
                 } else {
                     DispatchQueue.main.async {
+                        self.indicator.stopAnimating()
                         self.tableView.reloadData()
                     }
                 }
@@ -54,6 +66,17 @@ class SearchViewController: UIViewController {
                 print("Upps,Error \(error?.localizedDescription)")
             }
         }
+    }
+    
+    private func textFieldSetup() {
+        searchTextField.delegate = self
+        searchTextField.returnKeyType = .go
+        searchTextField.layer.shadowColor = UIColor.systemIndigo.cgColor
+        searchTextField.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
+        searchTextField.layer.masksToBounds = false
+        searchTextField.layer.shadowRadius = 1.0
+        searchTextField.layer.shadowOpacity = 0.5
+        searchTextField.layer.cornerRadius = 10
     }
     
     // MARK: - Collection View Config
@@ -69,26 +92,10 @@ class SearchViewController: UIViewController {
         collectionView.register(LibraryCollectionViewCell.nib(), forCellWithReuseIdentifier: LibraryCollectionViewCell.identifier)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: self.searchBar.bottomAnchor, constant: 16),
+            collectionView.topAnchor.constraint(equalTo: self.searchTextField.bottomAnchor, constant: 16),
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16),
-        ])
-    }
-    
-    // MARK: - Create Search Bar
-    private func createSearchBar() {
-        searchBar = UISearchBar()
-        searchBar.placeholder = "Search"
-        searchBar.translatesAutoresizingMaskIntoConstraints = false
-        searchBar.delegate = self
-        view.addSubview(searchBar)
-
-        NSLayoutConstraint.activate([
-            searchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
-            searchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            searchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            searchBar.heightAnchor.constraint(equalToConstant: 44)
         ])
     }
     
@@ -101,6 +108,34 @@ class SearchViewController: UIViewController {
     }
 
 }
+
+
+extension SearchViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if let searchBookWord = searchTextField.text?.replacingOccurrences(of: " ", with: "+"),
+           !searchBookWord.isEmpty {
+            tableView.isHidden = false
+            collectionView.isHidden = true
+            DispatchQueue.main.async {
+                self.viewModel.fetchSearchBooks(searchWord: searchBookWord)
+                self.indicator.startAnimating()
+                self.tableView.reloadData()
+                self.view.endEditing(true)
+            }
+        }
+        return true
+    }
+    
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        if searchTextField.text == "" {
+            tableView.isHidden = true
+            collectionView.isHidden = false
+            viewModel.searchBook = []
+            tableView.reloadData()
+        }
+    }
+}
+
 // MARK: - Extensions Table View
 extension SearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -141,20 +176,5 @@ extension SearchViewController: UICollectionViewDelegate {
 extension SearchViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 158, height: 202)
-    }
-}
-
-// MARK: - Extensions Search Bar
-extension SearchViewController: UISearchBarDelegate {
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if searchText.isEmpty {
-            self.collectionView.isHidden = false
-            self.tableView.isHidden = true
-        } else {
-            self.collectionView.isHidden = true
-            self.tableView.isHidden = false
-            self.viewModel.fetchSearchBooks(searchWord: searchText)
-            self.tableView.reloadData()
-        }
     }
 }

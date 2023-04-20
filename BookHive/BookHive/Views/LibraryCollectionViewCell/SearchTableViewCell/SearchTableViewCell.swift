@@ -45,6 +45,14 @@ class SearchTableViewCell: UITableViewCell {
     
     // MARK: - Search Cell Config
     public func searchConfig(model: SearchDoc) {
+        let olid = model.cover_edition_key
+        let cover = String(model.cover_i ?? 0)
+        if cover == nil {
+            bookImageView.setImageOlid(with: olid!)
+        } else {
+            bookImageView.setImageCover(with: Int(cover)!)
+        }
+
         bookNameLabel.text = model.title
         let authorNames = model.author_name?.joined(separator: ", ")
         authorNameLabel.text = authorNames
@@ -60,25 +68,5 @@ class SearchTableViewCell: UITableViewCell {
     
     // MARK: - Search Details Button Action
     @IBAction func viewDetailsButtonTapped(_ sender: UIButton) {
-    }
-}
-
-extension UIImageView {
-    func setImageCoverI(with cover_i: String) {
-        let urlString = "https://covers.openlibrary.org/b/id/\(cover_i)-L.jpg"
-        guard let url = URL(string: urlString) else { return }
-        let resource = ImageResource(downloadURL: url, cacheKey: urlString)
-        print("-----> olid URL SERVİCES \(urlString)")
-        kf.indicatorType = .activity
-        kf.setImage(with: resource)
-    }
-    
-    func setCover(with cover: Int) {
-        let urlString = "https://covers.openlibrary.org/b/id/\(cover)-L.jpg"
-        guard let url = URL(string: urlString) else { return }
-        let resource = ImageResource(downloadURL: url, cacheKey: urlString)
-        print("-----> cover URL SERVİCES \(urlString)")
-        kf.indicatorType = .activity
-        kf.setImage(with: resource)
     }
 }
