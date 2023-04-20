@@ -8,8 +8,10 @@
 import UIKit
 
 class HomeCourselTableViewCell: UITableViewCell {
+    var delegate : HomeCourseTableViewCellDelegate?
     private var viewModel = HomeViewModel()
   
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func awakeFromNib() {
@@ -38,21 +40,29 @@ class HomeCourselTableViewCell: UITableViewCell {
             
             switch event {
             case .loading:
-                //indicator show
+                DispatchQueue.main.async {
+                    self.indicator.startAnimating()
+                }
                 print("Product loading...")
             case .stopLoading:
-                // indicator hide
+                DispatchQueue.main.async {
+                    self.indicator.stopAnimating()
+                
+                }
                 print("Stop loading...")
             case .dataLoaded:
+               
                 if self.viewModel.bestSeller.count == 0 {
                     print("DATA COUNT ----->>>> 0")
                 } else {
                     DispatchQueue.main.async {
+                        self.indicator.stopAnimating()
                         self.collectionView.reloadData()
                     }
                 }
                 print("Data loaded count...\( self.viewModel.bestSeller.count)")
             case .error(let error):
+                indicator.stopAnimating()
                 print("HATA VAR!!!! \(error?.localizedDescription ?? "ERROR")")
             }
         }
@@ -70,6 +80,7 @@ class HomeCourselTableViewCell: UITableViewCell {
         collectionView.register(HomeCollectionViewCoursel.nib(), forCellWithReuseIdentifier: HomeCollectionViewCoursel.identifier)
         collectionView.delegate = self
         collectionView.dataSource = self
+        
     }
     
     
@@ -85,6 +96,11 @@ extension HomeCourselTableViewCell: UICollectionViewDelegate, UICollectionViewDa
         scaleCenterCell()
         return cell
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.didSelectCell(selectedItem: viewModel.bestSeller[indexPath.row], olidID: (viewModel.bestSeller[indexPath.row]), coverID: viewModel.bestSeller[indexPath.row])
+        print("INDEXPATH \(indexPath.row)")
+      
+    }
    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let centerX = scrollView.contentOffset.x + scrollView.frame.size.width / 2
@@ -97,4 +113,10 @@ extension HomeCourselTableViewCell: UICollectionViewDelegate, UICollectionViewDa
             cell.transform = CGAffineTransform(scaleX: scale, y: scale)
         }
     }
+    
+}
+
+protocol HomeCourseTableViewCellDelegate {
+    func didSelectCell(selectedItem: Work,olidID: Work,coverID: Work)
+    
 }

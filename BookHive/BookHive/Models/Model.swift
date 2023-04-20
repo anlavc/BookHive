@@ -9,6 +9,7 @@ import Foundation
 
 // MARK: - Bookhive
 struct Bookhive: Codable {
+   
     let query: String?
     let works: [Work]!
     let days, hours: Int?
@@ -16,6 +17,7 @@ struct Bookhive: Codable {
 
 // MARK: - Work
 struct Work: Codable {
+    let key: String?
     let title: String?
     let cover_i: Int? 
     let cover_id: Int?

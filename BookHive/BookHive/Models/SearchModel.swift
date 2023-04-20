@@ -13,7 +13,7 @@ struct SearchModel: Codable {
     let docs: [SearchDoc]?
     let searchModelNumFound: Int?
     let q: String?
-    let offset: NSNull?
+   
 }
 
 // MARK: - Doc

@@ -12,6 +12,7 @@ class HomeTableViewCell: UITableViewCell {
     private var viewModel = HomeViewModel()
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -29,10 +30,14 @@ class HomeTableViewCell: UITableViewCell {
             
             switch event {
             case .loading:
-                //indicator show
+                DispatchQueue.main.async {
+                    self.indicator.startAnimating()
+                }
                 print("Product loading...")
             case .stopLoading:
-                // indicator hide
+                DispatchQueue.main.async {
+                    self.indicator.stopAnimating()
+                }
                 print("Stop loading...")
             case .dataLoaded:
                 if self.viewModel.trendBook.count == 0 {
@@ -40,6 +45,7 @@ class HomeTableViewCell: UITableViewCell {
                 } else {
                     DispatchQueue.main.async {
                         self.collectionView.reloadData()
+                        self.indicator.stopAnimating()
                     }
                 }
                 print("Data loaded count...\( self.viewModel.trendBook.count)")
@@ -68,29 +74,3 @@ extension HomeTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
     }
 }
 
-// Kingfisher image cache Extensions
-extension UIImageView {
-    func setImageOlid(with olid: String) {
-        let urlString = "https://covers.openlibrary.org/b/olid/\(olid)-M.jpg"
-        guard let url = URL(string: urlString) else {
-            return
-        }
-        let resource = ImageResource(downloadURL: url, cacheKey: urlString)
-        print("------> OLİD URL SERVİS \(urlString)")
-        kf.indicatorType = .activity
-        kf.setImage(with: resource)
-    }
-    
-    func setImageCover(with cover: Int) {
-        let urlString = "https://covers.openlibrary.org/b/id/\(cover)-M.jpg"
-        guard let url = URL(string: urlString) else {
-            return
-        }
-        let resource = ImageResource(downloadURL: url, cacheKey: urlString)
-        print("------> COVER URL servis-- \(urlString)")
-      
-        kf.indicatorType = .activity
-        kf.setImage(with: resource)
-    }
-
-}

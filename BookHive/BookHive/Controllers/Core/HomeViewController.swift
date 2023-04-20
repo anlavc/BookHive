@@ -7,11 +7,30 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, HomeCourseTableViewCellDelegate {
+    func didSelectCell(selectedItem: Work, olidID: Work, coverID: Work) {
+        let vc = DetailViewController()
+        vc.modalPresentationStyle = .fullScreen
+        vc.selectedBook = selectedItem.key
+//        vc.olidID = olidID.availability?.openlibrary_edition
+//        vc.coverID = coverID.cover_id
+        present(vc, animated: true)
+    }
+    
+  
+    
+ 
+    
+    func didSelectCell(selectedItem: Work) {
+      
+    }
+    
+
     
     let cell = "HomeTableViewCell"
     let cellCoursel = "HomeCourselTableViewCell"
     let circle = "CategoryCircleCell"
+    let viewModel = HomeViewModel()
     
     let sections = ["BEST_SELLERS","CATEGORY_CHOOSE","TRENDING_BOOKS","BEST_SHARE"]
     
@@ -19,12 +38,11 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        UINavigationBar.appearance().backgroundColor = UIColor.red
         xibRegister()
         tableRegister()
-        // Right Bar Button Item
-            let rightButton = UIBarButtonItem(title: "Button Title", style: .plain, target: self, action: #selector(rightButtonTapped))
-            navigationItem.rightBarButtonItem = rightButton        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
     }
     private func xibRegister() {
         Bundle.main.loadNibNamed("HomeViewController", owner: self, options: nil)![0] as? HomeViewController
@@ -53,6 +71,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         switch indexPath.section {
         case 0:
             let cell1 = tableView.dequeueReusableCell(withIdentifier: cellCoursel, for: indexPath) as! HomeCourselTableViewCell
+            cell1.delegate = self
             return cell1
         case 1:
             let cell2 = tableView.dequeueReusableCell(withIdentifier: circle, for: indexPath) as! CategoryCircleCell
@@ -92,6 +111,11 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
            
         }
        
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       
+        let vc = DetailViewController()
+       performSegue(withIdentifier: "DetailViewController", sender: nil)
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         switch section {

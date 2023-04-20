@@ -38,4 +38,5 @@ extension CategoryCircleCell: UICollectionViewDelegate, UICollectionViewDataSour
         return cell
     }
     
+    
 }
