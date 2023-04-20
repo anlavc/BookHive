@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 // MARK: - SearchModel
 struct SearchModel: Codable {
     let numFound, start: Int?
@@ -13,16 +14,15 @@ struct SearchModel: Codable {
     let docs: [SearchDoc]?
     let searchModelNumFound: Int?
     let q: String?
-    let offset: NSNull?
 }
 
 // MARK: - Doc
 struct SearchDoc: Codable {
     let key: String?
     let title: String?
-    let authorName: [String]?
+    let author_name: [String]?
     let subject: [String]?
-    let coverEditionKey: String?
-    let coverI: Int?
+    let cover_edition_key: String?
+    let cover_i: Int?
 }
 

@@ -6,17 +6,17 @@
 //
 
 import UIKit
+import Kingfisher
 
 class SearchViewController: UIViewController {
     
     // MARK: - Outlets
-    @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView     : UITableView!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    // MARK: Properties
-    
-    
+    // MARK: - Properties
+    var viewModel = SearchViewModel()
+    var searchBar: UISearchBar!
     
     // MARK: - Life Cycle
     override func loadView() {
@@ -26,40 +26,90 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        createSearchBar()
         collectionViewSetup()
         tableViewSetup()
-        searchBar.delegate = self
+        observeEvent()
     }
     
-    private func collectionViewSetup() {
+    func observeEvent() {
+        viewModel.eventHandler = { [weak self] event in
+            guard let self else {return}
+            
+            switch event {
+            case .loading:
+                print("Product Loading...")
+            case .stopLoading:
+                print("Stop Loading...")
+            case .dataLoaded:
+                if self.viewModel.searchBook.count == 0 {
+                    print("Data Count ----> 0")
+                } else {
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                }
+                print("Data Loaded count...\(self.viewModel.searchBook.count)")
+            case .error(let error):
+                print("Upps,Error \(error?.localizedDescription)")
+            }
+        }
+    }
+    
+    // MARK: - Collection View Config
+     func collectionViewSetup() {
         collectionView.isHidden = false
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.minimumInteritemSpacing = 10
-        layout.minimumLineSpacing = 30
+        layout.minimumLineSpacing = 16
+        layout.minimumInteritemSpacing = 16
         collectionView.collectionViewLayout = layout
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(LibraryCollectionViewCell.nib(), forCellWithReuseIdentifier: LibraryCollectionViewCell.identifier)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            collectionView.topAnchor.constraint(equalTo: self.searchBar.bottomAnchor, constant: 16),
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16),
+        ])
     }
     
-    // MARK: - Table View Setup
+    // MARK: - Create Search Bar
+    private func createSearchBar() {
+        searchBar = UISearchBar()
+        searchBar.placeholder = "Search"
+        searchBar.translatesAutoresizingMaskIntoConstraints = false
+        searchBar.delegate = self
+        view.addSubview(searchBar)
+
+        NSLayoutConstraint.activate([
+            searchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
+            searchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            searchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            searchBar.heightAnchor.constraint(equalToConstant: 44)
+        ])
+    }
+    
+    // MARK: - Table View Config
     private func tableViewSetup() {
-        tableView.isHidden = true
+        tableView.isHidden   = true
         tableView.dataSource = self
         tableView.delegate   = self
         tableView.register(SearchTableViewCell.nib(), forCellReuseIdentifier: SearchTableViewCell.identifier)
     }
 
 }
-// MARK: - Extensions
+// MARK: - Extensions Table View
 extension SearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return viewModel.searchBook.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: SearchTableViewCell.identifier, for: indexPath) as! SearchTableViewCell
+        cell.searchConfig(model: viewModel.searchBook[indexPath.row])
         return cell
     }
 }
@@ -70,6 +120,7 @@ extension SearchViewController: UITableViewDelegate {
     }
 }
 
+// MARK: - Extensions Collection View
 extension SearchViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
@@ -91,22 +142,19 @@ extension SearchViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 158, height: 202)
     }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        let inset: CGFloat = 11
-        let outset: CGFloat = 30
-        return UIEdgeInsets(top: inset, left: outset, bottom: inset, right: outset)
-    }
 }
 
+// MARK: - Extensions Search Bar
 extension SearchViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.isEmpty {
-            collectionView.isHidden = false
-            tableView.isHidden = true
+            self.collectionView.isHidden = false
+            self.tableView.isHidden = true
         } else {
-            collectionView.isHidden = true
-            tableView.isHidden = false
+            self.collectionView.isHidden = true
+            self.tableView.isHidden = false
+            self.viewModel.fetchSearchBooks(searchWord: searchText)
+            self.tableView.reloadData()
         }
     }
 }

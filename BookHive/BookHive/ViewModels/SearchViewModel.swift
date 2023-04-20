@@ -10,7 +10,6 @@ import UIKit
 final class SearchViewModel {
     var searchBook: [SearchDoc] = []
   
-    
     var eventHandler: ((_ event: Event) -> Void)?
     
     func fetchSearchBooks(searchWord: String) {
@@ -26,10 +25,8 @@ final class SearchViewModel {
                     self.eventHandler?(.error(error))
                 }
             }
-    }
-
-    
-    
+        
+    }   
 }
 extension SearchViewModel {
     enum Event {

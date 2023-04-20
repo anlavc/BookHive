@@ -25,6 +25,7 @@ class AccountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableViewConfigure()
+        viewsConfig()
         profileView.layer.cornerRadius = 20
     }
     
@@ -33,12 +34,16 @@ class AccountViewController: UIViewController {
         tableView.delegate = self
         tableView.register(AccountTableViewCell.nib(), forCellReuseIdentifier: AccountTableViewCell.identifier)
     }
+    
+    private func viewsConfig() {
+        profileView.addShadow(color: .black, opacity: 0.5, offset: CGSize(width: 5, height: 5), radius: 5)
+    }
 
 }
 
 extension AccountViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return 4
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: AccountTableViewCell.identifier, for: indexPath) as! AccountTableViewCell
@@ -48,6 +53,6 @@ extension AccountViewController: UITableViewDataSource {
 
 extension AccountViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 75
+        return 80
     }
 }

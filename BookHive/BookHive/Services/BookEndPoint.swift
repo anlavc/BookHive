@@ -5,6 +5,7 @@
 //  Created by Anıl AVCI on 14.04.2023.
 //
 //https://openlibrary.org/subjects/new_york_times_bestseller
+//https://covers.openlibrary.org/b/id/13775629-L.jpg
 
 import Foundation
 

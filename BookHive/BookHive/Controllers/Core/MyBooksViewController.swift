@@ -22,6 +22,7 @@ class MyBooksViewController: UIViewController {
         super.viewDidLoad()
         collectionViewSetup()
         viewsSetup()
+        
     }
     
     private func collectionViewSetup() {

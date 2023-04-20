@@ -25,14 +25,14 @@ class LibraryCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        viewConfigure()
+        viewsConfig()
     }
     
     static func nib() -> UINib {
         return UINib(nibName: "LibraryCollectionViewCell", bundle: nil)
     }
     
-    private func viewConfigure() {
+    private func viewsConfig() {
         categoryImageView.layer.cornerRadius = 15
         cellView.layer.cornerRadius = 30
     }

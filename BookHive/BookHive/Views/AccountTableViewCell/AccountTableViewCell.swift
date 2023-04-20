@@ -19,7 +19,7 @@ class AccountTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        viewConfigure()
+        viewsConfig()
         
     }
     
@@ -27,8 +27,9 @@ class AccountTableViewCell: UITableViewCell {
         return UINib(nibName: "AccountTableViewCell", bundle: nil)
     }
     
-    private func viewConfigure() {
+    private func viewsConfig() {
         accountCellView.addShadow(color: .gray, opacity: 0.5, offset: CGSize(width: 2, height: 2), radius: 5)
+        accountCellView.layer.cornerRadius = 15
     }
 
    
