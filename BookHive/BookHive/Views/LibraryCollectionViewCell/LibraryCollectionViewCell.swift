@@ -11,7 +11,6 @@ class LibraryCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "LibraryCollectionViewCell"
 
-    
     @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var categoryNameLabel: UILabel!
     @IBOutlet weak var categoryImageView: UIImageView!
@@ -37,9 +36,8 @@ class LibraryCollectionViewCell: UICollectionViewCell {
         cellView.layer.cornerRadius = 30
     }
     
-//    public func configure(model: ??) {
-//        categoryImageView.image = ??
-//        categoryNameLabel.text = ??
-//    }
+    public func configure(model: Subjects) {
+        categoryNameLabel.text = model.title
+    }
     
 }

@@ -17,6 +17,7 @@ enum BookEndPoint {
     case detail(detail: String)
     case pageNumber(olid: String)
     case sience
+    case subjects
 }
 extension BookEndPoint: EndPointType {
     var path: String {
@@ -35,6 +36,8 @@ extension BookEndPoint: EndPointType {
             return "\(olid).json"
         case .sience:
             return "subjects/science_fiction.json"
+        case .subjects:
+            return "subjects.json?limit=10"
         }
     }
     var baseURL: String {
@@ -52,6 +55,8 @@ extension BookEndPoint: EndPointType {
         case .pageNumber:
             return "https://openlibrary.org/books"
         case .sience:
+            return "https://openlibrary.org"
+        case .subjects:
             return "https://openlibrary.org"
         }
     }
@@ -73,6 +78,9 @@ extension BookEndPoint: EndPointType {
         case .pageNumber:
             return .get
         case .sience:
+            return .get
+        }
+        case .subjects:
             return .get
         }
     }

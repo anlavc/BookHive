@@ -69,7 +69,11 @@
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="14"/>
                                 </buttonConfiguration>
                                 <connections>
+<<<<<<< HEAD
                                     <action selector="viewDetailsButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="c5H-lU-Ckt"/>
+=======
+                                    <action selector="viewDetailsButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Y1R-it-9nA"/>
+>>>>>>> Features/mbuyukplevne/BP-24-Search-Fetch-Data
                                 </connections>
                             </button>
                         </subviews>

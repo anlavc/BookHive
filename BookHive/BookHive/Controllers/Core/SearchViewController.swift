@@ -8,7 +8,12 @@
 import UIKit
 import Kingfisher
 
-class SearchViewController: UIViewController {
+class SearchViewController: UIViewController, SearchTableViewCellDelegate {
+    func didSelect(selectedItem: SearchDoc) {
+        let vc = DetailViewController()
+        vc.selectedBook = "selectedItem.key"
+        present(vc, animated: true)
+    }
     
     // MARK: - Outlets
     @IBOutlet weak var tableView     : UITableView!
@@ -18,6 +23,9 @@ class SearchViewController: UIViewController {
     
     // MARK: - Properties
     var viewModel = SearchViewModel()
+    var subjectViewModel = LibraryViewModel()
+    var button = UIButton(type: .custom)
+    var delegate: SearchTableViewCellDelegate?
     
     // MARK: - Life Cycle
     override func loadView() {
@@ -27,7 +35,6 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        createSearchBar()
         textFieldSetup()
         collectionViewSetup()
         tableViewSetup()
@@ -40,6 +47,7 @@ class SearchViewController: UIViewController {
         }
     }
     
+    // MARK: - Observe Event
     func observeEvent() {
         viewModel.eventHandler = { [weak self] event in
             guard let self else {return}
@@ -68,15 +76,34 @@ class SearchViewController: UIViewController {
         }
     }
     
+    // MARK: - TextField Setup Func.
     private func textFieldSetup() {
         searchTextField.delegate = self
         searchTextField.returnKeyType = .go
+        searchTextField.placeholder = "Search for Books or Authors"
         searchTextField.layer.shadowColor = UIColor.systemIndigo.cgColor
         searchTextField.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
         searchTextField.layer.masksToBounds = false
         searchTextField.layer.shadowRadius = 1.0
         searchTextField.layer.shadowOpacity = 0.5
         searchTextField.layer.cornerRadius = 10
+        button.isHidden = true
+        button.tintColor = .gray
+        button.setImage(UIImage(systemName: "x.circle"), for: .normal)
+        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: -20, bottom: 0, right: 0)
+        searchTextField.rightView = button
+        searchTextField.rightViewMode = .always
+        button.addTarget(self, action: #selector(clearTextField), for: .touchUpInside)
+    }
+    
+    // MARK: - Clear TextField Button Action
+    @objc func clearTextField() {
+        searchTextField.text = ""
+        tableView.isHidden = true
+        collectionView.isHidden = false
+        button.isHidden = true
+        viewModel.searchBook = []
+        tableView.reloadData()
     }
     
     // MARK: - Collection View Config
@@ -106,18 +133,19 @@ class SearchViewController: UIViewController {
         tableView.delegate   = self
         tableView.register(SearchTableViewCell.nib(), forCellReuseIdentifier: SearchTableViewCell.identifier)
     }
-
 }
 
-
+// MARK: - Extensions TextField
 extension SearchViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if let searchBookWord = searchTextField.text?.replacingOccurrences(of: " ", with: "+"),
+        if let searchBookWord = searchTextField.turkishText(),
            !searchBookWord.isEmpty {
+            button.isHidden = false
             tableView.isHidden = false
             collectionView.isHidden = true
             DispatchQueue.main.async {
                 self.viewModel.fetchSearchBooks(searchWord: searchBookWord)
+                print("**\(searchBookWord)")
                 self.indicator.startAnimating()
                 self.tableView.reloadData()
                 self.view.endEditing(true)
@@ -145,6 +173,8 @@ extension SearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: SearchTableViewCell.identifier, for: indexPath) as! SearchTableViewCell
         cell.searchConfig(model: viewModel.searchBook[indexPath.row])
+        cell.index = viewModel.searchBook[indexPath.row]
+        cell.delegate = self
         return cell
     }
 }
@@ -178,3 +208,4 @@ extension SearchViewController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: 158, height: 202)
     }
 }
+
