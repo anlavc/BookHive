@@ -19,16 +19,12 @@ class HomeCourselTableViewCell: UITableViewCell {
         initViewModel()
         observeEvent()
         collectionSetup()
-      
-       
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
         scaleCenterCell()
     }
-    
-    
     func initViewModel() {
         viewModel.fetchBestSeller()
     }
@@ -62,7 +58,11 @@ class HomeCourselTableViewCell: UITableViewCell {
                 }
                 print("Data loaded count...\( self.viewModel.bestSeller.count)")
             case .error(let error):
-                indicator.stopAnimating()
+                
+                DispatchQueue.main.async {
+                    self.indicator.stopAnimating()
+                    self.collectionView.reloadData()
+                }
                 print("HATA VAR!!!! \(error?.localizedDescription ?? "ERROR")")
             }
         }
@@ -83,7 +83,6 @@ class HomeCourselTableViewCell: UITableViewCell {
         
     }
     
-    
 }
 extension HomeCourselTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -97,8 +96,7 @@ extension HomeCourselTableViewCell: UICollectionViewDelegate, UICollectionViewDa
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        delegate?.didSelectCell(selectedItem: viewModel.bestSeller[indexPath.row], olidID: (viewModel.bestSeller[indexPath.row]), coverID: viewModel.bestSeller[indexPath.row])
-        print("INDEXPATH \(indexPath.row)")
+        delegate?.didSelectCell(selectedItem: viewModel.bestSeller[indexPath.row])
       
     }
    
@@ -117,6 +115,6 @@ extension HomeCourselTableViewCell: UICollectionViewDelegate, UICollectionViewDa
 }
 
 protocol HomeCourseTableViewCellDelegate {
-    func didSelectCell(selectedItem: Work,olidID: Work,coverID: Work)
+    func didSelectCell(selectedItem: Work)
     
 }

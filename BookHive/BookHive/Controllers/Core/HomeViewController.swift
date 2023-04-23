@@ -8,31 +8,27 @@
 import UIKit
 
 class HomeViewController: UIViewController, HomeCourseTableViewCellDelegate {
-    func didSelectCell(selectedItem: Work, olidID: Work, coverID: Work) {
-        let vc = DetailViewController()
-        vc.modalPresentationStyle = .fullScreen
-        vc.selectedBook = selectedItem.key
-//        vc.olidID = olidID.availability?.openlibrary_edition
-//        vc.coverID = coverID.cover_id
-        present(vc, animated: true)
-    }
-    
-  
-    
- 
     
     func didSelectCell(selectedItem: Work) {
-      
+        let vc = DetailViewController()
+        vc.modalPresentationStyle = .fullScreen
+        vc.selectedBook = selectedItem.key // choosebookkey
+        vc.detailID = selectedItem.cover_edition_key ?? selectedItem.availability?.openlibrary_edition // image
+        vc.bookTitle = selectedItem.title // title
+        var languageArray = selectedItem.language?.prefix(2)
+        vc.language = languageArray?.joined(separator: " & ") ?? "?"
+        vc.authorName = selectedItem.author_name?.joined(separator: " & ") ?? selectedItem.authors?[0].name
+        vc.publishDateData = selectedItem.first_publish_year
+        present(vc, animated: true)
     }
-    
-
-    
     let cell = "HomeTableViewCell"
     let cellCoursel = "HomeCourselTableViewCell"
     let circle = "CategoryCircleCell"
+    let siencelCell = "SienceTableViewCell"
+    
     let viewModel = HomeViewModel()
     
-    let sections = ["BEST_SELLERS","CATEGORY_CHOOSE","TRENDING_BOOKS","BEST_SHARE"]
+    let sections = ["BEST_SELLERS","CATEGORY_CHOOSE","TRENDING_BOOKS","SCIENCE"]
     
  
     @IBOutlet weak var tableView: UITableView!
@@ -54,6 +50,8 @@ class HomeViewController: UIViewController, HomeCourseTableViewCellDelegate {
         tableView.register(UINib(nibName: cell, bundle: nil), forCellReuseIdentifier: cell)
         // circle
         tableView.register(UINib(nibName: circle, bundle: nil), forCellReuseIdentifier: circle)
+        // sience
+        tableView.register(UINib(nibName: siencelCell, bundle: nil), forCellReuseIdentifier: siencelCell)
         tableView.dataSource = self
         tableView.delegate = self
     }
@@ -78,7 +76,12 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
             return cell2
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: cell, for: indexPath) as! HomeTableViewCell
+            cell.delegate = self
             return cell
+        case 3:
+            let cell3 = tableView.dequeueReusableCell(withIdentifier: siencelCell, for: indexPath) as! SienceTableViewCell
+            cell3.delegate = self
+            return cell3
         default:
             return UITableViewCell()
         }
@@ -93,6 +96,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         //titlelabel
         let titleLabel = UILabel(frame: CGRect(x: 10, y: 10, width: headerView.frame.size.width, height: 20))
         titleLabel.text = "\(sections[section])"
+//        titleLabel.textColor = UIColor(named: "tabbarIcon")
         titleLabel.font = UIFont.systemFont(ofSize: 20,weight: .bold) // Font boyutunu ayarlayın
         headerView.addSubview(titleLabel)
         //button
@@ -106,16 +110,12 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
             headerView.backgroundColor = UIColor(named: "coverbgColor")
         } else if section == 1 {
             let headerView = view as! UIView
+            
             headerView.isHidden = true
             
            
         }
        
-    }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       
-        let vc = DetailViewController()
-       performSegue(withIdentifier: "DetailViewController", sender: nil)
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         switch section {
@@ -133,6 +133,8 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         case 1:
             return 120
         case 2:
+            return 210
+        case 3:
             return 210
         default:
             return 200

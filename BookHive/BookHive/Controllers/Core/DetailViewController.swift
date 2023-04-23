@@ -10,8 +10,6 @@ import UIKit
 class DetailViewController: UIViewController {
     @IBOutlet weak var dismissButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var aboutLabel: UILabel!
-    @IBOutlet weak var aboutTextLabel: UILabel!
     @IBOutlet weak var addReadButton: UIButton!
     @IBOutlet weak var readButton: UIButton!
     @IBOutlet weak var languageLabelText: UILabel!
@@ -26,8 +24,17 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var bgview: UIView!
+    
     var selectedBook: String?
+    var detailID: String!
+    var bookTitle: String?
+    var language: String?
+    var authorName: String?
+    var publishDateData: Int?
+    
+    
     private var viewModel = DetailViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         xibRegister()
@@ -36,6 +43,7 @@ class DetailViewController: UIViewController {
         observeEvent()
         collectionSetup()
         setUpText()
+       
     }
     @IBAction func dismissButton(_ sender: UIButton) {
         self.dismiss(animated: true)
@@ -62,7 +70,6 @@ class DetailViewController: UIViewController {
         languageLabelText.text = "LANGUAGES"
         readButton.titleLabel?.text = "READ"
         addReadButton.titleLabel?.text = "ADD_TO_READ_LIST"
-        aboutTextLabel.text = "ABOUT"
         
     }
     private func collectionSetup() {
@@ -74,18 +81,19 @@ class DetailViewController: UIViewController {
             }
     }
     private func initViewModel() {
+        viewModel.fetchDetailOlid(olidKey: detailID )
         viewModel.fetchDetailBooks(detail: selectedBook ?? "")
     }
-    func setup(book: DetailModel) {
-        self.titleLabel.text = book.title ?? ""
-        self.aboutLabel.text = book.description ?? ""
-        // Download image and set
-//        let olid = olidID
-//        let cover = coverID ?? 0
-      
-        imageView.setImageCover(with: viewModel.detailBook?.covers?[0] ?? 0)
-            print("---- ** prınt COVER IMAGE ")
-        
+    func setupOlid(olid: DetailModel2) {
+        let pagenumber = String("\(olid.numberOfPages ?? 0)")
+        self.titleLabel.text = bookTitle
+        self.author.text = authorName
+        self.pageNumber.text = pagenumber
+        self.publishDate.text = String("\(publishDateData ?? 0)")
+        self.languageLabel.text = language?.uppercased()
+        //image
+        let olid = detailID
+        imageView.setImageOlid(with: olid!)
     }
    private func observeEvent() {
         viewModel.eventHandler = { [weak self] event in
@@ -99,18 +107,15 @@ class DetailViewController: UIViewController {
                 // indicator hide
                 print("Stop loading detail...")
             case .dataLoaded:
-                if self.viewModel.detailBook?.title?.count == 0 {
-                    print("DATA COUNT DETAIL ----->>>> 0")
-                } else {
+               
                     
-                    DispatchQueue.main.async {
+                    DispatchQueue.main.async { [self] in
                         self.collectionView.reloadData()
-                        self.setup(book: self.viewModel.detailBook!)
-                       
-                        
+                      
+                          self.setupOlid(olid: self.viewModel.detailOlid!)
+                     
                     }
-                }
-                print("Data loaded count detail...\( self.viewModel.detailBook?.title?.count)")
+               
             case .error(let error):
                 print("HATA VAR!!!! \(error?.localizedDescription)")
             }
@@ -120,13 +125,18 @@ class DetailViewController: UIViewController {
 }
 extension DetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.detailBook?.subjects?.count ?? 1
+        let numberOfItems = viewModel.detailBook?.subjects?.count
+           if numberOfItems == nil {
+               collectionView.isHidden = true
+           } else {
+               collectionView.isHidden = false
+           }
+        return numberOfItems ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailSubjectCell.identifier, for: indexPath) as! DetailSubjectCell
         cell.subjectLabel.text = viewModel.detailBook?.subjects![indexPath.row]
-      //  cell.setup(book: Work)
         return cell
     }
  

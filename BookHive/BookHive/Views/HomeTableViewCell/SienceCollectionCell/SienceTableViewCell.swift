@@ -1,18 +1,18 @@
 //
-//  HomeTableViewCell.swift
+//  SienceTableViewCell.swift
 //  BookHive
 //
-//  Created by Anıl AVCI on 12.04.2023.
+//  Created by Anıl AVCI on 23.04.2023.
 //
 
 import UIKit
 import Kingfisher
 
-class HomeTableViewCell: UITableViewCell {
+class SienceTableViewCell: UITableViewCell {
     private var viewModel = HomeViewModel()
     @IBOutlet weak var collectionView: UICollectionView!
     var delegate : HomeCourseTableViewCellDelegate?
-    @IBOutlet weak var indicator: UIActivityIndicatorView!
+//    @IBOutlet weak var indicator: UIActivityIndicatorView!
     override func awakeFromNib() {
         super.awakeFromNib()
         initViewModel()
@@ -20,7 +20,6 @@ class HomeTableViewCell: UITableViewCell {
         collectionSetup()
     }
     func initViewModel() {
-        viewModel.fetchTrendBooks()
         viewModel.fetchSienceBooks()
     }
     func observeEvent() {
@@ -30,24 +29,24 @@ class HomeTableViewCell: UITableViewCell {
             switch event {
             case .loading:
                 DispatchQueue.main.async {
-                    self.indicator.startAnimating()
+//                    self.indicator.startAnimating()
                 }
                 print("Product loading...")
             case .stopLoading:
                 DispatchQueue.main.async {
-                    self.indicator.stopAnimating()
+//                    self.indicator.stopAnimating()
                 }
                 print("Stop loading...")
             case .dataLoaded:
-                if self.viewModel.trendBook.count == 0 {
+                if self.viewModel.sience.count == 0 {
                     print("DATA COUNT ----->>>> 0")
                 } else {
                     DispatchQueue.main.async {
                         self.collectionView.reloadData()
-                        self.indicator.stopAnimating()
+//                        self.indicator.stopAnimating()
                     }
                 }
-                print("Data loaded count...\( self.viewModel.trendBook.count)")
+                print("Data loaded count...\( self.viewModel.sience.count)")
             case .error(let error):
                 print("HATA VAR!!!! \(error?.localizedDescription)")
             }
@@ -60,20 +59,20 @@ class HomeTableViewCell: UITableViewCell {
     }
     
 }
-extension HomeTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
+extension SienceTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return viewModel.trendBook.count
+        return viewModel.sience.count
         //return bookList[collectionView.tag].bookImage.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TableCollectionViewCell.identifier, for: indexPath) as! TableCollectionViewCell
-        cell.setup(book: viewModel.trendBook[indexPath.row])
+        cell.setup(book: viewModel.sience[indexPath.row])
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        delegate?.didSelectCell(selectedItem: viewModel.trendBook[indexPath.row])
+        delegate?.didSelectCell(selectedItem: viewModel.sience[indexPath.row])
     }
 }
 

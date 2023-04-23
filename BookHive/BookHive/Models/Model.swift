@@ -19,9 +19,14 @@ struct Bookhive: Codable {
 struct Work: Codable {
     let key: String?
     let title: String?
-    let cover_i: Int? 
+    let cover_i: Int?
     let cover_id: Int?
     let availability: Availability?
+    let language: [String]?
+    let cover_edition_key: String?
+    let author_name: [String]?
+    let authors: [Authors]?
+    let first_publish_year: Int?
 }
 
 // MARK: - Availability
@@ -29,6 +34,11 @@ struct Availability: Codable {
     
     let isbn: String?
     let openlibrary_edition: String?
-   
-    
 }
+
+struct Authors: Codable {
+    
+    let name: String?
+
+}
+

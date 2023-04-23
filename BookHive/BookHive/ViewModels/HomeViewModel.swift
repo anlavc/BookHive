@@ -10,6 +10,7 @@ import Foundation
 final class HomeViewModel {
     var trendBook: [Work] = []
     var bestSeller: [Work] = []
+    var sience: [Work] = []
     
     var eventHandler: ((_ event: Event) -> Void)?
     
@@ -21,6 +22,20 @@ final class HomeViewModel {
                 switch response {
                 case .success(let books):
                     self.trendBook = books.works
+                    self.eventHandler?(.dataLoaded)
+                case .failure(let error):
+                    self.eventHandler?(.error(error))
+                }
+            }
+    }
+    func fetchSienceBooks() {
+        APIManager.shared.request(
+            modelType: Bookhive.self,
+            type: BookEndPoint.sience) { response in
+                self.eventHandler?(.stopLoading)
+                switch response {
+                case .success(let books):
+                    self.sience = books.works
                     self.eventHandler?(.dataLoaded)
                 case .failure(let error):
                     self.eventHandler?(.error(error))

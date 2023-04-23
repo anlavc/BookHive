@@ -57,3 +57,39 @@ class APIManager {
 //        ]
 //    }
 }
+
+//func jsonDataDecoder() {
+//   
+//    
+//    var request = URLRequest(url: URL(string: "https://openlibrary.org/api/books?bibkeys=olid:OL24274306M&jscmd=details&format=json")!)
+//    URLSession.shared.dataTask(with: request) { data, response, error in
+//        
+//        guard let data, error == nil else {
+//            return
+//        }
+//        guard let response = response as? HTTPURLResponse,
+//              200 ... 299 ~= response.statusCode else {
+//            return
+//        }
+//        do {
+//            if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+//                    // try to read out a string array
+//                if let names = json["olid:OL24274306M"] as? [String: Any],
+//                   let details = names["details"] as? [String:Any],
+//                   let publisher = details["publishers"] as? [String],
+//                   let title = details["title"] as? String
+//                {
+//                  
+//                    let olidModel = OlidModel(publishers: publisher, title: title)
+//                    print(olidModel)
+//                 
+//                    }
+//                }
+//        } catch {
+//        }
+//    }.resume()
+//}
+//struct OlidModel {
+//    let publishers: [String]
+//    let title: String
+//}

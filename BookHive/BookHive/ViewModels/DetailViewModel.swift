@@ -9,6 +9,7 @@ import Foundation
 
 final class DetailViewModel {
     var detailBook: DetailModel?
+    var detailOlid: DetailModel2?
  
     
     var eventHandler: ((_ event: Event) -> Void)?
@@ -28,7 +29,21 @@ final class DetailViewModel {
                 }
             }
     }
- 
+    
+    func fetchDetailOlid(olidKey: String) {
+        APIManager.shared.request(
+            modelType: DetailModel2.self,
+            type: BookEndPoint.pageNumber(olid: olidKey)) { response in
+                self.eventHandler?(.stopLoading)
+                switch response {
+                case .success(let detail):
+                    self.detailOlid = detail
+                    self.eventHandler?(.dataLoaded)
+                case .failure(let error):
+                    self.eventHandler?(.error(error))
+                }
+            }
+    }
     
     
 }

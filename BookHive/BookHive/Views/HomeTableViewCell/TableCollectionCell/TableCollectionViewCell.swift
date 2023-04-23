@@ -20,13 +20,14 @@ class TableCollectionViewCell: UICollectionViewCell {
     func setup(book: Work) {
         bookName.text = book.title
         // Download image and set
-        let olid = book.availability?.openlibrary_edition
+        let olid = book.cover_edition_key
         let cover = String(book.cover_i ?? 0)
         
-        if cover == nil {
-            imageView.setImageOlid(with: olid!)
-        } else {
+        if olid == nil {
             imageView.setImageCover(with: Int(cover)!)
+
+        } else {
+            imageView.setImageOlid(with: olid!)
         }
     }
     static func nib() -> UINib {
