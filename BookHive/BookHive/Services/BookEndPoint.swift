@@ -79,7 +79,6 @@ extension BookEndPoint: EndPointType {
             return .get
         case .sience:
             return .get
-        }
         case .subjects:
             return .get
         }
