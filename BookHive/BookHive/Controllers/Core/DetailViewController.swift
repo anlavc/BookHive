@@ -8,6 +8,7 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+    
     @IBOutlet weak var dismissButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var aboutLabel: UILabel!
@@ -77,14 +78,14 @@ class DetailViewController: UIViewController {
         viewModel.fetchDetailBooks(detail: selectedBook ?? "")
     }
     func setup(book: DetailModel) {
-        self.titleLabel.text = book.title ?? ""
+        self.titleLabel.text = selectedBook
         self.aboutLabel.text = book.description ?? ""
         // Download image and set
 //        let olid = olidID
 //        let cover = coverID ?? 0
       
         imageView.setImageCover(with: viewModel.detailBook?.covers?[0] ?? 0)
-            print("---- ** prınt COVER IMAGE ")
+//            print("---- ** prınt COVER IMAGE ")
         
     }
    private func observeEvent() {

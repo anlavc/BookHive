@@ -9,8 +9,11 @@ import UIKit
 import Kingfisher
 
 class SearchTableViewCell: UITableViewCell {
-
+    
     var isFavorited = false
+    var viewModel: SearchViewModel?
+    var delegate: SearchTableViewCellDelegate?
+    var index: SearchDoc?
     
     // MARK: - Outlets
     @IBOutlet weak var searchView: UIView!
@@ -68,5 +71,10 @@ class SearchTableViewCell: UITableViewCell {
     
     // MARK: - Search Details Button Action
     @IBAction func viewDetailsButtonTapped(_ sender: UIButton) {
+        delegate?.didSelect(selectedItem: index!)
     }
+}
+
+protocol SearchTableViewCellDelegate {
+    func didSelect(selectedItem: SearchDoc)
 }
