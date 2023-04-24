@@ -11,7 +11,12 @@ import Kingfisher
 class SearchViewController: UIViewController, SearchTableViewCellDelegate {
     func didSelect(selectedItem: SearchDoc) {
         let vc = DetailViewController()
-        vc.selectedBook = "selectedItem.key"
+        vc.selectedBook = selectedItem.key
+        vc.detailID = selectedItem.cover_edition_key
+        vc.bookTitle = selectedItem.title
+        var languageArray = selectedItem.language?.prefix(2)
+        vc.language = languageArray?.joined(separator: "&") ?? "?"
+        vc.authorName = selectedItem.author_name?.joined(separator: ",")
         present(vc, animated: true)
     }
     
@@ -172,9 +177,10 @@ extension SearchViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: SearchTableViewCell.identifier, for: indexPath) as! SearchTableViewCell
+        cell.delegate = self
         cell.searchConfig(model: viewModel.searchBook[indexPath.row])
         cell.index = viewModel.searchBook[indexPath.row]
-        cell.delegate = self
+        
         return cell
     }
 }

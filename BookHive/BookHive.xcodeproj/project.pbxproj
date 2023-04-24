@@ -25,6 +25,7 @@
 		2EE0E11129F47267008B2362 /* LibraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE0E11029F47267008B2362 /* LibraryViewModel.swift */; };
 		2EE0E11329F4728E008B2362 /* LibraryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE0E11229F4728E008B2362 /* LibraryModel.swift */; };
 		2EE0E11529F48AB9008B2362 /* TextfieldCharacters + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE0E11429F48AB9008B2362 /* TextfieldCharacters + Ext.swift */; };
+		2EE0E11B29F5E1A1008B2362 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EE0E11A29F5E1A1008B2362 /* SearchTableViewCell.xib */; };
 		2EF4B4C429EE7B080039B0E0 /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF4B4C229EE7B080039B0E0 /* AccountTableViewCell.swift */; };
 		2EF4B4C529EE7B080039B0E0 /* AccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EF4B4C329EE7B080039B0E0 /* AccountTableViewCell.xib */; };
 		EE41027829EC31FB009CC3BE /* CategoryCircleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE41027629EC31FB009CC3BE /* CategoryCircleCell.swift */; };
@@ -85,6 +86,7 @@
 		2EE0E11029F47267008B2362 /* LibraryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewModel.swift; sourceTree = "<group>"; };
 		2EE0E11229F4728E008B2362 /* LibraryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryModel.swift; sourceTree = "<group>"; };
 		2EE0E11429F48AB9008B2362 /* TextfieldCharacters + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextfieldCharacters + Ext.swift"; sourceTree = "<group>"; };
+		2EE0E11A29F5E1A1008B2362 /* SearchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
 		2EF4B4C229EE7B080039B0E0 /* AccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
 		2EF4B4C329EE7B080039B0E0 /* AccountTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountTableViewCell.xib; sourceTree = "<group>"; };
 		EE41027629EC31FB009CC3BE /* CategoryCircleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCircleCell.swift; sourceTree = "<group>"; };
@@ -226,7 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				2E88B35A29E7082C008F4B4B /* SearchTableViewCell.swift */,
-				EE80390A29F65B10004E13C7 /* SearchTableViewCell.xib */,
+				2EE0E11A29F5E1A1008B2362 /* SearchTableViewCell.xib */,
 			);
 			path = SearchTableViewCell;
 			sourceTree = "<group>";
@@ -504,7 +506,7 @@
 				EEAC4FD529E714280066757B /* TableCollectionViewCell.xib in Resources */,
 				2E88B35529E7009F008F4B4B /* SearchViewController.xib in Resources */,
 				EEC8356A29EAEE6300058796 /* HomeCollectionViewCoursel.xib in Resources */,
-				EE80390B29F65B10004E13C7 /* SearchTableViewCell.xib in Resources */,
+				2EE0E11B29F5E1A1008B2362 /* SearchTableViewCell.xib in Resources */,
 				EE977F8829F16B1B0027CF90 /* DetailSubjectCell.xib in Resources */,
 				EEAC4FB029E6F8220066757B /* Main.storyboard in Resources */,
 				2E88B34D29E70077008F4B4B /* HomeViewController.xib in Resources */,

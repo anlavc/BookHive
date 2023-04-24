@@ -8,6 +8,10 @@
 import UIKit
 import Kingfisher
 
+protocol SearchTableViewCellDelegate {
+    func didSelect(selectedItem: SearchDoc)
+}
+
 class SearchTableViewCell: UITableViewCell {
     
     var isFavorited = false
@@ -73,8 +77,4 @@ class SearchTableViewCell: UITableViewCell {
     @IBAction func viewDetailsButtonTapped(_ sender: UIButton) {
         delegate?.didSelect(selectedItem: index!)
     }
-}
-
-protocol SearchTableViewCellDelegate {
-    func didSelect(selectedItem: SearchDoc)
 }
