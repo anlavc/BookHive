@@ -37,7 +37,7 @@ extension BookEndPoint: EndPointType {
         case .sience:
             return "subjects/science_fiction.json"
         case .subjects:
-            return "subjects.json?limit=10"
+            return "subjects.json"
         }
     }
     var baseURL: String {
@@ -83,4 +83,29 @@ extension BookEndPoint: EndPointType {
             return .get
         }
     }
+    
+    func fetchCategories(completion: @escaping ([String]?, Error?) -> Void) {
+        guard let url = URL(string: "https://openlibrary.org/subjects.json?limit=10") else {
+            completion(nil, NSError(domain: "Invalid URL", code: 0, userInfo: nil))
+            return
+        }
+
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data, error == nil else {
+                completion(nil, error)
+                return
+            }
+
+            do {
+                let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+                let categories = json?["works"] as? [String] ?? []
+                completion(categories, nil)
+            } catch {
+                completion(nil, error)
+            }
+        }
+
+        task.resume()
+    }
+
 }
