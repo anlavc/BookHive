@@ -19,7 +19,6 @@
 		2E88B35829E700AE008F4B4B /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88B35629E700AE008F4B4B /* AccountViewController.swift */; };
 		2E88B35929E700AE008F4B4B /* AccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E88B35729E700AE008F4B4B /* AccountViewController.xib */; };
 		2E88B35C29E7082C008F4B4B /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88B35A29E7082C008F4B4B /* SearchTableViewCell.swift */; };
-		2E88B35D29E7082C008F4B4B /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E88B35B29E7082C008F4B4B /* SearchTableViewCell.xib */; };
 		2E88B36F29E883A9008F4B4B /* MyBooksCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E88B36E29E883A9008F4B4B /* MyBooksCollectionViewCell.xib */; };
 		2E88B37129E883BE008F4B4B /* MyBooksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88B37029E883BE008F4B4B /* MyBooksCollectionViewCell.swift */; };
 		2ECF25B129E89D3E00956FCB /* UIView + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECF25B029E89D3E00956FCB /* UIView + Ext.swift */; };
@@ -35,6 +34,7 @@
 		EE78967329F4742200991261 /* DetailOlid.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE78967229F4742200991261 /* DetailOlid.swift */; };
 		EE80390829F5BDF6004E13C7 /* SienceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE80390629F5BDF6004E13C7 /* SienceTableViewCell.swift */; };
 		EE80390929F5BDF6004E13C7 /* SienceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE80390729F5BDF6004E13C7 /* SienceTableViewCell.xib */; };
+		EE80390B29F65B10004E13C7 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE80390A29F65B10004E13C7 /* SearchTableViewCell.xib */; };
 		EE977F7C29F02F6A0027CF90 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE977F7A29F02F6A0027CF90 /* DetailViewController.swift */; };
 		EE977F7D29F02F6A0027CF90 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE977F7B29F02F6A0027CF90 /* DetailViewController.xib */; };
 		EE977F7F29F13E910027CF90 /* ImageView + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE977F7E29F13E910027CF90 /* ImageView + Ext.swift */; };
@@ -79,7 +79,6 @@
 		2E88B35629E700AE008F4B4B /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		2E88B35729E700AE008F4B4B /* AccountViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountViewController.xib; sourceTree = "<group>"; };
 		2E88B35A29E7082C008F4B4B /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
-		2E88B35B29E7082C008F4B4B /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
 		2E88B36E29E883A9008F4B4B /* MyBooksCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyBooksCollectionViewCell.xib; sourceTree = "<group>"; };
 		2E88B37029E883BE008F4B4B /* MyBooksCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBooksCollectionViewCell.swift; sourceTree = "<group>"; };
 		2ECF25B029E89D3E00956FCB /* UIView + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Ext.swift"; sourceTree = "<group>"; };
@@ -95,6 +94,7 @@
 		EE78967229F4742200991261 /* DetailOlid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailOlid.swift; sourceTree = "<group>"; };
 		EE80390629F5BDF6004E13C7 /* SienceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SienceTableViewCell.swift; sourceTree = "<group>"; };
 		EE80390729F5BDF6004E13C7 /* SienceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SienceTableViewCell.xib; sourceTree = "<group>"; };
+		EE80390A29F65B10004E13C7 /* SearchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
 		EE977F7A29F02F6A0027CF90 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		EE977F7B29F02F6A0027CF90 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		EE977F7E29F13E910027CF90 /* ImageView + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageView + Ext.swift"; sourceTree = "<group>"; };
@@ -226,7 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				2E88B35A29E7082C008F4B4B /* SearchTableViewCell.swift */,
-				2E88B35B29E7082C008F4B4B /* SearchTableViewCell.xib */,
+				EE80390A29F65B10004E13C7 /* SearchTableViewCell.xib */,
 			);
 			path = SearchTableViewCell;
 			sourceTree = "<group>";
@@ -496,7 +496,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEAC4FB829E6F8230066757B /* LaunchScreen.storyboard in Resources */,
-				2E88B35D29E7082C008F4B4B /* SearchTableViewCell.xib in Resources */,
 				2E88B35929E700AE008F4B4B /* AccountViewController.xib in Resources */,
 				EE41027929EC31FB009CC3BE /* CategoryCircleCell.xib in Resources */,
 				EE41027D29EC3223009CC3BE /* CategoryCircleCollectionCell.xib in Resources */,
@@ -505,6 +504,7 @@
 				EEAC4FD529E714280066757B /* TableCollectionViewCell.xib in Resources */,
 				2E88B35529E7009F008F4B4B /* SearchViewController.xib in Resources */,
 				EEC8356A29EAEE6300058796 /* HomeCollectionViewCoursel.xib in Resources */,
+				EE80390B29F65B10004E13C7 /* SearchTableViewCell.xib in Resources */,
 				EE977F8829F16B1B0027CF90 /* DetailSubjectCell.xib in Resources */,
 				EEAC4FB029E6F8220066757B /* Main.storyboard in Resources */,
 				2E88B34D29E70077008F4B4B /* HomeViewController.xib in Resources */,
