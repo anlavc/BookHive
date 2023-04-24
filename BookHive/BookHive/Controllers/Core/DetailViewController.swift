@@ -53,8 +53,7 @@ class DetailViewController: UIViewController {
         Bundle.main.loadNibNamed("DetailViewController", owner: self, options: nil)![0] as? DetailViewController
     }
     private func setupUI() {
-        addReadButton.layer.borderWidth = 1
-        addReadButton.layer.borderColor = UIColor.systemIndigo.cgColor
+      
         addReadButton.layer.cornerRadius = 5
         readButton.layer.cornerRadius = 5
         bgview.layer.cornerRadius = 20 // istediğiniz yarıçap değeri

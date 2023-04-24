@@ -22,9 +22,9 @@ class HomeViewController: UIViewController, HomeCourseTableViewCellDelegate {
         present(vc, animated: true)
     }
     let cell = "HomeTableViewCell"
-    let cellCoursel = "HomeCourselTableViewCell"
+    let cellCarousel = "HomeCarouselTableViewCell"
     let circle = "CategoryCircleCell"
-    let siencelCell = "SienceTableViewCell"
+    let sciencelCell = "ScienceTableViewCell"
     
     let viewModel = HomeViewModel()
     
@@ -45,13 +45,13 @@ class HomeViewController: UIViewController, HomeCourseTableViewCellDelegate {
     }
     private func tableRegister() {
         //courcell
-        tableView.register(UINib(nibName: cellCoursel, bundle: nil), forCellReuseIdentifier: cellCoursel)
+        tableView.register(UINib(nibName: cellCarousel, bundle: nil), forCellReuseIdentifier: cellCarousel)
         //trending
         tableView.register(UINib(nibName: cell, bundle: nil), forCellReuseIdentifier: cell)
         // circle
         tableView.register(UINib(nibName: circle, bundle: nil), forCellReuseIdentifier: circle)
         // sience
-        tableView.register(UINib(nibName: siencelCell, bundle: nil), forCellReuseIdentifier: siencelCell)
+        tableView.register(UINib(nibName: sciencelCell, bundle: nil), forCellReuseIdentifier: sciencelCell)
         tableView.dataSource = self
         tableView.delegate = self
     }
@@ -68,7 +68,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 0:
-            let cell1 = tableView.dequeueReusableCell(withIdentifier: cellCoursel, for: indexPath) as! HomeCourselTableViewCell
+            let cell1 = tableView.dequeueReusableCell(withIdentifier: cellCarousel, for: indexPath) as! HomeCarouselTableViewCell
             cell1.delegate = self
             return cell1
         case 1:
@@ -79,7 +79,8 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
             cell.delegate = self
             return cell
         case 3:
-            let cell3 = tableView.dequeueReusableCell(withIdentifier: siencelCell, for: indexPath) as! SienceTableViewCell
+            let cell3 = tableView.dequeueReusableCell(withIdentifier: sciencelCell, for: indexPath) as! ScienceTableViewCell
+            cell3.backgroundColor = .black
             cell3.delegate = self
             return cell3
         default:
@@ -106,10 +107,10 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     //Tableview section header bg color
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         if section == 0 {
-            let headerView = view as! UIView
+            let headerView = view
             headerView.backgroundColor = UIColor(named: "coverbgColor")
         } else if section == 1 {
-            let headerView = view as! UIView
+            let headerView = view 
             
             headerView.isHidden = true
             
