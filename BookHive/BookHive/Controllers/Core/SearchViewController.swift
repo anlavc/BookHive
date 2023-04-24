@@ -17,18 +17,19 @@ class SearchViewController: UIViewController, SearchTableViewCellDelegate {
         var languageArray = selectedItem.language?.prefix(2)
         vc.language = languageArray?.joined(separator: "&") ?? "?"
         vc.authorName = selectedItem.author_name?.joined(separator: ",")
+        vc.publishDateData = selectedItem.first_publish_year
         present(vc, animated: true)
     }
     
     // MARK: - Outlets
     @IBOutlet weak var tableView     : UITableView!
-    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
+    @IBOutlet weak var gifImageView: UIImageView!
+    @IBOutlet weak var findLabel: UILabel!
     
     // MARK: - Properties
     var viewModel = SearchViewModel()
-    var subjectViewModel = LibraryViewModel()
     var button = UIButton(type: .custom)
     var delegate: SearchTableViewCellDelegate?
     
@@ -41,9 +42,9 @@ class SearchViewController: UIViewController, SearchTableViewCellDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         textFieldSetup()
-        collectionViewSetup()
         tableViewSetup()
         observeEvent()
+//        searchEmptySetup()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,6 +52,11 @@ class SearchViewController: UIViewController, SearchTableViewCellDelegate {
             self.indicator.stopAnimating()
         }
     }
+    
+//    private func searchEmptySetup() {
+//        gifImageView.isHidden = false
+//        findLabel.isHidden = false
+//    }
     
     // MARK: - Observe Event
     func observeEvent() {
@@ -105,30 +111,11 @@ class SearchViewController: UIViewController, SearchTableViewCellDelegate {
     @objc func clearTextField() {
         searchTextField.text = ""
         tableView.isHidden = true
-        collectionView.isHidden = false
         button.isHidden = true
+        gifImageView.isHidden = false
+        findLabel.isHidden = false
         viewModel.searchBook = []
         tableView.reloadData()
-    }
-    
-    // MARK: - Collection View Config
-     func collectionViewSetup() {
-        collectionView.isHidden = false
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        layout.minimumLineSpacing = 16
-        layout.minimumInteritemSpacing = 16
-        collectionView.collectionViewLayout = layout
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        collectionView.register(LibraryCollectionViewCell.nib(), forCellWithReuseIdentifier: LibraryCollectionViewCell.identifier)
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: self.searchTextField.bottomAnchor, constant: 16),
-            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16),
-        ])
     }
     
     // MARK: - Table View Config
@@ -147,7 +134,8 @@ extension SearchViewController: UITextFieldDelegate {
            !searchBookWord.isEmpty {
             button.isHidden = false
             tableView.isHidden = false
-            collectionView.isHidden = true
+            gifImageView.isHidden = true
+            findLabel.isHidden = true
             DispatchQueue.main.async {
                 self.viewModel.fetchSearchBooks(searchWord: searchBookWord)
                 print("**\(searchBookWord)")
@@ -162,7 +150,6 @@ extension SearchViewController: UITextFieldDelegate {
     func textFieldDidChangeSelection(_ textField: UITextField) {
         if searchTextField.text == "" {
             tableView.isHidden = true
-            collectionView.isHidden = false
             viewModel.searchBook = []
             tableView.reloadData()
         }
@@ -180,7 +167,6 @@ extension SearchViewController: UITableViewDataSource {
         cell.delegate = self
         cell.searchConfig(model: viewModel.searchBook[indexPath.row])
         cell.index = viewModel.searchBook[indexPath.row]
-        
         return cell
     }
 }
@@ -190,28 +176,3 @@ extension SearchViewController: UITableViewDelegate {
         return 200
     }
 }
-
-// MARK: - Extensions Collection View
-extension SearchViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LibraryCollectionViewCell.identifier, for: indexPath) as! LibraryCollectionViewCell
-        let cellColor = UIColor.cellColors[indexPath.row % UIColor.cellColors.count]
-        cell.cellColor = cellColor
-        return cell
-    }
-}
-
-extension SearchViewController: UICollectionViewDelegate {
-    
-}
-
-extension SearchViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 158, height: 202)
-    }
-}
-
