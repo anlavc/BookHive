@@ -24,5 +24,6 @@ struct SearchDoc: Codable {
     let subject: [String]?
     let cover_edition_key: String?
     let cover_i: Int?
+    let language: [String]?
 }
 

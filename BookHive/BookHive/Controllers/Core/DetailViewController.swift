@@ -82,7 +82,7 @@ class DetailViewController: UIViewController {
             }
     }
     private func initViewModel() {
-        viewModel.fetchDetailOlid(olidKey: detailID )
+        viewModel.fetchDetailOlid(olidKey: detailID)
         viewModel.fetchDetailBooks(detail: selectedBook ?? "")
     }
     func setupOlid(olid: DetailModel2) {
