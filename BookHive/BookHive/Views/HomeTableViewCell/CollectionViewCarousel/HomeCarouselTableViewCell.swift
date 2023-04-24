@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeCourselTableViewCell: UITableViewCell {
+class HomeCarouselTableViewCell: UITableViewCell {
     var delegate : HomeCourseTableViewCellDelegate?
     private var viewModel = HomeViewModel()
   
@@ -77,20 +77,20 @@ class HomeCourselTableViewCell: UITableViewCell {
             cell.transform = CGAffineTransform(scaleX: scale, y: scale) } }
 
     private func collectionSetup() {
-        collectionView.register(HomeCollectionViewCoursel.nib(), forCellWithReuseIdentifier: HomeCollectionViewCoursel.identifier)
+        collectionView.register(HomeCollectionViewCarousel.nib(), forCellWithReuseIdentifier: HomeCollectionViewCarousel.identifier)
         collectionView.delegate = self
         collectionView.dataSource = self
         
     }
     
 }
-extension HomeCourselTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
+extension HomeCarouselTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.bestSeller.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCoursel.identifier, for: indexPath) as! HomeCollectionViewCoursel
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCarousel.identifier, for: indexPath) as! HomeCollectionViewCarousel
         cell.setup(book: viewModel.bestSeller[indexPath.row])
         scaleCenterCell()
         return cell

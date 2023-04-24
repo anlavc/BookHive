@@ -1,5 +1,5 @@
 //
-//  SienceTableViewCell.swift
+//  ScienceTableViewCell.swift
 //  BookHive
 //
 //  Created by Anıl AVCI on 23.04.2023.
@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-class SienceTableViewCell: UITableViewCell {
+class ScienceTableViewCell: UITableViewCell {
     private var viewModel = HomeViewModel()
     @IBOutlet weak var collectionView: UICollectionView!
     var delegate : HomeCourseTableViewCellDelegate?
@@ -59,7 +59,7 @@ class SienceTableViewCell: UITableViewCell {
     }
     
 }
-extension SienceTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
+extension ScienceTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         return viewModel.sience.count

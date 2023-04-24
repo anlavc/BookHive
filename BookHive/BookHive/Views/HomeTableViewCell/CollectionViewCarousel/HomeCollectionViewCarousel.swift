@@ -1,5 +1,5 @@
 //
-//  HomeCollectionViewCoursel.swift
+//  HomeCollectionViewCarousel.swift
 //  BookHive
 //
 //  Created by Anıl AVCI on 15.04.2023.
@@ -7,9 +7,9 @@
 
 import UIKit
 
-class HomeCollectionViewCoursel: UICollectionViewCell {
+class HomeCollectionViewCarousel: UICollectionViewCell {
     
-    static let identifier = "HomeCollectionViewCoursel"
+    static let identifier = "HomeCollectionViewCarousel"
     
 
   
@@ -37,7 +37,7 @@ class HomeCollectionViewCoursel: UICollectionViewCell {
     }
    
     static func nib() -> UINib {
-        return UINib(nibName: "HomeCollectionViewCoursel", bundle: nil)
+        return UINib(nibName: "HomeCollectionViewCarousel", bundle: nil)
     }
     
 }
