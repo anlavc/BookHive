@@ -12,7 +12,7 @@ class SearchViewController: UIViewController, SearchTableViewCellDelegate {
     func didSelect(selectedItem: SearchDoc) {
         let vc = DetailViewController()
         vc.selectedBook = selectedItem.key
-        vc.detailID = selectedItem.cover_edition_key
+        vc.detailID = selectedItem.cover_edition_key ?? selectedItem.edition_key![0]
         vc.bookTitle = selectedItem.title
         var languageArray = selectedItem.language?.prefix(2)
         vc.language = languageArray?.joined(separator: "&") ?? "?"
