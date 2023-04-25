@@ -1,0 +1,6 @@
+
+/* Class = "UITextField"; placeholder = "Search for Books or Authors"; ObjectID = "bo6-T2-jt4"; */
+"bo6-T2-jt4.placeholder" = "Boeken of auteurs zoeken";
+
+/* Class = "UILabel"; text = "You can find results by searching"; ObjectID = "oSh-zd-STT"; */
+"oSh-zd-STT.text" = "U kunt resultaten vinden door te zoeken";

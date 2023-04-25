@@ -1,0 +1,36 @@
+
+/* Class = "UILabel"; text = "Rating"; ObjectID = "7z4-8Q-s40"; */
+"7z4-8Q-s40.text" = "Clasificación";
+
+/* Class = "UILabel"; text = "Languages"; ObjectID = "GdZ-ys-1gd"; */
+"GdZ-ys-1gd.text" = "Idiomas";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "IKH-1y-I3c"; */
+"IKH-1y-I3c.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "KM8-c8-p2f"; */
+"KM8-c8-p2f.text" = "0";
+
+/* Class = "UIButton"; configuration.title = "Add to Read List"; ObjectID = "XC5-zV-cj3"; */
+"XC5-zV-cj3.configuration.title" = "Añadir a la lista";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "XC5-zV-cj3"; */
+"XC5-zV-cj3.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "READ"; ObjectID = "cLy-Xb-4u4"; */
+"cLy-Xb-4u4.configuration.title" = "LEA";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "cLy-Xb-4u4"; */
+"cLy-Xb-4u4.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Number of Pages"; ObjectID = "hNm-Mb-aul"; */
+"hNm-Mb-aul.text" = "Número de páginas";
+
+/* Class = "UILabel"; text = "NIL"; ObjectID = "oag-hX-3xL"; */
+"oag-hX-3xL.text" = "NIL";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "rwr-ez-ruL"; */
+"rwr-ez-ruL.text" = "0";
+
+/* Class = "UILabel"; text = "Publish Date"; ObjectID = "ylh-Nr-1KU"; */
+"ylh-Nr-1KU.text" = "Publicar Fecha";
