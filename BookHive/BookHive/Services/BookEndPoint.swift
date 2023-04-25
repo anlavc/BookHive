@@ -10,20 +10,20 @@
 import Foundation
 
 enum BookEndPoint {
-    case trending
+    case now
     case cover(isbn: String)
     case bestseller
     case search(search: String)
     case detail(detail: String)
     case pageNumber(olid: String)
-    case sience
-    case subjects
+    case week
+    case yearly
 }
 extension BookEndPoint: EndPointType {
     var path: String {
         switch self {
-        case .trending:
-            return "trending/daily.json?limit=20"
+        case .now:
+            return "trending/now.json?limit=20"
         case .cover(isbn: let isbn):
             return "b/isbn/\(isbn)-L.jpg"
         case .bestseller:
@@ -34,15 +34,16 @@ extension BookEndPoint: EndPointType {
             return "\(detail).json"
         case .pageNumber(let olid):
             return "\(olid).json"
-        case .sience:
-            return "subjects/science_fiction.json"
-        case .subjects:
-            return "subjects.json"
+        case .week:
+            return "trending/weekly.json?limit=20"
+        case .yearly:
+            return "trending/yearly.json?limit=20"
+            
         }
     }
     var baseURL: String {
         switch self {
-        case .trending:
+        case .now:
             return "https://openlibrary.org"
         case .cover:
             return "https://covers.openlibrary.org"
@@ -54,9 +55,9 @@ extension BookEndPoint: EndPointType {
             return "https://openlibrary.org"
         case .pageNumber:
             return "https://openlibrary.org/books"
-        case .sience:
+        case .week:
             return "https://openlibrary.org"
-        case .subjects:
+        case .yearly:
             return "https://openlibrary.org"
         }
     }
@@ -65,7 +66,7 @@ extension BookEndPoint: EndPointType {
     }
     var method: HTTPMethods {
         switch self {
-        case .trending:
+        case .now:
             return .get
         case .cover:
             return .get
@@ -77,35 +78,36 @@ extension BookEndPoint: EndPointType {
             return .get
         case .pageNumber:
             return .get
-        case .sience:
+        case .week:
             return .get
-        case .subjects:
+        case .yearly:
             return .get
         }
     }
-    
-    func fetchCategories(completion: @escaping ([String]?, Error?) -> Void) {
-        guard let url = URL(string: "https://openlibrary.org/subjects.json?limit=10") else {
-            completion(nil, NSError(domain: "Invalid URL", code: 0, userInfo: nil))
-            return
-        }
-
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
-            guard let data = data, error == nil else {
-                completion(nil, error)
-                return
-            }
-
-            do {
-                let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
-                let categories = json?["works"] as? [String] ?? []
-                completion(categories, nil)
-            } catch {
-                completion(nil, error)
-            }
-        }
-
-        task.resume()
-    }
-
 }
+//
+//    func fetchCategories(completion: @escaping ([String]?, Error?) -> Void) {
+//        guard let url = URL(string: "https://openlibrary.org/subjects.json?limit=10") else {
+//            completion(nil, NSError(domain: "Invalid URL", code: 0, userInfo: nil))
+//            return
+//        }
+//
+//        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+//            guard let data = data, error == nil else {
+//                completion(nil, error)
+//                return
+//            }
+//
+//            do {
+//                let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+//                let categories = json?["works"] as? [String] ?? []
+//                completion(categories, nil)
+//            } catch {
+//                completion(nil, error)
+//            }
+//        }
+//
+//        task.resume()
+//    }
+//
+//}

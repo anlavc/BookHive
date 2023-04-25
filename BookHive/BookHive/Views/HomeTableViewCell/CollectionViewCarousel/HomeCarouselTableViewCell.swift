@@ -10,7 +10,7 @@ import UIKit
 class HomeCarouselTableViewCell: UITableViewCell {
     var delegate : HomeCourseTableViewCellDelegate?
     private var viewModel = HomeViewModel()
-  
+    
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -24,6 +24,7 @@ class HomeCarouselTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         scaleCenterCell()
+        
     }
     func initViewModel() {
         viewModel.fetchBestSeller()
@@ -43,11 +44,11 @@ class HomeCarouselTableViewCell: UITableViewCell {
             case .stopLoading:
                 DispatchQueue.main.async {
                     self.indicator.stopAnimating()
-                
+                    
                 }
                 print("Stop loading...")
             case .dataLoaded:
-               
+                
                 if self.viewModel.bestSeller.count == 0 {
                     print("DATA COUNT ----->>>> 0")
                 } else {
@@ -73,9 +74,21 @@ class HomeCarouselTableViewCell: UITableViewCell {
         for cell in collectionView.visibleCells {
             var offsetX = centerX - cell.center.x
             if offsetX < 0 { offsetX = -offsetX }
-            let scale = 1 - offsetX / collectionView.frame.size.width
-            cell.transform = CGAffineTransform(scaleX: scale, y: scale) } }
+            let scale = 1 - offsetX / collectionView.frame.size.width * 0.4
+            
+            // Sol ve sağ hücrelerin boyutunu ayarla
+            let scaleFactor = 0.8
+            if offsetX < 0 {
+                cell.transform = CGAffineTransform(scaleX: CGFloat(scale * scaleFactor), y: CGFloat(scale * scaleFactor))
+            } else {
+                cell.transform = CGAffineTransform(scaleX: CGFloat(scale), y: CGFloat(scale))
+            }
+        }
+    }
 
+    
+    
+    
     private func collectionSetup() {
         collectionView.register(HomeCollectionViewCarousel.nib(), forCellWithReuseIdentifier: HomeCollectionViewCarousel.identifier)
         collectionView.delegate = self
@@ -84,7 +97,7 @@ class HomeCarouselTableViewCell: UITableViewCell {
     }
     
 }
-extension HomeCarouselTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
+extension HomeCarouselTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.bestSeller.count
     }
@@ -97,19 +110,18 @@ extension HomeCarouselTableViewCell: UICollectionViewDelegate, UICollectionViewD
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         delegate?.didSelectCell(selectedItem: viewModel.bestSeller[indexPath.row])
-      
+        
     }
-   
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let padding: CGFloat = 10
+        let availableWidth = collectionView.frame.width - padding * 3
+        let widthPerItem = availableWidth / 3
+        return CGSize(width: widthPerItem, height: widthPerItem + 50)
+    }
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let centerX = scrollView.contentOffset.x + scrollView.frame.size.width / 2
-        for cell in collectionView.visibleCells {
-            var offsetX = centerX - cell.center.x
-            if offsetX < 0 {
-                offsetX = -offsetX
-            }
-            let scale = 1 - offsetX / scrollView.frame.size.width
-            cell.transform = CGAffineTransform(scaleX: scale, y: scale)
-        }
+        scaleCenterCell()
+        
     }
     
 }

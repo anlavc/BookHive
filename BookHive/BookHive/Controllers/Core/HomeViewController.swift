@@ -13,7 +13,7 @@ class HomeViewController: UIViewController, HomeCourseTableViewCellDelegate {
         let vc = DetailViewController()
         vc.modalPresentationStyle = .fullScreen
         vc.selectedBook = selectedItem.key // choosebookkey
-        vc.detailID = selectedItem.cover_edition_key ?? selectedItem.availability?.openlibrary_edition // image
+        vc.detailID = selectedItem.cover_edition_key
         vc.bookTitle = selectedItem.title // title
         var languageArray = selectedItem.language?.prefix(2)
         vc.language = languageArray?.joined(separator: " & ") ?? "?"
@@ -23,12 +23,10 @@ class HomeViewController: UIViewController, HomeCourseTableViewCellDelegate {
     }
     let cell = "HomeTableViewCell"
     let cellCarousel = "HomeCarouselTableViewCell"
-    let circle = "CategoryCircleCell"
-    let sciencelCell = "ScienceTableViewCell"
-    
+    let nowCell = "NowTableViewCell"
+    let yearly = "YearlyTableViewCell"
     let viewModel = HomeViewModel()
-    
-    let sections = ["BEST_SELLERS","CATEGORY_CHOOSE","TRENDING_BOOKS","SCIENCE"]
+    let sections = ["BEST_SELLERS","NOW_TREND","WEEK_TREND","MOUNTH_TREND"]
     
  
     @IBOutlet weak var tableView: UITableView!
@@ -48,16 +46,12 @@ class HomeViewController: UIViewController, HomeCourseTableViewCellDelegate {
         tableView.register(UINib(nibName: cellCarousel, bundle: nil), forCellReuseIdentifier: cellCarousel)
         //trending
         tableView.register(UINib(nibName: cell, bundle: nil), forCellReuseIdentifier: cell)
-        // circle
-        tableView.register(UINib(nibName: circle, bundle: nil), forCellReuseIdentifier: circle)
-        // sience
-        tableView.register(UINib(nibName: sciencelCell, bundle: nil), forCellReuseIdentifier: sciencelCell)
+        // now
+        tableView.register(UINib(nibName: nowCell, bundle: nil), forCellReuseIdentifier: nowCell)
+        //yearly
+        tableView.register(UINib(nibName: yearly, bundle: nil), forCellReuseIdentifier: yearly)
         tableView.dataSource = self
         tableView.delegate = self
-    }
-    @objc func rightButtonTapped() {
-        print("tapped all")
-        
     }
 }
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
@@ -68,21 +62,25 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 0:
+            // bestsellers
             let cell1 = tableView.dequeueReusableCell(withIdentifier: cellCarousel, for: indexPath) as! HomeCarouselTableViewCell
             cell1.delegate = self
             return cell1
         case 1:
-            let cell2 = tableView.dequeueReusableCell(withIdentifier: circle, for: indexPath) as! CategoryCircleCell
-            return cell2
-        case 2:
-            let cell = tableView.dequeueReusableCell(withIdentifier: cell, for: indexPath) as! HomeTableViewCell
+            //now
+            let cell = tableView.dequeueReusableCell(withIdentifier: nowCell, for: indexPath) as! NowTableViewCell
             cell.delegate = self
             return cell
+        case 2:
+            //week
+            let cell2 = tableView.dequeueReusableCell(withIdentifier: cell, for: indexPath) as! HomeTableViewCell
+            cell2.delegate = self
+            return cell2
         case 3:
-            let cell3 = tableView.dequeueReusableCell(withIdentifier: sciencelCell, for: indexPath) as! ScienceTableViewCell
-            cell3.backgroundColor = .black
+            let cell3 = tableView.dequeueReusableCell(withIdentifier: yearly, for: indexPath) as! YearlyTableViewCell
             cell3.delegate = self
             return cell3
+
         default:
             return UITableViewCell()
         }
@@ -109,38 +107,20 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         if section == 0 {
             let headerView = view
             headerView.backgroundColor = UIColor(named: "coverbgColor")
-        } else if section == 1 {
-            let headerView = view 
-            
-            headerView.isHidden = true
-            
-           
         }
        
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        switch section {
-        case 1:
-            return 10
-        default:
-            return 40
-        }
+       return 40
     }
     //Homevc cell height setting
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
         case 0:
             return 220
-        case 1:
-            return 120
-        case 2:
-            return 210
-        case 3:
-            return 210
         default:
-            return 200
+            return 210
         }
-
     }
     
 }
