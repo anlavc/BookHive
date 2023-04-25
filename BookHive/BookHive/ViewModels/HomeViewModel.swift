@@ -8,40 +8,56 @@
 import Foundation
 
 final class HomeViewModel {
-    var trendBook: [Work] = []
+    var nowBook: [Work] = []
     var bestSeller: [Work] = []
-    var sience: [Work] = []
+    var weekTrend: [Work] = []
+    var yearlyTrendy: [Work] = []
     
     var eventHandler: ((_ event: Event) -> Void)?
     
-    func fetchTrendBooks() {
+    func fetchNowTrendBooks() {
         APIManager.shared.request(
             modelType: Bookhive.self,
-            type: BookEndPoint.trending) { response in
+            type: BookEndPoint.now) { response in
                 self.eventHandler?(.stopLoading)
                 switch response {
                 case .success(let books):
-                    self.trendBook = books.works
+                    self.nowBook = books.works
                     self.eventHandler?(.dataLoaded)
                 case .failure(let error):
                     self.eventHandler?(.error(error))
                 }
             }
     }
-    func fetchSienceBooks() {
+    func fetchWeekTrendBooks() {
         APIManager.shared.request(
             modelType: Bookhive.self,
-            type: BookEndPoint.sience) { response in
+            type: BookEndPoint.week) { response in
                 self.eventHandler?(.stopLoading)
                 switch response {
                 case .success(let books):
-                    self.sience = books.works
+                    self.weekTrend = books.works
                     self.eventHandler?(.dataLoaded)
                 case .failure(let error):
                     self.eventHandler?(.error(error))
                 }
             }
     }
+    func fetchYearlyTrendBooks() {
+        APIManager.shared.request(
+            modelType: Bookhive.self,
+            type: BookEndPoint.yearly) { response in
+                self.eventHandler?(.stopLoading)
+                switch response {
+                case .success(let books):
+                    self.yearlyTrendy = books.works
+                    self.eventHandler?(.dataLoaded)
+                case .failure(let error):
+                    self.eventHandler?(.error(error))
+                }
+            }
+    }
+    
     func fetchBestSeller() {
         APIManager.shared.request(
             modelType: Bookhive.self,

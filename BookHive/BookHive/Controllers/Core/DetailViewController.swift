@@ -44,7 +44,7 @@ class DetailViewController: UIViewController {
         observeEvent()
         collectionSetup()
         setUpText()
-       
+        
     }
     @IBAction func dismissButton(_ sender: UIButton) {
         self.dismiss(animated: true)
@@ -53,7 +53,7 @@ class DetailViewController: UIViewController {
         Bundle.main.loadNibNamed("DetailViewController", owner: self, options: nil)![0] as? DetailViewController
     }
     private func setupUI() {
-      
+        
         addReadButton.layer.cornerRadius = 5
         readButton.layer.cornerRadius = 5
         bgview.layer.cornerRadius = 20 // istediğiniz yarıçap değeri
@@ -77,12 +77,12 @@ class DetailViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         if let flowLayout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
-              flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-            }
+            flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        }
     }
     private func initViewModel() {
         viewModel.fetchDetailOlid(olidKey: detailID)
-        viewModel.fetchDetailBooks(detail: selectedBook ?? "")
+        //        viewModel.fetchDetailBooks(detail: selectedBook ?? "")
     }
     func setupOlid(olid: DetailModel2) {
         let pagenumber = String("\(olid.numberOfPages ?? 0)")
@@ -95,7 +95,7 @@ class DetailViewController: UIViewController {
         let olid = detailID
         imageView.setImageOlid(with: olid!)
     }
-   private func observeEvent() {
+    private func observeEvent() {
         viewModel.eventHandler = { [weak self] event in
             guard let self else {return}
             
@@ -107,30 +107,29 @@ class DetailViewController: UIViewController {
                 // indicator hide
                 print("Stop loading detail...")
             case .dataLoaded:
-               
+                
+                
+                DispatchQueue.main.async { [self] in
+                    self.collectionView.reloadData()
                     
-                    DispatchQueue.main.async { [self] in
-                        self.collectionView.reloadData()
-                      
-                          self.setupOlid(olid: self.viewModel.detailOlid!)
-                     
-                    }
-               
+                    self.setupOlid(olid: self.viewModel.detailOlid!)
+                }
+                
             case .error(let error):
                 print("HATA VAR!!!! \(error?.localizedDescription)")
             }
         }
     }
-
+    
 }
 extension DetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let numberOfItems = viewModel.detailBook?.subjects?.count
-           if numberOfItems == nil {
-               collectionView.isHidden = true
-           } else {
-               collectionView.isHidden = false
-           }
+        if numberOfItems == nil {
+            collectionView.isHidden = true
+        } else {
+            collectionView.isHidden = false
+        }
         return numberOfItems ?? 0
     }
     
@@ -139,12 +138,12 @@ extension DetailViewController: UICollectionViewDelegate, UICollectionViewDataSo
         cell.subjectLabel.text = viewModel.detailBook?.subjects![indexPath.row]
         return cell
     }
- 
+    
 }
 
-  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
-    }
+func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+    return 10
+}
 extension DetailViewController: UICollectionViewDelegateFlowLayout {
     
 }

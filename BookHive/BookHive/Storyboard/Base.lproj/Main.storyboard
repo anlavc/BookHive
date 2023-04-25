@@ -4,6 +4,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -19,7 +21,7 @@
                         <viewLayoutGuide key="safeArea" id="8HT-DW-d1r"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="My Books" image="books.vertical" catalog="system" id="Uj0-ym-Pjc"/>
+                    <tabBarItem key="tabBarItem" title="My Books" image="books.vertical" catalog="system" selectedImage="books.vertical.fill" id="Uj0-ym-Pjc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MaG-ty-oPJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -54,7 +56,7 @@
                         <viewLayoutGuide key="safeArea" id="eUV-m8-5Yz"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Library" image="book.closed" catalog="system" id="yAb-fy-DZu"/>
+                    <tabBarItem key="tabBarItem" title="Library" image="book.closed" catalog="system" selectedImage="book.closed.fill" id="yAb-fy-DZu"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xBV-AD-c5w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -70,7 +72,7 @@
                         <viewLayoutGuide key="safeArea" id="xdZ-ht-5CF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Account" image="person" catalog="system" id="1gC-DS-FTI"/>
+                    <tabBarItem key="tabBarItem" title="Account" image="person" catalog="system" selectedImage="person.fill" id="1gC-DS-FTI"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tGi-gQ-hJW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -100,7 +102,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" name="coverbgColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="foregroundColor">
+                                <color key="value" systemColor="systemYellowColor"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
                         <segue destination="bIW-tm-ul1" kind="relationship" relationship="viewControllers" id="9eY-rB-Ccf"/>
@@ -117,7 +124,16 @@
         <scene sceneID="61Y-ss-PLm">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bIW-tm-ul1" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="4Gp-GK-Jju"/>
+                    <tabBarItem key="tabBarItem" title="Home" selectedImage="house.fill" catalog="system" id="4Gp-GK-Jju">
+                        <imageReference key="image" image="house" catalog="system" renderingMode="hierarchical-single" variableValue="0.0">
+                            <hierarchicalColors>
+                                <color systemColor="labelColor"/>
+                                <color name="coverbgColor"/>
+                                <color systemColor="linkColor"/>
+                            </hierarchicalColors>
+                        </imageReference>
+                        <color key="badgeColor" systemColor="systemGreenColor"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Mbr-co-Kkw">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -135,11 +151,30 @@
     </scenes>
     <resources>
         <image name="book.closed" catalog="system" width="115" height="128"/>
+        <image name="book.closed.fill" catalog="system" width="115" height="128"/>
         <image name="books.vertical" catalog="system" width="128" height="107"/>
+        <image name="books.vertical.fill" catalog="system" width="128" height="110"/>
         <image name="house" catalog="system" width="128" height="104"/>
+        <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="person" catalog="system" width="128" height="121"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
+        <namedColor name="coverbgColor">
+            <color red="0.99607843137254903" green="0.77254901960784317" blue="0.086274509803921567" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

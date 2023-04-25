@@ -25,6 +25,7 @@ class HomeCollectionViewCarousel: UICollectionViewCell {
         
 
     }
+    
     func setup(book: Work) {
         // Download image and set
         let olid = book.availability?.openlibrary_edition
