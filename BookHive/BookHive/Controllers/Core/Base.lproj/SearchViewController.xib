@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -25,11 +26,12 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="aLz-5O-Gk5">
-                    <rect key="frame" x="0.0" y="169" width="393" height="649"/>
+                    <rect key="frame" x="0.0" y="169" width="393" height="937"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
-                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bo6-T2-jt4">
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search for Books or Authors" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bo6-T2-jt4">
                     <rect key="frame" x="10" y="109" width="373" height="40"/>
+                    <color key="backgroundColor" name="textfield"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="7g5-AD-Xbp"/>
                     </constraints>
@@ -37,44 +39,54 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="uU9-g8-vgR">
-                    <rect key="frame" x="186.66666666666666" y="416" width="20" height="20"/>
+                    <rect key="frame" x="186.66666666666666" y="560" width="20" height="20"/>
                 </activityIndicatorView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="8852-searching-for-word.gif" translatesAutoresizingMaskIntoConstraints="NO" id="ObT-Xf-3J3">
-                    <rect key="frame" x="0.0" y="149" width="393" height="669"/>
-                </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can find results by searching" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oSh-zd-STT">
-                    <rect key="frame" x="16" y="309" width="361" height="63"/>
+                <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can find results by searching" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oSh-zd-STT">
+                    <rect key="frame" x="16" y="258" width="361" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="361" id="OeI-N8-z4c"/>
+                        <constraint firstAttribute="height" constant="50" id="Y5c-lb-74k"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="19"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search.png" translatesAutoresizingMaskIntoConstraints="NO" id="ObT-Xf-3J3">
+                    <rect key="frame" x="88" y="328" width="251" height="512"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="252" id="CdB-Te-eiV"/>
+                        <constraint firstAttribute="width" constant="251" id="k63-6g-Y9O"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="ObT-Xf-3J3" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="2bf-dJ-YZw"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ObT-Xf-3J3" secondAttribute="trailing" id="5HX-PV-9tG"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="oSh-zd-STT" secondAttribute="trailing" constant="16" id="Bm1-q6-fLW"/>
                 <constraint firstItem="aLz-5O-Gk5" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Dtp-Ix-hwL"/>
-                <constraint firstItem="ObT-Xf-3J3" firstAttribute="top" secondItem="bo6-T2-jt4" secondAttribute="bottom" id="Fqw-cL-NJR"/>
-                <constraint firstItem="oSh-zd-STT" firstAttribute="top" secondItem="bo6-T2-jt4" secondAttribute="bottom" constant="160" id="HSJ-g5-6gA"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ObT-Xf-3J3" secondAttribute="bottom" constant="266" id="GVb-IP-OR9"/>
+                <constraint firstItem="oSh-zd-STT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="JEd-bz-hOW"/>
+                <constraint firstItem="ObT-Xf-3J3" firstAttribute="top" secondItem="oSh-zd-STT" secondAttribute="bottom" constant="20" id="RGO-rl-rfP"/>
                 <constraint firstItem="aLz-5O-Gk5" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="RVk-Y0-J0g"/>
                 <constraint firstItem="bo6-T2-jt4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="Znc-5T-IdP"/>
-                <constraint firstItem="oSh-zd-STT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="bEo-6S-ism"/>
                 <constraint firstItem="uU9-g8-vgR" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="bza-zF-uK2"/>
                 <constraint firstItem="bo6-T2-jt4" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="cr4-UY-05L"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="oSh-zd-STT" secondAttribute="trailing" constant="16" id="hAi-Ej-HPX"/>
-                <constraint firstItem="uU9-g8-vgR" firstAttribute="top" secondItem="oSh-zd-STT" secondAttribute="bottom" constant="44" id="jgv-qn-ZxV"/>
+                <constraint firstItem="ObT-Xf-3J3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="88" id="ggN-iF-2qv"/>
+                <constraint firstItem="oSh-zd-STT" firstAttribute="top" secondItem="bo6-T2-jt4" secondAttribute="bottom" constant="109" id="iho-xd-6cs"/>
                 <constraint firstItem="aLz-5O-Gk5" firstAttribute="top" secondItem="bo6-T2-jt4" secondAttribute="bottom" constant="20" id="kxd-9m-U4L"/>
-                <constraint firstItem="ObT-Xf-3J3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="nHM-hq-Qac"/>
                 <constraint firstItem="aLz-5O-Gk5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="psS-Bl-7WI"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bo6-T2-jt4" secondAttribute="trailing" constant="10" id="rKh-lx-x4V"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ObT-Xf-3J3" secondAttribute="trailing" constant="54" id="vRb-1g-zbg"/>
                 <constraint firstItem="uU9-g8-vgR" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="yOo-nY-ssY"/>
             </constraints>
             <point key="canvasLocation" x="101.5267175572519" y="20.422535211267608"/>
         </view>
     </objects>
     <resources>
-        <image name="8852-searching-for-word.gif" width="640" height="640"/>
+        <image name="search.png" width="409.60000610351562" height="409.60000610351562"/>
+        <namedColor name="textfield">
+            <color red="0.94912010732323226" green="0.94912010732323226" blue="0.94912010732323226" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

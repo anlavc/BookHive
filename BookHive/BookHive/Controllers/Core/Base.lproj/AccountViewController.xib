@@ -60,14 +60,14 @@
                                             </subviews>
                                         </stackView>
                                     </subviews>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <color key="backgroundColor" systemColor="systemGray6Color"/>
                                     <constraints>
                                         <constraint firstItem="9ee-XB-cjd" firstAttribute="centerX" secondItem="o28-OY-2ht" secondAttribute="centerX" id="JgG-jB-s4I"/>
                                         <constraint firstItem="9ee-XB-cjd" firstAttribute="centerY" secondItem="o28-OY-2ht" secondAttribute="centerY" id="uNF-Eb-XwQ"/>
                                     </constraints>
                                 </view>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <color key="backgroundColor" systemColor="systemGray6Color"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="Q8p-0I-3ds" secondAttribute="trailing" constant="144" id="5eU-6f-9OO"/>
                                 <constraint firstAttribute="width" constant="377" id="DLB-td-IFS"/>
@@ -114,6 +114,9 @@
         <image name="IMG_2491" width="629" height="606"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

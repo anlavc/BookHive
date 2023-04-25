@@ -61,15 +61,15 @@ class DetailViewController: UIViewController {
         imageView.layer.cornerRadius = 5
     }
     private func setUpText() {
-        ratingLabel.text = "RATING"
+//        ratingLabel.text = "RATING"
         let imageName = "rating4.5"
         let ratingimage = UIImage(named: imageName)
         ratingImage.image = ratingimage
-        publishDateText.text = "PUBLISH_DATE"
-        numberOfPagesLabel.text = "NUMBER_OF_PAGES"
-        languageLabelText.text = "LANGUAGES"
-        readButton.titleLabel?.text = "READ"
-        addReadButton.titleLabel?.text = "ADD_TO_READ_LIST"
+//        publishDateText.text = "PUBLISH_DATE"
+//        numberOfPagesLabel.text = "NUMBER_OF_PAGES"
+//        languageLabelText.text = "LANGUAGES"
+//        readButton.titleLabel?.text = "READ"
+//        addReadButton.titleLabel?.text = "ADD_TO_READ_LIST"
         
     }
     private func collectionSetup() {

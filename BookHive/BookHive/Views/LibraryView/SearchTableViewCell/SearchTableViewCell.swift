@@ -43,6 +43,7 @@ class SearchTableViewCell: UITableViewCell {
     
     // MARK: - Views Config
     private func viewConfigure() {
+        viewDetailsButton.layer.cornerRadius = 12
         searchView.layer.cornerRadius = 20
         searchView.addShadow(color  : .gray,
                              opacity: 0.5,

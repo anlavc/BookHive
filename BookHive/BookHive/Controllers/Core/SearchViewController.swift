@@ -44,7 +44,7 @@ class SearchViewController: UIViewController, SearchTableViewCellDelegate {
         textFieldSetup()
         tableViewSetup()
         observeEvent()
-//        searchEmptySetup()
+        gestureRecognizer()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -52,11 +52,6 @@ class SearchViewController: UIViewController, SearchTableViewCellDelegate {
             self.indicator.stopAnimating()
         }
     }
-    
-//    private func searchEmptySetup() {
-//        gifImageView.isHidden = false
-//        findLabel.isHidden = false
-//    }
     
     // MARK: - Observe Event
     func observeEvent() {
@@ -91,7 +86,6 @@ class SearchViewController: UIViewController, SearchTableViewCellDelegate {
     private func textFieldSetup() {
         searchTextField.delegate = self
         searchTextField.returnKeyType = .go
-        searchTextField.placeholder = "Search for Books or Authors"
         searchTextField.layer.shadowColor = UIColor.systemIndigo.cgColor
         searchTextField.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
         searchTextField.layer.masksToBounds = false
@@ -99,12 +93,22 @@ class SearchViewController: UIViewController, SearchTableViewCellDelegate {
         searchTextField.layer.shadowOpacity = 0.5
         searchTextField.layer.cornerRadius = 10
         button.isHidden = true
-        button.tintColor = .gray
+        button.tintColor = .label
         button.setImage(UIImage(systemName: "x.circle"), for: .normal)
         button.imageEdgeInsets = UIEdgeInsets(top: 0, left: -20, bottom: 0, right: 0)
         searchTextField.rightView = button
         searchTextField.rightViewMode = .always
         button.addTarget(self, action: #selector(clearTextField), for: .touchUpInside)
+        button.addTarget(self, action: #selector(dismissKeyboard), for: .touchUpInside)
+    }
+    
+    private func gestureRecognizer() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     // MARK: - Clear TextField Button Action
