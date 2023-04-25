@@ -32,7 +32,6 @@
 		EE7CDFEB29F7E13A0058C163 /* YearlyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7CDFE929F7E13A0058C163 /* YearlyTableViewCell.swift */; };
 		EE7CDFEC29F7E13A0058C163 /* YearlyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE7CDFEA29F7E13A0058C163 /* YearlyTableViewCell.xib */; };
 		EE80390829F5BDF6004E13C7 /* NowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE80390629F5BDF6004E13C7 /* NowTableViewCell.swift */; };
-		EE80391D29F7221E004E13C7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EE80391F29F7221E004E13C7 /* Localizable.strings */; };
 		EE977F7C29F02F6A0027CF90 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE977F7A29F02F6A0027CF90 /* DetailViewController.swift */; };
 		EE977F7D29F02F6A0027CF90 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE977F7B29F02F6A0027CF90 /* DetailViewController.xib */; };
 		EE977F7F29F13E910027CF90 /* ImageView + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE977F7E29F13E910027CF90 /* ImageView + Ext.swift */; };
@@ -90,7 +89,6 @@
 		EE7CDFE929F7E13A0058C163 /* YearlyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearlyTableViewCell.swift; sourceTree = "<group>"; };
 		EE7CDFEA29F7E13A0058C163 /* YearlyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YearlyTableViewCell.xib; sourceTree = "<group>"; };
 		EE80390629F5BDF6004E13C7 /* NowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowTableViewCell.swift; sourceTree = "<group>"; };
-		EE80391E29F7221E004E13C7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EE977F7A29F02F6A0027CF90 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		EE977F7B29F02F6A0027CF90 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		EE977F7E29F13E910027CF90 /* ImageView + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageView + Ext.swift"; sourceTree = "<group>"; };
@@ -296,7 +294,6 @@
 		EEAC4F9C29E6F8220066757B = {
 			isa = PBXGroup;
 			children = (
-				EE80391F29F7221E004E13C7 /* Localizable.strings */,
 				EEAC4FA729E6F8220066757B /* BookHive */,
 				EEAC4FA629E6F8220066757B /* Products */,
 			);
@@ -499,7 +496,6 @@
 				2E88B35529E7009F008F4B4B /* SearchViewController.xib in Resources */,
 				EEC8356A29EAEE6300058796 /* HomeCollectionViewCarousel.xib in Resources */,
 				EE7CDFEC29F7E13A0058C163 /* YearlyTableViewCell.xib in Resources */,
-				EE80391D29F7221E004E13C7 /* Localizable.strings in Resources */,
 				2EE0E11B29F5E1A1008B2362 /* SearchTableViewCell.xib in Resources */,
 				EE977F8829F16B1B0027CF90 /* DetailSubjectCell.xib in Resources */,
 				EEAC4FB029E6F8220066757B /* Main.storyboard in Resources */,
@@ -559,14 +555,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		EE80391F29F7221E004E13C7 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EE80391E29F7221E004E13C7 /* en */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
 		EEAC4FAE29E6F8220066757B /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
