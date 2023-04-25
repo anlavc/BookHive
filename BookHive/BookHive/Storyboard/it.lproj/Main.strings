@@ -1,0 +1,12 @@
+
+/* Class = "UITabBarItem"; title = "Account"; ObjectID = "1gC-DS-FTI"; */
+"1gC-DS-FTI.title" = "Conto";
+
+/* Class = "UITabBarItem"; title = "Home"; ObjectID = "4Gp-GK-Jju"; */
+"4Gp-GK-Jju.title" = "Avvio";
+
+/* Class = "UITabBarItem"; title = "My Books"; ObjectID = "Uj0-ym-Pjc"; */
+"Uj0-ym-Pjc.title" = "Miei Libri";
+
+/* Class = "UITabBarItem"; title = "Library"; ObjectID = "yAb-fy-DZu"; */
+"yAb-fy-DZu.title" = "Biblioteca";
