@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2E1F164029F72158007FC4E3 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E1F163F29F72158007FC4E3 /* search.png */; };
-		2E1F164329F7BABE007FC4E3 /* localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2E1F164529F7BABE007FC4E3 /* localizable.strings */; };
-		2E1F165229F7C207007FC4E3 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E1F165429F7C207007FC4E3 /* DetailViewController.xib */; };
-		2E1F165B29F7C4C7007FC4E3 /* AccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E1F165D29F7C4C7007FC4E3 /* AccountViewController.xib */; };
 		2E1F166829F7C951007FC4E3 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E1F166A29F7C951007FC4E3 /* SearchViewController.xib */; };
 		2E1F167329F7CB77007FC4E3 /* MyBooksViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E1F167529F7CB77007FC4E3 /* MyBooksViewController.xib */; };
 		2E1F167E29F7CEB8007FC4E3 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E1F168029F7CEB8007FC4E3 /* SearchTableViewCell.xib */; };
@@ -28,6 +24,8 @@
 		2EE0E11529F48AB9008B2362 /* TextfieldCharacters + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE0E11429F48AB9008B2362 /* TextfieldCharacters + Ext.swift */; };
 		2EF4B4C429EE7B080039B0E0 /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF4B4C229EE7B080039B0E0 /* AccountTableViewCell.swift */; };
 		2EF4B4C529EE7B080039B0E0 /* AccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EF4B4C329EE7B080039B0E0 /* AccountTableViewCell.xib */; };
+		EE42977F29F81A1E003B077C /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE42977E29F81A1E003B077C /* DetailViewController.xib */; };
+		EE42978129F81AAA003B077C /* AccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE42978029F81AAA003B077C /* AccountViewController.xib */; };
 		EE78967329F4742200991261 /* DetailOlid.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE78967229F4742200991261 /* DetailOlid.swift */; };
 		EE7CDFE429F7CA310058C163 /* NowCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7CDFE229F7CA310058C163 /* NowCollectionViewCell.swift */; };
 		EE7CDFE529F7CA310058C163 /* NowCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE7CDFE329F7CA310058C163 /* NowCollectionViewCell.xib */; };
@@ -67,19 +65,9 @@
 
 /* Begin PBXFileReference section */
 		2E1F163F29F72158007FC4E3 /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
-		2E1F164429F7BABE007FC4E3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/localizable.strings; sourceTree = "<group>"; };
 		2E1F164629F7BAD3007FC4E3 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Main.strings; sourceTree = "<group>"; };
-		2E1F164729F7BAD3007FC4E3 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/localizable.strings; sourceTree = "<group>"; };
 		2E1F164829F7BADD007FC4E3 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
-		2E1F164929F7BADD007FC4E3 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/localizable.strings; sourceTree = "<group>"; };
-		2E1F165329F7C207007FC4E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/DetailViewController.xib; sourceTree = "<group>"; };
-		2E1F165629F7C20C007FC4E3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/DetailViewController.strings; sourceTree = "<group>"; };
-		2E1F165829F7C213007FC4E3 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/DetailViewController.strings; sourceTree = "<group>"; };
-		2E1F165A29F7C216007FC4E3 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/DetailViewController.strings; sourceTree = "<group>"; };
-		2E1F165C29F7C4C7007FC4E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/AccountViewController.xib; sourceTree = "<group>"; };
 		2E1F166429F7C4F8007FC4E3 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
-		2E1F166629F7C4F8007FC4E3 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/DetailViewController.strings; sourceTree = "<group>"; };
-		2E1F166729F7C4F8007FC4E3 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/localizable.strings; sourceTree = "<group>"; };
 		2E1F166929F7C951007FC4E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SearchViewController.xib; sourceTree = "<group>"; };
 		2E1F166C29F7C955007FC4E3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SearchViewController.strings; sourceTree = "<group>"; };
 		2E1F166E29F7C955007FC4E3 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/SearchViewController.strings; sourceTree = "<group>"; };
@@ -109,6 +97,8 @@
 		2EE0E11429F48AB9008B2362 /* TextfieldCharacters + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextfieldCharacters + Ext.swift"; sourceTree = "<group>"; };
 		2EF4B4C229EE7B080039B0E0 /* AccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
 		2EF4B4C329EE7B080039B0E0 /* AccountTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountTableViewCell.xib; sourceTree = "<group>"; };
+		EE42977E29F81A1E003B077C /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		EE42978029F81AAA003B077C /* AccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountViewController.xib; sourceTree = "<group>"; };
 		EE78967229F4742200991261 /* DetailOlid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailOlid.swift; sourceTree = "<group>"; };
 		EE7CDFE229F7CA310058C163 /* NowCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowCollectionViewCell.swift; sourceTree = "<group>"; };
 		EE7CDFE329F7CA310058C163 /* NowCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NowCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -196,9 +186,9 @@
 				2E88B35229E7009F008F4B4B /* SearchViewController.swift */,
 				2E1F166A29F7C951007FC4E3 /* SearchViewController.xib */,
 				2E88B35629E700AE008F4B4B /* AccountViewController.swift */,
-				2E1F165D29F7C4C7007FC4E3 /* AccountViewController.xib */,
+				EE42978029F81AAA003B077C /* AccountViewController.xib */,
 				EE977F7A29F02F6A0027CF90 /* DetailViewController.swift */,
-				2E1F165429F7C207007FC4E3 /* DetailViewController.xib */,
+				EE42977E29F81A1E003B077C /* DetailViewController.xib */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -518,8 +508,6 @@
 			files = (
 				EEAC4FB829E6F8230066757B /* LaunchScreen.storyboard in Resources */,
 				EE7CDFE529F7CA310058C163 /* NowCollectionViewCell.xib in Resources */,
-				2E88B35929E700AE008F4B4B /* AccountViewController.xib in Resources */,
-				2E1F163A29F6FF2F007FC4E3 /* 8852-searching-for-word.gif in Resources */,
 				EEAC4FD029E70EDF0066757B /* HomeTableViewCell.xib in Resources */,
 				EEAC4FB529E6F8230066757B /* Assets.xcassets in Resources */,
 				EEAC4FD529E714280066757B /* TableCollectionViewCell.xib in Resources */,
@@ -527,14 +515,14 @@
 				2E1F167E29F7CEB8007FC4E3 /* SearchTableViewCell.xib in Resources */,
 				EEC8356A29EAEE6300058796 /* HomeCollectionViewCarousel.xib in Resources */,
 				EE7CDFEC29F7E13A0058C163 /* YearlyTableViewCell.xib in Resources */,
-				2EE0E11B29F5E1A1008B2362 /* SearchTableViewCell.xib in Resources */,
 				EE977F8829F16B1B0027CF90 /* DetailSubjectCell.xib in Resources */,
 				EEAC4FB029E6F8220066757B /* Main.storyboard in Resources */,
 				2E1F168929F7DBB0007FC4E3 /* HomeViewController.xib in Resources */,
 				EEC8356E29EAF1D200058796 /* HomeCarouselTableViewCell.xib in Resources */,
-				EE977F7D29F02F6A0027CF90 /* DetailViewController.xib in Resources */,
+				EE42977F29F81A1E003B077C /* DetailViewController.xib in Resources */,
 				EE7CDFE729F7D2F00058C163 /* NowTableViewCell.xib in Resources */,
 				2EF4B4C529EE7B080039B0E0 /* AccountTableViewCell.xib in Resources */,
+				EE42978129F81AAA003B077C /* AccountViewController.xib in Resources */,
 				2E1F167329F7CB77007FC4E3 /* MyBooksViewController.xib in Resources */,
 				2E88B36F29E883A9008F4B4B /* MyBooksCollectionViewCell.xib in Resources */,
 			);
@@ -574,7 +562,6 @@
 				EE977F8729F16B1B0027CF90 /* DetailSubjectCell.swift in Sources */,
 				EEFBBCAC29E9730400BDD902 /* BookEndPoint.swift in Sources */,
 				2E88B34C29E70077008F4B4B /* HomeViewController.swift in Sources */,
-				EE41027829EC31FB009CC3BE /* CategoryCircleCell.swift in Sources */,
 				2E1F168F29F7E4CC007FC4E3 /* AccountModel.swift in Sources */,
 				EEAC4FCF29E70EDF0066757B /* HomeTableViewCell.swift in Sources */,
 				EEFBBCAE29E977A100BDD902 /* APIManager.swift in Sources */,
@@ -588,37 +575,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		2E1F164529F7BABE007FC4E3 /* localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2E1F164429F7BABE007FC4E3 /* en */,
-				2E1F164729F7BAD3007FC4E3 /* tr */,
-				2E1F164929F7BADD007FC4E3 /* fr */,
-				2E1F166729F7C4F8007FC4E3 /* de */,
-			);
-			name = localizable.strings;
-			sourceTree = "<group>";
-		};
-		2E1F165429F7C207007FC4E3 /* DetailViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2E1F165329F7C207007FC4E3 /* Base */,
-				2E1F165629F7C20C007FC4E3 /* en */,
-				2E1F165829F7C213007FC4E3 /* fr */,
-				2E1F165A29F7C216007FC4E3 /* tr */,
-				2E1F166629F7C4F8007FC4E3 /* de */,
-			);
-			name = DetailViewController.xib;
-			sourceTree = "<group>";
-		};
-		2E1F165D29F7C4C7007FC4E3 /* AccountViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2E1F165C29F7C4C7007FC4E3 /* Base */,
-			);
-			name = AccountViewController.xib;
-			sourceTree = "<group>";
-		};
 		2E1F166A29F7C951007FC4E3 /* SearchViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
