@@ -18,6 +18,7 @@ enum BookEndPoint {
     case pageNumber(olid: String)
     case week
     case yearly
+    case rating(olid: String)
 }
 extension BookEndPoint: EndPointType {
     var path: String {
@@ -38,6 +39,8 @@ extension BookEndPoint: EndPointType {
             return "trending/weekly.json?limit=20"
         case .yearly:
             return "trending/yearly.json?limit=20"
+        case .rating:
+            return "ratings.json"
             
         }
     }
@@ -59,6 +62,8 @@ extension BookEndPoint: EndPointType {
             return "https://openlibrary.org"
         case .yearly:
             return "https://openlibrary.org"
+        case .rating(let olid):
+            return "https://openlibrary.org\(olid)"
         }
     }
     var url: URL? {
@@ -81,6 +86,8 @@ extension BookEndPoint: EndPointType {
         case .week:
             return .get
         case .yearly:
+            return .get
+        case .rating:
             return .get
         }
     }
