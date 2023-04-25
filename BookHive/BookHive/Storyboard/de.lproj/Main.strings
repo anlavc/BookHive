@@ -1,12 +1,12 @@
 
 /* Class = "UITabBarItem"; title = "Account"; ObjectID = "1gC-DS-FTI"; */
-"1gC-DS-FTI.title" = "Hesabım";
+"1gC-DS-FTI.title" = "Mein Konto";
 
 /* Class = "UITabBarItem"; title = "Home"; ObjectID = "4Gp-GK-Jju"; */
-"4Gp-GK-Jju.title" = "Anasayfa";
+"4Gp-GK-Jju.title" = "Start";
 
 /* Class = "UITabBarItem"; title = "My Books"; ObjectID = "Uj0-ym-Pjc"; */
-"Uj0-ym-Pjc.title" = "Kitaplarım";
+"Uj0-ym-Pjc.title" = "Meine Bücher";
 
 /* Class = "UITabBarItem"; title = "Library"; ObjectID = "yAb-fy-DZu"; */
-"yAb-fy-DZu.title" = "Kütüphane";
+"yAb-fy-DZu.title" = "Bibliothek";

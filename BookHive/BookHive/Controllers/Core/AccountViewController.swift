@@ -9,6 +9,8 @@ import UIKit
 
 class AccountViewController: UIViewController {
     
+    let model = AccountModel()
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var backView: UIView!
     @IBOutlet weak var profileView: UIView!
@@ -42,11 +44,13 @@ class AccountViewController: UIViewController {
 }
 
 extension AccountViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return model.accountModel.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: AccountTableViewCell.identifier, for: indexPath) as! AccountTableViewCell
+        cell.accountTableViewCellLabelName.text = model.accountModel[indexPath.row].title
         return cell
     }
 }

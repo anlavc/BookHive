@@ -31,7 +31,4 @@ class AccountTableViewCell: UITableViewCell {
         accountCellView.addShadow(color: .gray, opacity: 0.5, offset: CGSize(width: 2, height: 2), radius: 5)
         accountCellView.layer.cornerRadius = 15
     }
-
-   
-    
 }

@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  BookHive
+
+  Created by Anıl AVCI on 24.04.2023.
+  
+*/
+
+
+"PUBLISH_DATE" = "Publish Date";
+
+"READ" = "Read";
+
+"ADD_TO_READ_LIST" = "Add to Read List";
+"BEST_SELLERS" = "Best Sellers";
+"CATEGORY_CHOOSE" = "";
+"TRENDING_BOOKS" = "Trend Book";
+"SCIENCE" = "Bilim";
