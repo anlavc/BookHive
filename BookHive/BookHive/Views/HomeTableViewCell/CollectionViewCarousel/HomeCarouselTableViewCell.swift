@@ -74,7 +74,7 @@ class HomeCarouselTableViewCell: UITableViewCell {
         for cell in collectionView.visibleCells {
             var offsetX = centerX - cell.center.x
             if offsetX < 0 { offsetX = -offsetX }
-            let scale = 1 - offsetX / collectionView.frame.size.width * 0.4
+            let scale = 1 - offsetX / collectionView.frame.size.width * 0.9
             
             // Sol ve sağ hücrelerin boyutunu ayarla
             let scaleFactor = 0.8
@@ -108,20 +108,39 @@ extension HomeCarouselTableViewCell: UICollectionViewDelegate, UICollectionViewD
         scaleCenterCell()
         return cell
     }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         delegate?.didSelectCell(selectedItem: viewModel.bestSeller[indexPath.row])
         
     }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let padding: CGFloat = 10
-        let availableWidth = collectionView.frame.width - padding * 3
-        let widthPerItem = availableWidth / 3
-        return CGSize(width: widthPerItem, height: widthPerItem + 50)
-    }
+    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        let padding: CGFloat = 10
+//        let availableWidth = collectionView.frame.width - padding * 3
+//        let widthPerItem = availableWidth / 3
+//        return CGSize(width: widthPerItem, height: widthPerItem + 50)
+//    }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         scaleCenterCell()
         
+    }
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        guard let collectionView = scrollView as? UICollectionView else { return }
+
+        let targetX = targetContentOffset.pointee.x
+        var closestCellOffset: CGFloat = .greatestFiniteMagnitude
+        
+        for indexPath in collectionView.indexPathsForVisibleItems {
+            let cell = collectionView.cellForItem(at: indexPath)!
+            let cellOffset = cell.frame.origin.x
+            if abs(cellOffset - targetX) < abs(closestCellOffset - targetX) {
+                closestCellOffset = cellOffset
+            }
+        }
+        
+        targetContentOffset.pointee.x = closestCellOffset
     }
     
 }
