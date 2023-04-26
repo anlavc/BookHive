@@ -24,7 +24,7 @@ class NowCollectionViewCell: UICollectionViewCell {
         } else if let cover = book.cover_i, cover != 0 {
             imageView.setImageCover(with: cover)
         } else {
-            imageView.image = UIImage(systemName: "book.circle")
+            imageView.image = UIImage(named: "404")
         }
     }
     static func nib() -> UINib {

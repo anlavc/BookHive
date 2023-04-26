@@ -130,7 +130,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rating4.5" translatesAutoresizingMaskIntoConstraints="NO" id="cmW-MJ-6C1">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0_star" translatesAutoresizingMaskIntoConstraints="NO" id="cmW-MJ-6C1">
                                                             <rect key="frame" x="48.666666666666671" y="0.0" width="120.00000000000001" height="35"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="120" id="gQC-c7-OD8"/>
@@ -307,7 +307,7 @@
         </view>
     </objects>
     <resources>
-        <image name="rating4.5" width="278" height="86"/>
+        <image name="0_star" width="374" height="113"/>
         <image name="xmark.app" catalog="system" width="128" height="114"/>
         <namedColor name="colordarkgray">
             <color red="0.17647058823529413" green="0.17647058823529413" blue="0.17647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
