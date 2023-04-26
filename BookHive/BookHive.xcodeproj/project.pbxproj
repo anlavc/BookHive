@@ -49,7 +49,6 @@
 		EEAC4FAB29E6F8220066757B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAC4FAA29E6F8220066757B /* SceneDelegate.swift */; };
 		EEAC4FB029E6F8220066757B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEAC4FAE29E6F8220066757B /* Main.storyboard */; };
 		EEAC4FB329E6F8220066757B /* BookHive.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EEAC4FB129E6F8220066757B /* BookHive.xcdatamodeld */; };
-		EEAC4FB529E6F8230066757B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEAC4FB429E6F8230066757B /* Assets.xcassets */; };
 		EEAC4FB829E6F8230066757B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEAC4FB629E6F8230066757B /* LaunchScreen.storyboard */; };
 		EEAC4FCF29E70EDF0066757B /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAC4FCD29E70EDF0066757B /* HomeTableViewCell.swift */; };
 		EEAC4FD029E70EDF0066757B /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEAC4FCE29E70EDF0066757B /* HomeTableViewCell.xib */; };
@@ -158,7 +157,6 @@
 		EEAC4FAA29E6F8220066757B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		EEAC4FAF29E6F8220066757B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EEAC4FB229E6F8220066757B /* BookHive.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BookHive.xcdatamodel; sourceTree = "<group>"; };
-		EEAC4FB429E6F8230066757B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EEAC4FB729E6F8230066757B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EEAC4FB929E6F8230066757B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EEAC4FCD29E70EDF0066757B /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
@@ -401,7 +399,6 @@
 			isa = PBXGroup;
 			children = (
 				2E1F163F29F72158007FC4E3 /* search.png */,
-				EEAC4FB429E6F8230066757B /* Assets.xcassets */,
 				EEAC4FB929E6F8230066757B /* Info.plist */,
 				EEAC4FC729E6F9470066757B /* Font */,
 			);
@@ -564,7 +561,6 @@
 				EEAC4FB829E6F8230066757B /* LaunchScreen.storyboard in Resources */,
 				EE7CDFE529F7CA310058C163 /* NowCollectionViewCell.xib in Resources */,
 				EEAC4FD029E70EDF0066757B /* HomeTableViewCell.xib in Resources */,
-				EEAC4FB529E6F8230066757B /* Assets.xcassets in Resources */,
 				EEAC4FD529E714280066757B /* TableCollectionViewCell.xib in Resources */,
 				2E1F166829F7C951007FC4E3 /* SearchViewController.xib in Resources */,
 				2E1F167E29F7CEB8007FC4E3 /* SearchTableViewCell.xib in Resources */,
