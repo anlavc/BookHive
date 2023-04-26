@@ -10,24 +10,25 @@ import UIKit
 class HomeViewController: UIViewController, HomeCourseTableViewCellDelegate {
     
     func didSelectCell(selectedItem: Work) {
-        let vc = DetailViewController()
-        vc.modalPresentationStyle = .fullScreen
-        vc.selectedBook = selectedItem.key // choosebookkey
-        vc.detailID = selectedItem.cover_edition_key
-        vc.bookTitle = selectedItem.title // title
-        var languageArray = selectedItem.language?.prefix(2)
-        vc.language = languageArray?.joined(separator: " & ") ?? "?"
-        vc.authorName = selectedItem.author_name?.joined(separator: " & ") ?? selectedItem.authors?[0].name
-        vc.publishDateData = selectedItem.first_publish_year
-        present(vc, animated: true)
+        if let coverID = selectedItem.cover_edition_key {
+            let vc = DetailViewController()
+            vc.modalPresentationStyle = .fullScreen
+            vc.selectedBook = selectedItem.key // choosebookkey
+            vc.detailID = coverID
+            vc.bookTitle = selectedItem.title // title
+            var languageArray = selectedItem.language?.prefix(2)
+            vc.language = languageArray?.joined(separator: " & ") ?? "?"
+            vc.authorName = selectedItem.author_name?.joined(separator: " & ") ?? selectedItem.authors?[0].name
+            vc.publishDateData = selectedItem.first_publish_year
+            present(vc, animated: true)
+        }
     }
     let cell = "HomeTableViewCell"
     let cellCarousel = "HomeCarouselTableViewCell"
     let nowCell = "NowTableViewCell"
     let yearly = "YearlyTableViewCell"
     let viewModel = HomeViewModel()
-    let sections = ["BEST_SELLERS","NOW_TREND","WEEK_TREND","MOUNTH_TREND"]
-
+    let sections = ["","NOW_TREND","WEEK_TREND","MOUNTH_TREND"]
     
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {

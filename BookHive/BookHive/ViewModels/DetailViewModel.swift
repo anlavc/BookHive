@@ -10,6 +10,7 @@ import Foundation
 final class DetailViewModel {
     var detailBook: DetailModel?
     var detailOlid: DetailModel2?
+    var rating: Rating?
  
     
     var eventHandler: ((_ event: Event) -> Void)?
@@ -38,6 +39,20 @@ final class DetailViewModel {
                 switch response {
                 case .success(let detail):
                     self.detailOlid = detail
+                    self.eventHandler?(.dataLoaded)
+                case .failure(let error):
+                    self.eventHandler?(.error(error))
+                }
+            }
+    }
+    func fetchRating(olidKey: String) {
+        APIManager.shared.request(
+            modelType: Rating.self,
+            type: BookEndPoint.rating(olid: olidKey)) { response in
+                self.eventHandler?(.stopLoading)
+                switch response {
+                case .success(let detail):
+                    self.rating = detail
                     self.eventHandler?(.dataLoaded)
                 case .failure(let error):
                     self.eventHandler?(.error(error))

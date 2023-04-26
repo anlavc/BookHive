@@ -42,48 +42,39 @@
                     <rect key="frame" x="186.66666666666666" y="416" width="20" height="20"/>
                 </activityIndicatorView>
                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can find results by searching" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oSh-zd-STT">
-                    <rect key="frame" x="16" y="258" width="361" height="50"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="361" id="OeI-N8-z4c"/>
-                        <constraint firstAttribute="height" constant="50" id="Y5c-lb-74k"/>
-                    </constraints>
+                    <rect key="frame" x="46.666666666666657" y="466" width="300" height="22"/>
                     <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="19"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search.png" translatesAutoresizingMaskIntoConstraints="NO" id="ObT-Xf-3J3">
-                    <rect key="frame" x="86" y="357" width="251" height="224"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="251" id="VeZ-DF-1AD"/>
-                        <constraint firstAttribute="height" constant="224" id="xyZ-Wn-jdT"/>
-                    </constraints>
+                <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="window.awning" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ObT-Xf-3J3">
+                    <rect key="frame" x="78.666666666666671" y="199.66666666666663" width="235.66666666666663" height="230.33333333333337"/>
                 </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ObT-Xf-3J3" secondAttribute="trailing" constant="56" id="4bw-RG-A0E"/>
-                <constraint firstItem="ObT-Xf-3J3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="86" id="A1c-dM-EXC"/>
-                <constraint firstItem="ObT-Xf-3J3" firstAttribute="top" secondItem="oSh-zd-STT" secondAttribute="bottom" constant="49" id="BDa-fc-qy1"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="oSh-zd-STT" secondAttribute="trailing" constant="16" id="Bm1-q6-fLW"/>
                 <constraint firstItem="aLz-5O-Gk5" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Dtp-Ix-hwL"/>
-                <constraint firstItem="oSh-zd-STT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="JEd-bz-hOW"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ObT-Xf-3J3" secondAttribute="bottom" constant="237" id="PX9-Xa-zSW"/>
+                <constraint firstItem="ObT-Xf-3J3" firstAttribute="width" secondItem="aLz-5O-Gk5" secondAttribute="width" multiplier="0.6" id="JJz-hP-wJp"/>
+                <constraint firstItem="ObT-Xf-3J3" firstAttribute="centerX" secondItem="aLz-5O-Gk5" secondAttribute="centerX" id="JVa-gb-FBL"/>
                 <constraint firstItem="aLz-5O-Gk5" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="RVk-Y0-J0g"/>
                 <constraint firstItem="bo6-T2-jt4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="Znc-5T-IdP"/>
                 <constraint firstItem="uU9-g8-vgR" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="bza-zF-uK2"/>
+                <constraint firstItem="ObT-Xf-3J3" firstAttribute="height" secondItem="aLz-5O-Gk5" secondAttribute="height" multiplier="0.355932" id="coT-ce-lz4"/>
                 <constraint firstItem="bo6-T2-jt4" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="cr4-UY-05L"/>
-                <constraint firstItem="oSh-zd-STT" firstAttribute="top" secondItem="bo6-T2-jt4" secondAttribute="bottom" constant="109" id="iho-xd-6cs"/>
                 <constraint firstItem="aLz-5O-Gk5" firstAttribute="top" secondItem="bo6-T2-jt4" secondAttribute="bottom" constant="20" id="kxd-9m-U4L"/>
+                <constraint firstItem="oSh-zd-STT" firstAttribute="top" secondItem="uU9-g8-vgR" secondAttribute="bottom" constant="30" id="p2b-S1-pyi"/>
                 <constraint firstItem="aLz-5O-Gk5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="psS-Bl-7WI"/>
+                <constraint firstItem="ObT-Xf-3J3" firstAttribute="top" secondItem="bo6-T2-jt4" secondAttribute="bottom" constant="50" id="rCv-WG-HSi"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bo6-T2-jt4" secondAttribute="trailing" constant="10" id="rKh-lx-x4V"/>
+                <constraint firstItem="oSh-zd-STT" firstAttribute="centerX" secondItem="ObT-Xf-3J3" secondAttribute="centerX" id="tBV-g0-Hvr"/>
                 <constraint firstItem="uU9-g8-vgR" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="yOo-nY-ssY"/>
             </constraints>
             <point key="canvasLocation" x="101.5267175572519" y="20.422535211267608"/>
         </view>
     </objects>
     <resources>
-        <image name="search.png" width="409.60000610351562" height="409.60000610351562"/>
+        <image name="window.awning" catalog="system" width="128" height="118"/>
         <namedColor name="textfield">
             <color red="0.94900000095367432" green="0.94900000095367432" blue="0.94900000095367432" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

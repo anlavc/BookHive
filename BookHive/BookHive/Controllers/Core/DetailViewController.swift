@@ -34,6 +34,7 @@ class DetailViewController: UIViewController {
     var publishDateData: Int?
     
     
+    
     private var viewModel = DetailViewModel()
     
     override func viewDidLoad() {
@@ -44,7 +45,6 @@ class DetailViewController: UIViewController {
         observeEvent()
         collectionSetup()
         setUpText()
-        
     }
     @IBAction func dismissButton(_ sender: UIButton) {
         self.dismiss(animated: true)
@@ -61,15 +61,8 @@ class DetailViewController: UIViewController {
         imageView.layer.cornerRadius = 5
     }
     private func setUpText() {
-//        ratingLabel.text = "RATING"
-        let imageName = "rating4.5"
-        let ratingimage = UIImage(named: imageName)
-        ratingImage.image = ratingimage
-//        publishDateText.text = "PUBLISH_DATE"
-//        numberOfPagesLabel.text = "NUMBER_OF_PAGES"
-//        languageLabelText.text = "LANGUAGES"
-//        readButton.titleLabel?.text = "READ"
-//        addReadButton.titleLabel?.text = "ADD_TO_READ_LIST"
+       
+//        let ratingimage = UIImage(named: imageName)
         
     }
     private func collectionSetup() {
@@ -82,9 +75,9 @@ class DetailViewController: UIViewController {
     }
     private func initViewModel() {
         viewModel.fetchDetailOlid(olidKey: detailID)
-        //        viewModel.fetchDetailBooks(detail: selectedBook ?? "")
+        viewModel.fetchRating(olidKey: selectedBook!)
     }
-    func setupOlid(olid: DetailModel2) {
+    private func setupOlid(olid: DetailModel2) {
         let pagenumber = String("\(olid.numberOfPages ?? 0)")
         self.titleLabel.text = bookTitle
         self.author.text = authorName
@@ -94,6 +87,46 @@ class DetailViewController: UIViewController {
         //image
         let olid = detailID
         imageView.setImageOlid(with: olid!)
+    }
+    private func setupRatingImage(olidKey: Rating) {
+        // image ismini tutacak bir değişken tanımlayalım
+          var imageName: String
+          
+          // olidKey değerine göre imageName değişkenini güncelleyelim
+        switch olidKey.summary?.average {
+            case 0:
+              imageName = "0_star"
+            case 0.5:
+              imageName = "0-5_star"
+            case 1:
+              imageName = "1_star"
+            // diğer durumlar için de aynı şekilde devam edelim
+            case 1.5:
+              imageName = "1-5_star"
+            case 2:
+              imageName = "2_star"
+            case 2.5:
+              imageName = "2-5_star"
+            case 3:
+              imageName = "3_star"
+            case 3.5:
+              imageName = "3-5_star"
+            case 4:
+              imageName = "4_star"
+            case 4.5:
+              imageName = "4-5_star"
+            case 5:
+              imageName = "5_star"
+            default:
+              // eğer olidKey beklenen değerlerden farklıysa bir hata mesajı gösterelim
+              print("Invalid rating value")
+              return // fonksiyondan çıkalım
+          }
+          
+          // imageName değişkenini kullanarak image nesnesi oluşturalım
+          let image = UIImage(named: imageName)
+          
+          // image nesnesini istediğiniz şekilde kullanabilirsiniz
     }
     private func observeEvent() {
         viewModel.eventHandler = { [weak self] event in
@@ -111,8 +144,41 @@ class DetailViewController: UIViewController {
                 
                 DispatchQueue.main.async { [self] in
                     self.collectionView.reloadData()
+                    if let detail = self.viewModel.detailOlid {
+                        self.setupOlid(olid: detail)
+                    }
+                 
                     
-                    self.setupOlid(olid: self.viewModel.detailOlid!)
+                    if let starpoint = self.viewModel.rating?.summary?.average {
+                        var imageName : String
+                        switch starpoint {
+                          case 0...0.5: // 0 ile 0.5 arasındaki tüm değerler için
+                            imageName = "0-5_star"
+                          case 0.5...1: // 0.5 ile 1 arasındaki tüm değerler için
+                            imageName = "1_star"
+                          case 1...1.5: // 1 ile 1.5 arasındaki tüm değerler için
+                            imageName = "1-5_star"
+                          case 1.5...2: // 1.5 ile 2 arasındaki tüm değerler için
+                            imageName = "2_star"
+                          case 2...2.5: // 2 ile 2.5 arasındaki tüm değerler için
+                            imageName = "2-5_star"
+                          case 2.5...3: // 2.5 ile 3 arasındaki tüm değerler için
+                            imageName = "3_star"
+                          case 3...3.5: // 3 ile 3.5 arasındaki tüm değerler için
+                            imageName = "3-5_star"
+                          case 3.5...4: // 3.5 ile 4 arasındaki tüm değerler için
+                            imageName = "4_star"
+                          case 4...4.5: // 4 ile 4.5 arasındaki tüm değerler için
+                            imageName = "4-5_star"
+                          case 4.5...5: // 4.5 ile 5 arasındaki tüm değerler için
+                            imageName = "5_star"
+                        default:
+                            imageName = "0_star"
+                        }
+                        self.ratingImage.image = UIImage(named: imageName)
+                    }
+                 
+                   
                 }
                 
             case .error(let error):
