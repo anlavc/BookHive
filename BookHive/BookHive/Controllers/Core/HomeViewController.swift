@@ -30,7 +30,6 @@ class HomeViewController: UIViewController, HomeCourseTableViewCellDelegate {
     let viewModel = HomeViewModel()
     let sections = ["","NOW_TREND","WEEK_TREND","MOUNTH_TREND"]
     
- 
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()

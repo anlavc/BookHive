@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  BookHive
+
+  Created by Mehdican Büyükplevne on 26.04.2023.
+  
+*/
+
+"Name" = "İsim";
+"Email" = "E-posta";
+"User Informatıon" = "Kullanıcı Bilgileri";
+"About" = "Hakkımızda";
+"Contact" = "İletişime Geçin";
+"Rate us in App Store" = "Bizi App Storeda Puanlayın";
+"Developers" = "Geliştiriciler";
+"Logout" = "Çıkış Yap";
+"Delete Account" = "Hesabımı Sil";
+
+
+
