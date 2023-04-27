@@ -39,9 +39,11 @@ class HomeViewController: UIViewController, HomeCourseTableViewCellDelegate {
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = true
     }
+    
     private func xibRegister() {
         Bundle.main.loadNibNamed("HomeViewController", owner: self, options: nil)![0] as? HomeViewController
     }
+    
     private func tableRegister() {
         //courcell
         tableView.register(UINib(nibName: cellCarousel, bundle: nil), forCellReuseIdentifier: cellCarousel)
