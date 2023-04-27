@@ -106,7 +106,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Ep0-OB-6Vf"/>
                     <connections>
-                        <segue destination="eza-ub-oxQ" kind="show" identifier="" id="wvR-Of-PEu"/>
+                        <segue destination="eza-ub-oxQ" kind="show" id="qnY-MK-XwR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PgD-6h-EFr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -132,7 +132,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="3uk-gf-inD">
             <objects>
-                <tabBarController id="2q6-Nk-vEo" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabbar" id="2q6-Nk-vEo" customClass="TabBarController" customModule="BookHive" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8vN-Ce-KD2">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -186,7 +186,7 @@
         <!--Navigation Controller-->
         <scene sceneID="IRP-h9-OrR">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IOB-ok-Y83" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navBar" automaticallyAdjustsScrollViewInsets="NO" id="IOB-ok-Y83" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="EVT-zA-zTV">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
