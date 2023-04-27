@@ -8,6 +8,7 @@
 import UIKit
 import Eureka
 import MessageUI
+import FirebaseAuth
 
 class AccountViewController: FormViewController, MFMailComposeViewControllerDelegate {
 
@@ -66,6 +67,13 @@ class AccountViewController: FormViewController, MFMailComposeViewControllerDele
                 let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel, handler: nil)
                 alertController.addAction(cancelAction)
                 self.present(alertController, animated: true, completion: nil)
+            }
+        }
+        <<< AccountCustomRow() {
+            $0.cell.accountTableViewCellLabelName.text = NSLocalizedString("Share Us", comment: "")
+            $0.cell.accountIconImageView.image = UIImage(systemName: "square.and.arrow.up")
+            $0.onCellSelection { cell, row in
+                // tapped
             }
         }
         
@@ -143,7 +151,15 @@ class AccountViewController: FormViewController, MFMailComposeViewControllerDele
                 cell.textLabel?.textColor = .darkGray
             }
             $0.onCellSelection { cell, row in
-                // logout button tapped
+                do {
+                    try Auth.auth().signOut()
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let tabBar = storyboard.instantiateViewController(identifier: "navBar") as? UINavigationController
+                    self.view.window?.rootViewController = tabBar
+                    self.view.window?.makeKeyAndVisible()
+                } catch {
+                    print("çıkış hatası")
+                }
             }
         }
         
