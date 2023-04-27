@@ -33,6 +33,7 @@
 		2EFA102B29FB116200AE6888 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EFA102A29FB116200AE6888 /* AboutViewController.xib */; };
 		2EFA102D29FB121A00AE6888 /* PageNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFA102C29FB121A00AE6888 /* PageNumberViewController.swift */; };
 		2EFA102F29FB122300AE6888 /* PageNumberViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EFA102E29FB122300AE6888 /* PageNumberViewController.xib */; };
+		2EFA103129FB148400AE6888 /* AccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EFA103029FB148300AE6888 /* AccountTableViewCell.xib */; };
 		EE6DF06C29FA8C4C007B8DF8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE6DF06B29FA8C4C007B8DF8 /* GoogleService-Info.plist */; };
 		EE6DF06F29FA8E2E007B8DF8 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = EE6DF06E29FA8E2E007B8DF8 /* FirebaseAuth */; };
 		EE6DF07129FA8E2E007B8DF8 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = EE6DF07029FA8E2E007B8DF8 /* FirebaseDatabase */; };
@@ -67,7 +68,6 @@
 		EEAC4FD529E714280066757B /* TableCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEAC4FD329E714280066757B /* TableCollectionViewCell.xib */; };
 		EEAD10C329EF485A00BA6603 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10C229EF485A00BA6603 /* SearchModel.swift */; };
 		EEAD10C529EF4DE600BA6603 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10C429EF4DE600BA6603 /* SearchViewModel.swift */; };
-		EEADD69C29FA638C0024FE50 /* AccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEADD69B29FA638C0024FE50 /* AccountTableViewCell.xib */; };
 		EEBEAEBC29F85ADD00F993B8 /* Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBEAEBB29F85ADD00F993B8 /* Rating.swift */; };
 		EEC8356929EAEE6300058796 /* HomeCollectionViewCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC8356729EAEE6300058796 /* HomeCollectionViewCarousel.swift */; };
 		EEC8356A29EAEE6300058796 /* HomeCollectionViewCarousel.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEC8356829EAEE6300058796 /* HomeCollectionViewCarousel.xib */; };
@@ -216,7 +216,6 @@
 		EEAC4FE729E7169D0066757B /* SF-Pro-Display-Ultralight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Ultralight.ttf"; sourceTree = "<group>"; };
 		EEAD10C229EF485A00BA6603 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		EEAD10C429EF4DE600BA6603 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
-		EEADD69B29FA638C0024FE50 /* AccountTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountTableViewCell.xib; sourceTree = "<group>"; };
 		EEBEAEBB29F85ADD00F993B8 /* Rating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rating.swift; sourceTree = "<group>"; };
 		EEC8356729EAEE6300058796 /* HomeCollectionViewCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCarousel.swift; sourceTree = "<group>"; };
 		EEC8356829EAEE6300058796 /* HomeCollectionViewCarousel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCollectionViewCarousel.xib; sourceTree = "<group>"; };
@@ -255,7 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				2E1F16C129F91EC0007FC4E3 /* AccountTableViewCell.swift */,
-				EEADD69B29FA638C0024FE50 /* AccountTableViewCell.xib */,
+				2EFA103029FB148300AE6888 /* AccountTableViewCell.xib */,
 				2E1F16C529F91F57007FC4E3 /* AccountCustomRow.swift */,
 			);
 			path = AccountTableViewCell;
@@ -291,17 +290,6 @@
 				EE904BF429FAF44700441AA8 /* TabBarController.swift */,
 			);
 			path = Core;
-			sourceTree = "<group>";
-		};
-		2E88B34529E6FBC3008F4B4B /* Details */ = {
-			isa = PBXGroup;
-			children = (
-				2E1F16C729F973DD007FC4E3 /* AboutViewController.swift */,
-				2EFA100E29FA707200AE6888 /* AboutViewController.xib */,
-				2EFA102129FACAEF00AE6888 /* PageNumberViewController.swift */,
-				2EFA102229FACAEF00AE6888 /* PageNumberViewController.xib */,
-			);
-			path = Details;
 			sourceTree = "<group>";
 		};
 		2E88B34929E6FC53008F4B4B /* Views */ = {
@@ -628,7 +616,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEE4DAB829F914980017A5EF /* LoginViewController.xib in Resources */,
-				EEADD69C29FA638C0024FE50 /* AccountTableViewCell.xib in Resources */,
 				EEAC4FB829E6F8230066757B /* LaunchScreen.storyboard in Resources */,
 				EEE4DABE29F934E70017A5EF /* RegisterViewController.xib in Resources */,
 				2EFA100B29FA4C8100AE6888 /* Assets.xcassets in Resources */,
@@ -637,6 +624,7 @@
 				EEAC4FD529E714280066757B /* TableCollectionViewCell.xib in Resources */,
 				2E1F166829F7C951007FC4E3 /* SearchViewController.xib in Resources */,
 				2E1F167E29F7CEB8007FC4E3 /* SearchTableViewCell.xib in Resources */,
+				2EFA103129FB148400AE6888 /* AccountTableViewCell.xib in Resources */,
 				EEC8356A29EAEE6300058796 /* HomeCollectionViewCarousel.xib in Resources */,
 				EE7CDFEC29F7E13A0058C163 /* YearlyTableViewCell.xib in Resources */,
 				2E1F16D229F9B436007FC4E3 /* Localizable.strings in Resources */,
@@ -647,8 +635,6 @@
 				2EFA102B29FB116200AE6888 /* AboutViewController.xib in Resources */,
 				EEC8356E29EAF1D200058796 /* HomeCarouselTableViewCell.xib in Resources */,
 				EE6DF06C29FA8C4C007B8DF8 /* GoogleService-Info.plist in Resources */,
-				2EFA100C29FA707200AE6888 /* AboutViewController.xib in Resources */,
-				2EFA102429FACAEF00AE6888 /* PageNumberViewController.xib in Resources */,
 				2E1F169029F82080007FC4E3 /* DetailViewController.xib in Resources */,
 				EE904C2229FB0D0900441AA8 /* (null) in Resources */,
 				2E1F16E129F9B7ED007FC4E3 /* HomeVCLocalizable.strings in Resources */,
@@ -677,7 +663,6 @@
 				EE78967329F4742200991261 /* DetailOlid.swift in Sources */,
 				2EFA102D29FB121A00AE6888 /* PageNumberViewController.swift in Sources */,
 				EE977F7F29F13E910027CF90 /* ImageView + Ext.swift in Sources */,
-				2EFA102329FACAEF00AE6888 /* PageNumberViewController.swift in Sources */,
 				EEFBBCB029E9784D00BDD902 /* HomeViewModel.swift in Sources */,
 				2E88B35829E700AE008F4B4B /* AccountViewController.swift in Sources */,
 				EEFBBCA829E96E3100BDD902 /* Model.swift in Sources */,
