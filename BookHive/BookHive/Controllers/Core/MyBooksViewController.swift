@@ -13,6 +13,9 @@ class MyBooksViewController: UIViewController {
     @IBOutlet weak var wantToReadView: UIView!
     @IBOutlet weak var readView: UIView!
     
+    var pageInputView: UIView?
+    var pageNumberTextField: UITextField?
+    
     override func loadView() {
         let mybooksView = Bundle.main.loadNibNamed("MyBooksViewController", owner: self)?.first as! UIView
         self.view = mybooksView
@@ -56,7 +59,9 @@ extension MyBooksViewController: UICollectionViewDataSource {
 }
 
 extension MyBooksViewController: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+    }
 }
 
 extension MyBooksViewController: UICollectionViewDelegateFlowLayout {
