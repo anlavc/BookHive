@@ -15,7 +15,6 @@
 		2E1F169029F82080007FC4E3 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E1F169229F82080007FC4E3 /* DetailViewController.xib */; };
 		2E1F16BB29F916B2007FC4E3 /* Eureka in Frameworks */ = {isa = PBXBuildFile; productRef = 2E1F16BA29F916B2007FC4E3 /* Eureka */; };
 		2E1F16C329F91EC0007FC4E3 /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1F16C129F91EC0007FC4E3 /* AccountTableViewCell.swift */; };
-		2E1F16C429F91EC0007FC4E3 /* AccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E1F16C229F91EC0007FC4E3 /* AccountTableViewCell.xib */; };
 		2E1F16C629F91F57007FC4E3 /* AccountCustomRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1F16C529F91F57007FC4E3 /* AccountCustomRow.swift */; };
 		2E1F16C929F973DD007FC4E3 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1F16C729F973DD007FC4E3 /* AboutViewController.swift */; };
 		2E1F16CA29F973DD007FC4E3 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E1F16C829F973DD007FC4E3 /* AboutViewController.xib */; };
@@ -57,6 +56,7 @@
 		EEAC4FD529E714280066757B /* TableCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEAC4FD329E714280066757B /* TableCollectionViewCell.xib */; };
 		EEAD10C329EF485A00BA6603 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10C229EF485A00BA6603 /* SearchModel.swift */; };
 		EEAD10C529EF4DE600BA6603 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10C429EF4DE600BA6603 /* SearchViewModel.swift */; };
+		EEADD69C29FA638C0024FE50 /* AccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEADD69B29FA638C0024FE50 /* AccountTableViewCell.xib */; };
 		EEBEAEBC29F85ADD00F993B8 /* Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBEAEBB29F85ADD00F993B8 /* Rating.swift */; };
 		EEC8356929EAEE6300058796 /* HomeCollectionViewCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC8356729EAEE6300058796 /* HomeCollectionViewCarousel.swift */; };
 		EEC8356A29EAEE6300058796 /* HomeCollectionViewCarousel.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEC8356829EAEE6300058796 /* HomeCollectionViewCarousel.xib */; };
@@ -118,7 +118,6 @@
 		2E1F16B729F84D26007FC4E3 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/SearchViewController.strings; sourceTree = "<group>"; };
 		2E1F16B829F84D26007FC4E3 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/DetailViewController.strings; sourceTree = "<group>"; };
 		2E1F16C129F91EC0007FC4E3 /* AccountTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
-		2E1F16C229F91EC0007FC4E3 /* AccountTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountTableViewCell.xib; sourceTree = "<group>"; };
 		2E1F16C529F91F57007FC4E3 /* AccountCustomRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCustomRow.swift; sourceTree = "<group>"; };
 		2E1F16C729F973DD007FC4E3 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		2E1F16C829F973DD007FC4E3 /* AboutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
@@ -190,6 +189,7 @@
 		EEAC4FE729E7169D0066757B /* SF-Pro-Display-Ultralight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Ultralight.ttf"; sourceTree = "<group>"; };
 		EEAD10C229EF485A00BA6603 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		EEAD10C429EF4DE600BA6603 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		EEADD69B29FA638C0024FE50 /* AccountTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountTableViewCell.xib; sourceTree = "<group>"; };
 		EEBEAEBB29F85ADD00F993B8 /* Rating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rating.swift; sourceTree = "<group>"; };
 		EEC8356729EAEE6300058796 /* HomeCollectionViewCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCarousel.swift; sourceTree = "<group>"; };
 		EEC8356829EAEE6300058796 /* HomeCollectionViewCarousel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCollectionViewCarousel.xib; sourceTree = "<group>"; };
@@ -224,7 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				2E1F16C129F91EC0007FC4E3 /* AccountTableViewCell.swift */,
-				2E1F16C229F91EC0007FC4E3 /* AccountTableViewCell.xib */,
+				EEADD69B29FA638C0024FE50 /* AccountTableViewCell.xib */,
 				2E1F16C529F91F57007FC4E3 /* AccountCustomRow.swift */,
 			);
 			path = AccountTableViewCell;
@@ -576,6 +576,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEE4DAB829F914980017A5EF /* LoginViewController.xib in Resources */,
+				EEADD69C29FA638C0024FE50 /* AccountTableViewCell.xib in Resources */,
 				EEAC4FB829E6F8230066757B /* LaunchScreen.storyboard in Resources */,
 				EEE4DABE29F934E70017A5EF /* RegisterViewController.xib in Resources */,
 				2EFA100B29FA4C8100AE6888 /* Assets.xcassets in Resources */,
