@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  BookHive
+
+  Created by Mehdican Büyükplevne on 26.04.2023.
+  
+*/
+
+"Name" = "Nom";
+"Email" = "Courriel";
+"User Informatıon" = "Informations sur l'utilisateur";
+"About" = "A propos de";
+"Contact" = "Contac";
+"Rate us in App Store" = "Notez-nous dans l'App Store";
+"Developers" = "Développeur";
+"Logout" = "Déconnexion";
+"Delete Account" = "Supprimer le compte";
+"Support" = "Support";
+"Send Email" = "Envoyer un e-mail";
+"Cancel" = "Annuler";
+"Feedback" = "Feedback";
+"Cannot Send Email" = "Impossible d'envoyer un courriel";
+"Your device cannot send email. Please configure an email account in the Mail app and try again" = "Votre appareil ne peut pas envoyer d'e-mail. Veuillez configurer un compte de messagerie dans l'application Mail et réessayer.";
