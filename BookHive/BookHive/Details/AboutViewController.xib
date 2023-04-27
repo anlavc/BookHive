@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AboutViewController" customModule="BookHive" customModuleProvider="target">
+            <connections>
+                <outlet property="aboutLabel" destination="Ygo-yH-jQI" id="86E-86-xUE"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="about" translatesAutoresizingMaskIntoConstraints="NO" id="BRJ-Pn-Va6">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="393" id="S5S-Ps-hgA"/>
+                        <constraint firstAttribute="height" constant="852" id="nBs-QF-HG5"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="25" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ygo-yH-jQI">
+                    <rect key="frame" x="39" y="180" width="315" height="492"/>
+                    <mutableString key="text">Bookhive is a carefully developed digital bookmark app. Designed for those who love to read books, this app allows readers to easily locate the books they are reading. It also gives users the opportunity to learn about books. Bookhive is both a practical and useful tool and is the perfect solution for readers to keep track of their books.</mutableString>
+                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Oc-fx-aho">
+                    <rect key="frame" x="16" y="59" width="36" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="36" id="GGL-0V-HsQ"/>
+                        <constraint firstAttribute="height" constant="35" id="eOc-nQ-hlk"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="arrow.backward" catalog="system">
+                        <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="backButton:" destination="-1" eventType="touchUpInside" id="Xpa-ve-xdt"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Ygo-yH-jQI" secondAttribute="bottom" constant="146" id="1Di-dj-JzW"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ygo-yH-jQI" secondAttribute="trailing" constant="39" id="8E7-s8-T8e"/>
+                <constraint firstItem="Ygo-yH-jQI" firstAttribute="top" secondItem="6Oc-fx-aho" secondAttribute="bottom" constant="86" id="8Y9-25-jcY"/>
+                <constraint firstItem="BRJ-Pn-Va6" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="CFD-GH-NrG"/>
+                <constraint firstAttribute="bottom" secondItem="BRJ-Pn-Va6" secondAttribute="bottom" id="JHr-0T-wGu"/>
+                <constraint firstItem="6Oc-fx-aho" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="W34-wL-NAN"/>
+                <constraint firstItem="Ygo-yH-jQI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="39" id="dNq-at-Q4D"/>
+                <constraint firstItem="BRJ-Pn-Va6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="mXk-Vz-oie"/>
+                <constraint firstItem="6Oc-fx-aho" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="pnA-6p-Lah"/>
+                <constraint firstItem="BRJ-Pn-Va6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="qce-g7-AhA"/>
+                <constraint firstItem="Ygo-yH-jQI" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="121" id="udO-7L-k1Z"/>
+            </constraints>
+            <point key="canvasLocation" x="107.63358778625954" y="20.422535211267608"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="about" width="1080" height="1920"/>
+        <image name="arrow.backward" catalog="system" width="128" height="95"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
