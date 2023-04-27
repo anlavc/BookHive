@@ -11,7 +11,7 @@ import MessageUI
 
 class AccountViewController: FormViewController, MFMailComposeViewControllerDelegate {
 
-
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         userInformationForm()
@@ -20,6 +20,7 @@ class AccountViewController: FormViewController, MFMailComposeViewControllerDele
         accountInfoForm()
     }
     
+    // MARK: - User Information Form
     private func userInformationForm() {
         form +++
         Section(NSLocalizedString("User Informatıon", comment: ""))
@@ -33,7 +34,7 @@ class AccountViewController: FormViewController, MFMailComposeViewControllerDele
         }
     }
     
-    
+    // MARK: - About Form
     private func aboutForm() {
         form +++
         Section(NSLocalizedString("About", comment: ""))
@@ -48,45 +49,14 @@ class AccountViewController: FormViewController, MFMailComposeViewControllerDele
             $0.cell.accountTableViewCellLabelName.text = NSLocalizedString("Contact", comment: "")
             $0.cell.accountIconImageView.image = UIImage(systemName: "captions.bubble")
             $0.onCellSelection { cell, row in
-                func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-                    controller.dismiss(animated: true, completion: nil)
-                    switch result {
-                    case .sent:
-                        print("sent")
-                    case .saved:
-                        print("saved")
-                    case .failed:
-                        print("failed")
-                    case .cancelled:
-                        print("cancelled")
-                    default:
-                        break
-                    }
+                let alertController = UIAlertController(title: NSLocalizedString("Support", comment: ""), message: nil, preferredStyle: .actionSheet)
+                let sendEmailAction = UIAlertAction(title: NSLocalizedString("Send Email", comment: ""), style: .default) { action in
+                    self.sendEmail()
                 }
-                
-                // MARK: Helper Functions
-                func resultAlert(title: String, message: String, titleForAction: String) {
-                    let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: titleForAction, style: .default, handler: nil))
-                    self.present(alert, animated: true, completion: nil)
-                }
-                
-                // MARK: Private Functions
-                func sendMail() {
-                    let mailComposeVC = MFMailComposeViewController()
-                    mailComposeVC.mailComposeDelegate = self
-                    mailComposeVC.setToRecipients(["bookhive0@gmail.com"])
-                    mailComposeVC.setSubject("")
-                    mailComposeVC.setMessageBody("", isHTML: false)
-                    self.present(mailComposeVC, animated: true)
-                }
-                
-                if !MFMailComposeViewController.canSendMail() {
-                    let alert = UIAlertController(title: "Error", message: "Mail services are not available", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                    self.present(alert, animated: true)
-                    return 
-                }
+                alertController.addAction(sendEmailAction)
+                let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel, handler: nil)
+                alertController.addAction(cancelAction)
+                self.present(alertController, animated: true, completion: nil)
             }
         }
         
@@ -102,12 +72,33 @@ class AccountViewController: FormViewController, MFMailComposeViewControllerDele
         }
     }
     
+    // MARK: - Mail Compose Funcs.
+    private func sendEmail() {
+        if MFMailComposeViewController.canSendMail() {
+            let mailComposeViewController = MFMailComposeViewController()
+            mailComposeViewController.mailComposeDelegate = self
+            mailComposeViewController.setToRecipients(["bookhive0@gmail.com"])
+            mailComposeViewController.setSubject(NSLocalizedString("Feedback", comment: ""))
+            self.present(mailComposeViewController, animated: true, completion: nil)
+        } else {
+            let alertController = UIAlertController(title: NSLocalizedString("Cannot Send Email", comment: ""), message: NSLocalizedString("Your device cannot send email. Please configure an email account in the Mail app and try again", comment: ""), preferredStyle: .alert)
+            let okAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil)
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
+    // MARK: - Developers Form
     private func developerInfoForm() {
         form +++
         Section(NSLocalizedString("Developers", comment: ""))
         <<< AccountCustomRow() {
             $0.cell.accountTableViewCellLabelName.text = "Anıl Avcı"
-            $0.cell.accountIconImageView.image = UIImage(named: "devicon")?.withTintColor(.systemGray)
+            $0.cell.accountIconImageView.image = UIImage(named: "developer")?.withTintColor(.systemGray)
             $0.onCellSelection { cell, row in
                 if let url = URL(string: "https://www.linkedin.com/in/anilavci/") {
                     UIApplication.shared.open(url, options: [:], completionHandler: nil)
@@ -117,7 +108,7 @@ class AccountViewController: FormViewController, MFMailComposeViewControllerDele
         
         <<< AccountCustomRow() {
             $0.cell.accountTableViewCellLabelName.text = "Mehdican Büyükplevne"
-            $0.cell.accountIconImageView.image = UIImage(named: "devicon")?.withTintColor(.systemGray)
+            $0.cell.accountIconImageView.image = UIImage(named: "developer")?.withTintColor(.systemGray)
             $0.onCellSelection { cell, row in
                 if let url = URL(string: "https://www.linkedin.com/in/mbuyukplevne/") {
                     UIApplication.shared.open(url, options: [:], completionHandler: nil)
@@ -126,6 +117,7 @@ class AccountViewController: FormViewController, MFMailComposeViewControllerDele
         }
     }
     
+    // MARK: - Account Information Form
     private func accountInfoForm() {
         form +++
         Section("")

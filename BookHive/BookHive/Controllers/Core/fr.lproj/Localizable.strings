@@ -15,3 +15,9 @@
 "Developers" = "Développeur";
 "Logout" = "Déconnexion";
 "Delete Account" = "Supprimer le compte";
+"Support" = "Support";
+"Send Email" = "Envoyer un e-mail";
+"Cancel" = "Annuler";
+"Feedback" = "Feedback";
+"Cannot Send Email" = "Impossible d'envoyer un courriel";
+"Your device cannot send email. Please configure an email account in the Mail app and try again" = "Votre appareil ne peut pas envoyer d'e-mail. Veuillez configurer un compte de messagerie dans l'application Mail et réessayer.";
