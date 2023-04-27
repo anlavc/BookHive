@@ -8,10 +8,7 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-    //label
-    @IBOutlet weak var registerLabel: UILabel!
-    @IBOutlet weak var passwordLabel: UILabel!
-    
+
     //textfield
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -26,8 +23,7 @@ class LoginViewController: UIViewController {
     //image
     @IBOutlet weak var personicon: UIButton!
     @IBOutlet weak var lockicon: UIButton!
-    @IBOutlet weak var logoImageView: UIImageView!
-    
+
     @IBOutlet weak var centerStack: UIStackView!
     
     override func viewDidLoad() {
@@ -42,6 +38,7 @@ class LoginViewController: UIViewController {
     private func xibRegister() {
         Bundle.main.loadNibNamed("LoginViewController", owner: self, options: nil)![0] as? LoginViewController
     }
+    //MARK: - UI Configuration
     private func setupUI() {
         personicon.layer.cornerRadius = 12
         loginButton.layer.cornerRadius = 5
@@ -55,9 +52,9 @@ class LoginViewController: UIViewController {
         self.navigationController?.isNavigationBarHidden = true
     }
     @IBAction func registerButtonTapped(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let registerVc = storyboard.instantiateViewController(withIdentifier: "toRegister")
-        navigationController?.pushViewController(registerVc, animated: true)
+        let vc = RegisterViewController()
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
     }
     
 }
