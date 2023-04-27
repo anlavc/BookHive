@@ -400,6 +400,18 @@
 			path = NowCollectionCell;
 			sourceTree = "<group>";
 		};
+		EE904C0E29FB0C0600441AA8 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				EE904C1A29FB0C0600441AA8 /* AboutViewController.swift */,
+				EE904C2429FB0D0900441AA8 /* AboutViewController.xib */,
+				EE904C1129FB0C0600441AA8 /* PageNumberViewController.swift */,
+				EE904C1729FB0C0600441AA8 /* PageNumberViewController.xib */,
+			);
+			name = Details;
+			path = ../../../../Downloads/Details;
+			sourceTree = "<group>";
+		};
 		EE977F8429F16AF20027CF90 /* DetailSubjectCell */ = {
 			isa = PBXGroup;
 			children = (
