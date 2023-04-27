@@ -18,7 +18,6 @@
 		2E1F16C629F91F57007FC4E3 /* AccountCustomRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1F16C529F91F57007FC4E3 /* AccountCustomRow.swift */; };
 		2E1F16C929F973DD007FC4E3 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1F16C729F973DD007FC4E3 /* AboutViewController.swift */; };
 		2E1F16CA29F973DD007FC4E3 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E1F16C829F973DD007FC4E3 /* AboutViewController.xib */; };
-		2E1F16CC29F9A7E3007FC4E3 /* AccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E1F16CE29F9A7E3007FC4E3 /* AccountViewController.xib */; };
 		2E1F16D229F9B436007FC4E3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2E1F16D429F9B436007FC4E3 /* Localizable.strings */; };
 		2E1F16E129F9B7ED007FC4E3 /* HomeVCLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2E1F16E329F9B7ED007FC4E3 /* HomeVCLocalizable.strings */; };
 		2E71F82F29ED537B00403A86 /* CellColor + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E71F82E29ED537B00403A86 /* CellColor + Ext.swift */; };
@@ -44,6 +43,7 @@
 		EE7CDFEB29F7E13A0058C163 /* YearlyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7CDFE929F7E13A0058C163 /* YearlyTableViewCell.swift */; };
 		EE7CDFEC29F7E13A0058C163 /* YearlyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE7CDFEA29F7E13A0058C163 /* YearlyTableViewCell.xib */; };
 		EE80390829F5BDF6004E13C7 /* NowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE80390629F5BDF6004E13C7 /* NowTableViewCell.swift */; };
+		EE904BF529FAF44700441AA8 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE904BF429FAF44700441AA8 /* TabBarController.swift */; };
 		EE977F7C29F02F6A0027CF90 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE977F7A29F02F6A0027CF90 /* DetailViewController.swift */; };
 		EE977F7F29F13E910027CF90 /* ImageView + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE977F7E29F13E910027CF90 /* ImageView + Ext.swift */; };
 		EE977F8129F14F140027CF90 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE977F8029F14F140027CF90 /* DetailViewModel.swift */; };
@@ -126,7 +126,6 @@
 		2E1F16C529F91F57007FC4E3 /* AccountCustomRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCustomRow.swift; sourceTree = "<group>"; };
 		2E1F16C729F973DD007FC4E3 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		2E1F16C829F973DD007FC4E3 /* AboutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
-		2E1F16CD29F9A7E3007FC4E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/AccountViewController.xib; sourceTree = "<group>"; };
 		2E1F16D529F9B438007FC4E3 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2E1F16D629F9B43A007FC4E3 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2E1F16D729F9B43B007FC4E3 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -158,6 +157,7 @@
 		EE7CDFE929F7E13A0058C163 /* YearlyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearlyTableViewCell.swift; sourceTree = "<group>"; };
 		EE7CDFEA29F7E13A0058C163 /* YearlyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YearlyTableViewCell.xib; sourceTree = "<group>"; };
 		EE80390629F5BDF6004E13C7 /* NowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowTableViewCell.swift; sourceTree = "<group>"; };
+		EE904BF429FAF44700441AA8 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		EE977F7A29F02F6A0027CF90 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		EE977F7E29F13E910027CF90 /* ImageView + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageView + Ext.swift"; sourceTree = "<group>"; };
 		EE977F8029F14F140027CF90 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
@@ -260,7 +260,6 @@
 				2E88B35229E7009F008F4B4B /* SearchViewController.swift */,
 				2E1F166A29F7C951007FC4E3 /* SearchViewController.xib */,
 				2E88B35629E700AE008F4B4B /* AccountViewController.swift */,
-				2E1F16CE29F9A7E3007FC4E3 /* AccountViewController.xib */,
 				2E1F16D429F9B436007FC4E3 /* Localizable.strings */,
 				EE977F7A29F02F6A0027CF90 /* DetailViewController.swift */,
 				2E1F169229F82080007FC4E3 /* DetailViewController.xib */,
@@ -268,6 +267,7 @@
 				EEE4DAB629F914980017A5EF /* LoginViewController.xib */,
 				EEE4DABB29F934E70017A5EF /* RegisterViewController.swift */,
 				EEE4DABC29F934E70017A5EF /* RegisterViewController.xib */,
+				EE904BF429FAF44700441AA8 /* TabBarController.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -613,7 +613,6 @@
 				2E1F169029F82080007FC4E3 /* DetailViewController.xib in Resources */,
 				2E1F16E129F9B7ED007FC4E3 /* HomeVCLocalizable.strings in Resources */,
 				EE7CDFE729F7D2F00058C163 /* NowTableViewCell.xib in Resources */,
-				2E1F16CC29F9A7E3007FC4E3 /* AccountViewController.xib in Resources */,
 				2E1F167329F7CB77007FC4E3 /* MyBooksViewController.xib in Resources */,
 				2E88B36F29E883A9008F4B4B /* MyBooksCollectionViewCell.xib in Resources */,
 			);
@@ -651,6 +650,7 @@
 				EE7CDFE429F7CA310058C163 /* NowCollectionViewCell.swift in Sources */,
 				EEAC4FD429E714280066757B /* TableCollectionViewCell.swift in Sources */,
 				EEAD10C329EF485A00BA6603 /* SearchModel.swift in Sources */,
+				EE904BF529FAF44700441AA8 /* TabBarController.swift in Sources */,
 				EEE4DABD29F934E70017A5EF /* RegisterViewController.swift in Sources */,
 				2E88B35C29E7082C008F4B4B /* SearchTableViewCell.swift in Sources */,
 				2ECF25B129E89D3E00956FCB /* UIView + Ext.swift in Sources */,
@@ -738,14 +738,6 @@
 				2E1F16B829F84D26007FC4E3 /* nl */,
 			);
 			name = DetailViewController.xib;
-			sourceTree = "<group>";
-		};
-		2E1F16CE29F9A7E3007FC4E3 /* AccountViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2E1F16CD29F9A7E3007FC4E3 /* Base */,
-			);
-			name = AccountViewController.xib;
 			sourceTree = "<group>";
 		};
 		2E1F16D429F9B436007FC4E3 /* Localizable.strings */ = {

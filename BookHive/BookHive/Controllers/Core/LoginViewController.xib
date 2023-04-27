@@ -14,11 +14,12 @@
             <connections>
                 <outlet property="centerStack" destination="Fzl-SL-QPY" id="VqG-SV-LiU"/>
                 <outlet property="emailTextField" destination="u7N-9c-5a9" id="Q7b-tf-eEk"/>
+                <outlet property="forgotPasswordButton" destination="cXE-nv-yik" id="4MQ-gi-4Te"/>
                 <outlet property="lockicon" destination="h1o-EV-1Ra" id="eOb-KJ-XRI"/>
-                <outlet property="loginButton" destination="jxD-Cb-MRq" id="qZC-dG-QHS"/>
+                <outlet property="loginButton" destination="jxD-Cb-MRq" id="Tkp-aI-28v"/>
                 <outlet property="passwordTextField" destination="v2G-Im-hKE" id="WYc-13-Vdl"/>
                 <outlet property="personicon" destination="kde-9y-sYG" id="wRK-tn-Caj"/>
-                <outlet property="registerButton" destination="drE-qc-nZ4" id="OWM-0z-8vu"/>
+                <outlet property="registerButton" destination="drE-qc-nZ4" id="Q9x-AZ-PxH"/>
                 <outlet property="view" destination="0d6-gW-yvP" id="Wx4-KS-cPx"/>
             </connections>
         </placeholder>
@@ -121,6 +122,9 @@
                                     <color key="tintColor" name="colordarkgray"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" title="Forget Password?"/>
+                                    <connections>
+                                        <action selector="forgetButtonTapped:" destination="-1" eventType="touchUpInside" id="OmN-Hy-2Am"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jxD-Cb-MRq">
                                     <rect key="frame" x="20" y="495.33333333333337" width="353" height="60"/>
@@ -130,6 +134,9 @@
                                     </constraints>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" title="Login"/>
+                                    <connections>
+                                        <action selector="loginButtonTapped:" destination="-1" eventType="touchUpInside" id="3fQ-Sx-glO"/>
+                                    </connections>
                                 </button>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ea8-bD-VIQ">
                                     <rect key="frame" x="20" y="714.66666666666663" width="353" height="34.333333333333371"/>
@@ -146,7 +153,7 @@
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" title="Create Account"/>
                                             <connections>
-                                                <action selector="registerButtonTapped:" destination="-1" eventType="touchUpInside" id="JHH-6x-UtZ"/>
+                                                <action selector="registerButtonTapped:" destination="-1" eventType="touchUpInside" id="a1K-j2-i0k"/>
                                             </connections>
                                         </button>
                                     </subviews>
