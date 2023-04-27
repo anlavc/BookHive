@@ -16,3 +16,17 @@
 "Delete Account" = "Hesabımı Sil";
 
 
+
+//Register
+"Please enter your username, nickname and password for registration." = "Please enter your username, nickname and password for registration.";
+"Please enter your e-mail address correctly."                         = "Please enter your e-mail address correctly.";
+"Please enter your username, nickname and password for registration." = "Please enter your username, nickname and password for registration.";
+"Your password is insufficient. \n Your password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character. \n Please choose a stronger password."
+                                                                      = "Your password is insufficient. \n Your password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character. \n Please choose a stronger password.";
+"Password did not match"                                              = "Password did not match";
+"Error"                                                               = "Error";
+"Warning"                                                             = "Warning";
+"An error occurred during registration."                              = "An error occurred during registration.";
+//Error
+"User login error"                                                    = "User login error";
+"Email or password field is empty"                                    = "Email or password field is empty";

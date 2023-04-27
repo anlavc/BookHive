@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -13,7 +12,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterViewController" customModule="BookHive" customModuleProvider="target">
             <connections>
-                <outlet property="backButton" destination="c9C-N1-pOo" id="6Ut-Bv-4gN"/>
                 <outlet property="centerStack" destination="jpS-wU-vIR" id="L0G-s8-ezk"/>
                 <outlet property="createButton" destination="SUs-dU-FZj" id="Bpb-xM-1JW"/>
                 <outlet property="email" destination="DUd-7C-qg1" id="KS0-oF-tLl"/>
@@ -37,21 +35,6 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cy0-TA-50b">
                             <rect key="frame" x="0.0" y="0.0" width="393" height="759"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c9C-N1-pOo">
-                                    <rect key="frame" x="5" y="5" width="68" height="50"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="50" id="fVF-Vt-eDt"/>
-                                    </constraints>
-                                    <color key="tintColor" name="labelColorBold"/>
-                                    <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain">
-                                        <imageReference key="image" image="chevron.backward.square" catalog="system" symbolScale="large"/>
-                                        <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="30"/>
-                                    </buttonConfiguration>
-                                    <connections>
-                                        <action selector="backbuttonTapped:" destination="-1" eventType="touchUpInside" id="xbX-qG-2AM"/>
-                                    </connections>
-                                </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CREATE ACCOUNT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rHH-pw-6oH">
                                     <rect key="frame" x="20" y="90" width="275" height="40"/>
                                     <constraints>
@@ -174,8 +157,14 @@
                                             <color key="tintColor" name="coverbgColor"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" title="Login"/>
+                                            <connections>
+                                                <action selector="loginButtonTapped:" destination="-1" eventType="touchUpInside" id="WzD-g1-vL2"/>
+                                            </connections>
                                         </button>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="yuq-i4-kdg" firstAttribute="centerY" secondItem="XYh-N0-a1h" secondAttribute="centerY" id="2AD-Jf-4Q5"/>
+                                    </constraints>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="qaf-a6-TaM" userLabel="logo">
                                     <rect key="frame" x="101.66666666666669" y="649.66666666666663" width="190" height="40"/>
@@ -202,19 +191,16 @@
                                 <constraint firstItem="SUs-dU-FZj" firstAttribute="trailing" secondItem="jpS-wU-vIR" secondAttribute="trailing" id="3dV-sQ-UkF"/>
                                 <constraint firstItem="jpS-wU-vIR" firstAttribute="centerX" secondItem="cy0-TA-50b" secondAttribute="centerX" id="4kk-s3-NGR"/>
                                 <constraint firstAttribute="trailing" secondItem="jpS-wU-vIR" secondAttribute="trailing" constant="20" id="7Bc-SH-dVC"/>
+                                <constraint firstItem="rHH-pw-6oH" firstAttribute="top" secondItem="cy0-TA-50b" secondAttribute="top" constant="90" id="EJZ-IJ-XXX"/>
                                 <constraint firstItem="rHH-pw-6oH" firstAttribute="leading" secondItem="cy0-TA-50b" secondAttribute="leading" constant="20" id="Fef-VW-SJU"/>
                                 <constraint firstItem="SUs-dU-FZj" firstAttribute="top" secondItem="jpS-wU-vIR" secondAttribute="bottom" constant="30" id="G3z-RB-8nM"/>
-                                <constraint firstItem="c9C-N1-pOo" firstAttribute="top" secondItem="cy0-TA-50b" secondAttribute="top" constant="5" id="HW8-Gl-HzL"/>
                                 <constraint firstItem="jpS-wU-vIR" firstAttribute="top" secondItem="rHH-pw-6oH" secondAttribute="bottom" constant="90" id="Pxo-K1-MzJ"/>
-                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="c9C-N1-pOo" secondAttribute="trailing" constant="20" symbolic="YES" id="TgY-Qc-lcp"/>
                                 <constraint firstItem="SUs-dU-FZj" firstAttribute="leading" secondItem="jpS-wU-vIR" secondAttribute="leading" id="US7-hd-9Tv"/>
                                 <constraint firstAttribute="bottom" secondItem="old-FZ-QRz" secondAttribute="bottom" constant="10" id="UvC-XP-fhP"/>
                                 <constraint firstItem="qaf-a6-TaM" firstAttribute="top" relation="lessThanOrEqual" secondItem="SUs-dU-FZj" secondAttribute="bottom" constant="99.670000000000002" id="fnL-bN-42L"/>
-                                <constraint firstItem="c9C-N1-pOo" firstAttribute="leading" secondItem="cy0-TA-50b" secondAttribute="leading" constant="5" id="hi2-Ya-YqO"/>
                                 <constraint firstItem="old-FZ-QRz" firstAttribute="centerX" secondItem="cy0-TA-50b" secondAttribute="centerX" id="iR6-yQ-LD3"/>
                                 <constraint firstItem="jpS-wU-vIR" firstAttribute="leading" secondItem="cy0-TA-50b" secondAttribute="leading" constant="20" id="mmg-YC-mqL"/>
                                 <constraint firstItem="qaf-a6-TaM" firstAttribute="centerX" secondItem="cy0-TA-50b" secondAttribute="centerX" id="pwB-CM-FQl"/>
-                                <constraint firstItem="rHH-pw-6oH" firstAttribute="top" secondItem="c9C-N1-pOo" secondAttribute="bottom" constant="35" id="u3D-C0-tH7"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -244,7 +230,6 @@
         </view>
     </objects>
     <resources>
-        <image name="chevron.backward.square" catalog="system" width="128" height="114"/>
         <image name="envelope.circle" catalog="system" width="128" height="123"/>
         <image name="iconbook" width="500" height="500"/>
         <image name="lock.circle" catalog="system" width="128" height="123"/>
@@ -254,9 +239,6 @@
         </namedColor>
         <namedColor name="coverbgColor">
             <color red="0.99607843137254903" green="0.77254901960784317" blue="0.086274509803921567" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="labelColorBold">
-            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

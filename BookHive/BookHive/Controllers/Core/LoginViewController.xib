@@ -13,10 +13,13 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="BookHive" customModuleProvider="target">
             <connections>
                 <outlet property="centerStack" destination="Fzl-SL-QPY" id="VqG-SV-LiU"/>
+                <outlet property="dontaccountTextLabel" destination="c3C-wj-x2W" id="NeH-sq-8Qx"/>
                 <outlet property="emailTextField" destination="u7N-9c-5a9" id="Q7b-tf-eEk"/>
                 <outlet property="forgotPasswordButton" destination="cXE-nv-yik" id="4MQ-gi-4Te"/>
                 <outlet property="lockicon" destination="h1o-EV-1Ra" id="eOb-KJ-XRI"/>
                 <outlet property="loginButton" destination="jxD-Cb-MRq" id="Tkp-aI-28v"/>
+                <outlet property="loginLabelText" destination="u6e-Rl-mKr" id="e4J-81-qyf"/>
+                <outlet property="millionsTextLabel" destination="arD-Q9-Rr9" id="LfY-XI-gR8"/>
                 <outlet property="passwordTextField" destination="v2G-Im-hKE" id="WYc-13-Vdl"/>
                 <outlet property="personicon" destination="kde-9y-sYG" id="wRK-tn-Caj"/>
                 <outlet property="registerButton" destination="drE-qc-nZ4" id="Q9x-AZ-PxH"/>
@@ -62,8 +65,8 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To access thousand of Books" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="arD-Q9-Rr9">
-                                            <rect key="frame" x="0.0" y="40.666666666666657" width="222.66666666666666" height="20.333333333333329"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To access millions of Books" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="arD-Q9-Rr9">
+                                            <rect key="frame" x="0.0" y="40.666666666666657" width="208.33333333333334" height="20.333333333333329"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -83,7 +86,7 @@
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" image="person" catalog="system"/>
                                                 </button>
-                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="anilavci@gmail.com" borderStyle="roundedRect" placeholder="Enter E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u7N-9c-5a9">
+                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u7N-9c-5a9">
                                                     <rect key="frame" x="48" y="0.0" width="305" height="60"/>
                                                     <color key="textColor" name="colordarkgray"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -121,7 +124,7 @@
                                     <rect key="frame" x="20" y="376" width="353" height="34.333333333333314"/>
                                     <color key="tintColor" name="colordarkgray"/>
                                     <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" title="Forget Password?"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="Forgot Password?"/>
                                     <connections>
                                         <action selector="forgetButtonTapped:" destination="-1" eventType="touchUpInside" id="OmN-Hy-2Am"/>
                                     </connections>

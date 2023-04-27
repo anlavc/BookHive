@@ -47,6 +47,9 @@
 		EE80390829F5BDF6004E13C7 /* NowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE80390629F5BDF6004E13C7 /* NowTableViewCell.swift */; };
 		EE904BF529FAF44700441AA8 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE904BF429FAF44700441AA8 /* TabBarController.swift */; };
 		EE904C2229FB0D0900441AA8 /* (null) in Resources */ = {isa = PBXBuildFile; };
+		EE904C2C29FB1DBC00441AA8 /* ViewController + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE904C2B29FB1DBC00441AA8 /* ViewController + Ext.swift */; };
+		EE904C2E29FB1FAD00441AA8 /* isValidEmailPassword + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE904C2D29FB1FAD00441AA8 /* isValidEmailPassword + Ext.swift */; };
+		EE904C3029FB203400441AA8 /* String + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE904C2F29FB203400441AA8 /* String + Ext.swift */; };
 		EE977F7C29F02F6A0027CF90 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE977F7A29F02F6A0027CF90 /* DetailViewController.swift */; };
 		EE977F7F29F13E910027CF90 /* ImageView + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE977F7E29F13E910027CF90 /* ImageView + Ext.swift */; };
 		EE977F8129F14F140027CF90 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE977F8029F14F140027CF90 /* DetailViewModel.swift */; };
@@ -163,6 +166,9 @@
 		EE7CDFEA29F7E13A0058C163 /* YearlyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YearlyTableViewCell.xib; sourceTree = "<group>"; };
 		EE80390629F5BDF6004E13C7 /* NowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowTableViewCell.swift; sourceTree = "<group>"; };
 		EE904BF429FAF44700441AA8 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		EE904C2B29FB1DBC00441AA8 /* ViewController + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController + Ext.swift"; sourceTree = "<group>"; };
+		EE904C2D29FB1FAD00441AA8 /* isValidEmailPassword + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "isValidEmailPassword + Ext.swift"; sourceTree = "<group>"; };
+		EE904C2F29FB203400441AA8 /* String + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Ext.swift"; sourceTree = "<group>"; };
 		EE977F7A29F02F6A0027CF90 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		EE977F7E29F13E910027CF90 /* ImageView + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageView + Ext.swift"; sourceTree = "<group>"; };
 		EE977F8029F14F140027CF90 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
@@ -297,6 +303,9 @@
 				EE977F7E29F13E910027CF90 /* ImageView + Ext.swift */,
 				2EE0E11429F48AB9008B2362 /* TextfieldCharacters + Ext.swift */,
 				EEE4DAB929F91A030017A5EF /* TextField + Ext.swift */,
+				EE904C2B29FB1DBC00441AA8 /* ViewController + Ext.swift */,
+				EE904C2D29FB1FAD00441AA8 /* isValidEmailPassword + Ext.swift */,
+				EE904C2F29FB203400441AA8 /* String + Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -377,18 +386,6 @@
 				EE7CDFE329F7CA310058C163 /* NowCollectionViewCell.xib */,
 			);
 			path = NowCollectionCell;
-			sourceTree = "<group>";
-		};
-		EE904C0E29FB0C0600441AA8 /* Details */ = {
-			isa = PBXGroup;
-			children = (
-				EE904C1A29FB0C0600441AA8 /* AboutViewController.swift */,
-				EE904C2429FB0D0900441AA8 /* AboutViewController.xib */,
-				EE904C1129FB0C0600441AA8 /* PageNumberViewController.swift */,
-				EE904C1729FB0C0600441AA8 /* PageNumberViewController.xib */,
-			);
-			name = Details;
-			path = ../../../../Downloads/Details;
 			sourceTree = "<group>";
 		};
 		EE977F8429F16AF20027CF90 /* DetailSubjectCell */ = {
@@ -674,7 +671,9 @@
 				2EFA102929FB114900AE6888 /* AboutViewController.swift in Sources */,
 				EEAC4FD429E714280066757B /* TableCollectionViewCell.swift in Sources */,
 				EEAD10C329EF485A00BA6603 /* SearchModel.swift in Sources */,
+				EE904C3029FB203400441AA8 /* String + Ext.swift in Sources */,
 				EE904BF529FAF44700441AA8 /* TabBarController.swift in Sources */,
+				EE904C2E29FB1FAD00441AA8 /* isValidEmailPassword + Ext.swift in Sources */,
 				EEE4DABD29F934E70017A5EF /* RegisterViewController.swift in Sources */,
 				2E88B35C29E7082C008F4B4B /* SearchTableViewCell.swift in Sources */,
 				2ECF25B129E89D3E00956FCB /* UIView + Ext.swift in Sources */,
@@ -682,6 +681,7 @@
 				EE977F8729F16B1B0027CF90 /* DetailSubjectCell.swift in Sources */,
 				EEFBBCAC29E9730400BDD902 /* BookEndPoint.swift in Sources */,
 				2E88B34C29E70077008F4B4B /* HomeViewController.swift in Sources */,
+				EE904C2C29FB1DBC00441AA8 /* ViewController + Ext.swift in Sources */,
 				EEBEAEBC29F85ADD00F993B8 /* Rating.swift in Sources */,
 				2E1F168F29F7E4CC007FC4E3 /* AccountModel.swift in Sources */,
 				EEAC4FCF29E70EDF0066757B /* HomeTableViewCell.swift in Sources */,
