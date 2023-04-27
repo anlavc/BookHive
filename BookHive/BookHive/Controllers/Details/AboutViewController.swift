@@ -11,6 +11,8 @@ class AboutViewController: UIViewController {
     
     @IBOutlet weak var aboutLabel: UILabel!
     
+    @IBOutlet weak var aboutLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
