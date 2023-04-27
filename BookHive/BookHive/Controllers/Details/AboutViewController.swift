@@ -10,12 +10,16 @@ import UIKit
 class AboutViewController: UIViewController {
     
     
-
+    @IBOutlet weak var aboutLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
 
 
     }
-
+    @IBAction func backButton(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
