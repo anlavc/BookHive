@@ -20,6 +20,10 @@ class AccountViewController: FormViewController, MFMailComposeViewControllerDele
         accountInfoForm()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
     // MARK: - User Information Form
     private func userInformationForm() {
         form +++
@@ -42,8 +46,13 @@ class AccountViewController: FormViewController, MFMailComposeViewControllerDele
             $0.cell.accountTableViewCellLabelName.text = NSLocalizedString("About", comment: "")
             $0.cell.accountIconImageView.image = UIImage(systemName: "info.circle")
             $0.onCellSelection { cell, row in
-                //
+                let vc = AboutViewController()
+                vc.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gear"), style: .done, target: self, action: #selector(self.backButtonAction))
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: true)
             }
+            
+            
         }
         <<< AccountCustomRow() {
             $0.cell.accountTableViewCellLabelName.text = NSLocalizedString("Contact", comment: "")
@@ -70,6 +79,11 @@ class AccountViewController: FormViewController, MFMailComposeViewControllerDele
 //                }
             }
         }
+    }
+    
+    @objc func backButtonAction() {
+        let vc = AboutViewController()
+        self.navigationController?.popViewController(animated: true)
     }
     
     // MARK: - Mail Compose Funcs.

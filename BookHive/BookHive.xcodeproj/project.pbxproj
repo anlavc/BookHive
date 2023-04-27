@@ -18,7 +18,6 @@
 		2E1F16C429F91EC0007FC4E3 /* AccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E1F16C229F91EC0007FC4E3 /* AccountTableViewCell.xib */; };
 		2E1F16C629F91F57007FC4E3 /* AccountCustomRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1F16C529F91F57007FC4E3 /* AccountCustomRow.swift */; };
 		2E1F16C929F973DD007FC4E3 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1F16C729F973DD007FC4E3 /* AboutViewController.swift */; };
-		2E1F16CA29F973DD007FC4E3 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E1F16C829F973DD007FC4E3 /* AboutViewController.xib */; };
 		2E1F16CC29F9A7E3007FC4E3 /* AccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E1F16CE29F9A7E3007FC4E3 /* AccountViewController.xib */; };
 		2E1F16D229F9B436007FC4E3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2E1F16D429F9B436007FC4E3 /* Localizable.strings */; };
 		2E1F16E129F9B7ED007FC4E3 /* HomeVCLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2E1F16E329F9B7ED007FC4E3 /* HomeVCLocalizable.strings */; };
@@ -33,6 +32,7 @@
 		2ECF25B129E89D3E00956FCB /* UIView + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECF25B029E89D3E00956FCB /* UIView + Ext.swift */; };
 		2EE0E11529F48AB9008B2362 /* TextfieldCharacters + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE0E11429F48AB9008B2362 /* TextfieldCharacters + Ext.swift */; };
 		2EFA100B29FA4C8100AE6888 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EFA100A29FA4C8100AE6888 /* Assets.xcassets */; };
+		2EFA100C29FA707200AE6888 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EFA100E29FA707200AE6888 /* AboutViewController.xib */; };
 		EE78967329F4742200991261 /* DetailOlid.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE78967229F4742200991261 /* DetailOlid.swift */; };
 		EE7CDFE429F7CA310058C163 /* NowCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7CDFE229F7CA310058C163 /* NowCollectionViewCell.swift */; };
 		EE7CDFE529F7CA310058C163 /* NowCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE7CDFE329F7CA310058C163 /* NowCollectionViewCell.xib */; };
@@ -121,7 +121,6 @@
 		2E1F16C229F91EC0007FC4E3 /* AccountTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountTableViewCell.xib; sourceTree = "<group>"; };
 		2E1F16C529F91F57007FC4E3 /* AccountCustomRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCustomRow.swift; sourceTree = "<group>"; };
 		2E1F16C729F973DD007FC4E3 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
-		2E1F16C829F973DD007FC4E3 /* AboutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
 		2E1F16CD29F9A7E3007FC4E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/AccountViewController.xib; sourceTree = "<group>"; };
 		2E1F16D529F9B438007FC4E3 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2E1F16D629F9B43A007FC4E3 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -146,6 +145,13 @@
 		2ECF25B029E89D3E00956FCB /* UIView + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Ext.swift"; sourceTree = "<group>"; };
 		2EE0E11429F48AB9008B2362 /* TextfieldCharacters + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextfieldCharacters + Ext.swift"; sourceTree = "<group>"; };
 		2EFA100A29FA4C8100AE6888 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2EFA100D29FA707200AE6888 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/AboutViewController.xib; sourceTree = "<group>"; };
+		2EFA101029FA707600AE6888 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/AboutViewController.strings; sourceTree = "<group>"; };
+		2EFA101229FA707700AE6888 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/AboutViewController.strings; sourceTree = "<group>"; };
+		2EFA101429FA707700AE6888 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/AboutViewController.strings; sourceTree = "<group>"; };
+		2EFA101629FA707800AE6888 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/AboutViewController.strings; sourceTree = "<group>"; };
+		2EFA101829FA707800AE6888 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/AboutViewController.strings; sourceTree = "<group>"; };
+		2EFA101A29FA707900AE6888 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/AboutViewController.strings; sourceTree = "<group>"; };
 		EE78967229F4742200991261 /* DetailOlid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailOlid.swift; sourceTree = "<group>"; };
 		EE7CDFE229F7CA310058C163 /* NowCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowCollectionViewCell.swift; sourceTree = "<group>"; };
 		EE7CDFE329F7CA310058C163 /* NowCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NowCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -266,7 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				2E1F16C729F973DD007FC4E3 /* AboutViewController.swift */,
-				2E1F16C829F973DD007FC4E3 /* AboutViewController.xib */,
+				2EFA100E29FA707200AE6888 /* AboutViewController.xib */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -591,7 +597,7 @@
 				EEAC4FB029E6F8220066757B /* Main.storyboard in Resources */,
 				2E1F168929F7DBB0007FC4E3 /* HomeViewController.xib in Resources */,
 				EEC8356E29EAF1D200058796 /* HomeCarouselTableViewCell.xib in Resources */,
-				2E1F16CA29F973DD007FC4E3 /* AboutViewController.xib in Resources */,
+				2EFA100C29FA707200AE6888 /* AboutViewController.xib in Resources */,
 				2E1F169029F82080007FC4E3 /* DetailViewController.xib in Resources */,
 				2E1F16E129F9B7ED007FC4E3 /* HomeVCLocalizable.strings in Resources */,
 				EE7CDFE729F7D2F00058C163 /* NowTableViewCell.xib in Resources */,
@@ -754,6 +760,20 @@
 				2E1F16E929F9B7F4007FC4E3 /* tr */,
 			);
 			name = HomeVCLocalizable.strings;
+			sourceTree = "<group>";
+		};
+		2EFA100E29FA707200AE6888 /* AboutViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2EFA100D29FA707200AE6888 /* Base */,
+				2EFA101029FA707600AE6888 /* nl */,
+				2EFA101229FA707700AE6888 /* fr */,
+				2EFA101429FA707700AE6888 /* de */,
+				2EFA101629FA707800AE6888 /* it */,
+				2EFA101829FA707800AE6888 /* es */,
+				2EFA101A29FA707900AE6888 /* tr */,
+			);
+			name = AboutViewController.xib;
 			sourceTree = "<group>";
 		};
 		EEAC4FAE29E6F8220066757B /* Main.storyboard */ = {
