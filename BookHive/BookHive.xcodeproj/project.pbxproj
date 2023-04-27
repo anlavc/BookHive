@@ -56,6 +56,11 @@
 		EEC8356A29EAEE6300058796 /* HomeCollectionViewCarousel.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEC8356829EAEE6300058796 /* HomeCollectionViewCarousel.xib */; };
 		EEC8356D29EAF1D200058796 /* HomeCarouselTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC8356B29EAF1D200058796 /* HomeCarouselTableViewCell.swift */; };
 		EEC8356E29EAF1D200058796 /* HomeCarouselTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEC8356C29EAF1D200058796 /* HomeCarouselTableViewCell.xib */; };
+		EEE4DAB729F914980017A5EF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE4DAB529F914980017A5EF /* LoginViewController.swift */; };
+		EEE4DAB829F914980017A5EF /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEE4DAB629F914980017A5EF /* LoginViewController.xib */; };
+		EEE4DABA29F91A030017A5EF /* TextField + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE4DAB929F91A030017A5EF /* TextField + Ext.swift */; };
+		EEE4DABD29F934E70017A5EF /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE4DABB29F934E70017A5EF /* RegisterViewController.swift */; };
+		EEE4DABE29F934E70017A5EF /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEE4DABC29F934E70017A5EF /* RegisterViewController.xib */; };
 		EEFBBCA829E96E3100BDD902 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFBBCA729E96E3100BDD902 /* Model.swift */; };
 		EEFBBCAA29E9723000BDD902 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFBBCA929E9723000BDD902 /* EndPointType.swift */; };
 		EEFBBCAC29E9730400BDD902 /* BookEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFBBCAB29E9730400BDD902 /* BookEndPoint.swift */; };
@@ -169,6 +174,11 @@
 		EEC8356829EAEE6300058796 /* HomeCollectionViewCarousel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCollectionViewCarousel.xib; sourceTree = "<group>"; };
 		EEC8356B29EAF1D200058796 /* HomeCarouselTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCarouselTableViewCell.swift; sourceTree = "<group>"; };
 		EEC8356C29EAF1D200058796 /* HomeCarouselTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCarouselTableViewCell.xib; sourceTree = "<group>"; };
+		EEE4DAB529F914980017A5EF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		EEE4DAB629F914980017A5EF /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		EEE4DAB929F91A030017A5EF /* TextField + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField + Ext.swift"; sourceTree = "<group>"; };
+		EEE4DABB29F934E70017A5EF /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		EEE4DABC29F934E70017A5EF /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
 		EEFBBCA729E96E3100BDD902 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		EEFBBCA929E9723000BDD902 /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
 		EEFBBCAB29E9730400BDD902 /* BookEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookEndPoint.swift; sourceTree = "<group>"; };
@@ -210,6 +220,10 @@
 				EE42978029F81AAA003B077C /* AccountViewController.xib */,
 				EE977F7A29F02F6A0027CF90 /* DetailViewController.swift */,
 				2E1F169229F82080007FC4E3 /* DetailViewController.xib */,
+				EEE4DAB529F914980017A5EF /* LoginViewController.swift */,
+				EEE4DAB629F914980017A5EF /* LoginViewController.xib */,
+				EEE4DABB29F934E70017A5EF /* RegisterViewController.swift */,
+				EEE4DABC29F934E70017A5EF /* RegisterViewController.xib */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -240,6 +254,7 @@
 				2E71F82E29ED537B00403A86 /* CellColor + Ext.swift */,
 				EE977F7E29F13E910027CF90 /* ImageView + Ext.swift */,
 				2EE0E11429F48AB9008B2362 /* TextfieldCharacters + Ext.swift */,
+				EEE4DAB929F91A030017A5EF /* TextField + Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -531,7 +546,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEE4DAB829F914980017A5EF /* LoginViewController.xib in Resources */,
 				EEAC4FB829E6F8230066757B /* LaunchScreen.storyboard in Resources */,
+				EEE4DABE29F934E70017A5EF /* RegisterViewController.xib in Resources */,
 				EE7CDFE529F7CA310058C163 /* NowCollectionViewCell.xib in Resources */,
 				EEAC4FD029E70EDF0066757B /* HomeTableViewCell.xib in Resources */,
 				EEAC4FB529E6F8230066757B /* Assets.xcassets in Resources */,
@@ -560,10 +577,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEE4DAB729F914980017A5EF /* LoginViewController.swift in Sources */,
 				2E88B35429E7009F008F4B4B /* SearchViewController.swift in Sources */,
 				EEAC4FB329E6F8220066757B /* BookHive.xcdatamodeld in Sources */,
 				EE977F8329F150330027CF90 /* DetailModel.swift in Sources */,
 				EEC8356D29EAF1D200058796 /* HomeCarouselTableViewCell.swift in Sources */,
+				EEE4DABA29F91A030017A5EF /* TextField + Ext.swift in Sources */,
 				EEC8356929EAEE6300058796 /* HomeCollectionViewCarousel.swift in Sources */,
 				EEFBBCAA29E9723000BDD902 /* EndPointType.swift in Sources */,
 				EE78967329F4742200991261 /* DetailOlid.swift in Sources */,
@@ -581,6 +600,7 @@
 				EE7CDFE429F7CA310058C163 /* NowCollectionViewCell.swift in Sources */,
 				EEAC4FD429E714280066757B /* TableCollectionViewCell.swift in Sources */,
 				EEAD10C329EF485A00BA6603 /* SearchModel.swift in Sources */,
+				EEE4DABD29F934E70017A5EF /* RegisterViewController.swift in Sources */,
 				2E88B35C29E7082C008F4B4B /* SearchTableViewCell.swift in Sources */,
 				2ECF25B129E89D3E00956FCB /* UIView + Ext.swift in Sources */,
 				2E71F82F29ED537B00403A86 /* CellColor + Ext.swift in Sources */,
