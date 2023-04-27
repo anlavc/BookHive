@@ -186,7 +186,7 @@
         <!--Navigation Controller-->
         <scene sceneID="IRP-h9-OrR">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IOB-ok-Y83" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navBar" automaticallyAdjustsScrollViewInsets="NO" id="IOB-ok-Y83" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="EVT-zA-zTV">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
