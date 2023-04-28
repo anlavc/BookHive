@@ -25,6 +25,7 @@ class AccountViewController: FormViewController, MFMailComposeViewControllerDele
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
+    
     // MARK: - User Information Form
     private func userInformationForm() {
         form +++
@@ -52,8 +53,6 @@ class AccountViewController: FormViewController, MFMailComposeViewControllerDele
                 vc.modalPresentationStyle = .fullScreen
                 self.present(vc, animated: true)
             }
-            
-            
         }
         <<< AccountCustomRow() {
             $0.cell.accountTableViewCellLabelName.text = NSLocalizedString("Contact", comment: "")

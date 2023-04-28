@@ -10,15 +10,11 @@ import Eureka
 
 class AccountTableViewCell: Cell<String>, CellType {
     
-    
-    @IBOutlet weak var accountCellView: UIView!
-    @IBOutlet weak var accountIconImageView: UIImageView!
+    @IBOutlet weak var accountCellView              : UIView!
+    @IBOutlet weak var accountIconImageView         : UIImageView!
     @IBOutlet weak var accountTableViewCellLabelName: UILabel!
     
-    
-
     override func awakeFromNib() {
         super.awakeFromNib()
-        
     }
 }

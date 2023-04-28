@@ -11,19 +11,20 @@ class MyBooksCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "MyBooksCollectionViewCell"
     
-    @IBOutlet weak var mybooksView: UIView!
-    @IBOutlet weak var mybooksImageView: UIImageView!
-    @IBOutlet weak var mybooksBookNameLabel: UILabel!
+    @IBOutlet weak var mybooksView           : UIView!
+    @IBOutlet weak var mybooksImageView      : UIImageView!
+    @IBOutlet weak var mybooksBookNameLabel  : UILabel!
     @IBOutlet weak var mybooksAuthorNameLabel: UILabel!
-    @IBOutlet weak var progressBar: UIProgressView!
+    @IBOutlet weak var progressBar           : UIProgressView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        mybooksView.layer.cornerRadius = 15
-        mybooksView.layer.shadowColor = UIColor.gray.cgColor
+        mybooksView.layer.cornerRadius  = 15
+        mybooksView.layer.shadowColor   = UIColor.gray.cgColor
         mybooksView.layer.shadowOpacity = 0.5
-        mybooksView.layer.shadowRadius = 5
-        mybooksView.layer.shadowOffset = CGSize(width: 2, height: 2)
+        mybooksView.layer.shadowRadius  = 5
+        mybooksView.layer.shadowOffset  = CGSize(width : 2,
+                                                 height: 2)
     }
     
     static func nib() -> UINib {
