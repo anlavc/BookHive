@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -13,10 +12,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterViewController" customModule="BookHive" customModuleProvider="target">
             <connections>
-                <outlet property="backButton" destination="c9C-N1-pOo" id="6Ut-Bv-4gN"/>
                 <outlet property="centerStack" destination="jpS-wU-vIR" id="L0G-s8-ezk"/>
+                <outlet property="createAccount" destination="rHH-pw-6oH" id="xLB-uj-LZC"/>
                 <outlet property="createButton" destination="SUs-dU-FZj" id="Bpb-xM-1JW"/>
                 <outlet property="email" destination="DUd-7C-qg1" id="KS0-oF-tLl"/>
+                <outlet property="haveAccount" destination="yuq-i4-kdg" id="rNI-KF-MBp"/>
                 <outlet property="lockButton" destination="Tdr-XM-lon" id="0w1-fE-YEM"/>
                 <outlet property="loginButton" destination="XYh-N0-a1h" id="zXg-VE-Y2e"/>
                 <outlet property="nickname" destination="nhg-iL-SVC" id="pys-AA-bVS"/>
@@ -37,21 +37,6 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cy0-TA-50b">
                             <rect key="frame" x="0.0" y="0.0" width="393" height="759"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c9C-N1-pOo">
-                                    <rect key="frame" x="5" y="5" width="68" height="50"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="50" id="fVF-Vt-eDt"/>
-                                    </constraints>
-                                    <color key="tintColor" name="labelColorBold"/>
-                                    <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain">
-                                        <imageReference key="image" image="chevron.backward.square" catalog="system" symbolScale="large"/>
-                                        <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="30"/>
-                                    </buttonConfiguration>
-                                    <connections>
-                                        <action selector="backbuttonTapped:" destination="-1" eventType="touchUpInside" id="xbX-qG-2AM"/>
-                                    </connections>
-                                </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CREATE ACCOUNT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rHH-pw-6oH">
                                     <rect key="frame" x="20" y="90" width="275" height="40"/>
                                     <constraints>
@@ -61,94 +46,116 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="jpS-wU-vIR" userLabel="centerStack">
-                                    <rect key="frame" x="20" y="220" width="353" height="240"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jpS-wU-vIR" userLabel="centerStack">
+                                    <rect key="frame" x="20" y="220" width="353" height="248.66666666666663"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IMM-27-adu">
-                                            <rect key="frame" x="0.0" y="0.0" width="353" height="60"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="IMM-27-adu">
+                                            <rect key="frame" x="0.0" y="0.0" width="49.666666666666664" height="248.66666666666666"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z4C-D7-Rve">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z4C-D7-Rve" userLabel="person">
                                                     <rect key="frame" x="0.0" y="0.0" width="49.666666666666664" height="60"/>
                                                     <color key="backgroundColor" name="coverbgColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="PQ2-xt-QYI"/>
+                                                    </constraints>
                                                     <color key="tintColor" name="colordarkgray"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" image="person.circle" catalog="system"/>
                                                 </button>
-                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nhg-iL-SVC">
-                                                    <rect key="frame" x="49.666666666666657" y="0.0" width="303.33333333333337" height="60"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="60" id="CZt-5R-yOA"/>
-                                                    </constraints>
-                                                    <color key="textColor" name="colordarkgray"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits" textContentType="email"/>
-                                                </textField>
-                                            </subviews>
-                                        </stackView>
-                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zy2-E0-fxt">
-                                            <rect key="frame" x="0.0" y="60" width="353" height="60"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0f6-3J-7yJ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="49.666666666666664" height="60"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0f6-3J-7yJ" userLabel="mail">
+                                                    <rect key="frame" x="0.0" y="60" width="49.666666666666664" height="60"/>
                                                     <color key="backgroundColor" name="coverbgColor"/>
                                                     <color key="tintColor" name="colordarkgray"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" image="envelope.circle" catalog="system"/>
                                                 </button>
-                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DUd-7C-qg1">
-                                                    <rect key="frame" x="49.666666666666657" y="0.0" width="303.33333333333337" height="60"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQA-Ba-2P4" userLabel="lock">
+                                                    <rect key="frame" x="0.0" y="120" width="49.666666666666664" height="68.666666666666686"/>
+                                                    <color key="backgroundColor" name="coverbgColor"/>
+                                                    <color key="tintColor" name="colordarkgray"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" image="lock.circle" catalog="system"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tdr-XM-lon" userLabel="relock">
+                                                    <rect key="frame" x="0.0" y="188.66666666666669" width="49.666666666666664" height="60"/>
+                                                    <color key="backgroundColor" name="coverbgColor"/>
+                                                    <color key="tintColor" name="colordarkgray"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" image="lock.circle" catalog="system"/>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Tdr-XM-lon" firstAttribute="height" secondItem="Z4C-D7-Rve" secondAttribute="height" id="CDk-NU-OJS"/>
+                                                <constraint firstItem="fQA-Ba-2P4" firstAttribute="height" secondItem="Z4C-D7-Rve" secondAttribute="height" multiplier="1.14167" id="RtG-wT-w9j"/>
+                                                <constraint firstItem="0f6-3J-7yJ" firstAttribute="height" secondItem="Z4C-D7-Rve" secondAttribute="height" id="u6a-xb-gnh"/>
+                                            </constraints>
+                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Zy2-E0-fxt">
+                                            <rect key="frame" x="49.666666666666657" y="0.0" width="303.33333333333337" height="248.66666666666666"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nhg-iL-SVC" customClass="PaddingTextField" customModule="BookHive" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="303.33333333333331" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="BXv-Oa-4Tt"/>
+                                                    </constraints>
                                                     <color key="textColor" name="colordarkgray"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" textContentType="email"/>
                                                 </textField>
-                                            </subviews>
-                                        </stackView>
-                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RBf-ZG-qKE">
-                                            <rect key="frame" x="0.0" y="120" width="353" height="60"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQA-Ba-2P4">
-                                                    <rect key="frame" x="0.0" y="0.0" width="49.666666666666664" height="60"/>
-                                                    <color key="backgroundColor" name="coverbgColor"/>
-                                                    <color key="tintColor" name="colordarkgray"/>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" image="lock.circle" catalog="system"/>
-                                                </button>
-                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9jF-Vv-rjJ">
-                                                    <rect key="frame" x="49.666666666666657" y="0.0" width="303.33333333333337" height="60"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DL5-z5-zjk">
+                                                    <rect key="frame" x="0.0" y="60" width="303.33333333333331" height="1"/>
+                                                    <color key="backgroundColor" name="colordarkgray"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="ft7-Js-qgH"/>
+                                                    </constraints>
+                                                </view>
+                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DUd-7C-qg1" customClass="PaddingTextField" customModule="BookHive" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="61" width="303.33333333333331" height="60"/>
+                                                    <color key="textColor" name="colordarkgray"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <textInputTraits key="textInputTraits" textContentType="email"/>
+                                                </textField>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gi4-Dk-9QL">
+                                                    <rect key="frame" x="0.0" y="121" width="303.33333333333331" height="1"/>
+                                                    <color key="backgroundColor" name="colordarkgray"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="PAc-E8-uLA"/>
+                                                    </constraints>
+                                                </view>
+                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9jF-Vv-rjJ" customClass="PaddingTextField" customModule="BookHive" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="122" width="303.33333333333331" height="60"/>
                                                     <color key="textColor" name="colordarkgray"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" textContentType="password"/>
+                                                    <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                                 </textField>
-                                            </subviews>
-                                        </stackView>
-                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WyR-yQ-jWw">
-                                            <rect key="frame" x="0.0" y="180" width="353" height="60"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tdr-XM-lon">
-                                                    <rect key="frame" x="0.0" y="0.0" width="49.666666666666664" height="60"/>
-                                                    <color key="backgroundColor" name="coverbgColor"/>
-                                                    <color key="tintColor" name="colordarkgray"/>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" image="lock.circle" catalog="system"/>
-                                                </button>
-                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Re-Enter Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZcV-fQ-k2W">
-                                                    <rect key="frame" x="49.666666666666657" y="0.0" width="303.33333333333337" height="60"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gJX-VT-avm">
+                                                    <rect key="frame" x="0.0" y="182" width="303.33333333333331" height="1"/>
+                                                    <color key="backgroundColor" name="colordarkgray"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="ky5-dt-1V0"/>
+                                                    </constraints>
+                                                </view>
+                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Re-Enter Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZcV-fQ-k2W" customClass="PaddingTextField" customModule="BookHive" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="183" width="303.33333333333331" height="60"/>
                                                     <color key="textColor" name="colordarkgray"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" textContentType="password"/>
+                                                    <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                                 </textField>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E9b-Ls-uTI">
+                                                    <rect key="frame" x="0.0" y="243" width="303.33333333333331" height="5.6666666666666572"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="DUd-7C-qg1" firstAttribute="height" secondItem="nhg-iL-SVC" secondAttribute="height" id="6li-oJ-h4b"/>
+                                                <constraint firstItem="ZcV-fQ-k2W" firstAttribute="height" secondItem="nhg-iL-SVC" secondAttribute="height" id="bpt-dM-m2P"/>
+                                                <constraint firstItem="9jF-Vv-rjJ" firstAttribute="height" secondItem="nhg-iL-SVC" secondAttribute="height" id="w7D-K4-rQY"/>
+                                            </constraints>
                                         </stackView>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="240" id="12O-bf-YZo"/>
-                                        <constraint firstItem="DUd-7C-qg1" firstAttribute="height" secondItem="nhg-iL-SVC" secondAttribute="height" id="7DS-VP-d45"/>
-                                        <constraint firstItem="ZcV-fQ-k2W" firstAttribute="height" secondItem="nhg-iL-SVC" secondAttribute="height" id="DNG-rq-4Oc"/>
-                                        <constraint firstItem="9jF-Vv-rjJ" firstAttribute="height" secondItem="nhg-iL-SVC" secondAttribute="height" id="tL3-fC-zPw"/>
-                                    </constraints>
                                 </stackView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SUs-dU-FZj">
-                                    <rect key="frame" x="20" y="490" width="353" height="60"/>
+                                    <rect key="frame" x="20" y="498.66666666666663" width="353" height="60"/>
                                     <color key="backgroundColor" name="coverbgColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="60" id="BFG-6x-XuE"/>
@@ -174,8 +181,14 @@
                                             <color key="tintColor" name="coverbgColor"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" title="Login"/>
+                                            <connections>
+                                                <action selector="loginButtonTapped:" destination="-1" eventType="touchUpInside" id="WzD-g1-vL2"/>
+                                            </connections>
                                         </button>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="yuq-i4-kdg" firstAttribute="centerY" secondItem="XYh-N0-a1h" secondAttribute="centerY" id="2AD-Jf-4Q5"/>
+                                    </constraints>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="qaf-a6-TaM" userLabel="logo">
                                     <rect key="frame" x="101.66666666666669" y="649.66666666666663" width="190" height="40"/>
@@ -202,19 +215,16 @@
                                 <constraint firstItem="SUs-dU-FZj" firstAttribute="trailing" secondItem="jpS-wU-vIR" secondAttribute="trailing" id="3dV-sQ-UkF"/>
                                 <constraint firstItem="jpS-wU-vIR" firstAttribute="centerX" secondItem="cy0-TA-50b" secondAttribute="centerX" id="4kk-s3-NGR"/>
                                 <constraint firstAttribute="trailing" secondItem="jpS-wU-vIR" secondAttribute="trailing" constant="20" id="7Bc-SH-dVC"/>
+                                <constraint firstItem="rHH-pw-6oH" firstAttribute="top" secondItem="cy0-TA-50b" secondAttribute="top" constant="90" id="EJZ-IJ-XXX"/>
                                 <constraint firstItem="rHH-pw-6oH" firstAttribute="leading" secondItem="cy0-TA-50b" secondAttribute="leading" constant="20" id="Fef-VW-SJU"/>
                                 <constraint firstItem="SUs-dU-FZj" firstAttribute="top" secondItem="jpS-wU-vIR" secondAttribute="bottom" constant="30" id="G3z-RB-8nM"/>
-                                <constraint firstItem="c9C-N1-pOo" firstAttribute="top" secondItem="cy0-TA-50b" secondAttribute="top" constant="5" id="HW8-Gl-HzL"/>
                                 <constraint firstItem="jpS-wU-vIR" firstAttribute="top" secondItem="rHH-pw-6oH" secondAttribute="bottom" constant="90" id="Pxo-K1-MzJ"/>
-                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="c9C-N1-pOo" secondAttribute="trailing" constant="20" symbolic="YES" id="TgY-Qc-lcp"/>
                                 <constraint firstItem="SUs-dU-FZj" firstAttribute="leading" secondItem="jpS-wU-vIR" secondAttribute="leading" id="US7-hd-9Tv"/>
                                 <constraint firstAttribute="bottom" secondItem="old-FZ-QRz" secondAttribute="bottom" constant="10" id="UvC-XP-fhP"/>
                                 <constraint firstItem="qaf-a6-TaM" firstAttribute="top" relation="lessThanOrEqual" secondItem="SUs-dU-FZj" secondAttribute="bottom" constant="99.670000000000002" id="fnL-bN-42L"/>
-                                <constraint firstItem="c9C-N1-pOo" firstAttribute="leading" secondItem="cy0-TA-50b" secondAttribute="leading" constant="5" id="hi2-Ya-YqO"/>
                                 <constraint firstItem="old-FZ-QRz" firstAttribute="centerX" secondItem="cy0-TA-50b" secondAttribute="centerX" id="iR6-yQ-LD3"/>
                                 <constraint firstItem="jpS-wU-vIR" firstAttribute="leading" secondItem="cy0-TA-50b" secondAttribute="leading" constant="20" id="mmg-YC-mqL"/>
                                 <constraint firstItem="qaf-a6-TaM" firstAttribute="centerX" secondItem="cy0-TA-50b" secondAttribute="centerX" id="pwB-CM-FQl"/>
-                                <constraint firstItem="rHH-pw-6oH" firstAttribute="top" secondItem="c9C-N1-pOo" secondAttribute="bottom" constant="35" id="u3D-C0-tH7"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -244,7 +254,6 @@
         </view>
     </objects>
     <resources>
-        <image name="chevron.backward.square" catalog="system" width="128" height="114"/>
         <image name="envelope.circle" catalog="system" width="128" height="123"/>
         <image name="iconbook" width="500" height="500"/>
         <image name="lock.circle" catalog="system" width="128" height="123"/>
@@ -254,9 +263,6 @@
         </namedColor>
         <namedColor name="coverbgColor">
             <color red="0.99607843137254903" green="0.77254901960784317" blue="0.086274509803921567" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="labelColorBold">
-            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

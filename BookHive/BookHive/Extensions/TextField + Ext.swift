@@ -24,6 +24,21 @@ extension UITextField {
         self.layer.cornerRadius = cornerRadius
     }
 
-    
+}
 
+class PaddingTextField: UITextField {
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    override func textRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.inset(by: UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 15))
+    }
+   
+     func placheholderRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.inset(by: UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 15))
+    }
+    override func editingRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.inset(by: UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 15))
+
+    }
 }
