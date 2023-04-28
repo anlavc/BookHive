@@ -8,23 +8,26 @@
 import UIKit
 import Kingfisher
 
+// MARK: - Protocol
 protocol SearchTableViewCellDelegate {
     func didSelect(selectedItem: SearchDoc)
 }
 
+// MARK: - Class
 class SearchTableViewCell: UITableViewCell {
     
-    var isFavorited = false
+    // MARK: - Properties
     var viewModel: SearchViewModel?
-    var delegate: SearchTableViewCellDelegate?
-    var index: SearchDoc?
+    var delegate : SearchTableViewCellDelegate?
+    var index    : SearchDoc?
+    var isFavorited = false
     
     // MARK: - Outlets
-    @IBOutlet weak var searchView: UIView!
-    @IBOutlet weak var bookImageView: UIImageView!
-    @IBOutlet weak var favoriteButton: UIButton!
-    @IBOutlet weak var bookNameLabel: UILabel!
-    @IBOutlet weak var authorNameLabel: UILabel!
+    @IBOutlet weak var searchView       : UIView!
+    @IBOutlet weak var bookImageView    : UIImageView!
+    @IBOutlet weak var favoriteButton   : UIButton!
+    @IBOutlet weak var bookNameLabel    : UILabel!
+    @IBOutlet weak var authorNameLabel  : UILabel!
     @IBOutlet weak var viewDetailsButton: UIButton!
     
     // MARK: - Identifier
@@ -44,10 +47,11 @@ class SearchTableViewCell: UITableViewCell {
     // MARK: - Views Config
     private func viewConfigure() {
         viewDetailsButton.layer.cornerRadius = 12
-        searchView.layer.cornerRadius = 20
+        searchView.layer.cornerRadius        = 20
         searchView.addShadow(color  : .gray,
                              opacity: 0.5,
-                             offset : CGSize(width: 2, height: 2),
+                             offset : CGSize(width : 2,
+                                             height: 2),
                              radius : 5)
     }
     

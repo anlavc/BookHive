@@ -30,10 +30,10 @@
 		2EE0E11529F48AB9008B2362 /* TextfieldCharacters + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE0E11429F48AB9008B2362 /* TextfieldCharacters + Ext.swift */; };
 		2EFA100B29FA4C8100AE6888 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EFA100A29FA4C8100AE6888 /* Assets.xcassets */; };
 		2EFA102929FB114900AE6888 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFA102829FB114900AE6888 /* AboutViewController.swift */; };
-		2EFA102B29FB116200AE6888 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EFA102A29FB116200AE6888 /* AboutViewController.xib */; };
 		2EFA102D29FB121A00AE6888 /* PageNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFA102C29FB121A00AE6888 /* PageNumberViewController.swift */; };
 		2EFA102F29FB122300AE6888 /* PageNumberViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EFA102E29FB122300AE6888 /* PageNumberViewController.xib */; };
 		2EFA103129FB148400AE6888 /* AccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EFA103029FB148300AE6888 /* AccountTableViewCell.xib */; };
+		2EFA103229FB971B00AE6888 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EFA103429FB971B00AE6888 /* AboutViewController.xib */; };
 		EE6DF06C29FA8C4C007B8DF8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE6DF06B29FA8C4C007B8DF8 /* GoogleService-Info.plist */; };
 		EE6DF06F29FA8E2E007B8DF8 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = EE6DF06E29FA8E2E007B8DF8 /* FirebaseAuth */; };
 		EE6DF07129FA8E2E007B8DF8 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = EE6DF07029FA8E2E007B8DF8 /* FirebaseDatabase */; };
@@ -154,9 +154,16 @@
 		2EE0E11429F48AB9008B2362 /* TextfieldCharacters + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextfieldCharacters + Ext.swift"; sourceTree = "<group>"; };
 		2EFA100A29FA4C8100AE6888 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2EFA102829FB114900AE6888 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
-		2EFA102A29FB116200AE6888 /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
 		2EFA102C29FB121A00AE6888 /* PageNumberViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageNumberViewController.swift; sourceTree = "<group>"; };
 		2EFA102E29FB122300AE6888 /* PageNumberViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PageNumberViewController.xib; sourceTree = "<group>"; };
+		2EFA103029FB148300AE6888 /* AccountTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountTableViewCell.xib; sourceTree = "<group>"; };
+		2EFA103329FB971B00AE6888 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/AboutViewController.xib; sourceTree = "<group>"; };
+		2EFA103629FB971D00AE6888 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/AboutViewController.strings; sourceTree = "<group>"; };
+		2EFA103829FB971D00AE6888 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/AboutViewController.strings; sourceTree = "<group>"; };
+		2EFA103A29FB971E00AE6888 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/AboutViewController.strings; sourceTree = "<group>"; };
+		2EFA103C29FB971E00AE6888 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/AboutViewController.strings; sourceTree = "<group>"; };
+		2EFA103E29FB971F00AE6888 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/AboutViewController.strings; sourceTree = "<group>"; };
+		2EFA104029FB971F00AE6888 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/AboutViewController.strings; sourceTree = "<group>"; };
 		EE6DF06B29FA8C4C007B8DF8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2EFA100D29FA707200AE6888 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/AboutViewController.xib; sourceTree = "<group>"; };
 		2EFA101029FA707600AE6888 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/AboutViewController.strings; sourceTree = "<group>"; };
@@ -348,7 +355,7 @@
 			isa = PBXGroup;
 			children = (
 				2EFA102829FB114900AE6888 /* AboutViewController.swift */,
-				2EFA102A29FB116200AE6888 /* AboutViewController.xib */,
+				2EFA103429FB971B00AE6888 /* AboutViewController.xib */,
 				2EFA102C29FB121A00AE6888 /* PageNumberViewController.swift */,
 				2EFA102E29FB122300AE6888 /* PageNumberViewController.xib */,
 			);
@@ -632,7 +639,7 @@
 				EEAC4FB029E6F8220066757B /* Main.storyboard in Resources */,
 				2E1F168929F7DBB0007FC4E3 /* HomeViewController.xib in Resources */,
 				2EFA102F29FB122300AE6888 /* PageNumberViewController.xib in Resources */,
-				2EFA102B29FB116200AE6888 /* AboutViewController.xib in Resources */,
+				2EFA103229FB971B00AE6888 /* AboutViewController.xib in Resources */,
 				EEC8356E29EAF1D200058796 /* HomeCarouselTableViewCell.xib in Resources */,
 				EE6DF06C29FA8C4C007B8DF8 /* GoogleService-Info.plist in Resources */,
 				2E1F169029F82080007FC4E3 /* DetailViewController.xib in Resources */,
