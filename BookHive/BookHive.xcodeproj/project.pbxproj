@@ -11,14 +11,12 @@
 		2E1F167329F7CB77007FC4E3 /* MyBooksViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E1F167529F7CB77007FC4E3 /* MyBooksViewController.xib */; };
 		2E1F167E29F7CEB8007FC4E3 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E1F168029F7CEB8007FC4E3 /* SearchTableViewCell.xib */; };
 		2E1F168929F7DBB0007FC4E3 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E1F168B29F7DBB0007FC4E3 /* HomeViewController.xib */; };
-		2E1F168F29F7E4CC007FC4E3 /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1F168E29F7E4CC007FC4E3 /* AccountModel.swift */; };
 		2E1F169029F82080007FC4E3 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E1F169229F82080007FC4E3 /* DetailViewController.xib */; };
 		2E1F16BB29F916B2007FC4E3 /* Eureka in Frameworks */ = {isa = PBXBuildFile; productRef = 2E1F16BA29F916B2007FC4E3 /* Eureka */; };
 		2E1F16C329F91EC0007FC4E3 /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1F16C129F91EC0007FC4E3 /* AccountTableViewCell.swift */; };
 		2E1F16C629F91F57007FC4E3 /* AccountCustomRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1F16C529F91F57007FC4E3 /* AccountCustomRow.swift */; };
 		2E1F16D229F9B436007FC4E3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2E1F16D429F9B436007FC4E3 /* Localizable.strings */; };
 		2E1F16E129F9B7ED007FC4E3 /* HomeVCLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2E1F16E329F9B7ED007FC4E3 /* HomeVCLocalizable.strings */; };
-		2E71F82F29ED537B00403A86 /* CellColor + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E71F82E29ED537B00403A86 /* CellColor + Ext.swift */; };
 		2E88B34C29E70077008F4B4B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88B34A29E70077008F4B4B /* HomeViewController.swift */; };
 		2E88B35029E70091008F4B4B /* MyBooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88B34E29E70091008F4B4B /* MyBooksViewController.swift */; };
 		2E88B35429E7009F008F4B4B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88B35229E7009F008F4B4B /* SearchViewController.swift */; };
@@ -107,7 +105,6 @@
 		2E1F168629F7CEBC007FC4E3 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/SearchTableViewCell.strings; sourceTree = "<group>"; };
 		2E1F168829F7CEBD007FC4E3 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/SearchTableViewCell.strings; sourceTree = "<group>"; };
 		2E1F168A29F7DBB0007FC4E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/HomeViewController.xib; sourceTree = "<group>"; };
-		2E1F168E29F7E4CC007FC4E3 /* AccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModel.swift; sourceTree = "<group>"; };
 		2E1F169129F82080007FC4E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/DetailViewController.xib; sourceTree = "<group>"; };
 		2E1F16A229F820EB007FC4E3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/DetailViewController.strings; sourceTree = "<group>"; };
 		2E1F16A429F820ED007FC4E3 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/DetailViewController.strings; sourceTree = "<group>"; };
@@ -142,7 +139,6 @@
 		2E1F16E729F9B7F3007FC4E3 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/HomeVCLocalizable.strings; sourceTree = "<group>"; };
 		2E1F16E829F9B7F4007FC4E3 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/HomeVCLocalizable.strings; sourceTree = "<group>"; };
 		2E1F16E929F9B7F4007FC4E3 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/HomeVCLocalizable.strings; sourceTree = "<group>"; };
-		2E71F82E29ED537B00403A86 /* CellColor + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CellColor + Ext.swift"; sourceTree = "<group>"; };
 		2E88B34A29E70077008F4B4B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2E88B34E29E70091008F4B4B /* MyBooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBooksViewController.swift; sourceTree = "<group>"; };
 		2E88B35229E7009F008F4B4B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -299,7 +295,6 @@
 			isa = PBXGroup;
 			children = (
 				2ECF25B029E89D3E00956FCB /* UIView + Ext.swift */,
-				2E71F82E29ED537B00403A86 /* CellColor + Ext.swift */,
 				EE977F7E29F13E910027CF90 /* ImageView + Ext.swift */,
 				2EE0E11429F48AB9008B2362 /* TextfieldCharacters + Ext.swift */,
 				EEE4DAB929F91A030017A5EF /* TextField + Ext.swift */,
@@ -467,7 +462,6 @@
 				EEAD10C229EF485A00BA6603 /* SearchModel.swift */,
 				EE977F8229F150330027CF90 /* DetailModel.swift */,
 				EE78967229F4742200991261 /* DetailOlid.swift */,
-				2E1F168E29F7E4CC007FC4E3 /* AccountModel.swift */,
 				EEBEAEBB29F85ADD00F993B8 /* Rating.swift */,
 			);
 			path = Models;
@@ -677,13 +671,11 @@
 				EEE4DABD29F934E70017A5EF /* RegisterViewController.swift in Sources */,
 				2E88B35C29E7082C008F4B4B /* SearchTableViewCell.swift in Sources */,
 				2ECF25B129E89D3E00956FCB /* UIView + Ext.swift in Sources */,
-				2E71F82F29ED537B00403A86 /* CellColor + Ext.swift in Sources */,
 				EE977F8729F16B1B0027CF90 /* DetailSubjectCell.swift in Sources */,
 				EEFBBCAC29E9730400BDD902 /* BookEndPoint.swift in Sources */,
 				2E88B34C29E70077008F4B4B /* HomeViewController.swift in Sources */,
 				EE904C2C29FB1DBC00441AA8 /* ViewController + Ext.swift in Sources */,
 				EEBEAEBC29F85ADD00F993B8 /* Rating.swift in Sources */,
-				2E1F168F29F7E4CC007FC4E3 /* AccountModel.swift in Sources */,
 				EEAC4FCF29E70EDF0066757B /* HomeTableViewCell.swift in Sources */,
 				EEFBBCAE29E977A100BDD902 /* APIManager.swift in Sources */,
 				EEAD10C529EF4DE600BA6603 /* SearchViewModel.swift in Sources */,

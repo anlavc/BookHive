@@ -10,10 +10,7 @@ import FirebaseAuth
 import Firebase
 
 class RegisterViewController: UIViewController {
-    
-    
     @IBOutlet weak var personicon: UIButton!
-    
     @IBOutlet weak var centerStack: UIStackView!
     //textfield
     @IBOutlet weak var rePassword: UITextField!
@@ -23,10 +20,13 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var nickname: UITextField!
     //button
     @IBOutlet weak var loginButton: UIButton!
-    
     @IBOutlet weak var lockButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var createButton: UIButton!
+    //label
+    @IBOutlet weak var createAccount: UILabel!
+    @IBOutlet weak var haveAccount: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         xibRegister()
@@ -55,11 +55,16 @@ class RegisterViewController: UIViewController {
         personicon.layer.maskedCorners = [.layerMinXMinYCorner]
         lockButton.layer.cornerRadius = 12
         lockButton.layer.maskedCorners = [.layerMinXMaxYCorner]
-        centerStack.addShadow(color: UIColor.darkGray, opacity: 0.5, offset: CGSize(width: 0, height: 0), radius: 5)
+        centerStack.addShadow(color: UIColor.darkGray, opacity: 0.5, offset: CGSize(width: 0, height: 0), radius: 0)
         createButton.addShadow(color: UIColor.darkGray, opacity: 0.5, offset: CGSize(width: 2, height: 2), radius: 5)
-        password.isSecureTextEntry = true
-        repassword.isSecureTextEntry = true
-        
+        nickname.placeholder = NSLocalizedString("Enter Name", comment: "")
+        email.placeholder = NSLocalizedString("Enter E-mail", comment: "")
+        password.placeholder = NSLocalizedString("Enter Password", comment: "")
+        repassword.placeholder = NSLocalizedString("Re-Enter Password", comment: "")
+        createButton.setTitle(NSLocalizedString("Register", comment: ""), for: .normal)
+        loginButton.setTitle(NSLocalizedString("Login", comment: ""), for: .normal)
+        haveAccount.text = NSLocalizedString("Already have an account?", comment: "")
+        createAccount.text = NSLocalizedString("CREATE ACCOUNT", comment: "")
     }
     //MARK: - Login Segue
     @IBAction func backbuttonTapped(_ sender: UIButton) {

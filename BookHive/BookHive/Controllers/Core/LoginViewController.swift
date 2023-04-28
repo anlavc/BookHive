@@ -10,7 +10,6 @@ import FirebaseAuth
 
 
 class LoginViewController: UIViewController {
-    let myView = UIView(frame: CGRect(x: 0, y: UIScreen.main.bounds.height, width: UIScreen.main.bounds.width, height: 100))
     //textfield
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -39,11 +38,6 @@ class LoginViewController: UIViewController {
            xibRegister()
            setupUI()
            gestureRecognizer()
-         
-   //        let myLabel = UILabel(frame: CGRect(x: 0, y: 0, width: myView.frame.width, height: myView.frame.height))
-   //        myLabel.text = "Bu, animasyonlu olarak gösterilecek 3-4 satırlık yazıdır."
-   //        myLabel.numberOfLines = 4
-   //        myView.addSubview(myLabel)
 
        }
        
@@ -58,16 +52,15 @@ class LoginViewController: UIViewController {
            personicon.layer.maskedCorners = [.layerMinXMinYCorner]
            lockicon.layer.cornerRadius = 12
            lockicon.layer.maskedCorners = [.layerMinXMaxYCorner]
-           centerStack.addShadow(color: UIColor.darkGray, opacity: 0.5, offset: CGSize(width: 0, height: 0), radius: 5)
+           centerStack.addShadow(color: UIColor.darkGray, opacity: 0.5, offset: CGSize(width: 0, height: 0), radius: 0)
            loginButton.addShadow(color: UIColor.darkGray, opacity: 0.5, offset: CGSize(width: 2, height: 2), radius: 5)
-           passwordTextField.isSecureTextEntry = true
            //localize
-           loginButton.titleLabel?.text 			= NSLocalizedString("Login", comment: "")
+           loginButton.setTitle(NSLocalizedString("Login", comment: ""), for: .normal)
            loginLabelText.text 						= NSLocalizedString("LOGIN", comment: "")
            millionsTextLabel.text 					= NSLocalizedString("To access millions of Books", comment: "")
-           forgotPasswordButton.titleLabel?.text 	= NSLocalizedString("Forget Password?", comment: "")
+           forgotPasswordButton.setTitle(NSLocalizedString("Forgot Password?", comment: ""), for: .normal)
            dontaccountTextLabel.text 				= NSLocalizedString("Hesabınız yok mu?", comment: "")
-           registerButton.titleLabel?.text 			= NSLocalizedString("Create Account", comment: "")
+           registerButton.setTitle(NSLocalizedString("Create Account", comment: ""), for: .normal)
            emailTextField.placeholder               = NSLocalizedString("Enter E-mail adress", comment: "")
            passwordTextField.placeholder            = NSLocalizedString("Enter Password", comment: "")
        }
@@ -112,6 +105,16 @@ class LoginViewController: UIViewController {
                }
            }
        }
+    //MARK: - Button Animation
+    func buttonAnimation(_ viewToAnimate:UIView) {
+        UIView.animate(withDuration: 0.3,delay: 0, usingSpringWithDamping: 0.5 ,initialSpringVelocity: 0.5,options: .curveEaseIn, animations: {
+            viewToAnimate.transform = CGAffineTransform(scaleX: 0.92, y: 0.92)
+        }) { (_) in
+            UIView.animate(withDuration: 0.15,delay: 0, usingSpringWithDamping: 0.4 ,initialSpringVelocity: 2,options: .curveEaseIn,animations: {
+                viewToAnimate.transform = CGAffineTransform(scaleX: 1, y: 1)
+            }, completion: nil)
+        }
+    }
     //MARK: - Validate Button
     func validateFields() -> String? {
         if emailTextField.text!.isNilOrEmpty ||
@@ -129,13 +132,6 @@ class LoginViewController: UIViewController {
     }
        
        @IBAction func forgetButtonTapped(_ sender: UIButton) {
-           myView.frame.origin.y = self.view.frame.height - myView.frame.height
-                   self.view.addSubview(myView)
-                   
-                   UIView.animate(withDuration: 0.3) {
-                       self.myView.frame.origin.y = self.view.frame.height - self.myView.frame.height
-                   }
-
 
        }
    }

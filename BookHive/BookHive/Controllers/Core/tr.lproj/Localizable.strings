@@ -48,3 +48,13 @@
 "Create Account" 				    = "Hesap Oluştur";
 "Enter E-mail adress"               = "Email adresini giriniz";
 "Enter Password"    	            = "Parolanızı giriniz";
+
+// Register
+
+
+"Enter Name"                = "İsminizi giriniz";
+"Enter E-mail"              = "E-mail adresini giriniz";
+"Re-Enter Password"         = "Parolanızı tekrar giriniz";
+"Register"                  = "Kayıt ol";
+"Already have an account?"  = "Zaten bir hesabın var mı?";
+"CREATE ACCOUNT"            = "HESAP OLUŞTUR";
