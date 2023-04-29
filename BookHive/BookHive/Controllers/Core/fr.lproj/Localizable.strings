@@ -19,5 +19,11 @@
 "Send Email" = "Envoyer un e-mail";
 "Cancel" = "Annuler";
 "Feedback" = "Feedback";
+"Share Us" = "Partager";
 "Cannot Send Email" = "Impossible d'envoyer un courriel";
 "Your device cannot send email. Please configure an email account in the Mail app and try again" = "Votre appareil ne peut pas envoyer d'e-mail. Veuillez configurer un compte de messagerie dans l'application Mail et réessayer.";
+
+"Permanently Delete Account" = "Supprimer définitivement le compte";
+"You are permanently deleting your account! This action is irreversible! Are You Sure?" = "Vous supprimez définitivement votre compte ! Cette action est irréversible ! Êtes-vous sûr ?";
+"OK"                    = "OK";
+"Cancel"                = "Annuler";

@@ -97,7 +97,7 @@
         <!--Login View Controller-->
         <scene sceneID="b96-0O-8ml">
             <objects>
-                <viewController id="fvy-J5-6B9" customClass="LoginViewController" customModule="BookHive" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="fvy-J5-6B9" customClass="LoginViewController" customModule="BookHive" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5NU-zj-VNV">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -23,6 +23,8 @@ class MyBooksViewController: UIViewController {
         let mybooksView = Bundle.main.loadNibNamed("MyBooksViewController",
                                                    owner: self)?.first as! UIView
         self.view       = mybooksView
+        
+        
     }
     
     // MARK: - Life Cycle
@@ -30,6 +32,9 @@ class MyBooksViewController: UIViewController {
         super.viewDidLoad()
         collectionViewSetup()
         viewsSetup()
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(wantToReadViewTapped))
+        wantToReadView.addGestureRecognizer(tapGesture)
+        
     }
     
     // MARK: - Collection View Configure
@@ -64,6 +69,13 @@ class MyBooksViewController: UIViewController {
                                           height: 2),
                            radius: 5)
     }
+    
+    @objc public func wantToReadViewTapped() {
+        let vc = ReadListViewController()
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
+    }
+    
 }
 
 // MARK: - Extensions

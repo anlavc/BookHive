@@ -11,7 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AboutViewController" customModule="BookHive" customModuleProvider="target">
             <connections>
-                <outlet property="aboutLabel" destination="Ygo-yH-jQI" id="86E-86-xUE"/>
+                <outlet property="aboutLabel" destination="TGj-vG-Thb" id="VGo-DV-NlK"/>
+                <outlet property="aboutView" destination="y4Q-9z-H6M" id="xbE-l4-pJW"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -27,13 +28,6 @@
                         <constraint firstAttribute="height" constant="852" id="nBs-QF-HG5"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="25" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ygo-yH-jQI">
-                    <rect key="frame" x="39" y="180" width="315" height="492"/>
-                    <mutableString key="text">Bookhive is a carefully developed digital bookmark app. Designed for those who love to read books, this app allows readers to easily locate the books they are reading. It also gives users the opportunity to learn about books. Bookhive is both a practical and useful tool and is the perfect solution for readers to keep track of their books.</mutableString>
-                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Oc-fx-aho">
                     <rect key="frame" x="16" y="59" width="36" height="35"/>
                     <constraints>
@@ -48,21 +42,39 @@
                         <action selector="backButton:" destination="-1" eventType="touchUpInside" id="Xpa-ve-xdt"/>
                     </connections>
                 </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y4Q-9z-H6M">
+                    <rect key="frame" x="5" y="112" width="383" height="599"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="13" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGj-vG-Thb">
+                            <rect key="frame" x="25" y="57" width="332" height="485"/>
+                            <string key="text">Bookhive is a carefully developed digital bookmark app. Designed for those who love to read books, this app allows readers to easily locate the books they are reading. It also gives users the opportunity to learn about books. Bookhive is both a practical and useful tool and is the perfect solution for readers to keep track of their books.</string>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemGray6Color"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="TGj-vG-Thb" secondAttribute="trailing" constant="26" id="2tE-Of-whd"/>
+                        <constraint firstItem="TGj-vG-Thb" firstAttribute="top" secondItem="y4Q-9z-H6M" secondAttribute="top" constant="57" id="3b0-ha-aLQ"/>
+                        <constraint firstAttribute="bottom" secondItem="TGj-vG-Thb" secondAttribute="bottom" constant="57" id="IhU-E5-LCs"/>
+                        <constraint firstItem="TGj-vG-Thb" firstAttribute="leading" secondItem="y4Q-9z-H6M" secondAttribute="leading" constant="25" id="eqh-Wo-iLi"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Ygo-yH-jQI" secondAttribute="bottom" constant="146" id="1Di-dj-JzW"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ygo-yH-jQI" secondAttribute="trailing" constant="39" id="8E7-s8-T8e"/>
-                <constraint firstItem="Ygo-yH-jQI" firstAttribute="top" secondItem="6Oc-fx-aho" secondAttribute="bottom" constant="86" id="8Y9-25-jcY"/>
+                <constraint firstItem="y4Q-9z-H6M" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="5" id="BxI-gf-FgK"/>
                 <constraint firstItem="BRJ-Pn-Va6" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="CFD-GH-NrG"/>
                 <constraint firstAttribute="bottom" secondItem="BRJ-Pn-Va6" secondAttribute="bottom" id="JHr-0T-wGu"/>
                 <constraint firstItem="6Oc-fx-aho" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="W34-wL-NAN"/>
-                <constraint firstItem="Ygo-yH-jQI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="39" id="dNq-at-Q4D"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="y4Q-9z-H6M" secondAttribute="trailing" constant="5" id="ZC7-tR-klu"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="y4Q-9z-H6M" secondAttribute="bottom" constant="107" id="iud-Jf-SZa"/>
                 <constraint firstItem="BRJ-Pn-Va6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="mXk-Vz-oie"/>
                 <constraint firstItem="6Oc-fx-aho" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="pnA-6p-Lah"/>
                 <constraint firstItem="BRJ-Pn-Va6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="qce-g7-AhA"/>
-                <constraint firstItem="Ygo-yH-jQI" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="121" id="udO-7L-k1Z"/>
+                <constraint firstItem="y4Q-9z-H6M" firstAttribute="top" secondItem="6Oc-fx-aho" secondAttribute="bottom" constant="18" id="yJH-8U-AUM"/>
             </constraints>
             <point key="canvasLocation" x="107.63358778625954" y="20.422535211267608"/>
         </view>
@@ -72,6 +84,9 @@
         <image name="arrow.backward" catalog="system" width="128" height="95"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

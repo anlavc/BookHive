@@ -4,10 +4,10 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="UIMenu" message="Requires Xcode 11 or later." minToolsVersion="11.0" requiredIntegratedClassName="UICommandDiff"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -54,13 +54,33 @@
                                 </label>
                             </subviews>
                         </stackView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bwz-9e-4DJ">
+                            <rect key="frame" x="311" y="66" width="67" height="52"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="67" id="VrI-nH-mdZ"/>
+                                <constraint firstAttribute="height" constant="52" id="q1D-k1-9W1"/>
+                            </constraints>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain">
+                                <imageReference key="image" image="xmark.app" catalog="system" symbolScale="large"/>
+                                <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="24"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="offButton:" destination="-1" eventType="touchUpInside" id="8ul-to-6A9"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" name="coverbgColor"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="JbT-5y-OSm" secondAttribute="trailing" constant="90" id="CB3-Ko-wAB"/>
+                        <constraint firstAttribute="bottom" secondItem="bwz-9e-4DJ" secondAttribute="bottom" constant="69" id="DZq-Da-1oU"/>
                         <constraint firstAttribute="bottom" secondItem="JbT-5y-OSm" secondAttribute="bottom" constant="66" id="JjU-Id-flG"/>
                         <constraint firstItem="JbT-5y-OSm" firstAttribute="leading" secondItem="4J5-T3-2qp" secondAttribute="leading" constant="15" id="TOs-dk-f6F"/>
                         <constraint firstAttribute="height" constant="187" id="VPs-82-gF3"/>
+                        <constraint firstAttribute="trailing" secondItem="bwz-9e-4DJ" secondAttribute="trailing" constant="15" id="XDi-WP-0iN"/>
+                        <constraint firstItem="bwz-9e-4DJ" firstAttribute="top" secondItem="4J5-T3-2qp" secondAttribute="top" constant="66" id="bnu-Cg-e4g"/>
+                        <constraint firstItem="bwz-9e-4DJ" firstAttribute="leading" secondItem="JbT-5y-OSm" secondAttribute="trailing" constant="8" symbolic="YES" id="hth-hh-d1E"/>
                         <constraint firstAttribute="width" constant="393" id="sAz-iP-yoc"/>
                         <constraint firstItem="JbT-5y-OSm" firstAttribute="top" secondItem="4J5-T3-2qp" secondAttribute="top" constant="66" id="whL-lR-kSS"/>
                     </constraints>
@@ -91,7 +111,7 @@
                                     </constraints>
                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" title="Bitti">
+                                    <buttonConfiguration key="configuration" style="plain" title="Done">
                                         <fontDescription key="titleFontDescription" type="boldSystem" pointSize="13"/>
                                     </buttonConfiguration>
                                     <connections>
@@ -132,7 +152,7 @@
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="jpG-sY-RWK">
                             <rect key="frame" x="109" y="171" width="229" height="83"/>
                             <subviews>
-                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Kaldığınız Sayfa No." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bwg-bt-HWU">
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Page No." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bwg-bt-HWU">
                                     <rect key="frame" x="0.0" y="0.0" width="229" height="34"/>
                                     <color key="backgroundColor" systemColor="systemGray6Color"/>
                                     <constraints>
@@ -151,7 +171,7 @@
                                     </constraints>
                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" title="Kaydet">
+                                    <buttonConfiguration key="configuration" style="plain" title="Save">
                                         <fontDescription key="titleFontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="15"/>
                                     </buttonConfiguration>
                                     <connections>
@@ -163,7 +183,7 @@
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Pz3-Vu-Bxp">
                             <rect key="frame" x="132" y="138" width="205.66666666666663" height="15.666666666666657"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Başlangıç Tarihi :" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KVl-2b-dBt">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Date: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KVl-2b-dBt">
                                     <rect key="frame" x="0.0" y="0.0" width="95.333333333333329" height="15.666666666666666"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                     <nil key="textColor"/>
@@ -231,22 +251,11 @@
             </constraints>
             <point key="canvasLocation" x="127.48091603053435" y="20.422535211267608"/>
         </view>
-        <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" id="Dqv-CC-h3s">
-            <rect key="frame" x="0.0" y="0.0" width="41" height="30"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <menu key="menu" id="eR7-wg-v3f">
-                <children>
-                    <command title="Item 1" id="ays-eq-fmb"/>
-                    <command title="Item 2" id="Tqv-p4-ORU"/>
-                </children>
-            </menu>
-            <state key="normal" title="Button"/>
-            <point key="canvasLocation" x="-417" y="-5"/>
-        </button>
     </objects>
     <resources>
         <image name="12" width="383" height="600"/>
         <image name="info.circle" catalog="system" width="128" height="123"/>
+        <image name="xmark.app" catalog="system" width="128" height="114"/>
         <namedColor name="colordarkgray">
             <color red="0.17647058823529413" green="0.17647058823529413" blue="0.17647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

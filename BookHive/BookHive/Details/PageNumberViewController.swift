@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class PageNumberViewController: UIViewController {
     
@@ -29,6 +30,7 @@ class PageNumberViewController: UIViewController {
         super.viewDidLoad()
         viewsConfigure()
         setPopButton()
+        userNameSetup()
 
     }
     
@@ -51,13 +53,15 @@ class PageNumberViewController: UIViewController {
         saveButton.layer.cornerRadius   = 8
     }
     
+    private func userNameSetup() {
+//        userNameLabel.text = Auth.auth().currentUser?.displayName
+    }
+    
     // MARK: - Setup Pop Button
     private func setPopButton() {
         let infoClosure = { (action: UIAction) in
            
-            // Aksiyon tetiklendiğinde yapılacak işlemler
         }
-
         self.infoIcon.menu = UIMenu(children: [
             UIAction(title: "Enter the last page you read in your book.", state: .off, handler: infoClosure)
         ])
@@ -65,10 +69,15 @@ class PageNumberViewController: UIViewController {
         self.infoIcon.changesSelectionAsPrimaryAction = false
     }
 
-    
     @IBAction func finishButtonTapped(_ sender: UIButton) {
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
     }
+    
+    @IBAction func offButton(_ sender: UIButton) {
+        dismiss(animated: true)
+    }
+    
+    
 }

@@ -24,6 +24,11 @@
     					= "Cihazınız e-posta gönderemiyor. Lütfen Posta uygulamasında bir e-posta hesabı yapılandırın ve tekrar deneyin";
 "Share Us" 				= "Bizi Paylaş";
 
+"Permanently Delete Account" = "Hesabı Kalıcı Olarak Sil";
+"You are permanently deleting your account! This action is irreversible! Are You Sure?" = "Hesabınızı kalıcı olarak siliyorsunuz! Bu işlem geri alınamaz! Emin misiniz?";
+"OK"                    = "Sil";
+"Cancel"                = "İptal";
+
 //Register
 "Please enter your username, nickname and password for registration." = "Lütfen kayıt için kullanıcı adınızı, takma adınızı ve şifrenizi giriniz.";
 "Please enter your e-mail address correctly."                         = "Lütfen e-posta adresinizi doğru giriniz.";

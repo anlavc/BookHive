@@ -32,11 +32,11 @@ class AccountViewController: FormViewController, MFMailComposeViewControllerDele
         Section(NSLocalizedString("User Informatıon", comment: ""))
         <<< LabelRow() {
             $0.title = NSLocalizedString("Name", comment: "")
-            $0.value = "Auth.auth().currentUser?.displayName" // Firebase kurulumdan sonra kullanıcının bilgilerini buraya çekeceğiz
+            $0.value = Auth.auth().currentUser?.displayName
         }
         <<< LabelRow() {
             $0.title = NSLocalizedString("Email", comment: "")
-            $0.value = "Auth.auth().currentUser?.email"
+            $0.value = Auth.auth().currentUser?.email
         }
     }
     
@@ -54,6 +54,7 @@ class AccountViewController: FormViewController, MFMailComposeViewControllerDele
                 self.present(vc, animated: true)
             }
         }
+        
         <<< AccountCustomRow() {
             $0.cell.accountTableViewCellLabelName.text = NSLocalizedString("Contact", comment: "")
             $0.cell.accountIconImageView.image = UIImage(systemName: "captions.bubble")
@@ -68,13 +69,19 @@ class AccountViewController: FormViewController, MFMailComposeViewControllerDele
                 self.present(alertController, animated: true, completion: nil)
             }
         }
+        
         <<< AccountCustomRow() {
             $0.cell.accountTableViewCellLabelName.text = NSLocalizedString("Share Us", comment: "")
             $0.cell.accountIconImageView.image = UIImage(systemName: "square.and.arrow.up")
             $0.onCellSelection { cell, row in
-                // tapped
+                if let link = URL(string: "https://www.apple.com") {
+                    let shareItems: [Any] = [link]
+                    let activityViewController = UIActivityViewController(activityItems: shareItems, applicationActivities: nil)
+                    self.present(activityViewController, animated: true, completion: nil)
+                }
             }
         }
+
         
         <<< AccountCustomRow() {
             $0.cell.accountTableViewCellLabelName.text = NSLocalizedString("Rate us in App Store", comment: "")
@@ -168,7 +175,31 @@ class AccountViewController: FormViewController, MFMailComposeViewControllerDele
                 cell.textLabel?.textColor = .systemRed
             }
             $0.onCellSelection { cell, row in
-                //
+                if let user = Auth.auth().currentUser {
+                    let alert = UIAlertController(title: NSLocalizedString("Permanently Delete Account", comment: ""), message: NSLocalizedString("You are permanently deleting your account! This action is irreversible! Are You Sure?", comment: ""), preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .destructive) { (_) in
+                        user.delete { error in
+                            if let error = error {
+                                print(error.localizedDescription)
+                            } else {
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                    let storyboard = UIStoryboard(name: "Main", bundle: .main)
+                                    let loginVc = storyboard.instantiateViewController(identifier: "LoginViewController")
+                                    loginVc.modalPresentationStyle = .fullScreen
+                                    self.present(loginVc, animated: true, completion: nil)
+                                }
+                            }
+                        }
+                    }
+                    let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel) { (_) in
+                        alert.dismiss(animated: true, completion: nil)
+                    }
+                    alert.addAction(okAction)
+                    alert.addAction(cancelAction)
+                    self.present(alert, animated: true, completion: nil)
+                } else {
+                    print("User is not logged in")
+                }
             }
         }
     }

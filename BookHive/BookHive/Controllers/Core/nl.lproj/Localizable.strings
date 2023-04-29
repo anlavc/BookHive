@@ -19,5 +19,13 @@
 "Send Email" = "Verstuur e-mail";
 "Cancel" = "Annuleren";
 "Feedback" = "Feedback";
+"Share Us" = "Deel ons";
 "Cannot Send Email" = "Kan geen e-mail verzenden";
 "Your device cannot send email. Please configure an email account in the Mail app and try again" = "Uw apparaat kan geen e-mail verzenden. Configureer een e-mailaccount in de Mail-app en probeer het opnieuw.";
+
+"Permanently Delete Account" = "Account definitief verwijderen";
+"You are permanently deleting your account! This action is irreversible! Are You Sure?" = "U verwijdert uw account definitief! Deze actie is onomkeerbaar! Weet u het zeker?";
+"OK"                    = "OK";
+"Cancel"                = "Annuleren";
+
+
