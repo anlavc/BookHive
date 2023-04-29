@@ -63,13 +63,14 @@
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IKH-1y-I3c">
                                             <rect key="frame" x="318" y="8" width="67" height="52"/>
                                             <constraints>
+                                                <constraint firstAttribute="height" constant="52" id="5Lu-lp-HJf"/>
                                                 <constraint firstAttribute="width" constant="67" id="zNc-gc-21b"/>
                                             </constraints>
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain">
                                                 <imageReference key="image" image="xmark.app" catalog="system" symbolScale="large"/>
-                                                <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="32"/>
+                                                <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="24"/>
                                             </buttonConfiguration>
                                             <connections>
                                                 <action selector="dismissButton:" destination="-1" eventType="touchUpInside" id="xRG-FM-IY4"/>
