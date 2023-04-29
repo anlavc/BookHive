@@ -252,6 +252,9 @@
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" title="Add to Read List"/>
+                                            <connections>
+                                                <action selector="addtoReadListTapped:" destination="-1" eventType="touchUpInside" id="X60-gp-EFp"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemGray6Color"/>

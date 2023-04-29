@@ -6,9 +6,12 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
+import FirebaseDatabase
 
 class DetailViewController: UIViewController {
-    
+    //MARK: - Outlets
     @IBOutlet weak var dismissButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var addReadButton: UIButton!
@@ -26,17 +29,18 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var bgview: UIView!
     
+    //MARK: - Variables
     var selectedBook: String?
     var detailID: String!
     var bookTitle: String?
     var language: String?
     var authorName: String?
     var publishDateData: Int?
-    
-    
+    var bookDocumentID: String?
+    var favoriteBooks: [Book] = []
     
     private var viewModel = DetailViewModel()
-    
+    //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         xibRegister()
@@ -44,39 +48,70 @@ class DetailViewController: UIViewController {
         initViewModel()
         observeEvent()
         collectionSetup()
-        setUpText()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        fetchFavoriteBooks()
+    }
+    //MARK: - Firebase favorite Book fetch func
+    private func fetchFavoriteBooks() {
+        if let uuid = Auth.auth().currentUser?.uid {
+            let favoriteBooksCollection = Firestore.firestore().collection("users/\(uuid)/favoriteBooks")
+            favoriteBooksCollection.getDocuments() { (querySnapshot, error) in
+                if let error = error {
+                    print("Error fetching favorite books: \(error.localizedDescription)")
+                    return
+                }
+                guard let documents = querySnapshot?.documents else {
+                    self.showAlert(title: "hata", message: "No favorite books found.")
+                    return
+                }
+                for document in documents {
+                    let coverID = document.data()["coverID"] as! String
+                    let title = document.data()["title"] as! String
+                    let book = Book(coverID: coverID, title: title)
+                    self.favoriteBooks.append(book)
+                    
+                    // Check if the current book is a favorite
+                    if coverID == self.detailID {
+                        self.addReadButton.setTitle("Added in favorites", for: .normal)
+                        self.addReadButton.backgroundColor = UIColor(named: "addedFavoriteButton")
+                    }
+                    
+                }
+            }
+        }
+    }
+    
+    
     @IBAction func dismissButton(_ sender: UIButton) {
         self.dismiss(animated: true)
     }
     private func xibRegister() {
         Bundle.main.loadNibNamed("DetailViewController", owner: self, options: nil)![0] as? DetailViewController
     }
+    //MARK: - UI Configurations
     private func setupUI() {
-        
         addReadButton.layer.cornerRadius = 5
         readButton.layer.cornerRadius = 5
         bgview.layer.cornerRadius = 20 // istediğiniz yarıçap değeri
         bgview.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         imageView.layer.cornerRadius = 5
     }
-    private func setUpText() {
-       
-//        let ratingimage = UIImage(named: imageName)
-        
-    }
+    //MARK: - Collection Setup
     private func collectionSetup() {
         collectionView.register(DetailSubjectCell.nib(), forCellWithReuseIdentifier: DetailSubjectCell.identifier)
-        collectionView.delegate = self
+//        collectionView.delegate = self
         collectionView.dataSource = self
         if let flowLayout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
             flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         }
     }
+    //MARK: - ViewModel fetch data
     private func initViewModel() {
         viewModel.fetchDetailOlid(olidKey: detailID)
         viewModel.fetchRating(olidKey: selectedBook!)
     }
+    //MARK: - UI variables set
     private func setupOlid(olid: DetailModel2) {
         let pagenumber = String("\(olid.numberOfPages ?? 0)")
         self.titleLabel.text = bookTitle
@@ -88,46 +123,38 @@ class DetailViewController: UIViewController {
         let olid = detailID
         imageView.setImageOlid(with: olid!)
     }
+    //MARK: - Rating Image func
     private func setupRatingImage(olidKey: Rating) {
-        // image ismini tutacak bir değişken tanımlayalım
-          var imageName: String
-          
-          // olidKey değerine göre imageName değişkenini güncelleyelim
+        var imageName: String
         switch olidKey.summary?.average {
-            case 0:
-              imageName = "0_star"
-            case 0.5:
-              imageName = "0-5_star"
-            case 1:
-              imageName = "1_star"
-            // diğer durumlar için de aynı şekilde devam edelim
-            case 1.5:
-              imageName = "1-5_star"
-            case 2:
-              imageName = "2_star"
-            case 2.5:
-              imageName = "2-5_star"
-            case 3:
-              imageName = "3_star"
-            case 3.5:
-              imageName = "3-5_star"
-            case 4:
-              imageName = "4_star"
-            case 4.5:
-              imageName = "4-5_star"
-            case 5:
-              imageName = "5_star"
-            default:
-              // eğer olidKey beklenen değerlerden farklıysa bir hata mesajı gösterelim
-              print("Invalid rating value")
-              return // fonksiyondan çıkalım
-          }
-          
-          // imageName değişkenini kullanarak image nesnesi oluşturalım
-          let image = UIImage(named: imageName)
-          
-          // image nesnesini istediğiniz şekilde kullanabilirsiniz
+        case 0:
+            imageName = "0_star"
+        case 0.5:
+            imageName = "0-5_star"
+        case 1:
+            imageName = "1_star"
+        case 1.5:
+            imageName = "1-5_star"
+        case 2:
+            imageName = "2_star"
+        case 2.5:
+            imageName = "2-5_star"
+        case 3:
+            imageName = "3_star"
+        case 3.5:
+            imageName = "3-5_star"
+        case 4:
+            imageName = "4_star"
+        case 4.5:
+            imageName = "4-5_star"
+        case 5:
+            imageName = "5_star"
+        default:
+            return
+        }
+        let image = UIImage(named: imageName)
     }
+    //MARK: - Observed Event
     private func observeEvent() {
         viewModel.eventHandler = { [weak self] event in
             guard let self else {return}
@@ -140,45 +167,41 @@ class DetailViewController: UIViewController {
                 // indicator hide
                 print("Stop loading detail...")
             case .dataLoaded:
-                
-                
                 DispatchQueue.main.async { [self] in
                     self.collectionView.reloadData()
                     if let detail = self.viewModel.detailOlid {
                         self.setupOlid(olid: detail)
                     }
-                 
-                    
                     if let starpoint = self.viewModel.rating?.summary?.average {
                         var imageName : String
                         switch starpoint {
-                          case 0...0.5: // 0 ile 0.5 arasındaki tüm değerler için
+                        case 0...0.5:
                             imageName = "0-5_star"
-                          case 0.5...1: // 0.5 ile 1 arasındaki tüm değerler için
+                        case 0.5...1:
                             imageName = "1_star"
-                          case 1...1.5: // 1 ile 1.5 arasındaki tüm değerler için
+                        case 1...1.5:
                             imageName = "1-5_star"
-                          case 1.5...2: // 1.5 ile 2 arasındaki tüm değerler için
+                        case 1.5...2:
                             imageName = "2_star"
-                          case 2...2.5: // 2 ile 2.5 arasındaki tüm değerler için
+                        case 2...2.5:
                             imageName = "2-5_star"
-                          case 2.5...3: // 2.5 ile 3 arasındaki tüm değerler için
+                        case 2.5...3:
                             imageName = "3_star"
-                          case 3...3.5: // 3 ile 3.5 arasındaki tüm değerler için
+                        case 3...3.5:
                             imageName = "3-5_star"
-                          case 3.5...4: // 3.5 ile 4 arasındaki tüm değerler için
+                        case 3.5...4:
                             imageName = "4_star"
-                          case 4...4.5: // 4 ile 4.5 arasındaki tüm değerler için
+                        case 4...4.5:
                             imageName = "4-5_star"
-                          case 4.5...5: // 4.5 ile 5 arasındaki tüm değerler için
+                        case 4.5...5:
                             imageName = "5_star"
                         default:
                             imageName = "0_star"
                         }
                         self.ratingImage.image = UIImage(named: imageName)
                     }
-                 
-                   
+                    
+                    
                 }
                 
             case .error(let error):
@@ -186,9 +209,44 @@ class DetailViewController: UIViewController {
             }
         }
     }
-    
+    //MARK: - AddtoReadList Button Tapped
+    @IBAction func addtoReadListTapped(_ sender: UIButton) {
+        toggleFavoriteBookFetch()
+    }
+    //MARK: - Add Favorite and Remove Favorite
+    func toggleFavoriteBookFetch() {
+        if let uuid = Auth.auth().currentUser?.uid {
+            let favoriteBooksCollection = Firestore.firestore().collection("users/\(uuid)/favoriteBooks")
+            favoriteBooksCollection.whereField("coverID", isEqualTo: detailID!).getDocuments { (snapshot, error) in
+                if let error = error {
+                    self.showAlert(title: "ERROR", message: "Favorilere ekleme sırasında bir hata ile karşılaşıldı.")
+                } else {
+                    if let documents = snapshot?.documents {
+                        for document in documents {
+                            let bookID = document.documentID
+                            favoriteBooksCollection.document(bookID).delete()
+                            self.addReadButton.setTitle("Add to favorites", for: .normal)
+                            self.addReadButton.backgroundColor = UIColor(named: "coverbgColor")
+                            
+                        }
+                        if documents.isEmpty {
+                            favoriteBooksCollection.addDocument(data: ["coverID": self.detailID!,
+                                                                       "title": self.bookTitle!])
+                            self.addReadButton.setTitle("Added in favorites", for: .normal)
+                            self.addReadButton.backgroundColor = UIColor(named: "addedFavoriteButton")
+                        }
+                        DispatchQueue.main.async {
+                            self.fetchFavoriteBooks()
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
-extension DetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+
+    //MARK: - CollectionviewDataSource
+extension DetailViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let numberOfItems = viewModel.detailBook?.subjects?.count
         if numberOfItems == nil {
@@ -210,7 +268,5 @@ extension DetailViewController: UICollectionViewDelegate, UICollectionViewDataSo
 func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
     return 10
 }
-extension DetailViewController: UICollectionViewDelegateFlowLayout {
-    
-}
+
 

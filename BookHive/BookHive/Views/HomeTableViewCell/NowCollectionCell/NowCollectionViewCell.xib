@@ -29,7 +29,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="59x-b9-N4S">
                                 <rect key="frame" x="0.0" y="0.0" width="209" height="230"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="F6a-9s-pde">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="F6a-9s-pde">
                                         <rect key="frame" x="0.0" y="1.6666666666666714" width="209" height="177.33333333333331"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="180" id="aRh-Dv-M96"/>
