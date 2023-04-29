@@ -28,7 +28,7 @@ class PageNumberViewController: UIViewController {
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewsConfigure()
+//        viewsConfigure()
         setPopButton()
         userNameSetup()
 
