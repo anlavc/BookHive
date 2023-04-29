@@ -17,9 +17,7 @@
 		2E1F16C629F91F57007FC4E3 /* AccountCustomRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1F16C529F91F57007FC4E3 /* AccountCustomRow.swift */; };
 		2E1F16D229F9B436007FC4E3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2E1F16D429F9B436007FC4E3 /* Localizable.strings */; };
 		2E1F16E129F9B7ED007FC4E3 /* HomeVCLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2E1F16E329F9B7ED007FC4E3 /* HomeVCLocalizable.strings */; };
-		2E81B40C29FD1B8800986F98 /* PageNumberViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E81B40E29FD1B8800986F98 /* PageNumberViewController.xib */; };
 		2E81B43A29FD33F700986F98 /* ReadListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E81B43829FD33F700986F98 /* ReadListViewController.swift */; };
-		2E81B43B29FD33F700986F98 /* ReadListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E81B43929FD33F700986F98 /* ReadListViewController.xib */; };
 		2E81B44429FD3F7800986F98 /* ReadtoListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E81B44229FD3F7800986F98 /* ReadtoListTableViewCell.swift */; };
 		2E81B44529FD3F7800986F98 /* ReadtoListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E81B44329FD3F7800986F98 /* ReadtoListTableViewCell.xib */; };
 		2E88B34C29E70077008F4B4B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88B34A29E70077008F4B4B /* HomeViewController.swift */; };
@@ -33,10 +31,11 @@
 		2EE0E11529F48AB9008B2362 /* TextfieldCharacters + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE0E11429F48AB9008B2362 /* TextfieldCharacters + Ext.swift */; };
 		2EFA100B29FA4C8100AE6888 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EFA100A29FA4C8100AE6888 /* Assets.xcassets */; };
 		2EFA102929FB114900AE6888 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFA102829FB114900AE6888 /* AboutViewController.swift */; };
-		2EFA102D29FB121A00AE6888 /* PageNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFA102C29FB121A00AE6888 /* PageNumberViewController.swift */; };
 		2EFA103129FB148400AE6888 /* AccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EFA103029FB148300AE6888 /* AccountTableViewCell.xib */; };
 		2EFA103229FB971B00AE6888 /* (null) in Resources */ = {isa = PBXBuildFile; };
 		EE1B9B3129FD7B1C002F81F2 /* FavoriteBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1B9B3029FD7B1C002F81F2 /* FavoriteBook.swift */; };
+		EE1B9B3329FD836F002F81F2 /* PageNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1B9B3229FD836F002F81F2 /* PageNumberViewController.swift */; };
+		EE1B9B3529FD882C002F81F2 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE1B9B3429FD882B002F81F2 /* AboutViewController.xib */; };
 		EE6DF06C29FA8C4C007B8DF8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE6DF06B29FA8C4C007B8DF8 /* GoogleService-Info.plist */; };
 		EE6DF06F29FA8E2E007B8DF8 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = EE6DF06E29FA8E2E007B8DF8 /* FirebaseAuth */; };
 		EE6DF07129FA8E2E007B8DF8 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = EE6DF07029FA8E2E007B8DF8 /* FirebaseDatabase */; };
@@ -166,9 +165,10 @@
 		2EE0E11429F48AB9008B2362 /* TextfieldCharacters + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextfieldCharacters + Ext.swift"; sourceTree = "<group>"; };
 		2EFA100A29FA4C8100AE6888 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2EFA102829FB114900AE6888 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
-		2EFA102C29FB121A00AE6888 /* PageNumberViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageNumberViewController.swift; sourceTree = "<group>"; };
 		2EFA103029FB148300AE6888 /* AccountTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountTableViewCell.xib; sourceTree = "<group>"; };
 		EE1B9B3029FD7B1C002F81F2 /* FavoriteBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteBook.swift; sourceTree = "<group>"; };
+		EE1B9B3229FD836F002F81F2 /* PageNumberViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageNumberViewController.swift; sourceTree = "<group>"; };
+		EE1B9B3429FD882B002F81F2 /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
 		EE6DF06B29FA8C4C007B8DF8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EE78967229F4742200991261 /* DetailOlid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailOlid.swift; sourceTree = "<group>"; };
 		EE7CDFE229F7CA310058C163 /* NowCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -360,7 +360,8 @@
 			isa = PBXGroup;
 			children = (
 				2EFA102829FB114900AE6888 /* AboutViewController.swift */,
-				2EFA102C29FB121A00AE6888 /* PageNumberViewController.swift */,
+				EE1B9B3429FD882B002F81F2 /* AboutViewController.xib */,
+				EE1B9B3229FD836F002F81F2 /* PageNumberViewController.swift */,
 				2E81B40E29FD1B8800986F98 /* PageNumberViewController.xib */,
 				2E81B43829FD33F700986F98 /* ReadListViewController.swift */,
 				2E81B43929FD33F700986F98 /* ReadListViewController.xib */,
@@ -645,7 +646,7 @@
 				EE977F8829F16B1B0027CF90 /* DetailSubjectCell.xib in Resources */,
 				EEAC4FB029E6F8220066757B /* Main.storyboard in Resources */,
 				2E1F168929F7DBB0007FC4E3 /* HomeViewController.xib in Resources */,
-				2EFA102F29FB122300AE6888 /* PageNumberViewController.xib in Resources */,
+				EE1B9B3529FD882C002F81F2 /* AboutViewController.xib in Resources */,
 				2EFA103229FB971B00AE6888 /* (null) in Resources */,
 				EEC8356E29EAF1D200058796 /* HomeCarouselTableViewCell.xib in Resources */,
 				EE6DF06C29FA8C4C007B8DF8 /* GoogleService-Info.plist in Resources */,
@@ -678,7 +679,6 @@
 				EEC8356929EAEE6300058796 /* HomeCollectionViewCarousel.swift in Sources */,
 				EEFBBCAA29E9723000BDD902 /* EndPointType.swift in Sources */,
 				EE78967329F4742200991261 /* DetailOlid.swift in Sources */,
-				2EFA102D29FB121A00AE6888 /* PageNumberViewController.swift in Sources */,
 				EE977F7F29F13E910027CF90 /* ImageView + Ext.swift in Sources */,
 				EEFBBCB029E9784D00BDD902 /* HomeViewModel.swift in Sources */,
 				2E88B35829E700AE008F4B4B /* AccountViewController.swift in Sources */,
@@ -695,6 +695,7 @@
 				2EFA102929FB114900AE6888 /* AboutViewController.swift in Sources */,
 				EEAC4FD429E714280066757B /* TableCollectionViewCell.swift in Sources */,
 				EEAD10C329EF485A00BA6603 /* SearchModel.swift in Sources */,
+				EE1B9B3329FD836F002F81F2 /* PageNumberViewController.swift in Sources */,
 				EE904C3029FB203400441AA8 /* String + Ext.swift in Sources */,
 				EE904BF529FAF44700441AA8 /* TabBarController.swift in Sources */,
 				EE904C2E29FB1FAD00441AA8 /* isValidEmailPassword + Ext.swift in Sources */,
@@ -824,20 +825,6 @@
 				2E81B41A29FD1B9200986F98 /* tr */,
 			);
 			name = PageNumberViewController.xib;
-			sourceTree = "<group>";
-		};
-		2EFA103429FB971B00AE6888 /* AboutViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2EFA103329FB971B00AE6888 /* Base */,
-				2EFA103629FB971D00AE6888 /* nl */,
-				2EFA103829FB971D00AE6888 /* fr */,
-				2EFA103A29FB971E00AE6888 /* de */,
-				2EFA103C29FB971E00AE6888 /* it */,
-				2EFA103E29FB971F00AE6888 /* es */,
-				2EFA104029FB971F00AE6888 /* tr */,
-			);
-			name = AboutViewController.xib;
 			sourceTree = "<group>";
 		};
 		EEAC4FAE29E6F8220066757B /* Main.storyboard */ = {
@@ -989,7 +976,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4899K4S95G;
+				DEVELOPMENT_TEAM = 74UL9K89V5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BookHive/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Bookhive;
@@ -1021,7 +1008,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4899K4S95G;
+				DEVELOPMENT_TEAM = 74UL9K89V5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BookHive/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Bookhive;

@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -16,7 +15,7 @@
                 <outlet property="bookImageView" destination="Tiz-Gz-yiS" id="wxL-x2-BCk"/>
                 <outlet property="bookNameLabel" destination="iMQ-lt-2jr" id="LWJ-sI-NpL"/>
                 <outlet property="bookStartDate" destination="GWr-Gj-gRP" id="lWS-ud-7r7"/>
-                <outlet property="bottomView" destination="QcD-6V-dXe" id="Vev-Rk-2jh"/>
+                <outlet property="bottomView" destination="QcD-6V-dXe" id="hgd-wY-Moz"/>
                 <outlet property="finishButton" destination="gfe-Hi-teV" id="GTX-ZF-mJb"/>
                 <outlet property="infoIcon" destination="siS-4f-KrQ" id="FCX-1r-2Us"/>
                 <outlet property="pageNumberTF" destination="Bwg-bt-HWU" id="LhI-VI-gFq"/>
