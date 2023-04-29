@@ -17,13 +17,8 @@
 		2E1F16C629F91F57007FC4E3 /* AccountCustomRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1F16C529F91F57007FC4E3 /* AccountCustomRow.swift */; };
 		2E1F16D229F9B436007FC4E3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2E1F16D429F9B436007FC4E3 /* Localizable.strings */; };
 		2E1F16E129F9B7ED007FC4E3 /* HomeVCLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2E1F16E329F9B7ED007FC4E3 /* HomeVCLocalizable.strings */; };
-		2E81B44729FD867600986F98 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E81B44629FD867600986F98 /* AboutViewController.xib */; };
-		2E81B45629FD878F00986F98 /* PageNumberViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E81B45429FD878E00986F98 /* PageNumberViewController.xib */; };
-		2E81B45729FD878F00986F98 /* PageNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E81B45529FD878F00986F98 /* PageNumberViewController.swift */; };
 		2E81B45A29FD898400986F98 /* ReadtoListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E81B45829FD898400986F98 /* ReadtoListTableViewCell.xib */; };
 		2E81B45B29FD898400986F98 /* ReadtoListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E81B45929FD898400986F98 /* ReadtoListTableViewCell.swift */; };
-		2E81B45E29FD89C100986F98 /* ReadListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E81B45C29FD89C100986F98 /* ReadListViewController.xib */; };
-		2E81B45F29FD89C100986F98 /* ReadListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E81B45D29FD89C100986F98 /* ReadListViewController.swift */; };
 		2E88B34C29E70077008F4B4B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88B34A29E70077008F4B4B /* HomeViewController.swift */; };
 		2E88B35029E70091008F4B4B /* MyBooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88B34E29E70091008F4B4B /* MyBooksViewController.swift */; };
 		2E88B35429E7009F008F4B4B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88B35229E7009F008F4B4B /* SearchViewController.swift */; };
@@ -40,6 +35,9 @@
 		EE1B9B3129FD7B1C002F81F2 /* FavoriteBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1B9B3029FD7B1C002F81F2 /* FavoriteBook.swift */; };
 		EE1B9B3329FD836F002F81F2 /* PageNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1B9B3229FD836F002F81F2 /* PageNumberViewController.swift */; };
 		EE1B9B3529FD882C002F81F2 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE1B9B3429FD882B002F81F2 /* AboutViewController.xib */; };
+		EE1B9B3929FD8D58002F81F2 /* ReadListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE1B9B3729FD8D58002F81F2 /* ReadListViewController.xib */; };
+		EE1B9B3A29FD8D58002F81F2 /* ReadListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1B9B3829FD8D58002F81F2 /* ReadListViewController.swift */; };
+		EE1B9B3C29FD8D76002F81F2 /* PageNumberViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE1B9B3B29FD8D76002F81F2 /* PageNumberViewController.xib */; };
 		EE6DF06C29FA8C4C007B8DF8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE6DF06B29FA8C4C007B8DF8 /* GoogleService-Info.plist */; };
 		EE6DF06F29FA8E2E007B8DF8 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = EE6DF06E29FA8E2E007B8DF8 /* FirebaseAuth */; };
 		EE6DF07129FA8E2E007B8DF8 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = EE6DF07029FA8E2E007B8DF8 /* FirebaseDatabase */; };
@@ -147,13 +145,8 @@
 		2E1F16E729F9B7F3007FC4E3 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/HomeVCLocalizable.strings; sourceTree = "<group>"; };
 		2E1F16E829F9B7F4007FC4E3 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/HomeVCLocalizable.strings; sourceTree = "<group>"; };
 		2E1F16E929F9B7F4007FC4E3 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/HomeVCLocalizable.strings; sourceTree = "<group>"; };
-		2E81B44629FD867600986F98 /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
-		2E81B45429FD878E00986F98 /* PageNumberViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PageNumberViewController.xib; sourceTree = "<group>"; };
-		2E81B45529FD878F00986F98 /* PageNumberViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageNumberViewController.swift; sourceTree = "<group>"; };
 		2E81B45829FD898400986F98 /* ReadtoListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReadtoListTableViewCell.xib; sourceTree = "<group>"; };
 		2E81B45929FD898400986F98 /* ReadtoListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadtoListTableViewCell.swift; sourceTree = "<group>"; };
-		2E81B45C29FD89C100986F98 /* ReadListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReadListViewController.xib; sourceTree = "<group>"; };
-		2E81B45D29FD89C100986F98 /* ReadListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadListViewController.swift; sourceTree = "<group>"; };
 		2E88B34A29E70077008F4B4B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2E88B34E29E70091008F4B4B /* MyBooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBooksViewController.swift; sourceTree = "<group>"; };
 		2E88B35229E7009F008F4B4B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -169,6 +162,9 @@
 		EE1B9B3029FD7B1C002F81F2 /* FavoriteBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteBook.swift; sourceTree = "<group>"; };
 		EE1B9B3229FD836F002F81F2 /* PageNumberViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageNumberViewController.swift; sourceTree = "<group>"; };
 		EE1B9B3429FD882B002F81F2 /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
+		EE1B9B3729FD8D58002F81F2 /* ReadListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ReadListViewController.xib; path = ../../../../Downloads/Archive/ReadListViewController.xib; sourceTree = "<group>"; };
+		EE1B9B3829FD8D58002F81F2 /* ReadListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReadListViewController.swift; path = ../../../../Downloads/Archive/ReadListViewController.swift; sourceTree = "<group>"; };
+		EE1B9B3B29FD8D76002F81F2 /* PageNumberViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PageNumberViewController.xib; path = ../../../../Downloads/PageNumberViewController.xib; sourceTree = "<group>"; };
 		EE6DF06B29FA8C4C007B8DF8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EE78967229F4742200991261 /* DetailOlid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailOlid.swift; sourceTree = "<group>"; };
 		EE7CDFE229F7CA310058C163 /* NowCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -362,9 +358,9 @@
 				2EFA102829FB114900AE6888 /* AboutViewController.swift */,
 				EE1B9B3429FD882B002F81F2 /* AboutViewController.xib */,
 				EE1B9B3229FD836F002F81F2 /* PageNumberViewController.swift */,
-				2E81B40E29FD1B8800986F98 /* PageNumberViewController.xib */,
-				2E81B43829FD33F700986F98 /* ReadListViewController.swift */,
-				2E81B43929FD33F700986F98 /* ReadListViewController.xib */,
+				EE1B9B3B29FD8D76002F81F2 /* PageNumberViewController.xib */,
+				EE1B9B3829FD8D58002F81F2 /* ReadListViewController.swift */,
+				EE1B9B3729FD8D58002F81F2 /* ReadListViewController.xib */,
 			);
 			name = Details;
 			path = ../Details;
@@ -640,11 +636,11 @@
 				2E1F166829F7C951007FC4E3 /* SearchViewController.xib in Resources */,
 				2E1F167E29F7CEB8007FC4E3 /* SearchTableViewCell.xib in Resources */,
 				2EFA103129FB148400AE6888 /* AccountTableViewCell.xib in Resources */,
+				EE1B9B3929FD8D58002F81F2 /* ReadListViewController.xib in Resources */,
 				EEC8356A29EAEE6300058796 /* HomeCollectionViewCarousel.xib in Resources */,
 				EE7CDFEC29F7E13A0058C163 /* YearlyTableViewCell.xib in Resources */,
 				2E1F16D229F9B436007FC4E3 /* Localizable.strings in Resources */,
 				EE977F8829F16B1B0027CF90 /* DetailSubjectCell.xib in Resources */,
-				2E81B45629FD878F00986F98 /* PageNumberViewController.xib in Resources */,
 				EEAC4FB029E6F8220066757B /* Main.storyboard in Resources */,
 				2E1F168929F7DBB0007FC4E3 /* HomeViewController.xib in Resources */,
 				EE1B9B3529FD882C002F81F2 /* AboutViewController.xib in Resources */,
@@ -657,7 +653,7 @@
 				2E1F16E129F9B7ED007FC4E3 /* HomeVCLocalizable.strings in Resources */,
 				EE7CDFE729F7D2F00058C163 /* NowTableViewCell.xib in Resources */,
 				2E1F167329F7CB77007FC4E3 /* MyBooksViewController.xib in Resources */,
-				2E81B45E29FD89C100986F98 /* ReadListViewController.xib in Resources */,
+				EE1B9B3C29FD8D76002F81F2 /* PageNumberViewController.xib in Resources */,
 				2E88B36F29E883A9008F4B4B /* MyBooksCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -713,7 +709,7 @@
 				EEFBBCAE29E977A100BDD902 /* APIManager.swift in Sources */,
 				EEAD10C529EF4DE600BA6603 /* SearchViewModel.swift in Sources */,
 				2E88B35029E70091008F4B4B /* MyBooksViewController.swift in Sources */,
-				2E81B45F29FD89C100986F98 /* ReadListViewController.swift in Sources */,
+				EE1B9B3A29FD8D58002F81F2 /* ReadListViewController.swift in Sources */,
 				EE977F7C29F02F6A0027CF90 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -813,20 +809,6 @@
 				2E1F16E929F9B7F4007FC4E3 /* tr */,
 			);
 			name = HomeVCLocalizable.strings;
-			sourceTree = "<group>";
-		};
-		2E81B40E29FD1B8800986F98 /* PageNumberViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2E81B40D29FD1B8800986F98 /* Base */,
-				2E81B41029FD1B8F00986F98 /* nl */,
-				2E81B41229FD1B9000986F98 /* fr */,
-				2E81B41429FD1B9000986F98 /* de */,
-				2E81B41629FD1B9100986F98 /* it */,
-				2E81B41829FD1B9100986F98 /* es */,
-				2E81B41A29FD1B9200986F98 /* tr */,
-			);
-			name = PageNumberViewController.xib;
 			sourceTree = "<group>";
 		};
 		EEAC4FAE29E6F8220066757B /* Main.storyboard */ = {
