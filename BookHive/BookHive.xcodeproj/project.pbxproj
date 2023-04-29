@@ -87,7 +87,7 @@
 		EEFBBCAC29E9730400BDD902 /* BookEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFBBCAB29E9730400BDD902 /* BookEndPoint.swift */; };
 		EEFBBCAE29E977A100BDD902 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFBBCAD29E977A100BDD902 /* APIManager.swift */; };
 		EEFBBCB029E9784D00BDD902 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFBBCAF29E9784D00BDD902 /* HomeViewModel.swift */; };
-		EEFBBCB329E9B9B000BDD902 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = EEFBBCB229E9B9B000BDD902 /* Kingfisher */; };
+		EEFBBCB329E9B9B000BDD902 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = EEFBBCB229E9B9B000BDD902 /* Kingfisher */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
