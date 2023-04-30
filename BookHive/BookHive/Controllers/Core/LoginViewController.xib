@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina6_12" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
@@ -76,7 +76,7 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fzl-SL-QPY">
                                     <rect key="frame" x="20" y="251" width="353" height="101"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="d0c-aK-xCS">
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="d0c-aK-xCS">
                                             <rect key="frame" x="0.0" y="0.0" width="48" height="101"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kde-9y-sYG">
@@ -95,7 +95,7 @@
                                                 </button>
                                             </subviews>
                                         </stackView>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="FSi-wd-Ah0">
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="FSi-wd-Ah0">
                                             <rect key="frame" x="48" y="0.0" width="305" height="101"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="leading" contentVerticalAlignment="center" placeholder="Enter E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u7N-9c-5a9" customClass="PaddingTextField" customModule="BookHive" customModuleProvider="target">
@@ -103,7 +103,6 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="lyr-YK-EzC"/>
                                                     </constraints>
-                                                    <color key="textColor" name="colordarkgray"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" textContentType="email"/>
                                                 </textField>
@@ -116,7 +115,6 @@
                                                 </view>
                                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v2G-Im-hKE" customClass="PaddingTextField" customModule="BookHive" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="51" width="305" height="50"/>
-                                                    <color key="textColor" name="colordarkgray"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                                 </textField>
@@ -130,7 +128,7 @@
                                 </stackView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXE-nv-yik">
                                     <rect key="frame" x="20" y="362" width="353" height="34.333333333333314"/>
-                                    <color key="tintColor" name="colordarkgray"/>
+                                    <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" title="Forgot Password?"/>
                                     <connections>
@@ -143,6 +141,7 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="60" id="42y-aQ-FQA"/>
                                     </constraints>
+                                    <color key="tintColor" name="colordarkgray"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" title="Login"/>
                                     <connections>

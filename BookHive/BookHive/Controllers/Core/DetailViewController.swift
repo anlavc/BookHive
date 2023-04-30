@@ -93,7 +93,7 @@ class DetailViewController: UIViewController {
     private func setupUI() {
         addReadButton.layer.cornerRadius = 5
         readButton.layer.cornerRadius = 5
-        bgview.layer.cornerRadius = 20 // istediğiniz yarıçap değeri
+        bgview.layer.cornerRadius = 20
         bgview.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         imageView.layer.cornerRadius = 5
     }
@@ -110,6 +110,7 @@ class DetailViewController: UIViewController {
     private func initViewModel() {
         viewModel.fetchDetailOlid(olidKey: detailID)
         viewModel.fetchRating(olidKey: selectedBook!)
+        viewModel.fetchDetailBooks(detail: detailID)
     }
     //MARK: - UI variables set
     private func setupOlid(olid: DetailModel2) {
@@ -231,7 +232,8 @@ class DetailViewController: UIViewController {
                         }
                         if documents.isEmpty {
                             favoriteBooksCollection.addDocument(data: ["coverID": self.detailID!,
-                                                                       "title": self.bookTitle!])
+                                                                       "title"  : self.bookTitle!,
+                                                                       "author" : self.authorName!])
                             self.addReadButton.setTitle("Added in favorites", for: .normal)
                             self.addReadButton.backgroundColor = UIColor(named: "addedFavoriteButton")
                         }

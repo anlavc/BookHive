@@ -17,8 +17,6 @@
 		2E1F16C629F91F57007FC4E3 /* AccountCustomRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1F16C529F91F57007FC4E3 /* AccountCustomRow.swift */; };
 		2E1F16D229F9B436007FC4E3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2E1F16D429F9B436007FC4E3 /* Localizable.strings */; };
 		2E1F16E129F9B7ED007FC4E3 /* HomeVCLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2E1F16E329F9B7ED007FC4E3 /* HomeVCLocalizable.strings */; };
-		2E81B45A29FD898400986F98 /* ReadtoListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E81B45829FD898400986F98 /* ReadtoListTableViewCell.xib */; };
-		2E81B45B29FD898400986F98 /* ReadtoListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E81B45929FD898400986F98 /* ReadtoListTableViewCell.swift */; };
 		2E88B34C29E70077008F4B4B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88B34A29E70077008F4B4B /* HomeViewController.swift */; };
 		2E88B35029E70091008F4B4B /* MyBooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88B34E29E70091008F4B4B /* MyBooksViewController.swift */; };
 		2E88B35429E7009F008F4B4B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88B35229E7009F008F4B4B /* SearchViewController.swift */; };
@@ -61,6 +59,8 @@
 		EE977F8329F150330027CF90 /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE977F8229F150330027CF90 /* DetailModel.swift */; };
 		EE977F8729F16B1B0027CF90 /* DetailSubjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE977F8529F16B1B0027CF90 /* DetailSubjectCell.swift */; };
 		EE977F8829F16B1B0027CF90 /* DetailSubjectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE977F8629F16B1B0027CF90 /* DetailSubjectCell.xib */; };
+		EEA23C5929FE8FDD00FA8818 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = EEA23C5829FE8FDD00FA8818 /* Lottie */; };
+		EEA23C5B29FE904C00FA8818 /* searchjson.json in Resources */ = {isa = PBXBuildFile; fileRef = EEA23C5A29FE904C00FA8818 /* searchjson.json */; };
 		EEAC4FA929E6F8220066757B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAC4FA829E6F8220066757B /* AppDelegate.swift */; };
 		EEAC4FAB29E6F8220066757B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAC4FAA29E6F8220066757B /* SceneDelegate.swift */; };
 		EEAC4FB029E6F8220066757B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEAC4FAE29E6F8220066757B /* Main.storyboard */; };
@@ -145,8 +145,6 @@
 		2E1F16E729F9B7F3007FC4E3 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/HomeVCLocalizable.strings; sourceTree = "<group>"; };
 		2E1F16E829F9B7F4007FC4E3 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/HomeVCLocalizable.strings; sourceTree = "<group>"; };
 		2E1F16E929F9B7F4007FC4E3 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/HomeVCLocalizable.strings; sourceTree = "<group>"; };
-		2E81B45829FD898400986F98 /* ReadtoListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReadtoListTableViewCell.xib; sourceTree = "<group>"; };
-		2E81B45929FD898400986F98 /* ReadtoListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadtoListTableViewCell.swift; sourceTree = "<group>"; };
 		2E88B34A29E70077008F4B4B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2E88B34E29E70091008F4B4B /* MyBooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBooksViewController.swift; sourceTree = "<group>"; };
 		2E88B35229E7009F008F4B4B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -183,6 +181,7 @@
 		EE977F8229F150330027CF90 /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
 		EE977F8529F16B1B0027CF90 /* DetailSubjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSubjectCell.swift; sourceTree = "<group>"; };
 		EE977F8629F16B1B0027CF90 /* DetailSubjectCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailSubjectCell.xib; sourceTree = "<group>"; };
+		EEA23C5A29FE904C00FA8818 /* searchjson.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = searchjson.json; sourceTree = "<group>"; };
 		EEAC4FA529E6F8220066757B /* BookHive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookHive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEAC4FA829E6F8220066757B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEAC4FAA29E6F8220066757B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -237,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEFBBCB329E9B9B000BDD902 /* Kingfisher in Frameworks */,
+				EEA23C5929FE8FDD00FA8818 /* Lottie in Frameworks */,
 				EE6DF06F29FA8E2E007B8DF8 /* FirebaseAuth in Frameworks */,
 				EE6DF07129FA8E2E007B8DF8 /* FirebaseDatabase in Frameworks */,
 				EE6DF07329FA8E2E007B8DF8 /* FirebaseFirestore in Frameworks */,
@@ -261,8 +261,6 @@
 		2E81B44129FD34BA00986F98 /* MyBooksDetailViews */ = {
 			isa = PBXGroup;
 			children = (
-				2E81B45929FD898400986F98 /* ReadtoListTableViewCell.swift */,
-				2E81B45829FD898400986F98 /* ReadtoListTableViewCell.xib */,
 			);
 			path = MyBooksDetailViews;
 			sourceTree = "<group>";
@@ -461,6 +459,7 @@
 		EEAC4FC029E6F8FA0066757B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EEA23C5A29FE904C00FA8818 /* searchjson.json */,
 				2EFA100A29FA4C8100AE6888 /* Assets.xcassets */,
 				2E1F163F29F72158007FC4E3 /* search.png */,
 				EEAC4FB929E6F8230066757B /* Info.plist */,
@@ -572,6 +571,7 @@
 				EE6DF07029FA8E2E007B8DF8 /* FirebaseDatabase */,
 				EE6DF07229FA8E2E007B8DF8 /* FirebaseFirestore */,
 				EE6DF07429FA8E2E007B8DF8 /* FirebaseStorage */,
+				EEA23C5829FE8FDD00FA8818 /* Lottie */,
 			);
 			productName = BookHive;
 			productReference = EEAC4FA529E6F8220066757B /* BookHive.app */;
@@ -611,6 +611,7 @@
 				EEFBBCB129E9B9B000BDD902 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				2E1F16B929F916B2007FC4E3 /* XCRemoteSwiftPackageReference "Eureka" */,
 				EE6DF06D29FA8E2E007B8DF8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				EEA23C5729FE8FDD00FA8818 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = EEAC4FA629E6F8220066757B /* Products */;
 			projectDirPath = "";
@@ -641,6 +642,7 @@
 				EE7CDFEC29F7E13A0058C163 /* YearlyTableViewCell.xib in Resources */,
 				2E1F16D229F9B436007FC4E3 /* Localizable.strings in Resources */,
 				EE977F8829F16B1B0027CF90 /* DetailSubjectCell.xib in Resources */,
+				EEA23C5B29FE904C00FA8818 /* searchjson.json in Resources */,
 				EEAC4FB029E6F8220066757B /* Main.storyboard in Resources */,
 				2E1F168929F7DBB0007FC4E3 /* HomeViewController.xib in Resources */,
 				EE1B9B3529FD882C002F81F2 /* AboutViewController.xib in Resources */,
@@ -648,7 +650,6 @@
 				EEC8356E29EAF1D200058796 /* HomeCarouselTableViewCell.xib in Resources */,
 				EE6DF06C29FA8C4C007B8DF8 /* GoogleService-Info.plist in Resources */,
 				2E1F169029F82080007FC4E3 /* DetailViewController.xib in Resources */,
-				2E81B45A29FD898400986F98 /* ReadtoListTableViewCell.xib in Resources */,
 				EE904C2229FB0D0900441AA8 /* (null) in Resources */,
 				2E1F16E129F9B7ED007FC4E3 /* HomeVCLocalizable.strings in Resources */,
 				EE7CDFE729F7D2F00058C163 /* NowTableViewCell.xib in Resources */,
@@ -675,7 +676,6 @@
 				EEE4DABA29F91A030017A5EF /* TextField + Ext.swift in Sources */,
 				EEC8356929EAEE6300058796 /* HomeCollectionViewCarousel.swift in Sources */,
 				EEFBBCAA29E9723000BDD902 /* EndPointType.swift in Sources */,
-				2E81B45B29FD898400986F98 /* ReadtoListTableViewCell.swift in Sources */,
 				EE78967329F4742200991261 /* DetailOlid.swift in Sources */,
 				EE977F7F29F13E910027CF90 /* ImageView + Ext.swift in Sources */,
 				EEFBBCB029E9784D00BDD902 /* HomeViewModel.swift in Sources */,
@@ -971,6 +971,7 @@
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1003,6 +1004,7 @@
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1056,6 +1058,14 @@
 				minimumVersion = 10.0.0;
 			};
 		};
+		EEA23C5729FE8FDD00FA8818 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 		EEFBBCB129E9B9B000BDD902 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
@@ -1091,6 +1101,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EE6DF06D29FA8E2E007B8DF8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		EEA23C5829FE8FDD00FA8818 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EEA23C5729FE8FDD00FA8818 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 		EEFBBCB229E9B9B000BDD902 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;

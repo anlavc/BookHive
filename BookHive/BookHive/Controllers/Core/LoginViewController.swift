@@ -32,6 +32,8 @@ class LoginViewController: UIViewController {
         setupUI()
         gestureRecognizer()
         textLocalizable()
+        let attributes = [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
+        emailTextField.attributedPlaceholder = NSAttributedString(string: NSLocalizedString("Enter E-mail", comment: ""), attributes: attributes)
     }
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = true
@@ -43,13 +45,17 @@ class LoginViewController: UIViewController {
     }
     //MARK: - UI Configuration
     private func setupUI() {
-        personicon.layer.cornerRadius   = 12
-        loginButton.layer.cornerRadius  = 5
-        lockicon.layer.cornerRadius     = 12
-        lockicon.layer.maskedCorners    = [.layerMinXMaxYCorner]
-        personicon.layer.maskedCorners  = [.layerMinXMinYCorner]
+        personicon.layer.cornerRadius               = 12
+        loginButton.layer.cornerRadius              = 5
+        lockicon.layer.cornerRadius                 = 12
+        lockicon.layer.maskedCorners                = [.layerMinXMaxYCorner]
+        personicon.layer.maskedCorners              = [.layerMinXMinYCorner]
         centerStack.addShadow(color: UIColor.darkGray, opacity: 0.5, offset: CGSize(width: 0, height: 0), radius: 0)
         loginButton.addShadow(color: UIColor.darkGray, opacity: 0.5, offset: CGSize(width: 2, height: 2), radius: 5)
+        let attributes                              = [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
+        emailTextField.attributedPlaceholder        = NSAttributedString(string: NSLocalizedString("Enter E-mail", comment: ""), attributes: attributes)
+        passwordTextField.attributedPlaceholder     = NSAttributedString(string: NSLocalizedString("Re-Enter Password", comment: ""), attributes: attributes)
+
     }
     //MARK: - Functions
     
@@ -90,7 +96,7 @@ class LoginViewController: UIViewController {
             Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
                 
                 if error != nil {
-                    self.showAlert(title: NSLocalizedString("User login error", comment: ""), message: "\(error!.localizedDescription)")
+                    self.showAlert(title: NSLocalizedString("User login error", comment: ""), message: NSLocalizedString("Please enter a valid e-mail address.", comment: ""))
                     
                 } else {
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)

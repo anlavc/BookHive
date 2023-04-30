@@ -12,8 +12,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchViewController" customModule="BookHive" customModuleProvider="target">
             <connections>
+                <outlet property="animationGif" destination="ObT-Xf-3J3" id="cW0-RP-FsW"/>
                 <outlet property="findLabel" destination="oSh-zd-STT" id="8mX-jv-Chj"/>
-                <outlet property="gifImageView" destination="ObT-Xf-3J3" id="Nam-Ae-7kD"/>
                 <outlet property="indicator" destination="uU9-g8-vgR" id="y3O-66-IMO"/>
                 <outlet property="searchTextField" destination="bo6-T2-jt4" id="V8C-rD-t6o"/>
                 <outlet property="tableView" destination="aLz-5O-Gk5" id="iiI-K4-jaO"/>
@@ -42,28 +42,31 @@
                     <rect key="frame" x="186.66666666666666" y="416" width="20" height="20"/>
                 </activityIndicatorView>
                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can find results by searching" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oSh-zd-STT">
-                    <rect key="frame" x="46.666666666666657" y="466" width="300" height="22"/>
+                    <rect key="frame" x="46.666666666666657" y="469" width="300" height="22"/>
                     <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="19"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="window.awning" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ObT-Xf-3J3">
-                    <rect key="frame" x="78.666666666666671" y="199.66666666666663" width="235.66666666666663" height="230.33333333333337"/>
+                <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ObT-Xf-3J3" customClass="AnimatedImageView" customModule="Kingfisher">
+                    <rect key="frame" x="10" y="199" width="373" height="250"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="250" id="ZL5-YY-gFq"/>
+                    </constraints>
                 </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="aLz-5O-Gk5" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Dtp-Ix-hwL"/>
-                <constraint firstItem="ObT-Xf-3J3" firstAttribute="width" secondItem="aLz-5O-Gk5" secondAttribute="width" multiplier="0.6" id="JJz-hP-wJp"/>
                 <constraint firstItem="ObT-Xf-3J3" firstAttribute="centerX" secondItem="aLz-5O-Gk5" secondAttribute="centerX" id="JVa-gb-FBL"/>
+                <constraint firstItem="oSh-zd-STT" firstAttribute="top" secondItem="ObT-Xf-3J3" secondAttribute="bottom" constant="20" id="L4H-ew-HIO"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ObT-Xf-3J3" secondAttribute="trailing" constant="10" id="Man-8H-7OX"/>
                 <constraint firstItem="aLz-5O-Gk5" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="RVk-Y0-J0g"/>
+                <constraint firstItem="ObT-Xf-3J3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="W3D-ym-F25"/>
                 <constraint firstItem="bo6-T2-jt4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="Znc-5T-IdP"/>
                 <constraint firstItem="uU9-g8-vgR" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="bza-zF-uK2"/>
-                <constraint firstItem="ObT-Xf-3J3" firstAttribute="height" secondItem="aLz-5O-Gk5" secondAttribute="height" multiplier="0.355932" id="coT-ce-lz4"/>
                 <constraint firstItem="bo6-T2-jt4" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="cr4-UY-05L"/>
                 <constraint firstItem="aLz-5O-Gk5" firstAttribute="top" secondItem="bo6-T2-jt4" secondAttribute="bottom" constant="20" id="kxd-9m-U4L"/>
-                <constraint firstItem="oSh-zd-STT" firstAttribute="top" secondItem="uU9-g8-vgR" secondAttribute="bottom" constant="30" id="p2b-S1-pyi"/>
                 <constraint firstItem="aLz-5O-Gk5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="psS-Bl-7WI"/>
                 <constraint firstItem="ObT-Xf-3J3" firstAttribute="top" secondItem="bo6-T2-jt4" secondAttribute="bottom" constant="50" id="rCv-WG-HSi"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bo6-T2-jt4" secondAttribute="trailing" constant="10" id="rKh-lx-x4V"/>
@@ -74,7 +77,6 @@
         </view>
     </objects>
     <resources>
-        <image name="window.awning" catalog="system" width="128" height="118"/>
         <namedColor name="textfield">
             <color red="0.94900000095367432" green="0.94900000095367432" blue="0.94900000095367432" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
