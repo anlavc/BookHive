@@ -55,7 +55,7 @@ extension BookEndPoint: EndPointType {
         case .search:
             return "https://openlibrary.org/search.json?q="
         case .detail:
-            return "https://openlibrary.org"
+            return "https://openlibrary.org/works"
         case .pageNumber:
             return "https://openlibrary.org/books"
         case .week:

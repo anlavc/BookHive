@@ -7,6 +7,7 @@
 
 import UIKit
 import Kingfisher
+import Lottie
 
 class SearchViewController: UIViewController, SearchTableViewCellDelegate {
     func didSelect(selectedItem: SearchDoc) {
@@ -26,7 +27,7 @@ class SearchViewController: UIViewController, SearchTableViewCellDelegate {
     @IBOutlet weak var tableView     : UITableView!
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
-    @IBOutlet weak var gifImageView: UIImageView!
+    @IBOutlet weak var animationGif: AnimatedImageView!
     @IBOutlet weak var findLabel: UILabel!
     
     // MARK: - Properties
@@ -46,6 +47,8 @@ class SearchViewController: UIViewController, SearchTableViewCellDelegate {
         tableViewSetup()
         observeEvent()
         gestureRecognizer()
+        startAnimation()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,7 +56,17 @@ class SearchViewController: UIViewController, SearchTableViewCellDelegate {
             self.indicator.stopAnimating()
         }
     }
-    
+    //MARK: - Lottie Search Animation Func
+    private func startAnimation() {
+        let aniView = LottieAnimationView(name: "searchjson")
+        aniView.contentMode = .scaleAspectFit
+        aniView.loopMode = .loop
+        aniView.center = self.animationGif.center
+        aniView.frame = self.animationGif.bounds
+        aniView.play()
+        self.animationGif.addSubview(aniView)
+        
+    }
     // MARK: - Observe Event
     func observeEvent() {
         viewModel.eventHandler = { [weak self] event in
@@ -117,7 +130,7 @@ class SearchViewController: UIViewController, SearchTableViewCellDelegate {
         searchTextField.text = ""
         tableView.isHidden = true
         button.isHidden = true
-        gifImageView.isHidden = false
+        animationGif.isHidden = false
         findLabel.isHidden = false
         viewModel.searchBook = []
         tableView.reloadData()
@@ -139,7 +152,8 @@ extension SearchViewController: UITextFieldDelegate {
            !searchBookWord.isEmpty {
             button.isHidden = false
             tableView.isHidden = false
-            gifImageView.isHidden = true
+            animationGif.isHidden = true
+            animationGif.stopAnimating()
             findLabel.isHidden = true
             DispatchQueue.main.async {
                 self.viewModel.fetchSearchBooks(searchWord: searchBookWord)

@@ -31,7 +31,6 @@ class HomeCarouselTableViewCell: UITableViewCell {
     }
     
     func observeEvent() {
-        print("DENEME")
         viewModel.eventHandler = { [weak self] event in
             guard let self else {return}
             

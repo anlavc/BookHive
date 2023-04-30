@@ -52,6 +52,11 @@ class RegisterViewController: UIViewController {
         lockButton.layer.maskedCorners  = [.layerMinXMaxYCorner]
         centerStack.addShadow(color: UIColor.darkGray, opacity: 0.5, offset: CGSize(width: 0, height: 0), radius: 0)
         createButton.addShadow(color: UIColor.darkGray, opacity: 0.5, offset: CGSize(width: 2, height: 2), radius: 5)
+        let attributes                              = [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
+        nickname.attributedPlaceholder        = NSAttributedString(string: NSLocalizedString("Enter Name", comment: ""), attributes: attributes)
+        email.attributedPlaceholder     = NSAttributedString(string: NSLocalizedString("Enter E-mail", comment: ""), attributes: attributes)
+        password.attributedPlaceholder     = NSAttributedString(string: NSLocalizedString("Enter Password", comment: ""), attributes: attributes)
+        repassword.attributedPlaceholder     = NSAttributedString(string: NSLocalizedString("Enter Password", comment: ""), attributes: attributes)
     }
     //MARK: - String Localizable
     private func textLocalizable() {

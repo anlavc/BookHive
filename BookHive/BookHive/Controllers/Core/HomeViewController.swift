@@ -12,24 +12,25 @@ class HomeViewController: UIViewController, HomeCourseTableViewCellDelegate {
     func didSelectCell(selectedItem: Work) {
         if let coverID = selectedItem.cover_edition_key {
             let vc = DetailViewController()
-            vc.modalPresentationStyle = .fullScreen
-            vc.selectedBook = selectedItem.key // choosebookkey
-            vc.detailID = coverID
-            vc.bookTitle = selectedItem.title // title
-            var languageArray = selectedItem.language?.prefix(2)
-            vc.language = languageArray?.joined(separator: " & ") ?? "?"
-            vc.authorName = selectedItem.author_name?.joined(separator: " & ") ?? selectedItem.authors?[0].name
-            vc.publishDateData = selectedItem.first_publish_year
+            vc.selectedBook             = selectedItem.key // choosebookkey
+            vc.detailID                 = coverID
+            vc.bookTitle                = selectedItem.title // title
+            var languageArray           = selectedItem.language?.prefix(2)
+            vc.language                 = languageArray?.joined(separator: " & ") ?? "Unknown"
+            vc.authorName               = selectedItem.author_name?.joined(separator: " & ") ?? selectedItem.authors?[0].name
+            vc.publishDateData          = selectedItem.first_publish_year
+            vc.modalPresentationStyle   = .fullScreen
             present(vc, animated: true)
         }
+        showAlert(title: NSLocalizedString("Opss!", comment: ""), message: NSLocalizedString("Sorry, details of the book could not be found!", comment: ""))
     }
     //MARK: - Cell Identifier
-    let cell = "HomeTableViewCell"
-    let cellCarousel = "HomeCarouselTableViewCell"
-    let nowCell = "NowTableViewCell"
-    let yearly = "YearlyTableViewCell"
-    let viewModel = HomeViewModel()
-    let sections = ["","NOW_TREND","WEEK_TREND","MOUNTH_TREND"]
+    let cell            = "HomeTableViewCell"
+    let cellCarousel    = "HomeCarouselTableViewCell"
+    let nowCell         = "NowTableViewCell"
+    let yearly          = "YearlyTableViewCell"
+    let viewModel       = HomeViewModel()
+    let sections        = ["","NOW_TREND","WEEK_TREND","MOUNTH_TREND"]
     //MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
     //MARK: - Life Cycle

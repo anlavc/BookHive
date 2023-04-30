@@ -9,35 +9,53 @@ import UIKit
 import Eureka
 import MessageUI
 import FirebaseAuth
+import Firebase
 
 class AccountViewController: FormViewController, MFMailComposeViewControllerDelegate {
-
+    var nickname: String? {
+        didSet {
+            userInformationForm()
+            aboutForm()
+            developerInfoForm()
+            accountInfoForm()
+        }
+    }
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        userInformationForm()
-        aboutForm()
-        developerInfoForm()
-        accountInfoForm()
+       fetchName()
+       
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
-    
     // MARK: - User Information Form
     private func userInformationForm() {
         form +++
         Section(NSLocalizedString("User Informatıon", comment: ""))
         <<< LabelRow() {
             $0.title = NSLocalizedString("Name", comment: "")
-            $0.value = Auth.auth().currentUser?.displayName
+            $0.value = nickname
         }
         <<< LabelRow() {
             $0.title = NSLocalizedString("Email", comment: "")
             $0.value = Auth.auth().currentUser?.email
         }
+    }
+    func fetchName() {
+        guard let currentUser = Auth.auth().currentUser else { return }
+           let uid = currentUser.uid
+           
+           Firestore.firestore().collection("users").document(uid).getDocument { (document, error) in
+               if let document = document, document.exists {
+                   let name = document.get("name") as? String ?? ""
+                   self.nickname = name
+               } else {
+                   self.nickname = ""
+               }
+           }
     }
     
     // MARK: - About Form
