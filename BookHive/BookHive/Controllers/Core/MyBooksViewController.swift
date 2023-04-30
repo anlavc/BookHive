@@ -15,8 +15,7 @@ class MyBooksViewController: UIViewController {
     @IBOutlet weak var readView      : UIView!
     
     // MARK: - Properties
-    var pageInputView      : UIView?
-    var pageNumberTextField: UITextField?
+
     
     // MARK: - Load View
     override func loadView() {

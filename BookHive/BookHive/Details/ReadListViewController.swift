@@ -6,23 +6,52 @@
 //
 
 import UIKit
+import FirebaseFirestore
+import FirebaseAuth
 
 class ReadListViewController: UIViewController {
     
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    var favoriteBooks = [Book]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setTableView()
-
+        setCollectionView()
+        fetchFavoriteBooks()
+    }
+    
+    private func fetchFavoriteBooks() {
+        if let uuid = Auth.auth().currentUser?.uid { // kullanıcının id sine ulaştım
+            let favoriteBooksCollection = Firestore.firestore().collection("users/\(uuid)/favoriteBooks") //kullanıcıya özel oluşturulmuş collectiona ulaştım
+            favoriteBooksCollection.getDocuments { (querySnapshot, error) in //kullanıcının collection ın dökümanına erişiyorum
+                if let error = error {
+                    print(error.localizedDescription)
+                    return
+                }
+                guard let documents = querySnapshot?.documents else {
+                    self.showAlert(title: "error", message: "No Favorite Books Found")
+                    return
+                }
+                var books = [Book]()
+                for document in documents {
+                    let coverID = document.data()["coverID"] as! String
+                    let title = document.data()["title"] as! String
+                    let book = Book(coverID: coverID, title: title)
+                    books.append(book)
+                }
+                self.favoriteBooks = books
+                self.collectionView.reloadData()
+            }
+        }
     }
     
     
-    private func setTableView() {
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.register(ReadtoListTableViewCell.nib(), forCellReuseIdentifier: ReadtoListTableViewCell.identifier)
+    private func setCollectionView() {
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.register(ReadListCollectionViewCell.nib(), forCellWithReuseIdentifier: ReadListCollectionViewCell.identifier)
     }
 
     @IBAction func backButton(_ sender: Any) {
@@ -30,26 +59,21 @@ class ReadListViewController: UIViewController {
     }
 }
 
-
-extension ReadListViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+extension ReadListViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 5
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: ReadtoListTableViewCell.identifier, for: indexPath) as! ReadtoListTableViewCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ReadListCollectionViewCell.identifier, for: indexPath) as! ReadListCollectionViewCell
         return cell
     }
 }
 
-extension ReadListViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc =  PageNumberViewController()
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true)
-    }
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        cell.alpha = 0
-        UIView.animate(withDuration: 1.0, animations: { cell.alpha = 1 })
-    }
+extension ReadListViewController: UICollectionViewDelegate {
+    
+}
+
+extension ReadListViewController: UICollectionViewDelegateFlowLayout {
+    
 }

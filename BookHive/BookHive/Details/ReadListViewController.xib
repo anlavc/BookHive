@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReadListViewController" customModule="BookHive" customModuleProvider="target">
             <connections>
-                <outlet property="tableView" destination="RAl-Vb-kFt" id="yqe-u9-TAU"/>
+                <outlet property="collectionView" destination="gDI-wn-IsR" id="g3L-rc-KAe"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,10 +20,6 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="RAl-Vb-kFt">
-                    <rect key="frame" x="0.0" y="146" width="393" height="672"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                </tableView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Want to Read" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ox0-EQ-ipT">
                     <rect key="frame" x="87" y="106" width="219" height="32"/>
                     <constraints>
@@ -44,20 +40,29 @@
                         <action selector="backButton:" destination="-1" eventType="touchUpInside" id="Xn3-l6-dGJ"/>
                     </connections>
                 </button>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="gDI-wn-IsR">
+                    <rect key="frame" x="0.0" y="138" width="393" height="714"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="HH9-xH-NiX">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="RAl-Vb-kFt" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="0zV-u6-cyQ"/>
+                <constraint firstItem="gDI-wn-IsR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="CKw-Aw-EyV"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="spz-6J-bPm" secondAttribute="trailing" constant="355" id="Gcw-vr-PIN"/>
-                <constraint firstItem="RAl-Vb-kFt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="JWG-Du-0Ob"/>
+                <constraint firstItem="gDI-wn-IsR" firstAttribute="top" secondItem="ox0-EQ-ipT" secondAttribute="bottom" id="PxC-FT-riz"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ox0-EQ-ipT" secondAttribute="trailing" constant="87" id="VEB-5y-c1D"/>
-                <constraint firstItem="RAl-Vb-kFt" firstAttribute="top" secondItem="ox0-EQ-ipT" secondAttribute="bottom" constant="8" symbolic="YES" id="amz-pv-rJG"/>
-                <constraint firstItem="RAl-Vb-kFt" firstAttribute="top" secondItem="spz-6J-bPm" secondAttribute="bottom" constant="52" id="foU-uS-892"/>
+                <constraint firstAttribute="bottom" secondItem="gDI-wn-IsR" secondAttribute="bottom" id="X72-EE-fl0"/>
                 <constraint firstItem="spz-6J-bPm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="gdo-X9-jDw"/>
                 <constraint firstItem="spz-6J-bPm" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="nSI-Ff-PTB"/>
-                <constraint firstItem="RAl-Vb-kFt" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="pmp-nZ-m4k"/>
                 <constraint firstItem="ox0-EQ-ipT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="87" id="rl0-Fy-kl8"/>
+                <constraint firstItem="gDI-wn-IsR" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="wdH-gJ-6qg"/>
                 <constraint firstItem="ox0-EQ-ipT" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="47" id="xnf-lJ-Rl0"/>
             </constraints>
             <point key="canvasLocation" x="139.69465648854961" y="20.422535211267608"/>
