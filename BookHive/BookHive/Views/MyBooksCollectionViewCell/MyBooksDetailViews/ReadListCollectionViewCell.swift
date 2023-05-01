@@ -35,7 +35,7 @@ class ReadListCollectionViewCell: UICollectionViewCell {
     }
     
     public func configure(with: Book) {
-        bookImageView.setImageOlid(with: with.coverID)
+        bookImageView.setImageOlid(with: with.coverID!)
     }
     
     @IBAction func deleteButtonTapped(_ sender: UIButton) {

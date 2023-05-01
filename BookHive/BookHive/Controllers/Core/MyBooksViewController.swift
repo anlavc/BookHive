@@ -21,6 +21,7 @@ class MyBooksViewController: UIViewController {
     // MARK: - Properties
     var readingBooks: [ReadBook] = []
     var favoriteBooks: [Book] = []
+    var finishBook: [ReadBook] = []
     
     // MARK: - Load View
     override func loadView() {
@@ -61,12 +62,16 @@ class MyBooksViewController: UIViewController {
                 }
                 self.favoriteBooks.removeAll()
                 for document in documents {
-                    let coverID = document.data()["coverID"] as! String
-                    let title = document.data()["title"] as! String
-                    let author = document.data()["author"] as? String
-                    let book = Book(coverID: coverID, title: title,author: author)
+                    let coverID     = document.data()["coverID"] as! String
+                    let title       = document.data()["title"] as! String
+                    let author      = document.data()["author"] as? String
+                    let book        = Book(coverID: coverID, title: title,author: author)
                     self.favoriteBooks.append(book)
-                    self.wantReadLabel.text = "(\(self.favoriteBooks.count)) Books"
+                    DispatchQueue.main.async {
+                        self.wantReadLabel.text = "Books (\(self.favoriteBooks.count))"
+                        self.readBookLabel.text = "Books (\(self.finishBook.count))"
+                    }
+                  
                     
                 }
             }
@@ -76,7 +81,7 @@ class MyBooksViewController: UIViewController {
     private func fetchReadingBooks() {
         if let uuid = Auth.auth().currentUser?.uid {
             let favoriteBooksCollection = Firestore.firestore().collection("users/\(uuid)/ReadsBooks")
-            favoriteBooksCollection.getDocuments() { (querySnapshot, error) in
+            favoriteBooksCollection.order(by: "readingdate",descending: true).getDocuments() { (querySnapshot, error) in
                 if let error = error {
                     print("Error fetching favorite books: \(error.localizedDescription)")
                     return
@@ -86,16 +91,24 @@ class MyBooksViewController: UIViewController {
                     return
                 }
                 self.readingBooks.removeAll()
+                self.finishBook.removeAll()
                 for document in documents {
+                    let documentID      = document.documentID
                     let coverID         = document.data()["coverID"] as! String
                     let title           = document.data()["title"] as! String
                     let finish          = document.data()["finish"] as! Bool
                     let readPage        = document.data()["readPage"] as! Int
-                    let readingDate     = document.data()["readingdate"] as? Date
+                    let readingDateTimestamp     = document.data()["readingdate"] as? Timestamp
+                    let readingDate = readingDateTimestamp?.dateValue()
                     let author          = document.data()["author"] as? String
                     let totalpageNumber = document.data()["totalpageNumber"] as! Int
-                    let readbookArray   = ReadBook(coverID: coverID, title: title, finish: finish, readPage: readPage, readingDate: readingDate, totalpageNumber: totalpageNumber, author: author)
-                    self.readingBooks.append(readbookArray)
+                    if !finish {
+                        let readbookArray   = ReadBook(coverID: coverID, title: title, finish: finish, readPage: readPage, readingDate: readingDate, totalpageNumber: totalpageNumber, author: author,documentID: documentID)
+                        self.readingBooks.append(readbookArray)
+                    } else {
+                        let readbookArray   = ReadBook(coverID: coverID, title: title, finish: finish, readPage: readPage, readingDate: readingDate, totalpageNumber: totalpageNumber, author: author,documentID: documentID)
+                        self.finishBook.append(readbookArray)
+                    }
                     self.collectionView.reloadData()
                     
                     
@@ -159,6 +172,7 @@ extension MyBooksViewController: UICollectionViewDataSource {
 extension MyBooksViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = PageNumberViewController()
+        vc.selectedReadBook = readingBooks[indexPath.row]
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
     }
