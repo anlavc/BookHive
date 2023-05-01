@@ -20,17 +20,13 @@ class AccountViewController: FormViewController, MFMailComposeViewControllerDele
             accountInfoForm()
         }
     }
+    
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-       fetchName()
-       
+        fetchName()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.setNavigationBarHidden(true, animated: animated)
-    }
     // MARK: - User Information Form
     private func userInformationForm() {
         form +++

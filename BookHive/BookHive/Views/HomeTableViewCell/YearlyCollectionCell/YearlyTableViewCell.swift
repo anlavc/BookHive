@@ -6,8 +6,6 @@
 //
 
 import UIKit
-
-import UIKit
 import Kingfisher
 
 class YearlyTableViewCell: UITableViewCell {

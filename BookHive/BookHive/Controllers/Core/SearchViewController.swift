@@ -167,6 +167,12 @@ extension SearchViewController: UITextFieldDelegate {
     }
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
+        if !searchTextField.text!.isEmpty {
+            button.isHidden = false
+        } else {
+            button.isHidden = true
+        }
+        
         if searchTextField.text == "" {
             tableView.isHidden = true
             viewModel.searchBook = []
