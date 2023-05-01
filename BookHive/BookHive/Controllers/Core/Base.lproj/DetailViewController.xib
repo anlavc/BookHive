@@ -246,6 +246,9 @@
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" title="READ"/>
+                                            <connections>
+                                                <action selector="readButtonTapped:" destination="-1" eventType="touchUpInside" id="lYk-O7-zwl"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XC5-zV-cj3">
                                             <rect key="frame" x="32" y="541" width="329" height="60"/>

@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class MyBooksViewController: UIViewController {
     
@@ -13,9 +15,12 @@ class MyBooksViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var wantToReadView: UIView!
     @IBOutlet weak var readView      : UIView!
+    @IBOutlet weak var wantReadLabel: UILabel!
     
+    @IBOutlet weak var readBookLabel: UILabel!
     // MARK: - Properties
-
+    var readingBooks: [ReadBook] = []
+    var favoriteBooks: [Book] = []
     
     // MARK: - Load View
     override func loadView() {
@@ -25,6 +30,7 @@ class MyBooksViewController: UIViewController {
         
         
     }
+   
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -35,7 +41,68 @@ class MyBooksViewController: UIViewController {
         wantToReadView.addGestureRecognizer(tapGesture)
         
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+       
+        fetchReadingBooks()
+        fetchFavoriteBooks()
+    }
+    //MARK: - Firebase favorite Book fetch func
+     func fetchFavoriteBooks() {
+        if let uuid = Auth.auth().currentUser?.uid {
+            let favoriteBooksCollection = Firestore.firestore().collection("users/\(uuid)/favoriteBooks")
+            favoriteBooksCollection.getDocuments() { (querySnapshot, error) in
+                if let error = error {
+                    print("Error fetching favorite books: \(error.localizedDescription)")
+                    return
+                }
+                guard let documents = querySnapshot?.documents else {
+                    self.showAlert(title: "hata", message: "No favorite books found.")
+                    return
+                }
+                self.favoriteBooks.removeAll()
+                for document in documents {
+                    let coverID = document.data()["coverID"] as! String
+                    let title = document.data()["title"] as! String
+                    let author = document.data()["author"] as? String
+                    let book = Book(coverID: coverID, title: title,author: author)
+                    self.favoriteBooks.append(book)
+                    self.wantReadLabel.text = "(\(self.favoriteBooks.count)) Books"
+                    
+                }
+            }
+        }
+    }
+//MARK: - Fetch ReadingBook
+    private func fetchReadingBooks() {
+        if let uuid = Auth.auth().currentUser?.uid {
+            let favoriteBooksCollection = Firestore.firestore().collection("users/\(uuid)/ReadsBooks")
+            favoriteBooksCollection.getDocuments() { (querySnapshot, error) in
+                if let error = error {
+                    print("Error fetching favorite books: \(error.localizedDescription)")
+                    return
+                }
+                guard let documents = querySnapshot?.documents else {
+                    self.showAlert(title: "hata", message: "No read books found.")
+                    return
+                }
+                self.readingBooks.removeAll()
+                for document in documents {
+                    let coverID         = document.data()["coverID"] as! String
+                    let title           = document.data()["title"] as! String
+                    let finish          = document.data()["finish"] as! Bool
+                    let readPage        = document.data()["readPage"] as! Int
+                    let readingDate     = document.data()["readingdate"] as? Date
+                    let author          = document.data()["author"] as? String
+                    let totalpageNumber = document.data()["totalpageNumber"] as! Int
+                    let readbookArray   = ReadBook(coverID: coverID, title: title, finish: finish, readPage: readPage, readingDate: readingDate, totalpageNumber: totalpageNumber, author: author)
+                    self.readingBooks.append(readbookArray)
+                    self.collectionView.reloadData()
+                    
+                    
+                }
+            }
+        }
+    }
     // MARK: - Collection View Configure
     private func collectionViewSetup() {
         let layout                          = UICollectionViewFlowLayout()
@@ -80,10 +147,11 @@ class MyBooksViewController: UIViewController {
 // MARK: - Extensions
 extension MyBooksViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return readingBooks.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyBooksCollectionViewCell.identifier, for: indexPath) as! MyBooksCollectionViewCell
+        cell.setup(book: readingBooks[indexPath.row])
         return cell
     }
 }
