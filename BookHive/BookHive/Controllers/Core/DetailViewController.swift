@@ -38,6 +38,7 @@ class DetailViewController: UIViewController {
     var publishDateData: Int?
     var bookDocumentID: String?
     var favoriteBooks: [Book] = []
+    var readingBooks: [ReadBook] = []
     
     private var viewModel = DetailViewModel()
     //MARK: - Life Cycle
@@ -48,12 +49,14 @@ class DetailViewController: UIViewController {
         initViewModel()
         observeEvent()
         collectionSetup()
+       
     }
     override func viewWillAppear(_ animated: Bool) {
         fetchFavoriteBooks()
+        fetchReadingBooks()
     }
     //MARK: - Firebase favorite Book fetch func
-    private func fetchFavoriteBooks() {
+     func fetchFavoriteBooks() {
         if let uuid = Auth.auth().currentUser?.uid {
             let favoriteBooksCollection = Firestore.firestore().collection("users/\(uuid)/favoriteBooks")
             favoriteBooksCollection.getDocuments() { (querySnapshot, error) in
@@ -68,7 +71,8 @@ class DetailViewController: UIViewController {
                 for document in documents {
                     let coverID = document.data()["coverID"] as! String
                     let title = document.data()["title"] as! String
-                    let book = Book(coverID: coverID, title: title)
+                    let author = document.data()["author"] as? String
+                    let book = Book(coverID: coverID, title: title,author: author)
                     self.favoriteBooks.append(book)
                     
                     // Check if the current book is a favorite
@@ -81,7 +85,41 @@ class DetailViewController: UIViewController {
             }
         }
     }
-    
+    //MARK: - Firebase Reading Books fetch func
+    private func fetchReadingBooks() {
+        if let uuid = Auth.auth().currentUser?.uid {
+            let favoriteBooksCollection = Firestore.firestore().collection("users/\(uuid)/ReadsBooks")
+            favoriteBooksCollection.getDocuments() { (querySnapshot, error) in
+                if let error = error {
+                    print("Error fetching favorite books: \(error.localizedDescription)")
+                    return
+                }
+                guard let documents = querySnapshot?.documents else {
+                    self.showAlert(title: "hata", message: "No read books found.")
+                    return
+                }
+                for document in documents {
+                    let coverID         = document.data()["coverID"] as! String
+                    let title           = document.data()["title"] as! String
+                    let finish          = document.data()["finish"] as! Bool
+                    let readPage        = document.data()["readPage"] as! Int
+                    let readingDate     = document.data()["readingdate"] as? Date
+                    let author          = document.data()["author"] as? String
+                    let totalpageNumber = document.data()["totalpageNumber"] as! Int
+                    
+                    let readbookArray   = ReadBook(coverID: coverID, title: title, finish: finish, readPage: readPage, readingDate: readingDate, totalpageNumber: totalpageNumber, author: author)
+                    self.readingBooks.append(readbookArray)
+                    
+                    // Check if the current book is a favorite
+                    if coverID == self.detailID {
+                        self.readButton.setTitle("Okunuyor", for: .normal)
+                        self.readButton.backgroundColor = UIColor(named: "addedFavoriteButton")
+                    }
+                    
+                }
+            }
+        }
+    }
     
     @IBAction func dismissButton(_ sender: UIButton) {
         self.dismiss(animated: true)
@@ -123,37 +161,6 @@ class DetailViewController: UIViewController {
         //image
         let olid = detailID
         imageView.setImageOlid(with: olid!)
-    }
-    //MARK: - Rating Image func
-    private func setupRatingImage(olidKey: Rating) {
-        var imageName: String
-        switch olidKey.summary?.average {
-        case 0:
-            imageName = "0_star"
-        case 0.5:
-            imageName = "0-5_star"
-        case 1:
-            imageName = "1_star"
-        case 1.5:
-            imageName = "1-5_star"
-        case 2:
-            imageName = "2_star"
-        case 2.5:
-            imageName = "2-5_star"
-        case 3:
-            imageName = "3_star"
-        case 3.5:
-            imageName = "3-5_star"
-        case 4:
-            imageName = "4_star"
-        case 4.5:
-            imageName = "4-5_star"
-        case 5:
-            imageName = "5_star"
-        default:
-            return
-        }
-        let image = UIImage(named: imageName)
     }
     //MARK: - Observed Event
     private func observeEvent() {
@@ -210,6 +217,10 @@ class DetailViewController: UIViewController {
             }
         }
     }
+    //MARK: - ReadButton Tapped
+    @IBAction func readButtonTapped(_ sender: Any) {
+        ReadBookFetch()
+    }
     //MARK: - AddtoReadList Button Tapped
     @IBAction func addtoReadListTapped(_ sender: UIButton) {
         toggleFavoriteBookFetch()
@@ -245,6 +256,40 @@ class DetailViewController: UIViewController {
             }
         }
     }
+    func ReadBookFetch() {
+        if let uuid = Auth.auth().currentUser?.uid {
+            let favoriteBooksCollection = Firestore.firestore().collection("users/\(uuid)/ReadsBooks")
+            favoriteBooksCollection.whereField("coverID", isEqualTo: detailID!).getDocuments { (snapshot, error) in
+                if let error = error {
+                    self.showAlert(title: "ERROR", message: "Okumaya başlama sırasında bir hata ile karşılaşıldı.")
+                } else {
+                    if let documents = snapshot?.documents {
+                        for document in documents {
+                            let bookID = document.documentID
+                            favoriteBooksCollection.document(bookID).delete()
+                            self.readButton.setTitle("Oku", for: .normal)
+                            self.readButton.backgroundColor = UIColor(named: "colordarkgray")
+                            
+                        }
+                        if documents.isEmpty {
+                            favoriteBooksCollection.addDocument(data: ["coverID" : self.detailID!,
+                                                                       "title"   : self.bookTitle!,
+                                                                       "readPage": 0,
+                                                                       "author"  : self.authorName,
+                                                                       "readingdate" : FieldValue.serverTimestamp(),
+                                                                       "totalpageNumber": self.viewModel.detailOlid?.numberOfPages ?? 0,
+                                                                       "finish": false])
+                            self.readButton.setTitle("Okunuyor", for: .normal)
+                            self.readButton.backgroundColor = UIColor(named: "addedFavoriteButton")
+                        }
+                        DispatchQueue.main.async {
+                            self.fetchReadingBooks()
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
     //MARK: - CollectionviewDataSource
@@ -270,5 +315,3 @@ extension DetailViewController: UICollectionViewDataSource {
 func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
     return 10
 }
-
-

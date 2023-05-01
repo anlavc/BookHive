@@ -26,6 +26,10 @@ class MyBooksCollectionViewCell: UICollectionViewCell {
         mybooksView.layer.shadowOffset  = CGSize(width : 2,
                                                  height: 2)
     }
+    func setup(book: ReadBook) {
+        mybooksBookNameLabel.text = book.title
+        mybooksAuthorNameLabel.text = book.author
+    }
     
     static func nib() -> UINib {
         return UINib(nibName: "MyBooksCollectionViewCell", bundle: nil)

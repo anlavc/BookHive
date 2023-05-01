@@ -38,7 +38,8 @@ class ReadListViewController: UIViewController {
                 for document in documents {
                     let coverID = document.data()["coverID"] as! String
                     let title = document.data()["title"] as! String
-                    let book = Book(coverID: coverID, title: title)
+                    let author = document.data()["author"] as? String
+                    let book = Book(coverID: coverID, title: title, author: author)
                     books.append(book)
                 }
                 self.favoriteBooks = books

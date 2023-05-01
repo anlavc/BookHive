@@ -8,6 +8,16 @@
 import Foundation
 
 struct Book {
-    let coverID: String
-    let title: String
+    let coverID: String?
+    let title: String?
+    let author: String?
+}
+struct ReadBook {
+    let coverID          :String?
+    let title            :String?
+    let finish           :Bool?
+    let readPage         :Int?
+    let readingDate      :Date?
+    let totalpageNumber  :Int?
+    let author           :String?
 }

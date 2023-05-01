@@ -93,7 +93,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2E1F163F29F72158007FC4E3 /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
 		2E1F164629F7BAD3007FC4E3 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Main.strings; sourceTree = "<group>"; };
 		2E1F164829F7BADD007FC4E3 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		2E1F166429F7C4F8007FC4E3 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
@@ -467,7 +466,6 @@
 			children = (
 				EEA23C5A29FE904C00FA8818 /* searchjson.json */,
 				2EFA100A29FA4C8100AE6888 /* Assets.xcassets */,
-				2E1F163F29F72158007FC4E3 /* search.png */,
 				EEAC4FB929E6F8230066757B /* Info.plist */,
 				EEAC4FC729E6F9470066757B /* Font */,
 			);
