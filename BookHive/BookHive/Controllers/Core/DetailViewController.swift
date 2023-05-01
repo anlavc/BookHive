@@ -244,7 +244,7 @@ class DetailViewController: UIViewController {
                         if documents.isEmpty {
                             favoriteBooksCollection.addDocument(data: ["coverID": self.detailID!,
                                                                        "title"  : self.bookTitle!,
-                                                                       "author" : self.authorName!])
+                                                                       "author" : self.authorName])
                             self.addReadButton.setTitle("Added in favorites", for: .normal)
                             self.addReadButton.backgroundColor = UIColor(named: "addedFavoriteButton")
                         }
