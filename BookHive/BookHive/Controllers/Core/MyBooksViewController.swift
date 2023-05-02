@@ -16,7 +16,6 @@ class MyBooksViewController: UIViewController {
     @IBOutlet weak var wantToReadView: UIView!
     @IBOutlet weak var readView      : UIView!
     @IBOutlet weak var wantReadLabel: UILabel!
-    
     @IBOutlet weak var readBookLabel: UILabel!
     // MARK: - Properties
     var readingBooks: [ReadBook] = []

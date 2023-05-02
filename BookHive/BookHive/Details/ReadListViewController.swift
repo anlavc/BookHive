@@ -9,9 +9,27 @@ import UIKit
 import FirebaseFirestore
 import FirebaseAuth
 
-class ReadListViewController: UIViewController {
-    
-    
+class ReadListViewController: UIViewController,ReadListCollectionViewCellDelegate {
+    func deleteItem(indexPath: IndexPath) {
+        if let uuid = Auth.auth().currentUser?.uid {
+            let favoriteBooksCollection = Firestore.firestore().collection("users/\(uuid)/favoriteBooks")
+            let book = favoriteBooks[indexPath.row]
+            favoriteBooksCollection.document(book.coverID ?? "").delete() { error in
+                if error != nil {
+                    return
+                }
+                self.favoriteBooks.remove(at: indexPath.row)
+                self.collectionView.performBatchUpdates({
+                    self.collectionView.deleteItems(at: [indexPath])
+                }, completion: { success in
+                    if self.favoriteBooks.isEmpty {
+                        self.collectionView.reloadData()
+                    }
+                })
+            }
+        }
+    }
+
     @IBOutlet weak var collectionView: UICollectionView!
     
     var favoriteBooks = [Book]()
@@ -69,17 +87,16 @@ extension ReadListViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ReadListCollectionViewCell.identifier, for: indexPath) as! ReadListCollectionViewCell
-        cell.configure(with: favoriteBooks[indexPath.row])
+        cell.indexPath = indexPath
+        cell.delegate = self
+        cell.book = favoriteBooks[indexPath.row]
+        cell.configure(model: favoriteBooks[indexPath.row])
         return cell
     }
 }
 
 extension ReadListViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = PageNumberViewController()
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true)
-    }
+   
 }
 
 extension ReadListViewController: UICollectionViewDelegateFlowLayout {
@@ -93,4 +110,5 @@ extension ReadListViewController: UICollectionViewDelegateFlowLayout {
         return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     }
 }
+
 

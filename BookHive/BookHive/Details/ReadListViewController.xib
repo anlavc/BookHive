@@ -31,7 +31,7 @@
                     </connections>
                 </button>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="gDI-wn-IsR">
-                    <rect key="frame" x="0.0" y="152" width="393" height="700"/>
+                    <rect key="frame" x="0.0" y="175" width="393" height="677"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="20" minimumInteritemSpacing="10" id="HH9-xH-NiX">
                         <size key="itemSize" width="100" height="200"/>
@@ -41,7 +41,7 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Want to Read" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ox0-EQ-ipT">
-                    <rect key="frame" x="16" y="102" width="219" height="30"/>
+                    <rect key="frame" x="16" y="120" width="219" height="30"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -52,8 +52,8 @@
             <constraints>
                 <constraint firstItem="gDI-wn-IsR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="CKw-Aw-EyV"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="spz-6J-bPm" secondAttribute="trailing" constant="355" id="Gcw-vr-PIN"/>
-                <constraint firstItem="gDI-wn-IsR" firstAttribute="top" secondItem="ox0-EQ-ipT" secondAttribute="bottom" constant="20" id="KLn-Q8-FdI"/>
-                <constraint firstItem="ox0-EQ-ipT" firstAttribute="top" secondItem="spz-6J-bPm" secondAttribute="bottom" constant="8" symbolic="YES" id="TWu-Rw-RPU"/>
+                <constraint firstItem="gDI-wn-IsR" firstAttribute="top" secondItem="ox0-EQ-ipT" secondAttribute="bottom" constant="25" id="KLn-Q8-FdI"/>
+                <constraint firstItem="ox0-EQ-ipT" firstAttribute="top" secondItem="spz-6J-bPm" secondAttribute="bottom" constant="26" id="TWu-Rw-RPU"/>
                 <constraint firstAttribute="bottom" secondItem="gDI-wn-IsR" secondAttribute="bottom" id="X72-EE-fl0"/>
                 <constraint firstItem="spz-6J-bPm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="gdo-X9-jDw"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ox0-EQ-ipT" secondAttribute="trailing" constant="158" id="mDy-Ez-7KF"/>

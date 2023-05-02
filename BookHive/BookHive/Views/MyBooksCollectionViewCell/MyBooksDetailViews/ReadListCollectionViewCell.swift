@@ -9,6 +9,10 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
+protocol ReadListCollectionViewCellDelegate {
+    func deleteItem(indexPath: IndexPath)
+}
+
 class ReadListCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "ReadListCollectionViewCell"
@@ -17,6 +21,12 @@ class ReadListCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var listView: UIView!
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var readButton: UIButton!
+    
+    var detailID: String?
+    var collectionView: ReadListViewController?
+    var delegate: ReadListCollectionViewCellDelegate?
+    var indexPath: IndexPath?
+    var book: Book?
     
     
     override func awakeFromNib() {
@@ -34,13 +44,18 @@ class ReadListCollectionViewCell: UICollectionViewCell {
         return UINib(nibName: "ReadListCollectionViewCell", bundle: nil)
     }
     
-    public func configure(with: Book) {
-        bookImageView.setImageOlid(with: with.coverID!)
+    public func configure(model: Book) {
+        bookImageView.setImageOlid(with: model.coverID ?? "")
     }
     
     @IBAction func deleteButtonTapped(_ sender: UIButton) {
-        
+        if let indexPath = indexPath {
+            delegate?.deleteItem(indexPath: indexPath)
+            collectionView?.deleteItem(indexPath: indexPath)
+        }
     }
+
+
     
     @IBAction func readButtonTapped(_ sender: UIButton) {
         

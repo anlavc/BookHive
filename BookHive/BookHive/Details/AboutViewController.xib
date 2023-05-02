@@ -43,10 +43,10 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y4Q-9z-H6M">
-                    <rect key="frame" x="5" y="112" width="383" height="599"/>
+                    <rect key="frame" x="5" y="112" width="383" height="556"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="13" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGj-vG-Thb">
-                            <rect key="frame" x="25" y="57" width="332" height="485"/>
+                            <rect key="frame" x="25" y="57" width="332" height="442"/>
                             <string key="text">Bookhive is a carefully developed digital bookmark app. Designed for those who love to read books, this app allows readers to easily locate the books they are reading. It also gives users the opportunity to learn about books. Bookhive is both a practical and useful tool and is the perfect solution for readers to keep track of their books.</string>
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <nil key="textColor"/>
@@ -70,7 +70,7 @@
                 <constraint firstAttribute="bottom" secondItem="BRJ-Pn-Va6" secondAttribute="bottom" id="JHr-0T-wGu"/>
                 <constraint firstItem="6Oc-fx-aho" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="W34-wL-NAN"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="y4Q-9z-H6M" secondAttribute="trailing" constant="5" id="ZC7-tR-klu"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="y4Q-9z-H6M" secondAttribute="bottom" constant="107" id="iud-Jf-SZa"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="y4Q-9z-H6M" secondAttribute="bottom" constant="150" id="iud-Jf-SZa"/>
                 <constraint firstItem="BRJ-Pn-Va6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="mXk-Vz-oie"/>
                 <constraint firstItem="6Oc-fx-aho" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="pnA-6p-Lah"/>
                 <constraint firstItem="BRJ-Pn-Va6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="qce-g7-AhA"/>
