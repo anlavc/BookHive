@@ -139,7 +139,7 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Mhv-2H-sa7">
+                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="Mhv-2H-sa7">
                                     <rect key="frame" x="0.0" y="23" width="249" height="4"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="4" id="9E7-v5-5hZ"/>
