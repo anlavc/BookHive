@@ -99,6 +99,7 @@ class DetailViewController: UIViewController {
                     return
                 }
                 for document in documents {
+                    let documentID      = document.documentID
                     let coverID         = document.data()["coverID"] as! String
                     let title           = document.data()["title"] as! String
                     let finish          = document.data()["finish"] as! Bool
@@ -107,7 +108,7 @@ class DetailViewController: UIViewController {
                     let author          = document.data()["author"] as? String
                     let totalpageNumber = document.data()["totalpageNumber"] as! Int
                     
-                    let readbookArray   = ReadBook(coverID: coverID, title: title, finish: finish, readPage: readPage, readingDate: readingDate, totalpageNumber: totalpageNumber, author: author)
+                    let readbookArray   = ReadBook(coverID: coverID, title: title, finish: finish, readPage: readPage, readingDate: readingDate, totalpageNumber: totalpageNumber, author: author,documentID:documentID)
                     self.readingBooks.append(readbookArray)
                     
                     // Check if the current book is a favorite

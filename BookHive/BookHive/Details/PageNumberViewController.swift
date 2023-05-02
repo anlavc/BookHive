@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseAuth
+import Firebase
 
 class PageNumberViewController: UIViewController {
     
@@ -25,12 +26,18 @@ class PageNumberViewController: UIViewController {
     @IBOutlet weak var tableView      : UITableView!
     @IBOutlet weak var infoIcon       : UIButton!
     
+    //MARK: - Variable
+    var selectedReadBook: ReadBook?
+    
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         viewsConfigure()
         setPopButton()
         userNameSetup()
+        bookNameLabel.text = selectedReadBook?.title
+        bookImageView.setImageOlid(with: (selectedReadBook?.coverID)!)
+        bookStartDate.text = selectedReadBook?.readingDate?.toFormattedString()
 
     }
     
@@ -68,8 +75,24 @@ class PageNumberViewController: UIViewController {
         self.infoIcon.showsMenuAsPrimaryAction = true
         self.infoIcon.changesSelectionAsPrimaryAction = false
     }
+    //MARK: - FinishBook
+    func updateReadingBook(bookId: String) {
+        if let uuid = Auth.auth().currentUser?.uid {
+            let favoriteBooksCollection = Firestore.firestore().collection("users/\(uuid)/ReadsBooks")
+            let bookRef = favoriteBooksCollection.document(bookId)
+            bookRef.updateData(["finish": true]) { error in
+                if let error = error {
+                    print("Error updating reading book: \(error.localizedDescription)")
+                    return
+                }
+                print("Reading book updated successfully.")
+            }
+        }
+    }
+
 
     @IBAction func finishButtonTapped(_ sender: UIButton) {
+        updateReadingBook(bookId: (selectedReadBook?.documentID)!)
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {

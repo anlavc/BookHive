@@ -20,4 +20,5 @@ struct ReadBook {
     let readingDate      :Date?
     let totalpageNumber  :Int?
     let author           :String?
+    let documentID       :String?
 }

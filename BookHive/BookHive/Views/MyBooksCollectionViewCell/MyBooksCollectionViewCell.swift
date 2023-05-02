@@ -29,6 +29,7 @@ class MyBooksCollectionViewCell: UICollectionViewCell {
     func setup(book: ReadBook) {
         mybooksBookNameLabel.text = book.title
         mybooksAuthorNameLabel.text = book.author
+        mybooksImageView.setImageOlid(with: book.coverID!)
     }
     
     static func nib() -> UINib {

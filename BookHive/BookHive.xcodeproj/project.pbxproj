@@ -50,6 +50,7 @@
 		EE7CDFEB29F7E13A0058C163 /* YearlyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7CDFE929F7E13A0058C163 /* YearlyTableViewCell.swift */; };
 		EE7CDFEC29F7E13A0058C163 /* YearlyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE7CDFEA29F7E13A0058C163 /* YearlyTableViewCell.xib */; };
 		EE80390829F5BDF6004E13C7 /* NowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE80390629F5BDF6004E13C7 /* NowTableViewCell.swift */; };
+		EE8CC18B2A0054D000A5AF7D /* Date + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8CC18A2A0054CF00A5AF7D /* Date + Ext.swift */; };
 		EE904BF529FAF44700441AA8 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE904BF429FAF44700441AA8 /* TabBarController.swift */; };
 		EE904C2229FB0D0900441AA8 /* (null) in Resources */ = {isa = PBXBuildFile; };
 		EE904C2C29FB1DBC00441AA8 /* ViewController + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE904C2B29FB1DBC00441AA8 /* ViewController + Ext.swift */; };
@@ -174,6 +175,7 @@
 		EE7CDFE929F7E13A0058C163 /* YearlyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearlyTableViewCell.swift; sourceTree = "<group>"; };
 		EE7CDFEA29F7E13A0058C163 /* YearlyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YearlyTableViewCell.xib; sourceTree = "<group>"; };
 		EE80390629F5BDF6004E13C7 /* NowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowTableViewCell.swift; sourceTree = "<group>"; };
+		EE8CC18A2A0054CF00A5AF7D /* Date + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date + Ext.swift"; sourceTree = "<group>"; };
 		EE904BF429FAF44700441AA8 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		EE904C2B29FB1DBC00441AA8 /* ViewController + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController + Ext.swift"; sourceTree = "<group>"; };
 		EE904C2D29FB1FAD00441AA8 /* isValidEmailPassword + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "isValidEmailPassword + Ext.swift"; sourceTree = "<group>"; };
@@ -324,6 +326,7 @@
 				EE904C2B29FB1DBC00441AA8 /* ViewController + Ext.swift */,
 				EE904C2D29FB1FAD00441AA8 /* isValidEmailPassword + Ext.swift */,
 				EE904C2F29FB203400441AA8 /* String + Ext.swift */,
+				EE8CC18A2A0054CF00A5AF7D /* Date + Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -687,6 +690,7 @@
 				2E88B35829E700AE008F4B4B /* AccountViewController.swift in Sources */,
 				EEFBBCA829E96E3100BDD902 /* Model.swift in Sources */,
 				2E1F16C629F91F57007FC4E3 /* AccountCustomRow.swift in Sources */,
+				EE8CC18B2A0054D000A5AF7D /* Date + Ext.swift in Sources */,
 				EE7CDFEB29F7E13A0058C163 /* YearlyTableViewCell.swift in Sources */,
 				EEAC4FA929E6F8220066757B /* AppDelegate.swift in Sources */,
 				EE80390829F5BDF6004E13C7 /* NowTableViewCell.swift in Sources */,
