@@ -16,7 +16,7 @@ struct ReadBook {
     let coverID          :String?
     let title            :String?
     let finish           :Bool?
-    let readPage         :Int?
+    var readPage         :Int?
     let readingDate      :Date?
     let totalpageNumber  :Int?
     let author           :String?

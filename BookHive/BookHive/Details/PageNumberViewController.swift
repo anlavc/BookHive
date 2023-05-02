@@ -28,6 +28,7 @@ class PageNumberViewController: UIViewController {
     
     //MARK: - Variable
     var selectedReadBook: ReadBook?
+    var newbookData : [ReadBook] = []
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -43,8 +44,38 @@ class PageNumberViewController: UIViewController {
         bookNameLabel.text = selectedReadBook?.title
         bookImageView.setImageOlid(with: (selectedReadBook?.coverID)!)
         bookStartDate.text = selectedReadBook?.readingDate?.toFormattedString()
+        
+        //pagenumber calculater
+        //toplam sayfa numarası 0 sa bottom aç total sayıyı iste
+        //girilen sayı totalden büyük olamaz
         pageNumberTF.text = "\(selectedReadBook?.readPage! ?? 0)"
+        let percentCompleted = Double((selectedReadBook?.readPage)!) / Double(((selectedReadBook?.totalpageNumber)!)) * 100
+        progressPercent.text = "% \(Int(percentCompleted))"
+        updateProgressView()
     }
+    private func updateProgressView() {
+        guard let book = selectedReadBook else { return }
+        let percentComplete = Float(book.readPage!) / Float(book.totalpageNumber!)
+          progressBar.setProgress(percentComplete, animated: true)
+      }
+    //MARK: - Fetch ReadingBook
+     private func pageNumberDidChange() {
+        guard let pageNumber = Int(pageNumberTF.text ?? "0"), var book = selectedReadBook else { return }
+        Firestore.firestore().collection("users").document(Auth.auth().currentUser!.uid).collection("ReadsBooks").document(book.documentID!).updateData(["readPage": pageNumber]) { error in
+            if let error = error {
+                print("Error updating read page number: \(error.localizedDescription)")
+                return
+            }
+            book.readPage = pageNumber
+            let percentComplete = Float(book.readPage!) / Float(book.totalpageNumber!)
+            
+            self.progressBar.setProgress(percentComplete, animated: true)
+            let percentCompleted1 = Double((book.readPage)!) / Double(((book.totalpageNumber)!)) * 100
+            self.progressPercent.text = "% \(Int(percentCompleted1))"
+        }
+    }
+    
+    
     //MARK: - FetchFirebase Nickname
     func fetchNickname() {
         guard let currentUser = Auth.auth().currentUser else { return }
@@ -59,6 +90,8 @@ class PageNumberViewController: UIViewController {
                }
            }
     }
+
+
     
     
     // MARK: - Views Setup
@@ -81,6 +114,8 @@ class PageNumberViewController: UIViewController {
     private func userNameSetup() {
         //        userNameLabel.text = Auth.auth().currentUser?.displayName
     }
+    //MARK: - Progress
+ 
     
     // MARK: - Setup Pop Button
     private func setPopButton() {
@@ -117,6 +152,7 @@ class PageNumberViewController: UIViewController {
                     print("Error updating reading book: \(error.localizedDescription)")
                     return
                 }
+                
                 print("Reading book updated successfully.")
             }
         }
@@ -128,6 +164,10 @@ class PageNumberViewController: UIViewController {
     
     @IBAction func saveButtonTapped(_ sender: Any) {
         pageNumberUpdate(bookId: (selectedReadBook?.documentID)!)
+        DispatchQueue.main.async {
+            self.pageNumberDidChange()
+        }
+        
     }
     
     @IBAction func offButton(_ sender: UIButton) {
