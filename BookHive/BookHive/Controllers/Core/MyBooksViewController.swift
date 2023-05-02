@@ -16,7 +16,6 @@ class MyBooksViewController: UIViewController {
     @IBOutlet weak var wantToReadView: UIView!
     @IBOutlet weak var readView      : UIView!
     @IBOutlet weak var wantReadLabel: UILabel!
-    
     @IBOutlet weak var readBookLabel: UILabel!
     // MARK: - Properties
     var readingBooks: [ReadBook] = []
@@ -66,7 +65,7 @@ class MyBooksViewController: UIViewController {
                     let author = document.data()["author"] as? String
                     let book = Book(coverID: coverID, title: title,author: author)
                     self.favoriteBooks.append(book)
-                    self.wantReadLabel.text = "(\(self.favoriteBooks.count)) Books"
+                    self.wantReadLabel.text = "Books (\(self.favoriteBooks.count))"
                     
                 }
             }
