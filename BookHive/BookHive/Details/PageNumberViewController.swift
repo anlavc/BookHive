@@ -35,39 +35,57 @@ class PageNumberViewController: UIViewController {
         viewsConfigure()
         setPopButton()
         userNameSetup()
+        setUpData()
+        fetchNickname()
+    }
+    //MARK: - Setup UI FirebaseData
+    private func setUpData() {
         bookNameLabel.text = selectedReadBook?.title
         bookImageView.setImageOlid(with: (selectedReadBook?.coverID)!)
         bookStartDate.text = selectedReadBook?.readingDate?.toFormattedString()
-
+        pageNumberTF.text = "\(selectedReadBook?.readPage! ?? 0)"
     }
+    //MARK: - FetchFirebase Nickname
+    func fetchNickname() {
+        guard let currentUser = Auth.auth().currentUser else { return }
+           let uid = currentUser.uid
+           
+           Firestore.firestore().collection("users").document(uid).getDocument { (document, error) in
+               if let document = document, document.exists {
+                   let name = document.get("name") as? String ?? ""
+                   self.userNameLabel.text = name
+               } else {
+                   self.userNameLabel.text = ""
+               }
+           }
+    }
+    
     
     // MARK: - Views Setup
     private func viewsConfigure() {
         bottomView.layer.cornerRadius = 15
-        bottomView.addShadow(color  : .gray,
-                             opacity: 0.5,
-                             offset : CGSize(width: 2,
-                                             height: 2),
-                             radius : 0.5)
+        bottomView.addShadow(color      : .gray,
+                             opacity    : 0.5,
+                             offset     : CGSize(width: 2,height: 2),
+                             radius     : 0.5)
         pageNumberTF.layer.cornerRadius = 15
-        pageNumberTF.addShadow(color: .gray,
-                               opacity: 0.5,
-                               offset: CGSize(width: 2,
-                                              height: 2),
-                               radius: 5)
+        pageNumberTF.addShadow(color:   .gray,
+                               opacity  : 0.5,
+                               offset   : CGSize(width: 2,height: 2),
+                               radius   : 5)
         finishButton.layer.cornerRadius = 8
         progressBar.layer.cornerRadius  = 5
         saveButton.layer.cornerRadius   = 8
     }
     
     private func userNameSetup() {
-//        userNameLabel.text = Auth.auth().currentUser?.displayName
+        //        userNameLabel.text = Auth.auth().currentUser?.displayName
     }
     
     // MARK: - Setup Pop Button
     private func setPopButton() {
         let infoClosure = { (action: UIAction) in
-           
+            
         }
         self.infoIcon.menu = UIMenu(children: [
             UIAction(title: "Enter the last page you read in your book.", state: .off, handler: infoClosure)
@@ -89,13 +107,27 @@ class PageNumberViewController: UIViewController {
             }
         }
     }
-
-
+    //MARK: - PageNumberUpdate
+    func pageNumberUpdate(bookId: String) {
+        if let uuid = Auth.auth().currentUser?.uid {
+            let favoriteBooksCollection = Firestore.firestore().collection("users/\(uuid)/ReadsBooks")
+            let bookRef = favoriteBooksCollection.document(bookId)
+            bookRef.updateData(["readPage": Int(pageNumberTF.text!)]) { error in
+                if let error = error {
+                    print("Error updating reading book: \(error.localizedDescription)")
+                    return
+                }
+                print("Reading book updated successfully.")
+            }
+        }
+    }
+    
     @IBAction func finishButtonTapped(_ sender: UIButton) {
         updateReadingBook(bookId: (selectedReadBook?.documentID)!)
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
+        pageNumberUpdate(bookId: (selectedReadBook?.documentID)!)
     }
     
     @IBAction func offButton(_ sender: UIButton) {
