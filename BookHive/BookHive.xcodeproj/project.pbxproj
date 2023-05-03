@@ -38,6 +38,8 @@
 		EE1B9B3129FD7B1C002F81F2 /* FavoriteBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1B9B3029FD7B1C002F81F2 /* FavoriteBook.swift */; };
 		EE1B9B3329FD836F002F81F2 /* PageNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1B9B3229FD836F002F81F2 /* PageNumberViewController.swift */; };
 		EE1B9B3529FD882C002F81F2 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE1B9B3429FD882B002F81F2 /* AboutViewController.xib */; };
+		EE5CF3952A02A1CB00AC47FD /* AddQuotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5CF3932A02A1CB00AC47FD /* AddQuotesViewController.swift */; };
+		EE5CF3962A02A1CB00AC47FD /* AddQuotesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE5CF3942A02A1CB00AC47FD /* AddQuotesViewController.xib */; };
 		EE6DF06C29FA8C4C007B8DF8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE6DF06B29FA8C4C007B8DF8 /* GoogleService-Info.plist */; };
 		EE6DF06F29FA8E2E007B8DF8 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = EE6DF06E29FA8E2E007B8DF8 /* FirebaseAuth */; };
 		EE6DF07129FA8E2E007B8DF8 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = EE6DF07029FA8E2E007B8DF8 /* FirebaseDatabase */; };
@@ -56,6 +58,8 @@
 		EE904C2C29FB1DBC00441AA8 /* ViewController + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE904C2B29FB1DBC00441AA8 /* ViewController + Ext.swift */; };
 		EE904C2E29FB1FAD00441AA8 /* isValidEmailPassword + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE904C2D29FB1FAD00441AA8 /* isValidEmailPassword + Ext.swift */; };
 		EE904C3029FB203400441AA8 /* String + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE904C2F29FB203400441AA8 /* String + Ext.swift */; };
+		EE92F0BD2A01CA350072D4C9 /* MyquotesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92F0BB2A01CA350072D4C9 /* MyquotesCollectionViewCell.swift */; };
+		EE92F0BE2A01CA350072D4C9 /* MyquotesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE92F0BC2A01CA350072D4C9 /* MyquotesCollectionViewCell.xib */; };
 		EE977F7C29F02F6A0027CF90 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE977F7A29F02F6A0027CF90 /* DetailViewController.swift */; };
 		EE977F7F29F13E910027CF90 /* ImageView + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE977F7E29F13E910027CF90 /* ImageView + Ext.swift */; };
 		EE977F8129F14F140027CF90 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE977F8029F14F140027CF90 /* DetailViewModel.swift */; };
@@ -167,6 +171,8 @@
 		EE1B9B3029FD7B1C002F81F2 /* FavoriteBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteBook.swift; sourceTree = "<group>"; };
 		EE1B9B3229FD836F002F81F2 /* PageNumberViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageNumberViewController.swift; sourceTree = "<group>"; };
 		EE1B9B3429FD882B002F81F2 /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
+		EE5CF3932A02A1CB00AC47FD /* AddQuotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuotesViewController.swift; sourceTree = "<group>"; };
+		EE5CF3942A02A1CB00AC47FD /* AddQuotesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddQuotesViewController.xib; sourceTree = "<group>"; };
 		EE6DF06B29FA8C4C007B8DF8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EE78967229F4742200991261 /* DetailOlid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailOlid.swift; sourceTree = "<group>"; };
 		EE7CDFE229F7CA310058C163 /* NowCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -180,6 +186,8 @@
 		EE904C2B29FB1DBC00441AA8 /* ViewController + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController + Ext.swift"; sourceTree = "<group>"; };
 		EE904C2D29FB1FAD00441AA8 /* isValidEmailPassword + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "isValidEmailPassword + Ext.swift"; sourceTree = "<group>"; };
 		EE904C2F29FB203400441AA8 /* String + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Ext.swift"; sourceTree = "<group>"; };
+		EE92F0BB2A01CA350072D4C9 /* MyquotesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyquotesCollectionViewCell.swift; sourceTree = "<group>"; };
+		EE92F0BC2A01CA350072D4C9 /* MyquotesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyquotesCollectionViewCell.xib; sourceTree = "<group>"; };
 		EE977F7A29F02F6A0027CF90 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		EE977F7E29F13E910027CF90 /* ImageView + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageView + Ext.swift"; sourceTree = "<group>"; };
 		EE977F8029F14F140027CF90 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
@@ -256,6 +264,7 @@
 		2E1F16C029F91C7B007FC4E3 /* AccountTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				EE977F8429F16AF20027CF90 /* DetailSubjectCell */,
 				2E1F16C129F91EC0007FC4E3 /* AccountTableViewCell.swift */,
 				2EFA103029FB148300AE6888 /* AccountTableViewCell.xib */,
 				2E1F16C529F91F57007FC4E3 /* AccountCustomRow.swift */,
@@ -307,7 +316,7 @@
 		2E88B34929E6FC53008F4B4B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				EE977F8429F16AF20027CF90 /* DetailSubjectCell */,
+				EE92F0BA2A01C9EE0072D4C9 /* MyquotesCollectionViewCell */,
 				EEAC4FCC29E70EB60066757B /* HomeTableViewCell */,
 				2EF4B4BE29EDE1170039B0E0 /* MyBooksCollectionViewCell */,
 				2EF4B4C029EDE1630039B0E0 /* LibraryView */,
@@ -367,6 +376,8 @@
 				2E81B46029FD8F2B00986F98 /* PageNumberViewController.xib */,
 				2E81B46229FD8F3900986F98 /* ReadListViewController.swift */,
 				2E81B46429FD8F4300986F98 /* ReadListViewController.xib */,
+				EE5CF3932A02A1CB00AC47FD /* AddQuotesViewController.swift */,
+				EE5CF3942A02A1CB00AC47FD /* AddQuotesViewController.xib */,
 			);
 			name = Details;
 			path = ../Details;
@@ -410,6 +421,15 @@
 				EE7CDFE329F7CA310058C163 /* NowCollectionViewCell.xib */,
 			);
 			path = NowCollectionCell;
+			sourceTree = "<group>";
+		};
+		EE92F0BA2A01C9EE0072D4C9 /* MyquotesCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				EE92F0BB2A01CA350072D4C9 /* MyquotesCollectionViewCell.swift */,
+				EE92F0BC2A01CA350072D4C9 /* MyquotesCollectionViewCell.xib */,
+			);
+			path = MyquotesCollectionViewCell;
 			sourceTree = "<group>";
 		};
 		EE977F8429F16AF20027CF90 /* DetailSubjectCell */ = {
@@ -655,10 +675,12 @@
 				2E1F168929F7DBB0007FC4E3 /* HomeViewController.xib in Resources */,
 				EE1B9B3529FD882C002F81F2 /* AboutViewController.xib in Resources */,
 				2EFA103229FB971B00AE6888 /* (null) in Resources */,
+				EE5CF3962A02A1CB00AC47FD /* AddQuotesViewController.xib in Resources */,
 				EEC8356E29EAF1D200058796 /* HomeCarouselTableViewCell.xib in Resources */,
 				EE6DF06C29FA8C4C007B8DF8 /* GoogleService-Info.plist in Resources */,
 				2E1F169029F82080007FC4E3 /* DetailViewController.xib in Resources */,
 				EE904C2229FB0D0900441AA8 /* (null) in Resources */,
+				EE92F0BE2A01CA350072D4C9 /* MyquotesCollectionViewCell.xib in Resources */,
 				2E1F16E129F9B7ED007FC4E3 /* HomeVCLocalizable.strings in Resources */,
 				EE7CDFE729F7D2F00058C163 /* NowTableViewCell.xib in Resources */,
 				2E1F167329F7CB77007FC4E3 /* MyBooksViewController.xib in Resources */,
@@ -674,6 +696,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE5CF3952A02A1CB00AC47FD /* AddQuotesViewController.swift in Sources */,
 				EEE4DAB729F914980017A5EF /* LoginViewController.swift in Sources */,
 				2E88B35429E7009F008F4B4B /* SearchViewController.swift in Sources */,
 				EEAC4FB329E6F8220066757B /* BookHive.xcdatamodeld in Sources */,
@@ -692,6 +715,7 @@
 				2E1F16C629F91F57007FC4E3 /* AccountCustomRow.swift in Sources */,
 				EE8CC18B2A0054D000A5AF7D /* Date + Ext.swift in Sources */,
 				EE7CDFEB29F7E13A0058C163 /* YearlyTableViewCell.swift in Sources */,
+				EE92F0BD2A01CA350072D4C9 /* MyquotesCollectionViewCell.swift in Sources */,
 				EEAC4FA929E6F8220066757B /* AppDelegate.swift in Sources */,
 				EE80390829F5BDF6004E13C7 /* NowTableViewCell.swift in Sources */,
 				EEAC4FAB29E6F8220066757B /* SceneDelegate.swift in Sources */,
