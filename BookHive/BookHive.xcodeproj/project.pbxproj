@@ -20,8 +20,6 @@
 		2E81B46129FD8F2B00986F98 /* PageNumberViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E81B46029FD8F2B00986F98 /* PageNumberViewController.xib */; };
 		2E81B46329FD8F3900986F98 /* ReadListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E81B46229FD8F3900986F98 /* ReadListViewController.swift */; };
 		2E81B46529FD8F4300986F98 /* ReadListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E81B46429FD8F4300986F98 /* ReadListViewController.xib */; };
-		2E81B46829FEEA3E00986F98 /* ReadListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E81B46629FEEA3E00986F98 /* ReadListCollectionViewCell.swift */; };
-		2E81B46929FEEA3E00986F98 /* ReadListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E81B46729FEEA3E00986F98 /* ReadListCollectionViewCell.xib */; };
 		2E88B34C29E70077008F4B4B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88B34A29E70077008F4B4B /* HomeViewController.swift */; };
 		2E88B35029E70091008F4B4B /* MyBooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88B34E29E70091008F4B4B /* MyBooksViewController.swift */; };
 		2E88B35429E7009F008F4B4B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88B35229E7009F008F4B4B /* SearchViewController.swift */; };
@@ -29,6 +27,9 @@
 		2E88B35C29E7082C008F4B4B /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88B35A29E7082C008F4B4B /* SearchTableViewCell.swift */; };
 		2E88B36F29E883A9008F4B4B /* MyBooksCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E88B36E29E883A9008F4B4B /* MyBooksCollectionViewCell.xib */; };
 		2E88B37129E883BE008F4B4B /* MyBooksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88B37029E883BE008F4B4B /* MyBooksCollectionViewCell.swift */; };
+		2EB596632A025DD000E18EE9 /* WantToReadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB596612A025DD000E18EE9 /* WantToReadTableViewCell.swift */; };
+		2EB596642A025DD000E18EE9 /* WantToReadTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EB596622A025DD000E18EE9 /* WantToReadTableViewCell.xib */; };
+		2EC622E32A0112D900DDA4F9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC622E22A0112D900DDA4F9 /* DetailViewController.swift */; };
 		2ECF25B129E89D3E00956FCB /* UIView + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECF25B029E89D3E00956FCB /* UIView + Ext.swift */; };
 		2EE0E11529F48AB9008B2362 /* TextfieldCharacters + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE0E11429F48AB9008B2362 /* TextfieldCharacters + Ext.swift */; };
 		2EFA100B29FA4C8100AE6888 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EFA100A29FA4C8100AE6888 /* Assets.xcassets */; };
@@ -56,7 +57,6 @@
 		EE904C2C29FB1DBC00441AA8 /* ViewController + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE904C2B29FB1DBC00441AA8 /* ViewController + Ext.swift */; };
 		EE904C2E29FB1FAD00441AA8 /* isValidEmailPassword + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE904C2D29FB1FAD00441AA8 /* isValidEmailPassword + Ext.swift */; };
 		EE904C3029FB203400441AA8 /* String + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE904C2F29FB203400441AA8 /* String + Ext.swift */; };
-		EE977F7C29F02F6A0027CF90 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE977F7A29F02F6A0027CF90 /* DetailViewController.swift */; };
 		EE977F7F29F13E910027CF90 /* ImageView + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE977F7E29F13E910027CF90 /* ImageView + Ext.swift */; };
 		EE977F8129F14F140027CF90 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE977F8029F14F140027CF90 /* DetailViewModel.swift */; };
 		EE977F8329F150330027CF90 /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE977F8229F150330027CF90 /* DetailModel.swift */; };
@@ -150,8 +150,6 @@
 		2E81B46029FD8F2B00986F98 /* PageNumberViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PageNumberViewController.xib; sourceTree = "<group>"; };
 		2E81B46229FD8F3900986F98 /* ReadListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadListViewController.swift; sourceTree = "<group>"; };
 		2E81B46429FD8F4300986F98 /* ReadListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReadListViewController.xib; sourceTree = "<group>"; };
-		2E81B46629FEEA3E00986F98 /* ReadListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadListCollectionViewCell.swift; sourceTree = "<group>"; };
-		2E81B46729FEEA3E00986F98 /* ReadListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReadListCollectionViewCell.xib; sourceTree = "<group>"; };
 		2E88B34A29E70077008F4B4B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2E88B34E29E70091008F4B4B /* MyBooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBooksViewController.swift; sourceTree = "<group>"; };
 		2E88B35229E7009F008F4B4B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -159,6 +157,9 @@
 		2E88B35A29E7082C008F4B4B /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		2E88B36E29E883A9008F4B4B /* MyBooksCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyBooksCollectionViewCell.xib; sourceTree = "<group>"; };
 		2E88B37029E883BE008F4B4B /* MyBooksCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBooksCollectionViewCell.swift; sourceTree = "<group>"; };
+		2EB596612A025DD000E18EE9 /* WantToReadTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantToReadTableViewCell.swift; sourceTree = "<group>"; };
+		2EB596622A025DD000E18EE9 /* WantToReadTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WantToReadTableViewCell.xib; sourceTree = "<group>"; };
+		2EC622E22A0112D900DDA4F9 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		2ECF25B029E89D3E00956FCB /* UIView + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Ext.swift"; sourceTree = "<group>"; };
 		2EE0E11429F48AB9008B2362 /* TextfieldCharacters + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextfieldCharacters + Ext.swift"; sourceTree = "<group>"; };
 		2EFA100A29FA4C8100AE6888 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -180,7 +181,6 @@
 		EE904C2B29FB1DBC00441AA8 /* ViewController + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController + Ext.swift"; sourceTree = "<group>"; };
 		EE904C2D29FB1FAD00441AA8 /* isValidEmailPassword + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "isValidEmailPassword + Ext.swift"; sourceTree = "<group>"; };
 		EE904C2F29FB203400441AA8 /* String + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Ext.swift"; sourceTree = "<group>"; };
-		EE977F7A29F02F6A0027CF90 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		EE977F7E29F13E910027CF90 /* ImageView + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageView + Ext.swift"; sourceTree = "<group>"; };
 		EE977F8029F14F140027CF90 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		EE977F8229F150330027CF90 /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
@@ -266,8 +266,8 @@
 		2E81B44129FD34BA00986F98 /* MyBooksDetailViews */ = {
 			isa = PBXGroup;
 			children = (
-				2E81B46629FEEA3E00986F98 /* ReadListCollectionViewCell.swift */,
-				2E81B46729FEEA3E00986F98 /* ReadListCollectionViewCell.xib */,
+				2EB596612A025DD000E18EE9 /* WantToReadTableViewCell.swift */,
+				2EB596622A025DD000E18EE9 /* WantToReadTableViewCell.xib */,
 			);
 			path = MyBooksDetailViews;
 			sourceTree = "<group>";
@@ -293,10 +293,10 @@
 				2E1F166A29F7C951007FC4E3 /* SearchViewController.xib */,
 				2E88B35629E700AE008F4B4B /* AccountViewController.swift */,
 				2E1F16D429F9B436007FC4E3 /* Localizable.strings */,
-				EE977F7A29F02F6A0027CF90 /* DetailViewController.swift */,
-				2E1F169229F82080007FC4E3 /* DetailViewController.xib */,
 				EEE4DAB529F914980017A5EF /* LoginViewController.swift */,
 				EEE4DAB629F914980017A5EF /* LoginViewController.xib */,
+				2EC622E22A0112D900DDA4F9 /* DetailViewController.swift */,
+				2E1F169229F82080007FC4E3 /* DetailViewController.xib */,
 				EEE4DABB29F934E70017A5EF /* RegisterViewController.swift */,
 				EEE4DABC29F934E70017A5EF /* RegisterViewController.xib */,
 				EE904BF429FAF44700441AA8 /* TabBarController.swift */,
@@ -634,9 +634,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EB596642A025DD000E18EE9 /* WantToReadTableViewCell.xib in Resources */,
 				EEE4DAB829F914980017A5EF /* LoginViewController.xib in Resources */,
 				EEAC4FB829E6F8230066757B /* LaunchScreen.storyboard in Resources */,
-				2E81B46929FEEA3E00986F98 /* ReadListCollectionViewCell.xib in Resources */,
 				EEE4DABE29F934E70017A5EF /* RegisterViewController.xib in Resources */,
 				2EFA100B29FA4C8100AE6888 /* Assets.xcassets in Resources */,
 				EE7CDFE529F7CA310058C163 /* NowCollectionViewCell.xib in Resources */,
@@ -699,11 +699,11 @@
 				2E88B37129E883BE008F4B4B /* MyBooksCollectionViewCell.swift in Sources */,
 				EE977F8129F14F140027CF90 /* DetailViewModel.swift in Sources */,
 				EE7CDFE429F7CA310058C163 /* NowCollectionViewCell.swift in Sources */,
-				2E81B46829FEEA3E00986F98 /* ReadListCollectionViewCell.swift in Sources */,
 				2EFA102929FB114900AE6888 /* AboutViewController.swift in Sources */,
 				EEAC4FD429E714280066757B /* TableCollectionViewCell.swift in Sources */,
 				EEAD10C329EF485A00BA6603 /* SearchModel.swift in Sources */,
 				EE1B9B3329FD836F002F81F2 /* PageNumberViewController.swift in Sources */,
+				2EC622E32A0112D900DDA4F9 /* DetailViewController.swift in Sources */,
 				EE904C3029FB203400441AA8 /* String + Ext.swift in Sources */,
 				EE904BF529FAF44700441AA8 /* TabBarController.swift in Sources */,
 				EE904C2E29FB1FAD00441AA8 /* isValidEmailPassword + Ext.swift in Sources */,
@@ -714,13 +714,13 @@
 				EEFBBCAC29E9730400BDD902 /* BookEndPoint.swift in Sources */,
 				2E88B34C29E70077008F4B4B /* HomeViewController.swift in Sources */,
 				EE904C2C29FB1DBC00441AA8 /* ViewController + Ext.swift in Sources */,
+				2EB596632A025DD000E18EE9 /* WantToReadTableViewCell.swift in Sources */,
 				EEBEAEBC29F85ADD00F993B8 /* Rating.swift in Sources */,
 				EEAC4FCF29E70EDF0066757B /* HomeTableViewCell.swift in Sources */,
 				EEFBBCAE29E977A100BDD902 /* APIManager.swift in Sources */,
 				EEAD10C529EF4DE600BA6603 /* SearchViewModel.swift in Sources */,
 				2E88B35029E70091008F4B4B /* MyBooksViewController.swift in Sources */,
 				2E81B46329FD8F3900986F98 /* ReadListViewController.swift in Sources */,
-				EE977F7C29F02F6A0027CF90 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

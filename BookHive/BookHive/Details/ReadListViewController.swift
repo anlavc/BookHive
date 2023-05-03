@@ -9,106 +9,244 @@ import UIKit
 import FirebaseFirestore
 import FirebaseAuth
 
-class ReadListViewController: UIViewController,ReadListCollectionViewCellDelegate {
-    func deleteItem(indexPath: IndexPath) {
-        if let uuid = Auth.auth().currentUser?.uid {
-            let favoriteBooksCollection = Firestore.firestore().collection("users/\(uuid)/favoriteBooks")
-            let book = favoriteBooks[indexPath.row]
-            favoriteBooksCollection.document(book.coverID ?? "").delete() { error in
-                if error != nil {
-                    return
-                }
-                self.favoriteBooks.remove(at: indexPath.row)
-                self.collectionView.performBatchUpdates({
-                    self.collectionView.deleteItems(at: [indexPath])
-                }, completion: { success in
-                    if self.favoriteBooks.isEmpty {
-                        self.collectionView.reloadData()
-                    }
-                })
-            }
-        }
-    }
-
-    @IBOutlet weak var collectionView: UICollectionView!
+class ReadListViewController: UIViewController {
     
+    // MARK: - Outlets
+    @IBOutlet weak var tableView: UITableView!
+    
+    // MARK: - Properties
     var favoriteBooks = [Book]()
+    var viewModel = DetailViewModel()
+    var readingBooks: [ReadBook] = []
     
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setCollectionView()
+       setTableView()
+        fetchReadingBooks()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         fetchFavoriteBooks()
     }
     
-    private func setCollectionView() {
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        collectionView.register(ReadListCollectionViewCell.nib(), forCellWithReuseIdentifier: ReadListCollectionViewCell.identifier)
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        collectionView.collectionViewLayout = layout
+    // MARK: - Table View Setup
+    private func setTableView() {
+        tableView.dataSource = self
+        tableView.delegate   = self
+        tableView.register(WantToReadTableViewCell.nib(),
+                           forCellReuseIdentifier: WantToReadTableViewCell.identifier)
     }
     
+    // MARK: - Fetch Favorite Books Collection (Firebase)
     private func fetchFavoriteBooks() {
-        if let uuid = Auth.auth().currentUser?.uid { // kullanıcının id sine ulaştım
-            let favoriteBooksCollection = Firestore.firestore().collection("users/\(uuid)/favoriteBooks") //kullanıcıya özel oluşturulmuş collectiona ulaştım
-            favoriteBooksCollection.getDocuments { (querySnapshot, error) in //kullanıcının collection ın dökümanına erişiyorum
+        if let uuid = Auth.auth().currentUser?.uid {
+            let favoriteBooksCollection = Firestore.firestore().collection("users/\(uuid)/favoriteBooks")
+            favoriteBooksCollection.getDocuments { (querySnapshot, error) in
                 if let error = error {
                     print(error.localizedDescription)
                     return
                 }
                 guard let documents = querySnapshot?.documents else {
-                    self.showAlert(title: "error", message: "No Favorite Books Found")
+                    self.showAlert(title  : "error",
+                                   message: "No Favorite Books Found")
                     return
                 }
                 var books = [Book]()
                 for document in documents {
                     let coverID = document.data()["coverID"] as! String
-                    let title = document.data()["title"] as! String
-                    let author = document.data()["author"] as? String
-                    let book = Book(coverID: coverID, title: title, author: author)
+                    let title   = document.data()["title"] as! String
+                    let author  = document.data()["author"] as? String
+                    let book    = Book(coverID: coverID, title: title, author: author)
                     books.append(book)
                 }
                 self.favoriteBooks = books
-                self.collectionView.reloadData()
+                self.tableView.reloadData()
             }
         }
     }
-
+    
+    private func fetchReadingBooks() {
+        if let uuid = Auth.auth().currentUser?.uid {
+            let favoriteBooksCollection = Firestore.firestore().collection("users/\(uuid)/ReadsBooks")
+            favoriteBooksCollection.getDocuments() { (querySnapshot, error) in
+                if let error = error {
+                    print("Error fetching favorite books: \(error.localizedDescription)")
+                    return
+                }
+                guard let documents = querySnapshot?.documents else {
+                    self.showAlert(title: "hata", message: "No read books found.")
+                    return
+                }
+                for document in documents {
+                    let documentID      = document.documentID
+                    let coverID         = document.data()["coverID"] as! String
+                    let title           = document.data()["title"] as! String
+                    let finish          = document.data()["finish"] as! Bool
+                    let readPage        = document.data()["readPage"] as! Int
+                    let readingDate     = document.data()["readingdate"] as? Date
+                    let author          = document.data()["author"] as? String
+                    let totalpageNumber = document.data()["totalpageNumber"] as! Int
+                    
+                    let readbookArray   = ReadBook(coverID: coverID, title: title, finish: finish, readPage: readPage, readingDate: readingDate, totalpageNumber: totalpageNumber, author: author,documentID:documentID)
+                    self.readingBooks.append(readbookArray)
+                    
+                }
+            }
+        }
+    }
+    
+    //MARK: - Remove Favorite
+    func favoriteBookDelete(index: Int) {
+        if let uuid = Auth.auth().currentUser?.uid {
+            let favoriteBooksCollection = Firestore.firestore().collection("users/\(uuid)/favoriteBooks")
+            let coverIDToDelete = self.favoriteBooks[index].coverID
+            favoriteBooksCollection.whereField("coverID", isEqualTo: coverIDToDelete!).getDocuments { (snapshot, error) in
+                if let error = error {
+                    self.showAlert(title: "ERROR", message: "Favorilere ekleme sırasında bir hata ile karşılaşıldı.")
+                } else {
+                    if let documents = snapshot?.documents {
+                        for document in documents {
+                            let bookID = document.documentID
+                            favoriteBooksCollection.document(bookID).delete()
+                        }
+                        DispatchQueue.main.async {
+                            self.fetchFavoriteBooks()
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    func addReadBook(index: Int) {
+        if let uuid = Auth.auth().currentUser?.uid {
+            let favoriteBooksCollection = Firestore.firestore().collection("users/\(uuid)/ReadsBooks")
+            let coverIDToDelete = self.favoriteBooks[index].coverID
+            let bookTitle = self.favoriteBooks[index].title
+            let authorName = self.favoriteBooks[index].author
+            let totalPage = self.readingBooks[index].totalpageNumber
+            favoriteBooksCollection.whereField("coverID", isEqualTo: coverIDToDelete!).getDocuments { (snapshot, error) in
+                if let error = error {
+                    self.showAlert(title: "ERROR", message: "Okumaya başlama sırasında bir hata ile karşılaşıldı.")
+                } else {
+                    favoriteBooksCollection.addDocument(data: ["coverID" : coverIDToDelete!,
+                                                               "title"   : bookTitle!,
+                                                               "readPage": 0,
+                                                               "author"  : authorName!,
+                                                               "readingdate" : FieldValue.serverTimestamp(),
+                                                               "totalpageNumber": totalPage ?? 0,
+                                                               "finish": false])
+                }
+                DispatchQueue.main.async {
+                    self.fetchReadingBooks()
+                }
+            }
+        }
+    }
+    
+    private func delete(rowIndexPathAt indexPath: IndexPath) -> UIContextualAction {
+        let deleteAction = UIContextualAction(style: .normal, title: "Delete") { action, view, completion in
+            if let uuid = Auth.auth().currentUser?.uid {
+                let favoriteBooksCollection = Firestore.firestore().collection("users/\(uuid)/favoriteBooks")
+                let coverIDToDelete = self.favoriteBooks[indexPath.row].coverID
+                favoriteBooksCollection.whereField("coverID", isEqualTo: coverIDToDelete ?? "").getDocuments { (snapshot, error) in
+                    if error != nil {
+                        self.showAlert(title: "ERROR", message: "Favorilere ekleme sırasında bir hata ile karşılaşıldı.")
+                    } else {
+                        if let documents = snapshot?.documents {
+                            for document in documents {
+                                let bookID = document.documentID
+                                favoriteBooksCollection.document(bookID).delete() { error in
+                                    if let error = error {
+                                        print("Error deleting document: \(error)")
+                                    } else {
+                                        self.favoriteBooks.remove(at: indexPath.row)
+                                        self.tableView.deleteRows(at: [indexPath], with: .fade)
+                                        self.tableView.reloadData()
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            completion(true)
+        }
+        deleteAction.backgroundColor = .systemRed
+        deleteAction.image = UIImage(systemName: "trash")
+        return deleteAction
+    }
+    
+    private func read(rowIndexPathAt indexPath: IndexPath) -> UIContextualAction {
+        let readAction = UIContextualAction(style: .normal, title: "Read") { action, view, completion in
+            self.favoriteBookDelete(index: indexPath.row)
+            self.addReadBook(index: indexPath.row)
+//            if let uuid = Auth.auth().currentUser?.uid {
+//                let favoriteBooksCollection = Firestore.firestore().collection("users/\(uuid)/ReadsBooks")
+//                favoriteBooksCollection.whereField("coverID", isEqualTo: self.detailID ?? "").getDocuments { (snapshot, error) in
+//                    if let error = error {
+//                        self.showAlert(title: "ERROR", message: "Okumaya başlama sırasında bir hata ile karşılaşıldı.")
+//                    } else {
+//                        if let documents = snapshot?.documents {
+//                            for document in documents {
+//                                let bookID = document.documentID
+//                                favoriteBooksCollection.document(bookID).delete()
+//                            }
+//                            if documents.isEmpty {
+//                                favoriteBooksCollection.addDocument(data: ["coverID" : self.detailID ?? "",
+//                                                                           "title"   : self.bookTitle ?? "",
+//                                                                           "readPage": 0,
+//                                                                           "author"  : self.author ?? "",
+//                                                                           "readingdate" : FieldValue.serverTimestamp(),
+//                                                                           "totalpageNumber": self.viewModel.detailOlid?.numberOfPages ?? 0,
+//                                                                           "finish": false])}
+//                            DispatchQueue.main.async {
+//                                self.fetchReadingBooks()
+//                            }
+//                        }
+//                    }
+//                }
+//            }
+            completion(true)
+        }
+        readAction.backgroundColor = UIColor(named: "addedFavoriteButton")
+        readAction.image = UIImage(systemName: "book")
+        return readAction
+        
+    }
+    
+    // MARK: - Back Button Action
     @IBAction func backButton(_ sender: Any) {
         dismiss(animated: true)
     }
+    
 }
 
-extension ReadListViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+// MARK: - Extensions
+extension ReadListViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return favoriteBooks.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ReadListCollectionViewCell.identifier, for: indexPath) as! ReadListCollectionViewCell
-        cell.indexPath = indexPath
-        cell.delegate = self
-        cell.book = favoriteBooks[indexPath.row]
-        cell.configure(model: favoriteBooks[indexPath.row])
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: WantToReadTableViewCell.identifier, for: indexPath) as! WantToReadTableViewCell
+        cell.configure(book: favoriteBooks[indexPath.row])
         return cell
     }
 }
 
-extension ReadListViewController: UICollectionViewDelegate {
-   
+extension ReadListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let delete = self.delete(rowIndexPathAt: indexPath)
+        let read = self.read(rowIndexPathAt: indexPath)
+        let swipe = UISwipeActionsConfiguration(actions: [delete,read])
+        return swipe
+    }
+ 
 }
 
-extension ReadListViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let cellWidth = (collectionView.bounds.width) / 2.2
-        let cellHeight = cellWidth * 1.7
-        return CGSize(width: cellWidth, height: cellHeight)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-    }
-}
+
+
 
 

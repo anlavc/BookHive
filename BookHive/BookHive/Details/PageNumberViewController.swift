@@ -44,7 +44,7 @@ class PageNumberViewController: UIViewController {
         bookStartDate.text      = selectedReadBook?.readingDate?.toFormattedString()
         pageNumberTF.text       = "\(selectedReadBook?.readPage! ?? 0)"
         let percentCompleted    = Double((selectedReadBook?.readPage)!) / Double(((selectedReadBook?.totalpageNumber)!)) * 100
-        progressPercent.text    = "% \(Int(percentCompleted))"
+        progressPercent.text    = "% \(Double(percentCompleted))"
         updateProgressView()
     }
     //MARK: - SetProgressView

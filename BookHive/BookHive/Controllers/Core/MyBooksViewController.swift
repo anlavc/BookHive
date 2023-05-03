@@ -70,8 +70,6 @@ class MyBooksViewController: UIViewController {
                         self.wantReadLabel.text = "Books (\(self.favoriteBooks.count))"
                         self.readBookLabel.text = "Books (\(self.finishBook.count))"
                     }
-                  
-                    
                 }
             }
         }
@@ -137,13 +135,13 @@ class MyBooksViewController: UIViewController {
         wantToReadView.layer.cornerRadius = 15
         wantToReadView.addShadow(color: .gray,
                                  opacity: 0.5,
-                                 offset: CGSize(width: 2,
+                                 offset: CGSize(width : 2,
                                                 height: 2),
                                  radius: 5)
         readView.layer.cornerRadius = 15
         readView.addShadow(color: .gray,
                            opacity: 0.5,
-                           offset: CGSize(width: 2,
+                           offset: CGSize(width : 2,
                                           height: 2),
                            radius: 5)
     }

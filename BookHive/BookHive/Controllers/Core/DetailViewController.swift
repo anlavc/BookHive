@@ -39,8 +39,8 @@ class DetailViewController: UIViewController {
     var bookDocumentID: String?
     var favoriteBooks: [Book] = []
     var readingBooks: [ReadBook] = []
-    
     private var viewModel = DetailViewModel()
+    
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()

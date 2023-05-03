@@ -169,8 +169,12 @@ extension SearchViewController: UITextFieldDelegate {
     func textFieldDidChangeSelection(_ textField: UITextField) {
         if !searchTextField.text!.isEmpty {
             button.isHidden = false
+            animationGif.isHidden = true
+            findLabel.isHidden = true
         } else {
             button.isHidden = true
+            animationGif.isHidden = false
+            findLabel.isHidden = false
         }
         
         if searchTextField.text == "" {
