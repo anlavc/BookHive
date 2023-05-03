@@ -22,3 +22,11 @@ struct ReadBook {
     let author           :String?
     let documentID       :String?
 }
+
+struct QuotesNote {
+    let title           : String?
+    let author          : String?
+    let notePageNumber  : String?
+    let quotesNote      : String?
+    let noteDate        : Date?
+}
