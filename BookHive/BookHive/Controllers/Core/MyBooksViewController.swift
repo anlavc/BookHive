@@ -33,9 +33,9 @@ class MyBooksViewController: UIViewController {
         super.viewDidLoad()
         collectionViewSetup()
         viewsSetup()
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(wantToReadViewTapped))
-        wantToReadView.addGestureRecognizer(tapGesture)
+        tapGestureViews()
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         fetchReadingBooks()
         favouriteBooksFetch()
@@ -146,6 +146,13 @@ class MyBooksViewController: UIViewController {
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
     }
+    
+    @objc public func ReadViewTapped() {
+        let vc = ReadViewController()
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
+    }
+    
 }
 
 // MARK: - Extensions

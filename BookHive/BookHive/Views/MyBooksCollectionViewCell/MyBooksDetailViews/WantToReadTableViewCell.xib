@@ -68,6 +68,7 @@
                             <constraint firstAttribute="trailing" secondItem="zwS-BY-M4d" secondAttribute="trailing" constant="8" id="Vwc-jI-wuj"/>
                             <constraint firstAttribute="trailing" secondItem="h2Q-7z-Hd5" secondAttribute="trailing" constant="8" id="o9c-gh-iQm"/>
                             <constraint firstItem="LEB-om-zIg" firstAttribute="leading" secondItem="GSf-Zf-J15" secondAttribute="leading" constant="8" id="qGw-1J-Cqh"/>
+                            <constraint firstItem="zwS-BY-M4d" firstAttribute="leading" secondItem="LEB-om-zIg" secondAttribute="trailing" constant="8" symbolic="YES" id="uvV-IO-xhD"/>
                         </constraints>
                     </view>
                 </subviews>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="127" id="KGk-i7-Jjw" customClass="ReadTableViewCell" customModule="BookHive" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="441" height="131"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="441" height="131"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BxE-JG-zAt">
+                        <rect key="frame" x="8" y="8" width="425" height="115"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Great Gatsby" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TQA-81-BXL">
+                                <rect key="frame" x="95" y="7" width="327" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Miu-UR-HRF"/>
+                                    <constraint firstAttribute="width" constant="327" id="gYJ-4z-KkS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stephenie Meyer" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qro-QH-C7b">
+                                <rect key="frame" x="95" y="75" width="327" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="327" id="7cJ-4X-r4u"/>
+                                    <constraint firstAttribute="height" constant="33" id="TKN-tr-wD9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="12" translatesAutoresizingMaskIntoConstraints="NO" id="uqq-Xg-0Km">
+                                <rect key="frame" x="0.0" y="0.0" width="87" height="115"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="87" id="A6N-Vq-VvR"/>
+                                    <constraint firstAttribute="height" constant="115" id="EGH-22-k5T"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="TQA-81-BXL" firstAttribute="top" secondItem="BxE-JG-zAt" secondAttribute="top" constant="7" id="A0g-fb-dY0"/>
+                            <constraint firstAttribute="bottom" secondItem="uqq-Xg-0Km" secondAttribute="bottom" id="HtK-ne-zzq"/>
+                            <constraint firstItem="uqq-Xg-0Km" firstAttribute="leading" secondItem="BxE-JG-zAt" secondAttribute="leading" id="OSn-iR-5Fv"/>
+                            <constraint firstAttribute="bottom" secondItem="Qro-QH-C7b" secondAttribute="bottom" constant="7" id="bcE-Yu-fil"/>
+                            <constraint firstItem="uqq-Xg-0Km" firstAttribute="top" secondItem="BxE-JG-zAt" secondAttribute="top" id="cvT-ML-JEb"/>
+                            <constraint firstAttribute="trailing" secondItem="TQA-81-BXL" secondAttribute="trailing" constant="3" id="muh-MA-9Sl"/>
+                            <constraint firstItem="TQA-81-BXL" firstAttribute="leading" secondItem="uqq-Xg-0Km" secondAttribute="trailing" constant="8" symbolic="YES" id="o3x-tw-rZs"/>
+                            <constraint firstAttribute="trailing" secondItem="Qro-QH-C7b" secondAttribute="trailing" constant="3" id="slg-0M-Fcp"/>
+                            <constraint firstItem="Qro-QH-C7b" firstAttribute="leading" secondItem="uqq-Xg-0Km" secondAttribute="trailing" constant="8" symbolic="YES" id="zbv-SL-qxC"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="BxE-JG-zAt" secondAttribute="bottom" constant="8" id="3ah-IS-0po"/>
+                    <constraint firstAttribute="trailing" secondItem="BxE-JG-zAt" secondAttribute="trailing" constant="8" id="Gnc-XI-i3e"/>
+                    <constraint firstItem="BxE-JG-zAt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="KKO-xA-eCX"/>
+                    <constraint firstItem="BxE-JG-zAt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="ys1-E1-G7J"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="authorNameLabel" destination="Qro-QH-C7b" id="BZe-Ns-cdZ"/>
+                <outlet property="bookImageView" destination="uqq-Xg-0Km" id="68Y-gx-4hl"/>
+                <outlet property="bookNameLabel" destination="TQA-81-BXL" id="plU-Z4-m4p"/>
+                <outlet property="readView" destination="BxE-JG-zAt" id="psq-D7-bcs"/>
+            </connections>
+            <point key="canvasLocation" x="12.977099236641221" y="27.816901408450704"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="12" width="383" height="600"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
