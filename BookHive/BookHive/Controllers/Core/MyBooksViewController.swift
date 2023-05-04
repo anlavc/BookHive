@@ -34,12 +34,13 @@ class MyBooksViewController: UIViewController {
         collectionViewSetup()
         viewsSetup()
         tapGestureViews()
+   
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         fetchReadingBooks()
         favouriteBooksFetch()
-        print("SAYFA YÜKLENDİ ***")
     }
   
         private func tapGestureViews() {
@@ -153,6 +154,7 @@ class MyBooksViewController: UIViewController {
     
     @objc public func wantToReadViewTapped() {
         let vc = ReadListViewController()
+        vc.favoriteBooks = self.favoriteBooks
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
     }

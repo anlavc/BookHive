@@ -141,6 +141,7 @@ class PageNumberViewController: UIViewController {
                     print("Error updating reading book: \(error.localizedDescription)")
                     return
                 }
+                
                 print("Reading book updated successfully.")
             }
         }
