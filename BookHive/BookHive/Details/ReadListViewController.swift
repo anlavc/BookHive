@@ -186,8 +186,8 @@ class ReadListViewController: UIViewController {
             // okunan kitaplara eklendi şeklinde ekrana bir bilgi gelip kaybolsun.
             completion(true)
         }
-//        readAction.backgroundColor = UIColor(named: "addedFavoriteButton")
-//        readAction.image = UIImage(systemName: "book")
+        readAction.backgroundColor = UIColor(named: "addedFavoriteButton")
+        readAction.image = UIImage(systemName: "book")
         return readAction
     }
     
@@ -219,8 +219,3 @@ extension ReadListViewController: UITableViewDelegate {
     }
  
 }
-
-
-
-
-
