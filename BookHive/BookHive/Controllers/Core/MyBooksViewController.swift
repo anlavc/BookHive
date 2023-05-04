@@ -8,9 +8,9 @@
 import UIKit
 import Firebase
 import FirebaseAuth
-
+ 
 class MyBooksViewController: UIViewController {
-    
+
     // MARK: - Outlets
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var wantToReadView: UIView!
@@ -117,6 +117,7 @@ class MyBooksViewController: UIViewController {
             }
         }
     }
+
     // MARK: - Collection View Configure
     private func collectionViewSetup() {
         let layout                          = UICollectionViewFlowLayout()
