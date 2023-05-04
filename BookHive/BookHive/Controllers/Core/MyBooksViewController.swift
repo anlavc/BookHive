@@ -60,24 +60,25 @@ class MyBooksViewController: UIViewController {
                     return
                 }
                 guard let documents = querySnapshot?.documents else {
-                    self.showAlert(title: "hata", message: "No favorite books found.")
+                    self.favoriteBooks.removeAll()
+                    self.wantReadLabel.text = "Books (0)"
                     return
                 }
                 self.favoriteBooks.removeAll()
                 for document in documents {
-                    let coverID     = document.data()["coverID"] as! String
-                    let title       = document.data()["title"] as! String
-                    let author      = document.data()["author"] as? String
-                    let book        = Book(coverID: coverID, title: title,author: author)
+                    let coverID = document.data()["coverID"] as! String
+                    let title = document.data()["title"] as! String
+                    let author = document.data()["author"] as? String
+                    let book = Book(coverID: coverID, title: title, author: author)
                     self.favoriteBooks.append(book)
-                    DispatchQueue.main.async {
-                        self.wantReadLabel.text = "Books (\(self.favoriteBooks.count))"
-                        self.readBookLabel.text = "Books (\(self.finishBook.count))"
-                    }
+                }
+                DispatchQueue.main.async {
+                    self.wantReadLabel.text = "Books (\(self.favoriteBooks.count))"
                 }
             }
         }
     }
+
     //MARK: - Reading books fetch firebase
     private func fetchReadingBooks() {
         if let uuid = Auth.auth().currentUser?.uid {
@@ -114,6 +115,7 @@ class MyBooksViewController: UIViewController {
                         self.finishBook.append(readbookArray)
                     }
                     self.collectionView.reloadData()
+                    self.readBookLabel.text = "Books (\(self.finishBook.count))"
                 }
             }
         }
