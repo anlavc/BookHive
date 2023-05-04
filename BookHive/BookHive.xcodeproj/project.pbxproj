@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E062E892A038C7E00B148AB /* ReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E062E872A038C7E00B148AB /* ReadViewController.swift */; };
+		2E062E8A2A038C7E00B148AB /* ReadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E062E882A038C7E00B148AB /* ReadViewController.xib */; };
 		2E1F166829F7C951007FC4E3 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E1F166A29F7C951007FC4E3 /* SearchViewController.xib */; };
 		2E1F167329F7CB77007FC4E3 /* MyBooksViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E1F167529F7CB77007FC4E3 /* MyBooksViewController.xib */; };
 		2E1F167E29F7CEB8007FC4E3 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E1F168029F7CEB8007FC4E3 /* SearchTableViewCell.xib */; };
@@ -29,6 +31,8 @@
 		2E88B37129E883BE008F4B4B /* MyBooksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88B37029E883BE008F4B4B /* MyBooksCollectionViewCell.swift */; };
 		2EB596632A025DD000E18EE9 /* WantToReadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB596612A025DD000E18EE9 /* WantToReadTableViewCell.swift */; };
 		2EB596642A025DD000E18EE9 /* WantToReadTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EB596622A025DD000E18EE9 /* WantToReadTableViewCell.xib */; };
+		2EB5966B2A02F47B00E18EE9 /* ReadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB596692A02F47B00E18EE9 /* ReadTableViewCell.swift */; };
+		2EB5966C2A02F47B00E18EE9 /* ReadTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EB5966A2A02F47B00E18EE9 /* ReadTableViewCell.xib */; };
 		2EC622E32A0112D900DDA4F9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC622E22A0112D900DDA4F9 /* DetailViewController.swift */; };
 		2ECF25B129E89D3E00956FCB /* UIView + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECF25B029E89D3E00956FCB /* UIView + Ext.swift */; };
 		2EE0E11529F48AB9008B2362 /* TextfieldCharacters + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE0E11429F48AB9008B2362 /* TextfieldCharacters + Ext.swift */; };
@@ -61,7 +65,6 @@
 		EE904C3029FB203400441AA8 /* String + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE904C2F29FB203400441AA8 /* String + Ext.swift */; };
 		EE92F0BD2A01CA350072D4C9 /* MyquotesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92F0BB2A01CA350072D4C9 /* MyquotesCollectionViewCell.swift */; };
 		EE92F0BE2A01CA350072D4C9 /* MyquotesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE92F0BC2A01CA350072D4C9 /* MyquotesCollectionViewCell.xib */; };
-		EE977F7C29F02F6A0027CF90 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE977F7A29F02F6A0027CF90 /* DetailViewController.swift */; };
 		EE977F7F29F13E910027CF90 /* ImageView + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE977F7E29F13E910027CF90 /* ImageView + Ext.swift */; };
 		EE977F8129F14F140027CF90 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE977F8029F14F140027CF90 /* DetailViewModel.swift */; };
 		EE977F8329F150330027CF90 /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE977F8229F150330027CF90 /* DetailModel.swift */; };
@@ -99,6 +102,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E062E872A038C7E00B148AB /* ReadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadViewController.swift; sourceTree = "<group>"; };
+		2E062E882A038C7E00B148AB /* ReadViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReadViewController.xib; sourceTree = "<group>"; };
 		2E1F164629F7BAD3007FC4E3 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Main.strings; sourceTree = "<group>"; };
 		2E1F164829F7BADD007FC4E3 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		2E1F166429F7C4F8007FC4E3 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
@@ -164,6 +169,8 @@
 		2E88B37029E883BE008F4B4B /* MyBooksCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBooksCollectionViewCell.swift; sourceTree = "<group>"; };
 		2EB596612A025DD000E18EE9 /* WantToReadTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantToReadTableViewCell.swift; sourceTree = "<group>"; };
 		2EB596622A025DD000E18EE9 /* WantToReadTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WantToReadTableViewCell.xib; sourceTree = "<group>"; };
+		2EB596692A02F47B00E18EE9 /* ReadTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadTableViewCell.swift; sourceTree = "<group>"; };
+		2EB5966A2A02F47B00E18EE9 /* ReadTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReadTableViewCell.xib; sourceTree = "<group>"; };
 		2EC622E22A0112D900DDA4F9 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		2ECF25B029E89D3E00956FCB /* UIView + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Ext.swift"; sourceTree = "<group>"; };
 		2EE0E11429F48AB9008B2362 /* TextfieldCharacters + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextfieldCharacters + Ext.swift"; sourceTree = "<group>"; };
@@ -190,7 +197,6 @@
 		EE904C2F29FB203400441AA8 /* String + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Ext.swift"; sourceTree = "<group>"; };
 		EE92F0BB2A01CA350072D4C9 /* MyquotesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyquotesCollectionViewCell.swift; sourceTree = "<group>"; };
 		EE92F0BC2A01CA350072D4C9 /* MyquotesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyquotesCollectionViewCell.xib; sourceTree = "<group>"; };
-		EE977F7A29F02F6A0027CF90 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		EE977F7E29F13E910027CF90 /* ImageView + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageView + Ext.swift"; sourceTree = "<group>"; };
 		EE977F8029F14F140027CF90 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		EE977F8229F150330027CF90 /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
@@ -279,6 +285,8 @@
 			children = (
 				2EB596612A025DD000E18EE9 /* WantToReadTableViewCell.swift */,
 				2EB596622A025DD000E18EE9 /* WantToReadTableViewCell.xib */,
+				2EB596692A02F47B00E18EE9 /* ReadTableViewCell.swift */,
+				2EB5966A2A02F47B00E18EE9 /* ReadTableViewCell.xib */,
 			);
 			path = MyBooksDetailViews;
 			sourceTree = "<group>";
@@ -380,6 +388,8 @@
 				2E81B46429FD8F4300986F98 /* ReadListViewController.xib */,
 				EE5CF3932A02A1CB00AC47FD /* AddQuotesViewController.swift */,
 				EE5CF3942A02A1CB00AC47FD /* AddQuotesViewController.xib */,
+				2E062E872A038C7E00B148AB /* ReadViewController.swift */,
+				2E062E882A038C7E00B148AB /* ReadViewController.xib */,
 			);
 			name = Details;
 			path = ../Details;
@@ -663,8 +673,10 @@
 				2EFA100B29FA4C8100AE6888 /* Assets.xcassets in Resources */,
 				EE7CDFE529F7CA310058C163 /* NowCollectionViewCell.xib in Resources */,
 				EEAC4FD029E70EDF0066757B /* HomeTableViewCell.xib in Resources */,
+				2EB5966C2A02F47B00E18EE9 /* ReadTableViewCell.xib in Resources */,
 				EEAC4FD529E714280066757B /* TableCollectionViewCell.xib in Resources */,
 				2E1F166829F7C951007FC4E3 /* SearchViewController.xib in Resources */,
+				2E062E8A2A038C7E00B148AB /* ReadViewController.xib in Resources */,
 				2E1F167E29F7CEB8007FC4E3 /* SearchTableViewCell.xib in Resources */,
 				2EFA103129FB148400AE6888 /* AccountTableViewCell.xib in Resources */,
 				EEC8356A29EAEE6300058796 /* HomeCollectionViewCarousel.xib in Resources */,
@@ -705,6 +717,7 @@
 				EE977F8329F150330027CF90 /* DetailModel.swift in Sources */,
 				EE1B9B3129FD7B1C002F81F2 /* FavoriteBook.swift in Sources */,
 				2E1F16C329F91EC0007FC4E3 /* AccountTableViewCell.swift in Sources */,
+				2E062E892A038C7E00B148AB /* ReadViewController.swift in Sources */,
 				EEC8356D29EAF1D200058796 /* HomeCarouselTableViewCell.swift in Sources */,
 				EEE4DABA29F91A030017A5EF /* TextField + Ext.swift in Sources */,
 				EEC8356929EAEE6300058796 /* HomeCollectionViewCarousel.swift in Sources */,
@@ -743,6 +756,7 @@
 				2EB596632A025DD000E18EE9 /* WantToReadTableViewCell.swift in Sources */,
 				EEBEAEBC29F85ADD00F993B8 /* Rating.swift in Sources */,
 				EEAC4FCF29E70EDF0066757B /* HomeTableViewCell.swift in Sources */,
+				2EB5966B2A02F47B00E18EE9 /* ReadTableViewCell.swift in Sources */,
 				EEFBBCAE29E977A100BDD902 /* APIManager.swift in Sources */,
 				EEAD10C529EF4DE600BA6603 /* SearchViewModel.swift in Sources */,
 				2E88B35029E70091008F4B4B /* MyBooksViewController.swift in Sources */,

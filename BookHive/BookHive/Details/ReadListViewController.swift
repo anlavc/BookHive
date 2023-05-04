@@ -123,8 +123,8 @@ class ReadListViewController: UIViewController {
         if let uuid = Auth.auth().currentUser?.uid {
             let favoriteBooksCollection = Firestore.firestore().collection("users/\(uuid)/ReadsBooks")
             let coverIDToDelete = self.favoriteBooks[index].coverID
-            let bookTitle = self.favoriteBooks[index].title
-            let authorName = self.favoriteBooks[index].author
+            let bookTitle = self.readingBooks[index].title
+            let authorName = self.readingBooks[index].author
             let totalPage = self.readingBooks[index].totalpageNumber
             favoriteBooksCollection.whereField("coverID", isEqualTo: coverIDToDelete!).getDocuments { (snapshot, error) in
                 if let error = error {
@@ -182,32 +182,6 @@ class ReadListViewController: UIViewController {
         let readAction = UIContextualAction(style: .normal, title: "Read") { action, view, completion in
             self.favoriteBookDelete(index: indexPath.row)
             self.addReadBook(index: indexPath.row)
-//            if let uuid = Auth.auth().currentUser?.uid {
-//                let favoriteBooksCollection = Firestore.firestore().collection("users/\(uuid)/ReadsBooks")
-//                favoriteBooksCollection.whereField("coverID", isEqualTo: self.detailID ?? "").getDocuments { (snapshot, error) in
-//                    if let error = error {
-//                        self.showAlert(title: "ERROR", message: "Okumaya başlama sırasında bir hata ile karşılaşıldı.")
-//                    } else {
-//                        if let documents = snapshot?.documents {
-//                            for document in documents {
-//                                let bookID = document.documentID
-//                                favoriteBooksCollection.document(bookID).delete()
-//                            }
-//                            if documents.isEmpty {
-//                                favoriteBooksCollection.addDocument(data: ["coverID" : self.detailID ?? "",
-//                                                                           "title"   : self.bookTitle ?? "",
-//                                                                           "readPage": 0,
-//                                                                           "author"  : self.author ?? "",
-//                                                                           "readingdate" : FieldValue.serverTimestamp(),
-//                                                                           "totalpageNumber": self.viewModel.detailOlid?.numberOfPages ?? 0,
-//                                                                           "finish": false])}
-//                            DispatchQueue.main.async {
-//                                self.fetchReadingBooks()
-//                            }
-//                        }
-//                    }
-//                }
-//            }
             completion(true)
         }
         readAction.backgroundColor = UIColor(named: "addedFavoriteButton")

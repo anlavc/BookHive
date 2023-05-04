@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReadViewController" customModule="BookHive" customModuleProvider="target">
+            <connections>
+                <outlet property="tableView" destination="n7U-KO-ZnU" id="Dit-wZ-bmi"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="v6L-ae-97E">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Finished Read" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F6v-5i-SJk">
+                    <rect key="frame" x="16" y="120" width="219" height="30"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6DO-fS-wSv">
+                    <rect key="frame" x="0.0" y="59" width="38" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="38" id="Wmr-ik-78J"/>
+                        <constraint firstAttribute="height" constant="35" id="kNc-yQ-3kr"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="arrow.backward" catalog="system">
+                        <color key="baseForegroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="backButton:" destination="-1" eventType="touchUpInside" id="y9v-Hg-kuu"/>
+                    </connections>
+                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="n7U-KO-ZnU">
+                    <rect key="frame" x="0.0" y="158" width="393" height="660"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="mFF-5t-umV"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="mFF-5t-umV" firstAttribute="trailing" secondItem="F6v-5i-SJk" secondAttribute="trailing" constant="158" id="2Bf-7h-p7E"/>
+                <constraint firstItem="n7U-KO-ZnU" firstAttribute="bottom" secondItem="mFF-5t-umV" secondAttribute="bottom" id="F4e-26-cyP"/>
+                <constraint firstItem="6DO-fS-wSv" firstAttribute="leading" secondItem="mFF-5t-umV" secondAttribute="leading" id="I64-Xc-hQ6"/>
+                <constraint firstItem="n7U-KO-ZnU" firstAttribute="leading" secondItem="mFF-5t-umV" secondAttribute="leading" id="K4q-ie-vUG"/>
+                <constraint firstItem="6DO-fS-wSv" firstAttribute="top" secondItem="mFF-5t-umV" secondAttribute="top" id="QYD-80-jaa"/>
+                <constraint firstItem="n7U-KO-ZnU" firstAttribute="top" secondItem="F6v-5i-SJk" secondAttribute="bottom" constant="8" symbolic="YES" id="ZHg-IL-Sol"/>
+                <constraint firstItem="n7U-KO-ZnU" firstAttribute="trailing" secondItem="mFF-5t-umV" secondAttribute="trailing" id="gQr-eo-FRW"/>
+                <constraint firstItem="mFF-5t-umV" firstAttribute="trailing" secondItem="6DO-fS-wSv" secondAttribute="trailing" constant="355" id="ghP-kD-JOs"/>
+                <constraint firstItem="F6v-5i-SJk" firstAttribute="leading" secondItem="mFF-5t-umV" secondAttribute="leading" constant="16" id="hlN-Ny-blZ"/>
+                <constraint firstItem="F6v-5i-SJk" firstAttribute="top" secondItem="6DO-fS-wSv" secondAttribute="bottom" constant="26" id="wYk-ln-bmu"/>
+            </constraints>
+            <point key="canvasLocation" x="361" y="14"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="arrow.backward" catalog="system" width="128" height="95"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
