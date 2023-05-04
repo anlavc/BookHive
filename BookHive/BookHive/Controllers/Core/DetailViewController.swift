@@ -12,33 +12,34 @@ import FirebaseDatabase
 
 class DetailViewController: UIViewController {
     //MARK: - Outlets
-    @IBOutlet weak var dismissButton: UIButton!
-    @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var addReadButton: UIButton!
-    @IBOutlet weak var readButton: UIButton!
+    @IBOutlet weak var dismissButton    : UIButton!
+    @IBOutlet weak var collectionView   : UICollectionView!
+    @IBOutlet weak var addReadButton    : UIButton!
+    @IBOutlet weak var readButton       : UIButton!
     @IBOutlet weak var languageLabelText: UILabel!
-    @IBOutlet weak var languageLabel: UILabel!
+    @IBOutlet weak var languageLabel    : UILabel!
     @IBOutlet weak var numberOfPagesLabel: UILabel!
-    @IBOutlet weak var pageNumber: UILabel!
-    @IBOutlet weak var publishDateText: UILabel!
-    @IBOutlet weak var publishDate: UILabel!
-    @IBOutlet weak var ratingImage: UIImageView!
-    @IBOutlet weak var ratingLabel: UILabel!
-    @IBOutlet weak var author: UILabel!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var bgview: UIView!
+    @IBOutlet weak var pageNumber       : UILabel!
+    @IBOutlet weak var publishDateText  : UILabel!
+    @IBOutlet weak var publishDate      : UILabel!
+    @IBOutlet weak var ratingImage      : UIImageView!
+    @IBOutlet weak var ratingLabel      : UILabel!
+    @IBOutlet weak var author           : UILabel!
+    @IBOutlet weak var titleLabel       : UILabel!
+    @IBOutlet weak var imageView        : UIImageView!
+    @IBOutlet weak var bgview           : UIView!
     
     //MARK: - Variables
-    var selectedBook: String?
-    var detailID: String!
-    var bookTitle: String?
-    var language: String?
-    var authorName: String?
-    var publishDateData: Int?
-    var bookDocumentID: String?
-    var favoriteBooks: [Book] = []
-    var readingBooks: [ReadBook] = []
+    var selectedBook    : String?
+    var detailID        : String!
+    var bookTitle       : String?
+    var language        : String?
+    var authorName      : String?
+    var publishDateData : Int?
+    var bookDocumentID  : String?
+    var favoriteBooks   : [Book] = []
+    var readingBooks    : [ReadBook] = []
+    
     private var viewModel = DetailViewModel()
     
     //MARK: - Life Cycle
@@ -52,14 +53,15 @@ class DetailViewController: UIViewController {
        
     }
     override func viewWillAppear(_ animated: Bool) {
-        fetchFavoriteBooks()
-        fetchReadingBooks()
+        favouriteBooksFetch()
+        readingBooksFetch()
     }
-    //MARK: - Firebase favorite Book fetch func
-     func fetchFavoriteBooks() {
+    //MARK: -   A request is sent from Firebase to access the information of favourite books
+     func favouriteBooksFetch() {
         if let uuid = Auth.auth().currentUser?.uid {
             let favoriteBooksCollection = Firestore.firestore().collection("users/\(uuid)/favoriteBooks")
             favoriteBooksCollection.getDocuments() { (querySnapshot, error) in
+                //Firebase erişimde bir hata var mı kontrol edilir.
                 if let error = error {
                     print("Error fetching favorite books: \(error.localizedDescription)")
                     return
@@ -70,25 +72,25 @@ class DetailViewController: UIViewController {
                 }
                 for document in documents {
                     let coverID = document.data()["coverID"] as! String
-                    let title = document.data()["title"] as! String
-                    let author = document.data()["author"] as? String
-                    let book = Book(coverID: coverID, title: title,author: author)
-                    self.favoriteBooks.append(book)
+                    let title   = document.data()["title"] as! String
+                    let author  = document.data()["author"] as? String
+                    let book    = Book(coverID: coverID, title: title,author: author)
                     
-                    // Check if the current book is a favorite
+                    self.favoriteBooks.append(book) //firebaseden gelen verilen oluşturulan favoriteBooks dizinin içine append edilir.
+                    
+                    // Gelen favori kitapların içinde detayına gidilen kitaba ait coverId varsa bu zaten favoride olan bir kitap olduğundan sayfa açıldığında butonda Favorilerde ekli yazar.
                     if coverID == self.detailID {
                         self.addReadButton.setTitle("Added in favorites", for: .normal)
                         self.addReadButton.backgroundColor = UIColor(named: "addedFavoriteButton")
                     }
-                    
                 }
             }
         }
     }
-    //MARK: - Firebase Reading Books fetch func
-    private func fetchReadingBooks() {
+    //MARK: -  A request is sent from Firebase to access the information of reading books
+    private func readingBooksFetch() {
         if let uuid = Auth.auth().currentUser?.uid {
-            let favoriteBooksCollection = Firestore.firestore().collection("users/\(uuid)/ReadsBooks")
+            let favoriteBooksCollection = Firestore.firestore().collection("users/\(uuid)/ReadsBooks") //Readbooks collectionu içinde arama yapılır.
             favoriteBooksCollection.getDocuments() { (querySnapshot, error) in
                 if let error = error {
                     print("Error fetching favorite books: \(error.localizedDescription)")
@@ -111,12 +113,11 @@ class DetailViewController: UIViewController {
                     let readbookArray   = ReadBook(coverID: coverID, title: title, finish: finish, readPage: readPage, readingDate: readingDate, totalpageNumber: totalpageNumber, author: author,documentID:documentID)
                     self.readingBooks.append(readbookArray)
                     
-                    // Check if the current book is a favorite
+                    //  Gelen okunan kitapların içinde detayına gidilen kitaba ait coverId varsa bu zaten okunan  bir kitap olduğundan sayfa açıldığında butonda okunuyor yazar.
                     if coverID == self.detailID {
                         self.readButton.setTitle("Okunuyor", for: .normal)
                         self.readButton.backgroundColor = UIColor(named: "addedFavoriteButton")
                     }
-                    
                 }
             }
         }
@@ -125,24 +126,24 @@ class DetailViewController: UIViewController {
     @IBAction func dismissButton(_ sender: UIButton) {
         self.dismiss(animated: true)
     }
+    //MARK: - Register View Xib
     private func xibRegister() {
         Bundle.main.loadNibNamed("DetailViewController", owner: self, options: nil)![0] as? DetailViewController
     }
     //MARK: - UI Configurations
     private func setupUI() {
-        addReadButton.layer.cornerRadius = 5
-        readButton.layer.cornerRadius = 5
-        bgview.layer.cornerRadius = 20
-        bgview.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        imageView.layer.cornerRadius = 5
+        addReadButton.layer.cornerRadius    = 5
+        readButton.layer.cornerRadius       = 5
+        bgview.layer.cornerRadius           = 20
+        bgview.layer.maskedCorners          = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        imageView.layer.cornerRadius        = 5
     }
-    //MARK: - Collection Setup
+    //MARK: - Collectionview Setup
     private func collectionSetup() {
         collectionView.register(DetailSubjectCell.nib(), forCellWithReuseIdentifier: DetailSubjectCell.identifier)
-//        collectionView.delegate = self
-        collectionView.dataSource = self
-        if let flowLayout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
-            flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        collectionView.dataSource           = self
+        if let flowLayout                   = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
+            flowLayout.estimatedItemSize    = UICollectionViewFlowLayout.automaticSize
         }
     }
     //MARK: - ViewModel fetch data
@@ -153,11 +154,11 @@ class DetailViewController: UIViewController {
     }
     //MARK: - UI variables set
     private func setupOlid(olid: DetailModel2) {
-        let pagenumber = String("\(olid.numberOfPages ?? 0)")
-        self.titleLabel.text = bookTitle
-        self.author.text = authorName
-        self.pageNumber.text = pagenumber
-        self.publishDate.text = String("\(publishDateData ?? 0)")
+        let pagenumber          = String("\(olid.numberOfPages ?? 0)")
+        self.titleLabel.text    = bookTitle
+        self.author.text        = authorName
+        self.pageNumber.text    = pagenumber
+        self.publishDate.text   = String("\(publishDateData ?? 0)")
         self.languageLabel.text = language?.uppercased()
         //image
         let olid = detailID
@@ -167,7 +168,6 @@ class DetailViewController: UIViewController {
     private func observeEvent() {
         viewModel.eventHandler = { [weak self] event in
             guard let self else {return}
-            
             switch event {
             case .loading:
                 //indicator show
@@ -209,8 +209,6 @@ class DetailViewController: UIViewController {
                         }
                         self.ratingImage.image = UIImage(named: imageName)
                     }
-                    
-                    
                 }
                 
             case .error(let error):
@@ -220,20 +218,21 @@ class DetailViewController: UIViewController {
     }
     //MARK: - ReadButton Tapped
     @IBAction func readButtonTapped(_ sender: Any) {
-        ReadBookFetch()
+        readBooksAddorRemove()
     }
     //MARK: - AddtoReadList Button Tapped
     @IBAction func addtoReadListTapped(_ sender: UIButton) {
-        toggleFavoriteBookFetch()
+        favouriteBooksAddorRemove()
     }
-    //MARK: - Add Favorite and Remove Favorite
-    func toggleFavoriteBookFetch() {
+    //MARK: - Add Favourite and Remove Favourite
+    func favouriteBooksAddorRemove() {
         if let uuid = Auth.auth().currentUser?.uid {
             let favoriteBooksCollection = Firestore.firestore().collection("users/\(uuid)/favoriteBooks")
-            favoriteBooksCollection.whereField("coverID", isEqualTo: detailID!).getDocuments { (snapshot, error) in
+            favoriteBooksCollection.whereField("coverID", isEqualTo: detailID!).getDocuments { (snapshot, error) in // Favori kitaplar içinde coverID göre ilgili kitabın coverid arasında arama yapılır.
                 if let error = error {
                     self.showAlert(title: "ERROR", message: "Favorilere ekleme sırasında bir hata ile karşılaşıldı.")
                 } else {
+                    // Favorilerde ekliyle eğer fetch kısmında zaten favorilerde ekli olduğu gözüktüğünde ve coverID ile detail id eşletiği için ilk şart çalışır ve ilgili kitabı favorilerden silerek butronda tekrar favorilere ekle yazar.
                     if let documents = snapshot?.documents {
                         for document in documents {
                             let bookID = document.documentID
@@ -242,6 +241,7 @@ class DetailViewController: UIViewController {
                             self.addReadButton.backgroundColor = UIColor(named: "coverbgColor")
                             
                         }
+                        // favoriler arasında coverID bulunamazsa favorilerde ekli değil demektir ve ilgili kitabı favorilere ekleyerek butonda favorilere eklendi yazar.
                         if documents.isEmpty {
                             favoriteBooksCollection.addDocument(data: ["coverID": self.detailID!,
                                                                        "title"  : self.bookTitle!,
@@ -250,20 +250,21 @@ class DetailViewController: UIViewController {
                             self.addReadButton.backgroundColor = UIColor(named: "addedFavoriteButton")
                         }
                         DispatchQueue.main.async {
-                            self.fetchFavoriteBooks()
+                            self.favouriteBooksFetch() // yeni veri eklendiğinden veya silindiğinden güncel bilgileri tekrar almak için tekrar istek yapılır.
                         }
                     }
                 }
             }
         }
     }
-    func ReadBookFetch() {
+    func readBooksAddorRemove() {
         if let uuid = Auth.auth().currentUser?.uid {
             let favoriteBooksCollection = Firestore.firestore().collection("users/\(uuid)/ReadsBooks")
             favoriteBooksCollection.whereField("coverID", isEqualTo: detailID!).getDocuments { (snapshot, error) in
                 if let error = error {
                     self.showAlert(title: "ERROR", message: "Okumaya başlama sırasında bir hata ile karşılaşıldı.")
                 } else {
+                    // okunuyorsa zaten okunanlardan siler.
                     if let documents = snapshot?.documents {
                         for document in documents {
                             let bookID = document.documentID
@@ -272,19 +273,48 @@ class DetailViewController: UIViewController {
                             self.readButton.backgroundColor = UIColor(named: "colordarkgray")
                             
                         }
+                        // okunmuyorsa kitabı readBooksa ekler.
                         if documents.isEmpty {
-                            favoriteBooksCollection.addDocument(data: ["coverID" : self.detailID!,
-                                                                       "title"   : self.bookTitle!,
-                                                                       "readPage": 0,
-                                                                       "author"  : self.authorName,
-                                                                       "readingdate" : FieldValue.serverTimestamp(),
-                                                                       "totalpageNumber": self.viewModel.detailOlid?.numberOfPages ?? 0,
-                                                                       "finish": false])
-                            self.readButton.setTitle("Okunuyor", for: .normal)
-                            self.readButton.backgroundColor = UIColor(named: "addedFavoriteButton")
+                            // Toplam sayfa numarası 0 olup olmadığı kontrol edilir. Eğer sıfırsa else bloğuna gider ve kullanıdan bir totalpage numarası ister.Zaten varsa kitabı okunan kitaplara ekler.
+                            if let numberOfPages = self.viewModel.detailOlid?.numberOfPages, numberOfPages != 0 {
+                                favoriteBooksCollection.addDocument(data: ["coverID"        : self.detailID!,
+                                                                           "title"          : self.bookTitle!,
+                                                                           "readPage"       : 0,
+                                                                           "author"         : self.authorName,
+                                                                           "readingdate"    : FieldValue.serverTimestamp(),
+                                                                           "totalpageNumber": numberOfPages,
+                                                                           "finish"         : false])
+                                self.readButton.setTitle("Okunuyor", for: .normal)
+                                self.readButton.backgroundColor = UIColor(named: "addedFavoriteButton")
+                            } else {
+                                // Totalpage numarası istenir.
+                                let alert = UIAlertController(title: "Number of pages not available", message: "Please enter the number of pages", preferredStyle: .alert)
+                                   alert.addTextField { (textField) in
+                                       textField.placeholder = "Number of pages"
+                                       textField.keyboardType = .numberPad
+                                   }
+                                   let saveAction = UIAlertAction(title: "Save", style: .default) { (action) in
+                                       if let textFields = alert.textFields, let text = textFields[0].text, let numberOfPages = Int(text), numberOfPages != 0 {
+                                           // Kullanıcının girdiği sayı 0 değil, kaydedilebilir.
+                                           favoriteBooksCollection.addDocument(data: ["coverID"         : self.detailID!,
+                                                                                      "title"           : self.bookTitle!,
+                                                                                      "readPage"        : 0,
+                                                                                      "author"          : self.authorName,
+                                                                                      "readingdate"     : FieldValue.serverTimestamp(),
+                                                                                      "totalpageNumber" : numberOfPages,
+                                                                                      "finish"          : false])
+                                           self.readButton.setTitle("Okunuyor", for: .normal)
+                                           self.readButton.backgroundColor = UIColor(named: "addedFavoriteButton")
+                                       }
+                                   }
+                                   alert.addAction(saveAction)
+                                   self.present(alert, animated: true, completion: nil)
+                            }
+
+                          
                         }
                         DispatchQueue.main.async {
-                            self.fetchReadingBooks()
+                            self.readingBooksFetch()
                         }
                     }
                 }
@@ -296,7 +326,7 @@ class DetailViewController: UIViewController {
     //MARK: - CollectionviewDataSource
 extension DetailViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let numberOfItems = viewModel.detailBook?.subjects?.count
+        let numberOfItems           = viewModel.detailBook?.subjects?.count
         if numberOfItems == nil {
             collectionView.isHidden = true
         } else {
@@ -312,7 +342,6 @@ extension DetailViewController: UICollectionViewDataSource {
     }
     
 }
-
 func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
     return 10
 }

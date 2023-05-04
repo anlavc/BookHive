@@ -41,8 +41,7 @@ class PageNumberViewController: UIViewController {
        
     }
     override func viewWillAppear(_ animated: Bool) {
-        fetchquotesBooks(forCoverId: (selectedReadBook?.coverID)!)
-
+        quotesBooksFetch(forCoverId: (selectedReadBook?.coverID)!)
     }
     //MARK: - Setup UI FirebaseData
     private func setUpData() {
@@ -51,16 +50,14 @@ class PageNumberViewController: UIViewController {
         bookStartDate.text      = selectedReadBook?.readingDate?.toFormattedString()
         pageNumberTF.text       = "\(selectedReadBook?.readPage! ?? 0)"
         let percentCompleted    = Double((selectedReadBook?.readPage)!) / Double(((selectedReadBook?.totalpageNumber)!)) * 100
-        
         progressPercent.text    = "% \(Int(percentCompleted))"
         updateProgressView()
     }
     //MARK: - CollectionView Setup
     private func collectionSetup() {
         collectionView.register(MyquotesCollectionViewCell.nib(), forCellWithReuseIdentifier: MyquotesCollectionViewCell.identifier)
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        
+        collectionView.delegate     = self
+        collectionView.dataSource   = self
     }
     //MARK: - SetProgressView
     private func updateProgressView() {
@@ -78,7 +75,7 @@ class PageNumberViewController: UIViewController {
             return
         } else if pageNumber    == book.totalpageNumber! {
             showAlert(title: "Tebriks", message: "Kitap bitti burdan sil okunana ekle")
-            updateReadingBook(bookId: (selectedReadBook?.documentID)!)
+            readingBookFinishUpdate(bookId: (selectedReadBook?.documentID)!)
         }
         Firestore.firestore().collection("users").document(Auth.auth().currentUser!.uid).collection("ReadsBooks").document(book.documentID!).updateData(["readPage": pageNumber]) { error in
             if let error = error {
@@ -134,8 +131,8 @@ class PageNumberViewController: UIViewController {
         self.infoIcon.showsMenuAsPrimaryAction = true
         self.infoIcon.changesSelectionAsPrimaryAction = false
     }
-    //MARK: - FinishedBook
-    func updateReadingBook(bookId: String) {
+    //MARK: - The finish value is updated to true if the book is finished
+    func readingBookFinishUpdate(bookId: String) {
         if let uuid = Auth.auth().currentUser?.uid {
             let favoriteBooksCollection = Firestore.firestore().collection("users/\(uuid)/ReadsBooks")
             let bookRef = favoriteBooksCollection.document(bookId)
@@ -169,34 +166,8 @@ class PageNumberViewController: UIViewController {
             }
         }
     }
-//    //MARK: - Fetch QuotesNote
-//    func fetchQuotesNote() {
-//       if let uuid = Auth.auth().currentUser?.uid {
-//           let favoriteBooksCollection = Firestore.firestore().collection("users/\(uuid)/QuotesBooks")
-//           favoriteBooksCollection.getDocuments() { (querySnapshot, error) in
-//               if let error = error {
-//                   print("Error fetching favorite books: \(error.localizedDescription)")
-//                   return
-//               }
-//               guard let documents = querySnapshot?.documents else {
-//                   self.showAlert(title: "hata", message: "No favorite books found.")
-//                   return
-//               }
-//               for document in documents {
-//                   let coverID = document.data()["coverID"] as! String
-//                   let quotesNote = document.data()["quotesNote"] as! String
-//                   let title = document.data()["title"] as! String
-//                   let author = document.data()["author"] as? String
-//                   let notePageNumber = document.data()["notePageNumber"] as? String
-//                   let notes = QuotesNote(title: title, author: author, notePageNumber: notePageNumber, quotesNote: quotesNote)
-//                   self.quotesNotes.append(notes)
-//                   self.collectionView.reloadData()
-//               }
-//           }
-//       }
-//   }
-    //MARK: - Fetch ReadingBook
-    private func fetchquotesBooks(forCoverId coverId: String) {
+    //MARK: - Fetch a request to see quotes related to the book
+    private func quotesBooksFetch(forCoverId coverId: String) {
         if let uuid = Auth.auth().currentUser?.uid {
             let favoriteBooksCollection = Firestore.firestore().collection("users/\(uuid)/QuotesBooks")
             favoriteBooksCollection.whereField("coverID", isEqualTo: coverId).getDocuments() { (querySnapshot, error) in
@@ -220,32 +191,28 @@ class PageNumberViewController: UIViewController {
                     let readingDateTimestamp        = document.data()["readingdate"] as? Timestamp
                     let readingDate                 = readingDateTimestamp?.dateValue()
                     let quotesNoteBook   = QuotesNote(title: title, author: author, notePageNumber: notePageNumber, quotesNote: quotesNote, noteDate: readingDate)
-                    self.quotesNotes.append(quotesNoteBook)
+                    self.quotesNotes.append(quotesNoteBook) // gelen veri quotesNotes dizisine eklenir.
                     self.collectionView.reloadData()
                 }
             }
         }
     }
 
-    
+    //MARK: - Button actions
     @IBAction func finishButtonTapped(_ sender: UIButton) {
-        updateReadingBook(bookId: (selectedReadBook?.documentID)!)
+        readingBookFinishUpdate(bookId: (selectedReadBook?.documentID)!)
     }
-    
     @IBAction func saveButtonTapped(_ sender: Any) {
-        
         DispatchQueue.main.async {
             self.pageNumberDidChange()
         }
-        
     }
-    
     @IBAction func offButton(_ sender: UIButton) {
         dismiss(animated: true)
     }
-    
     @IBAction func addQuotesButtonTapped(_ sender: UIButton) {
         let vc = AddQuotesViewController()
+        // present yaparken kitap adı ve yazar bilgileri belli olduğunda alıntı ekleme sayfasına buradan bilgiler gönderilir.
         vc.authorname  = selectedReadBook?.author
         vc.bookName = selectedReadBook?.title
         vc.coverID = selectedReadBook?.coverID
@@ -263,10 +230,10 @@ extension PageNumberViewController: UICollectionViewDelegate, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyquotesCollectionViewCell.identifier, for: indexPath) as! MyquotesCollectionViewCell
-        cell.authorLabel.text = quotesNotes[indexPath.row].author
-        cell.bookNameLabel.text = quotesNotes[indexPath.row].title
-        cell.quoteTextField.text = quotesNotes[indexPath.row].quotesNote
-        cell.pageNumberLabel.text = quotesNotes[indexPath.row].notePageNumber
+        cell.authorLabel.text       = quotesNotes[indexPath.row].author
+        cell.bookNameLabel.text     = quotesNotes[indexPath.row].title
+        cell.quoteTextField.text    = quotesNotes[indexPath.row].quotesNote
+        cell.pageNumberLabel.text   = quotesNotes[indexPath.row].notePageNumber
         return cell
     }
 }

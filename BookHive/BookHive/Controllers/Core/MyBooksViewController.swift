@@ -18,20 +18,16 @@ class MyBooksViewController: UIViewController {
     @IBOutlet weak var wantReadLabel: UILabel!
     @IBOutlet weak var readBookLabel: UILabel!
     // MARK: - Properties
-    var readingBooks: [ReadBook] = []
-    var favoriteBooks: [Book] = []
-    var finishBook: [ReadBook] = []
+    var readingBooks    : [ReadBook] = []
+    var favoriteBooks   : [Book] = []
+    var finishBook      : [ReadBook] = []
     
     // MARK: - Load View
     override func loadView() {
         let mybooksView = Bundle.main.loadNibNamed("MyBooksViewController",
                                                    owner: self)?.first as! UIView
         self.view       = mybooksView
-        
-        
     }
-   
-    
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,15 +35,13 @@ class MyBooksViewController: UIViewController {
         viewsSetup()
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(wantToReadViewTapped))
         wantToReadView.addGestureRecognizer(tapGesture)
-        
     }
     override func viewWillAppear(_ animated: Bool) {
-       
         fetchReadingBooks()
-        fetchFavoriteBooks()
+        favouriteBooksFetch()
     }
-    //MARK: - Firebase favorite Book fetch func
-     func fetchFavoriteBooks() {
+    //MARK: - Favourite books fetch firebase
+    func favouriteBooksFetch() {
         if let uuid = Auth.auth().currentUser?.uid {
             let favoriteBooksCollection = Firestore.firestore().collection("users/\(uuid)/favoriteBooks")
             favoriteBooksCollection.getDocuments() { (querySnapshot, error) in
@@ -74,7 +68,7 @@ class MyBooksViewController: UIViewController {
             }
         }
     }
-//MARK: - Fetch ReadingBook
+    //MARK: - Reading books fetch firebase
     private func fetchReadingBooks() {
         if let uuid = Auth.auth().currentUser?.uid {
             let favoriteBooksCollection = Firestore.firestore().collection("users/\(uuid)/ReadsBooks")
@@ -87,6 +81,7 @@ class MyBooksViewController: UIViewController {
                     self.showAlert(title: "hata", message: "No read books found.")
                     return
                 }
+                // Sayfaya yeni okunan kitaplar eklenirse tanımlı olan dizinin üzerine tekrar eklememesi için önce dizi tamamen boşaltılır.
                 self.readingBooks.removeAll()
                 self.finishBook.removeAll()
                 for document in documents {
@@ -100,15 +95,15 @@ class MyBooksViewController: UIViewController {
                     let author          = document.data()["author"] as? String
                     let totalpageNumber = document.data()["totalpageNumber"] as! Int
                     if !finish {
+                        // finish değeri true değilse readBook dizisine ekleler
                         let readbookArray   = ReadBook(coverID: coverID, title: title, finish: finish, readPage: readPage, readingDate: readingDate, totalpageNumber: totalpageNumber, author: author,documentID: documentID)
                         self.readingBooks.append(readbookArray)
                     } else {
+                        // finish değeri doğruysa yani biten kitapsa finishBooks dizisine ekler.
                         let readbookArray   = ReadBook(coverID: coverID, title: title, finish: finish, readPage: readPage, readingDate: readingDate, totalpageNumber: totalpageNumber, author: author,documentID: documentID)
                         self.finishBook.append(readbookArray)
                     }
                     self.collectionView.reloadData()
-                    
-                    
                 }
             }
         }
@@ -133,17 +128,17 @@ class MyBooksViewController: UIViewController {
     // MARK: - Views Setup
     private func viewsSetup() {
         wantToReadView.layer.cornerRadius = 15
-        wantToReadView.addShadow(color: .gray,
-                                 opacity: 0.5,
-                                 offset: CGSize(width : 2,
-                                                height: 2),
-                                 radius: 5)
-        readView.layer.cornerRadius = 15
-        readView.addShadow(color: .gray,
-                           opacity: 0.5,
-                           offset: CGSize(width : 2,
-                                          height: 2),
-                           radius: 5)
+        wantToReadView.addShadow(color      : .gray,
+                                 opacity    : 0.5,
+                                 offset     : CGSize(width : 2,
+                                                     height: 2),
+                                 radius     : 5)
+        readView.layer.cornerRadius         = 15
+        readView.addShadow(color            : .gray,
+                           opacity          : 0.5,
+                           offset           : CGSize(width : 2,
+                                                     height: 2),
+                           radius           : 5)
     }
     
     @objc public func wantToReadViewTapped() {
@@ -151,7 +146,6 @@ class MyBooksViewController: UIViewController {
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
     }
-    
 }
 
 // MARK: - Extensions
