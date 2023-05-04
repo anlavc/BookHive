@@ -39,6 +39,7 @@ class MyBooksViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         fetchReadingBooks()
         favouriteBooksFetch()
+        print("SAYFA YÜKLENDİ ***")
     }
   
         private func tapGestureViews() {

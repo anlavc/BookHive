@@ -42,12 +42,35 @@ class ReadViewController: UIViewController {
     @IBAction func backButton(_ sender: UIButton) {
         dismiss(animated: true)
     }
+    func readBooksRemove(index: Int) {
+        if let uuid = Auth.auth().currentUser?.uid {
+            let favoriteBooksCollection = Firestore.firestore().collection("users/\(uuid)/ReadsBooks")
+            let coverIDToDelete = self.readBook[index].coverID
+            favoriteBooksCollection.whereField("coverID", isEqualTo: coverIDToDelete).getDocuments { (snapshot, error) in
+                if let error = error {
+                    self.showAlert(title: "ERROR", message: "Okumaya başlama sırasında bir hata ile karşılaşıldı.")
+                } else {
+                    // okunuyorsa zaten okunanlardan siler.
+                    if let documents = snapshot?.documents {
+                        for document in documents {
+                            let bookID = document.documentID
+                            favoriteBooksCollection.document(bookID).delete()
+                            
+                        }
+                    
+                    }
+                }
+            }
+        }
+    }
     
     
     // MARK: - Swipe Delete Action Func.
     private func delete(rowIndexPathAt indexPath: IndexPath) -> UIContextualAction {
         let deleteAction = UIContextualAction(style: .normal, title: "Delete") { action, view, completion in
-          
+            self.readBooksRemove(index: indexPath.row)
+            self.readBook.remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: .fade)
             completion(true)
         }
         deleteAction.backgroundColor = .systemRed
