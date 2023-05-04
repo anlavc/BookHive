@@ -18,7 +18,7 @@ class ReadListViewController: UIViewController {
     var favoriteBooks : [Book] = []
 //    var viewModel = DetailViewModel()
     var readingBooks: [ReadBook] = []
-    
+        
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +29,7 @@ class ReadListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         favouriteBooksFetch()
     }
+   
     
     // MARK: - Table View Setup
     private func setTableView() {

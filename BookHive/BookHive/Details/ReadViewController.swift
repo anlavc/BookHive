@@ -15,7 +15,7 @@ class ReadViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Properties
-    
+    var readBook : [ReadBook] = []
     
     // MARK: - Show View
     override func loadView() {
@@ -59,10 +59,11 @@ class ReadViewController: UIViewController {
 // MARK: - Extensions
 extension ReadViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return readBook.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ReadTableViewCell.identifier, for: indexPath) as! ReadTableViewCell
+        cell.configure(book: readBook[indexPath.row])
         return cell
     }
 }

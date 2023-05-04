@@ -40,6 +40,14 @@ class MyBooksViewController: UIViewController {
         fetchReadingBooks()
         favouriteBooksFetch()
     }
+  
+        private func tapGestureViews() {
+                let tapGesture = UITapGestureRecognizer(target: self, action: #selector(wantToReadViewTapped))
+                wantToReadView.addGestureRecognizer(tapGesture)
+                let readTapGesture = UITapGestureRecognizer(target: self, action: #selector(ReadViewTapped))
+                readView.addGestureRecognizer(readTapGesture)
+            }
+    
     //MARK: - Favourite books fetch firebase
     func favouriteBooksFetch() {
         if let uuid = Auth.auth().currentUser?.uid {
@@ -149,6 +157,7 @@ class MyBooksViewController: UIViewController {
     
     @objc public func ReadViewTapped() {
         let vc = ReadViewController()
+        vc.readBook = self.finishBook
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
     }
