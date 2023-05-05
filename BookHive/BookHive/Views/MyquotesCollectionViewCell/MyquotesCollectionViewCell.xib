@@ -117,6 +117,7 @@
                 <outlet property="authorLabel" destination="hC1-cx-bkt" id="iu6-Zd-aeE"/>
                 <outlet property="bgview" destination="KD2-H8-hXl" id="Kct-9y-2s9"/>
                 <outlet property="bookNameLabel" destination="Soc-Li-2cN" id="vE2-qx-iFK"/>
+                <outlet property="noTextImage" destination="K9W-BO-DWY" id="1Ht-FX-Cu7"/>
                 <outlet property="pageNumberLabel" destination="6q1-vh-N4z" id="Pwa-wq-6Ae"/>
                 <outlet property="quoteTextField" destination="6yT-yC-QqM" id="yNY-x4-GxT"/>
             </connections>
