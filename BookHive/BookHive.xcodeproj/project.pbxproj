@@ -19,6 +19,9 @@
 		2E1F16C629F91F57007FC4E3 /* AccountCustomRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1F16C529F91F57007FC4E3 /* AccountCustomRow.swift */; };
 		2E1F16D229F9B436007FC4E3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2E1F16D429F9B436007FC4E3 /* Localizable.strings */; };
 		2E1F16E129F9B7ED007FC4E3 /* HomeVCLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2E1F16E329F9B7ED007FC4E3 /* HomeVCLocalizable.strings */; };
+		2E577F752A05561C00DCE61D /* wantToRead.json in Resources */ = {isa = PBXBuildFile; fileRef = 2E577F742A05561C00DCE61D /* wantToRead.json */; };
+		2E577F772A056DB900DCE61D /* read.json in Resources */ = {isa = PBXBuildFile; fileRef = 2E577F762A056DB900DCE61D /* read.json */; };
+		2E577F792A05702B00DCE61D /* reading.json in Resources */ = {isa = PBXBuildFile; fileRef = 2E577F782A05702B00DCE61D /* reading.json */; };
 		2E81B46129FD8F2B00986F98 /* PageNumberViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E81B46029FD8F2B00986F98 /* PageNumberViewController.xib */; };
 		2E81B46329FD8F3900986F98 /* ReadListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E81B46229FD8F3900986F98 /* ReadListViewController.swift */; };
 		2E81B46529FD8F4300986F98 /* ReadListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E81B46429FD8F4300986F98 /* ReadListViewController.xib */; };
@@ -161,6 +164,9 @@
 		2E1F16E729F9B7F3007FC4E3 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/HomeVCLocalizable.strings; sourceTree = "<group>"; };
 		2E1F16E829F9B7F4007FC4E3 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/HomeVCLocalizable.strings; sourceTree = "<group>"; };
 		2E1F16E929F9B7F4007FC4E3 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/HomeVCLocalizable.strings; sourceTree = "<group>"; };
+		2E577F742A05561C00DCE61D /* wantToRead.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wantToRead.json; sourceTree = "<group>"; };
+		2E577F762A056DB900DCE61D /* read.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = read.json; sourceTree = "<group>"; };
+		2E577F782A05702B00DCE61D /* reading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = reading.json; sourceTree = "<group>"; };
 		2E81B46029FD8F2B00986F98 /* PageNumberViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PageNumberViewController.xib; sourceTree = "<group>"; };
 		2E81B46229FD8F3900986F98 /* ReadListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadListViewController.swift; sourceTree = "<group>"; };
 		2E81B46429FD8F4300986F98 /* ReadListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReadListViewController.xib; sourceTree = "<group>"; };
@@ -519,7 +525,10 @@
 		EEAC4FC029E6F8FA0066757B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2E577F762A056DB900DCE61D /* read.json */,
+				2E577F782A05702B00DCE61D /* reading.json */,
 				EEA23C5A29FE904C00FA8818 /* searchjson.json */,
+				2E577F742A05561C00DCE61D /* wantToRead.json */,
 				2EFA100A29FA4C8100AE6888 /* Assets.xcassets */,
 				EEAC4FB929E6F8230066757B /* Info.plist */,
 				EEAC4FC729E6F9470066757B /* Font */,
@@ -687,6 +696,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2EB596642A025DD000E18EE9 /* WantToReadTableViewCell.xib in Resources */,
+				2E577F772A056DB900DCE61D /* read.json in Resources */,
 				EEE4DAB829F914980017A5EF /* LoginViewController.xib in Resources */,
 				EEAC4FB829E6F8230066757B /* LaunchScreen.storyboard in Resources */,
 				EEE4DABE29F934E70017A5EF /* RegisterViewController.xib in Resources */,
@@ -695,6 +705,7 @@
 				EEAC4FD029E70EDF0066757B /* HomeTableViewCell.xib in Resources */,
 				2EB5966C2A02F47B00E18EE9 /* ReadTableViewCell.xib in Resources */,
 				EEAC4FD529E714280066757B /* TableCollectionViewCell.xib in Resources */,
+				2E577F752A05561C00DCE61D /* wantToRead.json in Resources */,
 				2E1F166829F7C951007FC4E3 /* SearchViewController.xib in Resources */,
 				2E062E8A2A038C7E00B148AB /* ReadViewController.xib in Resources */,
 				2E1F167E29F7CEB8007FC4E3 /* SearchTableViewCell.xib in Resources */,
@@ -713,6 +724,7 @@
 				EEC8356E29EAF1D200058796 /* HomeCarouselTableViewCell.xib in Resources */,
 				EE6DF06C29FA8C4C007B8DF8 /* GoogleService-Info.plist in Resources */,
 				2E1F169029F82080007FC4E3 /* DetailViewController.xib in Resources */,
+				2E577F792A05702B00DCE61D /* reading.json in Resources */,
 				EE904C2229FB0D0900441AA8 /* (null) in Resources */,
 				EE92F0BE2A01CA350072D4C9 /* MyquotesCollectionViewCell.xib in Resources */,
 				2E1F16E129F9B7ED007FC4E3 /* HomeVCLocalizable.strings in Resources */,

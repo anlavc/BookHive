@@ -8,6 +8,8 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import Lottie
+import Kingfisher
  
 class MyBooksViewController: UIViewController {
 
@@ -17,6 +19,9 @@ class MyBooksViewController: UIViewController {
     @IBOutlet weak var readView      : UIView!
     @IBOutlet weak var wantReadLabel: UILabel!
     @IBOutlet weak var readBookLabel: UILabel!
+    @IBOutlet weak var animatedView: AnimatedImageView!
+    
+    
     // MARK: - Properties
     var readingBooks    : [ReadBook] = []
     var favoriteBooks   : [Book] = []
@@ -34,21 +39,42 @@ class MyBooksViewController: UIViewController {
         collectionViewSetup()
         viewsSetup()
         tapGestureViews()
-   
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fetchReadingBooks()
         favouriteBooksFetch()
+        startAnimation()
     }
   
-        private func tapGestureViews() {
+    private func tapGestureViews() {
                 let tapGesture = UITapGestureRecognizer(target: self, action: #selector(wantToReadViewTapped))
                 wantToReadView.addGestureRecognizer(tapGesture)
                 let readTapGesture = UITapGestureRecognizer(target: self, action: #selector(ReadViewTapped))
                 readView.addGestureRecognizer(readTapGesture)
-            }
+    }
+    
+    private func startAnimation() {
+        let animatedView = LottieAnimationView(name: "reading")
+        animatedView.contentMode = .scaleAspectFit
+        animatedView.loopMode = .loop
+        animatedView.center = self.animatedView.center
+        animatedView.frame = self.animatedView.bounds
+        animatedView.play()
+        self.animatedView.addSubview(animatedView)
+    }
+    
+    private func stopAnimation() {
+        let animatedView = LottieAnimationView(name: "reading")
+        animatedView.contentMode = .scaleAspectFit
+        animatedView.loopMode = .loop
+        animatedView.center = self.animatedView.center
+        animatedView.frame = self.animatedView.bounds
+        animatedView.stop()
+        animatedView.removeFromSuperview()
+        self.animatedView.addSubview(animatedView)
+    }
     
     //MARK: - Favourite books fetch firebase
     func favouriteBooksFetch() {
@@ -195,5 +221,15 @@ extension MyBooksViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width : 300,
                       height: 150)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if readingBooks.count > 0 {
+            self.stopAnimation()
+            self.animatedView.isHidden = true
+        } else {
+            self.animatedView.isHidden = false
+            self.startAnimation()
+        }
     }
 }

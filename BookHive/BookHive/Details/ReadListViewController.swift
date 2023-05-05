@@ -8,17 +8,22 @@
 import UIKit
 import FirebaseFirestore
 import FirebaseAuth
+import Kingfisher
+import Lottie
 
 class ReadListViewController: UIViewController {
     
     // MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var animatedImage: AnimatedImageView!
+    @IBOutlet weak var infoLabel: UILabel!
     
     // MARK: - Properties
     var favoriteBooks : [Book] = []
 //    var viewModel = DetailViewModel()
     var readingBooks: [ReadBook] = []
     private var viewModel = DetailViewModel()
+    
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +32,31 @@ class ReadListViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        startAnimation()
+        infoLabel.isHidden = false
 //        favouriteBooksFetch()
+    }
+    
+    private func startAnimation() {
+        let animatedView = LottieAnimationView(name: "wantToRead")
+        animatedView.contentMode = .scaleAspectFit
+        animatedView.loopMode = .loop
+        animatedView.center = self.animatedImage.center
+        animatedView.frame = self.animatedImage.bounds
+        animatedView.play()
+        self.animatedImage.addSubview(animatedView)
+    }
+    
+    private func stopAnimation() {
+        let animatedView = LottieAnimationView(name: "wantToRead")
+        animatedView.contentMode = .scaleAspectFit
+        animatedView.loopMode = .loop
+        animatedView.center = self.animatedImage.center
+        animatedView.frame = self.animatedImage.bounds
+        animatedView.stop()
+        animatedView.removeFromSuperview()
+        self.animatedImage.addSubview(animatedView)
     }
    
     
@@ -237,5 +266,16 @@ extension ReadListViewController: UITableViewDelegate {
         let swipe = UISwipeActionsConfiguration(actions: [delete,read])
         return swipe
     }
- 
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if favoriteBooks.count > 0 {
+            self.stopAnimation()
+            self.animatedImage.isHidden = true
+            self.infoLabel.isHidden = true
+        } else {
+            self.animatedImage.isHidden = false
+            self.infoLabel.isHidden = false
+            self.startAnimation()
+        }
+    }
 }
