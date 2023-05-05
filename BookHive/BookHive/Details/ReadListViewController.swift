@@ -104,7 +104,7 @@ class ReadListViewController: UIViewController {
             let coverIDToDelete = self.favoriteBooks[index].coverID
             favoriteBooksCollection.whereField("coverID", isEqualTo: coverIDToDelete!).getDocuments { (snapshot, error) in
                 if let error = error {
-                    self.showAlert(title: "ERROR", message: "Favorilere ekleme sırasında bir hata ile karşılaşıldı.")
+                    self.presentGFAlertOnMainThread(title: "ERROR", message: "Error adding a book to favorites.", buttonTitle: "OKEY")
                 } else {
                     if let documents = snapshot?.documents {
                         for document in documents {
@@ -129,18 +129,8 @@ class ReadListViewController: UIViewController {
             
             favoriteBooksCollection.whereField("coverID", isEqualTo: coverIDToDelete!).getDocuments { (snapshot, error) in
                 if let error = error {
-                    self.showAlert(title: "ERROR", message: "Okumaya başlama sırasında bir hata ile karşılaşıldı.")
+                    self.presentGFAlertOnMainThread(title: "ERROR", message: "An error was encountered during start reading.", buttonTitle: "OKEY")
                 } else {
-//                    if let numberOfPages = self.viewModel.detailOlid?.numberOfPages, numberOfPages != 0 {
-//                        favoriteBooksCollection.addDocument(data: ["coverID" : coverIDToDelete!,
-//                                                                   "title"   : bookTitle!,
-//                                                                   "readPage": 0,
-//                                                                   "author"  : authorName!,
-//                                                                   "readingdate" : FieldValue.serverTimestamp(),
-//                                                                   "totalpageNumber": numb,
-//                                                                   "finish": false])
-//                    }
-                    // Totalpage numarası istenir.
                     let alert = UIAlertController(title: "Number of pages not available", message: "Please enter the number of pages", preferredStyle: .alert)
                        alert.addTextField { (textField) in
                            textField.placeholder = "Number of pages"
@@ -179,7 +169,7 @@ class ReadListViewController: UIViewController {
                 let coverIDToDelete = self.favoriteBooks[indexPath.row].coverID
                 favoriteBooksCollection.whereField("coverID", isEqualTo: coverIDToDelete ?? "").getDocuments { (snapshot, error) in
                     if error != nil {
-                        self.showAlert(title: "ERROR", message: "Favorilere ekleme sırasında bir hata ile karşılaşıldı.")
+                        self.presentGFAlertOnMainThread(title: "ERROR", message: "Error adding a book to favorites.", buttonTitle: "OKEY")
                     } else {
                         if let documents = snapshot?.documents {
                             for document in documents {

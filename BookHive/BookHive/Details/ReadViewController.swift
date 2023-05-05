@@ -29,7 +29,7 @@ class ReadViewController: UIViewController {
         super.viewDidLoad()
         setTableView()
     }
-  
+    
     
     // MARK: - Table View Setup
     private func setTableView() {
@@ -49,7 +49,7 @@ class ReadViewController: UIViewController {
             let coverIDToDelete = self.readBook[index].coverID
             favoriteBooksCollection.whereField("coverID", isEqualTo: coverIDToDelete).getDocuments { (snapshot, error) in
                 if let error = error {
-                    self.showAlert(title: "ERROR", message: "Okumaya başlama sırasında bir hata ile karşılaşıldı.")
+                    self.presentGFAlertOnMainThread(title: "ERROR", message: "An error was encountered during start reading.", buttonTitle: "OKEY")
                 } else {
                     // okunuyorsa zaten okunanlardan siler.
                     if let documents = snapshot?.documents {
@@ -58,7 +58,7 @@ class ReadViewController: UIViewController {
                             favoriteBooksCollection.document(bookID).delete()
                             
                         }
-                    
+                        
                     }
                 }
             }
@@ -74,7 +74,7 @@ class ReadViewController: UIViewController {
                     return
                 }
                 guard let documents = querySnapshot?.documents else {
-                    self.showAlert(title: "hata", message: "No read books found.")
+                    self.presentGFAlertOnMainThread(title: "ERROR", message: "An error was encountered.", buttonTitle: "OKEY")
                     return
                 }
                 self.readBook.removeAll()
@@ -95,7 +95,7 @@ class ReadViewController: UIViewController {
             }
         }
     }
-
+    
     
     private func delete(rowIndexPathAt indexPath: IndexPath) -> UIContextualAction {
         let deleteAction = UIContextualAction(style: .normal, title: "Delete") { action, view, completion in
@@ -108,13 +108,13 @@ class ReadViewController: UIViewController {
         deleteAction.image = UIImage(systemName: "trash")
         return deleteAction
     }
-
+    
     func readBookDelete(coverIDToDelete: String) {
         if let uuid = Auth.auth().currentUser?.uid {
             let favoriteBooksCollection = Firestore.firestore().collection("users/\(uuid)/ReadsBooks")
             favoriteBooksCollection.whereField("coverID", isEqualTo: coverIDToDelete).getDocuments { (snapshot, error) in
                 if let error = error {
-                    self.showAlert(title: "ERROR", message: "Favorilere ekleme sırasında bir hata ile karşılaşıldı.")
+                    self.presentGFAlertOnMainThread(title: "ERROR", message: "Error adding a book to favorites.", buttonTitle: "OKEY")
                 } else {
                     if let documents = snapshot?.documents {
                         for document in documents {

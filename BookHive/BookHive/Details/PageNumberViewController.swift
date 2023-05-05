@@ -70,11 +70,11 @@ class PageNumberViewController: UIViewController {
         guard let pageNumber    = Int(pageNumberTF.text ?? "0"),
                 var book        = selectedReadBook else { return }
         if pageNumber > book.totalpageNumber! {
-            showAlert(title: "Hata", message: "Girilen sayfa numarası, kitabın toplam sayfa sayısından büyük olamaz.")
+            presentGFAlertOnMainThread(title: "WARNING", message: "The page number entered cannot be greater than the total page number.", buttonTitle: "TAMAM")
             pageNumberTF.text   = "\(book.readPage!)"
             return
         } else if pageNumber    == book.totalpageNumber! {
-            showAlert(title: "Tebriks", message: "Kitap bitti burdan sil okunana ekle")
+            presentGFAlertOnMainThread(title: "CONGRATULATIONS", message: "Congratulations. The book is finished.  Now this book will be listed among the reads.", buttonTitle: "OK")
             readingBookFinishUpdate(bookId: (selectedReadBook?.documentID)!)
         }
         Firestore.firestore().collection("users").document(Auth.auth().currentUser!.uid).collection("ReadsBooks").document(book.documentID!).updateData(["readPage": pageNumber]) { error in
@@ -141,7 +141,6 @@ class PageNumberViewController: UIViewController {
                     print("Error updating reading book: \(error.localizedDescription)")
                     return
                 }
-                
                 print("Reading book updated successfully.")
             }
         }
@@ -153,7 +152,7 @@ class PageNumberViewController: UIViewController {
             let bookRef = favoriteBooksCollection.document(bookId)
             bookRef.updateData(["readPage": Int(pageNumberTF.text!)]) { error in
                 if let error = error {
-                    self.showAlert(title: "Error", message: "An error was encountered while updating the page number.")
+                    self.presentGFAlertOnMainThread(title: "ERROR", message: "An error was encountered while updating the page number.", buttonTitle: "OK")
                     return
                 }
                 let originalColor = self.pageNumberTF.backgroundColor
@@ -177,7 +176,7 @@ class PageNumberViewController: UIViewController {
                     return
                 }
                 guard let documents = querySnapshot?.documents else {
-                    self.showAlert(title: "hata", message: "No read books found.")
+                    self.presentGFAlertOnMainThread(title: "ERROR", message: "No result found.", buttonTitle: "OK")
                     return
                 }
                 self.quotesNotes.removeAll()
@@ -201,7 +200,12 @@ class PageNumberViewController: UIViewController {
 
     //MARK: - Button actions
     @IBAction func finishButtonTapped(_ sender: UIButton) {
-        readingBookFinishUpdate(bookId: (selectedReadBook?.documentID)!)
+        presentBottomAlert(title: "", message: "Are you sure you want to add this book to your reading list?", okTitle: "DONE", cancelTitle: "CANCEL") { [self] in
+            self.readingBookFinishUpdate(bookId: (selectedReadBook?.documentID)!)
+            dismiss(animated: true)
+        }
+    
+        
     }
     @IBAction func saveButtonTapped(_ sender: Any) {
         DispatchQueue.main.async {

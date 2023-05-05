@@ -49,7 +49,9 @@ class AddQuotesViewController: UIViewController {
                                                        "notePageNumber" : notePageNumber.text!,
                                                        "readingdate"    : FieldValue.serverTimestamp()
                                                       ])
-            showAlert(title: "Success", message: "Notes Success Added")
+            presentGFAlertOnMainThread(title: "Success", message: "Notes Success Added", buttonTitle: "OKEY")
+            dismiss(animated: true)
+          
         }
     }
     

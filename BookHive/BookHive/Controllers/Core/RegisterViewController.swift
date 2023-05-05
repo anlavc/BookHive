@@ -96,7 +96,7 @@ class RegisterViewController: UIViewController {
     @IBAction func createUserButton(_ sender: UIButton) {
         let error = validateFields()
         if error != nil {
-            self.showAlert(title: "Warning", message: self.validateFields()!)
+            self.presentGFAlertOnMainThread(title: "WARNING", message: self.validateFields()!, buttonTitle: "OKEY")
         } else {
             let nickname    = nickname.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let email       = email.text!.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -104,7 +104,7 @@ class RegisterViewController: UIViewController {
             
             Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
                 if let error = error {
-                    self.showAlert(title: NSLocalizedString("Error", comment: ""), message: NSLocalizedString("An error occurred during registration.", comment: ""))
+                    self.presentGFAlertOnMainThread(title: "ERROR", message: "An error occurred during registration.", buttonTitle: "OKEY")
                 } else {
                     guard let uid = authResult?.user.uid else { return }
                     let userData = ["name" : self.nickname.text as Any,
@@ -113,7 +113,7 @@ class RegisterViewController: UIViewController {
                     
                     Firestore.firestore().collection("users").document(uid).setData(userData) { error in
                         if error != nil {
-                            self.showAlert(title: NSLocalizedString("Error", comment: ""), message: NSLocalizedString("An error occurred during registration.", comment: ""))
+                            self.presentGFAlertOnMainThread(title: "ERROR", message: "An error occurred during registration.", buttonTitle: "OKEY")
                         } else {
                             let storyboard = UIStoryboard(name: "Main", bundle: nil)
                             let homeViewController = storyboard.instantiateViewController(identifier: "tabbar") as? TabBarController
@@ -124,36 +124,7 @@ class RegisterViewController: UIViewController {
                     }
                 }
             }
-            
-            //            Auth.auth().createUser(withEmail: email, password: password) { (result, err) in
-            //                if  err != nil {
-            //                    self.showAlert(title: NSLocalizedString("Error", comment: ""), message: NSLocalizedString("An error occurred during registration.", comment: ""))
-            //
-            //                } else {
-            //                    print("*** KAYIT BAŞARILI")
-            //                    let firestoreDatabase = Firestore.firestore()
-            //                    var firestoreReference : DocumentReference? = nil
-            //                    let uuid = UUID().uuidString
-            //                    //create collection
-            //                    let firestoreUsers =  ["name" : self.nickname.text as Any,
-            //                                           "email" : Auth.auth().currentUser?.email as Any,
-            //                                           "date" : FieldValue.serverTimestamp(),
-            //                                           "uuid": uuid] as [String: Any]
-            //                    firestoreReference = firestoreDatabase.collection("users").addDocument(data: firestoreUsers, completion: { error in
-            //                        if error != nil {
-            //                            self.showAlert(title: NSLocalizedString("Error", comment: ""), message: NSLocalizedString("An error occurred during registration.", comment: ""))
-            //                        } else {
-            //                            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            //                            let homeViewController = storyboard.instantiateViewController(identifier: "tabbar") as? TabBarController
-            //
-            //                            self.view.window?.rootViewController = homeViewController
-            //                            self.view.window?.makeKeyAndVisible()
-            //                        }
-            //                    })
-            //                }
-            //
-            //            }
-        }
+          }
         
     }
     //MARK: - Login Segue Button

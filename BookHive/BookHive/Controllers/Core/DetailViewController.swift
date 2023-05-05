@@ -67,7 +67,7 @@ class DetailViewController: UIViewController {
                     return
                 }
                 guard let documents = querySnapshot?.documents else {
-                    self.showAlert(title: "hata", message: "No favorite books found.")
+                    self.presentGFAlertOnMainThread(title: "ERROR", message: "No favorite books found.", buttonTitle: "OKEY")
                     return
                 }
                 for document in documents {
@@ -97,7 +97,7 @@ class DetailViewController: UIViewController {
                     return
                 }
                 guard let documents = querySnapshot?.documents else {
-                    self.showAlert(title: "hata", message: "No read books found.")
+                    self.presentGFAlertOnMainThread(title: "ERROR", message: "No read books found.", buttonTitle: "OKEY")
                     return
                 }
                 for document in documents {
@@ -230,7 +230,7 @@ class DetailViewController: UIViewController {
             let favoriteBooksCollection = Firestore.firestore().collection("users/\(uuid)/favoriteBooks")
             favoriteBooksCollection.whereField("coverID", isEqualTo: detailID!).getDocuments { (snapshot, error) in // Favori kitaplar içinde coverID göre ilgili kitabın coverid arasında arama yapılır.
                 if let error = error {
-                    self.showAlert(title: "ERROR", message: "Favorilere ekleme sırasında bir hata ile karşılaşıldı.")
+                    self.presentGFAlertOnMainThread(title: "ERROR", message: "Error adding a book to favorites.", buttonTitle: "OKEY")
                 } else {
                     // Favorilerde ekliyle eğer fetch kısmında zaten favorilerde ekli olduğu gözüktüğünde ve coverID ile detail id eşletiği için ilk şart çalışır ve ilgili kitabı favorilerden silerek butronda tekrar favorilere ekle yazar.
                     if let documents = snapshot?.documents {
@@ -262,7 +262,7 @@ class DetailViewController: UIViewController {
             let favoriteBooksCollection = Firestore.firestore().collection("users/\(uuid)/ReadsBooks")
             favoriteBooksCollection.whereField("coverID", isEqualTo: detailID!).getDocuments { (snapshot, error) in
                 if let error = error {
-                    self.showAlert(title: "ERROR", message: "Okumaya başlama sırasında bir hata ile karşılaşıldı.")
+                    self.presentGFAlertOnMainThread(title: "ERROR", message: "Error adding the book to the reading list.", buttonTitle: "OKEY")
                 } else {
                     // okunuyorsa zaten okunanlardan siler.
                     if let documents = snapshot?.documents {

@@ -22,7 +22,7 @@ class HomeViewController: UIViewController, HomeCourseTableViewCellDelegate {
             vc.modalPresentationStyle   = .fullScreen
             present(vc, animated: true)
         }
-        showAlert(title: NSLocalizedString("Opss!", comment: ""), message: NSLocalizedString("Sorry, details of the book could not be found!", comment: ""))
+        presentGFAlertOnMainThread(title: "Opss", message: "Sorry, details of the book could not be found!", buttonTitle: "OK")
     }
     //MARK: - Cell Identifier
     let cell            = "HomeTableViewCell"

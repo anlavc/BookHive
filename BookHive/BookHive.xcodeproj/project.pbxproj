@@ -45,6 +45,10 @@
 		EE1B9B3529FD882C002F81F2 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE1B9B3429FD882B002F81F2 /* AboutViewController.xib */; };
 		EE5CF3952A02A1CB00AC47FD /* AddQuotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5CF3932A02A1CB00AC47FD /* AddQuotesViewController.swift */; };
 		EE5CF3962A02A1CB00AC47FD /* AddQuotesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE5CF3942A02A1CB00AC47FD /* AddQuotesViewController.xib */; };
+		EE60D1172A04DA1C00897F07 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE60D1132A04DA1C00897F07 /* AlertViewController.swift */; };
+		EE60D1182A04DA1C00897F07 /* AATitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE60D1142A04DA1C00897F07 /* AATitleLabel.swift */; };
+		EE60D1192A04DA1C00897F07 /* AAButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE60D1152A04DA1C00897F07 /* AAButton.swift */; };
+		EE60D11A2A04DA1C00897F07 /* AABodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE60D1162A04DA1C00897F07 /* AABodyLabel.swift */; };
 		EE6DF06C29FA8C4C007B8DF8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE6DF06B29FA8C4C007B8DF8 /* GoogleService-Info.plist */; };
 		EE6DF06F29FA8E2E007B8DF8 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = EE6DF06E29FA8E2E007B8DF8 /* FirebaseAuth */; };
 		EE6DF07129FA8E2E007B8DF8 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = EE6DF07029FA8E2E007B8DF8 /* FirebaseDatabase */; };
@@ -182,6 +186,10 @@
 		EE1B9B3429FD882B002F81F2 /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
 		EE5CF3932A02A1CB00AC47FD /* AddQuotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuotesViewController.swift; sourceTree = "<group>"; };
 		EE5CF3942A02A1CB00AC47FD /* AddQuotesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddQuotesViewController.xib; sourceTree = "<group>"; };
+		EE60D1132A04DA1C00897F07 /* AlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
+		EE60D1142A04DA1C00897F07 /* AATitleLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AATitleLabel.swift; sourceTree = "<group>"; };
+		EE60D1152A04DA1C00897F07 /* AAButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAButton.swift; sourceTree = "<group>"; };
+		EE60D1162A04DA1C00897F07 /* AABodyLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AABodyLabel.swift; sourceTree = "<group>"; };
 		EE6DF06B29FA8C4C007B8DF8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EE78967229F4742200991261 /* DetailOlid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailOlid.swift; sourceTree = "<group>"; };
 		EE7CDFE229F7CA310058C163 /* NowCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -294,6 +302,7 @@
 		2E88B34329E6FB9B008F4B4B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				EE60D1122A04DA0C00897F07 /* Alert */,
 				2E88B34429E6FBA5008F4B4B /* Core */,
 				2EFA102729FB10C900AE6888 /* Details */,
 			);
@@ -413,6 +422,17 @@
 				EE977F8029F14F140027CF90 /* DetailViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		EE60D1122A04DA0C00897F07 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				EE60D1162A04DA1C00897F07 /* AABodyLabel.swift */,
+				EE60D1152A04DA1C00897F07 /* AAButton.swift */,
+				EE60D1142A04DA1C00897F07 /* AATitleLabel.swift */,
+				EE60D1132A04DA1C00897F07 /* AlertViewController.swift */,
+			);
+			path = Alert;
 			sourceTree = "<group>";
 		};
 		EE7CDFE829F7E0A90058C163 /* YearlyCollectionCell */ = {
@@ -721,12 +741,14 @@
 				EEC8356D29EAF1D200058796 /* HomeCarouselTableViewCell.swift in Sources */,
 				EEE4DABA29F91A030017A5EF /* TextField + Ext.swift in Sources */,
 				EEC8356929EAEE6300058796 /* HomeCollectionViewCarousel.swift in Sources */,
+				EE60D1172A04DA1C00897F07 /* AlertViewController.swift in Sources */,
 				EEFBBCAA29E9723000BDD902 /* EndPointType.swift in Sources */,
 				EE78967329F4742200991261 /* DetailOlid.swift in Sources */,
 				EE977F7F29F13E910027CF90 /* ImageView + Ext.swift in Sources */,
 				EEFBBCB029E9784D00BDD902 /* HomeViewModel.swift in Sources */,
 				2E88B35829E700AE008F4B4B /* AccountViewController.swift in Sources */,
 				EEFBBCA829E96E3100BDD902 /* Model.swift in Sources */,
+				EE60D1182A04DA1C00897F07 /* AATitleLabel.swift in Sources */,
 				2E1F16C629F91F57007FC4E3 /* AccountCustomRow.swift in Sources */,
 				EE8CC18B2A0054D000A5AF7D /* Date + Ext.swift in Sources */,
 				EE7CDFEB29F7E13A0058C163 /* YearlyTableViewCell.swift in Sources */,
@@ -751,12 +773,14 @@
 				2ECF25B129E89D3E00956FCB /* UIView + Ext.swift in Sources */,
 				EE977F8729F16B1B0027CF90 /* DetailSubjectCell.swift in Sources */,
 				EEFBBCAC29E9730400BDD902 /* BookEndPoint.swift in Sources */,
+				EE60D1192A04DA1C00897F07 /* AAButton.swift in Sources */,
 				2E88B34C29E70077008F4B4B /* HomeViewController.swift in Sources */,
 				EE904C2C29FB1DBC00441AA8 /* ViewController + Ext.swift in Sources */,
 				2EB596632A025DD000E18EE9 /* WantToReadTableViewCell.swift in Sources */,
 				EEBEAEBC29F85ADD00F993B8 /* Rating.swift in Sources */,
 				EEAC4FCF29E70EDF0066757B /* HomeTableViewCell.swift in Sources */,
 				2EB5966B2A02F47B00E18EE9 /* ReadTableViewCell.swift in Sources */,
+				EE60D11A2A04DA1C00897F07 /* AABodyLabel.swift in Sources */,
 				EEFBBCAE29E977A100BDD902 /* APIManager.swift in Sources */,
 				EEAD10C529EF4DE600BA6603 /* SearchViewModel.swift in Sources */,
 				2E88B35029E70091008F4B4B /* MyBooksViewController.swift in Sources */,

@@ -88,7 +88,7 @@ class LoginViewController: UIViewController {
     @IBAction func loginButtonTapped(_ sender: UIButton) {
         let error = validateFields()
         if error != nil {
-            showAlert(title: NSLocalizedString("Error", comment: ""), message: self.validateFields()!)
+            presentGFAlertOnMainThread(title: "ERROR", message: self.validateFields()!, buttonTitle: "OKEY")
         } else {
             let email =     emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let password =  passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -96,8 +96,7 @@ class LoginViewController: UIViewController {
             Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
                 
                 if error != nil {
-                    self.showAlert(title: NSLocalizedString("User login error", comment: ""), message: NSLocalizedString("Please enter a valid e-mail address.", comment: ""))
-                    
+                    self.presentGFAlertOnMainThread(title: "User Login Error", message: "Please enter a valid e-mail address.", buttonTitle: "OKEY")
                 } else {
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
                     let homeViewController = storyboard.instantiateViewController(identifier: "tabbar") as? TabBarController

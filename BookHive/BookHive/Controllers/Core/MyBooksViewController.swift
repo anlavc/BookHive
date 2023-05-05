@@ -89,7 +89,7 @@ class MyBooksViewController: UIViewController {
                     return
                 }
                 guard let documents = querySnapshot?.documents else {
-                    self.showAlert(title: "hata", message: "No read books found.")
+                    self.presentGFAlertOnMainThread(title: "ERROR", message: "No result found.", buttonTitle: "OK")
                     return
                 }
                 // Sayfaya yeni okunan kitaplar eklenirse tanımlı olan dizinin üzerine tekrar eklememesi için önce dizi tamamen boşaltılır.
