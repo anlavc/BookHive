@@ -96,6 +96,7 @@ class ReadViewController: UIViewController {
         }
     }
     
+    
     private func readingBooksFetch() {
         if let uuid = Auth.auth().currentUser?.uid {
             let favoriteBooksCollection = Firestore.firestore().collection("users/\(uuid)/ReadsBooks")
@@ -126,8 +127,7 @@ class ReadViewController: UIViewController {
             }
         }
     }
-    
-    
+        
     private func delete(rowIndexPathAt indexPath: IndexPath) -> UIContextualAction {
         let deleteAction = UIContextualAction(style: .normal, title: "Delete") { action, view, completion in
             self.readBooksRemove(index: indexPath.row)
@@ -140,23 +140,7 @@ class ReadViewController: UIViewController {
         return deleteAction
     }
     
-    func readBookDelete(coverIDToDelete: String) {
-        if let uuid = Auth.auth().currentUser?.uid {
-            let favoriteBooksCollection = Firestore.firestore().collection("users/\(uuid)/ReadsBooks")
-            favoriteBooksCollection.whereField("coverID", isEqualTo: coverIDToDelete).getDocuments { (snapshot, error) in
-                if let error = error {
-                    self.presentGFAlertOnMainThread(title: "ERROR", message: "Error adding a book to favorites.", buttonTitle: "OKEY")
-                } else {
-                    if let documents = snapshot?.documents {
-                        for document in documents {
-                            let bookID = document.documentID
-                            favoriteBooksCollection.document(bookID).delete()
-                        }
-                    }
-                }
-            }
-        }
-    }
+
 }
 
 // MARK: - Extensions
