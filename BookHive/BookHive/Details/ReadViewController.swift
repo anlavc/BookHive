@@ -8,11 +8,15 @@
 import UIKit
 import FirebaseAuth
 import FirebaseFirestore
+import Lottie
+import Kingfisher
 
 class ReadViewController: UIViewController {
     
     // MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var animatedView: AnimatedImageView!
+    @IBOutlet weak var infoLabel: UILabel!
     
     // MARK: - Properties
     var readBook : [ReadBook] = []
@@ -30,6 +34,12 @@ class ReadViewController: UIViewController {
         setTableView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        startAnimation()
+        infoLabel.isHidden = false
+    }
+    
     
     // MARK: - Table View Setup
     private func setTableView() {
@@ -37,6 +47,27 @@ class ReadViewController: UIViewController {
         tableView.delegate = self
         tableView.register(ReadTableViewCell.nib(),
                            forCellReuseIdentifier: ReadTableViewCell.identifier)
+    }
+    
+    private func startAnimation() {
+        let animatedView = LottieAnimationView(name: "read")
+        animatedView.contentMode = .scaleAspectFit
+        animatedView.loopMode = .loop
+        animatedView.center = self.animatedView.center
+        animatedView.frame = self.animatedView.bounds
+        animatedView.play()
+        self.animatedView.addSubview(animatedView)
+    }
+    
+    private func stopAnimation() {
+        let animatedView = LottieAnimationView(name: "read")
+        animatedView.contentMode = .scaleAspectFit
+        animatedView.loopMode = .loop
+        animatedView.center = self.animatedView.center
+        animatedView.frame = self.animatedView.bounds
+        animatedView.stop()
+        animatedView.removeFromSuperview()
+        self.animatedView.addSubview(animatedView)
     }
     
     // MARK: - Back Button Action
@@ -146,6 +177,18 @@ extension ReadViewController: UITableViewDelegate {
         let delete = self.delete(rowIndexPathAt: indexPath)
         let swipe = UISwipeActionsConfiguration(actions: [delete])
         return swipe
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if readBook.count > 0 {
+            self.stopAnimation()
+            self.animatedView.isHidden = true
+            self.infoLabel.isHidden = true
+        } else {
+            self.animatedView.isHidden = false
+            self.infoLabel.isHidden = false
+            self.startAnimation()
+        }
     }
 }
 

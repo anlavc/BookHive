@@ -11,6 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReadListViewController" customModule="BookHive" customModuleProvider="target">
             <connections>
+                <outlet property="animatedImage" destination="MNn-rh-YA9" id="rrc-j1-aFh"/>
+                <outlet property="infoLabel" destination="ai6-WP-z6K" id="Awo-Gy-kPG"/>
                 <outlet property="tableView" destination="RXY-Um-6oQ" id="1f9-oj-RUt"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -40,19 +42,40 @@
                     <rect key="frame" x="0.0" y="158" width="393" height="660"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MNn-rh-YA9" customClass="AnimatedImageView" customModule="Kingfisher">
+                    <rect key="frame" x="46.666666666666657" y="326" width="300" height="200"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="300" id="7R4-sm-zop"/>
+                        <constraint firstAttribute="width" secondItem="MNn-rh-YA9" secondAttribute="height" multiplier="3:2" id="TPq-0k-bOG"/>
+                        <constraint firstAttribute="height" constant="200" id="X9m-iv-0c2"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Listenize Kitap Ekleyin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ai6-WP-z6K">
+                    <rect key="frame" x="16" y="534" width="361" height="120"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="RXY-Um-6oQ" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="C4e-Sl-Go9"/>
+                <constraint firstItem="MNn-rh-YA9" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="DsI-84-BqD"/>
+                <constraint firstItem="MNn-rh-YA9" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="FrL-dA-u9m"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="spz-6J-bPm" secondAttribute="trailing" constant="355" id="Gcw-vr-PIN"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ai6-WP-z6K" secondAttribute="bottom" constant="164" id="Mtl-RD-8qV"/>
                 <constraint firstItem="ox0-EQ-ipT" firstAttribute="top" secondItem="spz-6J-bPm" secondAttribute="bottom" constant="26" id="TWu-Rw-RPU"/>
                 <constraint firstItem="RXY-Um-6oQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="VKp-Yu-SeR"/>
                 <constraint firstItem="RXY-Um-6oQ" firstAttribute="top" secondItem="ox0-EQ-ipT" secondAttribute="bottom" constant="8" symbolic="YES" id="djk-RX-k9a"/>
                 <constraint firstItem="spz-6J-bPm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="gdo-X9-jDw"/>
+                <constraint firstItem="ai6-WP-z6K" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="gen-UQ-7hC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ai6-WP-z6K" secondAttribute="trailing" constant="16" id="jjB-9n-73z"/>
                 <constraint firstItem="RXY-Um-6oQ" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="lVZ-qn-cnp"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ox0-EQ-ipT" secondAttribute="trailing" constant="158" id="mDy-Ez-7KF"/>
                 <constraint firstItem="spz-6J-bPm" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="nSI-Ff-PTB"/>
+                <constraint firstItem="ai6-WP-z6K" firstAttribute="top" secondItem="MNn-rh-YA9" secondAttribute="bottom" constant="8" symbolic="YES" id="wIu-61-aU0"/>
                 <constraint firstItem="ox0-EQ-ipT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="yUo-id-FHf"/>
             </constraints>
             <point key="canvasLocation" x="139.69465648854961" y="20.422535211267608"/>

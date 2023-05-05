@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyBooksViewController" customModule="BookHive" customModuleProvider="target">
             <connections>
+                <outlet property="animatedView" destination="L2u-m7-KDf" id="n2L-e8-zVq"/>
                 <outlet property="collectionView" destination="D8K-UQ-mzK" id="Aat-qF-eFC"/>
                 <outlet property="readBookLabel" destination="zAm-Ha-itH" id="Jma-A6-j1J"/>
                 <outlet property="readView" destination="zvZ-VI-YkV" id="q8J-Re-SgC"/>
@@ -109,6 +110,11 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L2u-m7-KDf" customClass="AnimatedImageView" customModule="Kingfisher">
+                    <rect key="frame" x="63" y="224" width="280" height="164"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
