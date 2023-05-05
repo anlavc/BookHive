@@ -224,6 +224,7 @@ class DetailViewController: UIViewController {
     @IBAction func addtoReadListTapped(_ sender: UIButton) {
         favouriteBooksAddorRemove()
     }
+    
     //MARK: - Add Favourite and Remove Favourite
     func favouriteBooksAddorRemove() {
         if let uuid = Auth.auth().currentUser?.uid {
