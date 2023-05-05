@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseFirestore
 
 class HomeViewController: UIViewController, HomeCourseTableViewCellDelegate {
     
@@ -31,17 +33,24 @@ class HomeViewController: UIViewController, HomeCourseTableViewCellDelegate {
     let yearly          = "YearlyTableViewCell"
     let viewModel       = HomeViewModel()
     let sections        = ["","NOW_TREND","WEEK_TREND","MOUNTH_TREND"]
+    var userName: String?
+    
     //MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
+    
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         xibRegister()
         tableRegister()
         setTable()
+        fetchNickname()
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = true
+        tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+        tableView.reloadData()
     }
     
     private func xibRegister() {
@@ -62,7 +71,23 @@ class HomeViewController: UIViewController, HomeCourseTableViewCellDelegate {
         tableView.dataSource    = self
         tableView.delegate      = self
     }
+    
+    private func fetchNickname() {
+        guard let currentUser = Auth.auth().currentUser else { return }
+        let uid = currentUser.uid
+        Firestore.firestore().collection("users").document(uid).getDocument { (document, error) in
+            if let document = document, document.exists {
+                let name = document.get("name") as? String ?? ""
+                self.userName = name
+                self.tableView.reloadData()
+            } else {
+                self.userName = ""
+                
+            }
+        }
+    }
 }
+
 //MARK: - Tableview DataSource Methods
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -112,6 +137,15 @@ extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         if section == 0 {
             let headerView = view
+            let helloLabel = UILabel(frame: CGRect(x: 11, y: 5, width: headerView.frame.size.width, height: 20))
+            helloLabel.text = "Hello,"
+            helloLabel.font = UIFont.systemFont(ofSize: 16)
+            headerView.addSubview(helloLabel)
+            let userNameLabel = UILabel(frame: CGRect(x: 10, y: 25, width: headerView.frame.size.width, height: 20))
+            userNameLabel.text = self.userName
+            userNameLabel.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+            headerView.addSubview(userNameLabel)
+
             headerView.backgroundColor = UIColor(named: "coverbgColor") //Tableview section header bg color
         }
     }
