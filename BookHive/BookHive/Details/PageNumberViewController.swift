@@ -148,7 +148,7 @@ class PageNumberViewController: UIViewController {
             
         }
         self.infoIcon.menu = UIMenu(children: [
-            UIAction(title: "Enter the last page you read in your book. \n Total page number \(selectedReadBook?.totalpageNumber ?? 0)", state: .off, handler: infoClosure)
+            UIAction(title: "Enter the last page you read in your book.", state: .off, handler: infoClosure)
         ])
         self.infoIcon.showsMenuAsPrimaryAction = true
         self.infoIcon.changesSelectionAsPrimaryAction = false

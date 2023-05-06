@@ -10,6 +10,7 @@ import UIKit
 class MyquotesCollectionViewCell: UICollectionViewCell {
     static let identifier = "MyquotesCollectionViewCell"
     
+    @IBOutlet weak var logoStack: UIStackView!
     @IBOutlet weak var pagenoIcon: UIImageView!
     @IBOutlet weak var bookNameIcon: UIImageView!
     @IBOutlet weak var authorIcon: UIImageView!
@@ -32,14 +33,22 @@ class MyquotesCollectionViewCell: UICollectionViewCell {
         bookNameLabel.text     = note.title
         quoteTextField.text    = note.quotesNote
         pageNumberLabel.text   = note.notePageNumber
+        logoStack.isHidden     = true
+        authorLabel.isHidden    = false
+        bookNameLabel.isHidden  = false
+        pagenoIcon.isHidden     = false
+        bookNameIcon.isHidden   = false
+        authorIcon.isHidden     = false
+        
     }
     func setupNil() {
-        authorLabel.text        = ""
-        bookNameLabel.text      = "Bookhive"
-        quoteTextField.text     = NSLocalizedString("Hepinizin kitaplarınızı çok sevdiğini ve onları çizmek istemediğinizi biliyoruz. \n Okuduğunuz kitaplarda sevdiğiniz yerleri bu alana not alarak istediğiniz zaman ulaşabilir ve paylaşabilirsiniz.", comment: "")
+        authorLabel.isHidden    = true
+        bookNameLabel.isHidden  = true
+        quoteTextField.text     = NSLocalizedString("Hepinizin kitaplarınızı çok sevdiğini ve onları karalamak istemediğinizi biliyoruz. \nOkuduğunuz kitaplarda sevdiğiniz yerleri bu alana not alarak istediğiniz zaman ulaşabilir ve paylaşabilirsiniz.", comment: "")
         pageNumberLabel.text    = ""
         pagenoIcon.isHidden     = true
         bookNameIcon.isHidden   = true
         authorIcon.isHidden     = true
+        logoStack.isHidden      = false
     }
 }

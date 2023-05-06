@@ -28,9 +28,8 @@
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6yT-yC-QqM">
-                                <rect key="frame" x="12" y="20.333333333333346" width="225" height="272"/>
+                                <rect key="frame" x="12" y="20.333333333333343" width="225" height="272"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">"İnsanın konuşacak kadar zekaya ya da susacak kadar akla sahip olmaması büyük bir talihsizliktir." "İnsanın konuşacak kadar zekaya ya da susacak kadar akla sahip olmaması büyük bir talihsizliktir." "İnsanın konuşacak kadar zekaya ya da susacak kadar akla sahip olmaması büyük bir talihsizliktir." "İnsanın konuşacak kadar zekaya ya da susacak kadar akla sahip olmaması büyük bir talihsizliktir." </string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -88,6 +87,25 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="I7U-gP-rdT">
+                                <rect key="frame" x="61.666666666666664" y="257.33333333333331" width="125.66666666666669" height="35"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconbook" translatesAutoresizingMaskIntoConstraints="NO" id="u1B-Kq-EeF">
+                                        <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
+                                        <color key="tintColor" name="colordarkgray"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="35" id="DgO-1s-R08"/>
+                                            <constraint firstAttribute="height" constant="35" id="i1r-8t-Qx9"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bookhive" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pq6-5w-sO3">
+                                        <rect key="frame" x="45.000000000000007" y="0.0" width="80.666666666666686" height="35"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.93333333730000001" green="0.90980386729999996" blue="0.87450981139999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
@@ -95,7 +113,9 @@
                             <constraint firstItem="Q67-Gm-boY" firstAttribute="top" secondItem="KD2-H8-hXl" secondAttribute="top" constant="-10" id="Hta-hB-G4E"/>
                             <constraint firstAttribute="bottom" secondItem="MQb-Jh-OnD" secondAttribute="bottom" constant="10" id="Mud-2q-BUZ"/>
                             <constraint firstItem="MQb-Jh-OnD" firstAttribute="leading" secondItem="KD2-H8-hXl" secondAttribute="leading" constant="12" id="Pi8-8o-bZH"/>
+                            <constraint firstItem="MQb-Jh-OnD" firstAttribute="top" secondItem="I7U-gP-rdT" secondAttribute="bottom" constant="10" id="W8s-gf-Zdn"/>
                             <constraint firstAttribute="trailing" secondItem="qUx-f7-rgt" secondAttribute="trailing" constant="10" id="kii-HA-hNn"/>
+                            <constraint firstItem="I7U-gP-rdT" firstAttribute="centerX" secondItem="6yT-yC-QqM" secondAttribute="centerX" id="oZG-Vx-wV2"/>
                             <constraint firstItem="Q67-Gm-boY" firstAttribute="leading" secondItem="KD2-H8-hXl" secondAttribute="leading" constant="14" id="tZ3-F9-i8J"/>
                             <constraint firstItem="6yT-yC-QqM" firstAttribute="leading" secondItem="KD2-H8-hXl" secondAttribute="leading" constant="12" id="tph-Nk-GOl"/>
                             <constraint firstAttribute="trailing" secondItem="6yT-yC-QqM" secondAttribute="trailing" constant="12" id="vuO-Yl-kfH"/>
@@ -119,6 +139,7 @@
                 <outlet property="bgview" destination="KD2-H8-hXl" id="Kct-9y-2s9"/>
                 <outlet property="bookNameIcon" destination="j4t-AT-V9V" id="LVy-im-UrX"/>
                 <outlet property="bookNameLabel" destination="Soc-Li-2cN" id="vE2-qx-iFK"/>
+                <outlet property="logoStack" destination="I7U-gP-rdT" id="6nf-Vc-VcU"/>
                 <outlet property="noTextImage" destination="K9W-BO-DWY" id="1Ht-FX-Cu7"/>
                 <outlet property="pageNumberLabel" destination="6q1-vh-N4z" id="Pwa-wq-6Ae"/>
                 <outlet property="pagenoIcon" destination="K9W-BO-DWY" id="2IV-xr-FrN"/>
@@ -129,6 +150,7 @@
     </objects>
     <resources>
         <image name="book.closed.fill" catalog="system" width="115" height="128"/>
+        <image name="iconbook" width="500" height="500"/>
         <image name="numbersign" catalog="system" width="128" height="91"/>
         <image name="pencil.line" catalog="system" width="128" height="98"/>
         <image name="quote.opening" catalog="system" width="128" height="78"/>

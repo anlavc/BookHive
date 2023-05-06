@@ -14,7 +14,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PageNumberViewController" customModule="BookHive" customModuleProvider="target">
             <connections>
                 <outlet property="addQuotesButton" destination="0C0-qT-1Th" id="q4v-tj-tu9"/>
-                <outlet property="animatedView" destination="AGt-sl-8TV" id="hw7-Zp-XJR"/>
                 <outlet property="bookImageView" destination="Tiz-Gz-yiS" id="wxL-x2-BCk"/>
                 <outlet property="bookNameLabel" destination="iMQ-lt-2jr" id="LWJ-sI-NpL"/>
                 <outlet property="bookStartDate" destination="GWr-Gj-gRP" id="lWS-ud-7r7"/>
@@ -32,7 +31,7 @@
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" id="i5M-Pr-FkT">
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -247,7 +246,7 @@
                         <constraint firstItem="0C0-qT-1Th" firstAttribute="trailing" secondItem="gfe-Hi-teV" secondAttribute="trailing" id="yfL-ub-Qad"/>
                     </constraints>
                 </view>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="j82-yb-Fcu">
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="j82-yb-Fcu">
                     <rect key="frame" x="8" y="421" width="377" height="397"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Jqz-E9-ldh">
@@ -257,14 +256,6 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AGt-sl-8TV" customClass="AnimatedImageView" customModule="Kingfisher">
-                    <rect key="frame" x="86" y="440" width="225" height="263"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="263" id="3Ib-3L-glK"/>
-                        <constraint firstAttribute="width" constant="225" id="r6x-tQ-olh"/>
-                    </constraints>
-                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemGray6Color"/>
@@ -272,17 +263,13 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="j82-yb-Fcu" secondAttribute="trailing" constant="8" id="59a-b1-JzU"/>
                 <constraint firstItem="4J5-T3-2qp" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="77h-sF-eyP"/>
                 <constraint firstItem="4J5-T3-2qp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="E1S-lh-2SN"/>
-                <constraint firstItem="AGt-sl-8TV" firstAttribute="top" secondItem="QcD-6V-dXe" secondAttribute="bottom" constant="29" id="IW2-hr-s5j"/>
                 <constraint firstItem="j82-yb-Fcu" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="Pfw-bs-y6U"/>
                 <constraint firstItem="QcD-6V-dXe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="Tgv-OG-wSP"/>
                 <constraint firstItem="j82-yb-Fcu" firstAttribute="top" secondItem="QcD-6V-dXe" secondAttribute="bottom" constant="10" id="Uu7-yx-ixf"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="QcD-6V-dXe" secondAttribute="trailing" constant="8" id="VwE-mM-E3o"/>
                 <constraint firstItem="j82-yb-Fcu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="YOA-Fh-Tie"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="AGt-sl-8TV" secondAttribute="trailing" constant="82" id="dEt-8d-C1A"/>
                 <constraint firstItem="QcD-6V-dXe" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="90" id="lQx-Ju-d0w"/>
                 <constraint firstItem="4J5-T3-2qp" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="nmT-kc-6XD"/>
-                <constraint firstItem="AGt-sl-8TV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="86" id="uCi-Yt-9Sz"/>
-                <constraint firstItem="AGt-sl-8TV" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="zIC-TB-Qdh"/>
             </constraints>
             <point key="canvasLocation" x="127.48091603053435" y="20.422535211267608"/>
         </view>
