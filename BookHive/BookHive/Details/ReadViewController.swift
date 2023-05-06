@@ -39,6 +39,7 @@ class ReadViewController: UIViewController {
         startAnimation()
         infoLabel.isHidden = false
     }
+
     
     
     // MARK: - Table View Setup
@@ -91,15 +92,17 @@ class ReadViewController: UIViewController {
                         for document in documents {
                             let bookID = document.documentID
                             favoriteBooksCollection.document(bookID).delete()
-                            
+                            if self.readBook.isEmpty {
+                                self.startAnimation()
+                                self.infoLabel.isHidden = false
+                                self.animatedView.isHidden = false
+                            }
                         }
-                        
                     }
                 }
             }
         }
     }
-    
     
     private func readingBooksFetch() {
         if let uuid = Auth.auth().currentUser?.uid {
@@ -137,9 +140,6 @@ class ReadViewController: UIViewController {
             self.readBooksRemove(index: indexPath.row)
             self.readBook.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .fade)
-            self.startAnimation()
-            self.infoLabel.isHidden = false
-            self.animatedView.isHidden = false
             completion(true)
         }
         deleteAction.backgroundColor = .systemRed
@@ -177,7 +177,6 @@ extension ReadViewController: UITableViewDelegate {
         } else {
             self.animatedView.isHidden = false
             self.infoLabel.isHidden = false
-            self.startAnimation()
         }
     }
 }
