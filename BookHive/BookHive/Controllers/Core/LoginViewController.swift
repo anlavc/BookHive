@@ -96,12 +96,19 @@ class LoginViewController: UIViewController {
             Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
                 
                 if error != nil {
+                    
                     self.presentGFAlertOnMainThread(title: "User Login Error", message: "Please enter a valid e-mail address.", buttonTitle: "OKEY")
                 } else {
-                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    let homeViewController = storyboard.instantiateViewController(identifier: "tabbar") as? TabBarController
-                    self.view.window?.rootViewController = homeViewController
-                    self.view.window?.makeKeyAndVisible()
+                    if let currentUser = Auth.auth().currentUser {
+                        if currentUser.isEmailVerified {
+                            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                            let homeViewController = storyboard.instantiateViewController(identifier: "tabbar") as? TabBarController
+                            self.view.window?.rootViewController = homeViewController
+                            self.view.window?.makeKeyAndVisible()
+                        } else {
+                            self.presentGFAlertOnMainThread(title: "Email Verification", message: "Please verify your e-mail address to continue.", buttonTitle: "OKEY")
+                        }
+                    }
                 }
             }
         }
@@ -127,4 +134,5 @@ class LoginViewController: UIViewController {
         
     }
 }
+
 

@@ -133,11 +133,7 @@ class RegisterViewController: UIViewController {
                         if error != nil {
                             self.presentGFAlertOnMainThread(title: "ERROR", message: "An error occurred during registration.", buttonTitle: "OKEY")
                         } else {
-                            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                            let homeViewController = storyboard.instantiateViewController(identifier: "tabbar") as? TabBarController
-                            
-                            self.view.window?.rootViewController = homeViewController
-                            self.view.window?.makeKeyAndVisible()
+                            self.dismiss(animated: true)
                         }
                     }
                 }
