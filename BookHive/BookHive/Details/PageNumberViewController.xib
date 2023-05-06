@@ -208,11 +208,8 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0C0-qT-1Th">
-                            <rect key="frame" x="8" y="185" width="83" height="40"/>
+                            <rect key="frame" x="8" y="185" width="83" height="28"/>
                             <color key="backgroundColor" name="colordarkgray"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="40" id="0Sx-A5-VlK"/>
-                            </constraints>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                             <color key="tintColor" name="colordarkgray"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -240,6 +237,7 @@
                         <constraint firstAttribute="bottom" secondItem="jpG-sY-RWK" secondAttribute="bottom" constant="8" id="fA8-gD-DeM"/>
                         <constraint firstItem="Pz3-Vu-Bxp" firstAttribute="leading" secondItem="L4n-LD-olW" secondAttribute="trailing" constant="41" id="ftk-Io-wwu"/>
                         <constraint firstItem="ZJr-vG-VWZ" firstAttribute="top" secondItem="iMQ-lt-2jr" secondAttribute="bottom" constant="10" id="gD5-Fn-Fby"/>
+                        <constraint firstItem="0C0-qT-1Th" firstAttribute="height" secondItem="gfe-Hi-teV" secondAttribute="height" multiplier="0.933333" id="kuQ-2N-t0d"/>
                         <constraint firstItem="L4n-LD-olW" firstAttribute="leading" secondItem="QcD-6V-dXe" secondAttribute="leading" constant="8" id="nix-m7-Rvo"/>
                         <constraint firstItem="jpG-sY-RWK" firstAttribute="leading" secondItem="L4n-LD-olW" secondAttribute="trailing" constant="18" id="nmL-ny-uvJ"/>
                         <constraint firstItem="L4n-LD-olW" firstAttribute="top" secondItem="QcD-6V-dXe" secondAttribute="top" constant="8" id="pBY-Tk-npK"/>

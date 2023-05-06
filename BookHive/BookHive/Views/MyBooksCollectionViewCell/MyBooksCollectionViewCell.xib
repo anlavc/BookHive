@@ -22,51 +22,82 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ndf-UP-EEF">
                         <rect key="frame" x="5" y="5" width="299" height="123"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ISe-89-3qa">
-                                <rect key="frame" x="91" y="25.666666666666671" width="147" height="72"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Fde-U4-O8w">
+                                <rect key="frame" x="10" y="10" width="279" height="103"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Ths-ZU-fDo">
-                                        <rect key="frame" x="0.0" y="0.0" width="113.66666666666667" height="48"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="12" translatesAutoresizingMaskIntoConstraints="NO" id="Qkl-1L-fkw">
+                                        <rect key="frame" x="0.0" y="0.0" width="70" height="103"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="D09-CR-WSP"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="xJR-8x-4QG">
+                                        <rect key="frame" x="78" y="0.0" width="201" height="103"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Great Gatsby" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hEf-TN-3SX">
-                                                <rect key="frame" x="0.0" y="0.0" width="113.66666666666667" height="18"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="The Great Gatsby" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hEf-TN-3SX">
+                                                <rect key="frame" x="0.0" y="0.0" width="201" height="31"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="George Orwell" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m0e-3k-cAB">
-                                                <rect key="frame" x="0.0" y="30" width="113.66666666666667" height="18"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="George Orwell" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m0e-3k-cAB">
+                                                <rect key="frame" x="0.0" y="36" width="201" height="31"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NC2-f0-sxC">
+                                                <rect key="frame" x="0.0" y="72" width="201" height="31"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="% 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7c-Y2-bSG">
+                                                        <rect key="frame" x="2" y="4.3333333333333277" width="23.666666666666668" height="15.666666666666664"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="i25-Vi-rCD">
+                                                        <rect key="frame" x="2" y="22" width="139.33333333333334" height="4"/>
+                                                        <color key="tintColor" name="coverbgColor"/>
+                                                    </progressView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o1t-VN-VO1">
+                                                        <rect key="frame" x="161.66666666666666" y="13.999999999999998" width="34.333333333333343" height="20.333333333333329"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="numbersign" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="3Oz-qX-MuC">
+                                                                <rect key="frame" x="0.0" y="4.3333333333333321" width="16" height="11.666666666666668"/>
+                                                                <color key="tintColor" name="colordarkgray"/>
+                                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small"/>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="35" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SW9-EV-deb">
+                                                                <rect key="frame" x="16.000000000000028" y="0.0" width="18.333333333333329" height="20.333333333333332"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                                <color key="textColor" name="colordarkgray"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="i25-Vi-rCD" firstAttribute="width" secondItem="NC2-f0-sxC" secondAttribute="width" multiplier="0.693396" id="09G-93-HY9"/>
+                                                    <constraint firstAttribute="bottom" secondItem="i25-Vi-rCD" secondAttribute="bottom" constant="5" id="Xec-bt-Uni"/>
+                                                    <constraint firstItem="o1t-VN-VO1" firstAttribute="centerY" secondItem="i25-Vi-rCD" secondAttribute="centerY" id="Zh6-Fh-0Cf"/>
+                                                    <constraint firstItem="i25-Vi-rCD" firstAttribute="top" secondItem="A7c-Y2-bSG" secondAttribute="bottom" constant="2" id="b5n-Ly-vgU"/>
+                                                    <constraint firstItem="i25-Vi-rCD" firstAttribute="leading" secondItem="NC2-f0-sxC" secondAttribute="leading" constant="2" id="h7P-KO-ntQ"/>
+                                                    <constraint firstItem="A7c-Y2-bSG" firstAttribute="leading" secondItem="i25-Vi-rCD" secondAttribute="leading" id="hE4-qj-zVg"/>
+                                                    <constraint firstAttribute="trailing" secondItem="o1t-VN-VO1" secondAttribute="trailing" constant="5" id="hJe-L3-stD"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                     </stackView>
-                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="i25-Vi-rCD">
-                                        <rect key="frame" x="0.0" y="68" width="147" height="4"/>
-                                        <color key="tintColor" name="coverbgColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="147" id="i9m-lR-Xc4"/>
-                                        </constraints>
-                                    </progressView>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="12" translatesAutoresizingMaskIntoConstraints="NO" id="Qkl-1L-fkw">
-                                <rect key="frame" x="8" y="5" width="69" height="113"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="69" id="D09-CR-WSP"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
-                            <constraint firstItem="Qkl-1L-fkw" firstAttribute="leading" secondItem="Ndf-UP-EEF" secondAttribute="leading" constant="8" id="1cc-HF-RIS"/>
-                            <constraint firstAttribute="bottom" secondItem="ISe-89-3qa" secondAttribute="bottom" constant="25.329999999999998" id="6aH-lA-mS9"/>
-                            <constraint firstItem="ISe-89-3qa" firstAttribute="top" secondItem="Ndf-UP-EEF" secondAttribute="top" constant="25.670000000000002" id="7oz-6h-2BA"/>
-                            <constraint firstAttribute="bottom" secondItem="Qkl-1L-fkw" secondAttribute="bottom" constant="5" id="ASV-TR-ppv"/>
-                            <constraint firstItem="Qkl-1L-fkw" firstAttribute="top" secondItem="Ndf-UP-EEF" secondAttribute="top" constant="5" id="QTc-WY-Yc3"/>
-                            <constraint firstItem="ISe-89-3qa" firstAttribute="leading" secondItem="Qkl-1L-fkw" secondAttribute="trailing" constant="14" id="fCc-Wj-YZQ"/>
-                            <constraint firstAttribute="trailing" secondItem="ISe-89-3qa" secondAttribute="trailing" constant="61" id="zxN-zI-oYA"/>
+                            <constraint firstItem="Fde-U4-O8w" firstAttribute="top" secondItem="Ndf-UP-EEF" secondAttribute="top" constant="10" id="00H-PJ-ihi"/>
+                            <constraint firstItem="Fde-U4-O8w" firstAttribute="leading" secondItem="Ndf-UP-EEF" secondAttribute="leading" constant="10" id="J7d-su-kpJ"/>
+                            <constraint firstAttribute="trailing" secondItem="Fde-U4-O8w" secondAttribute="trailing" constant="10" id="s0x-EA-XPb"/>
+                            <constraint firstAttribute="bottom" secondItem="Fde-U4-O8w" secondAttribute="bottom" constant="10" id="wAH-hj-euU"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -84,13 +115,19 @@
                 <outlet property="mybooksBookNameLabel" destination="hEf-TN-3SX" id="MOb-U5-kgo"/>
                 <outlet property="mybooksImageView" destination="Qkl-1L-fkw" id="PZ0-Ke-tKb"/>
                 <outlet property="mybooksView" destination="Ndf-UP-EEF" id="CJb-po-Fit"/>
+                <outlet property="pageNumberLabel" destination="SW9-EV-deb" id="955-re-hXY"/>
                 <outlet property="progressBar" destination="i25-Vi-rCD" id="YMD-pB-Lld"/>
+                <outlet property="progressLabel" destination="A7c-Y2-bSG" id="oKQ-cl-edF"/>
             </connections>
             <point key="canvasLocation" x="173.2824427480916" y="15.140845070422536"/>
         </collectionViewCell>
     </objects>
     <resources>
         <image name="12" width="383" height="600"/>
+        <image name="numbersign" catalog="system" width="128" height="91"/>
+        <namedColor name="colordarkgray">
+            <color red="0.17647058823529413" green="0.17647058823529413" blue="0.17647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="coverbgColor">
             <color red="0.99607843137254903" green="0.77254901960784317" blue="0.086274509803921567" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

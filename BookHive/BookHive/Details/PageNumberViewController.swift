@@ -38,7 +38,8 @@ class PageNumberViewController: UIViewController {
         setUpData()
         fetchNickname()
         collectionSetup()
-       
+        gestureRecognizer()
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         quotesBooksFetch(forCoverId: (selectedReadBook?.coverID)!)
@@ -65,16 +66,27 @@ class PageNumberViewController: UIViewController {
         let percentComplete     = Float(book.readPage!) / Float(book.totalpageNumber!)
         progressBar.setProgress(percentComplete, animated: true)
     }
+    
+    //MARK: - Keyboard Gesture
+    private func gestureRecognizer() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
     //MARK: - Fetch ReadingBook
     private func pageNumberDidChange() {
         guard let pageNumber    = Int(pageNumberTF.text ?? "0"),
-                var book        = selectedReadBook else { return }
+              var book        = selectedReadBook else { return }
         if pageNumber > book.totalpageNumber! {
             presentGFAlertOnMainThread(title: "WARNING", message: "The page number entered cannot be greater than the total page number.", buttonTitle: "TAMAM")
             pageNumberTF.text   = "\(book.readPage!)"
             return
         } else if pageNumber    == book.totalpageNumber! {
-            presentGFAlertOnMainThread(title: "CONGRATULATIONS", message: "Congratulations. The book is finished.  Now this book will be listed among the reads.", buttonTitle: "OK")
+            presentGFAlertOnMainThread(title: "CONGRATULATIONS", message: "Congratulations. The book is finished.  Now this book will be listed among the reads.", buttonTitle: "OKEY")
             readingBookFinishUpdate(bookId: (selectedReadBook?.documentID)!)
         }
         Firestore.firestore().collection("users").document(Auth.auth().currentUser!.uid).collection("ReadsBooks").document(book.documentID!).updateData(["readPage": pageNumber]) { error in
@@ -131,6 +143,7 @@ class PageNumberViewController: UIViewController {
         self.infoIcon.showsMenuAsPrimaryAction = true
         self.infoIcon.changesSelectionAsPrimaryAction = false
     }
+    
     //MARK: - The finish value is updated to true if the book is finished
     func readingBookFinishUpdate(bookId: String) {
         if let uuid = Auth.auth().currentUser?.uid {
@@ -145,6 +158,7 @@ class PageNumberViewController: UIViewController {
             }
         }
     }
+    
     //MARK: - Page Number Update - Click button and readPage firebase update.
     func pageNumberUpdate(bookId: String) {
         if let uuid = Auth.auth().currentUser?.uid {
@@ -156,13 +170,13 @@ class PageNumberViewController: UIViewController {
                     return
                 }
                 let originalColor = self.pageNumberTF.backgroundColor
-                    UIView.animate(withDuration: 1, animations: {
-                        self.pageNumberTF.backgroundColor = UIColor(named: "addedFavoriteButton")?.withAlphaComponent(0.5)
-                    }) { _ in
-                        UIView.animate(withDuration: 1) {
-                            self.pageNumberTF.backgroundColor = originalColor
-                        }
+                UIView.animate(withDuration: 1, animations: {
+                    self.pageNumberTF.backgroundColor = UIColor(named: "addedFavoriteButton")?.withAlphaComponent(0.5)
+                }) { _ in
+                    UIView.animate(withDuration: 1) {
+                        self.pageNumberTF.backgroundColor = originalColor
                     }
+                }
             }
         }
     }
@@ -197,15 +211,14 @@ class PageNumberViewController: UIViewController {
             }
         }
     }
-
+    
     //MARK: - Button actions
     @IBAction func finishButtonTapped(_ sender: UIButton) {
-        presentBottomAlert(title: "", message: "Are you sure you want to add this book to your reading list?", okTitle: "DONE", cancelTitle: "CANCEL") {
+        presentBottomAlert(title: "", message: "Are you sure you want to add this book to your reading list?", okTitle: "Done", cancelTitle: "CANCEL") {
             [self] in
             self.readingBookFinishUpdate(bookId: (selectedReadBook?.documentID)!)
-            dismiss(animated: true)
         }
-    
+        
         
     }
     @IBAction func saveButtonTapped(_ sender: Any) {
