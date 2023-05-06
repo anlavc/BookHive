@@ -114,11 +114,14 @@
             </constraints>
             <size key="customSize" width="186" height="386"/>
             <connections>
+                <outlet property="authorIcon" destination="pXQ-Lg-X7u" id="C8b-1K-Xsh"/>
                 <outlet property="authorLabel" destination="hC1-cx-bkt" id="iu6-Zd-aeE"/>
                 <outlet property="bgview" destination="KD2-H8-hXl" id="Kct-9y-2s9"/>
+                <outlet property="bookNameIcon" destination="j4t-AT-V9V" id="LVy-im-UrX"/>
                 <outlet property="bookNameLabel" destination="Soc-Li-2cN" id="vE2-qx-iFK"/>
                 <outlet property="noTextImage" destination="K9W-BO-DWY" id="1Ht-FX-Cu7"/>
                 <outlet property="pageNumberLabel" destination="6q1-vh-N4z" id="Pwa-wq-6Ae"/>
+                <outlet property="pagenoIcon" destination="K9W-BO-DWY" id="2IV-xr-FrN"/>
                 <outlet property="quoteTextField" destination="6yT-yC-QqM" id="yNY-x4-GxT"/>
             </connections>
             <point key="canvasLocation" x="219.08396946564883" y="85.563380281690144"/>

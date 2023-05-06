@@ -84,17 +84,12 @@ class HomeCarouselTableViewCell: UITableViewCell {
             }
         }
     }
-
-    
-    
-    
     private func collectionSetup() {
         collectionView.register(HomeCollectionViewCarousel.nib(), forCellWithReuseIdentifier: HomeCollectionViewCarousel.identifier)
         collectionView.delegate = self
         collectionView.dataSource = self
         
     }
-    
 }
 extension HomeCarouselTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -112,14 +107,7 @@ extension HomeCarouselTableViewCell: UICollectionViewDelegate, UICollectionViewD
         delegate?.didSelectCell(selectedItem: viewModel.bestSeller[indexPath.row])
         
     }
-    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        let padding: CGFloat = 10
-//        let availableWidth = collectionView.frame.width - padding * 3
-//        let widthPerItem = availableWidth / 3
-//        return CGSize(width: widthPerItem, height: widthPerItem + 50)
-//    }
-    
+
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         scaleCenterCell()
         

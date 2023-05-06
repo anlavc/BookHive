@@ -54,7 +54,7 @@ class PageNumberViewController: UIViewController {
         bookNameLabel.text      = selectedReadBook?.title
         bookImageView.setImageOlid(with: (selectedReadBook?.coverID)!)
         bookStartDate.text      = selectedReadBook?.readingDate?.toFormattedString()
-        pageNumberTF.text       = "\(selectedReadBook?.readPage! ?? 0)"
+//        pageNumberTF.text       = "\(selectedReadBook?.readPage! ?? 0)"
         let percentCompleted    = Double((selectedReadBook?.readPage)!) / Double(((selectedReadBook?.totalpageNumber)!)) * 100
         progressPercent.text    = "% \(Int(percentCompleted))"
         updateProgressView()
@@ -106,6 +106,7 @@ class PageNumberViewController: UIViewController {
             let percentCompletedLabel   = Double((book.readPage)!) / Double(((book.totalpageNumber)!)) * 100
             self.progressPercent.text   = "% \(Int(percentCompletedLabel))"
             self.pageNumberUpdate(bookId: (self.selectedReadBook?.documentID)!)
+            self.pageNumberTF.text = ""
         }
     }
     
@@ -255,15 +256,21 @@ class PageNumberViewController: UIViewController {
 extension PageNumberViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if quotesNotes.count == 0 {
+            return 1
+        }
         return quotesNotes.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyquotesCollectionViewCell.identifier, for: indexPath) as! MyquotesCollectionViewCell
-        cell.authorLabel.text       = quotesNotes[indexPath.row].author
-        cell.bookNameLabel.text     = quotesNotes[indexPath.row].title
-        cell.quoteTextField.text    = quotesNotes[indexPath.row].quotesNote
-        cell.pageNumberLabel.text   = quotesNotes[indexPath.row].notePageNumber
+        if quotesNotes.count == 0 {
+            cell.setupNil()
+  
+        } else {
+            cell.setup(note: quotesNotes[indexPath.row])
+        }
         return cell
     }
+   
 }
