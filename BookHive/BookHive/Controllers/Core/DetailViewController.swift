@@ -57,7 +57,7 @@ class DetailViewController: UIViewController {
     }
     
     //MARK: -   A request is sent from Firebase to access the information of favourite books
-     func favouriteBooksFetch() {
+    func favouriteBooksFetch() {
         if let uuid = Auth.auth().currentUser?.uid {
             let favoriteBooksCollection = Firestore.firestore().collection("users/\(uuid)/favoriteBooks")
             favoriteBooksCollection.getDocuments() { (querySnapshot, error) in
@@ -116,9 +116,15 @@ class DetailViewController: UIViewController {
                     
                     //  Gelen okunan kitapların içinde detayına gidilen kitaba ait coverId varsa bu zaten okunan  bir kitap olduğundan sayfa açıldığında butonda okunuyor yazar.
                     if coverID == self.detailID {
-                        self.readButton.setTitle("Okunuyor", for: .normal)
-                        self.readButton.backgroundColor = UIColor(named: "addedFavoriteButton")
+                        if finish {
+                            self.readButton.setTitle(NSLocalizedString("Okundu", comment: ""), for: .normal)
+                            self.readButton.backgroundColor = UIColor.brown
+                        } else {
+                            self.readButton.setTitle("Okunuyor", for: .normal)
+                            self.readButton.backgroundColor = UIColor(named: "addedFavoriteButton")
+                        }
                     }
+                    
                 }
             }
         }
@@ -296,29 +302,29 @@ class DetailViewController: UIViewController {
                             } else {
                                 // Totalpage numarası istenir.
                                 let alert = UIAlertController(title: "Number of pages not available", message: "Please enter the number of pages", preferredStyle: .alert)
-                                   alert.addTextField { (textField) in
-                                       textField.placeholder = "Number of pages"
-                                       textField.keyboardType = .numberPad
-                                   }
-                                   let saveAction = UIAlertAction(title: "Save", style: .default) { (action) in
-                                       if let textFields = alert.textFields, let text = textFields[0].text, let numberOfPages = Int(text), numberOfPages != 0 {
-                                           // Kullanıcının girdiği sayı 0 değil, kaydedilebilir.
-                                           favoriteBooksCollection.addDocument(data: ["coverID"         : self.detailID!,
-                                                                                      "title"           : self.bookTitle!,
-                                                                                      "readPage"        : 0,
-                                                                                      "author"          : self.authorName,
-                                                                                      "readingdate"     : FieldValue.serverTimestamp(),
-                                                                                      "totalpageNumber" : numberOfPages,
-                                                                                      "finish"          : false])
-                                           self.readButton.setTitle("Okunuyor", for: .normal)
-                                           self.readButton.backgroundColor = UIColor(named: "addedFavoriteButton")
-                                       }
-                                   }
-                                   alert.addAction(saveAction)
-                                   self.present(alert, animated: true, completion: nil)
+                                alert.addTextField { (textField) in
+                                    textField.placeholder = "Number of pages"
+                                    textField.keyboardType = .numberPad
+                                }
+                                let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel, handler: nil)
+                                let saveAction = UIAlertAction(title: NSLocalizedString("Save", comment: ""), style: .default) { (action) in
+                                    if let textFields = alert.textFields, let text = textFields[0].text, let numberOfPages = Int(text), numberOfPages != 0 {
+                                        // Kullanıcının girdiği sayı 0 değil, kaydedilebilir.
+                                favoriteBooksCollection.addDocument(data: ["coverID"         : self.detailID!,
+                                                                           "title"           : self.bookTitle!,
+                                                                           "readPage"        : 0,
+                                                                           "author"          : self.authorName,
+                                                                           "readingdate"     : FieldValue.serverTimestamp(),
+                                                                           "totalpageNumber" : numberOfPages,
+                                                                           "finish"          : false])
+                                        self.readButton.setTitle("Okunuyor", for: .normal)
+                                        self.readButton.backgroundColor = UIColor(named: "addedFavoriteButton")
+                                    }
+                                }
+                                alert.addAction(saveAction)
+                                alert.addAction(cancelAction)
+                                self.present(alert, animated: true, completion: nil)
                             }
-
-                          
                         }
                         DispatchQueue.main.async {
                             self.readingBooksFetch()
@@ -330,7 +336,7 @@ class DetailViewController: UIViewController {
     }
 }
 
-    //MARK: - CollectionviewDataSource
+//MARK: - CollectionviewDataSource
 extension DetailViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let numberOfItems           = viewModel.detailBook?.subjects?.count

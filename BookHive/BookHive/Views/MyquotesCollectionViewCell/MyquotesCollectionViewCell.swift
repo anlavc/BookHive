@@ -15,12 +15,11 @@ class MyquotesCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var quoteTextField: UITextView!
     @IBOutlet weak var pageNumberLabel: UILabel!
     @IBOutlet weak var bookNameLabel: UILabel!
-    
+    @IBOutlet weak var noTextImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         bgview.layer.cornerRadius = 20
-        bgview.addShadow(color: .white, opacity: 0.5, offset: CGSize(width: 2, height: 2), radius: 5)
-        
+        bgview.addShadow(color: .white, opacity: 0.5, offset: CGSize(width: 2, height: 2), radius: 5)        
     }
     static func nib() -> UINib {
         return UINib(nibName: "MyquotesCollectionViewCell", bundle: nil)

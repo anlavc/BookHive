@@ -38,7 +38,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="393" height="759"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="iyH-kA-SeS">
-                                    <rect key="frame" x="30" y="10" width="353" height="45"/>
+                                    <rect key="frame" x="15" y="10" width="368" height="45"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconbook" translatesAutoresizingMaskIntoConstraints="NO" id="7Qu-Jx-XNL">
                                             <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
@@ -49,7 +49,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bookhive" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vjl-nX-dKu">
-                                            <rect key="frame" x="55" y="0.0" width="298" height="45"/>
+                                            <rect key="frame" x="55" y="0.0" width="313" height="45"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -175,7 +175,6 @@
                             <color key="backgroundColor" systemColor="systemGray6Color"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="ea8-bD-VIQ" secondAttribute="trailing" constant="20" id="0PC-Yh-0WT"/>
-                                <constraint firstItem="iyH-kA-SeS" firstAttribute="leading" secondItem="oo9-xc-xn4" secondAttribute="leading" constant="30" id="0SM-h7-Zs9"/>
                                 <constraint firstItem="TQ4-9h-piC" firstAttribute="top" secondItem="iyH-kA-SeS" secondAttribute="bottom" constant="100" id="0eh-zu-adX"/>
                                 <constraint firstItem="TQ4-9h-piC" firstAttribute="leading" secondItem="Fzl-SL-QPY" secondAttribute="leading" id="1ys-nB-8GS"/>
                                 <constraint firstAttribute="bottom" secondItem="ea8-bD-VIQ" secondAttribute="bottom" constant="10" id="MN6-rF-hzB"/>
@@ -186,6 +185,7 @@
                                 <constraint firstItem="Fzl-SL-QPY" firstAttribute="top" secondItem="TQ4-9h-piC" secondAttribute="bottom" constant="30" id="crt-c1-Qbk"/>
                                 <constraint firstAttribute="height" constant="759" id="e4g-Y2-oKn"/>
                                 <constraint firstItem="jxD-Cb-MRq" firstAttribute="trailing" secondItem="Fzl-SL-QPY" secondAttribute="trailing" id="j7h-mw-6gD"/>
+                                <constraint firstItem="iyH-kA-SeS" firstAttribute="leading" secondItem="TQ4-9h-piC" secondAttribute="leading" constant="-5" id="kE8-6o-nzV"/>
                                 <constraint firstItem="cXE-nv-yik" firstAttribute="trailing" secondItem="Fzl-SL-QPY" secondAttribute="trailing" id="lcu-Ql-HWa"/>
                                 <constraint firstItem="ea8-bD-VIQ" firstAttribute="leading" secondItem="oo9-xc-xn4" secondAttribute="leading" constant="20" id="mxD-pM-3QR"/>
                                 <constraint firstItem="jxD-Cb-MRq" firstAttribute="leading" secondItem="Fzl-SL-QPY" secondAttribute="leading" id="pRk-XC-GjO"/>

@@ -1046,7 +1046,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4899K4S95G;
+				DEVELOPMENT_TEAM = 74UL9K89V5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BookHive/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Bookhive;
