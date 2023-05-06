@@ -197,6 +197,14 @@ class MyBooksViewController: UIViewController {
 // MARK: - Extensions
 extension MyBooksViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if readingBooks.count == 0 {
+            if readingBooks.count > 0 {
+                self.animatedView.isHidden = true
+            } else {
+                self.animatedView.isHidden = false
+                self.startAnimation()
+            }
+        }
         return readingBooks.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
