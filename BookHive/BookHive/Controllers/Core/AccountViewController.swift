@@ -216,5 +216,20 @@ class AccountViewController: FormViewController, MFMailComposeViewControllerDele
                 }
             }
         }
+        
+        <<< ButtonRow() {
+            $0.title = NSLocalizedString("Privacy Policy", comment: "")
+            $0.cellSetup { cell, row in
+                cell.textLabel?.font = UIFont.systemFont(ofSize: 14)
+            }
+            $0.cellUpdate { cell, row in
+                cell.textLabel?.textColor = .systemBlue
+            }
+            $0.onCellSelection { cell, row in
+                if let url = URL(string: "https://www.google.com") {
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                }
+            }
+        }
     }
 }

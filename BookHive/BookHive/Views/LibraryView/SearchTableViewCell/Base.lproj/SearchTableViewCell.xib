@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -39,10 +38,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ysK-mD-2Xi">
-                                <rect key="frame" x="163" y="182" width="265" height="40"/>
+                                <rect key="frame" x="163" y="182" width="255" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZzF-fw-p1j">
-                                        <rect key="frame" x="0.0" y="0.0" width="205" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="255" height="40"/>
                                         <color key="backgroundColor" name="colordarkgray"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="AWy-d0-yJN"/>
@@ -56,27 +55,13 @@
                                             <action selector="viewDetailsButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="c5H-lU-Ckt"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jmf-Ux-ab7">
-                                        <rect key="frame" x="215" y="0.0" width="50" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="50" id="LNx-RJ-veu"/>
-                                        </constraints>
-                                        <color key="tintColor" name="coverbgColor"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain">
-                                            <imageReference key="image" image="heart" catalog="system" symbolScale="large"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="favoriteButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Bou-bv-xbd"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="sQf-KR-maC" secondAttribute="trailing" constant="10" id="6TE-3h-9Rk"/>
-                            <constraint firstAttribute="trailing" secondItem="ysK-mD-2Xi" secondAttribute="trailing" constant="10" id="82o-jh-n2S"/>
+                            <constraint firstAttribute="trailing" secondItem="ysK-mD-2Xi" secondAttribute="trailing" constant="20" id="82o-jh-n2S"/>
                             <constraint firstItem="sQf-KR-maC" firstAttribute="leading" secondItem="Zzm-4r-TF8" secondAttribute="trailing" constant="10" id="Dzx-PS-xZy"/>
                             <constraint firstItem="ysK-mD-2Xi" firstAttribute="leading" secondItem="Zzm-4r-TF8" secondAttribute="trailing" constant="20" id="QW1-Dg-TIz"/>
                             <constraint firstItem="sQf-KR-maC" firstAttribute="top" secondItem="Zzm-4r-TF8" secondAttribute="top" id="RGJ-IR-Dh7"/>
@@ -103,7 +88,6 @@
                 <outlet property="authorNameLabel" destination="zvs-jz-IaF" id="pTt-9Q-9JM"/>
                 <outlet property="bookImageView" destination="Zzm-4r-TF8" id="c5Z-aa-cxy"/>
                 <outlet property="bookNameLabel" destination="sQf-KR-maC" id="cBX-hh-zU6"/>
-                <outlet property="favoriteButton" destination="jmf-Ux-ab7" id="L2s-ZA-vzW"/>
                 <outlet property="searchView" destination="pMB-ok-p0M" id="zay-PW-lNm"/>
                 <outlet property="viewDetailsButton" destination="ZzF-fw-p1j" id="WG6-VC-J1J"/>
             </connections>
@@ -111,12 +95,8 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="heart" catalog="system" width="128" height="107"/>
         <namedColor name="colordarkgray">
             <color red="0.17647058823529413" green="0.17647058823529413" blue="0.17647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="coverbgColor">
-            <color red="0.99607843137254903" green="0.77254901960784317" blue="0.086274509803921567" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

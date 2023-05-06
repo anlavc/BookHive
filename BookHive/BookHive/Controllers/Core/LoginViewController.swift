@@ -98,6 +98,10 @@ class LoginViewController: UIViewController {
                 if error != nil {
                     self.presentGFAlertOnMainThread(title: "User Login Error", message: "Please enter a valid e-mail address.", buttonTitle: "OKEY")
                 } else {
+                    guard let currentUser = Auth.auth().currentUser, currentUser.isEmailVerified else {
+                        self.presentGFAlertOnMainThread(title: "ERROR", message: "Please verify your email before logging in.", buttonTitle: "OK")
+                        return
+                    }
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
                     let homeViewController = storyboard.instantiateViewController(identifier: "tabbar") as? TabBarController
                     self.view.window?.rootViewController = homeViewController

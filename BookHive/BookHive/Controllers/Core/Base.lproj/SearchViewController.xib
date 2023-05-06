@@ -15,6 +15,7 @@
                 <outlet property="animationGif" destination="ObT-Xf-3J3" id="cW0-RP-FsW"/>
                 <outlet property="findLabel" destination="oSh-zd-STT" id="8mX-jv-Chj"/>
                 <outlet property="indicator" destination="uU9-g8-vgR" id="y3O-66-IMO"/>
+                <outlet property="notFoundAnimated" destination="rbY-Ce-uxz" id="5dE-fv-Ei6"/>
                 <outlet property="searchTextField" destination="bo6-T2-jt4" id="V8C-rD-t6o"/>
                 <outlet property="tableView" destination="aLz-5O-Gk5" id="iiI-K4-jaO"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -53,6 +54,14 @@
                         <constraint firstAttribute="height" constant="250" id="ZL5-YY-gFq"/>
                     </constraints>
                 </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rbY-Ce-uxz" customClass="AnimatedImageView" customModule="Kingfisher">
+                    <rect key="frame" x="20.666666666666657" y="245" width="352" height="362"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="352" id="IHe-Xu-eKe"/>
+                        <constraint firstAttribute="width" secondItem="rbY-Ce-uxz" secondAttribute="height" multiplier="176:181" id="PBL-DL-2fr"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -66,11 +75,13 @@
                 <constraint firstItem="bo6-T2-jt4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="Znc-5T-IdP"/>
                 <constraint firstItem="uU9-g8-vgR" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="bza-zF-uK2"/>
                 <constraint firstItem="bo6-T2-jt4" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="cr4-UY-05L"/>
+                <constraint firstItem="rbY-Ce-uxz" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="gpt-gY-g1Q"/>
                 <constraint firstItem="aLz-5O-Gk5" firstAttribute="top" secondItem="bo6-T2-jt4" secondAttribute="bottom" constant="20" id="kxd-9m-U4L"/>
                 <constraint firstItem="aLz-5O-Gk5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="psS-Bl-7WI"/>
                 <constraint firstItem="ObT-Xf-3J3" firstAttribute="top" secondItem="bo6-T2-jt4" secondAttribute="bottom" constant="50" id="rCv-WG-HSi"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bo6-T2-jt4" secondAttribute="trailing" constant="10" id="rKh-lx-x4V"/>
                 <constraint firstItem="oSh-zd-STT" firstAttribute="centerX" secondItem="ObT-Xf-3J3" secondAttribute="centerX" id="tBV-g0-Hvr"/>
+                <constraint firstItem="rbY-Ce-uxz" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="uD1-fc-AOY"/>
                 <constraint firstItem="uU9-g8-vgR" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="yOo-nY-ssY"/>
             </constraints>
             <point key="canvasLocation" x="101.5267175572519" y="20.422535211267608"/>
