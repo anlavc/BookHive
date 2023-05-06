@@ -23,6 +23,9 @@
 		2E577F7D2A065D4700DCE61D /* read.json in Resources */ = {isa = PBXBuildFile; fileRef = 2E577F7C2A065D4700DCE61D /* read.json */; };
 		2E577F7F2A065E8D00DCE61D /* wantToRead.json in Resources */ = {isa = PBXBuildFile; fileRef = 2E577F7E2A065E8D00DCE61D /* wantToRead.json */; };
 		2E577F812A06840200DCE61D /* notfound.json in Resources */ = {isa = PBXBuildFile; fileRef = 2E577F802A06840200DCE61D /* notfound.json */; };
+		2E577F882A07059C00DCE61D /* LicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E577F862A07059C00DCE61D /* LicenseViewController.swift */; };
+		2E577F892A07059C00DCE61D /* LicenseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E577F872A07059C00DCE61D /* LicenseViewController.xib */; };
+		2E81B46129FD8F2B00986F98 /* PageNumberViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E81B46029FD8F2B00986F98 /* PageNumberViewController.xib */; };
 		2E81B46329FD8F3900986F98 /* ReadListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E81B46229FD8F3900986F98 /* ReadListViewController.swift */; };
 		2E81B46529FD8F4300986F98 /* ReadListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E81B46429FD8F4300986F98 /* ReadListViewController.xib */; };
 		2E88B34C29E70077008F4B4B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88B34A29E70077008F4B4B /* HomeViewController.swift */; };
@@ -169,6 +172,9 @@
 		2E577F7C2A065D4700DCE61D /* read.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = read.json; sourceTree = "<group>"; };
 		2E577F7E2A065E8D00DCE61D /* wantToRead.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wantToRead.json; sourceTree = "<group>"; };
 		2E577F802A06840200DCE61D /* notfound.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = notfound.json; sourceTree = "<group>"; };
+		2E577F862A07059C00DCE61D /* LicenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseViewController.swift; sourceTree = "<group>"; };
+		2E577F872A07059C00DCE61D /* LicenseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LicenseViewController.xib; sourceTree = "<group>"; };
+		2E81B46029FD8F2B00986F98 /* PageNumberViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PageNumberViewController.xib; sourceTree = "<group>"; };
 		2E81B46229FD8F3900986F98 /* ReadListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadListViewController.swift; sourceTree = "<group>"; };
 		2E81B46429FD8F4300986F98 /* ReadListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReadListViewController.xib; sourceTree = "<group>"; };
 		2E88B34A29E70077008F4B4B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -407,6 +413,8 @@
 				EE5CF3942A02A1CB00AC47FD /* AddQuotesViewController.xib */,
 				2E062E872A038C7E00B148AB /* ReadViewController.swift */,
 				2E062E882A038C7E00B148AB /* ReadViewController.xib */,
+				2E577F862A07059C00DCE61D /* LicenseViewController.swift */,
+				2E577F872A07059C00DCE61D /* LicenseViewController.xib */,
 			);
 			name = Details;
 			path = ../Details;
@@ -717,6 +725,8 @@
 				EE2976E52A070B7C00CD546F /* PageNumberViewController.xib in Resources */,
 				2E1F16D229F9B436007FC4E3 /* Localizable.strings in Resources */,
 				EE977F8829F16B1B0027CF90 /* DetailSubjectCell.xib in Resources */,
+				2E81B46129FD8F2B00986F98 /* PageNumberViewController.xib in Resources */,
+				2E577F892A07059C00DCE61D /* LicenseViewController.xib in Resources */,
 				EEA23C5B29FE904C00FA8818 /* searchjson.json in Resources */,
 				EEAC4FB029E6F8220066757B /* Main.storyboard in Resources */,
 				2E1F168929F7DBB0007FC4E3 /* HomeViewController.xib in Resources */,
@@ -786,6 +796,7 @@
 				EE904C2E29FB1FAD00441AA8 /* isValidEmailPassword + Ext.swift in Sources */,
 				EEE4DABD29F934E70017A5EF /* RegisterViewController.swift in Sources */,
 				2E88B35C29E7082C008F4B4B /* SearchTableViewCell.swift in Sources */,
+				2E577F882A07059C00DCE61D /* LicenseViewController.swift in Sources */,
 				2ECF25B129E89D3E00956FCB /* UIView + Ext.swift in Sources */,
 				EE977F8729F16B1B0027CF90 /* DetailSubjectCell.swift in Sources */,
 				EEFBBCAC29E9730400BDD902 /* BookEndPoint.swift in Sources */,

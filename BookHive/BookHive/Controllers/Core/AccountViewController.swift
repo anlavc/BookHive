@@ -98,13 +98,12 @@ class AccountViewController: FormViewController, MFMailComposeViewControllerDele
         
         
         <<< AccountCustomRow() {
-            $0.cell.accountTableViewCellLabelName.text = NSLocalizedString("Rate us in App Store", comment: "")
-            $0.cell.accountIconImageView.image = UIImage(systemName: "star.leadinghalf.filled")
+            $0.cell.accountTableViewCellLabelName.text = NSLocalizedString("License", comment: "")
+            $0.cell.accountIconImageView.image = UIImage(named: "license")
             $0.onCellSelection { cell, row in
-                // App Store URL
-                //                if let url = URL(string: "") {
-                //                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                //                }
+                let vc = LicenseViewController()
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: true)
             }
         }
     }
@@ -232,7 +231,7 @@ class AccountViewController: FormViewController, MFMailComposeViewControllerDele
         <<< ButtonRow() {
             $0.title = NSLocalizedString("Privacy Policy", comment: "")
             $0.cellSetup { cell, row in
-                cell.textLabel?.font = UIFont.systemFont(ofSize: 14)
+                cell.textLabel?.font = UIFont.systemFont(ofSize: 16)
             }
             $0.cellUpdate { cell, row in
                 cell.textLabel?.textColor = .systemBlue
