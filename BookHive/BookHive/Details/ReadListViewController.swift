@@ -35,13 +35,17 @@ class ReadListViewController: UIViewController {
     }
     
     private func startAnimation() {
-        let animatedView = LottieAnimationView(name: "wantToRead")
-        animatedView.contentMode = .scaleAspectFit
-        animatedView.loopMode = .loop
-        animatedView.center = self.animatedImage.center
-        animatedView.frame = self.animatedImage.bounds
-        animatedView.play()
-        self.animatedImage.addSubview(animatedView)
+        if let existingView = animatedImage.subviews.first(where: {$0 is LottieAnimationView}) as? LottieAnimationView {
+            existingView.play()
+        } else {
+            let animatedView = LottieAnimationView(name: "wantToRead")
+            animatedView.contentMode = .scaleAspectFit
+            animatedView.loopMode = .loop
+            animatedView.center = self.animatedImage.center
+            animatedView.frame = self.animatedImage.bounds
+            animatedView.play()
+            self.animatedImage.addSubview(animatedView)
+        }
     }
     
     private func stopAnimation() {
@@ -201,7 +205,6 @@ extension ReadListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if favoriteBooks.count > 0 {
-            self.stopAnimation()
             self.animatedImage.isHidden = true
             self.infoLabel.isHidden = true
         } else {

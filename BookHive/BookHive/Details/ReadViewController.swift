@@ -50,13 +50,17 @@ class ReadViewController: UIViewController {
     }
     
     private func startAnimation() {
-        let animatedView = LottieAnimationView(name: "read")
-        animatedView.contentMode = .scaleAspectFit
-        animatedView.loopMode = .loop
-        animatedView.center = self.animatedView.center
-        animatedView.frame = self.animatedView.bounds
-        animatedView.play()
-        self.animatedView.addSubview(animatedView)
+        if let existingView = animatedView.subviews.first(where: {$0 is LottieAnimationView}) as? LottieAnimationView {
+            existingView.play()
+        } else {
+            let animatedView = LottieAnimationView(name: "read")
+            animatedView.contentMode = .scaleAspectFit
+            animatedView.loopMode = .loop
+            animatedView.center = self.animatedView.center
+            animatedView.frame = self.animatedView.bounds
+            animatedView.play()
+            self.animatedView.addSubview(animatedView)
+        }
     }
     
     private func stopAnimation() {
@@ -133,6 +137,9 @@ class ReadViewController: UIViewController {
             self.readBooksRemove(index: indexPath.row)
             self.readBook.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .fade)
+            self.startAnimation()
+            self.infoLabel.isHidden = false
+            self.animatedView.isHidden = false
             completion(true)
         }
         deleteAction.backgroundColor = .systemRed
@@ -165,7 +172,6 @@ extension ReadViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if readBook.count > 0 {
-            self.stopAnimation()
             self.animatedView.isHidden = true
             self.infoLabel.isHidden = true
         } else {
