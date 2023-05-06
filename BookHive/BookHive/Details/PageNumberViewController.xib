@@ -14,7 +14,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PageNumberViewController" customModule="BookHive" customModuleProvider="target">
             <connections>
                 <outlet property="addQuotesButton" destination="0C0-qT-1Th" id="q4v-tj-tu9"/>
-                <outlet property="animatedView" destination="Uqj-ZT-xqp" id="Xaj-Ta-Iat"/>
                 <outlet property="bookImageView" destination="Tiz-Gz-yiS" id="wxL-x2-BCk"/>
                 <outlet property="bookNameLabel" destination="iMQ-lt-2jr" id="LWJ-sI-NpL"/>
                 <outlet property="bookStartDate" destination="GWr-Gj-gRP" id="lWS-ud-7r7"/>
@@ -209,11 +208,8 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0C0-qT-1Th">
-                            <rect key="frame" x="8" y="185" width="83" height="40"/>
+                            <rect key="frame" x="8" y="185" width="83" height="28"/>
                             <color key="backgroundColor" name="colordarkgray"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="40" id="0Sx-A5-VlK"/>
-                            </constraints>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                             <color key="tintColor" name="colordarkgray"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -222,12 +218,6 @@
                                 <action selector="addQuotesButtonTapped:" destination="-1" eventType="touchUpInside" id="vGI-b8-Kcy"/>
                             </connections>
                         </button>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Uqj-ZT-xqp" customClass="AnimatedImageView" customModule="Kingfisher">
-                            <rect key="frame" x="0.0" y="0.0" width="369" height="312"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="312" id="Pl5-U4-Vti"/>
-                            </constraints>
-                        </imageView>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemGray6Color"/>
                     <constraints>
@@ -237,10 +227,8 @@
                         <constraint firstItem="ZJr-vG-VWZ" firstAttribute="leading" secondItem="L4n-LD-olW" secondAttribute="trailing" constant="18" id="7Fp-Ka-VeQ"/>
                         <constraint firstAttribute="bottom" secondItem="L4n-LD-olW" secondAttribute="bottom" constant="87" id="9xO-4h-RHU"/>
                         <constraint firstAttribute="bottom" secondItem="siS-4f-KrQ" secondAttribute="bottom" constant="64" id="Avg-eT-4i5"/>
-                        <constraint firstAttribute="trailing" secondItem="Uqj-ZT-xqp" secondAttribute="trailing" id="H6Q-OY-GEE"/>
                         <constraint firstAttribute="width" constant="377" id="LNo-0V-l4P"/>
                         <constraint firstAttribute="trailing" secondItem="ZJr-vG-VWZ" secondAttribute="trailing" constant="19" id="LkR-zf-6YQ"/>
-                        <constraint firstItem="Uqj-ZT-xqp" firstAttribute="trailing" secondItem="iMQ-lt-2jr" secondAttribute="trailing" id="Psb-Ab-tmJ"/>
                         <constraint firstAttribute="trailing" secondItem="siS-4f-KrQ" secondAttribute="trailing" constant="11" id="RKj-eO-D5R"/>
                         <constraint firstAttribute="trailing" secondItem="Pz3-Vu-Bxp" secondAttribute="trailing" constant="39.329999999999998" id="a5f-6N-Dcz"/>
                         <constraint firstItem="jpG-sY-RWK" firstAttribute="top" secondItem="Pz3-Vu-Bxp" secondAttribute="bottom" constant="17.329999999999998" id="a8B-uc-nCr"/>
@@ -249,11 +237,10 @@
                         <constraint firstAttribute="bottom" secondItem="jpG-sY-RWK" secondAttribute="bottom" constant="8" id="fA8-gD-DeM"/>
                         <constraint firstItem="Pz3-Vu-Bxp" firstAttribute="leading" secondItem="L4n-LD-olW" secondAttribute="trailing" constant="41" id="ftk-Io-wwu"/>
                         <constraint firstItem="ZJr-vG-VWZ" firstAttribute="top" secondItem="iMQ-lt-2jr" secondAttribute="bottom" constant="10" id="gD5-Fn-Fby"/>
+                        <constraint firstItem="0C0-qT-1Th" firstAttribute="height" secondItem="gfe-Hi-teV" secondAttribute="height" multiplier="0.933333" id="kuQ-2N-t0d"/>
                         <constraint firstItem="L4n-LD-olW" firstAttribute="leading" secondItem="QcD-6V-dXe" secondAttribute="leading" constant="8" id="nix-m7-Rvo"/>
                         <constraint firstItem="jpG-sY-RWK" firstAttribute="leading" secondItem="L4n-LD-olW" secondAttribute="trailing" constant="18" id="nmL-ny-uvJ"/>
-                        <constraint firstItem="Uqj-ZT-xqp" firstAttribute="top" secondItem="QcD-6V-dXe" secondAttribute="top" id="ohN-kT-n8W"/>
                         <constraint firstItem="L4n-LD-olW" firstAttribute="top" secondItem="QcD-6V-dXe" secondAttribute="top" constant="8" id="pBY-Tk-npK"/>
-                        <constraint firstItem="Uqj-ZT-xqp" firstAttribute="leading" secondItem="QcD-6V-dXe" secondAttribute="leading" id="pdY-ob-wYt"/>
                         <constraint firstItem="iMQ-lt-2jr" firstAttribute="top" secondItem="QcD-6V-dXe" secondAttribute="top" constant="8" id="uks-kf-kS5"/>
                         <constraint firstAttribute="height" constant="262" id="xbI-W4-cal"/>
                         <constraint firstItem="0C0-qT-1Th" firstAttribute="trailing" secondItem="gfe-Hi-teV" secondAttribute="trailing" id="yfL-ub-Qad"/>
