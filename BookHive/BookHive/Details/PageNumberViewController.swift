@@ -8,6 +8,7 @@
 import UIKit
 import FirebaseAuth
 import Firebase
+import Kingfisher
 
 class PageNumberViewController: UIViewController {
     
@@ -26,6 +27,9 @@ class PageNumberViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var infoIcon       : UIButton!
     @IBOutlet weak var addQuotesButton: UIButton!
+    @IBOutlet weak var animatedView: AnimatedImageView!
+    @IBOutlet weak var quotesAnimateLabel: UILabel!
+
     //MARK: - Variable
     var selectedReadBook: ReadBook?
     var quotesNotes     : [QuotesNote] = []
@@ -39,11 +43,12 @@ class PageNumberViewController: UIViewController {
         fetchNickname()
         collectionSetup()
         gestureRecognizer()
-        
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         quotesBooksFetch(forCoverId: (selectedReadBook?.coverID)!)
     }
+    
     //MARK: - Setup UI FirebaseData
     private func setUpData() {
         bookNameLabel.text      = selectedReadBook?.title
@@ -54,6 +59,7 @@ class PageNumberViewController: UIViewController {
         progressPercent.text    = "% \(Int(percentCompleted))"
         updateProgressView()
     }
+    
     //MARK: - CollectionView Setup
     private func collectionSetup() {
         collectionView.register(MyquotesCollectionViewCell.nib(), forCellWithReuseIdentifier: MyquotesCollectionViewCell.identifier)
@@ -102,6 +108,7 @@ class PageNumberViewController: UIViewController {
             self.pageNumberUpdate(bookId: (self.selectedReadBook?.documentID)!)
         }
     }
+    
     //MARK: - FetchFirebase Nickname
     func fetchNickname() {
         guard let currentUser           = Auth.auth().currentUser else { return }
@@ -115,6 +122,7 @@ class PageNumberViewController: UIViewController {
             }
         }
     }
+    
     // MARK: - Views Setup
     private func viewsConfigure() {
         bottomView.layer.cornerRadius       = 15
@@ -132,6 +140,7 @@ class PageNumberViewController: UIViewController {
         progressBar.layer.cornerRadius      = 5
         saveButton.layer.cornerRadius       = 8
     }
+    
     // MARK: - Setup Pop Button
     private func setPopButton() {
         let infoClosure = { (action: UIAction) in
@@ -180,6 +189,7 @@ class PageNumberViewController: UIViewController {
             }
         }
     }
+    
     //MARK: - Fetch a request to see quotes related to the book
     private func quotesBooksFetch(forCoverId coverId: String) {
         if let uuid = Auth.auth().currentUser?.uid {
@@ -218,17 +228,18 @@ class PageNumberViewController: UIViewController {
             [self] in
             self.readingBookFinishUpdate(bookId: (selectedReadBook?.documentID)!)
         }
-        
-        
     }
+    
     @IBAction func saveButtonTapped(_ sender: Any) {
         DispatchQueue.main.async {
             self.pageNumberDidChange()
         }
     }
+    
     @IBAction func offButton(_ sender: UIButton) {
         dismiss(animated: true)
     }
+    
     @IBAction func addQuotesButtonTapped(_ sender: UIButton) {
         let vc = AddQuotesViewController()
         // present yaparken kitap adı ve yazar bilgileri belli olduğunda alıntı ekleme sayfasına buradan bilgiler gönderilir.
@@ -238,7 +249,6 @@ class PageNumberViewController: UIViewController {
         vc.modalPresentationStyle = .formSheet
         present(vc, animated: true)
     }
-    
 }
 
 extension PageNumberViewController: UICollectionViewDelegate, UICollectionViewDataSource {

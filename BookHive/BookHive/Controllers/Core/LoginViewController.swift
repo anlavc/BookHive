@@ -128,10 +128,16 @@ class LoginViewController: UIViewController {
             return nil
         }
     }
-    //MARK: - Forgot Button
+    //MARK: - Forget Button
     @IBAction func forgetButtonTapped(_ sender: UIButton) {
-        
-        
+        guard let email = emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
+        Auth.auth().sendPasswordReset(withEmail: email) { error in
+            if let error = error {
+                self.presentGFAlertOnMainThread(title: NSLocalizedString("ERROR_SENDING_PASSWORD_RESET_EMAIL", comment: ""), message: error.localizedDescription, buttonTitle: NSLocalizedString("OK", comment: ""))
+            } else {
+                self.presentGFAlertOnMainThread(title: NSLocalizedString("PASSWORD_RESET_EMAIL_SENT", comment: ""), message: NSLocalizedString("CHECK_YOUR_EMAIL(IT_MAYBE_IN_JUNK)", comment: ""), buttonTitle: NSLocalizedString("OK", comment: ""))
+            }
+        }
     }
 }
 

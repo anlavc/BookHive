@@ -223,7 +223,6 @@ extension MyBooksViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if readingBooks.count > 0 {
-            self.stopAnimation()
             self.animatedView.isHidden = true
         } else {
             self.animatedView.isHidden = false
