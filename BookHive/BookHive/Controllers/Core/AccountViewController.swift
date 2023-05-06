@@ -42,16 +42,16 @@ class AccountViewController: FormViewController, MFMailComposeViewControllerDele
     }
     func fetchName() {
         guard let currentUser = Auth.auth().currentUser else { return }
-           let uid = currentUser.uid
-           
-           Firestore.firestore().collection("users").document(uid).getDocument { (document, error) in
-               if let document = document, document.exists {
-                   let name = document.get("name") as? String ?? ""
-                   self.nickname = name
-               } else {
-                   self.nickname = ""
-               }
-           }
+        let uid = currentUser.uid
+        
+        Firestore.firestore().collection("users").document(uid).getDocument { (document, error) in
+            if let document = document, document.exists {
+                let name = document.get("name") as? String ?? ""
+                self.nickname = name
+            } else {
+                self.nickname = ""
+            }
+        }
     }
     
     // MARK: - About Form
@@ -95,16 +95,15 @@ class AccountViewController: FormViewController, MFMailComposeViewControllerDele
                 }
             }
         }
-
+        
         
         <<< AccountCustomRow() {
-            $0.cell.accountTableViewCellLabelName.text = NSLocalizedString("Rate us in App Store", comment: "")
-            $0.cell.accountIconImageView.image = UIImage(systemName: "star.leadinghalf.filled")
+            $0.cell.accountTableViewCellLabelName.text = NSLocalizedString("License", comment: "")
+            $0.cell.accountIconImageView.image = UIImage(named: "license")
             $0.onCellSelection { cell, row in
-                // App Store URL
-//                if let url = URL(string: "") {
-//                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
-//                }
+                let vc = LicenseViewController()
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: true)
             }
         }
     }
@@ -192,15 +191,27 @@ class AccountViewController: FormViewController, MFMailComposeViewControllerDele
                 if let user = Auth.auth().currentUser {
                     let alert = UIAlertController(title: NSLocalizedString("Permanently Delete Account", comment: ""), message: NSLocalizedString("You are permanently deleting your account! This action is irreversible! Are You Sure?", comment: ""), preferredStyle: .alert)
                     let okAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .destructive) { (_) in
+                        
+                        guard let user = Auth.auth().currentUser else {
+                            self.presentGFAlertOnMainThread(title: "ERROR", message: "No user is currently logged in.", buttonTitle: "OKEY")
+                            return
+                        }
                         user.delete { error in
                             if let error = error {
-                                print(error.localizedDescription)
+                                self.presentGFAlertOnMainThread(title: "ERROR", message: "An error occurred while deleting user account: \(error.localizedDescription)", buttonTitle: "OK")
                             } else {
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                                    let tabBar = storyboard.instantiateViewController(identifier: "navBar") as? UINavigationController
-                                    self.view.window?.rootViewController = tabBar
-                                    self.view.window?.makeKeyAndVisible()
+                                let uid = user.uid
+                                Firestore.firestore().collection("users").document(uid).delete { error in
+                                    if error != nil {
+                                        self.presentGFAlertOnMainThread(title: "ERROR", message: "An error occurred while deleting user data.", buttonTitle: "OK")
+                                    } else {
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                                            let tabBar = storyboard.instantiateViewController(identifier: "navBar") as? UINavigationController
+                                            self.view.window?.rootViewController = tabBar
+                                            self.view.window?.makeKeyAndVisible()
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -212,7 +223,7 @@ class AccountViewController: FormViewController, MFMailComposeViewControllerDele
                     alert.addAction(cancelAction)
                     self.present(alert, animated: true, completion: nil)
                 } else {
-                    print("User is not logged in")
+//                    print("User is not logged in")
                 }
             }
         }
@@ -220,7 +231,7 @@ class AccountViewController: FormViewController, MFMailComposeViewControllerDele
         <<< ButtonRow() {
             $0.title = NSLocalizedString("Privacy Policy", comment: "")
             $0.cellSetup { cell, row in
-                cell.textLabel?.font = UIFont.systemFont(ofSize: 14)
+                cell.textLabel?.font = UIFont.systemFont(ofSize: 16)
             }
             $0.cellUpdate { cell, row in
                 cell.textLabel?.textColor = .systemBlue
