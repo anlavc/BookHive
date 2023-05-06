@@ -20,12 +20,10 @@ class SearchTableViewCell: UITableViewCell {
     var viewModel: SearchViewModel?
     var delegate : SearchTableViewCellDelegate?
     var index    : SearchDoc?
-    var isFavorited = false
     
     // MARK: - Outlets
     @IBOutlet weak var searchView       : UIView!
     @IBOutlet weak var bookImageView    : UIImageView!
-    @IBOutlet weak var favoriteButton   : UIButton!
     @IBOutlet weak var bookNameLabel    : UILabel!
     @IBOutlet weak var authorNameLabel  : UILabel!
     @IBOutlet weak var viewDetailsButton: UIButton!
@@ -69,13 +67,6 @@ class SearchTableViewCell: UITableViewCell {
         let authorNames = model.author_name?.joined(separator: ", ")
         authorNameLabel.text = authorNames
        
-    }
-    
-    // MARK: - Search Favorite Button Action
-    @IBAction func favoriteButtonTapped(_ sender: UIButton) {
-        isFavorited.toggle()
-        let bookFavorite = isFavorited ? "heart.fill" : "heart"
-        favoriteButton.setImage(UIImage(systemName: bookFavorite), for: .normal)
     }
     
     // MARK: - Search Details Button Action

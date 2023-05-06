@@ -29,6 +29,7 @@ class SearchViewController: UIViewController, SearchTableViewCellDelegate {
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var animationGif: AnimatedImageView!
     @IBOutlet weak var findLabel: UILabel!
+    @IBOutlet weak var notFoundAnimated: AnimatedImageView!
     
     // MARK: - Properties
     var viewModel = SearchViewModel()
@@ -48,14 +49,17 @@ class SearchViewController: UIViewController, SearchTableViewCellDelegate {
         observeEvent()
         gestureRecognizer()
         startAnimation()
-        
+        notFoundAnimated.alpha = 0.0
     }
     
     override func viewWillAppear(_ animated: Bool) {
         DispatchQueue.main.async {
             self.indicator.stopAnimating()
+            self.notFoundAnimated.isHidden = true
+            self.stopNotFoundAnimation()
         }
     }
+    
     //MARK: - Lottie Search Animation Func
     private func startAnimation() {
         let aniView = LottieAnimationView(name: "searchjson")
@@ -65,8 +69,37 @@ class SearchViewController: UIViewController, SearchTableViewCellDelegate {
         aniView.frame = self.animationGif.bounds
         aniView.play()
         self.animationGif.addSubview(aniView)
-        
     }
+    
+    //MARK: - Lottie Search Not Found Start Animation Func
+    private func startNotFoundAnimation() {
+        if let existingView = notFoundAnimated.subviews.first(where: { $0 is LottieAnimationView }) as? LottieAnimationView {
+            existingView.play()
+        } else {
+            let animatedView = LottieAnimationView(name: "notfound")
+            animatedView.contentMode = .scaleAspectFit
+            animatedView.loopMode = .loop
+            animatedView.center = self.notFoundAnimated.center
+            animatedView.frame = self.notFoundAnimated.bounds
+            animatedView.play()
+            self.notFoundAnimated.addSubview(animatedView)
+        }
+        DispatchQueue.main.async {
+            AnimatedImageView.animate(withDuration: 1.5) {
+                self.notFoundAnimated.alpha = 1.0
+            }
+        }
+    }
+    
+    //MARK: - Lottie Search Not Found Stop Animation Func
+    private func stopNotFoundAnimation() {
+        guard let animatedView = notFoundAnimated.subviews.first(where: { $0 is LottieAnimationView }) as? LottieAnimationView else {
+            return
+        }
+        animatedView.stop()
+        animatedView.removeFromSuperview()
+    }
+    
     // MARK: - Observe Event
     func observeEvent() {
         viewModel.eventHandler = { [weak self] event in
@@ -82,6 +115,11 @@ class SearchViewController: UIViewController, SearchTableViewCellDelegate {
                 print("Stop Loading...")
             case .dataLoaded:
                 if self.viewModel.searchBook.count == 0 {
+                    DispatchQueue.main.async {
+                        self.notFoundAnimated.isHidden = false
+                        self.startNotFoundAnimation()
+                    }
+                    
                     print("Data Count ----> 0")
                 } else {
                     DispatchQueue.main.async {
@@ -130,6 +168,7 @@ class SearchViewController: UIViewController, SearchTableViewCellDelegate {
         searchTextField.text = ""
         tableView.isHidden = true
         button.isHidden = true
+        notFoundAnimated.isHidden = true
         animationGif.isHidden = false
         findLabel.isHidden = false
         viewModel.searchBook = []
