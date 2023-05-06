@@ -227,6 +227,7 @@ class PageNumberViewController: UIViewController {
         presentBottomAlert(title: "", message: "Are you sure you want to add this book to your reading list?", okTitle: "Done", cancelTitle: "CANCEL") {
             [self] in
             self.readingBookFinishUpdate(bookId: (selectedReadBook?.documentID)!)
+            dismiss(animated: true)
         }
     }
     

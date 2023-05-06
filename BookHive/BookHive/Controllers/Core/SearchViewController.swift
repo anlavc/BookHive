@@ -209,9 +209,11 @@ extension SearchViewController: UITextFieldDelegate {
         if !searchTextField.text!.isEmpty {
             button.isHidden = false
             animationGif.isHidden = true
+            notFoundAnimated.isHidden = true
             findLabel.isHidden = true
         } else {
             button.isHidden = true
+            notFoundAnimated.isHidden = true
             animationGif.isHidden = false
             findLabel.isHidden = false
         }
