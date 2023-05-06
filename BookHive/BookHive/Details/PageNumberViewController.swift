@@ -8,6 +8,8 @@
 import UIKit
 import FirebaseAuth
 import Firebase
+import Lottie
+import Kingfisher
 
 class PageNumberViewController: UIViewController {
     
@@ -26,6 +28,7 @@ class PageNumberViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var infoIcon       : UIButton!
     @IBOutlet weak var addQuotesButton: UIButton!
+    @IBOutlet weak var animatedView: AnimatedImageView!
     //MARK: - Variable
     var selectedReadBook: ReadBook?
     var quotesNotes     : [QuotesNote] = []
@@ -38,7 +41,6 @@ class PageNumberViewController: UIViewController {
         setUpData()
         fetchNickname()
         collectionSetup()
-       
     }
     override func viewWillAppear(_ animated: Bool) {
         quotesBooksFetch(forCoverId: (selectedReadBook?.coverID)!)
@@ -74,7 +76,12 @@ class PageNumberViewController: UIViewController {
             pageNumberTF.text   = "\(book.readPage!)"
             return
         } else if pageNumber    == book.totalpageNumber! {
-            presentGFAlertOnMainThread(title: "CONGRATULATIONS", message: "Congratulations. The book is finished.  Now this book will be listed among the reads.", buttonTitle: "OK")
+            startAnimation()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+                self.stopAnimation()
+            }
+            
+            presentGFAlertOnMainThread(title: "CONGRATULATIONS", message: "Congratulations. The book is finished.  Now this book will be listed among the reads.", buttonTitle: "OKEY")
             readingBookFinishUpdate(bookId: (selectedReadBook?.documentID)!)
         }
         Firestore.firestore().collection("users").document(Auth.auth().currentUser!.uid).collection("ReadsBooks").document(book.documentID!).updateData(["readPage": pageNumber]) { error in
@@ -131,6 +138,26 @@ class PageNumberViewController: UIViewController {
         self.infoIcon.showsMenuAsPrimaryAction = true
         self.infoIcon.changesSelectionAsPrimaryAction = false
     }
+    
+    //MARK: - Lottie Animation Start and Stop
+    private func startAnimation() {
+        let animatedView = LottieAnimationView(name: "confettiCong")
+        animatedView.contentMode = .scaleAspectFit
+        animatedView.loopMode = .loop
+        animatedView.center = self.animatedView.center
+        animatedView.frame = self.animatedView.bounds
+        animatedView.play()
+        self.animatedView.addSubview(animatedView)
+    }
+    
+    private func stopAnimation() {
+        guard let animatedView = animatedView.subviews.first(where: { $0 is LottieAnimationView }) as? LottieAnimationView else {
+            return
+        }
+        animatedView.stop()
+        animatedView.removeFromSuperview()
+    }
+
     //MARK: - The finish value is updated to true if the book is finished
     func readingBookFinishUpdate(bookId: String) {
         if let uuid = Auth.auth().currentUser?.uid {
@@ -145,6 +172,7 @@ class PageNumberViewController: UIViewController {
             }
         }
     }
+    
     //MARK: - Page Number Update - Click button and readPage firebase update.
     func pageNumberUpdate(bookId: String) {
         if let uuid = Auth.auth().currentUser?.uid {
@@ -203,7 +231,12 @@ class PageNumberViewController: UIViewController {
         presentBottomAlert(title: "", message: "Are you sure you want to add this book to your reading list?", okTitle: "DONE", cancelTitle: "CANCEL") {
             [self] in
             self.readingBookFinishUpdate(bookId: (selectedReadBook?.documentID)!)
-            dismiss(animated: true)
+            
+            startAnimation()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+                self.dismiss(animated: true)
+                self.stopAnimation()
+            }
         }
     
         

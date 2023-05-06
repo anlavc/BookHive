@@ -26,7 +26,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="D8K-UQ-mzK">
-                    <rect key="frame" x="15" y="224" width="363" height="164"/>
+                    <rect key="frame" x="15" y="217" width="363" height="164"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="363" id="aev-vj-6K3"/>
@@ -40,7 +40,7 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FTG-Mr-OTY">
-                    <rect key="frame" x="20" y="424" width="353" height="94"/>
+                    <rect key="frame" x="20" y="417" width="353" height="94"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="HqD-UX-yl0">
                             <rect key="frame" x="20" y="20" width="313" height="54"/>
@@ -71,7 +71,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zvZ-VI-YkV">
-                    <rect key="frame" x="20" y="535" width="353" height="94"/>
+                    <rect key="frame" x="20" y="528" width="353" height="94"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="taw-c8-s6l">
                             <rect key="frame" x="20" y="20" width="313" height="54"/>
@@ -121,7 +121,7 @@
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="D8K-UQ-mzK" secondAttribute="trailing" constant="15" id="1OT-J3-i0C"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hWw-JP-EUQ" secondAttribute="trailing" constant="50" id="2HP-Yr-s41"/>
-                <constraint firstItem="D8K-UQ-mzK" firstAttribute="top" secondItem="hWw-JP-EUQ" secondAttribute="bottom" constant="42" id="2rK-4r-eQV"/>
+                <constraint firstItem="D8K-UQ-mzK" firstAttribute="top" secondItem="hWw-JP-EUQ" secondAttribute="bottom" constant="35" id="2rK-4r-eQV"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zvZ-VI-YkV" secondAttribute="trailing" constant="20" id="5za-Qo-Ipy"/>
                 <constraint firstItem="hWw-JP-EUQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="8h8-hN-SiN"/>
                 <constraint firstItem="hWw-JP-EUQ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="69" id="Rkg-3E-hF5"/>
@@ -131,7 +131,6 @@
                 <constraint firstItem="zvZ-VI-YkV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="jOY-Pd-6mc"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="FTG-Mr-OTY" secondAttribute="trailing" constant="20" id="lI8-mI-FEY"/>
                 <constraint firstItem="FTG-Mr-OTY" firstAttribute="top" secondItem="D8K-UQ-mzK" secondAttribute="bottom" constant="36" id="sXr-aL-EXH"/>
-                <constraint firstItem="D8K-UQ-mzK" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="165" id="twb-iz-hM6"/>
             </constraints>
             <point key="canvasLocation" x="139.69465648854961" y="20.422535211267608"/>
         </view>
