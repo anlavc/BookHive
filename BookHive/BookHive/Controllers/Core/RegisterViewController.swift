@@ -10,6 +10,7 @@ import FirebaseAuth
 import Firebase
 
 class RegisterViewController: UIViewController {
+    
     //MARK: - Outlets
     @IBOutlet weak var personicon: UIButton!
     @IBOutlet weak var centerStack: UIStackView!
@@ -24,6 +25,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var createButton: UIButton!
     @IBOutlet weak var createAccount: UILabel!
     @IBOutlet weak var haveAccount: UILabel!
+    
     //MARK: - Lİfe Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,18 +34,22 @@ class RegisterViewController: UIViewController {
         gestureRecognizer()
         textLocalizable()
     }
+    
     //MARK: - Xib Register
     private func xibRegister() {
         Bundle.main.loadNibNamed("RegisterViewController", owner: self, options: nil)![0] as? RegisterViewController
     }
+    
     //MARK: - Keyboard Gesture
     private func gestureRecognizer() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tapGesture)
     }
+    
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
+    
     private func setupUI() {
         createButton.layer.cornerRadius = 5
         personicon.layer.cornerRadius   = 12
@@ -58,6 +64,7 @@ class RegisterViewController: UIViewController {
         password.attributedPlaceholder     = NSAttributedString(string: NSLocalizedString("Enter Password", comment: ""), attributes: attributes)
         repassword.attributedPlaceholder     = NSAttributedString(string: NSLocalizedString("Enter Password", comment: ""), attributes: attributes)
     }
+    
     //MARK: - String Localizable
     private func textLocalizable() {
         nickname.placeholder    = NSLocalizedString("Enter Name", comment: "")
@@ -69,10 +76,12 @@ class RegisterViewController: UIViewController {
         createButton.setTitle(NSLocalizedString("Register", comment: ""), for: .normal)
         loginButton.setTitle(NSLocalizedString("Login", comment: ""), for: .normal)
     }
+    
     //MARK: - Login Segue
     @IBAction func backbuttonTapped(_ sender: UIButton) {
         self.dismiss(animated: true)
     }
+    
     //MARK: - Validate Fields
     private func validateFields() -> String? {
         if nickname.text!.isNilOrEmpty  ||
@@ -92,6 +101,7 @@ class RegisterViewController: UIViewController {
             return nil
         }
     }
+    
     //MARK: - Firebase Create User
     @IBAction func createUserButton(_ sender: UIButton) {
         let error = validateFields()
@@ -107,6 +117,14 @@ class RegisterViewController: UIViewController {
                     self.presentGFAlertOnMainThread(title: "ERROR", message: "An error occurred during registration.", buttonTitle: "OKEY")
                 } else {
                     guard let uid = authResult?.user.uid else { return }
+                    // Kullanıcının e-posta adresini doğrula
+                    Auth.auth().currentUser?.sendEmailVerification(completion: { (error) in
+                        if let error = error {
+                            self.presentGFAlertOnMainThread(title: "ERROR", message: "An error occurred while sending verification email.", buttonTitle: "OK")
+                        } else {
+                            self.presentGFAlertOnMainThread(title: "SUCCESS", message: "Verification email sent successfully. Please check your inbox and click on the verification link to verify your email address.", buttonTitle: "OK")
+                        }
+                    })
                     let userData = ["name" : self.nickname.text as Any,
                                     "email" : Auth.auth().currentUser?.email as Any,
                                     "date" : FieldValue.serverTimestamp()]
@@ -124,8 +142,7 @@ class RegisterViewController: UIViewController {
                     }
                 }
             }
-          }
-        
+        }
     }
     //MARK: - Login Segue Button
     @IBAction func loginButtonTapped(_ sender: UIButton) {

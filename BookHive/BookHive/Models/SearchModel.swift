@@ -28,4 +28,3 @@ struct SearchDoc: Codable {
     let edition_key: [String]?
     let first_publish_year: Int?
 }
-

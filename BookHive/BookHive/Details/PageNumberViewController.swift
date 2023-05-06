@@ -200,7 +200,8 @@ class PageNumberViewController: UIViewController {
 
     //MARK: - Button actions
     @IBAction func finishButtonTapped(_ sender: UIButton) {
-        presentBottomAlert(title: "", message: "Are you sure you want to add this book to your reading list?", okTitle: "DONE", cancelTitle: "CANCEL") { [self] in
+        presentBottomAlert(title: "", message: "Are you sure you want to add this book to your reading list?", okTitle: "DONE", cancelTitle: "CANCEL") {
+            [self] in
             self.readingBookFinishUpdate(bookId: (selectedReadBook?.documentID)!)
             dismiss(animated: true)
         }

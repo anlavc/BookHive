@@ -21,7 +21,6 @@ class MyBooksViewController: UIViewController {
     @IBOutlet weak var readBookLabel: UILabel!
     @IBOutlet weak var animatedView: AnimatedImageView!
     
-    
     // MARK: - Properties
     var readingBooks    : [ReadBook] = []
     var favoriteBooks   : [Book] = []
@@ -33,6 +32,7 @@ class MyBooksViewController: UIViewController {
                                                    owner: self)?.first as! UIView
         self.view       = mybooksView
     }
+    
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,10 +49,10 @@ class MyBooksViewController: UIViewController {
     }
   
     private func tapGestureViews() {
-                let tapGesture = UITapGestureRecognizer(target: self, action: #selector(wantToReadViewTapped))
-                wantToReadView.addGestureRecognizer(tapGesture)
-                let readTapGesture = UITapGestureRecognizer(target: self, action: #selector(ReadViewTapped))
-                readView.addGestureRecognizer(readTapGesture)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(wantToReadViewTapped))
+        wantToReadView.addGestureRecognizer(tapGesture)
+        let readTapGesture = UITapGestureRecognizer(target: self, action: #selector(ReadViewTapped))
+        readView.addGestureRecognizer(readTapGesture)
     }
     
     private func startAnimation() {
@@ -66,15 +66,13 @@ class MyBooksViewController: UIViewController {
     }
     
     private func stopAnimation() {
-        let animatedView = LottieAnimationView(name: "reading")
-        animatedView.contentMode = .scaleAspectFit
-        animatedView.loopMode = .loop
-        animatedView.center = self.animatedView.center
-        animatedView.frame = self.animatedView.bounds
+        guard let animatedView = animatedView.subviews.first(where: { $0 is LottieAnimationView }) as? LottieAnimationView else {
+            return
+        }
         animatedView.stop()
         animatedView.removeFromSuperview()
-        self.animatedView.addSubview(animatedView)
     }
+    
     
     //MARK: - Favourite books fetch firebase
     func favouriteBooksFetch() {

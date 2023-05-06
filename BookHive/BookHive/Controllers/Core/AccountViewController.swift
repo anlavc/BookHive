@@ -197,10 +197,10 @@ class AccountViewController: FormViewController, MFMailComposeViewControllerDele
                                 print(error.localizedDescription)
                             } else {
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                                    let storyboard = UIStoryboard(name: "Main", bundle: .main)
-                                    let loginVc = storyboard.instantiateViewController(identifier: "LoginViewController")
-                                    loginVc.modalPresentationStyle = .fullScreen
-                                    self.present(loginVc, animated: true, completion: nil)
+                                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                                    let tabBar = storyboard.instantiateViewController(identifier: "navBar") as? UINavigationController
+                                    self.view.window?.rootViewController = tabBar
+                                    self.view.window?.makeKeyAndVisible()
                                 }
                             }
                         }

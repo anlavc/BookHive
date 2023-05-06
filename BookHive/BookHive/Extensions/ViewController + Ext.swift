@@ -10,12 +10,6 @@ import UIKit
 
 
 extension UIViewController {
-    func showAlert(title: String, message: String) {
-        let alertController = UIAlertController(title: NSLocalizedString(title, comment: ""), message: NSLocalizedString(message, comment: ""), preferredStyle: .alert)
-        let okAction = UIAlertAction(title: NSLocalizedString("TAMAM_BUTTON", comment: ""), style: .default, handler: nil)
-        alertController.addAction(okAction)
-        self.present(alertController, animated: true, completion: nil)
-    }
     
     func presentBottomAlert(title: String, message: String, okTitle: String, cancelTitle: String, okAction: @escaping () -> Void) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
@@ -23,7 +17,8 @@ extension UIViewController {
         let okAction = UIAlertAction(title: okTitle, style: .default) { _ in
             okAction()
         }
-        let cancelAction = UIAlertAction(title: cancelTitle, style: .cancel, handler: nil)
+        
+        let cancelAction = UIAlertAction(title: cancelTitle, style: .destructive, handler: nil)
         
         alert.addAction(okAction)
         alert.addAction(cancelAction)

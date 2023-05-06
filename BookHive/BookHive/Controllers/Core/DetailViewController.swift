@@ -50,12 +50,12 @@ class DetailViewController: UIViewController {
         initViewModel()
         observeEvent()
         collectionSetup()
-       
     }
     override func viewWillAppear(_ animated: Bool) {
         favouriteBooksFetch()
         readingBooksFetch()
     }
+    
     //MARK: -   A request is sent from Firebase to access the information of favourite books
      func favouriteBooksFetch() {
         if let uuid = Auth.auth().currentUser?.uid {
@@ -87,6 +87,7 @@ class DetailViewController: UIViewController {
             }
         }
     }
+    
     //MARK: -  A request is sent from Firebase to access the information of reading books
     private func readingBooksFetch() {
         if let uuid = Auth.auth().currentUser?.uid {
@@ -126,10 +127,12 @@ class DetailViewController: UIViewController {
     @IBAction func dismissButton(_ sender: UIButton) {
         self.dismiss(animated: true)
     }
+    
     //MARK: - Register View Xib
     private func xibRegister() {
         Bundle.main.loadNibNamed("DetailViewController", owner: self, options: nil)![0] as? DetailViewController
     }
+    
     //MARK: - UI Configurations
     private func setupUI() {
         addReadButton.layer.cornerRadius    = 5
@@ -138,6 +141,7 @@ class DetailViewController: UIViewController {
         bgview.layer.maskedCorners          = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         imageView.layer.cornerRadius        = 5
     }
+    
     //MARK: - Collectionview Setup
     private func collectionSetup() {
         collectionView.register(DetailSubjectCell.nib(), forCellWithReuseIdentifier: DetailSubjectCell.identifier)
@@ -146,12 +150,14 @@ class DetailViewController: UIViewController {
             flowLayout.estimatedItemSize    = UICollectionViewFlowLayout.automaticSize
         }
     }
+    
     //MARK: - ViewModel fetch data
     private func initViewModel() {
         viewModel.fetchDetailOlid(olidKey: detailID)
         viewModel.fetchRating(olidKey: selectedBook!)
         viewModel.fetchDetailBooks(detail: detailID)
     }
+    
     //MARK: - UI variables set
     private func setupOlid(olid: DetailModel2) {
         let pagenumber          = String("\(olid.numberOfPages ?? 0)")
