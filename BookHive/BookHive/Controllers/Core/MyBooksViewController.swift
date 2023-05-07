@@ -25,6 +25,7 @@ class MyBooksViewController: UIViewController {
     var readingBooks    : [ReadBook] = []
     var favoriteBooks   : [Book] = []
     var finishBook      : [ReadBook] = []
+    private var animationView: LottieAnimationView?
     
     // MARK: - Load View
     override func loadView() {
@@ -39,13 +40,13 @@ class MyBooksViewController: UIViewController {
         collectionViewSetup()
         viewsSetup()
         tapGestureViews()
+        startAnimation()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fetchReadingBooks()
         favouriteBooksFetch()
-        startAnimation()
     }
   
     private func tapGestureViews() {
@@ -56,6 +57,9 @@ class MyBooksViewController: UIViewController {
     }
     
     private func startAnimation() {
+        guard animationView == nil else {
+            return
+        }
         let animatedView = LottieAnimationView(name: "reading")
         animatedView.contentMode = .scaleAspectFit
         animatedView.loopMode = .loop
@@ -63,16 +67,8 @@ class MyBooksViewController: UIViewController {
         animatedView.frame = self.animatedView.bounds
         animatedView.play()
         self.animatedView.addSubview(animatedView)
+        self.animationView = animatedView
     }
-    
-    private func stopAnimation() {
-        guard let animatedView = animatedView.subviews.first(where: { $0 is LottieAnimationView }) as? LottieAnimationView else {
-            return
-        }
-        animatedView.stop()
-        animatedView.removeFromSuperview()
-    }
-    
     
     //MARK: - Favourite books fetch firebase
     func favouriteBooksFetch() {
