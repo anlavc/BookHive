@@ -7,13 +7,19 @@
 
 import UIKit
 
+protocol HomeCourseTableViewCellDelegate {
+    func didSelectCell(selectedItem: Work)
+}
+
 class HomeCarouselTableViewCell: UITableViewCell {
-    var delegate : HomeCourseTableViewCellDelegate?
-    private var viewModel = HomeViewModel()
+    
+    var delegate            : HomeCourseTableViewCellDelegate?
+    private var viewModel   = HomeViewModel()
     
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    //MARK: - Life Cycle
     override func awakeFromNib() {
         super.awakeFromNib()
         initViewModel()
@@ -23,9 +29,10 @@ class HomeCarouselTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        scaleCenterCell()
         
     }
+    //MARK: - Functions
+    
     func initViewModel() {
         viewModel.fetchBestSeller()
     }
@@ -33,7 +40,6 @@ class HomeCarouselTableViewCell: UITableViewCell {
     func observeEvent() {
         viewModel.eventHandler = { [weak self] event in
             guard let self else {return}
-            
             switch event {
             case .loading:
                 DispatchQueue.main.async {
@@ -43,7 +49,6 @@ class HomeCarouselTableViewCell: UITableViewCell {
             case .stopLoading:
                 DispatchQueue.main.async {
                     self.indicator.stopAnimating()
-                    
                 }
                 print("Stop loading...")
             case .dataLoaded:
@@ -52,7 +57,7 @@ class HomeCarouselTableViewCell: UITableViewCell {
                     print("DATA COUNT ----->>>> 0")
                 } else {
                     DispatchQueue.main.async {
-                        self.indicator.stopAnimating()
+                        //                        self.indicator.stopAnimating()
                         self.collectionView.reloadData()
                     }
                 }
@@ -67,15 +72,13 @@ class HomeCarouselTableViewCell: UITableViewCell {
             }
         }
     }
-    // HomePage collection ilk açıldığında istenilen görünümü alması için;
-    func scaleCenterCell() {
+    
+    private func scaleCenterCell() {
         let centerX = collectionView.contentOffset.x + collectionView.frame.size.width / 2
         for cell in collectionView.visibleCells {
             var offsetX = centerX - cell.center.x
             if offsetX < 0 { offsetX = -offsetX }
             let scale = 1 - offsetX / collectionView.frame.size.width * 0.9
-            
-            // Sol ve sağ hücrelerin boyutunu ayarla
             let scaleFactor = 0.8
             if offsetX < 0 {
                 cell.transform = CGAffineTransform(scaleX: CGFloat(scale * scaleFactor), y: CGFloat(scale * scaleFactor))
@@ -84,14 +87,46 @@ class HomeCarouselTableViewCell: UITableViewCell {
             }
         }
     }
+    
+    private func scaleCell() {
+        let customFlowLayout = CustomFlowLayout()
+        customFlowLayout.itemSize = CGSize(width: 130, height: 200)
+        customFlowLayout.scrollDirection = .horizontal
+        customFlowLayout.minimumLineSpacing = 5
+        collectionView.collectionViewLayout = customFlowLayout
+        collectionView.decelerationRate = .fast
+    }
+    
+    private func scrollToNearestVisibleCollectionViewCell() {
+        let visibleCenterPositionOfScrollView = Float(collectionView.contentOffset.x + (collectionView.bounds.size.width / 2))
+        var closestCellIndex = -1
+        var closestDistance: Float = .greatestFiniteMagnitude
+        
+        for i in collectionView.visibleCells.indices {
+            let cell = collectionView.visibleCells[i]
+            let cellWidth = cell.bounds.size.width
+            let cellCenter = Float(cell.frame.origin.x + cellWidth / 2)
+            let distance: Float = fabsf(visibleCenterPositionOfScrollView - cellCenter)
+            if distance < closestDistance {
+                closestDistance = distance
+                closestCellIndex = collectionView.indexPath(for: cell)!.row
+            }
+        }
+        if closestCellIndex != -1 {
+            collectionView.scrollToItem(at: IndexPath(row: closestCellIndex, section: 0), at: .centeredHorizontally, animated: true)
+        }
+    }
+    
+    //MARK: - Collection Setup
     private func collectionSetup() {
         collectionView.register(HomeCollectionViewCarousel.nib(), forCellWithReuseIdentifier: HomeCollectionViewCarousel.identifier)
         collectionView.delegate = self
         collectionView.dataSource = self
-        
+        scaleCell()
     }
+    
 }
-extension HomeCarouselTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
+extension HomeCarouselTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.bestSeller.count
     }
@@ -99,40 +134,25 @@ extension HomeCarouselTableViewCell: UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCarousel.identifier, for: indexPath) as! HomeCollectionViewCarousel
         cell.setup(book: viewModel.bestSeller[indexPath.row])
-        scaleCenterCell()
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         delegate?.didSelectCell(selectedItem: viewModel.bestSeller[indexPath.row])
-        
     }
-
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        scaleCenterCell()
+    }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         scaleCenterCell()
-        
     }
     
-    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        guard let collectionView = scrollView as? UICollectionView else { return }
-
-        let targetX = targetContentOffset.pointee.x
-        var closestCellOffset: CGFloat = .greatestFiniteMagnitude
-        
-        for indexPath in collectionView.indexPathsForVisibleItems {
-            let cell = collectionView.cellForItem(at: indexPath)!
-            let cellOffset = cell.frame.origin.x
-            if abs(cellOffset - targetX) < abs(closestCellOffset - targetX) {
-                closestCellOffset = cellOffset
-            }
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        scrollToNearestVisibleCollectionViewCell()
+    }
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if !decelerate {
+            scrollToNearestVisibleCollectionViewCell()
         }
-        
-        targetContentOffset.pointee.x = closestCellOffset
     }
-    
-}
-
-protocol HomeCourseTableViewCellDelegate {
-    func didSelectCell(selectedItem: Work)
-    
 }

@@ -25,10 +25,10 @@
                                 <rect key="frame" x="-5" y="-10" width="329" height="210"/>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Pza-4t-cYe">
-                                <rect key="frame" x="5" y="5" width="309" height="235"/>
+                                <rect key="frame" x="0.0" y="5" width="319" height="235"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="JMM-Ml-4ui">
-                                    <size key="itemSize" width="128" height="180"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="5" minimumInteritemSpacing="5" id="JMM-Ml-4ui">
+                                    <size key="itemSize" width="130" height="180"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -43,12 +43,12 @@
                             <constraint firstItem="Pza-4t-cYe" firstAttribute="top" secondItem="79c-AX-NHa" secondAttribute="top" constant="5" id="1av-hI-vBK"/>
                             <constraint firstAttribute="trailing" secondItem="bja-Ak-Z1X" secondAttribute="trailing" constant="-5" id="49d-JN-6dO"/>
                             <constraint firstItem="bja-Ak-Z1X" firstAttribute="top" secondItem="79c-AX-NHa" secondAttribute="top" constant="-10" id="5At-TI-Pog"/>
-                            <constraint firstItem="Pza-4t-cYe" firstAttribute="leading" secondItem="79c-AX-NHa" secondAttribute="leading" constant="5" id="6W7-U5-8hn"/>
+                            <constraint firstItem="Pza-4t-cYe" firstAttribute="leading" secondItem="79c-AX-NHa" secondAttribute="leading" id="6W7-U5-8hn"/>
                             <constraint firstAttribute="bottom" secondItem="bja-Ak-Z1X" secondAttribute="bottom" constant="40" id="M1q-IN-QPH"/>
                             <constraint firstItem="oGY-wP-y7E" firstAttribute="centerY" secondItem="79c-AX-NHa" secondAttribute="centerY" id="SJe-4j-fEE"/>
                             <constraint firstAttribute="bottom" secondItem="Pza-4t-cYe" secondAttribute="bottom" id="eKH-hO-WTN"/>
                             <constraint firstItem="bja-Ak-Z1X" firstAttribute="leading" secondItem="79c-AX-NHa" secondAttribute="leading" constant="-5" id="eqJ-gj-bJa"/>
-                            <constraint firstAttribute="trailing" secondItem="Pza-4t-cYe" secondAttribute="trailing" constant="5" id="jRc-1t-oJN"/>
+                            <constraint firstAttribute="trailing" secondItem="Pza-4t-cYe" secondAttribute="trailing" id="jRc-1t-oJN"/>
                             <constraint firstItem="oGY-wP-y7E" firstAttribute="centerX" secondItem="79c-AX-NHa" secondAttribute="centerX" id="swH-Fo-lGb"/>
                         </constraints>
                     </view>

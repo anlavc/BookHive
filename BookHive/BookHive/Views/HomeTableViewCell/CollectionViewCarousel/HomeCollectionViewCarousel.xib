@@ -21,14 +21,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="130" height="200"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="12" translatesAutoresizingMaskIntoConstraints="NO" id="I5h-6h-ySb">
-                                <rect key="frame" x="5" y="5" width="120" height="190"/>
+                                <rect key="frame" x="0.0" y="5" width="130" height="190"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="I5h-6h-ySb" firstAttribute="leading" secondItem="j9F-ep-GFI" secondAttribute="leading" constant="5" id="8gP-7Z-ygz"/>
-                            <constraint firstAttribute="trailing" secondItem="I5h-6h-ySb" secondAttribute="trailing" constant="5" id="NIV-mK-lsP"/>
+                            <constraint firstItem="I5h-6h-ySb" firstAttribute="leading" secondItem="j9F-ep-GFI" secondAttribute="leading" id="8gP-7Z-ygz"/>
+                            <constraint firstAttribute="trailing" secondItem="I5h-6h-ySb" secondAttribute="trailing" id="NIV-mK-lsP"/>
                             <constraint firstItem="I5h-6h-ySb" firstAttribute="top" secondItem="j9F-ep-GFI" secondAttribute="top" constant="5" id="PL3-tX-RBl"/>
                             <constraint firstAttribute="bottom" secondItem="I5h-6h-ySb" secondAttribute="bottom" constant="5" id="bYE-Bw-QeX"/>
                         </constraints>
