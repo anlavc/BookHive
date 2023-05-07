@@ -12,19 +12,16 @@ import FirebaseAuth
 import Firebase
 
 class AccountViewController: FormViewController, MFMailComposeViewControllerDelegate {
-    var nickname: String? {
-        didSet {
-            userInformationForm()
-            aboutForm()
-            developerInfoForm()
-            accountInfoForm()
-        }
-    }
+    var nickname: String?
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchName()
+//        fetchName()
+        userInformationForm()
+        aboutForm()
+        developerInfoForm()
+        accountInfoForm()
     }
     
     // MARK: - User Information Form
@@ -33,26 +30,26 @@ class AccountViewController: FormViewController, MFMailComposeViewControllerDele
         Section(NSLocalizedString("User Informatıon", comment: ""))
         <<< LabelRow() {
             $0.title = NSLocalizedString("Name", comment: "")
-            $0.value = nickname
+            $0.value = UserNickName.shared.userName
         }
         <<< LabelRow() {
             $0.title = NSLocalizedString("Email", comment: "")
             $0.value = Auth.auth().currentUser?.email
         }
     }
-    func fetchName() {
-        guard let currentUser = Auth.auth().currentUser else { return }
-        let uid = currentUser.uid
-        
-        Firestore.firestore().collection("users").document(uid).getDocument { (document, error) in
-            if let document = document, document.exists {
-                let name = document.get("name") as? String ?? ""
-                self.nickname = name
-            } else {
-                self.nickname = ""
-            }
-        }
-    }
+//    func fetchName() {
+//        guard let currentUser = Auth.auth().currentUser else { return }
+//        let uid = currentUser.uid
+//
+//        Firestore.firestore().collection("users").document(uid).getDocument { (document, error) in
+//            if let document = document, document.exists {
+//                let name = document.get("name") as? String ?? ""
+//                self.nickname = name
+//            } else {
+//                self.nickname = ""
+//            }
+//        }
+//    }
     
     // MARK: - About Form
     private func aboutForm() {
