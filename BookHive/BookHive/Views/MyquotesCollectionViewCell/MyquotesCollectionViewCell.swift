@@ -10,6 +10,8 @@ import UIKit
 class MyquotesCollectionViewCell: UICollectionViewCell {
     static let identifier = "MyquotesCollectionViewCell"
     
+    @IBOutlet weak var shareButton: UIButton!
+    @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var logoStack: UIStackView!
     @IBOutlet weak var pagenoIcon: UIImageView!
     @IBOutlet weak var bookNameIcon: UIImageView!
@@ -29,16 +31,18 @@ class MyquotesCollectionViewCell: UICollectionViewCell {
         return UINib(nibName: "MyquotesCollectionViewCell", bundle: nil)
     }
     func setup(note: QuotesNote) {
-        authorLabel.text       = note.author
-        bookNameLabel.text     = note.title
-        quoteTextField.text    = note.quotesNote
-        pageNumberLabel.text   = note.notePageNumber
-        logoStack.isHidden     = true
-        authorLabel.isHidden    = false
-        bookNameLabel.isHidden  = false
-        pagenoIcon.isHidden     = false
-        bookNameIcon.isHidden   = false
-        authorIcon.isHidden     = false
+        authorLabel.text         = note.author
+        bookNameLabel.text       = note.title
+        quoteTextField.text      = note.quotesNote
+        pageNumberLabel.text     = note.notePageNumber
+        logoStack.isHidden       = true
+        authorLabel.isHidden     = false
+        bookNameLabel.isHidden   = false
+        pagenoIcon.isHidden      = false
+        bookNameIcon.isHidden    = false
+        authorIcon.isHidden      = false
+        deleteButton.isHidden   =  false
+        shareButton.isHidden    =  false
         
     }
     func setupNil() {
@@ -50,5 +54,11 @@ class MyquotesCollectionViewCell: UICollectionViewCell {
         bookNameIcon.isHidden   = true
         authorIcon.isHidden     = true
         logoStack.isHidden      = false
+        deleteButton.isHidden   = true
+        shareButton.isHidden    = true
+    }
+    
+    @IBAction func deleteButtonTapped(_ sender: UIButton) {
+        print("DELETE TAPPED")
     }
 }
