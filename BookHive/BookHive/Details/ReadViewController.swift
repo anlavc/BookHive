@@ -159,8 +159,17 @@ extension ReadViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ReadTableViewCell.identifier, for: indexPath) as! ReadTableViewCell
         cell.configure(book: readBook[indexPath.row])
+        cell.selectionStyle = .none
+
         return cell
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = PageNumberViewController()
+        vc.selectedReadBook = readBook[indexPath.row]
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
+    }
+    
 }
 
 extension ReadViewController: UITableViewDelegate {
