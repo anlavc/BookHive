@@ -50,6 +50,10 @@ class AddQuotesViewController: UIViewController {
                                                        "readingdate"    : FieldValue.serverTimestamp()
                                                       ])
             presentGFAlertOnMainThread(title: "Success", message: "Notes Success Added", buttonTitle: "OKEY")
+            
+            guard let pageNumberVC = presentingViewController as? PageNumberViewController else {return}
+            pageNumberVC.quotesBooksFetch(forCoverId: coverID!)
+            pageNumberVC.collectionView.reloadData()
             dismiss(animated: true)
           
         }
