@@ -129,13 +129,17 @@ class MyBooksViewController: UIViewController {
                         // finish değeri true değilse readBook dizisine ekleler
                         let readbookArray   = ReadBook(coverID: coverID, title: title, finish: finish, readPage: readPage, readingDate: readingDate, totalpageNumber: totalpageNumber, author: author,documentID: documentID)
                         self.readingBooks.append(readbookArray)
-                    } else {
+                    } else if finish {
                         // finish değeri doğruysa yani biten kitapsa finishBooks dizisine ekler.
                         let readbookArray   = ReadBook(coverID: coverID, title: title, finish: finish, readPage: readPage, readingDate: readingDate, totalpageNumber: totalpageNumber, author: author,documentID: documentID)
                         self.finishBook.append(readbookArray)
                     }
                     self.collectionView.reloadData()
                     self.readBookLabel.text = "Books (\(self.finishBook.count))"
+                }
+                if documents.isEmpty {
+                    self.readBookLabel.text = "Books (0)"
+                    return
                 }
             }
         }

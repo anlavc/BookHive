@@ -98,6 +98,8 @@
 		EEC8356A29EAEE6300058796 /* HomeCollectionViewCarousel.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEC8356829EAEE6300058796 /* HomeCollectionViewCarousel.xib */; };
 		EEC8356D29EAF1D200058796 /* HomeCarouselTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC8356B29EAF1D200058796 /* HomeCarouselTableViewCell.swift */; };
 		EEC8356E29EAF1D200058796 /* HomeCarouselTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEC8356C29EAF1D200058796 /* HomeCarouselTableViewCell.xib */; };
+		EED293BF2A082E4600CA9203 /* CustomFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED293BE2A082E4600CA9203 /* CustomFlowLayout.swift */; };
+		EED293C12A0832E600CA9203 /* UserNickName + Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED293C02A0832E600CA9203 /* UserNickName + Singleton.swift */; };
 		EEE4DAB729F914980017A5EF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE4DAB529F914980017A5EF /* LoginViewController.swift */; };
 		EEE4DAB829F914980017A5EF /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEE4DAB629F914980017A5EF /* LoginViewController.xib */; };
 		EEE4DABA29F91A030017A5EF /* TextField + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE4DAB929F91A030017A5EF /* TextField + Ext.swift */; };
@@ -259,6 +261,8 @@
 		EEC8356829EAEE6300058796 /* HomeCollectionViewCarousel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCollectionViewCarousel.xib; sourceTree = "<group>"; };
 		EEC8356B29EAF1D200058796 /* HomeCarouselTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCarouselTableViewCell.swift; sourceTree = "<group>"; };
 		EEC8356C29EAF1D200058796 /* HomeCarouselTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCarouselTableViewCell.xib; sourceTree = "<group>"; };
+		EED293BE2A082E4600CA9203 /* CustomFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFlowLayout.swift; sourceTree = "<group>"; };
+		EED293C02A0832E600CA9203 /* UserNickName + Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserNickName + Singleton.swift"; sourceTree = "<group>"; };
 		EEE4DAB529F914980017A5EF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		EEE4DAB629F914980017A5EF /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		EEE4DAB929F91A030017A5EF /* TextField + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField + Ext.swift"; sourceTree = "<group>"; };
@@ -563,6 +567,7 @@
 				EE78967229F4742200991261 /* DetailOlid.swift */,
 				EEBEAEBB29F85ADD00F993B8 /* Rating.swift */,
 				EE1B9B3029FD7B1C002F81F2 /* FavoriteBook.swift */,
+				EED293C02A0832E600CA9203 /* UserNickName + Singleton.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -621,6 +626,7 @@
 				EEC8356C29EAF1D200058796 /* HomeCarouselTableViewCell.xib */,
 				EEC8356729EAEE6300058796 /* HomeCollectionViewCarousel.swift */,
 				EEC8356829EAEE6300058796 /* HomeCollectionViewCarousel.xib */,
+				EED293BE2A082E4600CA9203 /* CustomFlowLayout.swift */,
 			);
 			path = CollectionViewCarousel;
 			sourceTree = "<group>";
@@ -769,6 +775,7 @@
 				EE78967329F4742200991261 /* DetailOlid.swift in Sources */,
 				EE977F7F29F13E910027CF90 /* ImageView + Ext.swift in Sources */,
 				EEFBBCB029E9784D00BDD902 /* HomeViewModel.swift in Sources */,
+				EED293BF2A082E4600CA9203 /* CustomFlowLayout.swift in Sources */,
 				2E88B35829E700AE008F4B4B /* AccountViewController.swift in Sources */,
 				EEFBBCA829E96E3100BDD902 /* Model.swift in Sources */,
 				EE60D1182A04DA1C00897F07 /* AATitleLabel.swift in Sources */,
@@ -776,6 +783,7 @@
 				EE8CC18B2A0054D000A5AF7D /* Date + Ext.swift in Sources */,
 				EE7CDFEB29F7E13A0058C163 /* YearlyTableViewCell.swift in Sources */,
 				EE92F0BD2A01CA350072D4C9 /* MyquotesCollectionViewCell.swift in Sources */,
+				EED293C12A0832E600CA9203 /* UserNickName + Singleton.swift in Sources */,
 				EEAC4FA929E6F8220066757B /* AppDelegate.swift in Sources */,
 				EE80390829F5BDF6004E13C7 /* NowTableViewCell.swift in Sources */,
 				EEAC4FAB29E6F8220066757B /* SceneDelegate.swift in Sources */,

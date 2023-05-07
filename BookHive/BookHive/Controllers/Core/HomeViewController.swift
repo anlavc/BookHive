@@ -32,7 +32,7 @@ class HomeViewController: UIViewController, HomeCourseTableViewCellDelegate {
     let nowCell         = "NowTableViewCell"
     let yearly          = "YearlyTableViewCell"
     let viewModel       = HomeViewModel()
-    let sections        = ["","NOW_TREND","WEEK_TREND","MOUNTH_TREND"]
+    let sections        = ["","NOW_TREND","WEEK_TREND","MONTHLY_TREND"]
     var userName: String?
     
     //MARK: - Outlets
@@ -78,10 +78,10 @@ class HomeViewController: UIViewController, HomeCourseTableViewCellDelegate {
         Firestore.firestore().collection("users").document(uid).getDocument { (document, error) in
             if let document = document, document.exists {
                 let name = document.get("name") as? String ?? ""
-                self.userName = name
+                UserNickName.shared.userName = name
                 self.tableView.reloadData()
             } else {
-                self.userName = ""
+                UserNickName.shared.userName = ""
                 
             }
         }
@@ -142,7 +142,7 @@ extension HomeViewController: UITableViewDelegate {
             helloLabel.font = UIFont.systemFont(ofSize: 16)
             headerView.addSubview(helloLabel)
             let userNameLabel = UILabel(frame: CGRect(x: 10, y: 25, width: headerView.frame.size.width, height: 20))
-            userNameLabel.text = self.userName
+            userNameLabel.text = UserNickName.shared.userName
             userNameLabel.font = UIFont.systemFont(ofSize: 20, weight: .bold)
             headerView.addSubview(userNameLabel)
 

@@ -192,7 +192,7 @@ class PageNumberViewController: UIViewController {
     }
     
     //MARK: - Fetch a request to see quotes related to the book
-    private func quotesBooksFetch(forCoverId coverId: String) {
+     func quotesBooksFetch(forCoverId coverId: String) {
         if let uuid = Auth.auth().currentUser?.uid {
             let favoriteBooksCollection = Firestore.firestore().collection("users/\(uuid)/QuotesBooks")
             favoriteBooksCollection.whereField("coverID", isEqualTo: coverId).getDocuments() { (querySnapshot, error) in
