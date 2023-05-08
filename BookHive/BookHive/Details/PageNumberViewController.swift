@@ -10,8 +10,10 @@ import FirebaseAuth
 import Firebase
 import Kingfisher
 
-class PageNumberViewController: UIViewController {
-    
+class PageNumberViewController: UIViewController,MyquotesCollectionViewCellDelegate {
+    func deleteQuote(in cell: MyquotesCollectionViewCell) {
+        
+    }
     // MARK: - Outlets
     @IBOutlet weak var topView        : UIView!
     @IBOutlet weak var userNameLabel  : UILabel!
@@ -29,7 +31,7 @@ class PageNumberViewController: UIViewController {
     @IBOutlet weak var addQuotesButton: UIButton!
     @IBOutlet weak var animatedView: AnimatedImageView!
     @IBOutlet weak var quotesAnimateLabel: UILabel!
-
+    
     //MARK: - Variable
     var selectedReadBook: ReadBook?
     var quotesNotes     : [QuotesNote] = []
@@ -54,7 +56,7 @@ class PageNumberViewController: UIViewController {
         bookNameLabel.text      = selectedReadBook?.title
         bookImageView.setImageOlid(with: (selectedReadBook?.coverID)!)
         bookStartDate.text      = selectedReadBook?.readingDate?.toFormattedString()
-//        pageNumberTF.text       = "\(selectedReadBook?.readPage! ?? 0)"
+        //        pageNumberTF.text       = "\(selectedReadBook?.readPage! ?? 0)"
         let percentCompleted    = Double((selectedReadBook?.readPage)!) / Double(((selectedReadBook?.totalpageNumber)!)) * 100
         progressPercent.text    = "% \(Int(percentCompleted))"
         updateProgressView()
@@ -192,7 +194,7 @@ class PageNumberViewController: UIViewController {
     }
     
     //MARK: - Fetch a request to see quotes related to the book
-     func quotesBooksFetch(forCoverId coverId: String) {
+    func quotesBooksFetch(forCoverId coverId: String) {
         if let uuid = Auth.auth().currentUser?.uid {
             let favoriteBooksCollection = Firestore.firestore().collection("users/\(uuid)/QuotesBooks")
             favoriteBooksCollection.whereField("coverID", isEqualTo: coverId).getDocuments() { (querySnapshot, error) in
@@ -215,7 +217,7 @@ class PageNumberViewController: UIViewController {
                     let readPage                    = document.data()["readPage"] as? Int
                     let readingDateTimestamp        = document.data()["readingdate"] as? Timestamp
                     let readingDate                 = readingDateTimestamp?.dateValue()
-                    let quotesNoteBook   = QuotesNote(title: title, author: author, notePageNumber: notePageNumber, quotesNote: quotesNote, noteDate: readingDate)
+                    let quotesNoteBook   = QuotesNote(title: title, author: author, notePageNumber: notePageNumber, quotesNote: quotesNote, noteDate: readingDate,documentID: documentID)
                     self.quotesNotes.append(quotesNoteBook) // gelen veri quotesNotes dizisine eklenir.
                     self.collectionView.reloadData()
                 }
@@ -223,6 +225,30 @@ class PageNumberViewController: UIViewController {
         }
     }
     
+    //MARK: - Delete Quitef Func
+    func deleteQuote(at indexPath: IndexPath) {
+        if let uuid = Auth.auth().currentUser?.uid {
+            let favoriteBooksCollection = Firestore.firestore().collection("users/\(uuid)/QuotesBooks")
+            let quoteToDelete = quotesNotes[indexPath.row]
+            favoriteBooksCollection.document(quoteToDelete.documentID!).delete { (error) in
+                if let error = error {
+                    print("Error deleting quote: \(error.localizedDescription)")
+                    return
+                }
+                // Remove the item from the data source
+                self.quotesNotes.remove(at: indexPath.row)
+                if self.quotesNotes.isEmpty {
+                    // Reload the collection view with 1 empty cell
+                    self.collectionView.reloadData()
+                } else {
+                    // Delete the item from the collection view
+                    self.collectionView.deleteItems(at: [indexPath])
+                }
+            }
+        }
+    }
+
+
     //MARK: - Button actions
     @IBAction func finishButtonTapped(_ sender: UIButton) {
         presentBottomAlert(title: "", message: "Are you sure you want to add this book to your reading list?", okTitle: "Done", cancelTitle: "CANCEL") {
@@ -256,21 +282,17 @@ class PageNumberViewController: UIViewController {
 extension PageNumberViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if quotesNotes.count == 0 {
-            return 1
-        }
-        return quotesNotes.count
+        return quotesNotes.isEmpty ? 1 : quotesNotes.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyquotesCollectionViewCell.identifier, for: indexPath) as! MyquotesCollectionViewCell
-        if quotesNotes.count == 0 {
+        if quotesNotes.isEmpty {
             cell.setupNil()
-  
         } else {
             cell.setup(note: quotesNotes[indexPath.row])
+            cell.index = indexPath.row
         }
         return cell
     }
-   
 }

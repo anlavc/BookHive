@@ -6,10 +6,18 @@
 //
 
 import UIKit
+import FirebaseAuth
+import Firebase
+
+protocol MyquotesCollectionViewCellDelegate: AnyObject {
+    func deleteQuote(in cell: MyquotesCollectionViewCell)
+}
 
 class MyquotesCollectionViewCell: UICollectionViewCell {
     static let identifier = "MyquotesCollectionViewCell"
+    weak var delegate: MyquotesCollectionViewCellDelegate?
     
+    var index: Int!
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var logoStack: UIStackView!
@@ -25,7 +33,7 @@ class MyquotesCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         bgview.layer.cornerRadius = 20
-        bgview.addShadow(color: .white, opacity: 0.5, offset: CGSize(width: 2, height: 2), radius: 5)        
+        bgview.addShadow(color: .white, opacity: 0.5, offset: CGSize(width: 2, height: 2), radius: 5)
     }
     static func nib() -> UINib {
         return UINib(nibName: "MyquotesCollectionViewCell", bundle: nil)
@@ -59,6 +67,9 @@ class MyquotesCollectionViewCell: UICollectionViewCell {
     }
     
     @IBAction func deleteButtonTapped(_ sender: UIButton) {
-        print("DELETE TAPPED")
+        if let collectionView = superview as? UICollectionView,
+           let indexPath = collectionView.indexPath(for: self) {
+            (collectionView.delegate as? PageNumberViewController)?.deleteQuote(at: indexPath)
+        }
     }
 }

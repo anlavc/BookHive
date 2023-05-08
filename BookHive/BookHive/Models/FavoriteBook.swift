@@ -29,4 +29,5 @@ struct QuotesNote {
     let notePageNumber  : String?
     let quotesNote      : String?
     let noteDate        : Date?
+    let documentID:String?
 }

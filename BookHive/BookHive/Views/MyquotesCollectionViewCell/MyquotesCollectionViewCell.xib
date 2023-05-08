@@ -124,7 +124,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="WHR-EY-eH8" userLabel="Stack View Share">
-                                <rect key="frame" x="219" y="5" width="25" height="69.666666666666671"/>
+                                <rect key="frame" x="219" y="5" width="25" height="34.333333333333336"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O1q-Iv-vfh">
                                         <rect key="frame" x="0.0" y="0.0" width="25" height="34.333333333333336"/>
@@ -138,8 +138,8 @@
                                             <action selector="deleteButtonTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="MRY-gM-WIs"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qAm-uj-MI3">
-                                        <rect key="frame" x="0.0" y="35.333333333333329" width="25" height="34.333333333333329"/>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qAm-uj-MI3">
+                                        <rect key="frame" x="0.0" y="0.0" width="25" height="0.0"/>
                                         <color key="tintColor" name="colordarkgray"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="square.and.arrow.up" catalog="system"/>
