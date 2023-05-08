@@ -17,15 +17,30 @@
             // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
             // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
             // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-            guard let _ = (scene as? UIWindowScene) else { return }
+            guard let windowScene = (scene as? UIWindowScene) else { return }
             
-            let currentUser = Auth.auth().currentUser
-            if currentUser != nil {
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let tabBar = storyboard.instantiateViewController(identifier: "tabbar") as? TabBarController
-                window?.rootViewController = tabBar
-                window?.makeKeyAndVisible()
+            let window = UIWindow(windowScene: windowScene)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            // Check if the user is logged in
+            if Auth.auth().currentUser != nil {
+                let tabBarController = storyboard.instantiateViewController(withIdentifier: "tabbar")
+                window.rootViewController = tabBarController
+                window.makeKeyAndVisible()
+            } else {
+                let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+                window.rootViewController = loginViewController
+                window.makeKeyAndVisible()
             }
+            
+            // Show the splash screen only on first launch
+            let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
+            if !launchedBefore {
+                let splashViewController = storyboard.instantiateViewController(withIdentifier: "SplashViewController")
+                window.rootViewController?.present(splashViewController, animated: false, completion: nil)
+                UserDefaults.standard.set(true, forKey: "launchedBefore")
+            }
+            self.window = window
         }
 
         func sceneDidDisconnect(_ scene: UIScene) {
