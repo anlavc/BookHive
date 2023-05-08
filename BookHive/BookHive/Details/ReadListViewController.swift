@@ -127,6 +127,54 @@ class ReadListViewController: UIViewController {
     }
     
     //MARK: - Add the selected book to the reading list.
+//    private func read(rowIndexPathAt indexPath: IndexPath) -> UIContextualAction {
+//        let readAction = UIContextualAction(style: .normal, title: "Read") { action, view, completion in
+//            if let uuid = Auth.auth().currentUser?.uid {
+//                let favoriteBooksCollection = Firestore.firestore().collection("users/\(uuid)/ReadsBooks")
+//                let coverIDToDelete = self.favoriteBooks[indexPath.row].coverID
+//                let bookTitle = self.favoriteBooks[indexPath.row].title
+//                let authorName = self.favoriteBooks[indexPath.row].author
+//                favoriteBooksCollection.whereField("coverID", isEqualTo: coverIDToDelete!).getDocuments { (snapshot, error) in
+//                    if let error = error {
+//                        self.presentGFAlertOnMainThread(title: "ERROR", message: "An error was encountered during start reading.", buttonTitle: "OKEY")
+//                    } else {
+//                        let alert = UIAlertController(title: NSLocalizedString("Enter number of pages", comment: ""), message: nil, preferredStyle: .alert)
+//                        alert.addTextField()
+//                        let saveAction = UIAlertAction(title: NSLocalizedString("Save", comment: ""), style: .default) { (action) in
+//                            if let textFields = alert.textFields, let text = textFields[0].text, let numberOfPages = Int(text), numberOfPages != 0 {
+//                                // Kullanıcının girdiği sayı 0 değil, kaydedilebilir.
+//                                favoriteBooksCollection.addDocument(data:
+//                                    ["coverID" : coverIDToDelete!,
+//                                     "title"   : bookTitle!,
+//                                     "readPage": 0,
+//                                     "author"  : authorName!,
+//                                     "readingdate" : FieldValue.serverTimestamp(),
+//                                     "totalpageNumber": numberOfPages,
+//                                     "finish": false])
+//                                self.favoriteBookDelete(index: indexPath.row)
+//                                self.favoriteBooks.remove(at: indexPath.row)
+//                                self.tableView.deleteRows(at: [indexPath], with: .fade)
+//                                self.tableView.reloadData()
+//                                if self.favoriteBooks.isEmpty {
+//                                    self.startAnimation()
+//                                    self.infoLabel.isHidden = false
+//                                    self.animatedImage.isHidden = false
+//                                }
+//                            }
+//                        }
+//                        let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel, handler: nil)
+//                        alert.addAction(saveAction)
+//                        alert.addAction(cancelAction)
+//                        self.present(alert, animated: true, completion: nil)
+//                    }
+//                }
+//            }
+//            completion(true)
+//        }
+//        readAction.backgroundColor = UIColor(named: "addedFavoriteButton")
+//        readAction.image = UIImage(systemName: "book")
+//        return readAction
+//    }
     private func read(rowIndexPathAt indexPath: IndexPath) -> UIContextualAction {
         let readAction = UIContextualAction(style: .normal, title: "Read") { action, view, completion in
             if let uuid = Auth.auth().currentUser?.uid {
@@ -138,7 +186,11 @@ class ReadListViewController: UIViewController {
                     if let error = error {
                         self.presentGFAlertOnMainThread(title: "ERROR", message: "An error was encountered during start reading.", buttonTitle: "OKEY")
                     } else {
-                        let alert = UIAlertController(title: NSLocalizedString("Enter number of pages", comment: ""), message: nil, preferredStyle: .alert)
+                        if let documents = snapshot?.documents, !documents.isEmpty {
+                            self.presentGFAlertOnMainThread(title: "WARNING", message: "The book with the same name is already on your reading list or among the books you have read!", buttonTitle: "OKEY")
+                            return
+                        }
+                        let alert = UIAlertController(title: NSLocalizedString("How many pages in total?", comment: ""), message: nil, preferredStyle: .alert)
                         alert.addTextField()
                         let saveAction = UIAlertAction(title: NSLocalizedString("Save", comment: ""), style: .default) { (action) in
                             if let textFields = alert.textFields, let text = textFields[0].text, let numberOfPages = Int(text), numberOfPages != 0 {
@@ -175,7 +227,7 @@ class ReadListViewController: UIViewController {
         readAction.image = UIImage(systemName: "book")
         return readAction
     }
-    
+
     // MARK: - Back Button Action
     @IBAction func backButton(_ sender: Any) {
         dismiss(animated: true)
