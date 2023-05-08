@@ -22,13 +22,13 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Finished Read" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F6v-5i-SJk">
-                    <rect key="frame" x="16" y="120" width="219" height="30"/>
+                    <rect key="frame" x="16.000000000000014" y="120" width="235.33333333333337" height="30"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6DO-fS-wSv">
-                    <rect key="frame" x="0.0" y="59" width="38" height="35"/>
+                    <rect key="frame" x="5" y="59" width="49.333333333333336" height="35"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="38" id="Wmr-ik-78J"/>
                         <constraint firstAttribute="height" constant="35" id="kNc-yQ-3kr"/>
@@ -42,11 +42,11 @@
                     </connections>
                 </button>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="n7U-KO-ZnU">
-                    <rect key="frame" x="0.0" y="158" width="393" height="660"/>
+                    <rect key="frame" x="0.0" y="158" width="409.33333333333331" height="660"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uhx-nJ-Lbi" customClass="AnimatedImageView" customModule="Kingfisher">
-                    <rect key="frame" x="36.666666666666657" y="326" width="320" height="200"/>
+                    <rect key="frame" x="44.666666666666657" y="326" width="320" height="200"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="320" id="ExS-Gb-O3b"/>
@@ -55,7 +55,7 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Okunmuş Kitabınız Yok" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2D-YE-Ju6">
-                    <rect key="frame" x="16" y="534" width="361" height="120"/>
+                    <rect key="frame" x="16" y="534" width="377.33333333333331" height="120"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="120" id="avL-RK-Sez"/>
                         <constraint firstAttribute="width" constant="361" id="oa3-Lq-ito"/>
@@ -71,7 +71,7 @@
                 <constraint firstItem="uhx-nJ-Lbi" firstAttribute="centerX" secondItem="v6L-ae-97E" secondAttribute="centerX" id="07x-wi-iss"/>
                 <constraint firstItem="mFF-5t-umV" firstAttribute="trailing" secondItem="F6v-5i-SJk" secondAttribute="trailing" constant="158" id="2Bf-7h-p7E"/>
                 <constraint firstItem="n7U-KO-ZnU" firstAttribute="bottom" secondItem="mFF-5t-umV" secondAttribute="bottom" id="F4e-26-cyP"/>
-                <constraint firstItem="6DO-fS-wSv" firstAttribute="leading" secondItem="mFF-5t-umV" secondAttribute="leading" id="I64-Xc-hQ6"/>
+                <constraint firstItem="6DO-fS-wSv" firstAttribute="leading" secondItem="mFF-5t-umV" secondAttribute="leading" constant="5" id="I64-Xc-hQ6"/>
                 <constraint firstItem="n7U-KO-ZnU" firstAttribute="leading" secondItem="mFF-5t-umV" secondAttribute="leading" id="K4q-ie-vUG"/>
                 <constraint firstItem="6DO-fS-wSv" firstAttribute="top" secondItem="mFF-5t-umV" secondAttribute="top" id="QYD-80-jaa"/>
                 <constraint firstItem="A2D-YE-Ju6" firstAttribute="leading" secondItem="mFF-5t-umV" secondAttribute="leading" constant="16" id="WCw-w1-nqA"/>

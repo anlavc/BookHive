@@ -23,7 +23,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="spz-6J-bPm">
-                    <rect key="frame" x="0.0" y="59" width="38" height="35"/>
+                    <rect key="frame" x="5" y="59" width="33" height="35"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" image="arrow.backward" catalog="system">
                         <color key="baseForegroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -69,7 +69,7 @@
                 <constraint firstItem="ox0-EQ-ipT" firstAttribute="top" secondItem="spz-6J-bPm" secondAttribute="bottom" constant="26" id="TWu-Rw-RPU"/>
                 <constraint firstItem="RXY-Um-6oQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="VKp-Yu-SeR"/>
                 <constraint firstItem="RXY-Um-6oQ" firstAttribute="top" secondItem="ox0-EQ-ipT" secondAttribute="bottom" constant="8" symbolic="YES" id="djk-RX-k9a"/>
-                <constraint firstItem="spz-6J-bPm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="gdo-X9-jDw"/>
+                <constraint firstItem="spz-6J-bPm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="5" id="gdo-X9-jDw"/>
                 <constraint firstItem="ai6-WP-z6K" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="gen-UQ-7hC"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ai6-WP-z6K" secondAttribute="trailing" constant="16" id="jjB-9n-73z"/>
                 <constraint firstItem="RXY-Um-6oQ" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="lVZ-qn-cnp"/>
