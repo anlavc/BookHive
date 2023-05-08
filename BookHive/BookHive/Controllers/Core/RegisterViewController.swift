@@ -34,7 +34,7 @@ class RegisterViewController: UIViewController {
         gestureRecognizer()
         textLocalizable()
     }
-    
+
     //MARK: - Xib Register
     private func xibRegister() {
         Bundle.main.loadNibNamed("RegisterViewController", owner: self, options: nil)![0] as? RegisterViewController
@@ -133,6 +133,12 @@ class RegisterViewController: UIViewController {
                         if error != nil {
                             self.presentGFAlertOnMainThread(title: "ERROR", message: "An error occurred during registration.", buttonTitle: "OKEY")
                         } else {
+                            do {
+                                try Auth.auth().signOut()
+                            } catch let signOutError as NSError {
+                                print ("Error signing out: %@", signOutError)
+                            }
+                            
                             self.dismiss(animated: true)
                         }
                     }
