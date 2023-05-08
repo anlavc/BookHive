@@ -232,6 +232,7 @@ class DetailViewController: UIViewController {
     @IBAction func readButtonTapped(_ sender: Any) {
         readBooksAddorRemove()
     }
+    
     //MARK: - AddtoReadList Button Tapped
     @IBAction func addtoReadListTapped(_ sender: UIButton) {
         favouriteBooksAddorRemove()

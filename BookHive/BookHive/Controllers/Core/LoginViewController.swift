@@ -25,6 +25,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var millionsTextLabel: UILabel!
     @IBOutlet weak var dontaccountTextLabel: UILabel!
     
+    
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,8 +58,8 @@ class LoginViewController: UIViewController {
         passwordTextField.attributedPlaceholder     = NSAttributedString(string: NSLocalizedString("Re-Enter Password", comment: ""), attributes: attributes)
 
     }
-    //MARK: - Functions
     
+    //MARK: - Functions
     private func textLocalizable() {
         loginLabelText.text                         = NSLocalizedString("LOGIN", comment: "")
         millionsTextLabel.text                      = NSLocalizedString("To access millions of Books", comment: "")

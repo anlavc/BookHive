@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		2E062E892A038C7E00B148AB /* ReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E062E872A038C7E00B148AB /* ReadViewController.swift */; };
 		2E062E8A2A038C7E00B148AB /* ReadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E062E882A038C7E00B148AB /* ReadViewController.xib */; };
+		2E1021B92A0907DF000A3024 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1021B72A0907DF000A3024 /* OnboardingViewController.swift */; };
+		2E1021BC2A0909F0000A3024 /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1021BB2A0909F0000A3024 /* OnboardingSlide.swift */; };
+		2E1021BE2A090BA1000A3024 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1021BD2A090BA1000A3024 /* OnboardingCollectionViewCell.swift */; };
 		2E1F166829F7C951007FC4E3 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E1F166A29F7C951007FC4E3 /* SearchViewController.xib */; };
 		2E1F167329F7CB77007FC4E3 /* MyBooksViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E1F167529F7CB77007FC4E3 /* MyBooksViewController.xib */; };
 		2E1F167E29F7CEB8007FC4E3 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E1F168029F7CEB8007FC4E3 /* SearchTableViewCell.xib */; };
@@ -116,6 +119,9 @@
 /* Begin PBXFileReference section */
 		2E062E872A038C7E00B148AB /* ReadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadViewController.swift; sourceTree = "<group>"; };
 		2E062E882A038C7E00B148AB /* ReadViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReadViewController.xib; sourceTree = "<group>"; };
+		2E1021B72A0907DF000A3024 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		2E1021BB2A0909F0000A3024 /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
+		2E1021BD2A090BA1000A3024 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		2E1F164629F7BAD3007FC4E3 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Main.strings; sourceTree = "<group>"; };
 		2E1F164829F7BADD007FC4E3 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		2E1F166429F7C4F8007FC4E3 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
@@ -293,6 +299,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E1021B62A0907C0000A3024 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				2E1021B72A0907DF000A3024 /* OnboardingViewController.swift */,
+				2E1021BD2A090BA1000A3024 /* OnboardingCollectionViewCell.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		2E1F16C029F91C7B007FC4E3 /* AccountTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -351,6 +366,7 @@
 		2E88B34929E6FC53008F4B4B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2E1021B62A0907C0000A3024 /* Onboarding */,
 				EE92F0BA2A01C9EE0072D4C9 /* MyquotesCollectionViewCell */,
 				EEAC4FCC29E70EB60066757B /* HomeTableViewCell */,
 				2EF4B4BE29EDE1170039B0E0 /* MyBooksCollectionViewCell */,
@@ -568,6 +584,7 @@
 				EEBEAEBB29F85ADD00F993B8 /* Rating.swift */,
 				EE1B9B3029FD7B1C002F81F2 /* FavoriteBook.swift */,
 				EED293C02A0832E600CA9203 /* UserNickName + Singleton.swift */,
+				2E1021BB2A0909F0000A3024 /* OnboardingSlide.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -764,6 +781,7 @@
 				2E88B35429E7009F008F4B4B /* SearchViewController.swift in Sources */,
 				EEAC4FB329E6F8220066757B /* BookHive.xcdatamodeld in Sources */,
 				EE977F8329F150330027CF90 /* DetailModel.swift in Sources */,
+				2E1021BE2A090BA1000A3024 /* OnboardingCollectionViewCell.swift in Sources */,
 				EE1B9B3129FD7B1C002F81F2 /* FavoriteBook.swift in Sources */,
 				2E1F16C329F91EC0007FC4E3 /* AccountTableViewCell.swift in Sources */,
 				2E062E892A038C7E00B148AB /* ReadViewController.swift in Sources */,
@@ -774,6 +792,7 @@
 				EEFBBCAA29E9723000BDD902 /* EndPointType.swift in Sources */,
 				EE78967329F4742200991261 /* DetailOlid.swift in Sources */,
 				EE977F7F29F13E910027CF90 /* ImageView + Ext.swift in Sources */,
+				2E1021B92A0907DF000A3024 /* OnboardingViewController.swift in Sources */,
 				EEFBBCB029E9784D00BDD902 /* HomeViewModel.swift in Sources */,
 				EED293BF2A082E4600CA9203 /* CustomFlowLayout.swift in Sources */,
 				2E88B35829E700AE008F4B4B /* AccountViewController.swift in Sources */,
@@ -798,6 +817,7 @@
 				2EC622E32A0112D900DDA4F9 /* DetailViewController.swift in Sources */,
 				EE904C3029FB203400441AA8 /* String + Ext.swift in Sources */,
 				EE904BF529FAF44700441AA8 /* TabBarController.swift in Sources */,
+				2E1021BC2A0909F0000A3024 /* OnboardingSlide.swift in Sources */,
 				EE904C2E29FB1FAD00441AA8 /* isValidEmailPassword + Ext.swift in Sources */,
 				EEE4DABD29F934E70017A5EF /* RegisterViewController.swift in Sources */,
 				2E88B35C29E7082C008F4B4B /* SearchTableViewCell.swift in Sources */,
