@@ -1,0 +1,12 @@
+
+/* Class = "UIButton"; configuration.title = "Save"; ObjectID = "JZa-wK-WcY"; */
+"JZa-wK-WcY.configuration.title" = "Save";
+
+/* Class = "UILabel"; text = " Stefan Zweig "; ObjectID = "NKw-Lm-8f7"; */
+"NKw-Lm-8f7.text" = " Stefan Zweig ";
+
+/* Class = "UILabel"; text = "Santranç"; ObjectID = "ZuK-N5-OAH"; */
+"ZuK-N5-OAH.text" = "Santranç";
+
+/* Class = "UITextField"; placeholder = "Page Number"; ObjectID = "Zxt-AA-xyG"; */
+"Zxt-AA-xyG.placeholder" = "Page Number";

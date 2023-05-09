@@ -51,19 +51,18 @@ class OnboardingViewController: UIViewController {
     // MARK: - Button Action
     @IBAction func nextButtonClicked(_ sender: Any) {
         if currentPage == slides.count - 1 {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let tabBar = storyboard.instantiateViewController(identifier: "navBar") as? UINavigationController
-            self.view.window?.rootViewController = tabBar
-            self.view.window?.makeKeyAndVisible()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let tabBar = storyboard.instantiateViewController(identifier: "navBar") as? UINavigationController
+                self.view.window?.rootViewController = tabBar
+                self.view.window?.makeKeyAndVisible()
+            }
         } else {
             currentPage += 1
             let indexPath = IndexPath(item: currentPage, section: 0)
             collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
         }
-        
     }
-    
-
 }
 
 // MARK: - Extensions

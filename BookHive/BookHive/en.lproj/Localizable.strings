@@ -1,0 +1,86 @@
+/* 
+  Localizable.strings
+  BookHive
+
+  Created by Mehdican Büyükplevne on 9.05.2023.
+  
+*/
+
+"An error was encountered"                                                                      = "An error was encountered";
+"Success"                                                                                       = "Success";
+"Notes Success Added"                                                                           = "Notes Success Added";
+"Save"                                                                                          = "Save";
+"How many pages in total"                                                                       = "How many pages in total";
+"WARNING"                                                                                       = "WARNING";
+"The book with the same name is already on your reading list or among the books you have read!" = "The book with the same name is already on your reading list or among the books you have read!";
+"An error was encountered during start reading."                                                = "An error was encountered during start reading.";
+"Read"                                                                                          = "Read";
+"The page number entered cannot be greater than the total page number."                         = "The page number entered cannot be greater than the total page number.";
+"CONGRATULATIONS"                                                                               = "CONGRATULATIONS";
+"Congratulations. The book is finished.  Now this book will be listed among the reads."         = "Congratulations. The book is finished.  Now this book will be listed among the reads.";
+"Enter the last page you read in your book."                                                    = "Enter the last page you read in your book.";
+"An error was encountered while updating the page number."                                      = "An error was encountered while updating the page number.";
+"No result found."                                                                              = "No result found.";
+"Are you sure you want to add this book to your reading list?"                                  = "Are you sure you want to add this book to your reading list?";
+"DONE"                                                                                          = "DONE";
+"Enter Name"                                                                                    = "Enter Name";
+"Enter E-mail"                                                                                  = "Enter E-mail";
+"Enter Password"                                                                                = "Enter Password";
+"Re-Enter Password"                                                                             = "Re-Enter Password";
+"Already have an account?"                                                                      = "Already have an account?";
+"CREATE ACCOUNT"                                                                                = "CREATE ACCOUNT";
+"Register"                                                                                      = "Register";
+"Login"                                                                                         = "Login";
+"Please enter your username, nickname and password for registration."                           = "Please enter your username, nickname and password for registration.";
+"Please enter your e-mail address correctly."                                                   = "Please enter your e-mail address correctly.";
+"Password did not match"                                                                        = "Password did not match";
+"An error occurred while sending verification email."                                           = "An error occurred while sending verification email.";
+"No favorite books found."                                                                      = "No favorite books found.";
+"Added in favorites"                                                                            = "Added in favorites";
+"Readed"                                                                                        = "Readed";
+"Reading Now"                                                                                   = "Reading Now";
+"Error adding a book to favorites."                                                             = "Error adding a book to favorites.";
+"Add to favorites"                                                                              = "Add to favorites";
+"Error adding the book to the reading list."                                                    = "Error adding the book to the reading list.";
+"Number of pages not available"                                                                 = "Number of pages not available";
+"Please enter the number of pages"                                                              = "Please enter the number of pages";
+"Number of pages"                                                                               = "Number of pages";
+"To access millions of Books"                                                                   = "To access millions of Books";
+"Don't you have an account?"                                                                    = "Don't you have an account?";
+"User Login Error"                                                                              = "User Login Error";
+"Please enter a valid e-mail address."                                                          = "Please enter a valid e-mail address.";
+"Email Verification"                                                                            = "Email Verification";
+"Please verify your e-mail address to continue."                                                = "Please verify your e-mail address to continue.";
+"Email or password field is empty"                                                              = "Email or password field is empty";
+"Please enter your e-mail address correctly."                                                   = "Please enter your e-mail address correctly.";
+"Your Password or Mail Address is Incorrect"                                                    = "Your Password or Mail Address is Incorrect";
+"Error Sending Password Reset Email"                                                            = "Error Sending Password Reset Email";
+"Password Reset Email Sent"                                                                     = "Password Reset Email Sent";
+"Check Your Email(It Maybe In Junk)"                                                            = "Check Your Email(It Maybe In Junk)";
+"Sign up now and choose from millions of books"                                                 = "Sign up now and choose from millions of books";
+"Do you love reading books? Then Bookhive if for you!"                                          = "Do you love reading books? Then Bookhive if for you!";
+"Get Started"                                                                                   = "Get Started";
+"Next"                                                                                          = "Next";
+"Books (0)"                                                                                     = "Books (0)";
+"Hello,"                                                                                        = "Hello,";
+"Sorry, details of the book could not be found!"                                                = "Sorry, details of the book could not be found!";
+"Unknown"                                                                                       = "Unknown";
+"Create Account"                                                                                = "Create Account";
+"License"                                                                                       = "License";
+
+
+
+"Your password must be at least 8 characters long.\nand contain at least 1 lowercase letter, 1 uppercase letter, 1 number and 1 special character." = "Your password must be at least 8 characters long.\nand contain at least 1 lowercase letter, 1 uppercase letter, 1 number and 1 special character.";
+
+"Verification email sent successfully. Please check your inbox and click on the verification link to verify your email address." = "Verification email sent successfully. Please check your inbox and click on the verification link to verify your email address.";
+"Easily keep track of the books you've read, create reading lists, and create quotes about your books!" = "Easily keep track of the books you've read, create reading lists, and create quotes about your books!";
+
+
+
+"We know that you all love your books and don't want to scribble them /nYou can access and share your favorite parts of the books you read at any time by making a note in this field." = "We know that you all love your books and don't want to scribble them /nYou can access and share your favorite parts of the books you read at any time by making a note in this field.";
+
+"Bookhive is a carefully developed digital bookmark app. Designed for those who love to read books, this app allows readers to easily locate the books they are reading. It also gives users the opportunity to learn about books. Bookhive is both a practical and useful tool and is the perfect solution for readers to keep track of their books." = "Bookhive is a carefully developed digital bookmark app. Designed for those who love to read books, this app allows readers to easily locate the books they are reading. It also gives users the opportunity to learn about books. Bookhive is both a practical and useful tool and is the perfect solution for readers to keep track of their books.";
+
+
+
+

@@ -61,9 +61,9 @@ class LoginViewController: UIViewController {
     
     //MARK: - Functions
     private func textLocalizable() {
-        loginLabelText.text                         = NSLocalizedString("LOGIN", comment: "")
+        loginLabelText.text                         = NSLocalizedString("Login", comment: "")
         millionsTextLabel.text                      = NSLocalizedString("To access millions of Books", comment: "")
-        dontaccountTextLabel.text                   = NSLocalizedString("Hesabınız yok mu?", comment: "")
+        dontaccountTextLabel.text                   = NSLocalizedString("Don't you have an account?", comment: "")
         emailTextField.placeholder                  = NSLocalizedString("Enter E-mail adress", comment: "")
         passwordTextField.placeholder               = NSLocalizedString("Enter Password", comment: "")
         registerButton.setTitle(NSLocalizedString("Create Account", comment: ""), for: .normal)
@@ -89,7 +89,7 @@ class LoginViewController: UIViewController {
     @IBAction func loginButtonTapped(_ sender: UIButton) {
         let error = validateFields()
         if error != nil {
-            presentGFAlertOnMainThread(title: "ERROR", message: self.validateFields()!, buttonTitle: "OKEY")
+            presentGFAlertOnMainThread(title: "ERROR", message: self.validateFields()!, buttonTitle: "OK")
         } else {
             let email =     emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let password =  passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -98,7 +98,7 @@ class LoginViewController: UIViewController {
                 
                 if error != nil {
                     
-                    self.presentGFAlertOnMainThread(title: "User Login Error", message: "Please enter a valid e-mail address.", buttonTitle: "OKEY")
+                    self.presentGFAlertOnMainThread(title: "User Login Error", message: "Please enter a valid e-mail address.", buttonTitle: "OK")
                 } else {
                     if let currentUser = Auth.auth().currentUser {
                         if currentUser.isEmailVerified {
@@ -107,7 +107,7 @@ class LoginViewController: UIViewController {
                             self.view.window?.rootViewController = homeViewController
                             self.view.window?.makeKeyAndVisible()
                         } else {
-                            self.presentGFAlertOnMainThread(title: "Email Verification", message: "Please verify your e-mail address to continue.", buttonTitle: "OKEY")
+                            self.presentGFAlertOnMainThread(title: "Email Verification", message: "Please verify your e-mail address to continue.", buttonTitle: "OK")
                         }
                     }
                 }
@@ -124,7 +124,7 @@ class LoginViewController: UIViewController {
             return NSLocalizedString("Please enter your e-mail address correctly.", comment: "")
         } else if Utilities.isPasswordValid(passwordTextField.text!) == false {
             passwordTextField.layer.borderColor = UIColor.red.cgColor
-            return NSLocalizedString("Your password is insufficient. \n Your password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character. \n Please choose a stronger password.", comment: "")
+            return NSLocalizedString("Your Password or Mail Address is Incorrect", comment: "")
         } else {
             return nil
         }
@@ -134,9 +134,9 @@ class LoginViewController: UIViewController {
         guard let email = emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
         Auth.auth().sendPasswordReset(withEmail: email) { error in
             if let error = error {
-                self.presentGFAlertOnMainThread(title: NSLocalizedString("ERROR_SENDING_PASSWORD_RESET_EMAIL", comment: ""), message: error.localizedDescription, buttonTitle: NSLocalizedString("OKEY", comment: ""))
+                self.presentGFAlertOnMainThread(title: NSLocalizedString("Error Sending Password Reset Email", comment: ""), message: error.localizedDescription, buttonTitle: NSLocalizedString("OK", comment: ""))
             } else {
-                self.presentGFAlertOnMainThread(title: NSLocalizedString("PASSWORD_RESET_EMAIL_SENT", comment: ""), message: NSLocalizedString("CHECK_YOUR_EMAIL(IT_MAYBE_IN_JUNK)", comment: ""), buttonTitle: NSLocalizedString("OK", comment: ""))
+                self.presentGFAlertOnMainThread(title: NSLocalizedString("Password Reset Email Sent", comment: ""), message: NSLocalizedString("Check Your Email(It Maybe In Junk)", comment: ""), buttonTitle: NSLocalizedString("OK", comment: ""))
             }
         }
     }

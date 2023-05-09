@@ -34,6 +34,7 @@ class ReadListViewController: UIViewController {
         infoLabel.isHidden = false
     }
     
+    // MARK: - Start Animation Func.
     private func startAnimation() {
         if let existingView = animatedImage.subviews.first(where: {$0 is LottieAnimationView}) as? LottieAnimationView {
             existingView.play()
@@ -48,16 +49,6 @@ class ReadListViewController: UIViewController {
         }
     }
     
-    private func stopAnimation() {
-        let animatedView = LottieAnimationView(name: "wantToRead")
-        animatedView.contentMode = .scaleAspectFit
-        animatedView.loopMode = .loop
-        animatedView.center = self.animatedImage.center
-        animatedView.frame = self.animatedImage.bounds
-        animatedView.stop()
-        animatedView.removeFromSuperview()
-        self.animatedImage.addSubview(animatedView)
-    }
     // MARK: - Table View Setup
     private func setTableView() {
         tableView.dataSource = self
@@ -88,7 +79,7 @@ class ReadListViewController: UIViewController {
     
     //MARK: - Delete favourite book
     private func delete(rowIndexPathAt indexPath: IndexPath) -> UIContextualAction {
-        let deleteAction = UIContextualAction(style: .normal, title: "Delete") { action, view, completion in
+        let deleteAction = UIContextualAction(style: .normal, title: NSLocalizedString("Delete", comment: "")) { action, view, completion in
             if let uuid = Auth.auth().currentUser?.uid {
                 let favoriteBooksCollection = Firestore.firestore().collection("users/\(uuid)/favoriteBooks")
                 let coverIDToDelete = self.favoriteBooks[indexPath.row].coverID
@@ -176,7 +167,7 @@ class ReadListViewController: UIViewController {
 //        return readAction
 //    }
     private func read(rowIndexPathAt indexPath: IndexPath) -> UIContextualAction {
-        let readAction = UIContextualAction(style: .normal, title: "Read") { action, view, completion in
+        let readAction = UIContextualAction(style: .normal, title: NSLocalizedString("Read", comment: "") ) { action, view, completion in
             if let uuid = Auth.auth().currentUser?.uid {
                 let favoriteBooksCollection = Firestore.firestore().collection("users/\(uuid)/ReadsBooks")
                 let coverIDToDelete = self.favoriteBooks[indexPath.row].coverID
@@ -184,16 +175,18 @@ class ReadListViewController: UIViewController {
                 let authorName = self.favoriteBooks[indexPath.row].author
                 favoriteBooksCollection.whereField("coverID", isEqualTo: coverIDToDelete!).getDocuments { (snapshot, error) in
                     if let error = error {
-                        self.presentGFAlertOnMainThread(title: "ERROR", message: "An error was encountered during start reading.", buttonTitle: "OKEY")
+                        self.presentGFAlertOnMainThread(title: "ERROR", message: "An error was encountered during start reading.", buttonTitle: "OK")
                     } else {
                         if let documents = snapshot?.documents, !documents.isEmpty {
-                            self.presentGFAlertOnMainThread(title: "WARNING", message: "The book with the same name is already on your reading list or among the books you have read!", buttonTitle: "OKEY")
+                            self.presentGFAlertOnMainThread(title: "WARNING", message: "The book with the same name is already on your reading list or among the books you have read!", buttonTitle: "OK")
                             return
                         }
                         let alert = UIAlertController(title: NSLocalizedString("How many pages in total?", comment: ""), message: nil, preferredStyle: .alert)
                         alert.addTextField()
+                        alert.textFields?.first?.keyboardType = .numberPad
                         let saveAction = UIAlertAction(title: NSLocalizedString("Save", comment: ""), style: .default) { (action) in
                             if let textFields = alert.textFields, let text = textFields[0].text, let numberOfPages = Int(text), numberOfPages != 0 {
+                                
                                 // Kullanıcının girdiği sayı 0 değil, kaydedilebilir.
                                 favoriteBooksCollection.addDocument(data:
                                     ["coverID" : coverIDToDelete!,

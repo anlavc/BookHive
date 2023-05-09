@@ -13,21 +13,21 @@ import Kingfisher
 class PageNumberViewController: UIViewController {
     
     // MARK: - Outlets
-    @IBOutlet weak var topView        : UIView!
-    @IBOutlet weak var userNameLabel  : UILabel!
-    @IBOutlet weak var bottomView     : UIView!
-    @IBOutlet weak var bookImageView  : UIImageView!
-    @IBOutlet weak var finishButton   : UIButton!
-    @IBOutlet weak var bookNameLabel  : UILabel!
-    @IBOutlet weak var progressPercent: UILabel!
-    @IBOutlet weak var progressBar    : UIProgressView!
-    @IBOutlet weak var pageNumberTF   : UITextField!
-    @IBOutlet weak var saveButton     : UIButton!
-    @IBOutlet weak var bookStartDate  : UILabel!
-    @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var infoIcon       : UIButton!
-    @IBOutlet weak var addQuotesButton: UIButton!
-    @IBOutlet weak var animatedView: AnimatedImageView!
+    @IBOutlet weak var topView           : UIView!
+    @IBOutlet weak var userNameLabel     : UILabel!
+    @IBOutlet weak var bottomView        : UIView!
+    @IBOutlet weak var bookImageView     : UIImageView!
+    @IBOutlet weak var finishButton      : UIButton!
+    @IBOutlet weak var bookNameLabel     : UILabel!
+    @IBOutlet weak var progressPercent   : UILabel!
+    @IBOutlet weak var progressBar       : UIProgressView!
+    @IBOutlet weak var pageNumberTF      : UITextField!
+    @IBOutlet weak var saveButton        : UIButton!
+    @IBOutlet weak var bookStartDate     : UILabel!
+    @IBOutlet weak var collectionView    : UICollectionView!
+    @IBOutlet weak var infoIcon          : UIButton!
+    @IBOutlet weak var addQuotesButton   : UIButton!
+    @IBOutlet weak var animatedView      : AnimatedImageView!
     @IBOutlet weak var quotesAnimateLabel: UILabel!
 
     //MARK: - Variable
@@ -88,11 +88,11 @@ class PageNumberViewController: UIViewController {
         guard let pageNumber    = Int(pageNumberTF.text ?? "0"),
               var book        = selectedReadBook else { return }
         if pageNumber > book.totalpageNumber! {
-            presentGFAlertOnMainThread(title: "WARNING", message: "The page number entered cannot be greater than the total page number.", buttonTitle: "TAMAM")
+            presentGFAlertOnMainThread(title: "WARNING", message: "The page number entered cannot be greater than the total page number.", buttonTitle: "OK")
             pageNumberTF.text   = "\(book.readPage!)"
             return
         } else if pageNumber    == book.totalpageNumber! {
-            presentGFAlertOnMainThread(title: "CONGRATULATIONS", message: "Congratulations. The book is finished.  Now this book will be listed among the reads.", buttonTitle: "OKEY")
+            presentGFAlertOnMainThread(title: "CONGRATULATIONS", message: "Congratulations. The book is finished.  Now this book will be listed among the reads.", buttonTitle: "OK")
             readingBookFinishUpdate(bookId: (selectedReadBook?.documentID)!)
         }
         Firestore.firestore().collection("users").document(Auth.auth().currentUser!.uid).collection("ReadsBooks").document(book.documentID!).updateData(["readPage": pageNumber]) { error in
@@ -148,7 +148,7 @@ class PageNumberViewController: UIViewController {
             
         }
         self.infoIcon.menu = UIMenu(children: [
-            UIAction(title: "Enter the last page you read in your book.", state: .off, handler: infoClosure)
+            UIAction(title: NSLocalizedString("Enter the last page you read in your book.", comment: ""), state: .off, handler: infoClosure)
         ])
         self.infoIcon.showsMenuAsPrimaryAction = true
         self.infoIcon.changesSelectionAsPrimaryAction = false
@@ -225,7 +225,7 @@ class PageNumberViewController: UIViewController {
     
     //MARK: - Button actions
     @IBAction func finishButtonTapped(_ sender: UIButton) {
-        presentBottomAlert(title: "", message: "Are you sure you want to add this book to your reading list?", okTitle: "Done", cancelTitle: "CANCEL") {
+        presentBottomAlert(title: "", message: "Are you sure you want to add this book to your reading list?", okTitle: "DONE", cancelTitle: "Cancel") {
             [self] in
             self.readingBookFinishUpdate(bookId: (selectedReadBook?.documentID)!)
             dismiss(animated: true)

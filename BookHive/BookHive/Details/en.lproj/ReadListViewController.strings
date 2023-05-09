@@ -1,0 +1,9 @@
+
+/* Class = "UILabel"; text = "Listenize Kitap Ekleyin"; ObjectID = "ai6-WP-z6K"; */
+"ai6-WP-z6K.text" = "Add Books to Your List";
+
+/* Class = "UILabel"; text = "Want to Read"; ObjectID = "ox0-EQ-ipT"; */
+"ox0-EQ-ipT.text" = "Want to Read";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "spz-6J-bPm"; */
+"spz-6J-bPm.normalTitle" = "Button";

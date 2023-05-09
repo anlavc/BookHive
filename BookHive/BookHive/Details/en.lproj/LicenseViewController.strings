@@ -1,0 +1,33 @@
+
+/* Class = "UIButton"; configuration.title = "Go to License"; ObjectID = "4b4-eO-eE4"; */
+"4b4-eO-eE4.configuration.title" = "Go to License";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "4b4-eO-eE4"; */
+"4b4-eO-eE4.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Go to License"; ObjectID = "Aq5-VB-BLs"; */
+"Aq5-VB-BLs.configuration.title" = "Go to License";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Aq5-VB-BLs"; */
+"Aq5-VB-BLs.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "IuU-pP-mkd"; */
+"IuU-pP-mkd.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Lottie License"; ObjectID = "U6i-zd-Vvk"; */
+"U6i-zd-Vvk.text" = "Lottie License";
+
+/* Class = "UILabel"; text = "Uxwing License"; ObjectID = "cZu-dC-Ty6"; */
+"cZu-dC-Ty6.text" = "Uxwing License";
+
+/* Class = "UILabel"; text = "This application is based on information from the sources linked above.\""; ObjectID = "dkm-VA-ESa"; */
+"dkm-VA-ESa.text" = "This application is based on information from the sources linked above.\"";
+
+/* Class = "UIButton"; configuration.title = "Go to License"; ObjectID = "oU8-f8-hVu"; */
+"oU8-f8-hVu.configuration.title" = "Go to License";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "oU8-f8-hVu"; */
+"oU8-f8-hVu.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Open Library API License"; ObjectID = "uYh-pC-dyW"; */
+"uYh-pC-dyW.text" = "Open Library API License";

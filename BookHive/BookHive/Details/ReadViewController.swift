@@ -21,7 +21,6 @@ class ReadViewController: UIViewController {
     // MARK: - Properties
     var readBook : [ReadBook] = []
     
-    
     // MARK: - Show View
     override func loadView() {
         let readView = Bundle.main.loadNibNamed("ReadViewController", owner: self)?.first as? UIView
@@ -40,8 +39,6 @@ class ReadViewController: UIViewController {
         infoLabel.isHidden = false
     }
 
-    
-    
     // MARK: - Table View Setup
     private func setTableView() {
         tableView.dataSource = self
@@ -50,6 +47,7 @@ class ReadViewController: UIViewController {
                            forCellReuseIdentifier: ReadTableViewCell.identifier)
     }
     
+    // MARK: - Animation Start Func.
     private func startAnimation() {
         if let existingView = animatedView.subviews.first(where: {$0 is LottieAnimationView}) as? LottieAnimationView {
             existingView.play()
@@ -64,28 +62,19 @@ class ReadViewController: UIViewController {
         }
     }
     
-    private func stopAnimation() {
-        let animatedView = LottieAnimationView(name: "read")
-        animatedView.contentMode = .scaleAspectFit
-        animatedView.loopMode = .loop
-        animatedView.center = self.animatedView.center
-        animatedView.frame = self.animatedView.bounds
-        animatedView.stop()
-        animatedView.removeFromSuperview()
-        self.animatedView.addSubview(animatedView)
-    }
-    
     // MARK: - Back Button Action
     @IBAction func backButton(_ sender: UIButton) {
         dismiss(animated: true)
     }
+    
+    // MARK: - Delete for Button Tapped in Firebase
     func readBooksRemove(index: Int) {
         if let uuid = Auth.auth().currentUser?.uid {
             let favoriteBooksCollection = Firestore.firestore().collection("users/\(uuid)/ReadsBooks")
             let coverIDToDelete = self.readBook[index].coverID
             favoriteBooksCollection.whereField("coverID", isEqualTo: coverIDToDelete).getDocuments { (snapshot, error) in
                 if let error = error {
-                    self.presentGFAlertOnMainThread(title: "ERROR", message: "An error was encountered during start reading.", buttonTitle: "OKEY")
+                    self.presentGFAlertOnMainThread(title: "ERROR", message: "An error was encountered during start reading.", buttonTitle: "OK")
                 } else {
                     // okunuyorsa zaten okunanlardan siler.
                     if let documents = snapshot?.documents {
@@ -104,6 +93,7 @@ class ReadViewController: UIViewController {
         }
     }
     
+    // MARK: - Firebase Fetch Reading Books
     private func readingBooksFetch() {
         if let uuid = Auth.auth().currentUser?.uid {
             let favoriteBooksCollection = Firestore.firestore().collection("users/\(uuid)/ReadsBooks")
@@ -113,7 +103,7 @@ class ReadViewController: UIViewController {
                     return
                 }
                 guard let documents = querySnapshot?.documents else {
-                    self.presentGFAlertOnMainThread(title: "ERROR", message: "An error was encountered.", buttonTitle: "OKEY")
+                    self.presentGFAlertOnMainThread(title: "Error", message: "An error was encountered.", buttonTitle: "OK")
                     return
                 }
                 self.readBook.removeAll()
@@ -134,9 +124,10 @@ class ReadViewController: UIViewController {
             }
         }
     }
-        
+    
+    // MARK: - Delete Button Action
     private func delete(rowIndexPathAt indexPath: IndexPath) -> UIContextualAction {
-        let deleteAction = UIContextualAction(style: .normal, title: "Delete") { action, view, completion in
+        let deleteAction = UIContextualAction(style: .normal,  title: NSLocalizedString("Delete", comment: "") ) { action, view, completion in
             self.readBooksRemove(index: indexPath.row)
             self.readBook.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .fade)
@@ -146,11 +137,9 @@ class ReadViewController: UIViewController {
         deleteAction.image = UIImage(systemName: "trash")
         return deleteAction
     }
-    
-
 }
 
-// MARK: - Extensions
+// MARK: - Extension - Table View Data Source
 extension ReadViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return readBook.count
@@ -163,6 +152,7 @@ extension ReadViewController: UITableViewDataSource {
 
         return cell
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = PageNumberViewController()
         vc.selectedReadBook = readBook[indexPath.row]
@@ -172,6 +162,7 @@ extension ReadViewController: UITableViewDataSource {
     
 }
 
+// MARK: - Extension - Table View Delegate
 extension ReadViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let delete = self.delete(rowIndexPathAt: indexPath)

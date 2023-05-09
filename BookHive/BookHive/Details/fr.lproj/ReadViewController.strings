@@ -1,0 +1,9 @@
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "6DO-fS-wSv"; */
+"6DO-fS-wSv.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "No_Books_Read"; ObjectID = "A2D-YE-Ju6"; */
+"A2D-YE-Ju6.text" = "Aucun livre lu";
+
+/* Class = "UILabel"; text = "Finished_Read"; ObjectID = "F6v-5i-SJk"; */
+"F6v-5i-SJk.text" = "Livres lus terminés";

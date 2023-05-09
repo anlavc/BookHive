@@ -94,7 +94,7 @@ class RegisterViewController: UIViewController {
             return NSLocalizedString("Please enter your e-mail address correctly.", comment: "")
         } else if Utilities.isPasswordValid(password.text!) == false {
             password.layer.borderColor = UIColor.red.cgColor
-            return NSLocalizedString("Your password is insufficient. \n Your password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character. \n Please choose a stronger password.", comment: "")
+            return NSLocalizedString("Your password must be at least 8 characters long. \n and contain at least 1 lowercase letter, 1 uppercase letter, 1 number and 1 special character.", comment: "")
         } else if  password.text != repassword.text {
             return NSLocalizedString("Password did not match", comment: "")
         } else {
@@ -106,7 +106,7 @@ class RegisterViewController: UIViewController {
     @IBAction func createUserButton(_ sender: UIButton) {
         let error = validateFields()
         if error != nil {
-            self.presentGFAlertOnMainThread(title: "WARNING", message: self.validateFields()!, buttonTitle: "OKEY")
+            self.presentGFAlertOnMainThread(title: "WARNING", message: self.validateFields()!, buttonTitle: "OK")
         } else {
             let nickname    = nickname.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let email       = email.text!.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -114,7 +114,7 @@ class RegisterViewController: UIViewController {
             
             Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
                 if let error = error {
-                    self.presentGFAlertOnMainThread(title: "ERROR", message: "An error occurred during registration.", buttonTitle: "OKEY")
+                    self.presentGFAlertOnMainThread(title: "ERROR", message: "An error occurred during registration.", buttonTitle: "OK")
                 } else {
                     guard let uid = authResult?.user.uid else { return }
                     // Kullanıcının e-posta adresini doğrula
@@ -131,7 +131,7 @@ class RegisterViewController: UIViewController {
                     
                     Firestore.firestore().collection("users").document(uid).setData(userData) { error in
                         if error != nil {
-                            self.presentGFAlertOnMainThread(title: "ERROR", message: "An error occurred during registration.", buttonTitle: "OKEY")
+                            self.presentGFAlertOnMainThread(title: "ERROR", message: "An error occurred during registration.", buttonTitle: "OK")
                         } else {
                             do {
                                 try Auth.auth().signOut()

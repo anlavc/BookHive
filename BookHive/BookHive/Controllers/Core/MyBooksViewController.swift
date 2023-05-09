@@ -81,7 +81,7 @@ class MyBooksViewController: UIViewController {
                 }
                 guard let documents = querySnapshot?.documents else {
                     self.favoriteBooks.removeAll()
-                    self.wantReadLabel.text = "Books (0)"
+                    self.wantReadLabel.text = NSLocalizedString("Books (0)", comment: "")
                     return
                 }
                 self.favoriteBooks.removeAll()
@@ -93,7 +93,7 @@ class MyBooksViewController: UIViewController {
                     self.favoriteBooks.append(book)
                 }
                 DispatchQueue.main.async {
-                    self.wantReadLabel.text = "Books (\(self.favoriteBooks.count))"
+                    self.wantReadLabel.text = NSLocalizedString("Books (\(self.favoriteBooks.count))", comment: "")
                 }
             }
         }
