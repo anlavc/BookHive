@@ -47,13 +47,13 @@
 "An error was encountered while updating the page number."                                      = "Beim Aktualisieren der Seitenzahl ist ein Fehler aufgetreten.";
 "No result found."                                                                              = "Kein Ergebnis gefunden.";
 "Are you sure you want to add this book to your reading list?"                                  = "Sind Sie sicher, dass Sie dieses Buch zu Ihrer Leseliste hinzufügen möchten?";
-"DONE"                                                                                          = "FERTIG";
+"DONE"                                                                                          = "Fertig";
 "Enter Name"                                                                                    = "Name eingeben";
 "Enter E-mail"                                                                                  = "E-Mail eingeben";
 "Enter Password"                                                                                = "Passwort eingeben";
 "Re-Enter Password"                                                                             = "Passwort erneut eingeben";
 "Already have an account?"                                                                      = "Haben Sie bereits ein Konto?";
-"CREATE ACCOUNT"                                                                                = "KONTO ERSTELLEN";
+"CREATE ACCOUNT"                                                                                = "Konto erstellen";
 "Register"                                                                                      = "Registrieren";
 "Login"                                                                                         = "Anmelden";
 "Please enter your username, nickname and password for registration."                           = "Bitte geben Sie Ihren Benutzernamen, Spitznamen und Ihr Passwort für die Registrierung ein.";

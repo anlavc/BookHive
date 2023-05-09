@@ -11,7 +11,7 @@
 "Notes Success Added"                                                                           = "Notes Success Added";
 "Save"                                                                                          = "Save";
 "How many pages in total"                                                                       = "How many pages in total";
-"WARNING"                                                                                       = "WARNING";
+"WARNING"                                                                                       = "Warning";
 "The book with the same name is already on your reading list or among the books you have read!" = "The book with the same name is already on your reading list or among the books you have read!";
 "An error was encountered during start reading."                                                = "An error was encountered during start reading.";
 "Read"                                                                                          = "Read";
@@ -22,13 +22,13 @@
 "An error was encountered while updating the page number."                                      = "An error was encountered while updating the page number.";
 "No result found."                                                                              = "No result found.";
 "Are you sure you want to add this book to your reading list?"                                  = "Are you sure you want to add this book to your reading list?";
-"DONE"                                                                                          = "DONE";
+"DONE"                                                                                          = "Done";
 "Enter Name"                                                                                    = "Enter Name";
 "Enter E-mail"                                                                                  = "Enter E-mail";
 "Enter Password"                                                                                = "Enter Password";
 "Re-Enter Password"                                                                             = "Re-Enter Password";
 "Already have an account?"                                                                      = "Already have an account?";
-"CREATE ACCOUNT"                                                                                = "CREATE ACCOUNT";
+"CREATE ACCOUNT"                                                                                = "Create Account";
 "Register"                                                                                      = "Register";
 "Login"                                                                                         = "Login";
 "Please enter your username, nickname and password for registration."                           = "Please enter your username, nickname and password for registration.";

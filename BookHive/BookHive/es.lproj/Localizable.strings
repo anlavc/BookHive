@@ -46,13 +46,13 @@
 "An error was encountered while updating the page number."                                      ="Se ha producido un error al actualizar el número de página";
 "No result found."                                                                              ="No se ha encontrado ningún resultado.";
 "Are you sure you want to add this book to your reading list?"                                  ="¿Estás seguro de que quieres añadir este libro a tu lista de lecturas?";
-"DONE"                                                                                          ="HECHO";
+"DONE"                                                                                          ="Hecho";
 "Enter Name"                                                                                    ="Introducir Nombre";
 "Enter E-mail"                                                                                  ="Introducir E-mail";
 "Enter Password"                                                                                ="Introducir Contraseña";
 "Re-Enter Password"                                                                             ="Vuelva a introducir la contraseña";
 "Already have an account?"                                                                      ="¿Ya tienes una cuenta?";
-"CREATE ACCOUNT"                                                                                ="CREAR CUENTA";
+"CREATE ACCOUNT"                                                                                ="Crear una cuenta";
 "Register"                                                                                      ="Registrarse";
 "Login"                                                                                         ="Iniciar sesión";
 "Please enter your username, nickname and password for registration."                           ="Por favor, introduzca su nombre de usuario, apodo y contraseña para el registro.";
