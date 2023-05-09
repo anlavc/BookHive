@@ -67,7 +67,7 @@ class DetailViewController: UIViewController {
                     return
                 }
                 guard let documents = querySnapshot?.documents else {
-                    self.presentGFAlertOnMainThread(title: "ERROR", message: "No favorite books found.", buttonTitle: "OKEY")
+                    self.presentGFAlertOnMainThread(title: "ERROR", message: "No favorite books found.", buttonTitle: "OK")
                     return
                 }
                 for document in documents {
@@ -80,7 +80,7 @@ class DetailViewController: UIViewController {
                     
                     // Gelen favori kitapların içinde detayına gidilen kitaba ait coverId varsa bu zaten favoride olan bir kitap olduğundan sayfa açıldığında butonda Favorilerde ekli yazar.
                     if coverID == self.detailID {
-                        self.addReadButton.setTitle("Added in favorites", for: .normal)
+                        self.addReadButton.setTitle(NSLocalizedString("Added in Read List", comment: ""), for: .normal)
                         self.addReadButton.backgroundColor = UIColor(named: "addedFavoriteButton")
                     }
                 }
@@ -98,7 +98,7 @@ class DetailViewController: UIViewController {
                     return
                 }
                 guard let documents = querySnapshot?.documents else {
-                    self.presentGFAlertOnMainThread(title: "ERROR", message: "No read books found.", buttonTitle: "OKEY")
+                    self.presentGFAlertOnMainThread(title: "ERROR", message: "No read books found.", buttonTitle: "OK")
                     return
                 }
                 for document in documents {
@@ -117,10 +117,10 @@ class DetailViewController: UIViewController {
                     //  Gelen okunan kitapların içinde detayına gidilen kitaba ait coverId varsa bu zaten okunan  bir kitap olduğundan sayfa açıldığında butonda okunuyor yazar.
                     if coverID == self.detailID {
                         if finish {
-                            self.readButton.setTitle(NSLocalizedString("Okundu", comment: ""), for: .normal)
+                            self.readButton.setTitle(NSLocalizedString("Readed", comment: ""), for: .normal)
                             self.readButton.backgroundColor = UIColor.brown
                         } else {
-                            self.readButton.setTitle("Okunuyor", for: .normal)
+                            self.readButton.setTitle(NSLocalizedString("Reading Now", comment: ""), for: .normal)
                             self.readButton.backgroundColor = UIColor(named: "addedFavoriteButton")
                         }
                     }
@@ -244,14 +244,14 @@ class DetailViewController: UIViewController {
             let favoriteBooksCollection = Firestore.firestore().collection("users/\(uuid)/favoriteBooks")
             favoriteBooksCollection.whereField("coverID", isEqualTo: detailID!).getDocuments { (snapshot, error) in // Favori kitaplar içinde coverID göre ilgili kitabın coverid arasında arama yapılır.
                 if let error = error {
-                    self.presentGFAlertOnMainThread(title: "ERROR", message: "Error adding a book to favorites.", buttonTitle: "OKEY")
+                    self.presentGFAlertOnMainThread(title: "ERROR", message: "Error adding a book to favorites.", buttonTitle: "OK")
                 } else {
                     // Favorilerde ekliyle eğer fetch kısmında zaten favorilerde ekli olduğu gözüktüğünde ve coverID ile detail id eşletiği için ilk şart çalışır ve ilgili kitabı favorilerden silerek butronda tekrar favorilere ekle yazar.
                     if let documents = snapshot?.documents {
                         for document in documents {
                             let bookID = document.documentID
                             favoriteBooksCollection.document(bookID).delete()
-                            self.addReadButton.setTitle("Add to favorites", for: .normal)
+                            self.addReadButton.setTitle(NSLocalizedString("Add to Read List", comment: ""), for: .normal)
                             self.addReadButton.backgroundColor = UIColor(named: "coverbgColor")
                             
                         }
@@ -260,7 +260,7 @@ class DetailViewController: UIViewController {
                             favoriteBooksCollection.addDocument(data: ["coverID": self.detailID!,
                                                                        "title"  : self.bookTitle!,
                                                                        "author" : self.authorName])
-                            self.addReadButton.setTitle("Added in favorites", for: .normal)
+                            self.addReadButton.setTitle(NSLocalizedString("Added in Read List", comment: ""), for: .normal)
                             self.addReadButton.backgroundColor = UIColor(named: "addedFavoriteButton")
                         }
                         DispatchQueue.main.async {
@@ -276,14 +276,14 @@ class DetailViewController: UIViewController {
             let favoriteBooksCollection = Firestore.firestore().collection("users/\(uuid)/ReadsBooks")
             favoriteBooksCollection.whereField("coverID", isEqualTo: detailID!).getDocuments { (snapshot, error) in
                 if let error = error {
-                    self.presentGFAlertOnMainThread(title: "ERROR", message: "Error adding the book to the reading list.", buttonTitle: "OKEY")
+                    self.presentGFAlertOnMainThread(title: "ERROR", message: "Error adding the book to the reading list.", buttonTitle: "OK")
                 } else {
                     // okunuyorsa zaten okunanlardan siler.
                     if let documents = snapshot?.documents {
                         for document in documents {
                             let bookID = document.documentID
                             favoriteBooksCollection.document(bookID).delete()
-                            self.readButton.setTitle("Oku", for: .normal)
+                            self.readButton.setTitle(NSLocalizedString("Read", comment: ""), for: .normal)
                             self.readButton.backgroundColor = UIColor(named: "colordarkgray")
                             
                         }
@@ -298,13 +298,13 @@ class DetailViewController: UIViewController {
                                                                            "readingdate"    : FieldValue.serverTimestamp(),
                                                                            "totalpageNumber": numberOfPages,
                                                                            "finish"         : false])
-                                self.readButton.setTitle("Okunuyor", for: .normal)
+                                self.readButton.setTitle(NSLocalizedString("Reading Now", comment: ""), for: .normal)
                                 self.readButton.backgroundColor = UIColor(named: "addedFavoriteButton")
                             } else {
                                 // Totalpage numarası istenir.
-                                let alert = UIAlertController(title: "Number of pages not available", message: "Please enter the number of pages", preferredStyle: .alert)
+                                let alert = UIAlertController(title: NSLocalizedString("Number of pages not available", comment: ""), message:NSLocalizedString("Please enter the number of pages", comment: ""), preferredStyle: .alert)
                                 alert.addTextField { (textField) in
-                                    textField.placeholder = "Number of pages"
+                                    textField.placeholder = NSLocalizedString("Number of pages", comment: "")
                                     textField.keyboardType = .numberPad
                                 }
                                 let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel, handler: nil)
@@ -318,7 +318,7 @@ class DetailViewController: UIViewController {
                                                                            "readingdate"     : FieldValue.serverTimestamp(),
                                                                            "totalpageNumber" : numberOfPages,
                                                                            "finish"          : false])
-                                        self.readButton.setTitle("Okunuyor", for: .normal)
+                                        self.readButton.setTitle(NSLocalizedString("Reading Now", comment: ""), for: .normal)
                                         self.readButton.backgroundColor = UIColor(named: "addedFavoriteButton")
                                     }
                                 }

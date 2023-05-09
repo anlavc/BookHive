@@ -1,0 +1,115 @@
+/* 
+  Localizable.strings
+  BookHive
+
+  Created by Mehdican Büyükplevne on 9.05.2023.
+  
+*/
+
+"Name"                       = "Nombre";
+"Email"                      = "Correo electrónico";
+"User Informatıon"           = "Información del usuario";
+"About"                      = "Acerca de";
+"Contact"                    = "Contacto";
+"Rate us in App Store"       = "Valóranos en App Store";
+"Developers"                 = "Desarrollador";
+"Logout"                     = "Cerrar sesión";
+"Delete Account"             = "Eliminar cuenta";
+"Support"                    = "Soporte";
+"Send Email"                 = "Enviar correo electrónico";
+"Cancel"                     = "Cancelar";
+"Feedback"                   = "Comentarios";
+"Share Us"                   = "Compartir";
+"OK"                         = "ACEPTAR";
+"Cancel"                     = "Cancelar";
+"Cannot Send Email"          = "No se puede enviar correo electrónico";
+"Permanently Delete Account" = "Eliminar permanentemente la cuenta";
+
+"Your device cannot send email. Please configure an email account in the Mail app and try again" = "Tu dispositivo no puede enviar correo electrónico. Por favor, configura una cuenta de correo en la app Mail e inténtalo de nuevo";
+
+"You are permanently deleting your account! This action is irreversible! Are You Sure?" = "¡Estás eliminando permanentemente tu cuenta! ¡Esta acción es irreversible! ¿Está seguro?";
+
+
+"An error was encountered"                                                                      ="Se ha producido un error";
+"Success"                                                                                       ="Éxito";
+"Notes Success Added"                                                                           ="Notas añadidas con éxito";
+"Save"                                                                                          ="Guardar";
+"How many pages in total"                                                                       ="Cuántas páginas en total";
+"WARNING"                                                                                       ="ADVERTENCIA";
+"The book with the same name is already on your reading list or among the books you have read!" ="¡El libro con el mismo nombre ya está en tu lista de lectura o entre los libros que has leído!";
+"An error was encountered during start reading."                                                ="Se ha producido un error al iniciar la lectura";
+"Read"                                                                                          ="Leer";
+"The page number entered cannot be greater than the total page number."                         ="El número de página introducido no puede ser mayor que el número total de páginas.";
+"CONGRATULATIONS"                                                                               ="ENHORABUENA";
+"Congratulations. The book is finished.  Now this book will be listed among the reads."         ="Enhorabuena. El libro está terminado.  Ahora este libro aparecerá entre los leídos.";
+"Enter the last page you read in your book."                                                    ="Introduzca la última página leída del libro";
+"An error was encountered while updating the page number."                                      ="Se ha producido un error al actualizar el número de página";
+"No result found."                                                                              ="No se ha encontrado ningún resultado.";
+"Are you sure you want to add this book to your reading list?"                                  ="¿Estás seguro de que quieres añadir este libro a tu lista de lecturas?";
+"DONE"                                                                                          ="Hecho";
+"Enter Name"                                                                                    ="Introducir Nombre";
+"Enter E-mail"                                                                                  ="Introducir E-mail";
+"Enter Password"                                                                                ="Introducir Contraseña";
+"Re-Enter Password"                                                                             ="Vuelva a introducir la contraseña";
+"Already have an account?"                                                                      ="¿Ya tienes una cuenta?";
+"CREATE ACCOUNT"                                                                                ="Crear una cuenta";
+"Register"                                                                                      ="Registrarse";
+"Login"                                                                                         ="Iniciar sesión";
+"Please enter your username, nickname and password for registration."                           ="Por favor, introduzca su nombre de usuario, apodo y contraseña para el registro.";
+"Please enter your e-mail address correctly."                                                   ="Por favor, introduzca correctamente su dirección de correo electrónico";
+"Password did not match"                                                                        ="La contraseña no coincide";
+"An error occurred while sending verification email."                                           ="Se ha producido un error al enviar el correo electrónico de verificación";
+"No favorite books found."                                                                      ="No se han encontrado libros favoritos";
+"Added in Read List"                                                                            ="Añadido a la lista de lectura";
+"Readed"                                                                                        ="Leído";
+"Reading Now"                                                                                   ="Leyendo ahora";
+"Error adding a book to favorites."                                                             ="Error al añadir un libro a favoritos";
+"Add to Read List"                                                                              ="Añadir a la lista de lectura";
+"Error adding the book to the reading list."                                                    ="Error al añadir el libro a la lista de lectura";
+"Number of pages not available"                                                                 ="Número de páginas no disponible";
+"Please enter the number of pages"                                                              ="Por favor, introduzca el número de páginas";
+"Number of pages"                                                                               ="Número de páginas";
+"To access millions of Books"                                                                   ="Para acceder a millones de Libros";
+"Don't you have an account?"                                                                    ="¿No tiene una cuenta?";
+"User Login Error"                                                                              ="Error de inicio de sesión de usuario";
+"Please enter a valid e-mail address."                                                          ="Por favor, introduzca una dirección de correo electrónico válida";
+"Email Verification"                                                                            ="Verificación de correo electrónico";
+"Please verify your e-mail address to continue."                                                ="Por favor, verifique su dirección de correo electrónico para continuar";
+"Email or password field is empty"                                                              ="El campo de correo electrónico o contraseña está vacío";
+"Please enter your e-mail address correctly."                                                   ="Por favor, introduzca su dirección de correo electrónico correctamente";
+"Your Password or Mail Address is Incorrect"                                                    ="Su contraseña o dirección de correo es incorrecta";
+"Error Sending Password Reset Email"                                                            ="Error al enviar el correo electrónico de restablecimiento de contraseña";
+"Password Reset Email Sent"                                                                     ="Correo electrónico de restablecimiento de contraseña enviado";
+"Check Your Email(It Maybe In Junk)"                                                            ="Compruebe su correo electrónico (puede que esté en la bandeja de correo no deseado)";
+"Sign up now and choose from millions of books"                                                 ="Regístrate ahora y elige entre millones de libros";
+"Do you love reading books? Then Bookhive if for you!"                                          ="¿Te encanta leer libros? Entonces Bookhive es para ti";
+"Get Started"                                                                                   ="Comenzar";
+"Next"                                                                                          ="Siguiente";
+"Books (0)"                                                                                     ="Libros (0)";
+"Hello,"                                                                                        ="Hola";
+"Sorry, details of the book could not be found!"                                                ="Lo sentimos, ¡no se han encontrado los detalles del libro!";
+"Unknown"                                                                                       ="Desconocido";
+"Create Account"                                                                                ="Crear cuenta";
+"License"                                                                                       ="Licencia";
+
+"NOW_TREND"                     = "Tendencia Actual";
+"WEEK_TREND"                    = "Tendencia Semanal";
+"MONTHLY_TREND"                 = "Tendencia Mensual";
+"Delete"                        = "Borrar";
+"Privacy Policy"                = "Política de privacidad";
+
+
+
+
+
+"Your password must be at least 8 characters long.\nand contain at least 1 lowercase letter, 1 uppercase letter, 1 number and 1 special character." = "Su contraseña debe tener al menos 8 caracteres.\ny contener al menos 1 letra minúscula, 1 letra mayúscula, 1 número y 1 carácter especial.";
+
+"Verification email sent successfully. Please check your inbox and click on the verification link to verify your email address." = "El correo electrónico de verificación se ha enviado correctamente. Por favor, compruebe su bandeja de entrada y haga clic en el enlace de verificación para verificar su dirección de correo electrónico.";
+
+"Easily keep track of the books you've read, create reading lists, and create quotes about your books!" = "¡Sigue fácilmente la pista de los libros que has leído, crea listas de lectura y crea citas sobre tus libros!";
+
+
+
+"We know that you all love your books and don't want to scribble them You can access and share your favorite parts of the books you read at any time by making a note in this field." = "Sabemos que a todos os encantan vuestros libros y no queréis garabatearlos Podéis acceder y compartir vuestras partes favoritas de los libros que leéis en cualquier momento haciendo una nota en este campo.";
+
+"Bookhive is a carefully developed digital bookmark app. Designed for those who love to read books, this app allows readers to easily locate the books they are reading. It also gives users the opportunity to learn about books. Bookhive is both a practical and useful tool and is the perfect solution for readers to keep track of their books." = "Bookhive es una aplicación de marcapáginas digitales cuidadosamente desarrollada. Diseñada para los amantes de la lectura, esta aplicación permite a los lectores localizar fácilmente los libros que están leyendo. También ofrece a los usuarios la oportunidad de aprender sobre libros. Bookhive es una herramienta práctica y útil a la vez, y es la solución perfecta para que los lectores no pierdan de vista sus libros.";

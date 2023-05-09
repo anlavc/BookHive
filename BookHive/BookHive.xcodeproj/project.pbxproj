@@ -8,10 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		2E062E892A038C7E00B148AB /* ReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E062E872A038C7E00B148AB /* ReadViewController.swift */; };
-		2E062E8A2A038C7E00B148AB /* ReadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E062E882A038C7E00B148AB /* ReadViewController.xib */; };
 		2E1021B92A0907DF000A3024 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1021B72A0907DF000A3024 /* OnboardingViewController.swift */; };
 		2E1021BC2A0909F0000A3024 /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1021BB2A0909F0000A3024 /* OnboardingSlide.swift */; };
 		2E1021BE2A090BA1000A3024 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1021BD2A090BA1000A3024 /* OnboardingCollectionViewCell.swift */; };
+		2E1021BF2A0A31C7000A3024 /* LicenseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E1021C12A0A31C7000A3024 /* LicenseViewController.xib */; };
+		2E1021D02A0A3859000A3024 /* ReadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E1021D22A0A3859000A3024 /* ReadViewController.xib */; };
+		2E1021F72A0A3FAF000A3024 /* AddQuotesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E1021F92A0A3FAF000A3024 /* AddQuotesViewController.xib */; };
+		2E1022082A0A4100000A3024 /* ReadListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E10220A2A0A4100000A3024 /* ReadListViewController.xib */; };
 		2E1F166829F7C951007FC4E3 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E1F166A29F7C951007FC4E3 /* SearchViewController.xib */; };
 		2E1F167329F7CB77007FC4E3 /* MyBooksViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E1F167529F7CB77007FC4E3 /* MyBooksViewController.xib */; };
 		2E1F167E29F7CEB8007FC4E3 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E1F168029F7CEB8007FC4E3 /* SearchTableViewCell.xib */; };
@@ -20,16 +23,14 @@
 		2E1F16BB29F916B2007FC4E3 /* Eureka in Frameworks */ = {isa = PBXBuildFile; productRef = 2E1F16BA29F916B2007FC4E3 /* Eureka */; };
 		2E1F16C329F91EC0007FC4E3 /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1F16C129F91EC0007FC4E3 /* AccountTableViewCell.swift */; };
 		2E1F16C629F91F57007FC4E3 /* AccountCustomRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1F16C529F91F57007FC4E3 /* AccountCustomRow.swift */; };
-		2E1F16D229F9B436007FC4E3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2E1F16D429F9B436007FC4E3 /* Localizable.strings */; };
-		2E1F16E129F9B7ED007FC4E3 /* HomeVCLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2E1F16E329F9B7ED007FC4E3 /* HomeVCLocalizable.strings */; };
+		2E258FE12A0A56E10076C6B4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2E258FE32A0A56E10076C6B4 /* Localizable.strings */; };
+		2E258FEB2A0A58810076C6B4 /* PageNumberViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E258FED2A0A58810076C6B4 /* PageNumberViewController.xib */; };
 		2E577F792A05702B00DCE61D /* reading.json in Resources */ = {isa = PBXBuildFile; fileRef = 2E577F782A05702B00DCE61D /* reading.json */; };
 		2E577F7D2A065D4700DCE61D /* read.json in Resources */ = {isa = PBXBuildFile; fileRef = 2E577F7C2A065D4700DCE61D /* read.json */; };
 		2E577F7F2A065E8D00DCE61D /* wantToRead.json in Resources */ = {isa = PBXBuildFile; fileRef = 2E577F7E2A065E8D00DCE61D /* wantToRead.json */; };
 		2E577F812A06840200DCE61D /* notfound.json in Resources */ = {isa = PBXBuildFile; fileRef = 2E577F802A06840200DCE61D /* notfound.json */; };
 		2E577F882A07059C00DCE61D /* LicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E577F862A07059C00DCE61D /* LicenseViewController.swift */; };
-		2E577F892A07059C00DCE61D /* LicenseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E577F872A07059C00DCE61D /* LicenseViewController.xib */; };
 		2E81B46329FD8F3900986F98 /* ReadListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E81B46229FD8F3900986F98 /* ReadListViewController.swift */; };
-		2E81B46529FD8F4300986F98 /* ReadListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E81B46429FD8F4300986F98 /* ReadListViewController.xib */; };
 		2E88B34C29E70077008F4B4B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88B34A29E70077008F4B4B /* HomeViewController.swift */; };
 		2E88B35029E70091008F4B4B /* MyBooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88B34E29E70091008F4B4B /* MyBooksViewController.swift */; };
 		2E88B35429E7009F008F4B4B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88B35229E7009F008F4B4B /* SearchViewController.swift */; };
@@ -51,9 +52,7 @@
 		EE1B9B3129FD7B1C002F81F2 /* FavoriteBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1B9B3029FD7B1C002F81F2 /* FavoriteBook.swift */; };
 		EE1B9B3329FD836F002F81F2 /* PageNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1B9B3229FD836F002F81F2 /* PageNumberViewController.swift */; };
 		EE1B9B3529FD882C002F81F2 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE1B9B3429FD882B002F81F2 /* AboutViewController.xib */; };
-		EE2976E52A070B7C00CD546F /* PageNumberViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE2976E42A070B7C00CD546F /* PageNumberViewController.xib */; };
 		EE5CF3952A02A1CB00AC47FD /* AddQuotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5CF3932A02A1CB00AC47FD /* AddQuotesViewController.swift */; };
-		EE5CF3962A02A1CB00AC47FD /* AddQuotesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE5CF3942A02A1CB00AC47FD /* AddQuotesViewController.xib */; };
 		EE60D1172A04DA1C00897F07 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE60D1132A04DA1C00897F07 /* AlertViewController.swift */; };
 		EE60D1182A04DA1C00897F07 /* AATitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE60D1142A04DA1C00897F07 /* AATitleLabel.swift */; };
 		EE60D1192A04DA1C00897F07 /* AAButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE60D1152A04DA1C00897F07 /* AAButton.swift */; };
@@ -118,10 +117,41 @@
 
 /* Begin PBXFileReference section */
 		2E062E872A038C7E00B148AB /* ReadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadViewController.swift; sourceTree = "<group>"; };
-		2E062E882A038C7E00B148AB /* ReadViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReadViewController.xib; sourceTree = "<group>"; };
 		2E1021B72A0907DF000A3024 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		2E1021BB2A0909F0000A3024 /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
 		2E1021BD2A090BA1000A3024 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
+		2E1021C02A0A31C7000A3024 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LicenseViewController.xib; sourceTree = "<group>"; };
+		2E1021C32A0A31CA000A3024 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LicenseViewController.strings; sourceTree = "<group>"; };
+		2E1021C52A0A31CB000A3024 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/LicenseViewController.strings; sourceTree = "<group>"; };
+		2E1021C72A0A31CB000A3024 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LicenseViewController.strings; sourceTree = "<group>"; };
+		2E1021C92A0A31CC000A3024 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LicenseViewController.strings; sourceTree = "<group>"; };
+		2E1021CB2A0A31CC000A3024 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/LicenseViewController.strings; sourceTree = "<group>"; };
+		2E1021CD2A0A31CD000A3024 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LicenseViewController.strings; sourceTree = "<group>"; };
+		2E1021CF2A0A31CE000A3024 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/LicenseViewController.strings; sourceTree = "<group>"; };
+		2E1021D12A0A3859000A3024 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ReadViewController.xib; sourceTree = "<group>"; };
+		2E1021D42A0A385F000A3024 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ReadViewController.strings; sourceTree = "<group>"; };
+		2E1021D62A0A3860000A3024 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/ReadViewController.strings; sourceTree = "<group>"; };
+		2E1021D82A0A3860000A3024 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/ReadViewController.strings; sourceTree = "<group>"; };
+		2E1021DA2A0A3861000A3024 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/ReadViewController.strings; sourceTree = "<group>"; };
+		2E1021DC2A0A3862000A3024 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/ReadViewController.strings; sourceTree = "<group>"; };
+		2E1021DE2A0A3862000A3024 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/ReadViewController.strings; sourceTree = "<group>"; };
+		2E1021E02A0A3863000A3024 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/ReadViewController.strings; sourceTree = "<group>"; };
+		2E1021F82A0A3FAF000A3024 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/AddQuotesViewController.xib; sourceTree = "<group>"; };
+		2E1021FB2A0A3FB1000A3024 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/AddQuotesViewController.strings; sourceTree = "<group>"; };
+		2E1021FD2A0A3FB1000A3024 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/AddQuotesViewController.strings; sourceTree = "<group>"; };
+		2E1021FF2A0A3FB2000A3024 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/AddQuotesViewController.strings; sourceTree = "<group>"; };
+		2E1022012A0A3FB3000A3024 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/AddQuotesViewController.strings; sourceTree = "<group>"; };
+		2E1022032A0A3FB3000A3024 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/AddQuotesViewController.strings; sourceTree = "<group>"; };
+		2E1022052A0A3FB4000A3024 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/AddQuotesViewController.strings; sourceTree = "<group>"; };
+		2E1022072A0A3FB4000A3024 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/AddQuotesViewController.strings; sourceTree = "<group>"; };
+		2E1022092A0A4100000A3024 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ReadListViewController.xib; sourceTree = "<group>"; };
+		2E10220C2A0A4106000A3024 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ReadListViewController.strings; sourceTree = "<group>"; };
+		2E10220E2A0A4106000A3024 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/ReadListViewController.strings; sourceTree = "<group>"; };
+		2E1022102A0A4107000A3024 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/ReadListViewController.strings; sourceTree = "<group>"; };
+		2E1022122A0A4108000A3024 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/ReadListViewController.strings; sourceTree = "<group>"; };
+		2E1022142A0A4108000A3024 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/ReadListViewController.strings; sourceTree = "<group>"; };
+		2E1022162A0A4109000A3024 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/ReadListViewController.strings; sourceTree = "<group>"; };
+		2E1022182A0A4109000A3024 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/ReadListViewController.strings; sourceTree = "<group>"; };
 		2E1F164629F7BAD3007FC4E3 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Main.strings; sourceTree = "<group>"; };
 		2E1F164829F7BADD007FC4E3 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		2E1F166429F7C4F8007FC4E3 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
@@ -163,26 +193,27 @@
 		2E1F16B829F84D26007FC4E3 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/DetailViewController.strings; sourceTree = "<group>"; };
 		2E1F16C129F91EC0007FC4E3 /* AccountTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
 		2E1F16C529F91F57007FC4E3 /* AccountCustomRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCustomRow.swift; sourceTree = "<group>"; };
-		2E1F16D529F9B438007FC4E3 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
-		2E1F16D629F9B43A007FC4E3 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
-		2E1F16D729F9B43B007FC4E3 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
-		2E1F16D829F9B43C007FC4E3 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
-		2E1F16D929F9B43D007FC4E3 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
-		2E1F16DA29F9B43D007FC4E3 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
-		2E1F16E429F9B7F1007FC4E3 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/HomeVCLocalizable.strings; sourceTree = "<group>"; };
-		2E1F16E529F9B7F2007FC4E3 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/HomeVCLocalizable.strings; sourceTree = "<group>"; };
-		2E1F16E629F9B7F3007FC4E3 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/HomeVCLocalizable.strings; sourceTree = "<group>"; };
-		2E1F16E729F9B7F3007FC4E3 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/HomeVCLocalizable.strings; sourceTree = "<group>"; };
-		2E1F16E829F9B7F4007FC4E3 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/HomeVCLocalizable.strings; sourceTree = "<group>"; };
-		2E1F16E929F9B7F4007FC4E3 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/HomeVCLocalizable.strings; sourceTree = "<group>"; };
+		2E258FE22A0A56E10076C6B4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2E258FE42A0A56E50076C6B4 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2E258FE52A0A56E60076C6B4 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2E258FE62A0A56E60076C6B4 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2E258FE72A0A56E70076C6B4 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2E258FE82A0A56E80076C6B4 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2E258FEA2A0A572B0076C6B4 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2E258FEC2A0A58810076C6B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PageNumberViewController.xib; sourceTree = "<group>"; };
+		2E258FEF2A0A58850076C6B4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/PageNumberViewController.strings; sourceTree = "<group>"; };
+		2E258FF12A0A58860076C6B4 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/PageNumberViewController.strings; sourceTree = "<group>"; };
+		2E258FF32A0A58860076C6B4 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/PageNumberViewController.strings; sourceTree = "<group>"; };
+		2E258FF52A0A58870076C6B4 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/PageNumberViewController.strings; sourceTree = "<group>"; };
+		2E258FF72A0A58870076C6B4 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/PageNumberViewController.strings; sourceTree = "<group>"; };
+		2E258FF92A0A58880076C6B4 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/PageNumberViewController.strings; sourceTree = "<group>"; };
+		2E258FFB2A0A58890076C6B4 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/PageNumberViewController.strings; sourceTree = "<group>"; };
 		2E577F782A05702B00DCE61D /* reading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = reading.json; sourceTree = "<group>"; };
 		2E577F7C2A065D4700DCE61D /* read.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = read.json; sourceTree = "<group>"; };
 		2E577F7E2A065E8D00DCE61D /* wantToRead.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wantToRead.json; sourceTree = "<group>"; };
 		2E577F802A06840200DCE61D /* notfound.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = notfound.json; sourceTree = "<group>"; };
 		2E577F862A07059C00DCE61D /* LicenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseViewController.swift; sourceTree = "<group>"; };
-		2E577F872A07059C00DCE61D /* LicenseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LicenseViewController.xib; sourceTree = "<group>"; };
 		2E81B46229FD8F3900986F98 /* ReadListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadListViewController.swift; sourceTree = "<group>"; };
-		2E81B46429FD8F4300986F98 /* ReadListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReadListViewController.xib; sourceTree = "<group>"; };
 		2E88B34A29E70077008F4B4B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2E88B34E29E70091008F4B4B /* MyBooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBooksViewController.swift; sourceTree = "<group>"; };
 		2E88B35229E7009F008F4B4B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -203,9 +234,7 @@
 		EE1B9B3029FD7B1C002F81F2 /* FavoriteBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteBook.swift; sourceTree = "<group>"; };
 		EE1B9B3229FD836F002F81F2 /* PageNumberViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageNumberViewController.swift; sourceTree = "<group>"; };
 		EE1B9B3429FD882B002F81F2 /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
-		EE2976E42A070B7C00CD546F /* PageNumberViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PageNumberViewController.xib; sourceTree = "<group>"; };
 		EE5CF3932A02A1CB00AC47FD /* AddQuotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuotesViewController.swift; sourceTree = "<group>"; };
-		EE5CF3942A02A1CB00AC47FD /* AddQuotesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddQuotesViewController.xib; sourceTree = "<group>"; };
 		EE60D1132A04DA1C00897F07 /* AlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		EE60D1142A04DA1C00897F07 /* AATitleLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AATitleLabel.swift; sourceTree = "<group>"; };
 		EE60D1152A04DA1C00897F07 /* AAButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAButton.swift; sourceTree = "<group>"; };
@@ -344,14 +373,12 @@
 			isa = PBXGroup;
 			children = (
 				2E88B34A29E70077008F4B4B /* HomeViewController.swift */,
-				2E1F16E329F9B7ED007FC4E3 /* HomeVCLocalizable.strings */,
 				2E1F168B29F7DBB0007FC4E3 /* HomeViewController.xib */,
 				2E88B34E29E70091008F4B4B /* MyBooksViewController.swift */,
 				2E1F167529F7CB77007FC4E3 /* MyBooksViewController.xib */,
 				2E88B35229E7009F008F4B4B /* SearchViewController.swift */,
 				2E1F166A29F7C951007FC4E3 /* SearchViewController.xib */,
 				2E88B35629E700AE008F4B4B /* AccountViewController.swift */,
-				2E1F16D429F9B436007FC4E3 /* Localizable.strings */,
 				EEE4DAB529F914980017A5EF /* LoginViewController.swift */,
 				EEE4DAB629F914980017A5EF /* LoginViewController.xib */,
 				2EC622E22A0112D900DDA4F9 /* DetailViewController.swift */,
@@ -424,15 +451,15 @@
 				2EFA102829FB114900AE6888 /* AboutViewController.swift */,
 				EE1B9B3429FD882B002F81F2 /* AboutViewController.xib */,
 				EE1B9B3229FD836F002F81F2 /* PageNumberViewController.swift */,
-				EE2976E42A070B7C00CD546F /* PageNumberViewController.xib */,
+				2E258FED2A0A58810076C6B4 /* PageNumberViewController.xib */,
 				2E81B46229FD8F3900986F98 /* ReadListViewController.swift */,
-				2E81B46429FD8F4300986F98 /* ReadListViewController.xib */,
+				2E10220A2A0A4100000A3024 /* ReadListViewController.xib */,
 				EE5CF3932A02A1CB00AC47FD /* AddQuotesViewController.swift */,
-				EE5CF3942A02A1CB00AC47FD /* AddQuotesViewController.xib */,
+				2E1021F92A0A3FAF000A3024 /* AddQuotesViewController.xib */,
 				2E062E872A038C7E00B148AB /* ReadViewController.swift */,
-				2E062E882A038C7E00B148AB /* ReadViewController.xib */,
+				2E1021D22A0A3859000A3024 /* ReadViewController.xib */,
 				2E577F862A07059C00DCE61D /* LicenseViewController.swift */,
-				2E577F872A07059C00DCE61D /* LicenseViewController.xib */,
+				2E1021C12A0A31C7000A3024 /* LicenseViewController.xib */,
 			);
 			name = Details;
 			path = ../Details;
@@ -526,6 +553,7 @@
 		EEAC4FA729E6F8220066757B /* BookHive */ = {
 			isa = PBXGroup;
 			children = (
+				2E258FE32A0A56E10076C6B4 /* Localizable.strings */,
 				EE6DF06B29FA8C4C007B8DF8 /* GoogleService-Info.plist */,
 				2ECF25AF29E89D2000956FCB /* Extensions */,
 				EE4FA2D329E77015007BB98B /* ViewModels */,
@@ -738,21 +766,20 @@
 				2E577F7D2A065D4700DCE61D /* read.json in Resources */,
 				EEAC4FD529E714280066757B /* TableCollectionViewCell.xib in Resources */,
 				2E1F166829F7C951007FC4E3 /* SearchViewController.xib in Resources */,
-				2E062E8A2A038C7E00B148AB /* ReadViewController.xib in Resources */,
+				2E1021D02A0A3859000A3024 /* ReadViewController.xib in Resources */,
 				2E1F167E29F7CEB8007FC4E3 /* SearchTableViewCell.xib in Resources */,
 				2EFA103129FB148400AE6888 /* AccountTableViewCell.xib in Resources */,
 				EEC8356A29EAEE6300058796 /* HomeCollectionViewCarousel.xib in Resources */,
 				EE7CDFEC29F7E13A0058C163 /* YearlyTableViewCell.xib in Resources */,
-				EE2976E52A070B7C00CD546F /* PageNumberViewController.xib in Resources */,
-				2E1F16D229F9B436007FC4E3 /* Localizable.strings in Resources */,
+				2E258FEB2A0A58810076C6B4 /* PageNumberViewController.xib in Resources */,
 				EE977F8829F16B1B0027CF90 /* DetailSubjectCell.xib in Resources */,
-				2E577F892A07059C00DCE61D /* LicenseViewController.xib in Resources */,
+				2E1021BF2A0A31C7000A3024 /* LicenseViewController.xib in Resources */,
 				EEA23C5B29FE904C00FA8818 /* searchjson.json in Resources */,
 				EEAC4FB029E6F8220066757B /* Main.storyboard in Resources */,
 				2E1F168929F7DBB0007FC4E3 /* HomeViewController.xib in Resources */,
 				EE1B9B3529FD882C002F81F2 /* AboutViewController.xib in Resources */,
 				2EFA103229FB971B00AE6888 /* (null) in Resources */,
-				EE5CF3962A02A1CB00AC47FD /* AddQuotesViewController.xib in Resources */,
+				2E1021F72A0A3FAF000A3024 /* AddQuotesViewController.xib in Resources */,
 				EEC8356E29EAF1D200058796 /* HomeCarouselTableViewCell.xib in Resources */,
 				EE6DF06C29FA8C4C007B8DF8 /* GoogleService-Info.plist in Resources */,
 				2E1F169029F82080007FC4E3 /* DetailViewController.xib in Resources */,
@@ -760,11 +787,11 @@
 				EE904C2229FB0D0900441AA8 /* (null) in Resources */,
 				EE92F0BE2A01CA350072D4C9 /* MyquotesCollectionViewCell.xib in Resources */,
 				2E577F7F2A065E8D00DCE61D /* wantToRead.json in Resources */,
-				2E1F16E129F9B7ED007FC4E3 /* HomeVCLocalizable.strings in Resources */,
 				EE7CDFE729F7D2F00058C163 /* NowTableViewCell.xib in Resources */,
 				2E577F812A06840200DCE61D /* notfound.json in Resources */,
 				2E1F167329F7CB77007FC4E3 /* MyBooksViewController.xib in Resources */,
-				2E81B46529FD8F4300986F98 /* ReadListViewController.xib in Resources */,
+				2E258FE12A0A56E10076C6B4 /* Localizable.strings in Resources */,
+				2E1022082A0A4100000A3024 /* ReadListViewController.xib in Resources */,
 				2E88B36F29E883A9008F4B4B /* MyBooksCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -843,6 +870,66 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		2E1021C12A0A31C7000A3024 /* LicenseViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2E1021C02A0A31C7000A3024 /* Base */,
+				2E1021C32A0A31CA000A3024 /* en */,
+				2E1021C52A0A31CB000A3024 /* nl */,
+				2E1021C72A0A31CB000A3024 /* fr */,
+				2E1021C92A0A31CC000A3024 /* de */,
+				2E1021CB2A0A31CC000A3024 /* it */,
+				2E1021CD2A0A31CD000A3024 /* es */,
+				2E1021CF2A0A31CE000A3024 /* tr */,
+			);
+			name = LicenseViewController.xib;
+			sourceTree = "<group>";
+		};
+		2E1021D22A0A3859000A3024 /* ReadViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2E1021D12A0A3859000A3024 /* Base */,
+				2E1021D42A0A385F000A3024 /* en */,
+				2E1021D62A0A3860000A3024 /* nl */,
+				2E1021D82A0A3860000A3024 /* fr */,
+				2E1021DA2A0A3861000A3024 /* de */,
+				2E1021DC2A0A3862000A3024 /* it */,
+				2E1021DE2A0A3862000A3024 /* es */,
+				2E1021E02A0A3863000A3024 /* tr */,
+			);
+			name = ReadViewController.xib;
+			sourceTree = "<group>";
+		};
+		2E1021F92A0A3FAF000A3024 /* AddQuotesViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2E1021F82A0A3FAF000A3024 /* Base */,
+				2E1021FB2A0A3FB1000A3024 /* en */,
+				2E1021FD2A0A3FB1000A3024 /* nl */,
+				2E1021FF2A0A3FB2000A3024 /* fr */,
+				2E1022012A0A3FB3000A3024 /* de */,
+				2E1022032A0A3FB3000A3024 /* it */,
+				2E1022052A0A3FB4000A3024 /* es */,
+				2E1022072A0A3FB4000A3024 /* tr */,
+			);
+			name = AddQuotesViewController.xib;
+			sourceTree = "<group>";
+		};
+		2E10220A2A0A4100000A3024 /* ReadListViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2E1022092A0A4100000A3024 /* Base */,
+				2E10220C2A0A4106000A3024 /* en */,
+				2E10220E2A0A4106000A3024 /* nl */,
+				2E1022102A0A4107000A3024 /* fr */,
+				2E1022122A0A4108000A3024 /* de */,
+				2E1022142A0A4108000A3024 /* it */,
+				2E1022162A0A4109000A3024 /* es */,
+				2E1022182A0A4109000A3024 /* tr */,
+			);
+			name = ReadListViewController.xib;
+			sourceTree = "<group>";
+		};
 		2E1F166A29F7C951007FC4E3 /* SearchViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -911,30 +998,33 @@
 			name = DetailViewController.xib;
 			sourceTree = "<group>";
 		};
-		2E1F16D429F9B436007FC4E3 /* Localizable.strings */ = {
+		2E258FE32A0A56E10076C6B4 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				2E1F16D529F9B438007FC4E3 /* nl */,
-				2E1F16D629F9B43A007FC4E3 /* fr */,
-				2E1F16D729F9B43B007FC4E3 /* de */,
-				2E1F16D829F9B43C007FC4E3 /* it */,
-				2E1F16D929F9B43D007FC4E3 /* es */,
-				2E1F16DA29F9B43D007FC4E3 /* tr */,
+				2E258FE22A0A56E10076C6B4 /* en */,
+				2E258FE42A0A56E50076C6B4 /* nl */,
+				2E258FE52A0A56E60076C6B4 /* fr */,
+				2E258FE62A0A56E60076C6B4 /* de */,
+				2E258FE72A0A56E70076C6B4 /* it */,
+				2E258FE82A0A56E80076C6B4 /* es */,
+				2E258FEA2A0A572B0076C6B4 /* tr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
-		2E1F16E329F9B7ED007FC4E3 /* HomeVCLocalizable.strings */ = {
+		2E258FED2A0A58810076C6B4 /* PageNumberViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				2E1F16E429F9B7F1007FC4E3 /* nl */,
-				2E1F16E529F9B7F2007FC4E3 /* fr */,
-				2E1F16E629F9B7F3007FC4E3 /* it */,
-				2E1F16E729F9B7F3007FC4E3 /* de */,
-				2E1F16E829F9B7F4007FC4E3 /* es */,
-				2E1F16E929F9B7F4007FC4E3 /* tr */,
+				2E258FEC2A0A58810076C6B4 /* Base */,
+				2E258FEF2A0A58850076C6B4 /* en */,
+				2E258FF12A0A58860076C6B4 /* nl */,
+				2E258FF32A0A58860076C6B4 /* fr */,
+				2E258FF52A0A58870076C6B4 /* de */,
+				2E258FF72A0A58870076C6B4 /* it */,
+				2E258FF92A0A58880076C6B4 /* es */,
+				2E258FFB2A0A58890076C6B4 /* tr */,
 			);
-			name = HomeVCLocalizable.strings;
+			name = PageNumberViewController.xib;
 			sourceTree = "<group>";
 		};
 		EEAC4FAE29E6F8220066757B /* Main.storyboard */ = {
@@ -1086,7 +1176,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 74UL9K89V5;
+				DEVELOPMENT_TEAM = 4899K4S95G;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BookHive/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Bookhive;
@@ -1119,7 +1209,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 74UL9K89V5;
+				DEVELOPMENT_TEAM = 4899K4S95G;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BookHive/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Bookhive;

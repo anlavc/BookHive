@@ -1,0 +1,111 @@
+/* 
+  Localizable.strings
+  BookHive
+
+  Created by Mehdican Büyükplevne on 9.05.2023.
+  
+*/
+
+"Name"                          = "Naam";
+"Email"                         = "Email";
+"User Informatıon"              = "Gebruikersinformatie";
+"About"                         = "Over";
+"Contact"                       = "Contac";
+"Rate us in App Store"          = "Beoordeel ons in App Store";
+"Developers"                    = "Ontwikkelaar";
+"Logout"                        = "Uitloggen";
+"Delete Account"                = "Account verwijderen";
+"Support"                       = "Ondersteuning";
+"Send Email"                    = "Verstuur e-mail";
+"Cancel"                        = "Annuleren";
+"Feedback"                      = "Feedback";
+"Share Us"                      = "Deel ons";
+"Cannot Send Email"             = "Kan geen e-mail verzenden";
+"Permanently Delete Account"    = "Account definitief verwijderen";
+"OK"                            = "OK";
+"Cancel"                        = "Annuleren";
+"License"                       = "Licentie";
+
+"NOW_TREND"                     = "Nu Trend";
+"WEEK_TREND"                    = "Week Trend";
+"MONTHLY_TREND"                 = "Maandelijkse Trend";
+
+"Delete"                        = "Wis";
+"Privacy Policy"                = "Privacybeleid";
+
+
+
+"Your device cannot send email. Please configure an email account in the Mail app and try again" = "Uw apparaat kan geen e-mail verzenden. Configureer een e-mailaccount in de Mail-app en probeer het opnieuw.";
+
+"You are permanently deleting your account! This action is irreversible! Are You Sure?" = "U verwijdert uw account definitief! Deze actie is onomkeerbaar! Weet u het zeker?";
+
+"An error was encountered"                                                                      = "Er is een fout opgetreden.";
+"Success"                                                                                       = "Succes";
+"Notes Success Added"                                                                           = "Notities Succes Toegevoegd";
+"Save"                                                                                          = "Opslaan";
+"How many pages in total"                                                                       = "Hoeveel pagina's in totaal";
+"WARNING"                                                                                       = "WAARSCHUWING";
+"The book with the same name is already on your reading list or among the books you have read!" = "Het boek met dezelfde naam staat al op je leeslijst of tussen de boeken die je gelezen hebt!";
+"An error was encountered during start reading."                                                = "Er is een fout opgetreden tijdens het begin van het lezen.";
+"Read"                                                                                          = "Gelezen";
+"The page number entered cannot be greater than the total page number."                         = "Het ingevoerde paginanummer kan niet groter zijn dan het totale paginanummer.";
+"CONGRATULATIONS"                                                                               = "GEFELICITEERD";
+"Congratulations. The book is finished.  Now this book will be listed among the reads."         = "Gefeliciteerd. Het boek is af.  Dit boek wordt nu vermeld bij de gelezen boeken.";
+"Enter the last page you read in your book."                                                    = "Voer de laatste gelezen pagina van uw boek in.";
+"An error was encountered while updating the page number."                                      = "Er is een fout opgetreden tijdens het bijwerken van het paginanummer.";
+"No result found."                                                                              = "Geen resultaat gevonden.";
+"Are you sure you want to add this book to your reading list?"                                  = "Weet u zeker dat u dit boek wilt toevoegen aan uw leeslijst?";
+"DONE"                                                                                          = "Done";
+"Enter Name"                                                                                    = "Voer naam in";
+"Enter E-mail"                                                                                  = "Voer e-mail in";
+"Enter Password"                                                                                = "Voer wachtwoord in";
+"Re-Enter Password"                                                                             = "Wachtwoord opnieuw invoeren";
+"Already have an account?"                                                                      = "Heb je al een account?";
+"CREATE ACCOUNT"                                                                                = "Account Aanmaken";
+"Register"                                                                                      = "Registreren";
+"Login"                                                                                         = "Login";
+"Please enter your username, nickname and password for registration."                           = "Vul uw gebruikersnaam, bijnaam en wachtwoord in voor de registratie.";
+"Please enter your e-mail address correctly."                                                   = "Voer uw e-mailadres correct in.";
+"Password did not match"                                                                        = "Wachtwoord komt niet overeen.";
+"An error occurred while sending verification email."                                           = "Er is een fout opgetreden tijdens het verzenden van de verificatie e-mail.";
+"No favorite books found."                                                                      = "Geen favoriete boeken gevonden.";
+"Added in Read List"                                                                            = "Toegevoegd aan Leeslijst";
+"Readed"                                                                                        = "Gelezen";
+"Reading Now"                                                                                   = "Nu aan het lezen";
+"Error adding a book to favorites."                                                             = "Fout bij het toevoegen van een boek aan favorieten.";
+"Add to Read List"                                                                              = "Toevoegen aan Leeslijst";
+"Error adding the book to the reading list."                                                    = "Fout bij het toevoegen van het boek aan de leeslijst.";
+"Number of pages not available"                                                                 = "Aantal pagina's niet beschikbaar";
+"Please enter the number of pages"                                                              = "Voer het aantal pagina's in";
+"Number of pages"                                                                               = "Aantal pagina's";
+"To access millions of Books"                                                                   = "Om toegang te krijgen tot miljoenen boeken";
+"Don't you have an account?"                                                                    = "Heeft u geen account?";
+"User Login Error"                                                                              = "Fout bij aanmelden gebruiker";
+"Please enter a valid e-mail address."                                                          = "Voer een geldig e-mailadres in.";
+"Email Verification"                                                                            = "E-mail Verificatie";
+"Please verify your e-mail address to continue."                                                = "Controleer uw e-mailadres om door te gaan.";
+"Email or password field is empty"                                                              = "E-mail of wachtwoord veld is leeg";
+"Please enter your e-mail address correctly."                                                   = "Voer uw e-mailadres correct in.";
+"Your Password or Mail Address is Incorrect"                                                    = "Uw wachtwoord of e-mailadres is onjuist";
+"Error Sending Password Reset Email"                                                            = "Fout bij verzenden wachtwoord reset e-mail";
+"Password Reset Email Sent"                                                                     = "Wachtwoord reset e-mail verzonden";
+"Check Your Email(It Maybe In Junk)"                                                            = "Controleer uw e-mail (misschien in de junk)";
+"Sign up now and choose from millions of books"                                                 = "Meld je nu aan en kies uit miljoenen boeken";
+"Do you love reading books? Then Bookhive if for you!"                                          = "Houdt u van boeken lezen? Dan is Bookhive iets voor jou!";
+"Get Started"                                                                                   = "Aan de slag";
+"Next"                                                                                          = "Volgende";
+"Books (0)"                                                                                     = "Boeken (0)";
+"Hello,"                                                                                        = "Hallo,";
+"Sorry, details of the book could not be found!"                                                = "Sorry, details van het boek konden niet worden gevonden!";
+"Unknown"                                                                                       = "Onbekend";
+"Create Account"                                                                                = "Account aanmaken";
+"Your password must be at least 8 characters long.\nand contain at least 1 lowercase letter, 1 uppercase letter, 1 number and 1 special character." = "Uw wachtwoord moet minstens 8 tekens lang zijn en minstens 1 kleine letter, 1 hoofdletter, 1 cijfer en 1 speciaal teken bevatten.";
+
+"Verification email sent successfully. Please check your inbox and click on the verification link to verify your email address." = "Verificatie e-mail succesvol verzonden. Controleer uw inbox en klik op de verificatielink om uw e-mailadres te verifiëren.";
+"Easily keep track of the books you've read, create reading lists, and create quotes about your books!" = "Houd eenvoudig bij welke boeken je hebt gelezen, maak leeslijsten en maak quotes over je boeken!";
+
+
+
+"We know that you all love your books and don't want to scribble them You can access and share your favorite parts of the books you read at any time by making a note in this field." = "We weten dat jullie allemaal van jullie boeken houden en niet willen krabbelen U kunt uw favoriete delen van de boeken die u leest op elk moment openen en delen door een notitie te maken in dit veld.";
+
+"Bookhive is a carefully developed digital bookmark app. Designed for those who love to read books, this app allows readers to easily locate the books they are reading. It also gives users the opportunity to learn about books. Bookhive is both a practical and useful tool and is the perfect solution for readers to keep track of their books." = "Bookhive is een zorgvuldig ontwikkelde digitale bladwijzer app. Ontworpen voor degenen die graag boeken lezen, stelt deze app lezers in staat om de boeken die ze aan het lezen zijn gemakkelijk terug te vinden. Het geeft gebruikers ook de mogelijkheid om te leren over boeken. Bookhive is zowel een praktisch als nuttig hulpmiddel en is de perfecte oplossing voor lezers om hun boeken bij te houden.";

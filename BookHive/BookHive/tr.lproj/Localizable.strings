@@ -1,0 +1,116 @@
+/* 
+  Localizable.strings
+  BookHive
+
+  Created by Mehdican Büyükplevne on 9.05.2023.
+  
+*/
+
+"Name"                       = "İsim";
+"Email"                      = "E-posta";
+"User Informatıon"           = "Kullanıcı Bilgileri";
+"About"                      = "Hakkımızda";
+"Contact"                    = "İletişime Geçin";
+"Rate us in App Store"       = "Bizi App Storeda Puanlayın";
+"Developers"                 = "Geliştiriciler";
+"Logout"                     = "Çıkış Yap";
+"Delete Account"             = "Hesabımı Sil";
+"Support"                    = "Destek";
+"Send Email"                 = "E-posta Gönder";
+"Cancel"                     = "İptal";
+"Feedback"                   = "Geri Bildirim";
+"Share Us"                   = "Bizi Paylaş";
+"Cannot Send Email"          = "E-posta Gönderilemiyor";
+"Permanently Delete Account" = "Hesabı Kalıcı Olarak Sil";
+"OK"                         = "Sil";
+"Cancel"                     = "İptal";
+
+"Your device cannot send email. Please configure an email account in the Mail app and try again"
+                        = "Cihazınız e-posta gönderemiyor. Lütfen Posta uygulamasında bir e-posta hesabı yapılandırın ve tekrar deneyin";
+
+
+"You are permanently deleting your account! This action is irreversible! Are You Sure?" = "Hesabınızı kalıcı olarak siliyorsunuz! Bu işlem geri alınamaz! Emin misiniz?";
+
+
+"An error was encountered"                                                                      ="Bir hata ile karşılaşıldı";
+"Success"                                                                                       ="Başarılı";
+"Notes Success Added"                                                                           ="Not Başarıyla Eklendi";
+"Save"                                                                                          ="Kaydet";
+"How many pages in total"                                                                       ="Toplam kaç sayfa";
+"WARNING"                                                                                       ="UYARI";
+"The book with the same name is already on your reading list or among the books you have read!" ="Aynı isimli kitap zaten okuma listenizde veya okuduğunuz kitaplar arasında!";
+"An error was encountered during start reading."                                                ="Okumaya başlarken bir hatayla karşılaşıldı.";
+"Read"                                                                                          ="Oku";
+"The page number entered cannot be greater than the total page number."                         ="Girilen sayfa numarası toplam sayfa numarasından büyük olamaz.";
+"CONGRATULATIONS"                                                                               ="TEBRİKLER";
+"Congratulations. The book is finished.  Now this book will be listed among the reads."         ="Tebrikler. Kitap tamamlandı.  Artık bu kitap okunanlar arasında listelenecek.";
+"Enter the last page you read in your book."                                                    ="Kitabınızda okuduğunuz son sayfayı girin.";
+"An error was encountered while updating the page number."                                      ="Sayfa numarası güncellenirken bir hatayla karşılaşıldı.";
+"No result found."                                                                              ="Sonuç bulunamadı.";
+"Are you sure you want to add this book to your reading list?"                                  ="Bu kitabı okuma listenize eklemek istediğinizden emin misiniz?";
+"DONE"                                                                                          ="Tamam";
+"Enter Name"                                                                                    ="İsim Girin";
+"Enter E-mail"                                                                                  ="E-posta Girin";
+"Enter Password"                                                                                ="Şifre Girin";
+"Re-Enter Password"                                                                             ="Şifreyi Yeniden Girin";
+"Already have an account?"                                                                      ="Zaten bir hesabınız var mı?";
+"CREATE ACCOUNT"                                                                                ="Hesap Oluştur";
+"Register"                                                                                      ="Kaydol";
+"Login"                                                                                         ="Giriş";
+"Please enter your username, nickname and password for registration."                           ="Lütfen kayıt için kullanıcı adınızı, takma adınızı ve şifrenizi girin.";
+"Please enter your e-mail address correctly."                                                   ="Lütfen e-posta adresinizi doğru giriniz.";
+"Password did not match"                                                                        ="Şifre eşleşmedi";
+"An error occurred while sending verification email."                                           ="Doğrulama e-postası gönderilirken bir hata oluştu.";
+"No favorite books found."                                                                      ="Favori kitap bulunamadı.";
+"Added in Read List"                                                                            ="Okuma Listene Eklendi";
+"Readed"                                                                                        ="Okundu";
+"Reading Now"                                                                                   ="Okunuyor";
+"Error adding a book to favorites."                                                             ="Bir kitabı favorilere eklerken hata oluştu.";
+"Add to Read List"                                                                              ="Okuma Listene ekle";
+"Error adding the book to the reading list."                                                    ="Kitap okuma listesine eklenirken hata oluştu.";
+"Number of pages not available"                                                                 ="Sayfa sayısı mevcut değil";
+"Please enter the number of pages"                                                              ="Lütfen sayfa sayısını girin";
+"Number of pages"                                                                               ="Sayfa sayısı";
+"To access millions of Books"                                                                   ="Milyonlarca Kitaba erişmek için";
+"Don't you have an account?"                                                                    ="Hesabınız yok mu?";
+"User Login Error"                                                                              ="Kullanıcı Giriş Hatası";
+"Please enter a valid e-mail address."                                                          ="Lütfen geçerli bir e-posta adresi girin.";
+"Email Verification"                                                                            ="E-posta Doğrulama";
+"Please verify your e-mail address to continue."                                                ="Devam etmek için lütfen e-posta adresinizi doğrulayın.";
+"Email or password field is empty"                                                              ="E-posta veya şifre alanı boş";
+"Please enter your e-mail address correctly."                                                   ="Lütfen e-posta adresinizi doğru girin.";
+"Your Password or Mail Address is Incorrect"                                                    ="Şifreniz veya Mail Adresiniz Yanlış";
+"Error Sending Password Reset Email"                                                            ="Parola Sıfırlama E-postası Gönderilirken Hata Oluştu";
+"Password Reset Email Sent"                                                                     ="Şifre Sıfırlama E-postası Gönderildi";
+"Check Your Email(It Maybe In Junk)"                                                            ="E-postanızı Kontrol Edin (Gereksiz Kutusunu Kontrol Ediniz)";
+"Sign up now and choose from millions of books"                                                 ="Şimdi kaydolun ve milyonlarca kitap arasından seçim yapın";
+"Do you love reading books? Then Bookhive if for you!"                                          ="Kitap okumayı seviyor musunuz? O zaman Bookhive tam size göre!";
+"Get Started"                                                                                   ="Başlayın";
+"Next"                                                                                          ="Sonraki";
+"Books (0)"                                                                                     ="Kitaplar (0)";
+"Hello,"                                                                                        ="Merhaba,";
+"Sorry, details of the book could not be found!"                                                ="Üzgünüz, kitabın detayları bulunamadı!";
+"Unknown"                                                                                       ="Bilinmiyor";
+"Create Account"                                                                                ="Hesap Oluştur";
+"License"                                                                                       ="Lisans";
+
+"NOW_TREND"                     = "Günlük Trendler";
+"WEEK_TREND"                    = "Haftalık Trendler";
+"MONTHLY_TREND"                 = "Aylık Trendler";
+"Delete"                        = "Sil";
+"Privacy Policy"                = "Gizlilik Politikası";
+
+
+
+
+
+"Your password must be at least 8 characters long.\nand contain at least 1 lowercase letter, 1 uppercase letter, 1 number and 1 special character." = "Parolanız en az 8 karakter uzunluğunda olmalı ve en az 1 küçük harf, 1 büyük harf, 1 sayı ve 1 özel karakter içermelidir.";
+
+"Verification email sent successfully. Please check your inbox and click on the verification link to verify your email address." = "Doğrulama e-postası başarıyla gönderildi. Lütfen gelen kutunuzu kontrol edin ve e-posta adresinizi doğrulamak için doğrulama bağlantısına tıklayın.";
+"Easily keep track of the books you've read, create reading lists, and create quotes about your books!" = "Okuduğunuz kitapları kolayca takip edin, okuma listeleri oluşturun ve kitaplarınız hakkında alıntılar oluşturun!";
+
+
+
+"We know that you all love your books and don't want to scribble them You can access and share your favorite parts of the books you read at any time by making a note in this field." = "Hepinizin kitaplarınızı çok sevdiğinizi ve onları karalamak istemediğinizi biliyoruz.Okuduğunuz kitapların en sevdiğiniz bölümlerine bu alana not düşerek istediğiniz zaman ulaşabilir ve paylaşabilirsiniz.";
+
+"Bookhive is a carefully developed digital bookmark app. Designed for those who love to read books, this app allows readers to easily locate the books they are reading. It also gives users the opportunity to learn about books. Bookhive is both a practical and useful tool and is the perfect solution for readers to keep track of their books." = "Bookhive özenle geliştirilmiş bir dijital ayraç uygulamasıdır. Kitap okumayı sevenler için tasarlanan bu uygulama, okuyucuların okudukları kitapları kolayca bulmalarını sağlar. Ayrıca kullanıcılara kitaplar hakkında bilgi edinme fırsatı da veriyor. Bookhive hem pratik hem de kullanışlı bir araçtır ve okuyucuların kitaplarını takip etmeleri için mükemmel bir çözümdür.";

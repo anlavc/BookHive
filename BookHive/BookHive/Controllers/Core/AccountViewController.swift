@@ -159,8 +159,6 @@ class AccountViewController: FormViewController, MFMailComposeViewControllerDele
     private func accountInfoForm() {
         form +++
         Section("")
-        form +++
-        Section("")
         <<< ButtonRow() {
             $0.title = NSLocalizedString("Logout", comment: "")
             $0.cellUpdate { cell, row in

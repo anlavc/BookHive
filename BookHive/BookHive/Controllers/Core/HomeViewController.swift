@@ -18,13 +18,13 @@ class HomeViewController: UIViewController, HomeCourseTableViewCellDelegate {
             vc.detailID                 = coverID
             vc.bookTitle                = selectedItem.title // title
             var languageArray           = selectedItem.language?.prefix(2)
-            vc.language                 = languageArray?.joined(separator: " & ") ?? "Unknown"
+            vc.language                 = languageArray?.joined(separator: " & ") ?? NSLocalizedString("Unknown", comment: "") 
             vc.authorName               = selectedItem.author_name?.joined(separator: " & ") ?? selectedItem.authors?[0].name
             vc.publishDateData          = selectedItem.first_publish_year
             vc.modalPresentationStyle   = .fullScreen
             present(vc, animated: true)
         }
-        presentGFAlertOnMainThread(title: "Opss", message: "Sorry, details of the book could not be found!", buttonTitle: "OK")
+        presentGFAlertOnMainThread(title: "ERROR", message: "Sorry, details of the book could not be found!", buttonTitle: "OK")
     }
     //MARK: - Cell Identifier
     let cell            = "HomeTableViewCell"
@@ -32,7 +32,7 @@ class HomeViewController: UIViewController, HomeCourseTableViewCellDelegate {
     let nowCell         = "NowTableViewCell"
     let yearly          = "YearlyTableViewCell"
     let viewModel       = HomeViewModel()
-    let sections        = ["","NOW_TREND","WEEK_TREND","MONTHLY_TREND"]
+    let sections        = ["", NSLocalizedString("NOW_TREND", comment: ""), NSLocalizedString("WEEK_TREND", comment: ""), NSLocalizedString("MONTHLY_TREND", comment: "")]
     var userName: String?
     
     //MARK: - Outlets
@@ -138,7 +138,7 @@ extension HomeViewController: UITableViewDelegate {
         if section == 0 {
             let headerView = view
             let helloLabel = UILabel(frame: CGRect(x: 11, y: 5, width: headerView.frame.size.width, height: 20))
-            helloLabel.text = "Hello,"
+            helloLabel.text = NSLocalizedString("Hello,", comment: "")
             helloLabel.font = UIFont.systemFont(ofSize: 16)
             headerView.addSubview(helloLabel)
             let userNameLabel = UILabel(frame: CGRect(x: 10, y: 25, width: headerView.frame.size.width, height: 20))

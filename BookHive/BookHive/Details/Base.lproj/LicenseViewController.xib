@@ -33,18 +33,18 @@
                         <constraint firstAttribute="width" constant="361" id="LZB-ru-7kB"/>
                     </constraints>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Go to License"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Go_to_License"/>
                     <connections>
                         <action selector="lottie:" destination="-1" eventType="touchUpInside" id="gwA-aG-bI3"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lottie License" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U6i-zd-Vvk">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lottie_License" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U6i-zd-Vvk">
                     <rect key="frame" x="26" y="269" width="351" height="21"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="351" id="OpR-IX-6eD"/>
                         <constraint firstAttribute="height" constant="21" id="pfb-5X-0Qc"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -55,28 +55,28 @@
                         <constraint firstAttribute="width" constant="361" id="Tmw-xE-N29"/>
                     </constraints>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Go to License"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Go_to_License"/>
                     <connections>
                         <action selector="uxwing:" destination="-1" eventType="touchUpInside" id="cMa-oR-UBY"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Uxwing License" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZu-dC-Ty6">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Uxwing_License" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZu-dC-Ty6">
                     <rect key="frame" x="26" y="181" width="351" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="kC0-eW-ey9"/>
                         <constraint firstAttribute="width" constant="351" id="niW-Dr-LiI"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This application is based on information from the sources linked above.&quot;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dkm-VA-ESa">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&quot;This_application_is_based_on _information_from_the sources_linked_above.&quot;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dkm-VA-ESa">
                     <rect key="frame" x="26" y="572" width="351" height="89"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="89" id="9bl-SJ-2T8"/>
                         <constraint firstAttribute="width" constant="351" id="p8Z-yv-kCn"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -87,18 +87,18 @@
                         <constraint firstAttribute="height" constant="35" id="JiG-u7-BkU"/>
                     </constraints>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Go to License"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Go _to _License"/>
                     <connections>
                         <action selector="open:" destination="-1" eventType="touchUpInside" id="XL5-mQ-htA"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open Library API License" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uYh-pC-dyW">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open_Library_API_License" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uYh-pC-dyW">
                     <rect key="frame" x="26" y="362" width="351" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="1K7-Xc-fAN"/>
                         <constraint firstAttribute="width" constant="351" id="huK-oq-bWM"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
