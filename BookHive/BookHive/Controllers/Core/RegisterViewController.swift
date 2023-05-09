@@ -25,7 +25,8 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var createButton: UIButton!
     @IBOutlet weak var createAccount: UILabel!
     @IBOutlet weak var haveAccount: UILabel!
-    @IBOutlet weak var privacyLabel: UILabel!
+    @IBOutlet weak var privacyTextField: UITextView!
+  
     //MARK: - Lİfe Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +34,12 @@ class RegisterViewController: UIViewController {
         setupUI()
         gestureRecognizer()
         textLocalizable()
+        
+        let attributedString = NSMutableAttributedString(string: NSLocalizedString("By continuing, you agree to BookHive - Bookmark & Quotes' Terms of Service and confirm that you have read the Privacy Policy.", comment: ""))
+        let termsRange = (attributedString.string as NSString).range(of: NSLocalizedString("Terms of Service", comment: ""))
+        attributedString.addAttribute(.link, value: "https://www.bookhive.com/terms", range: termsRange)
+        privacyTextField.attributedText = attributedString
+
     }
 
     //MARK: - Xib Register
@@ -75,7 +82,7 @@ class RegisterViewController: UIViewController {
         createAccount.text      = NSLocalizedString("CREATE ACCOUNT", comment: "")
         createButton.setTitle(NSLocalizedString("Register", comment: ""), for: .normal)
         loginButton.setTitle(NSLocalizedString("Login", comment: ""), for: .normal)
-        privacyLabel.text       = NSLocalizedString("By continuing, you agree to BookHive - Bookmark & Quotes' Terms of Service and confirm that you have read the Privacy Policy.", comment: "")
+        privacyTextField.text       = NSLocalizedString("By continuing, you agree to BookHive - Bookmark & Quotes' Terms of Service and confirm that you have read the Privacy Policy.", comment: "")
     }
     
     //MARK: - Login Segue
