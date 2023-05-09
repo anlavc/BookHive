@@ -25,14 +25,16 @@
             // Check if the user is logged in
             if Auth.auth().currentUser != nil {
                 let tabBarController = storyboard.instantiateViewController(withIdentifier: "tabbar")
-                window.rootViewController = tabBarController
+                let navigationController = UINavigationController(rootViewController: tabBarController)
+                window.rootViewController = navigationController
                 window.makeKeyAndVisible()
             } else {
                 let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
-                window.rootViewController = loginViewController
+                let navigationController = UINavigationController(rootViewController: loginViewController)
+                window.rootViewController = navigationController
+            
                 window.makeKeyAndVisible()
             }
-            
             // Show the splash screen only on first launch
             let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
             if !launchedBefore {

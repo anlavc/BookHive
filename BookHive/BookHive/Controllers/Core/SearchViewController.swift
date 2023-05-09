@@ -195,11 +195,13 @@ extension SearchViewController: UITextFieldDelegate {
             animationGif.stopAnimating()
             findLabel.isHidden = true
             DispatchQueue.main.async {
+                self.viewModel.searchBook.removeAll()
                 self.viewModel.fetchSearchBooks(searchWord: searchBookWord)
                 print("**\(searchBookWord)")
                 self.indicator.startAnimating()
                 self.tableView.reloadData()
                 self.view.endEditing(true)
+//                self.searchTextField.text = ""
             }
         }
         return true

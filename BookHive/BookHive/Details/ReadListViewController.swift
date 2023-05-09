@@ -26,6 +26,7 @@ class ReadListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setTableView()
+        navigationController?.navigationBar.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -223,7 +224,7 @@ class ReadListViewController: UIViewController {
 
     // MARK: - Back Button Action
     @IBAction func backButton(_ sender: Any) {
-        dismiss(animated: true)
+        navigationController?.popViewController(animated: true)
     }
 }
 

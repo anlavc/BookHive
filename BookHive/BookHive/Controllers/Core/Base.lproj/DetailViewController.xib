@@ -323,7 +323,7 @@
                 </scrollView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" systemColor="systemGray6Color"/>
             <constraints>
                 <constraint firstItem="8fl-oQ-Up2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Dxj-Or-Fcd"/>
                 <constraint firstItem="8fl-oQ-Up2" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="U8K-61-LPc"/>

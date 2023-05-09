@@ -131,7 +131,9 @@ class DetailViewController: UIViewController {
     }
     
     @IBAction func dismissButton(_ sender: UIButton) {
-        self.dismiss(animated: true)
+//        self.dismiss(animated: true)
+        navigationController?.popViewController(animated: true)
+
     }
     
     //MARK: - Register View Xib

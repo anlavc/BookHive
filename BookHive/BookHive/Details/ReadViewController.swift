@@ -31,12 +31,12 @@ class ReadViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setTableView()
+        navigationController?.navigationBar.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         startAnimation()
-        infoLabel.isHidden = false
     }
 
     // MARK: - Table View Setup
@@ -61,10 +61,18 @@ class ReadViewController: UIViewController {
             self.animatedView.addSubview(animatedView)
         }
     }
+    //MARK: - Animation Stop Func.
+    private func stopAnimation() {
+            if let existingView = animatedView.subviews.first(where: { $0 is LottieAnimationView }) as? LottieAnimationView {
+                existingView.stop()
+                existingView.removeFromSuperview()
+            }
+        }
     
     // MARK: - Back Button Action
     @IBAction func backButton(_ sender: UIButton) {
-        dismiss(animated: true)
+        navigationController?.popViewController(animated: true)
+//        dismiss(animated: true)
     }
     
     // MARK: - Delete for Button Tapped in Firebase
@@ -155,9 +163,12 @@ extension ReadViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = PageNumberViewController()
+        
         vc.selectedReadBook = readBook[indexPath.row]
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true)
+        navigationController?.pushViewController(vc, animated: true)
+
+//        vc.modalPresentationStyle = .fullScreen
+//        present(vc, animated: true)
     }
     
 }
@@ -172,6 +183,7 @@ extension ReadViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if readBook.count > 0 {
+            self.stopAnimation()
             self.animatedView.isHidden = true
             self.infoLabel.isHidden = true
         } else {

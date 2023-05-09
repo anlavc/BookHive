@@ -198,7 +198,6 @@
                     </subviews>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="oo9-xc-xn4" secondAttribute="bottom" id="Aql-eg-eby"/>
-                        <constraint firstAttribute="height" constant="759" id="GyJ-0s-iiD"/>
                         <constraint firstItem="oo9-xc-xn4" firstAttribute="leading" secondItem="ko8-EH-MwZ" secondAttribute="leading" id="IIL-FM-dyV"/>
                         <constraint firstItem="oo9-xc-xn4" firstAttribute="top" secondItem="ko8-EH-MwZ" secondAttribute="top" id="Ifv-WJ-FiY"/>
                         <constraint firstItem="oo9-xc-xn4" firstAttribute="width" secondItem="Z8F-DC-PKd" secondAttribute="width" id="gfs-I5-PpW"/>

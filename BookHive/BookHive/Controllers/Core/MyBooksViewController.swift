@@ -181,15 +181,19 @@ class MyBooksViewController: UIViewController {
     @objc public func wantToReadViewTapped() {
         let vc = ReadListViewController()
         vc.favoriteBooks = self.favoriteBooks
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true)
+        navigationController?.pushViewController(vc, animated: true)
+   
+//        vc.modalPresentationStyle = .fullScreen
+//        present(vc, animated: true)
     }
     
     @objc public func ReadViewTapped() {
         let vc = ReadViewController()
+        navigationController?.pushViewController(vc, animated: true)
+
         vc.readBook = self.finishBook
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true)
+//        vc.modalPresentationStyle = .fullScreen
+//        present(vc, animated: true)
     }
     
 }
@@ -218,8 +222,9 @@ extension MyBooksViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = PageNumberViewController()
         vc.selectedReadBook = readingBooks[indexPath.row]
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true)
+        navigationController?.pushViewController(vc, animated: true)
+//        vc.modalPresentationStyle = .fullScreen
+//        present(vc, animated: true)
     }
 }
 

@@ -42,9 +42,10 @@ class PageNumberViewController: UIViewController,MyquotesCollectionViewCellDeleg
         viewsConfigure()
         setPopButton()
         setUpData()
-        fetchNickname()
+//        fetchNickname()
         collectionSetup()
         gestureRecognizer()
+        navigationController?.navigationBar.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,6 +61,7 @@ class PageNumberViewController: UIViewController,MyquotesCollectionViewCellDeleg
         let percentCompleted    = Double((selectedReadBook?.readPage)!) / Double(((selectedReadBook?.totalpageNumber)!)) * 100
         progressPercent.text    = "% \(Int(percentCompleted))"
         updateProgressView()
+        self.userNameLabel.text = UserNickName.shared.userName
     }
     
     //MARK: - CollectionView Setup
@@ -113,18 +115,18 @@ class PageNumberViewController: UIViewController,MyquotesCollectionViewCellDeleg
     }
     
     //MARK: - FetchFirebase Nickname
-    func fetchNickname() {
-        guard let currentUser           = Auth.auth().currentUser else { return }
-        let uid                         = currentUser.uid
-        Firestore.firestore().collection("users").document(uid).getDocument { (document, error) in
-            if let document             = document, document.exists {
-                let name                = document.get("name") as? String ?? ""
-                self.userNameLabel.text = name
-            } else {
-                self.userNameLabel.text = ""
-            }
-        }
-    }
+//    func fetchNickname() {
+//        guard let currentUser           = Auth.auth().currentUser else { return }
+//        let uid                         = currentUser.uid
+//        Firestore.firestore().collection("users").document(uid).getDocument { (document, error) in
+//            if let document             = document, document.exists {
+//                let name                = document.get("name") as? String ?? ""
+//
+//            } else {
+//                self.userNameLabel.text = ""
+//            }
+//        }
+//    }
     
     // MARK: - Views Setup
     private func viewsConfigure() {
@@ -265,7 +267,9 @@ class PageNumberViewController: UIViewController,MyquotesCollectionViewCellDeleg
     }
     
     @IBAction func offButton(_ sender: UIButton) {
-        dismiss(animated: true)
+//        dismiss(animated: true)
+        navigationController?.popViewController(animated: true)
+
     }
     
     @IBAction func addQuotesButtonTapped(_ sender: UIButton) {
