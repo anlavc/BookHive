@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_12" orientation="portrait" appearance="dark"/>
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
@@ -136,7 +136,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jxD-Cb-MRq">
-                                    <rect key="frame" x="20" y="481.33333333333337" width="353" height="60"/>
+                                    <rect key="frame" x="20" y="446.33333333333331" width="353" height="60"/>
                                     <color key="backgroundColor" name="coverbgColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="60" id="42y-aQ-FQA"/>
@@ -184,12 +184,13 @@
                                 <constraint firstAttribute="trailing" secondItem="iyH-kA-SeS" secondAttribute="trailing" constant="10" id="bJD-w3-UlT"/>
                                 <constraint firstItem="Fzl-SL-QPY" firstAttribute="top" secondItem="TQ4-9h-piC" secondAttribute="bottom" constant="30" id="crt-c1-Qbk"/>
                                 <constraint firstAttribute="height" constant="759" id="e4g-Y2-oKn"/>
+                                <constraint firstItem="ea8-bD-VIQ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="jxD-Cb-MRq" secondAttribute="bottom" constant="30" id="eUh-ju-mai"/>
                                 <constraint firstItem="jxD-Cb-MRq" firstAttribute="trailing" secondItem="Fzl-SL-QPY" secondAttribute="trailing" id="j7h-mw-6gD"/>
                                 <constraint firstItem="iyH-kA-SeS" firstAttribute="leading" secondItem="TQ4-9h-piC" secondAttribute="leading" constant="-5" id="kE8-6o-nzV"/>
                                 <constraint firstItem="cXE-nv-yik" firstAttribute="trailing" secondItem="Fzl-SL-QPY" secondAttribute="trailing" id="lcu-Ql-HWa"/>
                                 <constraint firstItem="ea8-bD-VIQ" firstAttribute="leading" secondItem="oo9-xc-xn4" secondAttribute="leading" constant="20" id="mxD-pM-3QR"/>
                                 <constraint firstItem="jxD-Cb-MRq" firstAttribute="leading" secondItem="Fzl-SL-QPY" secondAttribute="leading" id="pRk-XC-GjO"/>
-                                <constraint firstItem="jxD-Cb-MRq" firstAttribute="top" secondItem="cXE-nv-yik" secondAttribute="bottom" constant="85" id="u8w-SN-7mr"/>
+                                <constraint firstItem="jxD-Cb-MRq" firstAttribute="top" secondItem="cXE-nv-yik" secondAttribute="bottom" constant="50" id="u8w-SN-7mr"/>
                                 <constraint firstItem="TQ4-9h-piC" firstAttribute="trailing" secondItem="Fzl-SL-QPY" secondAttribute="trailing" id="x4E-lg-2GJ"/>
                                 <constraint firstItem="iyH-kA-SeS" firstAttribute="top" secondItem="oo9-xc-xn4" secondAttribute="top" constant="10" id="xXX-1j-Ldf"/>
                                 <constraint firstItem="cXE-nv-yik" firstAttribute="top" secondItem="Fzl-SL-QPY" secondAttribute="bottom" constant="10" id="yrk-BQ-vrN"/>
@@ -197,10 +198,10 @@
                         </view>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="oo9-xc-xn4" firstAttribute="height" secondItem="Z8F-DC-PKd" secondAttribute="height" id="Aj5-2F-skq"/>
                         <constraint firstAttribute="bottom" secondItem="oo9-xc-xn4" secondAttribute="bottom" id="Aql-eg-eby"/>
                         <constraint firstItem="oo9-xc-xn4" firstAttribute="leading" secondItem="ko8-EH-MwZ" secondAttribute="leading" id="IIL-FM-dyV"/>
                         <constraint firstItem="oo9-xc-xn4" firstAttribute="top" secondItem="ko8-EH-MwZ" secondAttribute="top" id="Ifv-WJ-FiY"/>
+                        <constraint firstItem="oo9-xc-xn4" firstAttribute="height" secondItem="VWs-FZ-yqG" secondAttribute="height" id="ade-ZI-aCo"/>
                         <constraint firstItem="oo9-xc-xn4" firstAttribute="width" secondItem="Z8F-DC-PKd" secondAttribute="width" id="gfs-I5-PpW"/>
                         <constraint firstAttribute="trailing" secondItem="oo9-xc-xn4" secondAttribute="trailing" id="ocJ-Pb-VjR"/>
                         <constraint firstItem="oo9-xc-xn4" firstAttribute="top" secondItem="VWs-FZ-yqG" secondAttribute="top" id="wQ3-Qa-C9a"/>
