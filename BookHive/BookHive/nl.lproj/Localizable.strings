@@ -69,11 +69,11 @@
 "Password did not match"                                                                        = "Wachtwoord komt niet overeen.";
 "An error occurred while sending verification email."                                           = "Er is een fout opgetreden tijdens het verzenden van de verificatie e-mail.";
 "No favorite books found."                                                                      = "Geen favoriete boeken gevonden.";
-"Added in favorites"                                                                            = "Toegevoegd aan favorieten";
+"Added in Read List"                                                                            = "Toegevoegd aan Leeslijst";
 "Readed"                                                                                        = "Gelezen";
 "Reading Now"                                                                                   = "Nu aan het lezen";
 "Error adding a book to favorites."                                                             = "Fout bij het toevoegen van een boek aan favorieten.";
-"Add to favorites"                                                                              = "Toevoegen aan favorieten";
+"Add to Read List"                                                                              = "Toevoegen aan Leeslijst";
 "Error adding the book to the reading list."                                                    = "Fout bij het toevoegen van het boek aan de leeslijst.";
 "Number of pages not available"                                                                 = "Aantal pagina's niet beschikbaar";
 "Please enter the number of pages"                                                              = "Voer het aantal pagina's in";

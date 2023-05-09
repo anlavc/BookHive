@@ -36,11 +36,11 @@
 "Password did not match"                                                                        = "Password did not match";
 "An error occurred while sending verification email."                                           = "An error occurred while sending verification email.";
 "No favorite books found."                                                                      = "No favorite books found.";
-"Added in favorites"                                                                            = "Added in favorites";
+"Added in Read List"                                                                            = "Added in Read List";
 "Readed"                                                                                        = "Readed";
 "Reading Now"                                                                                   = "Reading Now";
 "Error adding a book to favorites."                                                             = "Error adding a book to favorites.";
-"Add to favorites"                                                                              = "Add to favorites";
+"Add to Read List"                                                                              = "Add to Read List";
 "Error adding the book to the reading list."                                                    = "Error adding the book to the reading list.";
 "Number of pages not available"                                                                 = "Number of pages not available";
 "Please enter the number of pages"                                                              = "Please enter the number of pages";

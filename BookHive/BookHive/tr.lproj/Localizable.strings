@@ -62,11 +62,11 @@
 "Password did not match"                                                                        ="Şifre eşleşmedi";
 "An error occurred while sending verification email."                                           ="Doğrulama e-postası gönderilirken bir hata oluştu.";
 "No favorite books found."                                                                      ="Favori kitap bulunamadı.";
-"Added in favorites"                                                                            ="Favorilere eklendi";
+"Added in Read List"                                                                            ="Okuma Listene Eklendi";
 "Readed"                                                                                        ="Okundu";
 "Reading Now"                                                                                   ="Okunuyor";
 "Error adding a book to favorites."                                                             ="Bir kitabı favorilere eklerken hata oluştu.";
-"Add to favorites"                                                                              ="Favorilere ekle";
+"Add to Read List"                                                                              ="Okuma Listene ekle";
 "Error adding the book to the reading list."                                                    ="Kitap okuma listesine eklenirken hata oluştu.";
 "Number of pages not available"                                                                 ="Sayfa sayısı mevcut değil";
 "Please enter the number of pages"                                                              ="Lütfen sayfa sayısını girin";

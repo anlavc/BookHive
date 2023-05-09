@@ -60,11 +60,11 @@
 "Password did not match"                                                                        ="Le mot de passe ne correspond pas";
 "An error occurred while sending verification email."                                           ="Une erreur s'est produite lors de l'envoi de l'e-mail de vérification.";
 "No favorite books found."                                                                      ="Aucun livre favori n'a été trouvé.";
-"Added in favorites"                                                                            ="Ajouté dans les favoris";
+"Added in Read List"                                                                            ="Ajouté à la liste de lecture";
 "Readed"                                                                                        ="Lu";
 "Reading Now"                                                                                   ="Lu maintenant";
 "Error adding a book to favorites."                                                             ="Erreur lors de l'ajout d'un livre aux favoris.";
-"Add to favorites"                                                                              ="Ajouter aux favoris";
+"Add to Read List"                                                                              ="Ajouter à la liste de lecture";
 "Error adding the book to the reading list."                                                    ="Erreur lors de l'ajout du livre à la liste de lecture.";
 "Number of pages not available"                                                                 ="Le nombre de pages n'est pas disponible";
 "Please enter the number of pages"                                                              ="Veuillez saisir le nombre de pages";

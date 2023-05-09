@@ -80,7 +80,7 @@ class DetailViewController: UIViewController {
                     
                     // Gelen favori kitapların içinde detayına gidilen kitaba ait coverId varsa bu zaten favoride olan bir kitap olduğundan sayfa açıldığında butonda Favorilerde ekli yazar.
                     if coverID == self.detailID {
-                        self.addReadButton.setTitle(NSLocalizedString("Added in favorites", comment: ""), for: .normal)
+                        self.addReadButton.setTitle(NSLocalizedString("Added in Read List", comment: ""), for: .normal)
                         self.addReadButton.backgroundColor = UIColor(named: "addedFavoriteButton")
                     }
                 }
@@ -251,7 +251,7 @@ class DetailViewController: UIViewController {
                         for document in documents {
                             let bookID = document.documentID
                             favoriteBooksCollection.document(bookID).delete()
-                            self.addReadButton.setTitle(NSLocalizedString("Add to favorites", comment: ""), for: .normal)
+                            self.addReadButton.setTitle(NSLocalizedString("Add to Read List", comment: ""), for: .normal)
                             self.addReadButton.backgroundColor = UIColor(named: "coverbgColor")
                             
                         }
@@ -260,7 +260,7 @@ class DetailViewController: UIViewController {
                             favoriteBooksCollection.addDocument(data: ["coverID": self.detailID!,
                                                                        "title"  : self.bookTitle!,
                                                                        "author" : self.authorName])
-                            self.addReadButton.setTitle(NSLocalizedString("Added in favorites", comment: ""), for: .normal)
+                            self.addReadButton.setTitle(NSLocalizedString("Added in Read List", comment: ""), for: .normal)
                             self.addReadButton.backgroundColor = UIColor(named: "addedFavoriteButton")
                         }
                         DispatchQueue.main.async {
@@ -298,7 +298,7 @@ class DetailViewController: UIViewController {
                                                                            "readingdate"    : FieldValue.serverTimestamp(),
                                                                            "totalpageNumber": numberOfPages,
                                                                            "finish"         : false])
-                                self.readButton.setTitle(NSLocalizedString("Reading", comment: ""), for: .normal)
+                                self.readButton.setTitle(NSLocalizedString("Reading Now", comment: ""), for: .normal)
                                 self.readButton.backgroundColor = UIColor(named: "addedFavoriteButton")
                             } else {
                                 // Totalpage numarası istenir.

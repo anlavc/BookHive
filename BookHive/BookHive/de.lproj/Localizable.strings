@@ -61,11 +61,11 @@
 "Password did not match"                                                                        = "Passwort stimmt nicht überein";
 "An error occurred while sending verification email."                                           = "Beim Senden der Bestätigungs-E-Mail ist ein Fehler aufgetreten.";
 "No favorite books found."                                                                      = "Keine Lieblingsbücher gefunden";
-"Added in favorites"                                                                            = "Zu den Favoriten hinzugefügt";
+"Added in Read List"                                                                            = "Zur Leseliste hinzugefügt";
 "Readed"                                                                                        = "Gelesen";
 "Reading Now"                                                                                   = "Jetzt lesen";
 "Error adding a book to favorites."                                                             = "Fehler beim Hinzufügen eines Buches zu den Favoriten";
-"Add to favorites"                                                                              = "Zu den Favoriten hinzufügen";
+"Add to Read List"                                                                              = "Zur Leseliste hinzufügen";
 "Error adding the book to the reading list."                                                    = "Fehler beim Hinzufügen des Buches zur Leseliste";
 "Number of pages not available"                                                                 = "Anzahl der Seiten nicht verfügbar";
 "Please enter the number of pages"                                                              = "Bitte geben Sie die Anzahl der Seiten ein";
