@@ -93,6 +93,14 @@
 "Create Account"                                                                                = "Konto erstellen";
 "License"                                                                                       = "Lizenz";
 
+"NOW_TREND"                     = "Jetzt-Trend";
+"WEEK_TREND"                    = "Wochentrend";
+"MONTHLY_TREND"                 = "Monatlicher Trend";
+"Delete"                        = "Löschen";
+"Privacy Policy"                = "Datenschutzbestimmungen";
+
+
+
 
 
 "Your password must be at least 8 characters long.\nand contain at least 1 lowercase letter, 1 uppercase letter, 1 number and 1 special character." = "Ihr Passwort muss mindestens 8 Zeichen lang sein und mindestens 1 Kleinbuchstaben, 1 Großbuchstaben, 1 Zahl und 1 Sonderzeichen enthalten.";
@@ -101,6 +109,6 @@
 "Easily keep track of the books you've read, create reading lists, and create quotes about your books!" = "Behalten Sie ganz einfach den Überblick über die gelesenen Bücher, erstellen Sie Leselisten, und erstellen Sie Zitate zu Ihren Büchern!";
 
 
-"We know that you all love your books and don't want to scribble them /nYou can access and share your favorite parts of the books you read at any time by making a note in this field." = "Wir wissen, dass ihr alle eure Bücher liebt und sie nicht kritzeln wollt /nSie können jederzeit auf Ihre Lieblingsstellen in den Büchern, die Sie lesen, zugreifen und sie mit anderen teilen, indem Sie eine Notiz in diesem Feld machen.";
+"We know that you all love your books and don't want to scribble them You can access and share your favorite parts of the books you read at any time by making a note in this field." = "Wir wissen, dass ihr alle eure Bücher liebt und sie nicht kritzeln wollt Sie können jederzeit auf Ihre Lieblingsstellen in den Büchern, die Sie lesen, zugreifen und sie mit anderen teilen, indem Sie eine Notiz in diesem Feld machen.";
 
 "Bookhive is a carefully developed digital bookmark app. Designed for those who love to read books, this app allows readers to easily locate the books they are reading. It also gives users the opportunity to learn about books. Bookhive is both a practical and useful tool and is the perfect solution for readers to keep track of their books." = "Bookhive ist eine sorgfältig entwickelte digitale Lesezeichen-App. Diese App wurde für diejenigen entwickelt, die gerne Bücher lesen, und ermöglicht es den Lesern, die Bücher, die sie gerade lesen, leicht zu finden. Außerdem gibt sie den Nutzern die Möglichkeit, etwas über Bücher zu lernen. Bookhive ist sowohl ein praktisches als auch ein nützliches Werkzeug und die perfekte Lösung für Leser, um den Überblick über ihre Bücher zu behalten.";

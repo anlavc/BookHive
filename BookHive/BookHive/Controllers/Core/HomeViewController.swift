@@ -32,7 +32,7 @@ class HomeViewController: UIViewController, HomeCourseTableViewCellDelegate {
     let nowCell         = "NowTableViewCell"
     let yearly          = "YearlyTableViewCell"
     let viewModel       = HomeViewModel()
-    let sections        = ["","NOW_TREND","WEEK_TREND","MONTHLY_TREND"]
+    let sections        = ["", NSLocalizedString("NOW_TREND", comment: ""), NSLocalizedString("WEEK_TREND", comment: ""), NSLocalizedString("MONTHLY_TREND", comment: "")]
     var userName: String?
     
     //MARK: - Outlets

@@ -92,6 +92,14 @@
 "Create Account"                                                                                ="Créer un compte";
 "License"                                                                                       ="Licence";
 
+"NOW_TREND"                     = "Tendance du Moment";
+"WEEK_TREND"                    = "Tendance de la Semaine";
+"MONTHLY_TREND"                 = "Tendance Mensuelle";
+"Delete"                        = "Supprimer";
+"Privacy Policy"                = "Politique de Confidentialité";
+
+
+
 
 
 "Your password must be at least 8 characters long.\nand contain at least 1 lowercase letter, 1 uppercase letter, 1 number and 1 special character." = "Votre mot de passe doit comporter au moins 8 caractères et contenir au moins 1 lettre minuscule, 1 lettre majuscule, 1 chiffre et 1 caractère spécial.";
@@ -102,7 +110,7 @@
 
 
 
-"We know that you all love your books and don't want to scribble them /nYou can access and share your favorite parts of the books you read at any time by making a note in this field." = "Nous savons que vous aimez tous vos livres et que vous ne voulez pas les gribouiller /Vous pouvez accéder à vos parties préférées des livres que vous lisez et les partager à tout moment en les notant dans ce champ.";
+"We know that you all love your books and don't want to scribble them You can access and share your favorite parts of the books you read at any time by making a note in this field." = "Nous savons que vous aimez tous vos livres et que vous ne voulez pas les gribouiller Vous pouvez accéder à vos parties préférées des livres que vous lisez et les partager à tout moment en les notant dans ce champ.";
 
 "Bookhive is a carefully developed digital bookmark app. Designed for those who love to read books, this app allows readers to easily locate the books they are reading. It also gives users the opportunity to learn about books. Bookhive is both a practical and useful tool and is the perfect solution for readers to keep track of their books." = "Bookhive est une application de signets numériques soigneusement développée. Conçue pour ceux qui aiment lire des livres, cette application permet aux lecteurs de localiser facilement les livres qu'ils sont en train de lire. Elle donne également aux utilisateurs la possibilité de s'informer sur les livres. Bookhive est un outil à la fois pratique et utile et constitue la solution parfaite pour que les lecteurs puissent suivre leurs livres.";
 

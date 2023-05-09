@@ -26,6 +26,15 @@
 "Cancel"                        = "Annuleren";
 "License"                       = "Licentie";
 
+"NOW_TREND"                     = "Nu Trend";
+"WEEK_TREND"                    = "Week Trend";
+"MONTHLY_TREND"                 = "Maandelijkse Trend";
+
+"Delete"                        = "Wis";
+"Privacy Policy"                = "Privacybeleid";
+
+
+
 "Your device cannot send email. Please configure an email account in the Mail app and try again" = "Uw apparaat kan geen e-mail verzenden. Configureer een e-mailaccount in de Mail-app en probeer het opnieuw.";
 
 "You are permanently deleting your account! This action is irreversible! Are You Sure?" = "U verwijdert uw account definitief! Deze actie is onomkeerbaar! Weet u het zeker?";
@@ -97,6 +106,6 @@
 
 
 
-"We know that you all love your books and don't want to scribble them /nYou can access and share your favorite parts of the books you read at any time by making a note in this field." = "We weten dat jullie allemaal van jullie boeken houden en niet willen krabbelen /nU kunt uw favoriete delen van de boeken die u leest op elk moment openen en delen door een notitie te maken in dit veld.";
+"We know that you all love your books and don't want to scribble them You can access and share your favorite parts of the books you read at any time by making a note in this field." = "We weten dat jullie allemaal van jullie boeken houden en niet willen krabbelen U kunt uw favoriete delen van de boeken die u leest op elk moment openen en delen door een notitie te maken in dit veld.";
 
 "Bookhive is a carefully developed digital bookmark app. Designed for those who love to read books, this app allows readers to easily locate the books they are reading. It also gives users the opportunity to learn about books. Bookhive is both a practical and useful tool and is the perfect solution for readers to keep track of their books." = "Bookhive is een zorgvuldig ontwikkelde digitale bladwijzer app. Ontworpen voor degenen die graag boeken lezen, stelt deze app lezers in staat om de boeken die ze aan het lezen zijn gemakkelijk terug te vinden. Het geeft gebruikers ook de mogelijkheid om te leren over boeken. Bookhive is zowel een praktisch als nuttig hulpmiddel en is de perfecte oplossing voor lezers om hun boeken bij te houden.";

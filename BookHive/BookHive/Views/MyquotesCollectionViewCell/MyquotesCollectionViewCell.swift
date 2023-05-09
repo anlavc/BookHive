@@ -48,7 +48,7 @@ class MyquotesCollectionViewCell: UICollectionViewCell {
     func setupNil() {
         authorLabel.isHidden    = true
         bookNameLabel.isHidden  = true
-        quoteTextField.text     = NSLocalizedString( "We know that you all love your books and don't want to scribble them /nYou can access and share your favorite parts of the books you read at any time by making a note in this field.", comment: "")
+        quoteTextField.text     = NSLocalizedString( "We know that you all love your books and don't want to scribble them You can access and share your favorite parts of the books you read at any time by making a note in this field.", comment: "")
         pageNumberLabel.text    = ""
         pagenoIcon.isHidden     = true
         bookNameIcon.isHidden   = true
