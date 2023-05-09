@@ -102,7 +102,7 @@
 
 
 
-"Your password must be at least 8 characters long.\nand contain at least 1 lowercase letter, 1 uppercase letter, 1 number and 1 special character." = "La password deve essere lunga almeno 8 caratteri e contenere almeno 1 lettera minuscola, 1 lettera maiuscola, 1 numero e 1 carattere speciale.";
+"Your password must be at least 6 characters long.\nand contain at least 1 lowercase letter, 1 uppercase letter, 1 number and 1 special character." = "La password deve essere lunga almeno 6 caratteri e contenere almeno 1 lettera minuscola, 1 lettera maiuscola, 1 numero e 1 carattere speciale.";
 
 "Verification email sent successfully. Please check your inbox and click on the verification link to verify your email address." = "L'e-mail di verifica è stata inviata con successo. Controlla la tua casella di posta e clicca sul link di verifica per verificare il tuo indirizzo e-mail.";
 "Easily keep track of the books you've read, create reading lists, and create quotes about your books!" = "Tieni facilmente traccia dei libri che hai letto, crea liste di lettura e crea citazioni sui tuoi libri!";
@@ -112,3 +112,4 @@
 
 "Bookhive is a carefully developed digital bookmark app. Designed for those who love to read books, this app allows readers to easily locate the books they are reading. It also gives users the opportunity to learn about books. Bookhive is both a practical and useful tool and is the perfect solution for readers to keep track of their books." = "Bookhive è un'applicazione per segnalibri digitali sviluppata con cura. Pensata per chi ama leggere i libri, questa applicazione permette ai lettori di individuare facilmente i libri che stanno leggendo. Inoltre, offre agli utenti l'opportunità di imparare qualcosa sui libri. Bookhive è uno strumento pratico e utile ed è la soluzione perfetta per i lettori per tenere traccia dei loro libri.";
 
+"By continuing, you agree to Bookhive - Bookmark & Quotes' Terms of Service and confirm that you have read the Privacy Policy." = "Al continuar, aceptas las Condiciones del servicio de Bookhive - Bookmark & Quotes y confirmas que has leído la Política de privacidad.";

@@ -93,7 +93,7 @@ class MyBooksViewController: UIViewController {
                     self.favoriteBooks.append(book)
                 }
                 DispatchQueue.main.async {
-                    self.wantReadLabel.text = NSLocalizedString("Books (\(self.favoriteBooks.count))", comment: "")
+                    self.wantReadLabel.text = "(\(self.favoriteBooks.count))"
                 }
             }
         }
@@ -135,10 +135,10 @@ class MyBooksViewController: UIViewController {
                         self.finishBook.append(readbookArray)
                     }
                     self.collectionView.reloadData()
-                    self.readBookLabel.text = "Books (\(self.finishBook.count))"
+                    self.readBookLabel.text = "(\(self.finishBook.count))"
                 }
                 if documents.isEmpty {
-                    self.readBookLabel.text = "Books (0)"
+                    self.readBookLabel.text = "(0)"
                     return
                 }
             }

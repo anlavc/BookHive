@@ -99,7 +99,7 @@
 "Sorry, details of the book could not be found!"                                                = "Sorry, details van het boek konden niet worden gevonden!";
 "Unknown"                                                                                       = "Onbekend";
 "Create Account"                                                                                = "Account aanmaken";
-"Your password must be at least 8 characters long.\nand contain at least 1 lowercase letter, 1 uppercase letter, 1 number and 1 special character." = "Uw wachtwoord moet minstens 8 tekens lang zijn en minstens 1 kleine letter, 1 hoofdletter, 1 cijfer en 1 speciaal teken bevatten.";
+"Your password must be at least 6 characters long.\nand contain at least 1 lowercase letter, 1 uppercase letter, 1 number and 1 special character." = "Uw wachtwoord moet minstens 6 tekens lang zijn en minstens 1 kleine letter, 1 hoofdletter, 1 cijfer en 1 speciaal teken bevatten.";
 
 "Verification email sent successfully. Please check your inbox and click on the verification link to verify your email address." = "Verificatie e-mail succesvol verzonden. Controleer uw inbox en klik op de verificatielink om uw e-mailadres te verifiëren.";
 "Easily keep track of the books you've read, create reading lists, and create quotes about your books!" = "Houd eenvoudig bij welke boeken je hebt gelezen, maak leeslijsten en maak quotes over je boeken!";
@@ -109,3 +109,5 @@
 "We know that you all love your books and don't want to scribble them You can access and share your favorite parts of the books you read at any time by making a note in this field." = "We weten dat jullie allemaal van jullie boeken houden en niet willen krabbelen U kunt uw favoriete delen van de boeken die u leest op elk moment openen en delen door een notitie te maken in dit veld.";
 
 "Bookhive is a carefully developed digital bookmark app. Designed for those who love to read books, this app allows readers to easily locate the books they are reading. It also gives users the opportunity to learn about books. Bookhive is both a practical and useful tool and is the perfect solution for readers to keep track of their books." = "Bookhive is een zorgvuldig ontwikkelde digitale bladwijzer app. Ontworpen voor degenen die graag boeken lezen, stelt deze app lezers in staat om de boeken die ze aan het lezen zijn gemakkelijk terug te vinden. Het geeft gebruikers ook de mogelijkheid om te leren over boeken. Bookhive is zowel een praktisch als nuttig hulpmiddel en is de perfecte oplossing voor lezers om hun boeken bij te houden.";
+
+"By continuing, you agree to BookHive - Bookmark & Quotes' Terms of Service and confirm that you have read the Privacy Policy." = "Door verder te gaan, gaat u akkoord met de Servicevoorwaarden van BookHive - Bookmark & Quotes en bevestigt u dat u het Privacybeleid hebt gelezen.";

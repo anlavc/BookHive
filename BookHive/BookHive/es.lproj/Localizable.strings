@@ -102,7 +102,7 @@
 
 
 
-"Your password must be at least 8 characters long.\nand contain at least 1 lowercase letter, 1 uppercase letter, 1 number and 1 special character." = "Su contraseña debe tener al menos 8 caracteres.\ny contener al menos 1 letra minúscula, 1 letra mayúscula, 1 número y 1 carácter especial.";
+"Your password must be at least 6 characters long.\nand contain at least 1 lowercase letter, 1 uppercase letter, 1 number and 1 special character." = "Su contraseña debe tener al menos 6 caracteres.\ny contener al menos 1 letra minúscula, 1 letra mayúscula, 1 número y 1 carácter especial.";
 
 "Verification email sent successfully. Please check your inbox and click on the verification link to verify your email address." = "El correo electrónico de verificación se ha enviado correctamente. Por favor, compruebe su bandeja de entrada y haga clic en el enlace de verificación para verificar su dirección de correo electrónico.";
 
@@ -113,3 +113,5 @@
 "We know that you all love your books and don't want to scribble them You can access and share your favorite parts of the books you read at any time by making a note in this field." = "Sabemos que a todos os encantan vuestros libros y no queréis garabatearlos Podéis acceder y compartir vuestras partes favoritas de los libros que leéis en cualquier momento haciendo una nota en este campo.";
 
 "Bookhive is a carefully developed digital bookmark app. Designed for those who love to read books, this app allows readers to easily locate the books they are reading. It also gives users the opportunity to learn about books. Bookhive is both a practical and useful tool and is the perfect solution for readers to keep track of their books." = "Bookhive es una aplicación de marcapáginas digitales cuidadosamente desarrollada. Diseñada para los amantes de la lectura, esta aplicación permite a los lectores localizar fácilmente los libros que están leyendo. También ofrece a los usuarios la oportunidad de aprender sobre libros. Bookhive es una herramienta práctica y útil a la vez, y es la solución perfecta para que los lectores no pierdan de vista sus libros.";
+
+"By continuing, you agree to Bookhive - Bookmark & Quotes' Terms of Service and confirm that you have read the Privacy Policy." = "Al continuar, aceptas las Condiciones del servicio de Bookhive - Bookmark & Quotes y confirmas que has leído la Política de privacidad.";

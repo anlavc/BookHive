@@ -25,7 +25,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var createButton: UIButton!
     @IBOutlet weak var createAccount: UILabel!
     @IBOutlet weak var haveAccount: UILabel!
-    
+    @IBOutlet weak var privacyLabel: UILabel!
     //MARK: - Lİfe Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,6 +75,7 @@ class RegisterViewController: UIViewController {
         createAccount.text      = NSLocalizedString("CREATE ACCOUNT", comment: "")
         createButton.setTitle(NSLocalizedString("Register", comment: ""), for: .normal)
         loginButton.setTitle(NSLocalizedString("Login", comment: ""), for: .normal)
+        privacyLabel.text       = NSLocalizedString("By continuing, you agree to BookHive - Bookmark & Quotes' Terms of Service and confirm that you have read the Privacy Policy.", comment: "")
     }
     
     //MARK: - Login Segue
@@ -94,7 +95,7 @@ class RegisterViewController: UIViewController {
             return NSLocalizedString("Please enter your e-mail address correctly.", comment: "")
         } else if Utilities.isPasswordValid(password.text!) == false {
             password.layer.borderColor = UIColor.red.cgColor
-            return NSLocalizedString("Your password must be at least 8 characters long. \n and contain at least 1 lowercase letter, 1 uppercase letter, 1 number and 1 special character.", comment: "")
+            return NSLocalizedString("Your password must be at least 6 characters long. \n and contain at least 1 lowercase letter, 1 uppercase letter, 1 number and 1 special character.", comment: "")
         } else if  password.text != repassword.text {
             return NSLocalizedString("Password did not match", comment: "")
         } else {
@@ -108,18 +109,17 @@ class RegisterViewController: UIViewController {
         if error != nil {
             self.presentGFAlertOnMainThread(title: "WARNING", message: self.validateFields()!, buttonTitle: "OK")
         } else {
-            let nickname    = nickname.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let email       = email.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let password    = password.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             
             Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-                if let error = error {
+                if error != nil {
                     self.presentGFAlertOnMainThread(title: "ERROR", message: "An error occurred during registration.", buttonTitle: "OK")
                 } else {
                     guard let uid = authResult?.user.uid else { return }
                     // Kullanıcının e-posta adresini doğrula
                     Auth.auth().currentUser?.sendEmailVerification(completion: { (error) in
-                        if let error = error {
+                        if error != nil {
                             self.presentGFAlertOnMainThread(title: "ERROR", message: "An error occurred while sending verification email.", buttonTitle: "OK")
                         } else {
                             self.presentGFAlertOnMainThread(title: "SUCCESS", message: "Verification email sent successfully. Please check your inbox and click on the verification link to verify your email address.", buttonTitle: "OK")

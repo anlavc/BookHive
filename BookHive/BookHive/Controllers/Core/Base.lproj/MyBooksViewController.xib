@@ -13,10 +13,10 @@
             <connections>
                 <outlet property="animatedView" destination="L2u-m7-KDf" id="n2L-e8-zVq"/>
                 <outlet property="collectionView" destination="D8K-UQ-mzK" id="Aat-qF-eFC"/>
-                <outlet property="readBookLabel" destination="zAm-Ha-itH" id="Jma-A6-j1J"/>
+                <outlet property="readBookLabel" destination="WMw-zF-K4R" id="9bf-7g-e5H"/>
                 <outlet property="readView" destination="zvZ-VI-YkV" id="q8J-Re-SgC"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
-                <outlet property="wantReadLabel" destination="8mn-Mf-PZx" id="8SQ-UY-tQi"/>
+                <outlet property="wantReadLabel" destination="09q-eI-coI" id="cIR-Bc-0t4"/>
                 <outlet property="wantToReadView" destination="FTG-Mr-OTY" id="ROd-MO-1zc"/>
             </connections>
         </placeholder>
@@ -51,13 +51,37 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Books (0)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8mn-Mf-PZx">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pIp-yB-9TK">
                                     <rect key="frame" x="0.0" y="30.666666666666686" width="313" height="23.333333333333329"/>
-                                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                    <color key="textColor" systemColor="secondaryLabelColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Books " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8mn-Mf-PZx">
+                                            <rect key="frame" x="0.0" y="0.0" width="41" height="23.333333333333332"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                            <color key="textColor" systemColor="secondaryLabelColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(0)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="09q-eI-coI">
+                                            <rect key="frame" x="43" y="0.0" width="18" height="23.333333333333332"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                            <color key="textColor" systemColor="secondaryLabelColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="09q-eI-coI" firstAttribute="leading" secondItem="8mn-Mf-PZx" secondAttribute="trailing" constant="2" id="6fh-OB-KWh"/>
+                                        <constraint firstAttribute="bottom" secondItem="8mn-Mf-PZx" secondAttribute="bottom" id="Ezm-1Y-lpF"/>
+                                        <constraint firstItem="8mn-Mf-PZx" firstAttribute="leading" secondItem="pIp-yB-9TK" secondAttribute="leading" id="IbM-IF-gk2"/>
+                                        <constraint firstItem="09q-eI-coI" firstAttribute="top" secondItem="pIp-yB-9TK" secondAttribute="top" id="L4w-1z-eyb"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="09q-eI-coI" secondAttribute="trailing" constant="20" symbolic="YES" id="VKd-41-b0U"/>
+                                        <constraint firstAttribute="bottom" secondItem="09q-eI-coI" secondAttribute="bottom" id="hdC-Iw-i7U"/>
+                                        <constraint firstItem="8mn-Mf-PZx" firstAttribute="top" secondItem="pIp-yB-9TK" secondAttribute="top" id="tBh-0Q-JdG"/>
+                                    </constraints>
+                                </view>
                             </subviews>
+                            <constraints>
+                                <constraint firstItem="pIp-yB-9TK" firstAttribute="leading" secondItem="G8D-vd-i7c" secondAttribute="leading" id="GUC-af-FWo"/>
+                            </constraints>
                         </stackView>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemGray6Color"/>
@@ -82,12 +106,33 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Books (0)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zAm-Ha-itH">
-                                    <rect key="frame" x="0.0" y="27" width="58.666666666666664" height="27"/>
-                                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                    <color key="textColor" systemColor="secondaryLabelColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hAW-qK-WQf">
+                                    <rect key="frame" x="0.0" y="27" width="313" height="27"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Books " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Asq-hK-f0m">
+                                            <rect key="frame" x="0.0" y="0.0" width="41" height="27"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                            <color key="textColor" systemColor="secondaryLabelColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(0)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WMw-zF-K4R">
+                                            <rect key="frame" x="43" y="0.0" width="18" height="27"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                            <color key="textColor" systemColor="secondaryLabelColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="Asq-hK-f0m" secondAttribute="bottom" id="5w1-FI-Xfw"/>
+                                        <constraint firstItem="WMw-zF-K4R" firstAttribute="leading" secondItem="Asq-hK-f0m" secondAttribute="trailing" constant="2" id="B3R-Ks-r3z"/>
+                                        <constraint firstItem="WMw-zF-K4R" firstAttribute="top" secondItem="hAW-qK-WQf" secondAttribute="top" id="Tso-dg-KVi"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="WMw-zF-K4R" secondAttribute="trailing" constant="20" symbolic="YES" id="Uhj-Ig-TJu"/>
+                                        <constraint firstAttribute="bottom" secondItem="WMw-zF-K4R" secondAttribute="bottom" id="VLG-4V-xyd"/>
+                                        <constraint firstItem="Asq-hK-f0m" firstAttribute="top" secondItem="hAW-qK-WQf" secondAttribute="top" id="mXd-Ff-NJI"/>
+                                        <constraint firstItem="Asq-hK-f0m" firstAttribute="leading" secondItem="hAW-qK-WQf" secondAttribute="leading" id="uQ3-Yj-3Qx"/>
+                                    </constraints>
+                                </view>
                             </subviews>
                         </stackView>
                     </subviews>

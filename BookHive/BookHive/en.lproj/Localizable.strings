@@ -75,9 +75,7 @@
 
 
 
-
-
-"Your password must be at least 8 characters long.\nand contain at least 1 lowercase letter, 1 uppercase letter, 1 number and 1 special character." = "Your password must be at least 8 characters long.\nand contain at least 1 lowercase letter, 1 uppercase letter, 1 number and 1 special character.";
+"Your password must be at least 6 characters long.\nand contain at least 1 lowercase letter, 1 uppercase letter, 1 number and 1 special character." = "Your password must be at least 6 characters long.\nand contain at least 1 lowercase letter, 1 uppercase letter, 1 number and 1 special character.";
 
 "Verification email sent successfully. Please check your inbox and click on the verification link to verify your email address." = "Verification email sent successfully. Please check your inbox and click on the verification link to verify your email address.";
 "Easily keep track of the books you've read, create reading lists, and create quotes about your books!" = "Easily keep track of the books you've read, create reading lists, and create quotes about your books!";
@@ -88,6 +86,6 @@
 
 "Bookhive is a carefully developed digital bookmark app. Designed for those who love to read books, this app allows readers to easily locate the books they are reading. It also gives users the opportunity to learn about books. Bookhive is both a practical and useful tool and is the perfect solution for readers to keep track of their books." = "Bookhive is a carefully developed digital bookmark app. Designed for those who love to read books, this app allows readers to easily locate the books they are reading. It also gives users the opportunity to learn about books. Bookhive is both a practical and useful tool and is the perfect solution for readers to keep track of their books.";
 
-
+"By continuing, you agree to BookHive - Bookmark & Quotes' Terms of Service and confirm that you have read the Privacy Policy." = "By continuing, you agree to BookHive - Bookmark & Quotes' Terms of Service and confirm that you have read the Privacy Policy.";
 
 

@@ -22,6 +22,7 @@
                 <outlet property="nickname" destination="nhg-iL-SVC" id="pys-AA-bVS"/>
                 <outlet property="password" destination="9jF-Vv-rjJ" id="9QB-MA-6VO"/>
                 <outlet property="personicon" destination="Z4C-D7-Rve" id="2yt-K2-SrF"/>
+                <outlet property="privacyLabel" destination="af2-Qc-HW0" id="OJk-E6-ZEq"/>
                 <outlet property="repassword" destination="ZcV-fQ-k2W" id="Y3A-cz-VCI"/>
                 <outlet property="view" destination="vZI-iE-ME4" id="V3E-Xd-cm7"/>
             </connections>
@@ -187,43 +188,28 @@
                                         <constraint firstAttribute="height" constant="34.329999999999998" id="qeE-pI-vEa"/>
                                     </constraints>
                                 </stackView>
-                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qaf-a6-TaM" userLabel="logo">
-                                    <rect key="frame" x="109" y="668.33333333333337" width="175" height="40.666666666666629"/>
-                                    <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconbook" translatesAutoresizingMaskIntoConstraints="NO" id="K6B-c5-2YC">
-                                            <rect key="frame" x="0.0" y="0.33333333333337123" width="40" height="40"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="40" id="C74-qe-8EE"/>
-                                                <constraint firstAttribute="height" constant="40" id="XM9-8f-4l4"/>
-                                            </constraints>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bookhive" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PVe-HP-E5p">
-                                            <rect key="frame" x="40" y="0.0" width="135" height="40.666666666666664"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="40.670000000000002" id="6zE-5C-g4k"/>
-                                    </constraints>
-                                </stackView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By continuing, you agree to BookHive - Bookmark &amp; Quotes' Terms of Service and confirm that you have read the Privacy Policy." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="af2-Qc-HW0">
+                                    <rect key="frame" x="50" y="548" width="293" height="21.666666666666629"/>
+                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="9"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemGray6Color"/>
                             <constraints>
-                                <constraint firstItem="qaf-a6-TaM" firstAttribute="top" relation="greaterThanOrEqual" secondItem="d0E-zW-16Z" secondAttribute="bottom" constant="20" id="054-hd-c30"/>
                                 <constraint firstItem="SUs-dU-FZj" firstAttribute="trailing" secondItem="jpS-wU-vIR" secondAttribute="trailing" id="3dV-sQ-UkF"/>
                                 <constraint firstItem="jpS-wU-vIR" firstAttribute="centerX" secondItem="cy0-TA-50b" secondAttribute="centerX" id="4kk-s3-NGR"/>
                                 <constraint firstAttribute="trailing" secondItem="jpS-wU-vIR" secondAttribute="trailing" constant="20" id="7Bc-SH-dVC"/>
                                 <constraint firstItem="rHH-pw-6oH" firstAttribute="leading" secondItem="cy0-TA-50b" secondAttribute="leading" constant="20" id="Fef-VW-SJU"/>
                                 <constraint firstItem="d0E-zW-16Z" firstAttribute="top" secondItem="SUs-dU-FZj" secondAttribute="bottom" constant="10" id="JOR-Up-0I1"/>
-                                <constraint firstItem="qaf-a6-TaM" firstAttribute="centerX" secondItem="SUs-dU-FZj" secondAttribute="centerX" id="R0D-No-NR2"/>
+                                <constraint firstItem="af2-Qc-HW0" firstAttribute="leading" secondItem="SUs-dU-FZj" secondAttribute="leading" constant="30" id="L8p-CN-MJl"/>
                                 <constraint firstItem="SUs-dU-FZj" firstAttribute="leading" secondItem="jpS-wU-vIR" secondAttribute="leading" id="US7-hd-9Tv"/>
                                 <constraint firstItem="rHH-pw-6oH" firstAttribute="top" secondItem="cy0-TA-50b" secondAttribute="top" constant="50" id="ZDM-VI-XWL"/>
                                 <constraint firstItem="jpS-wU-vIR" firstAttribute="top" secondItem="rHH-pw-6oH" secondAttribute="bottom" constant="65" id="eBx-dR-kZw"/>
+                                <constraint firstItem="af2-Qc-HW0" firstAttribute="trailing" secondItem="SUs-dU-FZj" secondAttribute="trailing" constant="-30" id="faT-T7-xuH"/>
+                                <constraint firstItem="af2-Qc-HW0" firstAttribute="top" secondItem="d0E-zW-16Z" secondAttribute="bottom" constant="10" id="go7-VD-caQ"/>
                                 <constraint firstItem="d0E-zW-16Z" firstAttribute="centerX" secondItem="SUs-dU-FZj" secondAttribute="centerX" id="kGq-gB-TTl"/>
                                 <constraint firstItem="jpS-wU-vIR" firstAttribute="leading" secondItem="cy0-TA-50b" secondAttribute="leading" constant="20" id="mmg-YC-mqL"/>
-                                <constraint firstAttribute="bottom" secondItem="qaf-a6-TaM" secondAttribute="bottom" constant="50" id="wE7-7J-q7m"/>
                                 <constraint firstItem="SUs-dU-FZj" firstAttribute="top" secondItem="jpS-wU-vIR" secondAttribute="bottom" constant="30.000000000000057" id="xKS-M4-YJ2"/>
                             </constraints>
                         </view>
@@ -234,6 +220,8 @@
                         <constraint firstItem="cy0-TA-50b" firstAttribute="top" secondItem="Hae-UO-gCN" secondAttribute="top" id="GOI-0w-acf"/>
                         <constraint firstItem="cy0-TA-50b" firstAttribute="trailing" secondItem="Hae-UO-gCN" secondAttribute="trailing" id="OhP-xy-4m3"/>
                         <constraint firstItem="cy0-TA-50b" firstAttribute="width" secondItem="TzY-LI-jKA" secondAttribute="width" id="gTa-iS-FQC"/>
+                        <constraint firstItem="cy0-TA-50b" firstAttribute="top" secondItem="TzY-LI-jKA" secondAttribute="top" id="hdn-3r-WnP"/>
+                        <constraint firstItem="cy0-TA-50b" firstAttribute="bottom" secondItem="TzY-LI-jKA" secondAttribute="bottom" id="jeJ-Lv-UVE"/>
                         <constraint firstItem="cy0-TA-50b" firstAttribute="bottom" secondItem="Hae-UO-gCN" secondAttribute="bottom" id="s1f-pg-xpi"/>
                         <constraint firstItem="cy0-TA-50b" firstAttribute="bottom" secondItem="TzY-LI-jKA" secondAttribute="bottom" id="tu3-2L-onq"/>
                         <constraint firstItem="cy0-TA-50b" firstAttribute="height" secondItem="Hae-UO-gCN" secondAttribute="height" id="zUY-Yr-Y61"/>
@@ -256,7 +244,6 @@
     </objects>
     <resources>
         <image name="envelope.circle" catalog="system" width="128" height="123"/>
-        <image name="iconbook" width="500" height="500"/>
         <image name="lock.circle" catalog="system" width="128" height="123"/>
         <image name="person.circle" catalog="system" width="128" height="123"/>
         <namedColor name="colordarkgray">
