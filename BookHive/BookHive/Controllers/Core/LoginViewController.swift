@@ -35,6 +35,7 @@ class LoginViewController: UIViewController {
         textLocalizable()
         let attributes = [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
         emailTextField.attributedPlaceholder = NSAttributedString(string: NSLocalizedString("Enter E-mail", comment: ""), attributes: attributes)
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = true

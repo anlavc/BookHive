@@ -25,7 +25,6 @@ final class SearchViewModel {
                     self.eventHandler?(.error(error))
                 }
             }
-        
     }   
 }
 extension SearchViewModel {

@@ -82,7 +82,7 @@ class HomeViewController: UIViewController, HomeCourseTableViewCellDelegate {
                 self.tableView.reloadData()
             } else {
                 UserNickName.shared.userName = ""
-                
+                UserNickName.shared.userName = ""
             }
         }
     }
