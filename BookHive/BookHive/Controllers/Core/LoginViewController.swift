@@ -91,7 +91,7 @@ class LoginViewController: UIViewController {
         passwordTextField.placeholder               = NSLocalizedString("Enter Password", comment: "")
         registerButton.setTitle(NSLocalizedString("Create Account", comment: ""), for: .normal)
         loginButton.setTitle(NSLocalizedString("Login", comment: ""), for: .normal)
-        forgotPasswordButton.setTitle(NSLocalizedString("Forgot Password?", comment: ""), for: .normal)
+        forgotPasswordButton.setTitle(NSLocalizedString("Forgot Password", comment: ""), for: .normal)
     }
  
     //MARK: - Keyboard Gesture

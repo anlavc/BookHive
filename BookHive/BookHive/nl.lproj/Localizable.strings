@@ -100,6 +100,9 @@
 "Unknown"                                                                                       = "Onbekend";
 "Create Account"                                                                                = "Account aanmaken";
 "ERROR"                                                                                         = "Fout";
+"Forgot Password"                                                                              = "Wachtwoord vergeten";
+"Reading"                                                                                       = "Wordt gelezen";
+
 
 "Your password must be at least 6 characters long.\nand contain at least 1 lowercase letter, 1 uppercase letter, 1 number and 1 special character." = "Uw wachtwoord moet minstens 6 tekens lang zijn en minstens 1 kleine letter, 1 hoofdletter, 1 cijfer en 1 speciaal teken bevatten.";
 

@@ -41,7 +41,8 @@ class MyBooksViewController: UIViewController {
         viewsSetup()
         tapGestureViews()
         startAnimation()
-        navigationController?.navigationBar.isHidden = true
+       
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,6 +50,11 @@ class MyBooksViewController: UIViewController {
         fetchReadingBooks()
         favouriteBooksFetch()
         startAnimation()
+        navigationController?.navigationBar.isHidden = true
+//        navigationController?.navigationBar.prefersLargeTitles = true
+//        navigationItem.largeTitleDisplayMode = .always
+//        navigationItem.title = NSLocalizedString("Reading", comment: "")
+
     }
   
     private func tapGestureViews() {
@@ -195,9 +201,10 @@ class MyBooksViewController: UIViewController {
     
     @objc public func ReadViewTapped() {
         let vc = ReadViewController()
+        vc.readBook = self.finishBook
         navigationController?.pushViewController(vc, animated: true)
 
-        vc.readBook = self.finishBook
+        
     }
     
 }

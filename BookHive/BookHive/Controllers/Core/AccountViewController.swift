@@ -23,6 +23,9 @@ class AccountViewController: FormViewController, MFMailComposeViewControllerDele
         developerInfoForm()
         accountInfoForm()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = true
+    }
     
     // MARK: - User Information Form
     private func userInformationForm() {
@@ -60,9 +63,9 @@ class AccountViewController: FormViewController, MFMailComposeViewControllerDele
             $0.cell.accountIconImageView.image = UIImage(systemName: "info.circle")
             $0.onCellSelection { cell, row in
                 let vc = AboutViewController()
-                vc.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gear"), style: .done, target: self, action: #selector(self.backButtonAction))
+//                vc.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gear"), style: .done, target: self, action: #selector(self.backButtonAction))
                 vc.modalPresentationStyle = .fullScreen
-                self.present(vc, animated: true)
+                self.navigationController?.pushViewController(vc, animated: true)
             }
         }
         
@@ -88,7 +91,7 @@ class AccountViewController: FormViewController, MFMailComposeViewControllerDele
                 if let link = URL(string: "https://www.apple.com") {
                     let shareItems: [Any] = [link]
                     let activityViewController = UIActivityViewController(activityItems: shareItems, applicationActivities: nil)
-                    self.present(activityViewController, animated: true, completion: nil)
+                    self.present(activityViewController, animated: true)
                 }
             }
         }
@@ -100,13 +103,13 @@ class AccountViewController: FormViewController, MFMailComposeViewControllerDele
             $0.onCellSelection { cell, row in
                 let vc = LicenseViewController()
                 vc.modalPresentationStyle = .fullScreen
-                self.present(vc, animated: true)
+                self.navigationController?.pushViewController(vc, animated: true)
+
             }
         }
     }
     
     @objc func backButtonAction() {
-        let vc = AboutViewController()
         self.navigationController?.popViewController(animated: true)
     }
     

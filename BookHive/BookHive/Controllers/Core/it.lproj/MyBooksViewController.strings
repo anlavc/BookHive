@@ -1,12 +1,10 @@
 
+"Moi-2W-2cv.text" = "essere letto";
 /* Class = "UILabel"; text = "Want to Read"; ObjectID = "G8D-vd-i7c"; */
 "G8D-vd-i7c.text" = "Vuoi Leggere";
 
 /* Class = "UILabel"; text = "Read"; ObjectID = "JMu-ku-ovo"; */
 "JMu-ku-ovo.text" = "Leggi";
-
-/* Class = "UILabel"; text = "Reading"; ObjectID = "hWw-JP-EUQ"; */
-"hWw-JP-EUQ.text" = "Lettura";
 
 "8mn-Mf-PZx.text" = "Libri";
 

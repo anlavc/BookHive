@@ -32,7 +32,7 @@ class LicenseViewController: UIViewController {
     }
     
     @IBAction func backButton(_ sender: UIButton) {
-        dismiss(animated: true)
+        navigationController?.popViewController(animated: true)
     }
     
     

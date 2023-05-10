@@ -26,7 +26,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="D8K-UQ-mzK">
-                    <rect key="frame" x="15" y="217" width="363" height="164"/>
+                    <rect key="frame" x="15" y="129" width="363" height="164"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="363" id="aev-vj-6K3"/>
@@ -40,7 +40,7 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FTG-Mr-OTY">
-                    <rect key="frame" x="20" y="417" width="353" height="94"/>
+                    <rect key="frame" x="20" y="329" width="353" height="94"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="HqD-UX-yl0">
                             <rect key="frame" x="20" y="20" width="313" height="54"/>
@@ -95,7 +95,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zvZ-VI-YkV">
-                    <rect key="frame" x="20" y="528" width="353" height="94"/>
+                    <rect key="frame" x="20" y="440" width="353" height="94"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="taw-c8-s6l">
                             <rect key="frame" x="20" y="20" width="313" height="54"/>
@@ -146,36 +146,37 @@
                         <constraint firstItem="taw-c8-s6l" firstAttribute="leading" secondItem="zvZ-VI-YkV" secondAttribute="leading" constant="20" id="ul0-F4-2ta"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reading" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hWw-JP-EUQ">
-                    <rect key="frame" x="20" y="128" width="323" height="54"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="54" id="d8k-9Y-Lk9"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L2u-m7-KDf" customClass="AnimatedImageView" customModule="Kingfisher">
+                    <rect key="frame" x="0.0" y="129" width="393" height="164"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reading" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Moi-2W-2cv">
+                    <rect key="frame" x="16" y="84" width="357" height="30"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L2u-m7-KDf" customClass="AnimatedImageView" customModule="Kingfisher">
-                    <rect key="frame" x="63" y="224" width="280" height="164"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="D8K-UQ-mzK" secondAttribute="trailing" constant="15" id="1OT-J3-i0C"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hWw-JP-EUQ" secondAttribute="trailing" constant="50" id="2HP-Yr-s41"/>
-                <constraint firstItem="D8K-UQ-mzK" firstAttribute="top" secondItem="hWw-JP-EUQ" secondAttribute="bottom" constant="35" id="2rK-4r-eQV"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zvZ-VI-YkV" secondAttribute="trailing" constant="20" id="5za-Qo-Ipy"/>
-                <constraint firstItem="hWw-JP-EUQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="8h8-hN-SiN"/>
-                <constraint firstItem="hWw-JP-EUQ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="69" id="Rkg-3E-hF5"/>
+                <constraint firstItem="D8K-UQ-mzK" firstAttribute="top" secondItem="Moi-2W-2cv" secondAttribute="bottom" constant="15" id="61w-53-PmL"/>
+                <constraint firstItem="L2u-m7-KDf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="83K-IZ-SDI"/>
                 <constraint firstItem="FTG-Mr-OTY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="TcU-dz-IvG"/>
+                <constraint firstItem="L2u-m7-KDf" firstAttribute="top" secondItem="Moi-2W-2cv" secondAttribute="bottom" constant="15" id="dGQ-65-KQV"/>
                 <constraint firstItem="D8K-UQ-mzK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="dfi-dl-kpD"/>
+                <constraint firstItem="Moi-2W-2cv" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="25" id="fRk-tA-OlP"/>
                 <constraint firstItem="zvZ-VI-YkV" firstAttribute="top" secondItem="FTG-Mr-OTY" secondAttribute="bottom" constant="17" id="hrg-jr-xpp"/>
                 <constraint firstItem="zvZ-VI-YkV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="jOY-Pd-6mc"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="FTG-Mr-OTY" secondAttribute="trailing" constant="20" id="lI8-mI-FEY"/>
+                <constraint firstItem="L2u-m7-KDf" firstAttribute="height" secondItem="D8K-UQ-mzK" secondAttribute="height" id="mif-7h-LRP"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="L2u-m7-KDf" secondAttribute="trailing" id="nRu-6Y-pn7"/>
+                <constraint firstItem="L2u-m7-KDf" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="neC-Ka-o8G"/>
+                <constraint firstItem="Moi-2W-2cv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="npq-1K-9db"/>
                 <constraint firstItem="FTG-Mr-OTY" firstAttribute="top" secondItem="D8K-UQ-mzK" secondAttribute="bottom" constant="36" id="sXr-aL-EXH"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Moi-2W-2cv" secondAttribute="trailing" constant="20" id="thJ-n6-iq4"/>
             </constraints>
             <point key="canvasLocation" x="139.69465648854961" y="20.422535211267608"/>
         </view>

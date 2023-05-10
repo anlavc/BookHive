@@ -48,7 +48,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4J5-T3-2qp" userLabel="View1">
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="185"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bwz-9e-4DJ">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bwz-9e-4DJ">
                                             <rect key="frame" x="336" y="5" width="49" height="42.666666666666664"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="49" id="2KN-j9-ujq"/>
@@ -117,14 +117,13 @@
                                                                 <constraint firstAttribute="width" constant="90" id="9qk-HC-Ua1"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gfe-Hi-teV">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gfe-Hi-teV">
                                                             <rect key="frame" x="0.0" y="161" width="90" height="30"/>
                                                             <color key="backgroundColor" name="colordarkgray"/>
-                                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <state key="normal" title="Button"/>
-                                                            <buttonConfiguration key="configuration" style="plain" title="Done">
-                                                                <fontDescription key="titleFontDescription" type="boldSystem" pointSize="13"/>
-                                                            </buttonConfiguration>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                            <color key="tintColor" name="colordarkgray"/>
+                                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                            <state key="normal" title="Done"/>
                                                             <connections>
                                                                 <action selector="finishButtonTapped:" destination="-1" eventType="touchUpInside" id="5zY-9u-uqT"/>
                                                             </connections>
@@ -222,14 +221,13 @@
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="pRr-hK-QSy">
                                                                     <rect key="frame" x="0.0" y="43" width="237" height="35"/>
                                                                     <subviews>
-                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wcG-ea-ahm">
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wcG-ea-ahm">
                                                                             <rect key="frame" x="0.0" y="0.0" width="179" height="35"/>
                                                                             <color key="backgroundColor" name="colordarkgray"/>
-                                                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                            <state key="normal" title="Button"/>
-                                                                            <buttonConfiguration key="configuration" style="plain" title="Save">
-                                                                                <fontDescription key="titleFontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="15"/>
-                                                                            </buttonConfiguration>
+                                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                                            <color key="tintColor" name="colordarkgray"/>
+                                                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                            <state key="normal" title="Save"/>
                                                                             <connections>
                                                                                 <action selector="saveButtonTapped:" destination="-1" eventType="touchUpInside" id="a07-M3-Fla"/>
                                                                             </connections>

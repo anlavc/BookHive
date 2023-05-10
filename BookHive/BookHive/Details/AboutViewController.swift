@@ -23,6 +23,7 @@ class AboutViewController: UIViewController {
     }
     
     @IBAction func backButton(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
+
     }
 }

@@ -13,11 +13,8 @@ import Kingfisher
 class PageNumberViewController: UIViewController,MyquotesCollectionViewCellDelegate,AddQuotesViewControllerDelegate {
     func didCloseAddQuotesViewController() {
         quotesBooksFetch(forCoverId: (selectedReadBook?.coverID)!)
-        
     }
-    
     func deleteQuote(in cell: MyquotesCollectionViewCell) {
-        
     }
     // MARK: - Outlets
     @IBOutlet weak var topView           : UIView!
@@ -50,7 +47,7 @@ class PageNumberViewController: UIViewController,MyquotesCollectionViewCellDeleg
         collectionSetup()
         gestureRecognizer()
         keyboardDone()
-        navigationController?.navigationBar.isHidden = true
+//        navigationController?.navigationBar.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {

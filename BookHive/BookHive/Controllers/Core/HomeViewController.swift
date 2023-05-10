@@ -46,16 +46,14 @@ class HomeViewController: UIViewController, HomeCourseTableViewCellDelegate {
         tableRegister()
         setTable()
         fetchNickname()
-        navigationController?.navigationBar.isHidden = true
+       
     }
-    
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = true
         tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
         tableView.reloadData()
-        
+        navigationController?.navigationBar.isHidden = true
     }
-    
     private func xibRegister() {
         Bundle.main.loadNibNamed("HomeViewController", owner: self, options: nil)![0] as? HomeViewController
     }
