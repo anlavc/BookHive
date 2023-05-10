@@ -48,6 +48,7 @@ class MyBooksViewController: UIViewController {
         super.viewWillAppear(animated)
         fetchReadingBooks()
         favouriteBooksFetch()
+        startAnimation()
     }
   
     private func tapGestureViews() {
@@ -69,6 +70,13 @@ class MyBooksViewController: UIViewController {
         animatedView.play()
         self.animatedView.addSubview(animatedView)
         self.animationView = animatedView
+    }
+    
+    private func stopAnimation() {
+        if let existingView = animatedView.subviews.first(where: {$0 is LottieAnimationView}) as? LottieAnimationView {
+            existingView.stop()
+            existingView.removeFromSuperview()
+        }
     }
     
     //MARK: - Favourite books fetch firebase
@@ -204,6 +212,7 @@ extension MyBooksViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if readingBooks.count == 0 {
             if readingBooks.count > 0 {
+                stopAnimation()
                 self.animatedView.isHidden = true
             } else {
                 self.animatedView.isHidden = false
