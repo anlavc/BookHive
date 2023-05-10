@@ -34,40 +34,33 @@ class LoginViewController: UIViewController {
         setupUI()
         gestureRecognizer()
         textLocalizable()
-        setKeyboard()
         keyboardHidding()
+        keyboardDone()
         let attributes = [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
         emailTextField.attributedPlaceholder = NSAttributedString(string: NSLocalizedString("Enter E-mail", comment: ""), attributes: attributes)
-    }
     
+    }
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = true
     }
     
-    private func setKeyboard() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+   
+    //MARK: - Keyboard Done Button
+    private func keyboardDone() {
+        let toolBar = UIToolbar()
+        toolBar.sizeToFit()
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: #selector(self.keyboardRemove))
+        let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: nil, action: #selector(self.keyboardRemove))
+        toolBar.setItems([flexibleSpace, doneButton], animated: false)
+        emailTextField.inputAccessoryView = toolBar
+        passwordTextField.inputAccessoryView = toolBar
     }
-    
-    @objc func keyboardHide(notification: Notification) {
-        self.bottomCons.constant = 0
+    @objc func keyboardRemove() {
+        view.endEditing(true)
     }
-    
-    @objc func keyboardShow(notification: Notification) {
-        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-            let keyboardRectangle = keyboardFrame.cgRectValue
-            let keyboardHeight = keyboardRectangle.height
-            self.bottomCons.constant = keyboardHeight - 40
-        }
-    }
-    
     func keyboardHidding() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(keyboardRemove))
         self.view.addGestureRecognizer(tap)
-    }
-    
-    @objc func keyboardRemove() {
-        view.endEditing(true)
     }
     
     //MARK: - Xib Register

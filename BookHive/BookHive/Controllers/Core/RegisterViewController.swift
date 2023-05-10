@@ -36,8 +36,9 @@ class RegisterViewController: UIViewController {
         gestureRecognizer()
         textLocalizable()
         termsLabelConfig()
+        keyboardDone()
     }
-    
+    //MARK: - Privacy Policy
     private func termsLabelConfig() {
         let attributedString = NSMutableAttributedString(string: NSLocalizedString("By continuing, you acknowledge that you have read and accepted BookHive - Bookmark & Quotes' Terms of Service.", comment: "") )
         
@@ -49,8 +50,6 @@ class RegisterViewController: UIViewController {
         termsLabel.isUserInteractionEnabled = true
         termsLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(termsLabelTapped)))
     }
-    
-    
     @objc func termsLabelTapped() {
         if let url = URL(string: "https://docs.google.com/document/d/e/2PACX-1vR6cDqVe_j5rbOEKBNu5ai4yXBK0NO9uKNInfxzsoc0RfLqZt5RBxlYYKd1ZByz4gkvPZP9we5ho4hv/pub") {
             UIApplication.shared.open(url)
@@ -62,8 +61,18 @@ class RegisterViewController: UIViewController {
     private func xibRegister() {
         Bundle.main.loadNibNamed("RegisterViewController", owner: self, options: nil)![0] as? RegisterViewController
     }
-    
-    //MARK: - Keyboard Gesture
+    //MARK: - Keyboard Done Button
+    private func keyboardDone() {
+        let toolBar = UIToolbar()
+        toolBar.sizeToFit()
+        let flexibleSpace               = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: #selector(self.dismissKeyboard))
+        let doneButton                  = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: nil, action: #selector(self.dismissKeyboard))
+        toolBar.setItems([flexibleSpace, doneButton], animated: false)
+        nickname.inputAccessoryView     = toolBar
+        email.inputAccessoryView        = toolBar
+        password.inputAccessoryView     = toolBar
+        repassword.inputAccessoryView   = toolBar
+    }
     private func gestureRecognizer() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tapGesture)

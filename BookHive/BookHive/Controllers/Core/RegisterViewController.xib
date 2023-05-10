@@ -188,9 +188,8 @@
                                         <constraint firstAttribute="height" constant="34.329999999999998" id="qeE-pI-vEa"/>
                                     </constraints>
                                 </stackView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SmH-14-kmy">
-                                    <rect key="frame" x="20" y="568" width="353" height="76"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SmH-14-kmy">
+                                    <rect key="frame" x="20" y="706" width="353" height="43"/>
                                     <attributedString key="attributedText">
                                         <fragment content="By continuing, you agree to BookHive - Bookmark &amp; Quotes' Terms of Service and confirm that you have read the Privacy Policy.">
                                             <attributes>
@@ -211,7 +210,11 @@
                                 <constraint firstItem="d0E-zW-16Z" firstAttribute="top" secondItem="SUs-dU-FZj" secondAttribute="bottom" constant="10" id="JOR-Up-0I1"/>
                                 <constraint firstItem="SUs-dU-FZj" firstAttribute="leading" secondItem="jpS-wU-vIR" secondAttribute="leading" id="US7-hd-9Tv"/>
                                 <constraint firstItem="rHH-pw-6oH" firstAttribute="top" secondItem="cy0-TA-50b" secondAttribute="top" constant="50" id="ZDM-VI-XWL"/>
+                                <constraint firstItem="SmH-14-kmy" firstAttribute="leading" secondItem="cy0-TA-50b" secondAttribute="leading" constant="20" id="Zug-bg-2dW"/>
                                 <constraint firstItem="jpS-wU-vIR" firstAttribute="top" secondItem="rHH-pw-6oH" secondAttribute="bottom" constant="65" id="eBx-dR-kZw"/>
+                                <constraint firstAttribute="bottom" secondItem="SmH-14-kmy" secondAttribute="bottom" constant="10" id="hhd-wc-RjS"/>
+                                <constraint firstAttribute="trailing" secondItem="SmH-14-kmy" secondAttribute="trailing" constant="20" id="iG7-NR-rcs"/>
+                                <constraint firstItem="SmH-14-kmy" firstAttribute="top" relation="greaterThanOrEqual" secondItem="d0E-zW-16Z" secondAttribute="bottom" constant="20" id="iJI-LE-dym"/>
                                 <constraint firstItem="d0E-zW-16Z" firstAttribute="centerX" secondItem="SUs-dU-FZj" secondAttribute="centerX" id="kGq-gB-TTl"/>
                                 <constraint firstItem="jpS-wU-vIR" firstAttribute="leading" secondItem="cy0-TA-50b" secondAttribute="leading" constant="20" id="mmg-YC-mqL"/>
                                 <constraint firstItem="SUs-dU-FZj" firstAttribute="top" secondItem="jpS-wU-vIR" secondAttribute="bottom" constant="30.000000000000057" id="xKS-M4-YJ2"/>
