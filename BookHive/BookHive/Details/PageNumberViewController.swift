@@ -13,7 +13,7 @@ import Kingfisher
 class PageNumberViewController: UIViewController,MyquotesCollectionViewCellDelegate,AddQuotesViewControllerDelegate {
     func didCloseAddQuotesViewController() {
         quotesBooksFetch(forCoverId: (selectedReadBook?.coverID)!)
-
+        
     }
     
     func deleteQuote(in cell: MyquotesCollectionViewCell) {
@@ -47,9 +47,9 @@ class PageNumberViewController: UIViewController,MyquotesCollectionViewCellDeleg
         viewsConfigure()
         setPopButton()
         setUpData()
-//        fetchNickname()
         collectionSetup()
         gestureRecognizer()
+        keyboardDone()
         navigationController?.navigationBar.isHidden = true
     }
     
@@ -62,7 +62,6 @@ class PageNumberViewController: UIViewController,MyquotesCollectionViewCellDeleg
         bookNameLabel.text      = selectedReadBook?.title
         bookImageView.setImageOlid(with: (selectedReadBook?.coverID)!)
         bookStartDate.text      = selectedReadBook?.readingDate?.toFormattedString()
-        //        pageNumberTF.text       = "\(selectedReadBook?.readPage! ?? 0)"
         let percentCompleted    = Double((selectedReadBook?.readPage)!) / Double(((selectedReadBook?.totalpageNumber)!)) * 100
         progressPercent.text    = "% \(Int(percentCompleted))"
         updateProgressView()
@@ -87,7 +86,16 @@ class PageNumberViewController: UIViewController,MyquotesCollectionViewCellDeleg
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tapGesture)
     }
-    
+    //MARK: - Keyboard Done Button
+    private func keyboardDone() {
+        let toolBar = UIToolbar()
+        toolBar.sizeToFit()
+        
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: #selector(self.dismissKeyboard))
+        let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: nil, action: #selector(self.dismissKeyboard))
+        toolBar.setItems([flexibleSpace, doneButton], animated: false)
+        pageNumberTF.inputAccessoryView = toolBar
+    }
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
@@ -118,7 +126,7 @@ class PageNumberViewController: UIViewController,MyquotesCollectionViewCellDeleg
             self.pageNumberTF.text = ""
         }
     }
-
+    
     // MARK: - Views Setup
     private func viewsConfigure() {
         bottomView.layer.cornerRadius       = 15
@@ -240,8 +248,8 @@ class PageNumberViewController: UIViewController,MyquotesCollectionViewCellDeleg
             }
         }
     }
-
-
+    
+    
     //MARK: - Button actions
     @IBAction func finishButtonTapped(_ sender: UIButton) {
         presentBottomAlert(title: "", message: "Are you sure you want to add this book to your reading list?", okTitle: "DONE", cancelTitle: "Cancel") {
@@ -271,7 +279,7 @@ class PageNumberViewController: UIViewController,MyquotesCollectionViewCellDeleg
         
         vc.modalPresentationStyle = .formSheet
         present(vc, animated: true)
-
+        
     }
 }
 

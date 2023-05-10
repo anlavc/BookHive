@@ -31,14 +31,29 @@ class AddQuotesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presentationVc()
+        keyboardDone()
         authorNameLabel.text = authorname
         bookNameLabel.text = bookName
         bgview.layer.cornerRadius = 20
         isModalInPresentation = true
+        
     }
     @IBAction func closeVC(_ sender: UIButton) {
         delegate?.didCloseAddQuotesViewController()
                dismiss(animated: true)
+    }
+    //MARK: - Keyboard Done Button
+    private func keyboardDone() {
+        let toolBar = UIToolbar()
+        toolBar.sizeToFit()
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: #selector(self.doneClicked))
+        let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: nil, action: #selector(self.doneClicked))
+        toolBar.setItems([flexibleSpace, doneButton], animated: false)
+        notePageNumber.inputAccessoryView = toolBar
+        quotesTextField.inputAccessoryView = toolBar
+    }
+    @objc func doneClicked() {
+        view.endEditing(true)
     }
     //MARK: - Quotes save button
     @IBAction func saveButtonTapped(_ sender: UIButton) {
