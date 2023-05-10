@@ -34,6 +34,7 @@ class MyquotesCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         bgview.layer.cornerRadius = 20
         bgview.addShadow(color: .white, opacity: 0.5, offset: CGSize(width: 2, height: 2), radius: 5)
+        
     }
     static func nib() -> UINib {
         return UINib(nibName: "MyquotesCollectionViewCell", bundle: nil)
@@ -74,6 +75,8 @@ class MyquotesCollectionViewCell: UICollectionViewCell {
     }
     
     @IBAction func shareButtonTapped(_ sender: UIButton) {
+        deleteButton.isHidden = true
+        shareButton.isHidden = true
         UIGraphicsBeginImageContextWithOptions(bounds.size, false, 0.0)
         layer.render(in: UIGraphicsGetCurrentContext()!)
         let image = UIGraphicsGetImageFromCurrentImageContext()
@@ -81,6 +84,12 @@ class MyquotesCollectionViewCell: UICollectionViewCell {
         let activityViewController = UIActivityViewController(activityItems: [image as Any], applicationActivities: nil)
         if let viewController = UIApplication.shared.keyWindow?.rootViewController {
             activityViewController.popoverPresentationController?.sourceView = sender
+            
+            activityViewController.completionWithItemsHandler = { [weak self] activityType, completed, returnedItems, error in
+                self?.deleteButton.isHidden = false
+                self?.shareButton.isHidden = false
+            }
+            
             viewController.present(activityViewController, animated: true, completion: nil)
         }
     }
