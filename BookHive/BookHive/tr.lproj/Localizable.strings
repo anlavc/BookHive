@@ -109,7 +109,6 @@
 
 
 
-
 "Your password must be at least 6 characters long.\nand contain at least 1 lowercase letter, 1 uppercase letter, 1 number and 1 special character." = "Parolanız en az 6 karakter uzunluğunda olmalı ve en az 1 küçük harf, 1 büyük harf, 1 sayı ve 1 özel karakter içermelidir.";
 
 "Verification email sent successfully. Please check your inbox and click on the verification link to verify your email address." = "Doğrulama e-postası başarıyla gönderildi. Lütfen gelen kutunuzu kontrol edin ve e-posta adresinizi doğrulamak için doğrulama bağlantısına tıklayın.";

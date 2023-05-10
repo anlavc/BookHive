@@ -21,10 +21,7 @@
 "bwz-9e-4DJ.normalTitle" = "Button";
 
 /* Class = "UIButton"; configuration.title = "Done"; ObjectID = "gfe-Hi-teV"; */
-"gfe-Hi-teV.configuration.title" = "Bitti";
-
-/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "gfe-Hi-teV"; */
-"gfe-Hi-teV.normalTitle" = "Button";
+"gfe-Hi-teV.normalTitle" = "Bitti";
 
 /* Class = "UILabel"; text = "The Great Gatsby The Great Gatsby The Great Gatsby The Great Gatsby"; ObjectID = "iMQ-lt-2jr"; */
 "iMQ-lt-2jr.text" = "The Great Gatsby The Great Gatsby The Great Gatsby The Great Gatsby";
@@ -33,10 +30,7 @@
 "siS-4f-KrQ.normalTitle" = "Button";
 
 /* Class = "UIButton"; configuration.title = "Save"; ObjectID = "wcG-ea-ahm"; */
-"wcG-ea-ahm.configuration.title" = "Kaydet";
-
-/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "wcG-ea-ahm"; */
-"wcG-ea-ahm.normalTitle" = "Button";
+"wcG-ea-ahm.normalTitle" = "Kaydet";
 
 /* Class = "UILabel"; text = "Hello,"; ObjectID = "yTq-Ap-qtu"; */
 "yTq-Ap-qtu.text" = "Merhaba,";

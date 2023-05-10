@@ -10,7 +10,7 @@ import FirebaseAuth
 import Firebase
 import Kingfisher
 
-class PageNumberViewController: UIViewController,MyquotesCollectionViewCellDelegate,AddQuotesViewControllerDelegate {
+class PageNumberViewController: UIViewController, MyquotesCollectionViewCellDelegate, AddQuotesViewControllerDelegate {
     func didCloseAddQuotesViewController() {
         quotesBooksFetch(forCoverId: (selectedReadBook?.coverID)!)
     }

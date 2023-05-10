@@ -23,9 +23,6 @@
 /* Class = "UIButton"; configuration.title = "Done"; ObjectID = "gfe-Hi-teV"; */
 "gfe-Hi-teV.configuration.title" = "Erledigt";
 
-/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "gfe-Hi-teV"; */
-"gfe-Hi-teV.normalTitle" = "Button";
-
 /* Class = "UILabel"; text = "The Great Gatsby The Great Gatsby The Great Gatsby The Great Gatsby"; ObjectID = "iMQ-lt-2jr"; */
 "iMQ-lt-2jr.text" = "The Great Gatsby The Great Gatsby The Great Gatsby The Great Gatsby";
 
@@ -34,9 +31,6 @@
 
 /* Class = "UIButton"; configuration.title = "Save"; ObjectID = "wcG-ea-ahm"; */
 "wcG-ea-ahm.configuration.title" = "Speichern";
-
-/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "wcG-ea-ahm"; */
-"wcG-ea-ahm.normalTitle" = "Button";
 
 /* Class = "UILabel"; text = "Hello,"; ObjectID = "yTq-Ap-qtu"; */
 "yTq-Ap-qtu.text" = "Hallo,";
