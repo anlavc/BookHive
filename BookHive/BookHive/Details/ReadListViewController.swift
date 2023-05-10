@@ -32,7 +32,6 @@ class ReadListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         startAnimation()
-        infoLabel.isHidden = false
     }
     
     // MARK: - Start Animation Func.
@@ -49,6 +48,14 @@ class ReadListViewController: UIViewController {
             self.animatedImage.addSubview(animatedView)
         }
     }
+    
+    private func stopAnimation() {
+        if let existingView = animatedImage.subviews.first(where: {$0 is LottieAnimationView}) as? LottieAnimationView {
+            existingView.stop()
+            existingView.removeFromSuperview()
+        }
+    }
+
     
     // MARK: - Table View Setup
     private func setTableView() {
@@ -251,6 +258,7 @@ extension ReadListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if favoriteBooks.count > 0 {
+            stopAnimation()
             self.animatedImage.isHidden = true
             self.infoLabel.isHidden = true
         } else {
