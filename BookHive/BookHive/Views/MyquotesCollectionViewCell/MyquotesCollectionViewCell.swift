@@ -72,4 +72,17 @@ class MyquotesCollectionViewCell: UICollectionViewCell {
             (collectionView.delegate as? PageNumberViewController)?.deleteQuote(at: indexPath)
         }
     }
+    
+    @IBAction func shareButtonTapped(_ sender: UIButton) {
+        UIGraphicsBeginImageContextWithOptions(bounds.size, false, 0.0)
+        layer.render(in: UIGraphicsGetCurrentContext()!)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        let activityViewController = UIActivityViewController(activityItems: [image as Any], applicationActivities: nil)
+        if let viewController = UIApplication.shared.keyWindow?.rootViewController {
+            activityViewController.popoverPresentationController?.sourceView = sender
+            viewController.present(activityViewController, animated: true, completion: nil)
+        }
+    }
 }
+

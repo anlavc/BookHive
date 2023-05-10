@@ -10,6 +10,7 @@ import FirebaseAuth
 import Firebase
 
 class AddQuotesViewController: UIViewController {
+    
     //MARK: - Outlets
     @IBOutlet weak var notePageNumber: UITextField!
     @IBOutlet weak var saveButton: UIButton!

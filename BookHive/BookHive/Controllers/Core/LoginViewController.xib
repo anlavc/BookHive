@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="BookHive" customModuleProvider="target">
             <connections>
+                <outlet property="bottomCons" destination="2A1-8V-RrY" id="Nqy-Pf-XFu"/>
                 <outlet property="centerStack" destination="Fzl-SL-QPY" id="VqG-SV-LiU"/>
                 <outlet property="dontaccountTextLabel" destination="c3C-wj-x2W" id="NeH-sq-8Qx"/>
                 <outlet property="emailTextField" destination="u7N-9c-5a9" id="Q7b-tf-eEk"/>
@@ -177,6 +178,7 @@
                                 <constraint firstAttribute="trailing" secondItem="ea8-bD-VIQ" secondAttribute="trailing" constant="20" id="0PC-Yh-0WT"/>
                                 <constraint firstItem="TQ4-9h-piC" firstAttribute="top" secondItem="iyH-kA-SeS" secondAttribute="bottom" constant="100" id="0eh-zu-adX"/>
                                 <constraint firstItem="TQ4-9h-piC" firstAttribute="leading" secondItem="Fzl-SL-QPY" secondAttribute="leading" id="1ys-nB-8GS"/>
+                                <constraint firstItem="ea8-bD-VIQ" firstAttribute="top" secondItem="jxD-Cb-MRq" secondAttribute="bottom" constant="203.33000000000001" id="2A1-8V-RrY"/>
                                 <constraint firstItem="cXE-nv-yik" firstAttribute="leading" secondItem="Fzl-SL-QPY" secondAttribute="leading" id="PB5-0W-Sd4"/>
                                 <constraint firstAttribute="trailing" secondItem="Fzl-SL-QPY" secondAttribute="trailing" constant="20" id="UxS-Gd-B5F"/>
                                 <constraint firstItem="Fzl-SL-QPY" firstAttribute="leading" secondItem="oo9-xc-xn4" secondAttribute="leading" constant="20" id="Xx1-Pq-mFJ"/>

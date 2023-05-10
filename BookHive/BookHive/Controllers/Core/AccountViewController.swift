@@ -232,7 +232,7 @@ class AccountViewController: FormViewController, MFMailComposeViewControllerDele
                 cell.textLabel?.textColor = .systemBlue
             }
             $0.onCellSelection { cell, row in
-                if let url = URL(string: "https://www.google.com") {
+                if let url = URL(string: "https://docs.google.com/document/d/e/2PACX-1vQPDLO-QMEwHAo50VY803WHeFB9_gLshr2gBODF0PmDVb_nObiEQKzpJDf9cgCfo3QPfAINSA_vk6Y7/pub") {
                     UIApplication.shared.open(url, options: [:], completionHandler: nil)
                 }
             }

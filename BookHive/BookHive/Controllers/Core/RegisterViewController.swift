@@ -26,7 +26,8 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var createAccount: UILabel!
     @IBOutlet weak var haveAccount: UILabel!
     @IBOutlet weak var privacyTextField: UITextView!
-  
+    @IBOutlet weak var termsLabel: UILabel!
+    
     //MARK: - Lİfe Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,8 +35,28 @@ class RegisterViewController: UIViewController {
         setupUI()
         gestureRecognizer()
         textLocalizable()
-
+        termsLabelConfig()
     }
+    
+    private func termsLabelConfig() {
+        let attributedString = NSMutableAttributedString(string: NSLocalizedString("By continuing, you acknowledge that you have read and accepted BookHive - Bookmark & Quotes' Terms of Service.", comment: "") )
+        
+        let buttonRange = attributedString.mutableString.range(of: NSLocalizedString("Terms of Service", comment: "") )
+        if buttonRange.location != NSNotFound {
+            attributedString.addAttribute(.link, value: "https://docs.google.com/document/d/e/2PACX-1vR6cDqVe_j5rbOEKBNu5ai4yXBK0NO9uKNInfxzsoc0RfLqZt5RBxlYYKd1ZByz4gkvPZP9we5ho4hv/pub", range: buttonRange)
+        }
+        termsLabel.attributedText = attributedString
+        termsLabel.isUserInteractionEnabled = true
+        termsLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(termsLabelTapped)))
+    }
+    
+    
+    @objc func termsLabelTapped() {
+        if let url = URL(string: "https://docs.google.com/document/d/e/2PACX-1vR6cDqVe_j5rbOEKBNu5ai4yXBK0NO9uKNInfxzsoc0RfLqZt5RBxlYYKd1ZByz4gkvPZP9we5ho4hv/pub") {
+            UIApplication.shared.open(url)
+        }
+    }
+
 
     //MARK: - Xib Register
     private func xibRegister() {

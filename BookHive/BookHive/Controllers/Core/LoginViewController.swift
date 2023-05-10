@@ -24,6 +24,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginLabelText: UILabel!
     @IBOutlet weak var millionsTextLabel: UILabel!
     @IBOutlet weak var dontaccountTextLabel: UILabel!
+    @IBOutlet weak var bottomCons: NSLayoutConstraint!
     
     
     //MARK: - Lifecycle
@@ -33,12 +34,40 @@ class LoginViewController: UIViewController {
         setupUI()
         gestureRecognizer()
         textLocalizable()
+        setKeyboard()
+        keyboardHidding()
         let attributes = [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
         emailTextField.attributedPlaceholder = NSAttributedString(string: NSLocalizedString("Enter E-mail", comment: ""), attributes: attributes)
-        
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = true
+    }
+    
+    private func setKeyboard() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyboardHide(notification: Notification) {
+        self.bottomCons.constant = 0
+    }
+    
+    @objc func keyboardShow(notification: Notification) {
+        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            let keyboardHeight = keyboardRectangle.height
+            self.bottomCons.constant = keyboardHeight - 40
+        }
+    }
+    
+    func keyboardHidding() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(keyboardRemove))
+        self.view.addGestureRecognizer(tap)
+    }
+    
+    @objc func keyboardRemove() {
+        view.endEditing(true)
     }
     
     //MARK: - Xib Register

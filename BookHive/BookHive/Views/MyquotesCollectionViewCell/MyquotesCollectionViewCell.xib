@@ -143,6 +143,9 @@
                                         <color key="tintColor" name="colordarkgray"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="square.and.arrow.up" catalog="system"/>
+                                        <connections>
+                                            <action selector="shareButtonTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="f2P-Xc-jRW"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>

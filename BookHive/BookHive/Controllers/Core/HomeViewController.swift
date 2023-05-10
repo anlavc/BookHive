@@ -145,7 +145,6 @@ extension HomeViewController: UITableViewDelegate {
             userNameLabel.text = UserNickName.shared.userName
             userNameLabel.font = UIFont.systemFont(ofSize: 20, weight: .bold)
             headerView.addSubview(userNameLabel)
-
             headerView.backgroundColor = UIColor(named: "coverbgColor") //Tableview section header bg color
         }
     }

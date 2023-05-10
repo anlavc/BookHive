@@ -41,6 +41,7 @@ class MyBooksViewController: UIViewController {
         viewsSetup()
         tapGestureViews()
         startAnimation()
+        navigationController?.navigationBar.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {

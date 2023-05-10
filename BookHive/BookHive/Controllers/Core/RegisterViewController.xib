@@ -23,6 +23,7 @@
                 <outlet property="password" destination="9jF-Vv-rjJ" id="9QB-MA-6VO"/>
                 <outlet property="personicon" destination="Z4C-D7-Rve" id="2yt-K2-SrF"/>
                 <outlet property="repassword" destination="ZcV-fQ-k2W" id="Y3A-cz-VCI"/>
+                <outlet property="termsLabel" destination="SmH-14-kmy" id="P4a-hZ-N8a"/>
                 <outlet property="view" destination="vZI-iE-ME4" id="V3E-Xd-cm7"/>
             </connections>
         </placeholder>
@@ -187,12 +188,17 @@
                                         <constraint firstAttribute="height" constant="34.329999999999998" id="qeE-pI-vEa"/>
                                     </constraints>
                                 </stackView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SmH-14-kmy">
-                                    <rect key="frame" x="20" y="569" width="353" height="76"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SmH-14-kmy">
+                                    <rect key="frame" x="20" y="568" width="353" height="76"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <string key="text">By continuing, you agree to BookHive - Bookmark &amp; Quotes'                                 and confirm that you have read the Privacy Policy.</string>
-                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                    <nil key="textColor"/>
+                                    <attributedString key="attributedText">
+                                        <fragment content="By continuing, you agree to BookHive - Bookmark &amp; Quotes' Terms of Service and confirm that you have read the Privacy Policy.">
+                                            <attributes>
+                                                <font key="NSFont" metaFont="cellTitle"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>

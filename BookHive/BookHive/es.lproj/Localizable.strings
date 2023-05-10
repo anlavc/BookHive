@@ -20,7 +20,7 @@
 "Cancel"                     = "Cancelar";
 "Feedback"                   = "Comentarios";
 "Share Us"                   = "Compartir";
-"OK"                         = "ACEPTAR";
+"OK"                         = "OK";
 "Cancel"                     = "Cancelar";
 "Cannot Send Email"          = "No se puede enviar correo electrónico";
 "Permanently Delete Account" = "Eliminar permanentemente la cuenta";
@@ -114,4 +114,6 @@
 
 "Bookhive is a carefully developed digital bookmark app. Designed for those who love to read books, this app allows readers to easily locate the books they are reading. It also gives users the opportunity to learn about books. Bookhive is both a practical and useful tool and is the perfect solution for readers to keep track of their books." = "Bookhive es una aplicación de marcapáginas digitales cuidadosamente desarrollada. Diseñada para los amantes de la lectura, esta aplicación permite a los lectores localizar fácilmente los libros que están leyendo. También ofrece a los usuarios la oportunidad de aprender sobre libros. Bookhive es una herramienta práctica y útil a la vez, y es la solución perfecta para que los lectores no pierdan de vista sus libros.";
 
-"By continuing, you agree to Bookhive - Bookmark & Quotes' Terms of Service and confirm that you have read the Privacy Policy." = "Al continuar, aceptas las Condiciones del servicio de Bookhive - Bookmark & Quotes y confirmas que has leído la Política de privacidad.";
+"By continuing, you acknowledge that you have read and accepted BookHive - Bookmark & Quotes' Terms of Service." = "Al continuar, reconoces que has leído y aceptado las Condiciones del servicio de BookHive - Bookmark & Quotes";
+
+"Terms of Service" = "Condiciones del servicio";

@@ -69,13 +69,6 @@ class ReadViewController: UIViewController {
             }
         }
     
-    private func stopAnimation() {
-        if let existingView = animatedView.subviews.first(where: { $0 is LottieAnimationView }) as? LottieAnimationView {
-            existingView.stop()
-            existingView.removeFromSuperview()
-        }
-    }
-    
     // MARK: - Back Button Action
     @IBAction func backButton(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
@@ -170,7 +163,6 @@ extension ReadViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = PageNumberViewController()
-        
         vc.selectedReadBook = readBook[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
 

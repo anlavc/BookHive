@@ -22,7 +22,7 @@
 "Share Us"                   = "Bizi Paylaş";
 "Cannot Send Email"          = "E-posta Gönderilemiyor";
 "Permanently Delete Account" = "Hesabı Kalıcı Olarak Sil";
-"OK"                         = "Sil";
+"OK"                         = "Tamam";
 "Cancel"                     = "İptal";
 
 "Your device cannot send email. Please configure an email account in the Mail app and try again"
@@ -115,4 +115,6 @@
 
 "Bookhive is a carefully developed digital bookmark app. Designed for those who love to read books, this app allows readers to easily locate the books they are reading. It also gives users the opportunity to learn about books. Bookhive is both a practical and useful tool and is the perfect solution for readers to keep track of their books." = "Bookhive özenle geliştirilmiş bir dijital ayraç uygulamasıdır. Kitap okumayı sevenler için tasarlanan bu uygulama, okuyucuların okudukları kitapları kolayca bulmalarını sağlar. Ayrıca kullanıcılara kitaplar hakkında bilgi edinme fırsatı da veriyor. Bookhive hem pratik hem de kullanışlı bir araçtır ve okuyucuların kitaplarını takip etmeleri için mükemmel bir çözümdür.";
 
-"By continuing, you agree to Bookhive - Bookmark & Quotes' Terms of Service and confirm that you have read the Privacy Policy." = "Devam ederek Bookhive - Bookmark & Quotes'in Hizmet Şartları koşullarını kabul etmiş ve Gizlilik Politikası metnini okuduğunuzu onaylamış olursunuz.";
+"By continuing, you acknowledge that you have read and accepted BookHive - Bookmark & Quotes' Terms of Service." = "Devam ederek BookHive - Bookmark & Quotes'ın Hizmet Koşullarını okuduğunuzu ve kabul ettiğinizi onaylamış olursunuz.";
+
+"Terms of Service" = "Hizmet Koşulları";
