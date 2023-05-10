@@ -10,7 +10,12 @@ import FirebaseAuth
 import Firebase
 import Kingfisher
 
-class PageNumberViewController: UIViewController,MyquotesCollectionViewCellDelegate {
+class PageNumberViewController: UIViewController,MyquotesCollectionViewCellDelegate,AddQuotesViewControllerDelegate {
+    func didCloseAddQuotesViewController() {
+        quotesBooksFetch(forCoverId: (selectedReadBook?.coverID)!)
+
+    }
+    
     func deleteQuote(in cell: MyquotesCollectionViewCell) {
         
     }
@@ -113,21 +118,7 @@ class PageNumberViewController: UIViewController,MyquotesCollectionViewCellDeleg
             self.pageNumberTF.text = ""
         }
     }
-    
-    //MARK: - FetchFirebase Nickname
-//    func fetchNickname() {
-//        guard let currentUser           = Auth.auth().currentUser else { return }
-//        let uid                         = currentUser.uid
-//        Firestore.firestore().collection("users").document(uid).getDocument { (document, error) in
-//            if let document             = document, document.exists {
-//                let name                = document.get("name") as? String ?? ""
-//
-//            } else {
-//                self.userNameLabel.text = ""
-//            }
-//        }
-//    }
-    
+
     // MARK: - Views Setup
     private func viewsConfigure() {
         bottomView.layer.cornerRadius       = 15
@@ -256,7 +247,7 @@ class PageNumberViewController: UIViewController,MyquotesCollectionViewCellDeleg
         presentBottomAlert(title: "", message: "Are you sure you want to add this book to your reading list?", okTitle: "DONE", cancelTitle: "Cancel") {
             [self] in
             self.readingBookFinishUpdate(bookId: (selectedReadBook?.documentID)!)
-            dismiss(animated: true)
+            navigationController?.popViewController(animated: true)
         }
     }
     
@@ -267,9 +258,7 @@ class PageNumberViewController: UIViewController,MyquotesCollectionViewCellDeleg
     }
     
     @IBAction func offButton(_ sender: UIButton) {
-//        dismiss(animated: true)
         navigationController?.popViewController(animated: true)
-
     }
     
     @IBAction func addQuotesButtonTapped(_ sender: UIButton) {
@@ -278,8 +267,11 @@ class PageNumberViewController: UIViewController,MyquotesCollectionViewCellDeleg
         vc.authorname  = selectedReadBook?.author
         vc.bookName = selectedReadBook?.title
         vc.coverID = selectedReadBook?.coverID
+        vc.delegate = self
+        
         vc.modalPresentationStyle = .formSheet
         present(vc, animated: true)
+
     }
 }
 

@@ -9,6 +9,11 @@ import UIKit
 import FirebaseAuth
 import Firebase
 
+protocol AddQuotesViewControllerDelegate: AnyObject {
+    func didCloseAddQuotesViewController()
+}
+
+
 class AddQuotesViewController: UIViewController {
     
     //MARK: - Outlets
@@ -22,17 +27,18 @@ class AddQuotesViewController: UIViewController {
     var authorname: String?
     var bookName: String?
     var coverID: String?
-    
-    
-    
+    weak var delegate: AddQuotesViewControllerDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
         presentationVc()
         authorNameLabel.text = authorname
         bookNameLabel.text = bookName
         bgview.layer.cornerRadius = 20
-        
-        
+        isModalInPresentation = true
+    }
+    @IBAction func closeVC(_ sender: UIButton) {
+        delegate?.didCloseAddQuotesViewController()
+               dismiss(animated: true)
     }
     //MARK: - Quotes save button
     @IBAction func saveButtonTapped(_ sender: UIButton) {
@@ -51,22 +57,14 @@ class AddQuotesViewController: UIViewController {
                                                        "readingdate"    : FieldValue.serverTimestamp()
                                                       ])
             presentGFAlertOnMainThread(title: "Success", message: "Notes Success Added", buttonTitle: "OK")
-            
-            guard let pageNumberVC = presentingViewController as? PageNumberViewController else {return}
-            pageNumberVC.quotesBooksFetch(forCoverId: coverID!)
-            pageNumberVC.collectionView.reloadData()
-            dismiss(animated: true)
-          
         }
     }
-    
-    
-    
     //MARK: - BottomForm Medium
     private func presentationVc() {
         if let presentationController = presentationController as? UISheetPresentationController {
             presentationController.detents = [
                 .medium()
+                
             ]
         }
     }

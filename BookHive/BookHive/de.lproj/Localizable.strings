@@ -92,6 +92,8 @@
 "Unknown"                                                                                       = "Unbekannt";
 "Create Account"                                                                                = "Konto erstellen";
 "License"                                                                                       = "Lizenz";
+"ERROR"                                                                                         = "Fehler";
+
 
 "NOW_TREND"                     = "Jetzt-Trend";
 "WEEK_TREND"                    = "Wochentrend";

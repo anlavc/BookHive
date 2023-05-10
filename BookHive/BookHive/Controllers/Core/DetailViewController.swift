@@ -50,6 +50,7 @@ class DetailViewController: UIViewController {
         initViewModel()
         observeEvent()
         collectionSetup()
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         favouriteBooksFetch()
@@ -148,6 +149,7 @@ class DetailViewController: UIViewController {
         bgview.layer.cornerRadius           = 20
         bgview.layer.maskedCorners          = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         imageView.layer.cornerRadius        = 5
+        navigationController?.navigationBar.isHidden = true
     }
     
     //MARK: - Collectionview Setup

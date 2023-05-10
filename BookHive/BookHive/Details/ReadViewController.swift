@@ -165,9 +165,6 @@ extension ReadViewController: UITableViewDataSource {
         let vc = PageNumberViewController()
         vc.selectedReadBook = readBook[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
-
-//        vc.modalPresentationStyle = .fullScreen
-//        present(vc, animated: true)
     }
     
 }
