@@ -19,8 +19,7 @@ class SearchViewController: UIViewController, SearchTableViewCellDelegate {
         vc.language = languageArray?.joined(separator: "&") ?? "?"
         vc.authorName = selectedItem.author_name?.joined(separator: ",")
         vc.publishDateData = selectedItem.first_publish_year
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true)
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     // MARK: - Outlets
@@ -50,6 +49,7 @@ class SearchViewController: UIViewController, SearchTableViewCellDelegate {
         gestureRecognizer()
         startAnimation()
         notFoundAnimated.alpha = 0.0
+        navigationController?.navigationBar.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {

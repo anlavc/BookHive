@@ -183,9 +183,6 @@ class MyBooksViewController: UIViewController {
         let vc = ReadListViewController()
         vc.favoriteBooks = self.favoriteBooks
         navigationController?.pushViewController(vc, animated: true)
-   
-//        vc.modalPresentationStyle = .fullScreen
-//        present(vc, animated: true)
     }
     
     @objc public func ReadViewTapped() {
@@ -193,8 +190,6 @@ class MyBooksViewController: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
 
         vc.readBook = self.finishBook
-//        vc.modalPresentationStyle = .fullScreen
-//        present(vc, animated: true)
     }
     
 }
@@ -224,8 +219,6 @@ extension MyBooksViewController: UICollectionViewDelegate {
         let vc = PageNumberViewController()
         vc.selectedReadBook = readingBooks[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
-//        vc.modalPresentationStyle = .fullScreen
-//        present(vc, animated: true)
     }
 }
 

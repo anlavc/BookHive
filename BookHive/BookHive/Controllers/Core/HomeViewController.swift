@@ -21,8 +21,9 @@ class HomeViewController: UIViewController, HomeCourseTableViewCellDelegate {
             vc.language                 = languageArray?.joined(separator: " & ") ?? NSLocalizedString("Unknown", comment: "") 
             vc.authorName               = selectedItem.author_name?.joined(separator: " & ") ?? selectedItem.authors?[0].name
             vc.publishDateData          = selectedItem.first_publish_year
-            vc.modalPresentationStyle   = .fullScreen
-            present(vc, animated: true)
+            navigationController?.pushViewController(vc, animated: true)
+            return
+
         }
         presentGFAlertOnMainThread(title: "ERROR", message: "Sorry, details of the book could not be found!", buttonTitle: "OK")
     }
@@ -45,12 +46,14 @@ class HomeViewController: UIViewController, HomeCourseTableViewCellDelegate {
         tableRegister()
         setTable()
         fetchNickname()
+        navigationController?.navigationBar.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = true
         tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
         tableView.reloadData()
+        
     }
     
     private func xibRegister() {

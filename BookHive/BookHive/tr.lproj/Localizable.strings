@@ -93,6 +93,8 @@
 "Unknown"                                                                                       ="Bilinmiyor";
 "Create Account"                                                                                ="Hesap Oluştur";
 "License"                                                                                       ="Lisans";
+"ERROR"                                                                                         = "ERROR";
+
 
 "NOW_TREND"                     = "Günlük Trendler";
 "WEEK_TREND"                    = "Haftalık Trendler";

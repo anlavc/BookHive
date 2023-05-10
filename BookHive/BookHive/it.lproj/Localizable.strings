@@ -91,6 +91,8 @@
 "Unknown"                                                                                       ="Sconosciuto";
 "Create Account"                                                                                ="Crea account";
 "License"                                                                                       ="Licenza";
+"ERROR"                                                                                         = "Errore";
+
 
 "NOW_TREND"                     = "Tendenza Ora";
 "WEEK_TREND"                    = "Tendenza Settimanale";
