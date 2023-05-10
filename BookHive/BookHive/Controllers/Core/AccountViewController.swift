@@ -63,7 +63,6 @@ class AccountViewController: FormViewController, MFMailComposeViewControllerDele
             $0.cell.accountIconImageView.image = UIImage(systemName: "info.circle")
             $0.onCellSelection { cell, row in
                 let vc = AboutViewController()
-//                vc.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gear"), style: .done, target: self, action: #selector(self.backButtonAction))
                 vc.modalPresentationStyle = .fullScreen
                 self.navigationController?.pushViewController(vc, animated: true)
             }
