@@ -46,17 +46,20 @@ class HomeViewController: UIViewController, HomeCourseTableViewCellDelegate {
         tableRegister()
         setTable()
         fetchNickname()
-       
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = true
         tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
         tableView.reloadData()
         navigationController?.navigationBar.isHidden = true
+        navigationController?.tabBarController?.tabBar.isHidden = false
     }
+    
     private func xibRegister() {
         Bundle.main.loadNibNamed("HomeViewController", owner: self, options: nil)![0] as? HomeViewController
     }
+    
     private func tableRegister() {
         //courcell
         tableView.register(UINib(nibName: cellCarousel, bundle: nil), forCellReuseIdentifier: cellCarousel)
@@ -68,6 +71,7 @@ class HomeViewController: UIViewController, HomeCourseTableViewCellDelegate {
         tableView.register(UINib(nibName: yearly, bundle: nil), forCellReuseIdentifier: yearly)
         
     }
+    
     private func setTable() {
         tableView.dataSource    = self
         tableView.delegate      = self
@@ -94,6 +98,7 @@ extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 0:
@@ -120,10 +125,12 @@ extension HomeViewController: UITableViewDataSource {
             return UITableViewCell()
         }
     }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return sections.count
     }
 }
+
 //MARK: - Tableview Delegate Methods
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -149,9 +156,11 @@ extension HomeViewController: UITableViewDelegate {
             headerView.backgroundColor = UIColor(named: "coverbgColor") //Tableview section header bg color
         }
     }
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 40
     }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
         case 0:
@@ -160,6 +169,7 @@ extension HomeViewController: UITableViewDelegate {
             return 210
         }
     }
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView.contentOffset.y < 0 {
             scrollView.contentOffset.y = 0

@@ -107,7 +107,7 @@
 
 
 
-"Your password must be at least 6 characters long.\nand contain at least 1 lowercase letter, 1 uppercase letter, 1 number and 1 special character." = "Votre mot de passe doit comporter au moins 6 caractères et contenir au moins 1 lettre minuscule, 1 lettre majuscule, 1 chiffre et 1 caractère spécial.";
+"Your password must contain at least\n- 6 characters\n- 1 lowercase letter\n- 1 uppercase letter\n- 1 number\n- 1 special character." = "Votre mot de passe doit contenir au moins\n- 6 caractères\n- 1 lettre minuscule\n- 1 lettre majuscule\n- 1 chiffre\n- 1 caractère spécial.";
 
 "Verification email sent successfully. Please check your inbox and click on the verification link to verify your email address." = "L'e-mail de vérification a été envoyé avec succès. Veuillez vérifier votre boîte de réception et cliquer sur le lien de vérification pour vérifier votre adresse e-mail.";
 

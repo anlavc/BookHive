@@ -107,7 +107,7 @@
 
 
 
-"Your password must be at least 6 characters long.\nand contain at least 1 lowercase letter, 1 uppercase letter, 1 number and 1 special character." = "La password deve essere lunga almeno 6 caratteri e contenere almeno 1 lettera minuscola, 1 lettera maiuscola, 1 numero e 1 carattere speciale.";
+"Your password must contain at least\n- 6 characters\n- 1 lowercase letter\n- 1 uppercase letter\n- 1 number\n- 1 special character." = "La password deve contenere almeno\n- 6 caratteri\n- 1 lettera minuscola\n- 1 lettera maiuscola\n- 1 numero\n- 1 carattere speciale.";
 
 "Verification email sent successfully. Please check your inbox and click on the verification link to verify your email address." = "L'e-mail di verifica è stata inviata con successo. Controlla la tua casella di posta e clicca sul link di verifica per verificare il tuo indirizzo e-mail.";
 "Easily keep track of the books you've read, create reading lists, and create quotes about your books!" = "Tieni facilmente traccia dei libri che hai letto, crea liste di lettura e crea citazioni sui tuoi libri!";
