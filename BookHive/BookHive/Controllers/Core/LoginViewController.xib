@@ -146,20 +146,22 @@
                                         <constraint firstItem="cXE-nv-yik" firstAttribute="top" secondItem="1tq-N9-cEY" secondAttribute="top" id="YZm-nr-9rm"/>
                                     </constraints>
                                 </view>
-                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ea8-bD-VIQ" userLabel="bottomstack">
-                                    <rect key="frame" x="20" y="495.99999999999994" width="353" height="34.333333333333314"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ea8-bD-VIQ" userLabel="bottomstack">
+                                    <rect key="frame" x="60.333333333333343" y="494" width="272.66666666666663" height="32"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c3C-wj-x2W">
-                                            <rect key="frame" x="0.0" y="8.3333333333333712" width="176.66666666666666" height="18"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                            <rect key="frame" x="0.0" y="8.3333333333333712" width="142.33333333333334" height="15.666666666666664"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="drE-qc-nZ4">
-                                            <rect key="frame" x="176.66666666666663" y="0.0" width="176.33333333333337" height="34.333333333333336"/>
+                                            <rect key="frame" x="142.33333333333331" y="0.0" width="130.33333333333331" height="32"/>
                                             <color key="tintColor" name="coverbgColor"/>
                                             <state key="normal" title="Button"/>
-                                            <buttonConfiguration key="configuration" style="plain" title="Create Account"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="Create Account">
+                                                <fontDescription key="titleFontDescription" style="UICTFontTextStyleSubhead"/>
+                                            </buttonConfiguration>
                                             <connections>
                                                 <action selector="registerButtonTapped:" destination="-1" eventType="touchUpInside" id="a1K-j2-i0k"/>
                                             </connections>
@@ -185,10 +187,9 @@
                             </subviews>
                             <color key="backgroundColor" systemColor="systemGray6Color"/>
                             <constraints>
-                                <constraint firstAttribute="trailing" secondItem="ea8-bD-VIQ" secondAttribute="trailing" constant="20" id="0PC-Yh-0WT"/>
                                 <constraint firstItem="TQ4-9h-piC" firstAttribute="top" secondItem="iyH-kA-SeS" secondAttribute="bottom" constant="80" id="0eh-zu-adX"/>
                                 <constraint firstItem="TQ4-9h-piC" firstAttribute="leading" secondItem="Fzl-SL-QPY" secondAttribute="leading" id="1ys-nB-8GS"/>
-                                <constraint firstItem="ea8-bD-VIQ" firstAttribute="top" secondItem="jxD-Cb-MRq" secondAttribute="bottom" constant="20" id="2A1-8V-RrY"/>
+                                <constraint firstItem="ea8-bD-VIQ" firstAttribute="top" secondItem="jxD-Cb-MRq" secondAttribute="bottom" constant="18" id="2A1-8V-RrY"/>
                                 <constraint firstAttribute="trailing" secondItem="1tq-N9-cEY" secondAttribute="trailing" id="2t4-64-yyJ"/>
                                 <constraint firstItem="1tq-N9-cEY" firstAttribute="leading" secondItem="oo9-xc-xn4" secondAttribute="leading" id="9UN-LT-K8A"/>
                                 <constraint firstItem="1tq-N9-cEY" firstAttribute="top" secondItem="Fzl-SL-QPY" secondAttribute="bottom" id="FZ9-kS-bOV"/>
@@ -200,8 +201,8 @@
                                 <constraint firstItem="jxD-Cb-MRq" firstAttribute="trailing" secondItem="Fzl-SL-QPY" secondAttribute="trailing" id="j7h-mw-6gD"/>
                                 <constraint firstItem="jxD-Cb-MRq" firstAttribute="top" secondItem="1tq-N9-cEY" secondAttribute="bottom" constant="50" id="jei-hp-Wvf"/>
                                 <constraint firstItem="iyH-kA-SeS" firstAttribute="leading" secondItem="TQ4-9h-piC" secondAttribute="leading" constant="-5" id="kE8-6o-nzV"/>
-                                <constraint firstItem="ea8-bD-VIQ" firstAttribute="leading" secondItem="oo9-xc-xn4" secondAttribute="leading" constant="20" id="mxD-pM-3QR"/>
                                 <constraint firstItem="jxD-Cb-MRq" firstAttribute="leading" secondItem="Fzl-SL-QPY" secondAttribute="leading" id="pRk-XC-GjO"/>
+                                <constraint firstItem="ea8-bD-VIQ" firstAttribute="centerX" secondItem="jxD-Cb-MRq" secondAttribute="centerX" id="sOl-b8-K7y"/>
                                 <constraint firstItem="TQ4-9h-piC" firstAttribute="trailing" secondItem="Fzl-SL-QPY" secondAttribute="trailing" id="x4E-lg-2GJ"/>
                                 <constraint firstItem="iyH-kA-SeS" firstAttribute="top" secondItem="oo9-xc-xn4" secondAttribute="top" constant="10" id="xXX-1j-Ldf"/>
                             </constraints>
