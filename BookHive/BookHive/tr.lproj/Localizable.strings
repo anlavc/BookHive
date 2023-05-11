@@ -109,7 +109,7 @@
 
 
 
-"Your password must be at least 6 characters long.\nand contain at least 1 lowercase letter, 1 uppercase letter, 1 number and 1 special character." = "Parolanız en az 6 karakter uzunluğunda olmalı ve en az 1 küçük harf, 1 büyük harf, 1 sayı ve 1 özel karakter içermelidir.";
+"Your password must contain at least\n- 6 characters\n- 1 lowercase letter\n- 1 uppercase letter\n- 1 number\n- 1 special character." = "Parolanız en az\n- 6 karakter\n- 1 küçük harf\n- 1 büyük harf\n- 1 sayı\n- 1 özel karakter içermelidir.";
 
 "Verification email sent successfully. Please check your inbox and click on the verification link to verify your email address." = "Doğrulama e-postası başarıyla gönderildi. Lütfen gelen kutunuzu kontrol edin ve e-posta adresinizi doğrulamak için doğrulama bağlantısına tıklayın.";
 "Easily keep track of the books you've read, create reading lists, and create quotes about your books!" = "Okuduğunuz kitapları kolayca takip edin, okuma listeleri oluşturun ve kitaplarınız hakkında alıntılar oluşturun!";

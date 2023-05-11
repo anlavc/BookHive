@@ -127,7 +127,7 @@ class RegisterViewController: UIViewController {
             return NSLocalizedString("Please enter your e-mail address correctly.", comment: "")
         } else if Utilities.isPasswordValid(password.text!) == false {
             password.layer.borderColor = UIColor.red.cgColor
-            return NSLocalizedString("Your password must be at least 6 characters long. \n and contain at least 1 lowercase letter, 1 uppercase letter, 1 number and 1 special character.", comment: "")
+            return NSLocalizedString("Your password must contain at least\n- 6 characters\n- 1 lowercase letter\n- 1 uppercase letter\n- 1 number\n- 1 special character.", comment: "")
         } else if  password.text != repassword.text {
             return NSLocalizedString("Password did not match", comment: "")
         } else {
