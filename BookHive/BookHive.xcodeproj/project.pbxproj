@@ -1176,7 +1176,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 74UL9K89V5;
+				DEVELOPMENT_TEAM = 4899K4S95G;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BookHive/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Bookhive - Bookmark & Quotes";
@@ -1209,7 +1209,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 74UL9K89V5;
+				DEVELOPMENT_TEAM = 4899K4S95G;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BookHive/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Bookhive - Bookmark & Quotes";

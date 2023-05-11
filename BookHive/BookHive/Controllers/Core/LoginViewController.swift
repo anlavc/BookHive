@@ -127,7 +127,8 @@ class LoginViewController: UIViewController {
                         if currentUser.isEmailVerified {
                             let storyboard = UIStoryboard(name: "Main", bundle: nil)
                             let homeViewController = storyboard.instantiateViewController(identifier: "tabbar") as? TabBarController
-                            self.view.window?.rootViewController = homeViewController
+                            let navigationController = UINavigationController(rootViewController: homeViewController!)
+                            self.view.window?.rootViewController = navigationController
                             self.view.window?.makeKeyAndVisible()
                         } else {
                             self.presentGFAlertOnMainThread(title: "Email Verification", message: "Please verify your e-mail address to continue.", buttonTitle: "OK")
