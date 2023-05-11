@@ -166,19 +166,21 @@
                                     </connections>
                                 </button>
                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d0E-zW-16Z">
-                                    <rect key="frame" x="76.000000000000014" y="503.66666666666657" width="241.33333333333337" height="34.333333333333314"/>
+                                    <rect key="frame" x="88" y="503.66666666666657" width="217" height="34.333333333333314"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yuq-i4-kdg">
-                                            <rect key="frame" x="0.0" y="0.0" width="175.66666666666666" height="34.333333333333336"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="155.33333333333334" height="34.333333333333336"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XYh-N0-a1h">
-                                            <rect key="frame" x="175.66666666666666" y="0.0" width="65.666666666666657" height="34.333333333333336"/>
+                                            <rect key="frame" x="155.33333333333334" y="0.0" width="61.666666666666657" height="34.333333333333336"/>
                                             <color key="tintColor" name="coverbgColor"/>
                                             <state key="normal" title="Button"/>
-                                            <buttonConfiguration key="configuration" style="plain" title="Login"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="Login">
+                                                <fontDescription key="titleFontDescription" style="UICTFontTextStyleSubhead"/>
+                                            </buttonConfiguration>
                                             <connections>
                                                 <action selector="loginButtonTapped:" destination="-1" eventType="touchUpInside" id="WzD-g1-vL2"/>
                                             </connections>
