@@ -87,7 +87,7 @@ class AccountViewController: FormViewController, MFMailComposeViewControllerDele
             $0.cell.accountTableViewCellLabelName.text = NSLocalizedString("Share Us", comment: "")
             $0.cell.accountIconImageView.image = UIImage(systemName: "square.and.arrow.up")
             $0.onCellSelection { cell, row in
-                if let link = URL(string: "https://www.apple.com") {
+                if let link = URL(string: "https://apps.apple.com/tr/app/bookhive-bookmark-quotes/id6448895353?l") {
                     let shareItems: [Any] = [link]
                     let activityViewController = UIActivityViewController(activityItems: shareItems, applicationActivities: nil)
                     self.present(activityViewController, animated: true)
