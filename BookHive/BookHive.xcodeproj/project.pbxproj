@@ -259,7 +259,6 @@
 		EE977F8229F150330027CF90 /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
 		EE977F8529F16B1B0027CF90 /* DetailSubjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSubjectCell.swift; sourceTree = "<group>"; };
 		EE977F8629F16B1B0027CF90 /* DetailSubjectCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailSubjectCell.xib; sourceTree = "<group>"; };
-		EEA09A2F2A0D7095000AD53F /* BookHive.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BookHive.entitlements; sourceTree = "<group>"; };
 		EEA23C5A29FE904C00FA8818 /* searchjson.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = searchjson.json; sourceTree = "<group>"; };
 		EEAC4FA529E6F8220066757B /* BookHive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookHive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEAC4FA829E6F8220066757B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -554,7 +553,6 @@
 		EEAC4FA729E6F8220066757B /* BookHive */ = {
 			isa = PBXGroup;
 			children = (
-				EEA09A2F2A0D7095000AD53F /* BookHive.entitlements */,
 				2E258FE32A0A56E10076C6B4 /* Localizable.strings */,
 				EE6DF06B29FA8C4C007B8DF8 /* GoogleService-Info.plist */,
 				2ECF25AF29E89D2000956FCB /* Extensions */,
