@@ -22,7 +22,8 @@ final class HomeViewModel {
                 self.eventHandler?(.stopLoading)
                 switch response {
                 case .success(let books):
-                    self.nowBook = books.works
+                    let filteredWorks = books.works.filter({$0.cover_i != nil })
+                    self.nowBook = filteredWorks
                     self.eventHandler?(.dataLoaded)
                 case .failure(let error):
                     self.eventHandler?(.error(error))
@@ -36,7 +37,8 @@ final class HomeViewModel {
                 self.eventHandler?(.stopLoading)
                 switch response {
                 case .success(let books):
-                    self.weekTrend = books.works
+                    let filteredWorks = books.works.filter({$0.cover_i != nil})
+                    self.weekTrend = filteredWorks
                     self.eventHandler?(.dataLoaded)
                 case .failure(let error):
                     self.eventHandler?(.error(error))
@@ -50,7 +52,8 @@ final class HomeViewModel {
                 self.eventHandler?(.stopLoading)
                 switch response {
                 case .success(let books):
-                    self.yearlyTrendy = books.works
+                    let filteredWorks = books.works.filter({$0.cover_i != nil})
+                    self.yearlyTrendy = filteredWorks
                     self.eventHandler?(.dataLoaded)
                 case .failure(let error):
                     self.eventHandler?(.error(error))
@@ -72,8 +75,6 @@ final class HomeViewModel {
                 }
             }
     }
-    
-    
 }
 extension HomeViewModel {
     enum Event {
