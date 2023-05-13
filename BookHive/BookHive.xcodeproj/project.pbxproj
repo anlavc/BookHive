@@ -303,6 +303,7 @@
 		EEE4DAB929F91A030017A5EF /* TextField + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField + Ext.swift"; sourceTree = "<group>"; };
 		EEE4DABB29F934E70017A5EF /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		EEE4DABC29F934E70017A5EF /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		EEEAD89D2A1033A600C71D6C /* BookHive.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = BookHive.entitlements; path = ../../BookHive.entitlements; sourceTree = "<group>"; };
 		EEFBBCA729E96E3100BDD902 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		EEFBBCA929E9723000BDD902 /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
 		EEFBBCAB29E9730400BDD902 /* BookEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookEndPoint.swift; sourceTree = "<group>"; };
@@ -553,6 +554,7 @@
 		EEAC4FA729E6F8220066757B /* BookHive */ = {
 			isa = PBXGroup;
 			children = (
+				EEEAD89D2A1033A600C71D6C /* BookHive.entitlements */,
 				2E258FE32A0A56E10076C6B4 /* Localizable.strings */,
 				EE6DF06B29FA8C4C007B8DF8 /* GoogleService-Info.plist */,
 				2ECF25AF29E89D2000956FCB /* Extensions */,
