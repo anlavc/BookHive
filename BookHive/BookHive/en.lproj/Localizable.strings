@@ -78,7 +78,7 @@
 
 
 
-"Your password must contain at least\n- 6 characters\n- 1 lowercase letter\n- 1 uppercase letter\n- 1 number\n- 1 special character." = "Your password must contain at least\n- 6 characters\n- 1 lowercase letter\n- 1 uppercase letter\n- 1 number\n- 1 special character.";
+"Your password must contain at least\n- 6 characters\n- 1 lowercase letter\n- 1 uppercase letter\n- 1 number" = "Your password must contain at least\n- 6 characters\n- 1 lowercase letter\n- 1 uppercase letter\n- 1 number";
 
 "Verification email sent successfully. Please check your inbox and click on the verification link to verify your email address." = "Verification email sent successfully. Please check your inbox and click on the verification link to verify your email address.";
 "Easily keep track of the books you've read, create reading lists, and create quotes about your books!" = "Easily keep track of the books you've read, create reading lists, and create quotes about your books!";
