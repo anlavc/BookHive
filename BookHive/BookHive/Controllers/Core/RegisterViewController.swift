@@ -154,7 +154,7 @@ class RegisterViewController: UIViewController {
                         if error != nil {
                             self.presentGFAlertOnMainThread(title: "ERROR", message: "An error occurred while sending verification email.", buttonTitle: "OK")
                         } else {
-                            self.presentGFAlertOnMainThread(title: "SUCCESS", message: "Verification email sent successfully. Please check your inbox and click on the verification link to verify your email address.", buttonTitle: "OK")
+                            self.presentGFAlertOnMainThread(title: "Success", message: "Verification email sent successfully. Please check your inbox and click on the verification link to verify your email address.", buttonTitle: "OK")
                         }
                     })
                     let userData = ["name" : self.nickname.text as Any,
@@ -170,8 +170,7 @@ class RegisterViewController: UIViewController {
                             } catch let signOutError as NSError {
                                 print ("Error signing out: %@", signOutError)
                             }
-                            
-                            self.dismiss(animated: true)
+                            self.presentGFAlertOnMainThread(title: "Success", message: "Verification email sent successfully. Please check your inbox and click on the verification link to verify your email address.", buttonTitle: "OK")
                         }
                     }
                 }

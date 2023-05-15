@@ -252,6 +252,7 @@
 		EE904C2B29FB1DBC00441AA8 /* ViewController + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController + Ext.swift"; sourceTree = "<group>"; };
 		EE904C2D29FB1FAD00441AA8 /* isValidEmailPassword + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "isValidEmailPassword + Ext.swift"; sourceTree = "<group>"; };
 		EE904C2F29FB203400441AA8 /* String + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Ext.swift"; sourceTree = "<group>"; };
+		EE9229D42A124AD700BB7E8F /* BookHive.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = BookHive.entitlements; path = "../../../Downloads/BookHive 4/BookHive/BookHive/BookHive.entitlements"; sourceTree = "<group>"; };
 		EE92F0BB2A01CA350072D4C9 /* MyquotesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyquotesCollectionViewCell.swift; sourceTree = "<group>"; };
 		EE92F0BC2A01CA350072D4C9 /* MyquotesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyquotesCollectionViewCell.xib; sourceTree = "<group>"; };
 		EE977F7E29F13E910027CF90 /* ImageView + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageView + Ext.swift"; sourceTree = "<group>"; };
@@ -303,7 +304,6 @@
 		EEE4DAB929F91A030017A5EF /* TextField + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField + Ext.swift"; sourceTree = "<group>"; };
 		EEE4DABB29F934E70017A5EF /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		EEE4DABC29F934E70017A5EF /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
-		EEEAD89D2A1033A600C71D6C /* BookHive.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = BookHive.entitlements; path = ../../BookHive.entitlements; sourceTree = "<group>"; };
 		EEFBBCA729E96E3100BDD902 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		EEFBBCA929E9723000BDD902 /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
 		EEFBBCAB29E9730400BDD902 /* BookEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookEndPoint.swift; sourceTree = "<group>"; };
@@ -554,7 +554,7 @@
 		EEAC4FA729E6F8220066757B /* BookHive */ = {
 			isa = PBXGroup;
 			children = (
-				EEEAD89D2A1033A600C71D6C /* BookHive.entitlements */,
+				EE9229D42A124AD700BB7E8F /* BookHive.entitlements */,
 				2E258FE32A0A56E10076C6B4 /* Localizable.strings */,
 				EE6DF06B29FA8C4C007B8DF8 /* GoogleService-Info.plist */,
 				2ECF25AF29E89D2000956FCB /* Extensions */,
@@ -1178,7 +1178,7 @@
 				CODE_SIGN_ENTITLEMENTS = BookHive/BookHive.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 74UL9K89V5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BookHive/Resources/Info.plist;
@@ -1195,7 +1195,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.anilavci.BookHive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1215,7 +1215,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = BookHive/BookHive.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 74UL9K89V5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BookHive/Resources/Info.plist;
@@ -1232,7 +1232,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.anilavci.BookHive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

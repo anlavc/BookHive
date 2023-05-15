@@ -30,7 +30,9 @@ class MyquotesCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var pageNumberLabel: UILabel!
     @IBOutlet weak var bookNameLabel: UILabel!
     @IBOutlet weak var noTextImage: UIImageView!
+    
     override func awakeFromNib() {
+        
         super.awakeFromNib()
         bgview.layer.cornerRadius = 20
         bgview.addShadow(color: .white, opacity: 0.5, offset: CGSize(width: 2, height: 2), radius: 5)
@@ -77,6 +79,8 @@ class MyquotesCollectionViewCell: UICollectionViewCell {
     @IBAction func shareButtonTapped(_ sender: UIButton) {
         deleteButton.isHidden = true
         shareButton.isHidden = true
+        logoStack.isHidden = false
+        logoStack.alpha = 0.2
         UIGraphicsBeginImageContextWithOptions(bounds.size, false, 0.0)
         layer.render(in: UIGraphicsGetCurrentContext()!)
         let image = UIGraphicsGetImageFromCurrentImageContext()
@@ -88,6 +92,7 @@ class MyquotesCollectionViewCell: UICollectionViewCell {
             activityViewController.completionWithItemsHandler = { [weak self] activityType, completed, returnedItems, error in
                 self?.deleteButton.isHidden = false
                 self?.shareButton.isHidden = false
+                self?.logoStack.isHidden = true
             }
             
             viewController.present(activityViewController, animated: true, completion: nil)
