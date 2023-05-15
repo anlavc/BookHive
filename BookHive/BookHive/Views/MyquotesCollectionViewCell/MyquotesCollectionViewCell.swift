@@ -36,8 +36,8 @@ class MyquotesCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         bgview.layer.cornerRadius = 20
         bgview.addShadow(color: .white, opacity: 0.5, offset: CGSize(width: 2, height: 2), radius: 5)
-        
     }
+    
     static func nib() -> UINib {
         return UINib(nibName: "MyquotesCollectionViewCell", bundle: nil)
     }
