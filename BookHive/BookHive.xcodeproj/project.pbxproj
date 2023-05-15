@@ -252,7 +252,6 @@
 		EE904C2B29FB1DBC00441AA8 /* ViewController + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController + Ext.swift"; sourceTree = "<group>"; };
 		EE904C2D29FB1FAD00441AA8 /* isValidEmailPassword + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "isValidEmailPassword + Ext.swift"; sourceTree = "<group>"; };
 		EE904C2F29FB203400441AA8 /* String + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Ext.swift"; sourceTree = "<group>"; };
-		EE9229D42A124AD700BB7E8F /* BookHive.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = BookHive.entitlements; path = "../../../Downloads/BookHive 4/BookHive/BookHive/BookHive.entitlements"; sourceTree = "<group>"; };
 		EE92F0BB2A01CA350072D4C9 /* MyquotesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyquotesCollectionViewCell.swift; sourceTree = "<group>"; };
 		EE92F0BC2A01CA350072D4C9 /* MyquotesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyquotesCollectionViewCell.xib; sourceTree = "<group>"; };
 		EE977F7E29F13E910027CF90 /* ImageView + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageView + Ext.swift"; sourceTree = "<group>"; };
@@ -554,7 +553,6 @@
 		EEAC4FA729E6F8220066757B /* BookHive */ = {
 			isa = PBXGroup;
 			children = (
-				EE9229D42A124AD700BB7E8F /* BookHive.entitlements */,
 				2E258FE32A0A56E10076C6B4 /* Localizable.strings */,
 				EE6DF06B29FA8C4C007B8DF8 /* GoogleService-Info.plist */,
 				2ECF25AF29E89D2000956FCB /* Extensions */,

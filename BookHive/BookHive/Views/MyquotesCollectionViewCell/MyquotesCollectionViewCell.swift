@@ -65,6 +65,7 @@ class MyquotesCollectionViewCell: UICollectionViewCell {
         bookNameIcon.isHidden   = true
         authorIcon.isHidden     = true
         logoStack.isHidden      = false
+        logoStack.alpha         = 1
         deleteButton.isHidden   = true
         shareButton.isHidden    = true
     }
@@ -77,10 +78,10 @@ class MyquotesCollectionViewCell: UICollectionViewCell {
     }
     
     @IBAction func shareButtonTapped(_ sender: UIButton) {
-        deleteButton.isHidden = true
-        shareButton.isHidden = true
-        logoStack.isHidden = false
-        logoStack.alpha = 0.2
+        deleteButton.isHidden   = true
+        shareButton.isHidden    = true
+        logoStack.isHidden      = false
+        logoStack.alpha         = 0.2
         UIGraphicsBeginImageContextWithOptions(bounds.size, false, 0.0)
         layer.render(in: UIGraphicsGetCurrentContext()!)
         let image = UIGraphicsGetImageFromCurrentImageContext()
@@ -91,8 +92,8 @@ class MyquotesCollectionViewCell: UICollectionViewCell {
             
             activityViewController.completionWithItemsHandler = { [weak self] activityType, completed, returnedItems, error in
                 self?.deleteButton.isHidden = false
-                self?.shareButton.isHidden = false
-                self?.logoStack.isHidden = true
+                self?.shareButton.isHidden  = false
+                self?.logoStack.isHidden    = true
             }
             
             viewController.present(activityViewController, animated: true, completion: nil)
