@@ -19,20 +19,22 @@ Reading books is much more enjoyable and easy with this app! The features this a
 - Url Session
 - UIKit
 - TableView
+- ScroolView
 - CollectionView
 - Xib
 - User Default
 - Extensions
+- Delegate
 - Json
 - Search Filter
 - Auto Layout
 - Localization
 
-## User Libraries
+## Third Part Libraries
 - Firebase
 - Firestore
 - Firebase Authentication
-- Eureka Library
+- Eureka 
 - Lottie
 - Kingfisher
 
