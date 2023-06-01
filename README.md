@@ -56,13 +56,12 @@ Return values
     author_name, authors,first_publish_year
 
 
+
 ## Screen Shot
 
-<img src="https://github.com/anlavc/BookHive/assets/50744756/e562ac1e-f26d-44fd-baeb-21db7a714147.png" width="300" height="650">  <img src="https://github.com/anlavc/BookHive/assets/50744756/68e08b8f-fe58-466f-a8d7-63ef12e3e336.PNG" width="300" height="650">  <img src="https://github.com/anlavc/BookHive/assets/50744756/8dc78c8e-85a0-4f03-85c5-94b2fcc486a3.PNG" width="300" height="650">  <img src="https://github.com/anlavc/BookHive/assets/50744756/521d187a-775b-47ef-b976-210b49f50da8.PNG" width="300" height="650">  
+<img src="https://github.com/anlavc/BookHive/assets/50744756/95423a49-8260-45a3-af20-301342b056d0).png" width="300" height="650">  <img src="https://github.com/anlavc/BookHive/assets/50744756/585df8f4-444a-4adb-b1c9-ed5cc6a50fb2.PNG" width="300" height="650"> 
+<img src="https://github.com/anlavc/BookHive/assets/50744756/79958e09-8172-4238-be17-7a9e3291e74f.PNG" width="300" height="650">  <img src="https://github.com/anlavc/BookHive/assets/50744756/42e0a138-5c87-409e-b820-0a532ac19898.PNG" width="300" height="650">  
 
 ## Promo Video
 
-
-https://github.com/anlavc/BookHive/assets/50744756/b935efbd-84b5-480f-aa7b-216ab0b0c7ab
-
-<img src="https://github.com/anlavc/BookHive/assets/50744756/41d3238b-7bd9-40c3-a66f-1ae7296fe762.png" width="100" height="100"> 
+https://github.com/anlavc/BookHive/assets/50744756/0f6f383f-da6c-477f-b00a-c7f3ef750403
